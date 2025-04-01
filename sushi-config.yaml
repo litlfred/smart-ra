@@ -1,8 +1,8 @@
-id: smart.who.int.ig-empty
-canonical: http://smart.who.int/ig-empty
-name: IGEmpty
-title: Empty IG
-description: An empty Implementation Guide to be used as a starting point for building SMART Guidelines Implementation Guides
+id: smart.who.int.ra
+canonical: http://smart.who.int/ra
+name: RA
+title: Reference Architecture
+description: The Reference Architecture Implementation Guide to be used as a starting point for building infrastructure with the SMART Guidelines aproach
 status: draft # draft | active | retired | unknown
 experimental: false
 version: 0.1.0
@@ -33,6 +33,21 @@ dependencies:
   hl7.fhir.uv.cpg: 2.0.0
   hl7.fhir.us.cqfmeasures: 5.0.0
   # Actual dependencies
+  hl7.fhir.uv.extensions.r5: 5.2.0
+  ihe.iti.mcsd: 
+    id: IHE_ITI_mCSD
+    uri: https://profiles.ihe.net/ITI/mCSD/ImplementationGuide/ihe.iti.mcsd 
+    version: current
+  ihe.iti.svcm: 
+    id: IHE_ITI_SVCM
+    uri: https://profiles.ihe.net/ITI/mCSD/ImplementationGuide/ihe.iti.svcm 
+    version: current
+
+  smart.who.int.pcmt:
+    id: sb
+    version: current
+    reason: This IG uses SMART base computable guideline capabilities
+    
   smart.who.int.base:
     id: sb
     version: 0.1.0
