@@ -10,7 +10,7 @@ The important enabling role of DPI in sustainable development has been acknowled
 
 The WHO and the International Telecommunication Union (ITU) are spearheading an initiative under the Global Initiative on Digital Health (GIDH) to draw from country experiences and a growing corpus of technical guidance, to develop a reference architecture and reference country implementations for health systems leveraging DPI to achieve health objectives. The primary goal of the development of the DPI Reference Architecture Toolkit for National Digital Health Transformation as a flagship activity for GIDH is to build global momentum among countries to lead and secure sustainable financing for DPI-based digital transformation of the health sector to achieve one or more of their broader health goals (please see illustrative list above). The work will include creating comprehensive guidance that encompasses a digital reference architecture, implementation guidance, training curriculum, technical specifications for health-specific DPI building blocks that build on foundational cross-sectoral DPI components, and a clearinghouse that curates digital solutions that have been assessed against the reference architecture and technical specifications for health.
 
-\
+
 
 
 #### Digital Public Infrastructure for Health: Relevance and Requirements
@@ -35,13 +35,13 @@ Importantly, implementing a robust DPI for Health would catalyze and enable loca
 
 - _Health Financing_: Influencing health-financing models and processes through enhanced data availability and standardization.
 
-- _Regulation and Oversigh_t: Strengthening regulation, oversight, and patient safety by leveraging performance data and reducing errors.
+- _Regulation and Oversight_: Strengthening regulation, oversight, and patient safety by leveraging performance data and reducing errors.
 
 - _Data-driven Policy-Making and Resource Allocation_: Informing health policy-making and resource allocation through improved data quality and insights.
 
 The development of technical specifications for Digital Public Infrastructure (DPI) in health is crucial for ensuring that governments and software developers can build interoperable, scalable, and secure digital health systems. For governments, clear technical specifications enable the consistent evaluation and procurement of digital solutions that align with national health goals and global standards. For software developers, these specifications provide a framework to ensure their products meet the needs of diverse health systems, fostering innovation while adhering to best practices in privacy, security, and interoperability. However, to ensure that these digital solutions meet the established criteria, there is a need for a clearinghouse mechanism. Such a clearinghouse would serve as a trusted repository, curating DPI-based digital health solutions that have been rigorously assessed against the technical specifications. This would provide stakeholders with reliable, quality-assured solutions, driving confidence in the adoption of digital technologies that are essential for advancing health outcomes, particularly in low-resource settings.
 
-\
+
 
 
 #### WHO-ITU Flagship Programme of Work
@@ -50,7 +50,11 @@ This initiative focuses on learning from country experiences and developing comp
 
 Building on the foundational work on DPI pioneered under India’s G20 Presidency, this project leverages digital solutions for public good and promotes inclusive digital transformation. The principles and frameworks established during India’s G20 Presidency are integral to the project’s approach to developing digital public infrastructure for health. The project was officially launched by WHO and ITU at the ‘GIDH Multistakeholder Dialogue on National Digital Health Transformation: Supporting Health Systems of the Future through Robust Foundations and Digital Public Infrastructure’ at the World Summit on the Information Society +20 High Level Event under the C7 eHealth Action Line in late May 2024. This launch saw participation from more than 60 countries and 152 organizations and institutions and underscored the importance of international cooperation and shared learning in achieving digital health transformation. 
 
-![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXc4ObAdOEYFKOZKXm7MM8IXlT-ajQPvFh1afWTLu5ExZ-vfgsWouLR8dup4arHPA7wS49F5KOzYJhryvIvbnsvDbgyFgWoRgme9zvzL9xhM_bOUYXbyZ0lINNK2BxEPA_nTrks9?key=Thf6wvlITZreP8HSxzzeDv9v)
+
+
+<div style="display:block">
+	<img src="illustrative-dpi-h.png" width="675em"/>
+</div>
 
 #### Broader Health Goals supported by a DPI Reference Architecture Toolkit for National Digital Health Transformation
 
