@@ -47,3 +47,10 @@ auto-save-list
 tramp
 .\#*
 .swp
+
+# folio-assistant #
+###################
+# The built site (bun run build:site) and the private intake: returned
+# comment spreadsheets hold reviewers' emails and stay out of the repository.
+_site/
+review/public-comment/raw/

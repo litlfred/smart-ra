@@ -1,0 +1,5 @@
+- Claims systems can validate against an authoritative package definition rather than a local copy that may have drifted.
+- Eligibility for a specific individual and service combination can be consistently determined, regardless of which system or channel is querying.
+- Governments gain the visibility to identify populations not reached by any scheme, detect benefit overlaps, and make evidence-based decisions about package design and financing.
+- For beneficiaries, this transparency means that what they are entitled to is discoverable, checkable, and comparable to what they actually receive — a foundational condition for accountability in health financing.
+- Providers and pharmacies can access up-to-date information on covered services, medicines, and conditions at the point of care, supporting prescribing and treatment decisions that are consistent with what benefit packages include and what patients are entitled to receive.

@@ -1,0 +1,1 @@
+The figure below illustrates how these capabilities relate in practice: a change moves from intake, through change management and publication, to monitoring, carried out by defined roles (stakeholders, authors, owners) and supported by tools (change-request tooling, authoring and repository services), with upstream content and management rules feeding the process.

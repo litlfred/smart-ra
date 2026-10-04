@@ -1,0 +1,1 @@
+The method is illustrated in full for this goal in the worked example in Section 2.4.2. The spreadsheet below provides the complete mapping — goal to stakeholder value to capability to application service to component — including the public financial management, revenue, pooling, purchasing, benefits design, and safeguarding sub-functions in detail.

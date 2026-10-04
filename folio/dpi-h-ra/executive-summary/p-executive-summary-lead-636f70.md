@@ -1,0 +1,1 @@
+Countries are unlikely to achieve their health goals through investing in isolated or siloed health systems. Instead, they should build shared data and digital capabilities that support multiple programmes, multiple diseases and multiple levels of care.

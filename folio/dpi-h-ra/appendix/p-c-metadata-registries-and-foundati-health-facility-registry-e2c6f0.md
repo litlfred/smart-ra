@@ -1,0 +1,3 @@
+The most architecturally significant dependency of the Health Facility Registry is on geospatial infrastructure — specifically a Common Geo-Registry (CGR); a cross-sectoral foundational component that sits outside the health sector and serves the whole of government[^52]. A CGR would manage geographic objects — administrative units, settlements, boundaries, and their hierarchical relationships — with full temporal integrity: it would record not just current geographies but historical changes, enabling any system to query the state of a geography on any given date.
+
+[^52]: [https://healthgeolab.net/DOCUMENTS/Guidance\_Common\_Geo-registry\_Ve2.pdf](https://healthgeolab.net/DOCUMENTS/Guidance_Common_Geo-registry_Ve2.pdf)

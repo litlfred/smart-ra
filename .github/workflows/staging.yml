@@ -1,0 +1,37 @@
+name: Staging preview
+
+# A before/after preview of this folio for every pull request, published to
+# STAGING/<branch>/ on gh-pages, with the ChangeSet (what changed, block by
+# block) beside it. A push to main publishes main's site at the gh-pages root:
+# the "before" side. The mechanics live in the platform's reusable workflow.
+#
+# The site is built by the platform's build-document-site.ts: one page per
+# document, with an anchor on every labelled block. public-comment-site.ts then
+# adds the public-comment dashboard (public-comments/) and shows each comment
+# beside the block it is about. A preview at STAGING/<branch>/ is the AFTER
+# side of every comment's deep link; main's site at the root is the BEFORE.
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  issue_comment:
+    types: [created, edited]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# What the reusable workflow needs, and no more: publish the preview, comment
+# on the pull request, and read its comments for the review page.
+permissions:
+  contents: write
+  pull-requests: write
+  issues: read
+
+jobs:
+  staging:
+    uses: litlfred/folio-assistant/.github/workflows/folio-staging.yml@main
+    with:
+      build_command: 'bun run folio-assistant/folio-assistant-core/scripts/build-document-site.ts --out _site && bun run folio-assistant/folio-assistant-core/scripts/public-comment-site.ts --out _site'
+      site_dir: _site
+      folio_dir: folio
+      platform_dir: folio-assistant

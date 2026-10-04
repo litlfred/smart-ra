@@ -1,0 +1,3 @@
+The EHR is described variously as an electronic version of a patient's medical history maintained by the provider over time[^59], and ISO 18308:2011 characterises an EHR architecture as one designed to support lifelong, effective, high-quality and safe integrated health care through repositories of health information that are accessible by multiple authorised users across care settings. Some definitions of the EHR therefore approach the scope of what this reference architecture calls the LHR, while others describe what is functionally a point-of-care application.
+
+[^59]: [https://www.cms.gov/priorities/key-initiatives/e-health/records](https://www.cms.gov/priorities/key-initiatives/e-health/records)
