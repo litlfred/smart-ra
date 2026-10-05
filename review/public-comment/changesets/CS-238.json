@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-238",
   "title": "Define a minimum security, privacy and audit baseline",
   "requirements": "- Require policy-based access beyond role-based control\n- Describe security operations and incident response as a standing, recurrently funded function\n- Distinguish controls that mature over time from properties required from initial operation\n- State minimum key lifecycle states a national trust infrastructure must manage\n- Provide a risk-proportionate supplier assurance baseline countries can evaluate against\n- State the monoculture trade-off of consolidation and its design consequences, e.g. no mandated single reference implementation, degraded operation\n- Carry security-by-design into phases, procurement, financing and operations\n- Extend 3.4.4 to cover security operations, vulnerability management, continuity and disaster recovery, privacy incidents and supplier performance",

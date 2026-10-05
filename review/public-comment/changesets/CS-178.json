@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-178",
   "title": "Define terminology and SGI roles, decision rights and approval",
   "requirements": "- Define domain-specific reviewer qualifications, conflict-of-interest rules and multidisciplinary review\n- Define who approves extensions, translations, value sets and mappings\n- Add a RACI-style model assigning standards, terminology, model, clinical and publication authorities to capabilities\n- Extend technical review to implementability and validation, and distinguish automated structural checks from expert judgement\n- Include classification and clinical coding specialists\n- Distinguish authoring roles (content author, domain authority, modeller, terminology specialist, reviewer, publisher) with separation of duties\n- Require privacy, legal, ethical and equity review for high-impact artefacts, and proportionate public consultation\n- Link ICD release adoption to statistical reporting",

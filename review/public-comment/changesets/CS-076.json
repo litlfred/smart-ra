@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-076",
   "title": "Specify trust governance and cross-jurisdiction trust frameworks",
   "requirements": "- State what GDHCN participation provides (issuer trust, document integrity) and what it does not\n- Define what 'appropriate' PKI must cover (delegation, key lifecycle, revocation)\n- Apply the 3.4.5 reasoning to certificate, credential and identity trust services, or explain where trust governance is treated\n- Express requirements on the interface between DPI-H and national trust services\n- Classify GDHCN as an external/cross-border trust network distinct from domestic foundational trust\n- Separate person, professional, organisational and endpoint identity in mutual recognition",

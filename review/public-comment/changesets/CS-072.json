@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-072",
   "title": "Govern adapters and transformations that may alter meaning",
   "requirements": "- Allow systems internal models provided boundaries are conformant and meaning-preserving\n- Add to 3.7 testing that clinically significant meaning survives translation from logical model to technical artefact and end-to-end exchange\n- Replace the fixed 'consumer provides the adapter' rule with explicit assignment of adapter ownership\n- Name what must be preserved: provenance, status/certainty/negation, terminology bindings, units, concept relationships\n- Require transformation specifications documenting loss and assumptions, with mapping testing\n- Cover the selected terminology/classification pathway (e.g. ICD-11) and terminology-service operations in test cases\n- Soften 'semantic alignment at the source' to 'as close to the source as practicable'\n- Note existing frameworks (e.g. FHIR terminology service conformance) that can be reused",

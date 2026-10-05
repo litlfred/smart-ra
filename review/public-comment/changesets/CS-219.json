@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-219",
   "title": "Enrich mapped relationships with layer, status and dependencies",
   "requirements": "- Show for each element whether it is foundational shared data layer, business-services layer, DPI-F dependency, operational application, or cross-cutting governance\n- Indicate whether each relationship is core, supporting, optional, conditional or illustrative\n- Indicate which capabilities must exist before others can be implemented, e.g. via a dependency matrix\n- Distinguish authoritative entity registries from the longitudinal clinical record within the foundational layer\n- Map goals to the specific component services needed rather than whole components where possible\n- Mark capabilities as minimum REDDHI baseline, use-case-dependent, progressive enhancement or advanced target\n- Include the principal operational application categories, kept outside the DPI-H boundary\n- Apply one consistent relationship pattern (goal, outcome, capability, service, component, data object) across all goals",

@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-262",
   "title": "Adopt a global-core, national-extension policy for standards and profiles",
   "requirements": "- Require schema extensions to follow a governed national process with definitions, bindings and conformance\n- Keep the shared core minimal and reach national needs by governed extension\n- Direct countries to reuse international standards and IHE profiles first and limit national specifications to extensions\n- Acknowledge the role of regional profiles, implementation guides and communities of practice\n- Target unmanaged variation rather than variation itself\n- State the global-core, national-extension approach in the summary, principles, 3.6.2 and 4.3\n- Make governance mandatory even where a dedicated LIMR platform is optional\n- Let countries adopt existing models and define only necessary constraints and mappings",

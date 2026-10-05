@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-052",
   "title": "Apply minor editorial and structural fixes in 3.4",
   "requirements": "- Shorten the governance definition and add a plain-language summary for non-specialist readers\n- Add forward references in 3.4.5 to 3.5.3 and 3.6, or reorder so components are introduced first\n- Identify where 3.4 and the data-governance material overlap and consolidate or cross-reference\n- Give implementers guidance on avoiding duplicated governance structures",

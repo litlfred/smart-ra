@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-249",
   "title": "Require effective, not nominal, human oversight of AI",
   "requirements": "- Define assistive use by the system's actual role and influence\n- Describe human oversight as a behavioural and organisational capability, not just the presence of a reviewer\n- Articulate human-in-the-loop oversight principles\n- Consider a cross-cutting principle preserving transparency, accountability and override where automated processing materially affects people or institutions\n- Require proportionate exception and review where evidence is incomplete or conflicting\n- Require an operational oversight model proportionate to risk, addressing automation bias and review capacity\n- Address automation bias and over-reliance, especially in low-resource settings\n- Cover fairness, safety, transparency, explainability and lifecycle governance",

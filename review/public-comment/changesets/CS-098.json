@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-098",
   "title": "Specify the national implementation package and profile template",
   "requirements": "- List the minimum artefacts a country should produce\n- Cover terminology packages, security, versioning, errors, subscriptions, bulk exchange and non-functional requirements\n- Recommend resources for linking care, research and biospecimen data\n- Define the relationship from reference profile to national profile, IG, vendor implementation and conformance statement\n- Add a deliverables matrix by stage; point to a companion technical guide for detail",

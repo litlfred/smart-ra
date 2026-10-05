@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-068",
   "title": "Normalise component granularity and naming",
   "requirements": "- Define CDSE, surveillance platform and HMIS as bounded capabilities at a similar level\n- Use one term for PKI vs trust architecture, terminology service vs server, and HMIS 'service' vs 'system'\n- Give each component a preferred name, synonyms and excluded meanings\n- Separate governed knowledge from execution for the CDSE, or call it a logical capability\n- Distinguish ArchiMate 'Product' from health products in the Product Registry\n- Scope the shared surveillance capabilities and the HMIS component name\n- Present individual versus population level as a typical emphasis, not a boundary",

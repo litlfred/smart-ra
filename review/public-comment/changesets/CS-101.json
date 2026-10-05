@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-101",
   "title": "Govern civil-registration event updates to health registries",
   "requirements": "- Require matching, verification and exception handling before authoritative updates\n- Distinguish medical certification and cause-of-death coding from registry updates\n- Describe information flows and events rather than one-directional API categories",

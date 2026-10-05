@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-148",
   "title": "Specify facility location precision and restricted disclosure",
   "requirements": "- Model coordinates, address, geometry and administrative assignment separately with source and precision\n- Define a public subset with documented exceptions for sensitive facilities\n- Define CRS, accuracy, capture method and verification for coordinates\n- Require access controls on search and accessible, multilingual, low-bandwidth public formats\n- Allow restricted or approximate coordinates for sensitive sites\n- Support mobile services through routes, service areas and schedules",

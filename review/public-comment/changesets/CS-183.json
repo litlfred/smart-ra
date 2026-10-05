@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-183",
   "title": "Require governed indicator definitions and information-to-action in HMIS",
   "requirements": "- Require an indicator metadata model (numerator, denominator, disaggregation, period, source)\n- Add decentralised data use, interpretation and feedback at facility and district levels to the core attributes\n- Require separation of core code from governed, versioned configuration packages\n- Add governed climate-health indicators, spatial/temporal alignment, uncertainty, thresholds and action protocols\n- Define validation by indicator and source with quality flags\n- Require versioned reference data and reproducible calculations\n- Require national indicator governance to limit proliferation",

@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-103",
   "title": "Define service levels and operational readiness for shared components",
   "requirements": "- Replace unquantified 'high availability, low latency' with service classes\n- Point to a national mCSD or equivalent IG; define service classes with measurable availability\n- Define minimum service-management capabilities before production\n- Make minimum monitoring and error handling mandatory\n- Define offline fallback and justify differing availability grades (e.g. Supplier Registry)",

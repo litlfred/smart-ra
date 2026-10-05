@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-155",
   "title": "Specify workforce identifier and identity-assurance rules",
   "requirements": "- Permit a national identifier, linked professional identifiers or a federated arrangement\n- Define 'non-intelligent identifier' and its rationale\n- Allow provisional identifiers before verification\n- Make foundational-ID linkage optional, legally authorised and use-case specific",

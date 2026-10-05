@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-147",
   "title": "Model facility relationships beyond fixed hierarchies",
   "requirements": "- Explain 'multi-axial hierarchy' in plain language\n- Rename location hierarchies to relationship types; make each conditional on national policy\n- Model administrative/operational trees separately from many-to-many referral and catchment networks\n- Offer progressive catchment options with source and confidence\n- Harmonise relationship categories across the component\n- Represent catchments and population estimates with method, source, date and confidence",

@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-253",
   "title": "Name the custodian, versioning and change process of the architecture",
   "requirements": "- State where each artefact is published, its version and maintainer\n- Name a concrete channel for implementation findings\n- Name custodian, versioning scheme and revision cadence; identify the canonical machine-readable home; complete placeholder references and glossary\n- Tie each guidance version to a specific model release with change logs\n- Describe a learning cycle that collects national blueprints and shares lessons\n- Require persistent element identifiers across views and versions\n- Require as-built reconciliation of the model with deployed components",

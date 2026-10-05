@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-145",
   "title": "Tighten Client Registry data protection and query responses",
   "requirements": "- Correct 'pseudo-anonymisation' to 'pseudonymisation' and note pseudonymised data remains personal data\n- Return only authorised fields rather than full cross-reference maps\n- Replace the 'right to be forgotten' with applicable data-subject rights subject to statutory retention\n- Define public and restricted search profiles with limits against enumeration\n- Govern pseudonym generation to prevent a central linkability service\n- Break 'conformance with data-protection legislation' into testable controls",

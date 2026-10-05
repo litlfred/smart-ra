@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-157",
   "title": "Broaden the licence and qualification model in the Workforce Registry",
   "requirements": "- Use a governed licence-status value set including not applicable, provisional, restricted and relicensed states\n- Separate formal qualifications, certifications, CPD and scope-of-practice authorisations\n- Model licences with scope, jurisdiction, conditions and non-fixed expiry\n- Support multiple licences and licences without expiry\n- Support multiple qualifications, with place of training (national/foreign) for each\n- Model qualifications and specialisations as repeatable, verified records with issuing authority\n- Record status reason, scope, jurisdiction and effective period separately\n- Make specialisation conditionally mandatory",

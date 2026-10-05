@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-122",
   "title": "Add risk-tiered AI evaluation and use-case classification",
   "requirements": "- Define evaluation as layered (technical, clinical, human factors, security, real-world monitoring) and use plain terminology in place of 'evals'\n- Classify use cases by autonomy, reversibility, consequence of error and oversight needed\n- Clarify that trustworthiness is demonstrated through evidence and governance, and that trust should not be demanded as a substitute\n- Make evaluation risk-tiered, with reusable protocols and shared regional capacity for smaller systems\n- Expand decision-maker questions (non-AI alternatives, subgroup performance, exit) and supplier documentation duties\n- Address integrity of the evaluation environment itself",

@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-136",
   "title": "Reframe the Client Registry definition around governed, uncertain identity",
   "requirements": "- Describe records as possibly provisional, incomplete or at differing assurance levels, reconciled later\n- State that financing systems resolve identity via the registry while enrolment/eligibility live elsewhere\n- Define the 'canonical record' as a governed reference that keeps source provenance, match confidence and correction history\n- Remove facility-attendance history from the Facility Registry; place it in encounter or LHR data\n- State that identity and demographic data remain sensitive personal data even though no clinical data is held\n- Define how consent records identify subjects, representatives and authority\n- Explain overlap and differences between Client Registry, MPI and EMPI, and how persons' roles (e.g. carer) are represented\n- Make shared identity patterns with the Workforce Registry explicit while keeping domain differences",

@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-196",
   "title": "Govern inbound updates and bulk import into registries",
   "requirements": "- Distinguish proposals from authoritative updates and define precedence and acknowledgement\n- Require staged, validated bulk import with rollback and provenance",

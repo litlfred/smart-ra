@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-106",
   "title": "Broaden the specialist roles and modelling roles in 4.5.2",
   "requirements": "- Add or locate missing capabilities (AI governance, platform operations, service and product management, procurement, clinical safety, cybersecurity operations)\n- Make the modeller role standard-neutral, with FHIR profiling as one specialism\n- Distinguish architecture responsibilities and treat migration as a multidisciplinary workstream\n- Include ongoing maintenance, classification and clinical-coding responsibilities\n- Assign clinical-safety and AI-assurance accountability explicitly\n- Describe semantic governance as multidisciplinary rather than owned by terminology specialists alone",

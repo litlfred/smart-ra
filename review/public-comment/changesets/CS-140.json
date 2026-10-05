@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-140",
   "title": "Revise the Client Registry minimum dataset for necessity and inclusion",
   "requirements": "- Distinguish schema support, conditional requirement and mandatory presence; allow documented absent-data reasons\n- Reassess mandatory status of nationality, address, contact, sex at birth and gender identity against stated purposes\n- Support flexible names, date precision and estimated dates, no-fixed-address and unknown/not-disclosed values\n- Separate sex- and gender-related concepts with inclusive, governed value sets\n- Apply data-minimisation and impact assessment to the whole dataset, not only biometrics",

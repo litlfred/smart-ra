@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-233",
   "title": "Define SGI feedback and remediation loops from implementation",
   "requirements": "- Require structured feedback tied to artefact, version, system and use case\n- Show bidirectional flows in the SGI figure: publication downward; implementation feedback, requests and quality issues upward\n- Take in evidence that governed content is misread at the point of care\n- Classify issues (content defect, implementation error, configuration, source data, training) with owners and deadlines\n- Route issues to both artefact stewards and source-system owners, and make bidirectional governance explicit\n- Define community participation rights and processes",

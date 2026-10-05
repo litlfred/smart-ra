@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-099",
   "title": "Define transitional data formats and migration paths",
   "requirements": "- Give examples of simpler exchange mechanisms and how they progress to target conformance\n- State what a progression path from lighter formats to open standards must document\n- Allow non-FHIR systems to demonstrate equivalence via mappings or adapters under time-bound arrangements\n- Allow several governed integration patterns with foundational systems\n- Point to migration strategies for fragmented ecosystems",

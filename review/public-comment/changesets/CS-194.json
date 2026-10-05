@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-194",
   "title": "Fix editorial errors in the registry sections",
   "requirements": "- Correct grammar and remove the duplicate bullet in the Facility Registry\n- Keep one of the two near-identical passages\n- Lower-case undefined component-like terms\n- Define abbreviations such as HWWF and HWRF",

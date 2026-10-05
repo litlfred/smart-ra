@@ -22,9 +22,10 @@
       "id": "public-comments",
       "path": "review/public-comment/",
       "graphTypologies": [
-        "todo-items"
+        "todo-items",
+        "public-comments"
       ],
-      "description": "The public-review record: one folio-public-comment/v1 file per comment (comments/PC-0042.json), one manifest per intake batch (batches/), and config.json naming the editors and review committee. A public comment is a todo kind, so anything that reads todos reads these. Moved only by folio-assistant-core/scripts/public-comment.ts. The original spreadsheets hold reviewers' emails and are NOT kept here."
+      "description": "The public-review record: one public-comment/1.0.0 file per comment (comments/PC-0042.json), one changeset/1.0.0 file per change-set (changesets/CS-012.json), one manifest per intake batch (batches/), and config.json naming the editors and review committee. A public comment is a todo kind, so anything that reads todos reads these. Moved only by folio-assistant-core/scripts/public-comment.ts. The original spreadsheets hold reviewers' emails and are NOT kept here."
     },
     {
       "id": "uploads",

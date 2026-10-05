@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-228",
   "title": "Make SGI capabilities assessable with outputs and quality measures",
   "requirements": "- Separate monitoring of governance process, content quality, implementation conformance and adoption\n- Give each capability an expected output, accountable owner, evidence and maturity definition\n- Define quality dimensions and a runtime semantic-error taxonomy, and extend service monitoring beyond availability\n- Add governance-process indicators (backlog, triage, review, publication times) and outcome indicators linking SGI to interoperability results\n- Measure validated and production use rather than raw access volume\n- Offer the catalogue as an editable assessment workbook / operating-model template rather than only a dense PDF table\n- Keep usage monitoring proportionate and privacy-preserving",

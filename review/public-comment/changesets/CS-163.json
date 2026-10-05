@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-163",
   "title": "Define Product Registry scope and content boundary",
   "requirements": "- State criteria for foundational data (authority, stability, reuse, identification)\n- Define 'product' up front and state whether medical equipment is in scope\n- Align the registry/catalogue boundary across placement, requirements, data table and comparison table\n- Reassess storage, shelf-life, volumetric and clinical attributes against them\n- Use a common identity core with class-specific extensions\n- Replace the stable-versus-dynamic binary with update frequency and governance authority\n- Keep batch, serial, shipment and custody events in operational systems\n- Separate meanings of 'recognised for use' into distinct statuses",

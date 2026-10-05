@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-174",
   "title": "Specify LHR provenance, correction, provisional identity and erasure",
   "requirements": "- Require each item to keep its model/profile, terminology system, version and validation status\n- Require lifecycle and verification status for every item\n- Add workflows for provisional identity, uncertain matching, merge/unlink events and propagation of corrections\n- Distinguish amendment, correction, logical withdrawal and legally required erasure\n- Expand provenance to transformation, attestation and all provenance actors\n- Separate source data from reconciled or derived views\n- For ICD-11, retain source identifiers, release and full expression; validate against declared releases\n- Define correction, amendment and entered-in-error workflows",

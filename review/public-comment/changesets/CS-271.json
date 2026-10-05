@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-271",
   "title": "Define a pathway for person-generated and patient-reported data",
   "requirements": "- Describe an optional pathway for citizen- and device-generated data under consent\n- Support standardised collection and tracking of PROs\n- Allow individuals and authorised carers to contribute structured and narrative information to the LHR with provenance\n- Consider whether and how patient data input to DPI-H should be required, bound by the national principles\n- Clarify when consumer technologies outside DPI-H become subject to its controls\n- Address multi-vendor device interoperability free of identifiable data",

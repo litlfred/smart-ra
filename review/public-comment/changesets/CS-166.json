@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-166",
   "title": "Restructure the Product Registry data model by product class",
   "requirements": "- Model units, strength, routes, storage conditions and classifications as structured, governed attributes\n- Distinguish clinical concept, regulated product, item, packaging level, batch and serial instance\n- Add applicability by product class and identification level to the data-element table\n- Define a governed clinical-product model and identifier scheme\n- Model repeatable packaging relationships down to the smallest base unit\n- Make GTIN, brand name, medicinal attributes, origin, shelf life, dimensions and generic mapping conditional where not universally applicable\n- Link manufacturers and related parties to authoritative organisation records\n- Govern units and conversions, referencing UCUM where applicable, with integrity checks",

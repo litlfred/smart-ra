@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-030",
   "title": "Apply minor editorial fixes to the Chapter 2 introduction and Figure 2.2",
   "requirements": "- Replace 'semantic and terminology services' with the named components and semantic governance\n- Say 'application components and supporting specifications' or state the technology-layer scope\n- Add a paragraph interpreting Figure 2.2 and alt text",

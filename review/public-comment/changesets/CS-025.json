@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-025",
   "title": "Clarify the boundary between DPI-H and point-of-service applications",
   "requirements": "- Add a short 'what is and is not a DPI-H component' summary at the start of 3.5 with examples\n- Apply DPI-H classification to capabilities or logical components rather than whole products\n- Treat CHW-facing applications as a distinct concern, as a component or a defined interface layer\n- Revise the definition so applications that write to shared infrastructure carry conformance and provenance obligations\n- Justify, not only state, the exclusion of point-of-care clinical systems\n- Add a boundary contract stating what data-producing and consuming systems must provide",

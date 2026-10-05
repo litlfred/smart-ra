@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-041",
   "title": "Broaden the architecture description method in 3.2",
   "requirements": "- Introduce the many-to-many relation between elements and systems when the two-layer model is first described\n- Recommend views for audiences beyond function, realisation and motivation\n- Give a practical workflow for adapting, extending or setting aside reference elements\n- Clarify that considerations outside the structural views remain requirements and constraints\n- Define minimum behaviours that hold whether an element is central, federated or distributed",

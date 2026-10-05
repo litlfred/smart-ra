@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-100",
   "title": "Make minimum datasets proportionate and purpose-limited",
   "requirements": "- Require a documented purpose for each mandatory element\n- Note that fitness for reuse depends on purpose, granularity, provenance and lawful basis\n- Separate schema support from mandatory presence; define unknown and not-applicable values\n- Pair the principle with data minimisation at source where it is introduced\n- Ensure missing address or contact data cannot block registration or care",

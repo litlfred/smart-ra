@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-171",
   "title": "Recognise research and biobank systems as governed data sources",
   "requirements": "- Recognise research, LIMS and biorepository systems as functional applications and potential sources outside the core layer\n- Keep research, genomic and biospecimen data in source systems subject to ethics and purpose limits\n- Require granular research consent and biospecimen provenance\n- Cover biospecimen and research terminology in the Terminology Service",

@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-272",
   "title": "Embed clinical safety accountability in governance and decision support",
   "requirements": "- State that only suitable recommendations are made computable and that clinical judgement remains\n- Include clinical, clinical-informatics and patient-safety expertise in governance bodies for care-affecting decisions\n- Add severity classification and patient-safety escalation for semantic errors across the lifecycle\n- Add a structured clinical-risk methodology (e.g. hazard log) as a governance consideration\n- Distinguish deterministic rules, statistical models and AI, with assurance proportionate to type and risk\n- Name an accountable clinical-governance or patient-safety authority among strategic responsibilities\n- Define urgent-change authority, minimum review, rollback and post-hoc review\n- Address explainability, alert fatigue, automation bias, testing beyond unit tests and proportionate override capture",

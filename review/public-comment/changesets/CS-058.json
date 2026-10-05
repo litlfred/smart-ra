@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-058",
   "title": "Explain how SGI decisions become machine-checkable runtime constraints",
   "requirements": "- Describe how approved semantic constraints are published in computable form and enforced by validation of data instances\n- Distinguish design-time, publication-time, deployment-time and runtime roles of terminology and information models",

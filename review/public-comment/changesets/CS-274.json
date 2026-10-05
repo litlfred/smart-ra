@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-274",
   "title": "Define one lifecycle, versioning and impact process for semantic artefacts",
   "requirements": "- Establish controlled publication statuses (draft, trial use, normative, deprecated, retired) with permitted uses\n- Add a common lifecycle from authoring to retirement for models, terminologies and mappings\n- Add a taxonomy of terminology artefacts and their services\n- Add dependency, impact and compatibility management as an explicit cross-cutting capability\n- State version alignment of terminologies and value sets across consuming systems as a conformance expectation\n- Rename 'minimum dataset' to minimum metadata for governed artefacts\n- Define version semantics per artefact type, compatibility classification, and version alignment across participating systems\n- Make dependency tracking and impact analysis mandatory for production-used artefacts",

@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-269",
   "title": "Define common patterns for identifiers, provenance, versions and validity",
   "requirements": "- Require assigning authority, type, status, period and provenance for every identifier\n- Define cross-component patterns for identifiers, provenance, lifecycle status and effective periods\n- Add source authority, effective period, verification status, reason for change and supersession\n- Define identifier format, namespace and resolver\n- Define assurance levels across foundational ID, CRVS, biometrics and local evidence, and their appropriate uses\n- Cover source inventory, temporary crosswalks, canonical identifier assignment and duplicate resolution\n- Define creation, correction, merger, retirement, non-reuse and historical resolution\n- Apply versioning, validity and integrity requirements to all governed artefacts and registry records",

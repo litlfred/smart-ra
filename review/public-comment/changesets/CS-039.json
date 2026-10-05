@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-039",
   "title": "Explain the ArchiMate notation and add a non-technical entry point",
   "requirements": "- Explain why the selected subset suffices and what it excludes\n- Open 3.7 with a short recap of the 2.4 and 3.5/3.6 concepts it depends on\n- Open 3.1 with a short health example tracing goal to component\n- Add a short worked example (e.g. a national patient registry) illustrating realisation and adopt/adapt/map in practice\n- Introduce ArchiMate/TOGAF terms such as capability and application component before Chapter 1 uses them\n- Note that landscape diagrams may use more accessible notation, as Figure 3.2 does\n- Keep a concise conformance explanation in the main chapter and move detailed ArchiMate/IHE conventions to an annex or separate specification\n- Define an extension palette including Business Process, Business Role, Requirement, Constraint and Assessment",

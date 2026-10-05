@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-090",
   "title": "Base use-case selection and data models on priority workflows",
   "requirements": "- State that information needs are derived from purposes, actors, workflows and decisions\n- Select bounded use cases within goals\n- Add forward references to 4.3.1 from 2.2.2, 3.4.5 and 3.6.1\n- Reference SMART Guidelines where clinical content and point-of-care guidance are discussed\n- Require a traceability chain for priority clinical content from requirement through model, binding, exchange and test\n- Retitle or reword 'the most consequential decision' accordingly\n- Add equity and unmet need to selection criteria\n- Consider a short subsection on the governed information model before 4.3.3",
