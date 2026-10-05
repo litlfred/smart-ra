@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-273",
   "title": "Define a minimum SGI baseline and progressive maturity levels",
   "requirements": "- Identify the minimum SGI capabilities needed before a country publishes national terminology, models or IGs, and mark which belong to the REDDHI baseline\n- Define the minimum semantic-governance baseline (ownership, identifiers, versioning, approval, change control) needed before data structures go live\n- Explain how the terminology maturity model extends to other artefact types\n- Clarify that governed models exist from the outset but may be published through simpler means first\n- Describe progressive maturity stages and give short examples at each level\n- Place that baseline in Phases 1–2, reserving advanced SGI capabilities for Phase 3\n- Describe the criteria distinguishing each maturity level so maturity is not read as technology sophistication\n- Describe a maturity path rather than mandatory runtime prerequisites",

@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-164",
   "title": "Clarify Product Registry authority, identifiers and submission trust",
   "requirements": "- State whether the registry is the regulatory source, a master-data hub or a federated view\n- State that the registry records externally assigned GTINs rather than issuing them\n- Make bulk onboarding or equivalent migration capability mandatory with validation and rollback\n- Add organisational verification, submission provenance and separation of submitter and approver\n- Make regulatory status mandatory where regulation applies, with exempt/emergency categories\n- Require level-aware national-to-global mappings with mapping type\n- Make external-source integrations conditional on a country source strategy\n- Use attribute- and product-class-specific approval workflows",

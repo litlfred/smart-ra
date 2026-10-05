@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-268",
   "title": "Address organisation identity across facility, workforce and supplier registries",
   "requirements": "- Assess whether a shared organisation registry or identifier capability is needed, or where it comes from\n- Assess whether an Organisation Registry is needed or another source applies\n- Distinguish organisations (provider groups, payers, laboratories, regulators) from facilities and individual workers\n- Show how organisations, locations, practitioners, roles and services are distributed across components, consistent with mCSD\n- Reframe the three supply-chain pillars as non-exhaustive master-data domains\n- Clarify boundaries of business-service components such as decision support and surveillance delivery\n- Apply one organisation-identifier model across registries",

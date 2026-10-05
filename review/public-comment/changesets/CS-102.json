@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-102",
   "title": "Give balanced criteria for centralised, federated or hybrid topology",
   "requirements": "- Add pragmatic decision factors (capacity, landscape, funding, political economy)\n- Describe centralised, federated, distributed and hybrid mediation with their trade-offs rather than favouring one\n- Allow managed direct connections that use shared public specifications, and define 'managed'\n- Present central-bus risks as design-dependent rather than inherent\n- Explain logical decoupling for non-architects\n- Present benefits as possible, with risks and prerequisites for each topology\n- Acknowledge scaling and coordination costs of federation; cite a country example where possible\n- Reword 'interoperability, in its true sense' as the sense used in this guidance",

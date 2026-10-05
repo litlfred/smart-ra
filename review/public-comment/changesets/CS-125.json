@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-125",
   "title": "Include privacy-preserving and federated options for AI data access",
   "requirements": "- Mention privacy-preserving distributed learning as an option alongside nationally hosted models\n- Add federated analysis, secure environments and local deployment as alternatives to central data movement\n- State governance expectations that extend beyond individual institutions when such approaches are used",

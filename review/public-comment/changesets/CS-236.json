@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-236",
   "title": "Model delegated and supported agency as a governed relationship",
   "requirements": "- Distinguish a relationship record from current authority to act\n- Recognise that people may act through supporters or authorised representatives\n- Include proxies, guardians and caregivers in the minimum actor set\n- State that the architecture should be able to represent and enforce delegation, with legal rules left to national law\n- Add delegated and supported access to the LHR requirements",

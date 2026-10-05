@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-059",
   "title": "Clarify where AI, CDSE, LIMR and SGI sit relative to each other",
   "requirements": "- Clarify the relation between AI models and the CDSE\n- Present delegation of exact, rule-bound answers to governed services as an architecture-wide safety principle\n- Add a schematic or explanation of the relationship\n- Record task assignment, status, clinician acceptance and final responsibility across facility, AI service and specialist\n- Identify candidate reusable AI capabilities and the criteria for treating them as components, without proposing one national AI platform\n- Qualify reproducibility as relative to rule set, reference-data version and time context\n- Include governed rule and guideline repositories among the dependencies",

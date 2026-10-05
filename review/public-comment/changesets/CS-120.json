@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-120",
   "title": "Require identity, authority and a register for AI agents",
   "requirements": "- Require agents to carry verifiable delegated identities attributable to an accountable entity\n- Provide a catalogue of system/AI actors linked to accountable human roles, alongside the Health Workforce Registry\n- Add controls for authentication, least privilege, validation, safe failure and human confirmation",

@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-239",
   "title": "Treat offline-first and low-connectivity operation as a core design condition",
   "requirements": "- Set minimum offline-first requirements (local capture, store-and-forward, sync, deduplication, reconciliation) where connectivity is intermittent\n- Cover offline-first data capture and synchronisation for community health workers\n- Translate intermittent connectivity into requirements: caching, queues, retry, deduplication, reconciliation, conflict handling\n- State that offline resilience needs local availability, store-and-forward and conflict resolution regardless of topology\n- Apply them consistently to REDDHI, implementation guidance, HMIS, surveillance reporting and workforce credential checks\n- Define minimum conflict-resolution and reconciliation rules for offline and federated updates\n- Address identifier assignment and persistence offline without collisions\n- Do not imply that federation alone provides offline resilience",

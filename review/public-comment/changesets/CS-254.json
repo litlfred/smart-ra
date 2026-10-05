@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-254",
   "title": "Fix figure, table, footnote, page and cross-reference numbering",
   "requirements": "- Replace 'Annex [X]' with the actual appendix reference\n- Use 'Appendix A' consistently in contents, headings and cross-references\n- Number figures and tables by section, starting at 2.1\n- Adopt a single consistent figure-numbering scheme\n- Check and standardise footnote numbering and references to WHO and jurisdictional AI guidance\n- Ensure every printed page reference is unique, e.g. roman numerals for front matter and arabic for the body\n- Use Box 1.2/1.3/1.4 in body text\n- Add the conformance and testing section to the chapter overview",

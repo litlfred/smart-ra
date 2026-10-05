@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-197",
   "title": "Define progressive maturity levels for each foundational component",
   "requirements": "- Give every component the same maturity structure, from a governed baseline to advanced capability\n- Allow package-based or simpler starts (governed lists, spreadsheets, adopted models)\n- Allow different pathways by domain where relevant",

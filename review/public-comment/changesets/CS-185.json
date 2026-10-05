@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-185",
   "title": "Define the shared surveillance capabilities that qualify as DPI-H",
   "requirements": "- Apply the component-selection criteria to the PHSP and define its scope as modular capabilities with progressive implementation\n- Bound the component as a modular shared capability, naming what stays in other systems\n- State which functions each example tool illustrates and how it differs from a full shared surveillance capability\n- Define surveillance, monitoring, intelligence and response terms\n- Define progressive maturity from priority notifications to advanced analytics\n- Add scope, maturity and maintenance status for each example\n- Clarify boundaries with laboratory systems and contact-tracing workflows\n- Make clear it covers all public-health events (e.g. VPD, AEFI, MPDSR), not only epidemics and climate events",

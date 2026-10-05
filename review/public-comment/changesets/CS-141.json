@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-141",
   "title": "Model person relationships as conditional, role-based and restricted",
   "requirements": "- Make household, family and guardian relationships conditional on defined use cases\n- Use role-based relationship types (birth parent, legal parent, guardian, caregiver, representative) with validity periods\n- Require provenance, legal basis, sensitivity classification, restricted access and dispute handling\n- Replace the universal mandatory mother/guardian name with relationships for relevant dependants",

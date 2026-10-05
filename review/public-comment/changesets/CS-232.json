@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-232",
   "title": "Define conformance domains and validation services for semantic artefacts",
   "requirements": "- Distinguish conformance of artefacts, implementations, exchanged data and operational use, with evidence and authority for each\n- Provide open validators, test servers and offline/local validation options\n- Require conformance statements rather than inferring conformance from download\n- Consider runtime enforcement of governed constraints on data instances",

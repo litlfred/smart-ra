@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-027",
   "title": "Clarify terms and wording in 2.2.1",
   "requirements": "- Fix the sentence after 'the means to exchange data between them' (punctuation, capitalisation) so the interdependence point reads clearly\n- Add a short terminology note distinguishing implementation baseline, core capability, shared reuse, mandatory data content and conformance\n- Draw the consequence of 2.2.1's interdependence argument for how value and financing are assessed, rather than per component\n- Use each term consistently thereafter",

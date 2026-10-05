@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-124",
   "title": "Address AI equity and subgroup performance",
   "requirements": "- Require representative data and subgroup performance reporting (age, sex, disability, language, setting)\n- Extend equity assessment across the lifecycle (deployment, access, language, workflow, consequences of error)\n- Require evaluation of record-linkage accuracy and differential harms before linked data is used for AI\n- Require evaluation against locally representative populations and languages, with subgroup evaluation and response to disparities\n- Note the compounded risk where independent verification capacity is limited",

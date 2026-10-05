@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-199",
   "title": "Describe each listed tool with dated attributes and capability coverage",
   "requirements": "- Add per-tool fields: supported standards/profiles, conformance evidence, version and date assessed\n- For client-registry tools, distinguish registration, matching, deduplication and inclusive-registration support\n- Replace narrow HMIS/PHSP listings with a platform-level entry mapped to the capabilities it can co-realise\n- Distinguish terminology servers from model-governance tools such as CKM\n- Add a reference table mapping tools such as ODK, CommCare and OpenSRP to components\n- Add an illustrative tool example for the Benefits Package Registry\n- Add licensing (software and content), maintainership/governance and support model\n- For LHR repositories, identify supported LHR capabilities and that access-control/consent need deployment assessment",

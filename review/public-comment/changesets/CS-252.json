@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-252",
   "title": "Strengthen governed secondary use of health data",
   "requirements": "- Qualify 'capture once, use many times' with purpose and minimisation\n- Require provenance, coverage, denominator and timeliness assurance before data is treated as ground truth\n- Consider raising SHRF-8 to Required for federated and virtual implementations\n- Require separate environments, disclosure control and approval for analytics and surveillance\n- Carry machine-readable policy metadata with reused data",

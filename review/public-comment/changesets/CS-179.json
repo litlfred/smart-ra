@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-179",
   "title": "Specify LIMR artefacts, modelling method and metadata",
   "requirements": "- Require publication of machine-readable validation artefacts where feasible\n- Require artefacts in the LIMR to follow a declared, uniform modelling method to avoid divergent valid models\n- Address divergence where the same concept is modelled in incompatible but conformant ways\n- Have the LIMR publish version and hash, the CDSE verify loaded logic and record executed-content identity\n- Align LIMR Req 10's status with Table 3.5's no-reinterpretation claim\n- Define reusable model components and avoid copied fragments\n- Consider requiring a declared, uniform modelling method for artefacts in the LIMR\n- Model binding strength, purpose, version and expression handling",

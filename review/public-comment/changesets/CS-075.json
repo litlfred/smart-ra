@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-075",
   "title": "Correct Figure 3.6 and show conformance points per exchange pattern",
   "requirements": "- Reword the dashed-line legend to acknowledge that logs and registry interactions may carry sensitive metadata\n- Add conformance points or a table identifying interfaces, actor roles and specifications for each pattern in Figure 3.6",

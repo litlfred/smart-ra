@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-181",
   "title": "Define the CDSE boundary, deployment options and knowledge artefacts",
   "requirements": "- Present decision support as a logical capability that may run as a shared service, embedded locally or on-device, consuming the same governed artefacts\n- Require an intended-use statement and authority/provenance metadata (source guideline, jurisdiction, dates, owner) for each artefact\n- Distinguish computable knowledge management from rule or model execution, and both from interaction standards such as CDS Hooks\n- Use implementation-neutral wording where 2.1 describes how the CDSE evaluates a record\n- Require version-pinned dependencies on terminology, data models and value sets, with coordinated release and compatibility testing\n- State that the CDSE exposes decision services while point-of-care applications own workflow integration\n- State safe-failure behaviour when a remote service is unavailable: fallback, cached guidance, clear indication, queued work and reconciliation after recovery\n- Require enough recorded context to reproduce an execution result",

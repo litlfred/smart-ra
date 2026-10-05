@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-231",
   "title": "Secure semantic artefacts: integrity, provenance, access and licensing",
   "requirements": "- Require trusted publication with checksums or signatures and publisher verification\n- Define access classes for public and restricted assets, reusing foundational authentication services\n- Require security classification, provenance across national/regional/global sources, licence metadata and an audit-event model",

@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-137",
   "title": "Present health identifiers as options relative to foundational ID",
   "requirements": "- State the required outcome as reliable cross-system identification, achievable by national, federated or multiple linked identifiers\n- Describe how health identity integrates with, or transitions to, foundational ID services, including where health may seed foundational ID\n- Cite the exact WHO source for the three HUID models and say whether they are adapted\n- Define authoritative sources per attribute rather than assuming one foundational system for all demographics\n- Prefer identifiers linked to, not derived from, foundational IDs; address assurance under Model B and propagation under Model C\n- Reconcile 'does not duplicate foundational data' with the minimum demographics the registry must retain\n- Allow provisional identifiers at registration and capture of identifier types only when they exist\n- Base storage of foundational identifiers on legal authority and necessity, not consent alone",

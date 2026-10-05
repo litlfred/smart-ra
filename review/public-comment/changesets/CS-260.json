@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-260",
   "title": "Link procurement to conformance with published national profiles",
   "requirements": "- Make national profiles, test artefacts and tooling Phase 1/early Phase 2 outputs\n- Map test gates to procurement stages, contractual acceptance, deployment and major upgrades\n- Offer adaptable tender and acceptance clauses\n- Clarify that data models, profiles and conformance criteria must be developed or adopted nationally before serving as procurement specifications\n- Provide guidance or an annex on structuring digital procurement within public financial management\n- Make conformance mandatory only against published, versioned, testable profiles\n- Add procurement anti-patterns relevant to interoperability\n- Support smaller suppliers with test tools and proportionate evidence",

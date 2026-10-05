@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-168",
   "title": "Strengthen Product Registry versioning, lifecycle and provisional records",
   "requirements": "- Define separate product, packaging, regulatory, item and publication statuses\n- Expand history and provenance metadata and require impact assessment of changes\n- Allow time-bound provisional records for emergency procurement, donations and migration, with later reconciliation\n- Define decision rights per role\n- Define the effect of each lifecycle status on consumers; prohibit deletion of identifiers needed for history\n- Require impact analysis across consumers before major changes\n- Define a complete audit profile",

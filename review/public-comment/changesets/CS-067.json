@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-067",
   "title": "Broaden Terminology Service scope and conformance references",
   "requirements": "- Include UCUM and unit validation in the example and terminology list\n- Cite it as a machine-testable conformance model for the Terminology Service in 3.7\n- Tabulate purpose, authority, licensing and national extension needs for SNOMED CT, ICD-11, LOINC, ATC, UCUM and others\n- Include nationally governed and local code and identifier systems",

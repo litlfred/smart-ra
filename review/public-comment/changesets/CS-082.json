@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-082",
   "title": "Separate outcome contribution from technical conformance",
   "requirements": "- Clarify that outcome monitoring assesses architecture contribution, not attribution, alongside policy and service factors\n- Define what an outcome specification contains (indicator, baseline, target, population, timeframe, data source, disaggregation)\n- Replace 'in the same way as a component' with an analogous-traceability formulation\n- Model the indicator as a measure/criterion and the computation or collection as separate behaviour\n- Note that conformance does not establish that evidence for consequential decisions meets policy or regulatory requirements\n- Reference contribution analysis / theory of change for goal validation",

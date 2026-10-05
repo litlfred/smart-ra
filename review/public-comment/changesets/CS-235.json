@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-235",
   "title": "Specify consent and permissions as a first-class cross-cutting capability",
   "requirements": "- Give consent and authorisation a service profile comparable to named components: representation, lifecycle, revocation, delegated authority, audit\n- Split the combined row into distinct capabilities with their own purposes\n- Clarify that data carries or references policy and consent metadata evaluated against the current authoritative record\n- Specify consent representation, lifecycle, enforcement and interfaces across DPI-H\n- For centralised, federated and hybrid exchange, state where consent status is checked and when\n- Address purpose-of-use and attribute-based access control\n- Distinguish consent from legal basis and from authorisation\n- State whether a consent capability is a named shared component or a pattern",

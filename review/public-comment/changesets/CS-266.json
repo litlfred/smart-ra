@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-266",
   "title": "Clarify the two DPI-H layers and their depiction in figures",
   "requirements": "- State what 'two layers' covers relative to applications, foundational DPI and cross-cutting enablers in later figures\n- Visually separate and label the two DPI-H layers\n- Provide simplified audience-specific views alongside the full traceability view\n- Show and name the shared data and business-services layers in 3.3\n- Apply distinct, consistent colours with a legend in Figures 3.3–3.5\n- Clarify which enabling services (audit, consent, trust, terminology) are components and which are foundational\n- Rename 'Metadata registries' to match its contents, and replace the ambiguous 'application layer'\n- Place the EMR in the point-of-service tier consistent with its classification elsewhere",

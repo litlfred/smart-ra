@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-073",
   "title": "Decompose mediation into placeable, composable capabilities",
   "requirements": "- Decompose interoperability/mediation into capabilities (routing, transformation, discovery, audit, trust)\n- Explain that gateways, buses, access points and pub-sub are different dimensions that can be combined\n- Describe the interoperability capability as standards, profiles, governance, trust and exchange mechanisms rather than a procured mediator\n- Add the point to the DPI-H principles in 1.4\n- State each may be realised at endpoints, gateways or shared services, resolving the 'at the endpoints' contradiction\n- Rework or annotate Figure 3.6 accordingly\n- State its consequence: interoperability needs sustained funding rather than time-bound projects\n- Add a decision framework for where to place mediation",

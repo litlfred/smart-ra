@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-188",
   "title": "Bound the Benefits Package Registry against scheme operations",
   "requirements": "- Distinguish the Benefits Package Registry and other registries from enrolment, contracting, claims and payment systems\n- Define the BPR as the authoritative publication of benefit definitions, not an eligibility or adjudication engine\n- Limit the registry to authoritative benefit definitions and machine-readable rules\n- Require CBMS implementations to reconcile enrolment against the shared Client Registry identity\n- Separate workforce credential checks from contracting, empanelment and claim validity\n- Separate payment rails from decisions about correctness and authorisation; use measured language about fraud prevention\n- Keep enrolment, empanelment and contracting in operational systems that reference registries\n- State that enrolment, eligibility determination, contracting and adjudication sit in operational systems",

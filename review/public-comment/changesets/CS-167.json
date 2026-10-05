@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-167",
   "title": "Correct the roles of product classifications, dictionaries and coding",
   "requirements": "- State the purpose and product level of UNSPSC, GPC, ATC and WHODrug; they are not identifiers\n- Note that shelf labels aligned to the national registry may be needed where manufacturer codes are absent or equivalent products are pooled\n- Document licensing and governance per classification\n- Define IDMP and scope it to medicinal products\n- Categorise listed standards by role and normativity",

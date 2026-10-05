@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-256",
   "title": "Address closing the loop on clinical workflows across systems",
   "requirements": "- Add a principle that DPI-H supports resolution of clinical workflows, not only transmission\n- Identify which component or capability tracks multi-step commitments such as referrals to completion\n- Consider patient-visible transaction receipts and loop closure as part of adoption guidance, e.g. for chronic disease\n- Consider loop-closure measures in performance guidance",

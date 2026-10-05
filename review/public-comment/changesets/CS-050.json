@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-050",
   "title": "Revise the commons-governance principles in 3.4.2",
   "requirements": "- Keep the subsidiarity bullet to 'authority at the lowest effective level' and move mandate/execution matching to the next principle\n- Distinguish legitimate high demand from avoidable or uncompensated use\n- Cite the design-principles literature (Ostrom) as the empirical basis for the governance principles\n- Give criteria for deciding which decisions must remain national\n- Favour designing for scale and graceful degradation before rationing\n- Consider whether the missing principles (boundaries, monitoring, graduated sanctions) should be added\n- Recognise existing subnational arrangements that already meet the standard rather than displacing them\n- Require consistent, auditable usage measurement before usage data drives restrictions or charges",

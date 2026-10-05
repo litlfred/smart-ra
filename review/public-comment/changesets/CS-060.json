@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-060",
   "title": "Apply minor editorial fixes in 3.5",
   "requirements": "- Delete the trailing fragment 'person-centred that' and the duplicated 'that that'\n- Place the LIMR definition before the Terminology Service, matching subsequent references\n- Remove the repeated 'centralised, federated, or hybrid' clause\n- Proofread the full sentence so it reads as one complete definition",

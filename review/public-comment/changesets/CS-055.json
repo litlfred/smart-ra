@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-055",
   "title": "Clarify SGI as an institutional capability with an operating model",
   "requirements": "- State at the start of Appendix F that SGI is an institutional and operational framework supported by tools, not a single software platform\n- Describe the recurrent staffing, tooling, licensing and translation costs of maintaining semantic assets after first publication\n- State where SGI decisions sit relative to strategic and operational governance and the 3.4.4 escalation path\n- Give governance models and responsibilities, drawing on WHO-FIC and HL7 experience\n- State prominently that SGI is a governance capability supported by tools, or consider a name without 'infrastructure'\n- Explain how ministries, architecture teams, terminology centres and procurement teams use the catalogue (assessment, target design, role assignment)\n- Give indicative minimum staffing patterns and options for regional pooling of semantic governance\n- Relate the governance/runtime/content layers to the architecture framework used elsewhere in the document",

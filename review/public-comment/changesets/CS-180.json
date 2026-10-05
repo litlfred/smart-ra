@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-180",
   "title": "Clarify LIMR scope, name, governance and consumer notification",
   "requirements": "- Require release and deprecation notifications to registered consumers\n- Identify the LIMR as a proposed capability and distinguish established practice from novel consolidation\n- Federate only from published, versioned package channels and monitor publication-pipeline health\n- Require multidisciplinary domain review of models\n- Define whether it governs logical models only or also implementation artefacts\n- State that governance is required from the outset while tooling matures",

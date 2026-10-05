@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-063",
   "title": "Extend the component description template",
   "requirements": "- Add fields for accountable authority, operating model, prerequisites and dependencies, non-functional requirements and risks\n- Identify the responsible actor for each requirement\n- Specify intended use, audience and limits for material outputs such as alerts and scores\n- Add conformance fields: test method, evidence, applicable profile, conditional applicability\n- Add applicability (e.g. product class), standard, test method and evidence\n- Classify requirements as universal baseline, conditional or advanced target state",

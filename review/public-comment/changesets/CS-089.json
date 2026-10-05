@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-089",
   "title": "Base legacy disposition and transition on structured assessment",
   "requirements": "- Make integration conditional on assessment of safety, data quality, security, supportability and cost, not age alone\n- Include contracts, data, workforce and paper or hybrid workflows in the legacy baseline\n- Require transition planning well before contract end (migration, testing, parallel running, cutover)\n- Qualify the position against blank-slate approaches\n- Note that standards-based systems can still form silos and require shared governance, stewardship and funding coordination\n- Add these dimensions to legacy assessment with a documented disposition per system\n- Extend the four disposition options (e.g. consolidate, contain, replace in part)\n- Include costs of parallel operation, migration, archival and decommissioning in the investment case",

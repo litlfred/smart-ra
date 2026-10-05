@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-191",
   "title": "Scope the Supplier Registry as a health layer over cross-sector identities",
   "requirements": "- Build on authoritative business, tax and procurement identities where available rather than duplicating them\n- Support provisional and pending-verification statuses for emergency suppliers\n- Make notification of suspension, sanction, licence expiry and recall mandatory for authorised consumers\n- Limit content to supplier identity and health-sector qualification; keep contracts and performance in procurement systems\n- Verify legal-entity data via authoritative sources rather than revalidating it\n- Model typed supplier-product relationships and support diverse supplier forms\n- Require source, legal basis, correction and appeal for sanctions or exclusion status\n- Qualify claims about preventing counterfeit and corruption",

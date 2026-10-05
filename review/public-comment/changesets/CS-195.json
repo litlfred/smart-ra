@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-195",
   "title": "Add traceability from requirements to source specifications and artefacts",
   "requirements": "- Show model, binding, profile, validation and deployed version links with identifiers\n- Map each requirement or data element to its source, version, original status, DPI-H change, rationale and test method\n- Acknowledge non-lossless transformation between formalisms",

@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-257",
   "title": "Acknowledge the limits of structuring clinical information",
   "requirements": "- Recognise interpretive and narrative clinical information as first-class, not text awaiting structure\n- Recognise interpretive and narrative clinical information as first-class, in 1.2.2 and 3.6\n- State that the architecture supports rather than replaces narrative where structure would distort meaning",

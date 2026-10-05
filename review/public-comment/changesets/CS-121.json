@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-121",
   "title": "Add safeguards and data prerequisites to the AI use cases in 5.3",
   "requirements": "- For each example (claims, supply forecasting, product mapping, clinical support, settlement mapping, document extraction) note data prerequisites, evidence and validation needed\n- Note simpler alternatives where advanced models are not justified",

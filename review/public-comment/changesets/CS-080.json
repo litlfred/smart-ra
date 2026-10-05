@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-080",
   "title": "Define conformance assessment dimensions, evidence and results",
   "requirements": "- Avoid an undifferentiated coverage percentage as the principal adoption measure; report by layer, capability and criticality\n- Replace the 'left implicit' verdict with an explicit, persistent assessment-result model\n- Tie 'correctly realises' to normative requirements, test assertions and accepted evidence\n- Report structural, semantic, behavioural, security and interface conformance separately\n- Break 'conformance of the architecture' into model validity, reference alignment, coverage, traceability and documented deviation, with expected evidence\n- Add objectively checkable governance criteria (designated operator, multi-year plan, published performance, transfer plan, dispute route)\n- Report mandatory/critical failures separately rather than averaging them away\n- Specify minimum fields: status values, scope, assessor/mechanism, specification and version, evidence, date, validity",

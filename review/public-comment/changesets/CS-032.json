@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-032",
   "title": "Provide REDDHI maturity stages with measurable markers",
   "requirements": "- Define maturity stages (e.g. foundational, intermediate, advanced) without making REDDHI a one-time certification\n- Consider security, service performance, semantic maturity, workforce capacity and reuse within the progress framework\n- Distinguish infrastructure maturity from how faithfully clinical reality is represented\n- Make markers measurable (coverage, quality, use, resilience) rather than binary\n- Include governance status and dependency integrity in component coverage\n- Offer a self-assessment instrument or template and map it to established maturity frameworks",

@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-227",
   "title": "Map SGI capabilities to components, goals and available resources",
   "requirements": "- Distinguish SGI governance capabilities from the Terminology Service, LIMR and other components and organisations that realise them\n- Reference, for the SGI capabilities, the tools, programmes and SDO engagement pathways countries can use to operationalise them\n- Trace each capability to the Appendix C component requirements and the Section 3.7 conformance model\n- Keep references non-exclusive and vendor-neutral\n- Show which capabilities contribute to the seven priority health goals\n- Tie Appendix F to a named release of the machine-readable architecture model with persistent capability identifiers",

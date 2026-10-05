@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-251",
   "title": "Address diagnostic imaging in the architecture",
   "requirements": "- State that exchange references imaging studies while image transport uses specialised standards\n- Identify imaging foundations (DICOM/DICOMweb, PACS/RIS, report return) needed for imaging AI\n- Cover consent, quality, retention and interoperability of clinical photographs",

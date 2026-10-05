@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-061",
   "title": "Revise the criteria for designating DPI-H components",
   "requirements": "- Define 'foundational health system functions' more precisely, e.g. with a dependency or irreplaceability test\n- Remove or reword 'non-transactional' so high-volume infrastructural services (consent, registries) are not excluded\n- Reword 'without modification to core design' to allow configuration, content and localisation while the core stays stable\n- Reword the non-transactional requirement so it does not exclude legitimate shared transactional infrastructure\n- Treat recurrence across goals as one criterion among several\n- Express the intended distinction as not owning point-of-service or programme-specific transaction processing\n- Define stability as predictable, versioned evolution of purpose and interfaces\n- Clarify whether public governance is a present or target condition",

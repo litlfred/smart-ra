@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-149",
   "title": "Define the facility temporal, status and publication-state model",
   "requirements": "- Describe the CGR as a potential cross-sector capability, with an interim path where none exists\n- Separate legal, operational, accreditation and service-availability status with controlled values and effective periods\n- Define states and their criteria; represent status and effective periods\n- Require persistent area identifiers, effective periods and versioned boundaries for historical reporting\n- Allow provisional facility records followed by time-bound completion\n- Ensure historical queries reproduce facility state at a date\n- Use explicit normative language for CGR integration and treat temporal/notification services as target capabilities\n- Define permitted transitions, authority, propagation and audit",

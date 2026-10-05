@@ -1,5 +1,5 @@
 {
-  "$schema": "folio-public-comment-changeset/v1",
+  "$schema": "changeset/1.0.0",
   "id": "CS-186",
   "title": "Minimise surveillance data and make identity linkage conditional",
   "requirements": "- Replace universal LHR integration and verified-identity linkage with conditions set by national architecture and use case\n- Require purpose limitation, legal authority, minimisation and sensitivity classification\n- Replace a universal case dataset with a cross-hazard core and condition-specific modules\n- Require identity-optional case creation, pseudonymous identifiers and later reconciliation\n- Require human-rights safeguards against stigma and repurposing\n- Limit geographic detail by purpose and population size\n- Limit LHR and workforce data access to bounded, legally authorised surveillance datasets\n- Time-limit emergency powers and data reuse",
