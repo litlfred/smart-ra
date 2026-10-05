@@ -1,0 +1,101 @@
+name: Public comment — committee and editor tags
+
+# A committee member or the editor answers a public comment from GitHub, in a
+# conversation comment on any pull request (or issue, once issues are enabled):
+#
+#     pc: PC-0042
+#     recommend: accepted-modified        (committee or editor)
+#     decide: not-accepted                (editor only)
+#
+#     The rationale or reason, as many lines as needed.
+#
+# This job records it in review/public-comment/comments/, commits to main and
+# republishes the site. Only logins listed in review/public-comment/config.json
+# move a comment; anyone else's tag is answered with why it was not recorded.
+# Process: folio-assistant-core/processes/content/public-comment.bpmn.
+
+on:
+  issue_comment:
+    types: [created, edited]
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+  actions: write
+
+concurrency:
+  # One record update at a time, never cancelled half-way.
+  group: public-comment-record
+  cancel-in-progress: false
+
+jobs:
+  record:
+    if: contains(github.event.comment.body, 'pc:')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          submodules: recursive
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.3.14
+
+      - name: Install the platform's dependencies
+        run: cd folio-assistant && bun install --frozen-lockfile
+
+      - name: Record the tag
+        id: record
+        # The comment body is untrusted. It is read from the event FILE by the
+        # tool, never interpolated into this shell.
+        run: |
+          set -o pipefail
+          bun run folio-assistant/folio-assistant-core/scripts/public-comment.ts github --event "$GITHUB_EVENT_PATH" 2>&1 | tee result.txt
+          {
+            echo "result<<EOF"
+            cat result.txt
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Commit the record
+        id: commit
+        env:
+          ACTOR: ${{ github.event.comment.user.login }}
+          URL: ${{ github.event.comment.html_url }}
+        run: |
+          if git diff --quiet -- review/public-comment; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add review/public-comment
+          git commit -m "public comment: record $ACTOR's tag" -m "$URL"
+          for attempt in 1 2 3; do
+            git push origin HEAD && break
+            git pull --rebase origin "${{ github.event.repository.default_branch }}"
+          done
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Republish the site
+        # A push made with GITHUB_TOKEN starts no workflow; a dispatch does.
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run staging.yml --ref "${{ github.event.repository.default_branch }}"
+
+      - name: Answer on the thread
+        uses: actions/github-script@v7
+        env:
+          RESULT: ${{ steps.record.outputs.result }}
+        with:
+          script: |
+            const lines = (process.env.RESULT || "").split("\n").filter((l) => /^[✓✗]/.test(l));
+            if (!lines.length) return;
+            await github.rest.issues.createComment({
+              ...context.repo,
+              issue_number: context.issue.number,
+              body: "Public-comment record:\n\n" + lines.map((l) => "- " + l).join("\n"),
+            });

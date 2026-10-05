@@ -1,0 +1,1 @@
+This guidance is written so that no single reader needs to read all of it. The cards below describe what each audience will get most from, and roughly how many pages that core path runs to. The matrix that follows shows, section by section, what is essential, useful, or optional for you. Find your column and follow it down the table.

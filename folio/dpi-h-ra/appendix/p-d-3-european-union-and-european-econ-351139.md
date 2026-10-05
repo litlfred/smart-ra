@@ -1,0 +1,3 @@
+The European Surveillance System (**TESSy**) is a regional platform through which member states submit standardised communicable-disease surveillance data to the European Centre for Disease Prevention and Control for regional analysis and international reporting[^101]. It demonstrates how a supranational authority can operate shared surveillance infrastructure across sovereign jurisdictions with diverse national systems, and offers lessons on cross-border data-sharing governance, indicator standardisation and the management of variation in case definitions within a common framework.
+
+[^101]: https://www.ecdc.europa.eu/

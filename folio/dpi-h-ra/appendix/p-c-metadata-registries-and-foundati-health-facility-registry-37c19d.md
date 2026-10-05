@@ -1,0 +1,4 @@
+The following table defines the minimum dataset for a facility record in the Health Facility Registry. It draws on the WHO/USAID Master Facility List Resource Package (WHO, 2019)[^53], the WHO Geolocated Health Facilities Data initiative minimum data elements (Name, Type, Location, Unique ID)[^54], and expert feedback. The dataset is divided into a signature domain (core identity attributes) and a service domain (operational and service attributes). All signature domain elements marked Mandatory should be present for a record to be published as active.
+
+[^53]: [https://iris.who.int/server/api/core/bitstreams/d895078b-b45b-4b2c-b216-b82c07b2d4f7/content](https://iris.who.int/server/api/core/bitstreams/d895078b-b45b-4b2c-b216-b82c07b2d4f7/content)
+[^54]: [https://www.who.int/news-room/questions-and-answers/item/global-health-facilities-database](https://www.who.int/news-room/questions-and-answers/item/global-health-facilities-database)

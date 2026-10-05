@@ -1,0 +1,4 @@
+- The Client Registry provides the shared identity layer; the Benefits Package Registry does not replicate identity but records which schemes a person may be enrolled in as a cross-reference.
+- The Health Facility Registry provides the authoritative list of facilities; the registry references this to associate benefit packages with empanelled providers and to determine where covered services can be accessed.
+- The Product Registry provides the standardised catalogue of medicines and health commodities; benefit package definitions that include medicine coverage reference product identifiers from that registry rather than maintaining parallel lists.
+- The Terminology Service provides the standardised coding of services, procedures, and diagnoses that benefit definitions use to specify covered items unambiguously — an essential dependency if the registry is to support consistent claims validation across systems.

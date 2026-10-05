@@ -1,0 +1,27 @@
+{
+  "contentType": "document",
+  "adapter": "document",
+  "adapterModule": "./folio-assistant/folio-assistant-core/adapters/document/index.ts",
+  "dependencies": {
+    "folioAssistant": [
+      {
+        "name": "folio-assistant-core",
+        "path": "folio-assistant/folio-assistant-core"
+      },
+      {
+        "name": "smart-base",
+        "path": "folio-assistant/smart-base"
+      }
+    ]
+  },
+  "feedbackDir": ".folio-feedback",
+  "skills": ".claude/skills/local",
+  "viewer": {
+    "dir": "folio-assistant/cat-harness/viewer",
+    "port": 8080
+  },
+  "readme": {
+    "linkStyle": "blob",
+    "publishRef": "gh-pages"
+  }
+}
