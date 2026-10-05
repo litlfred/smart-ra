@@ -1,0 +1,23 @@
+{
+  "$schema": "folio-public-comment-changeset/v1",
+  "id": "CS-236",
+  "title": "Model delegated and supported agency as a governed relationship",
+  "requirements": "- Distinguish a relationship record from current authority to act\n- Recognise that people may act through supporters or authorised representatives\n- Include proxies, guardians and caregivers in the minimum actor set\n- State that the architecture should be able to represent and enforce delegation, with legal rules left to national law\n- Add delegated and supported access to the LHR requirements",
+  "refs": [
+    "PC-0036",
+    "PC-0041",
+    "PC-0045",
+    "PC-0690"
+  ],
+  "status": "proposed",
+  "issues": [],
+  "proposedBy": "claude-agent",
+  "proposedAt": "2026-10-05T14:39:26.609Z",
+  "history": [
+    {
+      "at": "2026-10-05T14:39:26.609Z",
+      "by": "claude-agent",
+      "what": "proposed with 4 comment(s)"
+    }
+  ]
+}
