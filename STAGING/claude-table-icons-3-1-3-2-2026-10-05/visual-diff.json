@@ -1,0 +1,194 @@
+{
+  "$schema": "folio-visual-diff/v1",
+  "tolerance": 24,
+  "blocks": {
+    "tbl:3-1": {
+      "label": "tbl:3-1",
+      "kind": "table",
+      "before": {
+        "png": "visual/tbl_3-1.before.png",
+        "width": 736,
+        "height": 1331
+      },
+      "after": {
+        "png": "visual/tbl_3-1.after.png",
+        "width": 736,
+        "height": 1970
+      },
+      "changed": 0.526618709997793,
+      "diff": "visual/tbl_3-1.diff.png"
+    },
+    "tbl:3-2": {
+      "label": "tbl:3-2",
+      "kind": "table",
+      "before": {
+        "png": "visual/tbl_3-2.before.png",
+        "width": 736,
+        "height": 499
+      },
+      "after": {
+        "png": "visual/tbl_3-2.after.png",
+        "width": 736,
+        "height": 651
+      },
+      "changed": 0.3310166633273225,
+      "diff": "visual/tbl_3-2.diff.png"
+    },
+    "fig:3-1-10ed95": {
+      "label": "fig:3-1-10ed95",
+      "kind": "figure",
+      "before": {
+        "png": "visual/fig_3-1-10ed95.before.png",
+        "width": 736,
+        "height": 218
+      },
+      "after": null,
+      "changed": null,
+      "diff": null
+    },
+    "fig:3-1-16433b": {
+      "label": "fig:3-1-16433b",
+      "kind": "figure",
+      "before": {
+        "png": "visual/fig_3-1-16433b.before.png",
+        "width": 736,
+        "height": 218
+      },
+      "after": null,
+      "changed": null,
+      "diff": null
+    },
+    "fig:3-1-56ad6f": {
+      "label": "fig:3-1-56ad6f",
+      "kind": "figure",
+      "before": {
+        "png": "visual/fig_3-1-56ad6f.before.png",
+        "width": 736,
+        "height": 256
+      },
+      "after": null,
+      "changed": null,
+      "diff": null
+    },
+    "fig:3-1-73b84f": {
+      "label": "fig:3-1-73b84f",
+      "kind": "figure",
+      "before": {
+        "png": "visual/fig_3-1-73b84f.before.png",
+        "width": 736,
+        "height": 218
+      },
+      "after": null,
+      "changed": null,
+      "diff": null
+    },
+    "fig:3-1-74e356": {
+      "label": "fig:3-1-74e356",
+      "kind": "figure",
+      "before": {
+        "png": "visual/fig_3-1-74e356.before.png",
+        "width": 736,
+        "height": 218
+      },
+      "after": null,
+      "changed": null,
+      "diff": null
+    },
+    "fig:3-1-7920b7": {
+      "label": "fig:3-1-7920b7",
+      "kind": "figure",
+      "before": {
+        "png": "visual/fig_3-1-7920b7.before.png",
+        "width": 736,
+        "height": 218
+      },
+      "after": null,
+      "changed": null,
+      "diff": null
+    },
+    "fig:3-1-795acd": {
+      "label": "fig:3-1-795acd",
+      "kind": "figure",
+      "before": {
+        "png": "visual/fig_3-1-795acd.before.png",
+        "width": 736,
+        "height": 218
+      },
+      "after": null,
+      "changed": null,
+      "diff": null
+    },
+    "fig:3-1-91e0e2": {
+      "label": "fig:3-1-91e0e2",
+      "kind": "figure",
+      "before": {
+        "png": "visual/fig_3-1-91e0e2.before.png",
+        "width": 736,
+        "height": 366
+      },
+      "after": null,
+      "changed": null,
+      "diff": null
+    },
+    "fig:3-1-cf7996": {
+      "label": "fig:3-1-cf7996",
+      "kind": "figure",
+      "before": {
+        "png": "visual/fig_3-1-cf7996.before.png",
+        "width": 736,
+        "height": 218
+      },
+      "after": null,
+      "changed": null,
+      "diff": null
+    },
+    "fig:3-1-d93ca2": {
+      "label": "fig:3-1-d93ca2",
+      "kind": "figure",
+      "before": {
+        "png": "visual/fig_3-1-d93ca2.before.png",
+        "width": 736,
+        "height": 218
+      },
+      "after": null,
+      "changed": null,
+      "diff": null
+    },
+    "fig:3-1-db6ea6": {
+      "label": "fig:3-1-db6ea6",
+      "kind": "figure",
+      "before": {
+        "png": "visual/fig_3-1-db6ea6.before.png",
+        "width": 736,
+        "height": 350
+      },
+      "after": null,
+      "changed": null,
+      "diff": null
+    },
+    "fig:3-1-f710a5": {
+      "label": "fig:3-1-f710a5",
+      "kind": "figure",
+      "before": {
+        "png": "visual/fig_3-1-f710a5.before.png",
+        "width": 736,
+        "height": 220
+      },
+      "after": null,
+      "changed": null,
+      "diff": null
+    },
+    "fig:3-1-fd7fbe": {
+      "label": "fig:3-1-fd7fbe",
+      "kind": "figure",
+      "before": {
+        "png": "visual/fig_3-1-fd7fbe.before.png",
+        "width": 736,
+        "height": 218
+      },
+      "after": null,
+      "changed": null,
+      "diff": null
+    }
+  }
+}
