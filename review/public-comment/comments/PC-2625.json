@@ -3,7 +3,7 @@
   "summary": "Some initial comments for this mapping:2.1 first column - revise to \"high-quality workforce data for planning, deployme…",
   "comment": "Some initial comments for this mapping:2.1 first column - revise to \"high-quality workforce data for planning, deployment and shortage mapping\"2.2 - can include some description on the lines of \"Payroll data can inform reporting on NHWA indicators on expenditure for compensation, entry-level wages and salaries, and pay gaps\".2.3 \"cross-border verification informed by the WHO Global Code of Practice on International Recruitment\" I don't the Code recommends any such verification, need to cross-check and revise language.2.4 last column - replace \"ISCO or competency taxonomies\" with \"ISCED taxonomy\"Reference 1 should be 2023, not 2024.Reference 3 is now being updated, will be published soon.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": null,
+  "targetLabel": "prose:e-37b7cf",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -46,11 +46,11 @@
       "raw": ""
     },
     "anchor": {
-      "targetLabel": null,
-      "method": "unplaced",
-      "confidence": "low",
+      "targetLabel": "prose:e-37b7cf",
+      "method": "manual",
+      "confidence": "high",
       "candidates": [],
-      "note": "nothing in the citation resolved; triage places it"
+      "note": "placed on the block, by a placement agent reading the comment against the text (high): Comments on rows 2.1-2.4 and references of the health workforce goal mapping spreadsheet."
     },
     "text": "Some initial comments for this mapping:2.1 first column - revise to \"high-quality workforce data for planning, deployment and shortage mapping\"2.2 - can include some description on the lines of \"Payroll data can inform reporting on NHWA indicators on expenditure for compensation, entry-level wages and salaries, and pay gaps\".2.3 \"cross-border verification informed by the WHO Global Code of Practice on International Recruitment\" I don't the Code recommends any such verification, need to cross-check and revise language.2.4 last column - replace \"ISCO or competency taxonomies\" with \"ISCED taxonomy\"Reference 1 should be 2023, not 2024.Reference 3 is now being updated, will be published soon.",
     "assignees": [],
@@ -62,6 +62,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--HWF-review row 104"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the block, by a placement agent reading the comment against the text (high): Comments on rows 2.1-2.4 and references of the health workforce goal mapping spreadsheet."
       }
     ]
   }

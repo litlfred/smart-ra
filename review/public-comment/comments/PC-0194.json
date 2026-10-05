@@ -3,7 +3,7 @@
   "summary": "The document mentions sovereign models and openness but does not provide guidance on how countries should decide betwee…",
   "comment": "The document mentions sovereign models and openness but does not provide guidance on how countries should decide between building their own AI capabilities, relying on commercial offerings, or using open-weight models. This decision has significant implications for cost, sovereignty, and sustainability.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "prose:4-3-4-83c937",
+  "targetLabel": "prose:5-4-4-a1fd66",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -50,11 +50,13 @@
       "raw": "§5.4.4, 5.5 p.108 - 109 l.170 - 218"
     },
     "anchor": {
-      "targetLabel": "prose:4-3-4-83c937",
-      "method": "page-line",
-      "confidence": "low",
-      "candidates": [],
-      "note": "p.108 - 109 l.170 - 218 read as the PDF page; section 5.4.4 does NOT agree"
+      "targetLabel": "prose:5-4-4-a1fd66",
+      "method": "manual",
+      "confidence": "medium",
+      "candidates": [
+        "prose:4-3-4-83c937"
+      ],
+      "note": "placed on the block, by a placement agent reading the comment against the text (medium): Cites 5.4.4/5.5 on build vs buy and commercial AI; this paragraph discusses commercial pressures"
     },
     "type": "general",
     "text": "The document mentions sovereign models and openness but does not provide guidance on how countries should decide between building their own AI capabilities, relying on commercial offerings, or using open-weight models. This decision has significant implications for cost, sovereignty, and sustainability.",
@@ -71,6 +73,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 194"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the block, by a placement agent reading the comment against the text (medium): Cites 5.4.4/5.5 on build vs buy and commercial AI; this paragraph discusses commercial pressures"
       }
     ]
   }

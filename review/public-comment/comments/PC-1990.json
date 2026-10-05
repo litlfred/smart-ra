@@ -3,7 +3,7 @@
   "summary": "“What is covered, for whom, and under which conditions” may imply that the registry makes individual eligibility determ…",
   "comment": "“What is covered, for whom, and under which conditions” may imply that the registry makes individual eligibility determinations.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "sec:c-business-services-components-benefits-package-registry",
+  "targetLabel": "prose:c-business-services-components-benefits-package-registry-6a97d1",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -51,13 +51,13 @@
       "raw": "§Benefits Package Registry, 1 p.186 l.Purpose and scope"
     },
     "anchor": {
-      "targetLabel": "sec:c-business-services-components-benefits-package-registry",
-      "method": "section",
-      "confidence": "low",
+      "targetLabel": "prose:c-business-services-components-benefits-package-registry-6a97d1",
+      "method": "manual",
+      "confidence": "high",
       "candidates": [
-        "sec:c-business-services-components-benefits-package-registry-distinguishing-the-benefits-pack"
+        "sec:c-business-services-components-benefits-package-registry"
       ],
-      "note": "section named \"Benefits Package Registry\""
+      "note": "placed on the block, by a placement agent reading the comment against the text (high): Paragraph containing \"what is covered, for whom ... under what conditions\"."
     },
     "text": "“What is covered, for whom, and under which conditions” may imply that the registry makes individual eligibility determinations.",
     "suggestedRevision": "Clarify that it publishes general entitlement and coverage definitions, while operational systems determine person-specific eligibility using current enrolment and contextual data.",
@@ -73,6 +73,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--EY-review row 1226"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the block, by a placement agent reading the comment against the text (high): Paragraph containing \"what is covered, for whom ... under what conditions\"."
       }
     ]
   }

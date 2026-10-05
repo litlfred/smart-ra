@@ -3,7 +3,7 @@
   "summary": "The worked example for health financing is helpful but could be expanded to include a practical scenario showing how th…",
   "comment": "The worked example for health financing is helpful but could be expanded to include a practical scenario showing how the Benefits Package Registry interfaces with a national health insurance scheme's operational systems (claims, enrolment, payment). This would make the architectural concepts more tangible.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "prose:2-3-4813b9",
+  "targetLabel": "sec:2-4-2",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -50,11 +50,13 @@
       "raw": "§2.4.2 p.36 l.503 - 525"
     },
     "anchor": {
-      "targetLabel": "prose:2-3-4813b9",
-      "method": "page-line",
-      "confidence": "low",
-      "candidates": [],
-      "note": "p.36 l.503 - 525 read as the printed page; section 2.4.2 does NOT agree"
+      "targetLabel": "sec:2-4-2",
+      "method": "manual",
+      "confidence": "high",
+      "candidates": [
+        "prose:2-3-4813b9"
+      ],
+      "note": "placed on the section, by a placement agent reading the comment against the text (high): Cites 2.4.2 worked example for health financing and asks to expand it"
     },
     "type": "editorial",
     "text": "The worked example for health financing is helpful but could be expanded to include a practical scenario showing how the Benefits Package Registry interfaces with a national health insurance scheme's operational systems (claims, enrolment, payment). This would make the architectural concepts more tangible.",
@@ -71,6 +73,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 195"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the section, by a placement agent reading the comment against the text (high): Cites 2.4.2 worked example for health financing and asks to expand it"
       }
     ]
   }

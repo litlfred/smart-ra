@@ -47,10 +47,10 @@
     },
     "anchor": {
       "targetLabel": null,
-      "method": "unplaced",
+      "method": "manual",
       "confidence": "low",
       "candidates": [],
-      "note": "nothing in the citation resolved; triage places it"
+      "note": "about the whole document, by a placement agent reading the comment against the text (low): Refers to an unspecified paragraph ('see comments in the text'); cannot pin."
     },
     "text": "Also, at one point in the document, the para starts out with benefit design, but then jumps to benefit provision (see the comments in the text).",
     "labels": {
@@ -65,6 +65,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 717"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "about the whole document, by a placement agent reading the comment against the text (low): Refers to an unspecified paragraph ('see comments in the text'); cannot pin."
       }
     ]
   }

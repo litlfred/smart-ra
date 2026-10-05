@@ -3,7 +3,7 @@
   "summary": "Authorised extensions qualification — The draft already provides for federation; the correction makes the WHO option vi…",
   "comment": "Authorised extensions qualification — The draft already provides for federation; the correction makes the WHO option visible and prevents compliance from being judged solely by a particular server's storage model. Evidence: WHO API local deployment (https://icd.who.int/docs/icd-api/ICDAPI-LocalDeployment/).",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "sec:c-metadata-registries-and-foundati-terminology-service",
+  "targetLabel": "tbl:c-metadata-registries-and-foundati-terminology-service-817b54",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -48,13 +48,13 @@
       "raw": "§Terminology Service, §5 p.170 l.A17.03"
     },
     "anchor": {
-      "targetLabel": "sec:c-metadata-registries-and-foundati-terminology-service",
-      "method": "section",
-      "confidence": "low",
+      "targetLabel": "tbl:c-metadata-registries-and-foundati-terminology-service-817b54",
+      "method": "manual",
+      "confidence": "high",
       "candidates": [
-        "sec:d-1-terminology-service-and-logical"
+        "sec:c-metadata-registries-and-foundati-terminology-service"
       ],
-      "note": "section named \"Terminology Service\""
+      "note": "placed on the block, by a placement agent reading the comment against the text (high): Cites Terminology Service §5; TS functional requirements table."
     },
     "text": "Authorised extensions qualification — The draft already provides for federation; the correction makes the WHO option visible and prevents compliance from being judged solely by a particular server's storage model. Evidence: WHO API local deployment (https://icd.who.int/docs/icd-api/ICDAPI-LocalDeployment/).",
     "suggestedRevision": "Replace phrase; retain rest of cell and coordinate with A17.02: support for authorised extensions of globally curated content where permitted by the publisher's rules and terms",
@@ -70,6 +70,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--CAT-WHO-FIC row 48"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the block, by a placement agent reading the comment against the text (high): Cites Terminology Service §5; TS functional requirements table."
       }
     ]
   }

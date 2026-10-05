@@ -3,7 +3,7 @@
   "summary": "Section 4.3.4 (lines 346–362) specifies the general and health-specific APIs connecting DPI-H to foundational DPI-  ide…",
   "comment": "Section 4.3.4 (lines 346–362) specifies the general and health-specific APIs connecting DPI-H to foundational DPI-  identity verification, civil registration, payment gateway and data exchange APIs-  without addressing the consent or legal basis under which health data crosses this boundary into non-health foundational systems. The Lifelong Health Record's consent-governed access control (line 111) is described within the health domain; it is not stated whether, or how, that consent basis and its purpose limitation are carried across, or re-established, when data is exchanged through a foundational, cross-sector API such as a payment gateway or a whole-of-government data exchange.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "prose:4-3-4-83c937",
+  "targetLabel": "sec:4-3-4",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -51,13 +51,13 @@
       "raw": "§4.3.4; Appendix C-  Lifelong Health Record p.96; 156 l.346–362; 111"
     },
     "anchor": {
-      "targetLabel": "prose:4-3-4-83c937",
-      "method": "page-line",
-      "confidence": "low",
+      "targetLabel": "sec:4-3-4",
+      "method": "manual",
+      "confidence": "high",
       "candidates": [
-        "prose:4-3-2-513f61"
+        "prose:4-3-4-83c937"
       ],
-      "note": "p.96; 156 l.346–362; 111 read as the printed page; section C does NOT agree"
+      "note": "placed on the section, by a placement agent reading the comment against the text (high): Cites §4.3.4 l.346-362, spanning both the general and health-specific API blocks; asks for a sentence in 4.3.4."
     },
     "type": "technical",
     "text": "Section 4.3.4 (lines 346–362) specifies the general and health-specific APIs connecting DPI-H to foundational DPI-  identity verification, civil registration, payment gateway and data exchange APIs-  without addressing the consent or legal basis under which health data crosses this boundary into non-health foundational systems. The Lifelong Health Record's consent-governed access control (line 111) is described within the health domain; it is not stated whether, or how, that consent basis and its purpose limitation are carried across, or re-established, when data is exchanged through a foundational, cross-sector API such as a payment gateway or a whole-of-government data exchange.",
@@ -74,6 +74,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 447"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the section, by a placement agent reading the comment against the text (high): Cites §4.3.4 l.346-362, spanning both the general and health-specific API blocks; asks for a sentence in 4.3.4."
       }
     ]
   }

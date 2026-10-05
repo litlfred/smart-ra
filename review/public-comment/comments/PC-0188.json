@@ -3,7 +3,7 @@
   "summary": "The guidance notes the importance of human oversight but does not address documented risks such as automation bias (cli…",
   "comment": "The guidance notes the importance of human oversight but does not address documented risks such as automation bias (clinicians over-relying on AI recommendations) or AI-fuelled misdiagnosis, particularly in low-resource settings where validation data may be limited.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "prose:4-3-2-513f61",
+  "targetLabel": "prose:5-4-2-11d943",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -50,11 +50,13 @@
       "raw": "§5.4.2 p.107 l.155 - 169"
     },
     "anchor": {
-      "targetLabel": "prose:4-3-2-513f61",
-      "method": "page-line",
-      "confidence": "low",
-      "candidates": [],
-      "note": "p.107 l.155 - 169 read as the PDF page; section 5.4.2 does NOT agree"
+      "targetLabel": "prose:5-4-2-11d943",
+      "method": "manual",
+      "confidence": "high",
+      "candidates": [
+        "prose:4-3-2-513f61"
+      ],
+      "note": "placed on the block, by a placement agent reading the comment against the text (high): Cites 5.4.2 l.155-169 on human oversight; this block is exactly l.155-169"
     },
     "type": "technical",
     "text": "The guidance notes the importance of human oversight but does not address documented risks such as automation bias (clinicians over-relying on AI recommendations) or AI-fuelled misdiagnosis, particularly in low-resource settings where validation data may be limited.",
@@ -71,6 +73,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 188"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the block, by a placement agent reading the comment against the text (high): Cites 5.4.2 l.155-169 on human oversight; this block is exactly l.155-169"
       }
     ]
   }

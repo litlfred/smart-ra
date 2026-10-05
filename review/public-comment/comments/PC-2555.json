@@ -3,7 +3,7 @@
   "summary": "You have presented this as two systems but in reality the situation is much more complex.HRIS - may be a single system …",
   "comment": "You have presented this as two systems but in reality the situation is much more complex.HRIS - may be a single system for the public sector, sometimes there may be multiple systems even in the public sector (eg. (a) in countries with federal systems, each state may have their own HRIS, (b) MoH owned and operated health facilities may have a single HRIS, while those health facilities operated by other departments/Ministries (eg. defence, labour, railways, etc) may have their own HRIS). Meanwhile, private sector may be heavily fragmented, each hospital operating their own HRIS or perhaps clinics doing it all offline using facility registers.LMS - again, this could be extremely fragmented, with each health workforce education and training institution having their own LMS.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": null,
+  "targetLabel": "tbl:c-metadata-registries-and-foundati-health-workforce-registry-290683",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -46,11 +46,11 @@
       "raw": ""
     },
     "anchor": {
-      "targetLabel": null,
-      "method": "unplaced",
-      "confidence": "low",
+      "targetLabel": "tbl:c-metadata-registries-and-foundati-health-workforce-registry-290683",
+      "method": "manual",
+      "confidence": "high",
       "candidates": [],
-      "note": "nothing in the citation resolved; triage places it"
+      "note": "placed on the block, by a placement agent reading the comment against the text (high): Says HRIS and LMS are presented as two systems; that is the Architecture Placement box."
     },
     "text": "You have presented this as two systems but in reality the situation is much more complex.HRIS - may be a single system for the public sector, sometimes there may be multiple systems even in the public sector (eg. (a) in countries with federal systems, each state may have their own HRIS, (b) MoH owned and operated health facilities may have a single HRIS, while those health facilities operated by other departments/Ministries (eg. defence, labour, railways, etc) may have their own HRIS). Meanwhile, private sector may be heavily fragmented, each hospital operating their own HRIS or perhaps clinics doing it all offline using facility registers.LMS - again, this could be extremely fragmented, with each health workforce education and training institution having their own LMS.",
     "assignees": [],
@@ -62,6 +62,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--HWF-review row 34"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the block, by a placement agent reading the comment against the text (high): Says HRIS and LMS are presented as two systems; that is the Architecture Placement box."
       }
     ]
   }

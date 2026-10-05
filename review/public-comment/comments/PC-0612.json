@@ -49,10 +49,10 @@
     },
     "anchor": {
       "targetLabel": null,
-      "method": "unplaced",
-      "confidence": "low",
+      "method": "manual",
+      "confidence": "high",
       "candidates": [],
-      "note": "nothing in the citation resolved; triage places it"
+      "note": "about the whole document, by a placement agent reading the comment against the text (high): Online-form context assumptions."
     },
     "type": "general",
     "text": "Context assumptions: Assumes reliable connectivity, mature DPI-F federation, FHIR/terminology capacity, IHE-style testing, and strong legal consent frameworks—often false in brownfield/LMIC settings. Also underplays offline care, ransomware recovery, licensing/ops cost, and data sovereignty.",
@@ -70,6 +70,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 612"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "about the whole document, by a placement agent reading the comment against the text (high): Online-form context assumptions."
       }
     ]
   }

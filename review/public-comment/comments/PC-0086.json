@@ -3,7 +3,7 @@
   "summary": "A strong cross-cutting approach but procurement risks remain.",
   "comment": "A strong cross-cutting approach but procurement risks remain.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": null,
+  "targetLabel": "sec:3-6",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -51,11 +51,11 @@
       "raw": "§Interoperability p.Relevant Section l.Relevant Lines"
     },
     "anchor": {
-      "targetLabel": null,
-      "method": "unplaced",
-      "confidence": "low",
+      "targetLabel": "sec:3-6",
+      "method": "manual",
+      "confidence": "medium",
       "candidates": [],
-      "note": "nothing in the citation resolved; triage places it"
+      "note": "placed on the section, by a placement agent reading the comment against the text (medium): Cites Interoperability generally; 3.6 Interoperability Architecture"
     },
     "type": "technical",
     "text": "A strong cross-cutting approach but procurement risks remain.",
@@ -72,6 +72,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 86"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the section, by a placement agent reading the comment against the text (medium): Cites Interoperability generally; 3.6 Interoperability Architecture"
       }
     ]
   }

@@ -3,7 +3,7 @@
   "summary": "The section treats individual agency mainly as direct personal action. In practice, some people exercise agency with su…",
   "comment": "The section treats individual agency mainly as direct personal action. In practice, some people exercise agency with support or through an authorised representative, including during temporary illness, disability, cognitive decline or other changes in functional ability. Without a standard delegation model, countries and applications will recreate proxy access inconsistently, increasing privacy, safety and exclusion risks.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "prose:2-3-cb8583",
+  "targetLabel": "prose:2-3-7d4652",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -51,11 +51,13 @@
       "raw": "§1.4 — VIII. Data Ownership, Access, and Control p.44–45 l.346–360"
     },
     "anchor": {
-      "targetLabel": "prose:2-3-cb8583",
-      "method": "page-line",
-      "confidence": "low",
-      "candidates": [],
-      "note": "p.44–45 l.346–360 read as the PDF page; section 1.4 does NOT agree"
+      "targetLabel": "prose:2-3-7d4652",
+      "method": "manual",
+      "confidence": "high",
+      "candidates": [
+        "prose:2-3-cb8583"
+      ],
+      "note": "placed on the block, by a placement agent reading the comment against the text (high): Cites Data Ownership, Access and Control principle l.346-360; this is its body starting l.347"
     },
     "type": "technical",
     "text": "The section treats individual agency mainly as direct personal action. In practice, some people exercise agency with support or through an authorised representative, including during temporary illness, disability, cognitive decline or other changes in functional ability. Without a standard delegation model, countries and applications will recreate proxy access inconsistently, increasing privacy, safety and exclusion risks.",
@@ -86,6 +88,13 @@
         "by": "review-log",
         "task": "Process_PublicComment#Task_EditorDecides",
         "note": "the log's status was \"Accepted\""
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the block, by a placement agent reading the comment against the text (high): Cites Data Ownership, Access and Control principle l.346-360; this is its body starting l.347"
       }
     ]
   }

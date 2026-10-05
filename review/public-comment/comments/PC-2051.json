@@ -3,7 +3,7 @@
   "summary": "Public maps and dashboards can stigmatise small communities or disclose sensitive locations.",
   "comment": "Public maps and dashboards can stigmatise small communities or disclose sensitive locations.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "sec:c-business-services-components-public-health-surveillance-platf",
+  "targetLabel": "tbl:c-business-services-components-public-health-surveillance-platf-181696",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -51,13 +51,13 @@
       "raw": "§PHSP, 5 p.198 l.Public-dashboard requirement"
     },
     "anchor": {
-      "targetLabel": "sec:c-business-services-components-public-health-surveillance-platf",
-      "method": "section",
-      "confidence": "low",
+      "targetLabel": "tbl:c-business-services-components-public-health-surveillance-platf-181696",
+      "method": "manual",
+      "confidence": "medium",
       "candidates": [
-        "sec:d-1-public-health-surveillance-platf"
+        "sec:c-business-services-components-public-health-surveillance-platf"
       ],
-      "note": "section named \"Public Health Surveillance Platform\""
+      "note": "placed on the block, by a placement agent reading the comment against the text (medium): Cites PHSP §5 requirements; no public-dashboard row; geographic/reporting rows."
     },
     "text": "Public maps and dashboards can stigmatise small communities or disclose sensitive locations.",
     "suggestedRevision": "Require aggregation, suppression, uncertainty, contextual explanation, accessibility, review, and community-risk assessment.",
@@ -73,6 +73,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--EY-review row 1287"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the block, by a placement agent reading the comment against the text (medium): Cites PHSP §5 requirements; no public-dashboard row; geographic/reporting rows."
       }
     ]
   }

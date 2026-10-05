@@ -3,7 +3,7 @@
   "summary": "At which point in time is a record created in the HWF registry- on graduation or emplyoment. Depending on the the occup…",
   "comment": "At which point in time is a record created in the HWF registry- on graduation or emplyoment. Depending on the the occupation maybe only after licensure. What about foreign trained health workers?",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": null,
+  "targetLabel": "prose:c-metadata-registries-and-foundati-health-workforce-registry-ff688e",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -46,11 +46,11 @@
       "raw": ""
     },
     "anchor": {
-      "targetLabel": null,
-      "method": "unplaced",
-      "confidence": "low",
+      "targetLabel": "prose:c-metadata-registries-and-foundati-health-workforce-registry-ff688e",
+      "method": "manual",
+      "confidence": "medium",
       "candidates": [],
-      "note": "nothing in the citation resolved; triage places it"
+      "note": "placed on the block, by a placement agent reading the comment against the text (medium): When is a record created; identity bullet covers creation and lifecycle management of records."
     },
     "text": "At which point in time is a record created in the HWF registry- on graduation or emplyoment. Depending on the the occupation maybe only after licensure. What about foreign trained health workers?",
     "assignees": [],
@@ -62,6 +62,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--HWF-review row 40"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the block, by a placement agent reading the comment against the text (medium): When is a record created; identity bullet covers creation and lifecycle management of records."
       }
     ]
   }

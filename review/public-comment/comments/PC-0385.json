@@ -3,7 +3,7 @@
   "summary": "FHIR is an important exchange framework, but the text may be read as making it the universal semantic and exchange solu…",
   "comment": "FHIR is an important exchange framework, but the text may be read as making it the universal semantic and exchange solution. Aggregate reporting, imaging, laboratory, logistics and geospatial/public-health data may require other standards. FHIR versions and resources also differ in normative maturity; HL7 describes R5 as an STU while R4 combines normative and STU content: https://fhir.hl7.org/fhir/versions.html",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "prose:4-3-2-513f61",
+  "targetLabel": "sec:4-3-3",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -51,11 +51,13 @@
       "raw": "§4.3.3 p.95–96 l.306–338"
     },
     "anchor": {
-      "targetLabel": "prose:4-3-2-513f61",
-      "method": "page-line",
-      "confidence": "low",
-      "candidates": [],
-      "note": "p.95–96 l.306–338 read as the printed page; section 4.3.3 does NOT agree"
+      "targetLabel": "sec:4-3-3",
+      "method": "manual",
+      "confidence": "high",
+      "candidates": [
+        "prose:4-3-2-513f61"
+      ],
+      "note": "placed on the section, by a placement agent reading the comment against the text (high): Cites all of §4.3.3 (l.306-338), the FHIR-as-recommended-framework subsection."
     },
     "type": "technical",
     "text": "FHIR is an important exchange framework, but the text may be read as making it the universal semantic and exchange solution. Aggregate reporting, imaging, laboratory, logistics and geospatial/public-health data may require other standards. FHIR versions and resources also differ in normative maturity; HL7 describes R5 as an STU while R4 combines normative and STU content: https://fhir.hl7.org/fhir/versions.html",
@@ -72,6 +74,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 385"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the section, by a placement agent reading the comment against the text (high): Cites all of §4.3.3 (l.306-338), the FHIR-as-recommended-framework subsection."
       }
     ]
   }

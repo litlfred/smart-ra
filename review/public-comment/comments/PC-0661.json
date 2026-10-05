@@ -3,7 +3,7 @@
   "summary": "Add at the end of the paragraph \"Given the existing fragmentation in the HIS, DPI-H also provides the means to integrat…",
   "comment": "Add at the end of the paragraph \"Given the existing fragmentation in the HIS, DPI-H also provides the means to integrate information across existing disconnected components of the HIS.\"",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": null,
+  "targetLabel": "prose:executive-summary-lead-f759cc",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -50,11 +50,11 @@
       "raw": "§Executive Summaruy l.12"
     },
     "anchor": {
-      "targetLabel": null,
-      "method": "unplaced",
-      "confidence": "low",
+      "targetLabel": "prose:executive-summary-lead-f759cc",
+      "method": "manual",
+      "confidence": "high",
       "candidates": [],
-      "note": "nothing in the citation resolved; triage places it"
+      "note": "placed on the block, by a placement agent reading the comment against the text (high): Cites Executive Summary l.12; this paragraph spans lines 5-12."
     },
     "text": "Add at the end of the paragraph \"Given the existing fragmentation in the HIS, DPI-H also provides the means to integrate information across existing disconnected components of the HIS.\"",
     "labels": {
@@ -70,6 +70,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 661"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the block, by a placement agent reading the comment against the text (high): Cites Executive Summary l.12; this paragraph spans lines 5-12."
       }
     ]
   }

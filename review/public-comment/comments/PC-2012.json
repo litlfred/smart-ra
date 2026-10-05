@@ -3,7 +3,7 @@
   "summary": "Routine aggregate reporting may still rely on paper forms, spreadsheets, SMS, or offline applications.",
   "comment": "Routine aggregate reporting may still rely on paper forms, spreadsheets, SMS, or offline applications.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "sec:c-business-services-components-health-management-information-sy",
+  "targetLabel": "prose:c-business-services-components-health-management-information-sy-8b268c",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -51,13 +51,13 @@
       "raw": "§HMIS, 1 p.190 l.Purpose and scope"
     },
     "anchor": {
-      "targetLabel": "sec:c-business-services-components-health-management-information-sy",
-      "method": "section",
-      "confidence": "low",
+      "targetLabel": "prose:c-business-services-components-health-management-information-sy-8b268c",
+      "method": "manual",
+      "confidence": "medium",
       "candidates": [
-        "sec:d-1-health-management-information-se"
+        "sec:c-business-services-components-health-management-information-sy"
       ],
-      "note": "section named \"Health Management Information System\""
+      "note": "placed on the block, by a placement agent reading the comment against the text (medium): HMIS §1; paragraph claims HMIS derives data rather than collecting via parallel reporting channels."
     },
     "text": "Routine aggregate reporting may still rely on paper forms, spreadsheets, SMS, or offline applications.",
     "suggestedRevision": "Support several contribution channels and define a progressive path toward more structured and automated reporting.",
@@ -73,6 +73,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--EY-review row 1248"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the block, by a placement agent reading the comment against the text (medium): HMIS §1; paragraph claims HMIS derives data rather than collecting via parallel reporting channels."
       }
     ]
   }

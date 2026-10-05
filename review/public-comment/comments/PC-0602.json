@@ -49,10 +49,10 @@
     },
     "anchor": {
       "targetLabel": null,
-      "method": "unplaced",
-      "confidence": "low",
+      "method": "manual",
+      "confidence": "high",
       "candidates": [],
-      "note": "nothing in the citation resolved; triage places it"
+      "note": "about the whole document, by a placement agent reading the comment against the text (high): Online-form overall impression on missing device interoperability layer."
     },
     "type": "general",
     "text": "Overall impression: There is a need for a multi-vendor and multi-country device interoperability infrastructure that is free of patient identifiable information in remote care. \n\nThis is completely missing from this document and perpetuates vertically integrated silos for primary IoT data collection.\n\nThis is a major technical reason why Europe is lagging behind the USA in terms of remote patient monitoring adoption. \n\nSuch a layer needs to uncouple two highly fragmented and regulated ecosystems: home medtech and health IT.",
@@ -69,6 +69,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 602"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "about the whole document, by a placement agent reading the comment against the text (high): Online-form overall impression on missing device interoperability layer."
       }
     ]
   }

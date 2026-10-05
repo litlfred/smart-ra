@@ -3,7 +3,7 @@
   "summary": "The measurement framework tracks component coverage, conformance, governance maturity and outcomes, but it lacks a meas…",
   "comment": "The measurement framework tracks component coverage, conformance, governance maturity and outcomes, but it lacks a measure of successful human access. Geographic or population reach does not show whether people can authenticate, understand the interface, complete a task, use an authorised representative, or obtain redress when access fails.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "prose:5-5-6a9e1b",
+  "targetLabel": "prose:4-4-2-51501c",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -51,11 +51,13 @@
       "raw": "§4.4.1–4.4.2 — Measuring Progress and Impact p.109–110 l.427–460"
     },
     "anchor": {
-      "targetLabel": "prose:5-5-6a9e1b",
-      "method": "page-line",
-      "confidence": "low",
-      "candidates": [],
-      "note": "p.109–110 l.427–460 read as the printed page; section 4.4.1 does NOT agree"
+      "targetLabel": "prose:4-4-2-51501c",
+      "method": "manual",
+      "confidence": "high",
+      "candidates": [
+        "prose:5-5-6a9e1b"
+      ],
+      "note": "placed on the block, by a placement agent reading the comment against the text (high): Cites 4.4.1-4.4.2 and proposes a fifth tracking dimension; this block lists the dimensions"
     },
     "type": "technical",
     "text": "The measurement framework tracks component coverage, conformance, governance maturity and outcomes, but it lacks a measure of successful human access. Geographic or population reach does not show whether people can authenticate, understand the interface, complete a task, use an authorised representative, or obtain redress when access fails.",
@@ -73,6 +75,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 42"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the block, by a placement agent reading the comment against the text (high): Cites 4.4.1-4.4.2 and proposes a fifth tracking dimension; this block lists the dimensions"
       }
     ]
   }

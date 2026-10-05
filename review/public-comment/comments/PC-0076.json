@@ -3,7 +3,7 @@
   "summary": "The nine specialist roles give a realistic picture of the skills the architecture requires, and it is helpful that line…",
   "comment": "The nine specialist roles give a realistic picture of the skills the architecture requires, and it is helpful that lines 521–524 note that each role does not need a separate post. States with populations under one million face a different problem. Skills such as FHIR modelling, terminology curation, conformance testing and security architecture often do not exist in the national labour market and are seldom sustainable as full-time national posts. The guidance does not yet offer a practical route for these settings beyond building capacity over time.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "prose:4-2-1-f13e61",
+  "targetLabel": "prose:4-5-2-da33cf",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -51,11 +51,13 @@
       "raw": "§4.5.2 p.100–101 l.500–524"
     },
     "anchor": {
-      "targetLabel": "prose:4-2-1-f13e61",
-      "method": "page-line",
-      "confidence": "low",
-      "candidates": [],
-      "note": "p.100–101 l.500–524 read as the PDF page; section 4.5.2 does NOT agree"
+      "targetLabel": "prose:4-5-2-da33cf",
+      "method": "manual",
+      "confidence": "high",
+      "candidates": [
+        "prose:4-2-1-f13e61"
+      ],
+      "note": "placed on the block, by a placement agent reading the comment against the text (high): Cites 4.5.2 and lines 521-524 (not every role needs a separate post); this block is l.521-525"
     },
     "type": "technical",
     "text": "The nine specialist roles give a realistic picture of the skills the architecture requires, and it is helpful that lines 521–524 note that each role does not need a separate post. States with populations under one million face a different problem. Skills such as FHIR modelling, terminology curation, conformance testing and security architecture often do not exist in the national labour market and are seldom sustainable as full-time national posts. The guidance does not yet offer a practical route for these settings beyond building capacity over time.",
@@ -72,6 +74,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 76"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the block, by a placement agent reading the comment against the text (high): Cites 4.5.2 and lines 521-524 (not every role needs a separate post); this block is l.521-525"
       }
     ]
   }

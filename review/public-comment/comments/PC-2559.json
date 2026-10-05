@@ -3,7 +3,7 @@
   "summary": "can also provide information for certain indicators in Module 3 (finance and expenditure), if linked with payroll syste…",
   "comment": "can also provide information for certain indicators in Module 3 (finance and expenditure), if linked with payroll systems (eg. total expenditure on compensation of health workforce, average entry-level wages and salaries).Wage data can also be used to do pay gap analysis (eg. gender gap, gap between public and private sector, gap between provinces of a country, etc)",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": null,
+  "targetLabel": "prose:c-metadata-registries-and-foundati-health-workforce-registry-ec5ed8",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -46,11 +46,11 @@
       "raw": ""
     },
     "anchor": {
-      "targetLabel": null,
-      "method": "unplaced",
-      "confidence": "low",
+      "targetLabel": "prose:c-metadata-registries-and-foundati-health-workforce-registry-ec5ed8",
+      "method": "manual",
+      "confidence": "high",
       "candidates": [],
-      "note": "nothing in the citation resolved; triage places it"
+      "note": "placed on the block, by a placement agent reading the comment against the text (high): Adds NHWA Module 3 finance indicators to the paragraph on NHWA indicators the registry supports."
     },
     "text": "can also provide information for certain indicators in Module 3 (finance and expenditure), if linked with payroll systems (eg. total expenditure on compensation of health workforce, average entry-level wages and salaries).Wage data can also be used to do pay gap analysis (eg. gender gap, gap between public and private sector, gap between provinces of a country, etc)",
     "assignees": [],
@@ -62,6 +62,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--HWF-review row 38"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the block, by a placement agent reading the comment against the text (high): Adds NHWA Module 3 finance indicators to the paragraph on NHWA indicators the registry supports."
       }
     ]
   }

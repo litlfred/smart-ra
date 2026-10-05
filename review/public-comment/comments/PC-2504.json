@@ -3,7 +3,7 @@
   "summary": "Federation as a conforming delivery arrangement — The draft already provides for federation; the correction makes the W…",
   "comment": "Federation as a conforming delivery arrangement — The draft already provides for federation; the correction makes the WHO option visible and prevents compliance from being judged solely by a particular server's storage model. Evidence: WHO API local deployment (https://icd.who.int/docs/icd-api/ICDAPI-LocalDeployment/).",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "sec:c-metadata-registries-and-foundati-terminology-service",
+  "targetLabel": "tbl:c-metadata-registries-and-foundati-terminology-service-817b54",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -48,13 +48,13 @@
       "raw": "§Terminology Service, §5 p.170 l.A17.02"
     },
     "anchor": {
-      "targetLabel": "sec:c-metadata-registries-and-foundati-terminology-service",
-      "method": "section",
-      "confidence": "low",
+      "targetLabel": "tbl:c-metadata-registries-and-foundati-terminology-service-817b54",
+      "method": "manual",
+      "confidence": "high",
       "candidates": [
-        "sec:d-1-terminology-service-and-logical"
+        "sec:c-metadata-registries-and-foundati-terminology-service"
       ],
-      "note": "section named \"Terminology Service\""
+      "note": "placed on the block, by a placement agent reading the comment against the text (high): Cites Terminology Service §5; TS functional requirements table."
     },
     "text": "Federation as a conforming delivery arrangement — The draft already provides for federation; the correction makes the WHO option visible and prevents compliance from being judged solely by a particular server's storage model. Evidence: WHO API local deployment (https://icd.who.int/docs/icd-api/ICDAPI-LocalDeployment/).",
     "suggestedRevision": "Append; retain Recommended status; also apply A17.03 in this cell: Federation shall be assessed as a delivery arrangement for the declared national TS functions. A federation-based implementation shall demonstrate how it meets each applicable mandatory requirement, including continuity during loss of external connectivity where required. It shall not be required to duplicate the entire publisher repository solely to demonstrate that those functions are available. Where a required function is not supplied by the publisher service, the national implementation shall identify and test the component that supplies it.",
@@ -70,6 +70,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--CAT-WHO-FIC row 47"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the block, by a placement agent reading the comment against the text (high): Cites Terminology Service §5; TS functional requirements table."
       }
     ]
   }

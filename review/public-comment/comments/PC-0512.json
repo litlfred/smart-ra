@@ -3,7 +3,7 @@
   "summary": "The section identifies important safeguards, including input and output controls, representative training data, drift m…",
   "comment": "The section identifies important safeguards, including input and output controls, representative training data, drift monitoring, evaluation, accountability and human oversight, and points to WHO's wider AI guidance. These requirements are dispersed across the narrative rather than consolidated into an operational baseline that procurement and implementation teams can test before deployment and during operation.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "prose:4-3-2-513f61",
+  "targetLabel": "sec:5-4",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -51,11 +51,13 @@
       "raw": "§5.4 p.107-109 l.Lines 142-194"
     },
     "anchor": {
-      "targetLabel": "prose:4-3-2-513f61",
-      "method": "page-line",
-      "confidence": "low",
-      "candidates": [],
-      "note": "p.107-109 l.Lines 142-194 read as the PDF page; section 5.4 does NOT agree"
+      "targetLabel": "sec:5-4",
+      "method": "manual",
+      "confidence": "high",
+      "candidates": [
+        "prose:4-3-2-513f61"
+      ],
+      "note": "placed on the section, by a placement agent reading the comment against the text (high): Cites §5.4 lines 142-194; asks to consolidate safeguards dispersed across the section."
     },
     "type": "technical",
     "text": "The section identifies important safeguards, including input and output controls, representative training data, drift monitoring, evaluation, accountability and human oversight, and points to WHO's wider AI guidance. These requirements are dispersed across the narrative rather than consolidated into an operational baseline that procurement and implementation teams can test before deployment and during operation.",
@@ -72,6 +74,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 512"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the section, by a placement agent reading the comment against the text (high): Cites §5.4 lines 142-194; asks to consolidate safeguards dispersed across the section."
       }
     ]
   }

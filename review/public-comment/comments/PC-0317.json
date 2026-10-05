@@ -50,10 +50,10 @@
     },
     "anchor": {
       "targetLabel": null,
-      "method": "unplaced",
-      "confidence": "low",
+      "method": "manual",
+      "confidence": "high",
       "candidates": [],
-      "note": "nothing in the citation resolved; triage places it"
+      "note": "about the whole document, by a placement agent reading the comment against the text (high): Whole document paragraph-length style; line 102 is only an example"
     },
     "type": "editorial",
     "text": "For readability I suggest limiting paragraphs to 3-4 sentences. Make a point and use next paragraph to provide a context or example",
@@ -70,6 +70,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 317"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "about the whole document, by a placement agent reading the comment against the text (high): Whole document paragraph-length style; line 102 is only an example"
       }
     ]
   }

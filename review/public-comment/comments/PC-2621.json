@@ -3,7 +3,7 @@
   "summary": "How do you ensure the cross sectoral governance, in particular with role of private sector? As a contributor, the priva…",
   "comment": "How do you ensure the cross sectoral governance, in particular with role of private sector? As a contributor, the private sector would have access to health workers data, but on the other hand you do not want the private sector to be able to use this as a shopping list for hiring staff from public sector.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": null,
+  "targetLabel": "tbl:c-metadata-registries-and-foundati-health-workforce-registry-ec36f4",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -46,11 +46,11 @@
       "raw": ""
     },
     "anchor": {
-      "targetLabel": null,
-      "method": "unplaced",
-      "confidence": "low",
+      "targetLabel": "tbl:c-metadata-registries-and-foundati-health-workforce-registry-ec36f4",
+      "method": "manual",
+      "confidence": "medium",
       "candidates": [],
-      "note": "nothing in the citation resolved; triage places it"
+      "note": "placed on the block, by a placement agent reading the comment against the text (medium): Cross-sectoral governance with private sector access; HWF Registry governance box."
     },
     "text": "How do you ensure the cross sectoral governance, in particular with role of private sector? As a contributor, the private sector would have access to health workers data, but on the other hand you do not want the private sector to be able to use this as a shopping list for hiring staff from public sector.",
     "assignees": [],
@@ -62,6 +62,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--HWF-review row 100"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the block, by a placement agent reading the comment against the text (medium): Cross-sectoral governance with private sector access; HWF Registry governance box."
       }
     ]
   }

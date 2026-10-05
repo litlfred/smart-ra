@@ -3,7 +3,7 @@
   "summary": "The document could better support the investment case by pointing to available funding instruments.",
   "comment": "The document could better support the investment case by pointing to available funding instruments.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": null,
+  "targetLabel": "sec:4-6-3",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -50,11 +50,11 @@
       "raw": "§3 p.102–103"
     },
     "anchor": {
-      "targetLabel": null,
-      "method": "unplaced",
-      "confidence": "low",
+      "targetLabel": "sec:4-6-3",
+      "method": "manual",
+      "confidence": "medium",
       "candidates": [],
-      "note": "nothing in the citation resolved; triage places it"
+      "note": "placed on the section, by a placement agent reading the comment against the text (medium): Cites p.102-103 (§4.6); asks to name funding instruments, which fits Approaches to Financing."
     },
     "type": "general",
     "text": "The document could better support the investment case by pointing to available funding instruments.",
@@ -71,6 +71,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 577"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the section, by a placement agent reading the comment against the text (medium): Cites p.102-103 (§4.6); asks to name funding instruments, which fits Approaches to Financing."
       }
     ]
   }

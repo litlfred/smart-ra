@@ -3,7 +3,7 @@
   "summary": "The financing options are well chosen but the guidance does not say who sets the price, on what basis, or with what ove…",
   "comment": "The financing options are well chosen but the guidance does not say who sets the price, on what basis, or with what oversight. Cost recovery and use-based contributions both require a method for determining allowed cost; without one the arrangement is renegotiated annually, which reproduces the instability that recurrent financing is meant to remove.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "prose:4-2-2-62927f",
+  "targetLabel": "prose:4-6-3-a21b35",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -51,11 +51,13 @@
       "raw": "§4.6.3 p.103 l.578"
     },
     "anchor": {
-      "targetLabel": "prose:4-2-2-62927f",
-      "method": "page-line",
-      "confidence": "low",
-      "candidates": [],
-      "note": "p.103 l.578 read as the PDF page; section 4.6.3 does NOT agree"
+      "targetLabel": "prose:4-6-3-a21b35",
+      "method": "manual",
+      "confidence": "high",
+      "candidates": [
+        "prose:4-2-2-62927f"
+      ],
+      "note": "placed on the block, by a placement agent reading the comment against the text (high): The financing-options list in §4.6.3 (recurrent budget, scheme contributions, etc.)."
     },
     "type": "technical",
     "text": "The financing options are well chosen but the guidance does not say who sets the price, on what basis, or with what oversight. Cost recovery and use-based contributions both require a method for determining allowed cost; without one the arrangement is renegotiated annually, which reproduces the instability that recurrent financing is meant to remove.",
@@ -72,6 +74,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 469"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the block, by a placement agent reading the comment against the text (high): The financing-options list in §4.6.3 (recurrent budget, scheme contributions, etc.)."
       }
     ]
   }

@@ -3,7 +3,7 @@
   "summary": "The CDSE is presented as one shared national application component, although decision support may be embedded locally, …",
   "comment": "The CDSE is presented as one shared national application component, although decision support may be embedded locally, invoked remotely, distributed, or split between knowledge and execution services.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "sec:c-business-services-components-computable-decision-support-engi",
+  "targetLabel": "tbl:c-business-services-components-computable-decision-support-engi-312caf",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -51,13 +51,13 @@
       "raw": "§CDSE, architecture placement p.177 l.Architecture placement"
     },
     "anchor": {
-      "targetLabel": "sec:c-business-services-components-computable-decision-support-engi",
-      "method": "section",
-      "confidence": "low",
+      "targetLabel": "tbl:c-business-services-components-computable-decision-support-engi-312caf",
+      "method": "manual",
+      "confidence": "high",
       "candidates": [
-        "sec:d-1-computable-decision-support-engi"
+        "sec:c-business-services-components-computable-decision-support-engi"
       ],
-      "note": "section named \"Computable Decision Support Engine\""
+      "note": "placed on the block, by a placement agent reading the comment against the text (high): CDSE architecture placement and scope table."
     },
     "text": "The CDSE is presented as one shared national application component, although decision support may be embedded locally, invoked remotely, distributed, or split between knowledge and execution services.",
     "suggestedRevision": "Define it as a logical decision-support capability that may be realised through governed knowledge artefacts, execution services, and application-integrated workflow components.",
@@ -73,6 +73,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--EY-review row 1184"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the block, by a placement agent reading the comment against the text (high): CDSE architecture placement and scope table."
       }
     ]
   }

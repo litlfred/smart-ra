@@ -3,7 +3,7 @@
   "summary": "AI readiness is organised into data, legal and policy, and institutional capacity. The framework omits technical infras…",
   "comment": "AI readiness is organised into data, legal and policy, and institutional capacity. The framework omits technical infrastructure, cybersecurity, procurement capability, clinical evidence, workforce readiness, financing, and change management.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "prose:4-3-2-513f61",
+  "targetLabel": "prose:5-4-1-15d2f2",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -51,11 +51,13 @@
       "raw": "§5.4.1 p.107-108 l.Lines 140-146"
     },
     "anchor": {
-      "targetLabel": "prose:4-3-2-513f61",
-      "method": "page-line",
-      "confidence": "low",
-      "candidates": [],
-      "note": "p.107-108 l.Lines 140-146 read as the PDF page; section 5.4.1 does NOT agree"
+      "targetLabel": "prose:5-4-1-15d2f2",
+      "method": "manual",
+      "confidence": "high",
+      "candidates": [
+        "prose:4-3-2-513f61"
+      ],
+      "note": "placed on the block, by a placement agent reading the comment against the text (high): §5.4.1 readiness dimensions (data, legal/policy, institutional) l.145-147."
     },
     "text": "AI readiness is organised into data, legal and policy, and institutional capacity. The framework omits technical infrastructure, cybersecurity, procurement capability, clinical evidence, workforce readiness, financing, and change management.",
     "suggestedRevision": "Expand the readiness framework or define these as subdimensions of institutional capacity. Include computing, integration, security, evidence, operations, financing, procurement, and user readiness.",
@@ -71,6 +73,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--EY-review row 594"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the block, by a placement agent reading the comment against the text (high): §5.4.1 readiness dimensions (data, legal/policy, institutional) l.145-147."
       }
     ]
   }

@@ -3,7 +3,7 @@
   "summary": "This section correctly identifies the need for evluation. It however doesn't offer further practical guides nor provide…",
   "comment": "This section correctly identifies the need for evluation. It however doesn't offer further practical guides nor provide a draft framework to countries on how to assess systems before deployment.\nThis framework is a critical step that will guide procurement teams in evaluating vendor claims and provide a basis for approving in-country AI tools for clinical decision support",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "prose:4-3-2-513f61",
+  "targetLabel": "prose:5-4-2-11d943",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -50,11 +50,13 @@
       "raw": "§5.4.2 p.107 l.155 - 169"
     },
     "anchor": {
-      "targetLabel": "prose:4-3-2-513f61",
-      "method": "page-line",
-      "confidence": "low",
-      "candidates": [],
-      "note": "p.107 l.155 - 169 read as the PDF page; section 5.4.2 does NOT agree"
+      "targetLabel": "prose:5-4-2-11d943",
+      "method": "manual",
+      "confidence": "high",
+      "candidates": [
+        "prose:4-3-2-513f61"
+      ],
+      "note": "placed on the block, by a placement agent reading the comment against the text (high): Cites 5.4.2 l.155-169; this block is exactly l.155-169 (evaluation)"
     },
     "type": "technical",
     "text": "This section correctly identifies the need for evluation. It however doesn't offer further practical guides nor provide a draft framework to countries on how to assess systems before deployment.\nThis framework is a critical step that will guide procurement teams in evaluating vendor claims and provide a basis for approving in-country AI tools for clinical decision support",
@@ -71,6 +73,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 186"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the block, by a placement agent reading the comment against the text (high): Cites 5.4.2 l.155-169; this block is exactly l.155-169 (evaluation)"
       }
     ]
   }

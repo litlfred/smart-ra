@@ -3,7 +3,7 @@
   "summary": "National stewardship is required, but clinical-data responsibility remains distributed among contributing providers and…",
   "comment": "National stewardship is required, but clinical-data responsibility remains distributed among contributing providers and professionals.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "sec:c-metadata-registries-and-foundati-lifelong-health-record",
+  "targetLabel": "tbl:c-metadata-registries-and-foundati-lifelong-health-record-0ef8cf",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -51,13 +51,13 @@
       "raw": "§Lifelong Health Record, Governance p.165 l.Governance item 1"
     },
     "anchor": {
-      "targetLabel": "sec:c-metadata-registries-and-foundati-lifelong-health-record",
-      "method": "section",
-      "confidence": "low",
+      "targetLabel": "tbl:c-metadata-registries-and-foundati-lifelong-health-record-0ef8cf",
+      "method": "manual",
+      "confidence": "high",
       "candidates": [
-        "sec:d-1-lifelong-health-record"
+        "sec:c-metadata-registries-and-foundati-lifelong-health-record"
       ],
-      "note": "section named \"Lifelong Health Record\""
+      "note": "placed on the block, by a placement agent reading the comment against the text (high): LHR governance table, item 1 stewardship."
     },
     "text": "National stewardship is required, but clinical-data responsibility remains distributed among contributing providers and professionals.",
     "suggestedRevision": "Define accountability for the LHR service, source-data accuracy, model governance, access policy, patient rights, corrections, security, service management, and downstream use.",
@@ -73,6 +73,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--EY-review row 1132"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the block, by a placement agent reading the comment against the text (high): LHR governance table, item 1 stewardship."
       }
     ]
   }

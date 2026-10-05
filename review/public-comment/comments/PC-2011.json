@@ -3,7 +3,7 @@
   "summary": "Aggregate reporting, indicator calculation, data collection, dashboards, analytics, and planning may be combined into o…",
   "comment": "Aggregate reporting, indicator calculation, data collection, dashboards, analytics, and planning may be combined into one very broad component.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "sec:c-business-services-components-health-management-information-sy",
+  "targetLabel": "prose:c-business-services-components-health-management-information-sy-9dea8c",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -51,13 +51,13 @@
       "raw": "§HMIS, 1 p.190 l.Purpose and scope"
     },
     "anchor": {
-      "targetLabel": "sec:c-business-services-components-health-management-information-sy",
-      "method": "section",
-      "confidence": "low",
+      "targetLabel": "prose:c-business-services-components-health-management-information-sy-9dea8c",
+      "method": "manual",
+      "confidence": "medium",
       "candidates": [
-        "sec:d-1-health-management-information-se"
+        "sec:c-business-services-components-health-management-information-sy"
       ],
-      "note": "section named \"Health Management Information System\""
+      "note": "placed on the block, by a placement agent reading the comment against the text (medium): HMIS §1 purpose/scope breadth; the \"What it is\" definition lists collection, aggregation, analysis, dashboards."
     },
     "text": "Aggregate reporting, indicator calculation, data collection, dashboards, analytics, and planning may be combined into one very broad component.",
     "suggestedRevision": "Separate shared indicator and aggregate-data services from collection tools, dashboards, analytics platforms, and programme workflows.",
@@ -73,6 +73,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--EY-review row 1247"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the block, by a placement agent reading the comment against the text (medium): HMIS §1 purpose/scope breadth; the \"What it is\" definition lists collection, aggregation, analysis, dashboards."
       }
     ]
   }

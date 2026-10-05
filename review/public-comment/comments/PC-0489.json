@@ -3,7 +3,7 @@
   "summary": "Governance maturity is described developmentally but without a mechanism for revising the arrangement itself. The most …",
   "comment": "Governance maturity is described developmentally but without a mechanism for revising the arrangement itself. The most significant governance risk over the life of a health infrastructure is not immaturity but purpose expansion: capabilities built for care become available for research, oversight, enforcement or entitlement decisions, incrementally and by administrative decision.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "prose:3-3-ff0e0e",
+  "targetLabel": "sec:3-4-7",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -51,11 +51,13 @@
       "raw": "§3.4.7 p.63 l.517"
     },
     "anchor": {
-      "targetLabel": "prose:3-3-ff0e0e",
-      "method": "page-line",
-      "confidence": "low",
-      "candidates": [],
-      "note": "p.63 l.517 read as the PDF page; section 3.4.7 does NOT agree"
+      "targetLabel": "sec:3-4-7",
+      "method": "manual",
+      "confidence": "high",
+      "candidates": [
+        "prose:3-3-ff0e0e"
+      ],
+      "note": "placed on the section, by a placement agent reading the comment against the text (high): Cites §3.4.7 governance maturity; asks for a revision mechanism."
     },
     "type": "technical",
     "text": "Governance maturity is described developmentally but without a mechanism for revising the arrangement itself. The most significant governance risk over the life of a health infrastructure is not immaturity but purpose expansion: capabilities built for care become available for research, oversight, enforcement or entitlement decisions, incrementally and by administrative decision.",
@@ -72,6 +74,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 489"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the section, by a placement agent reading the comment against the text (high): Cites §3.4.7 governance maturity; asks for a revision mechanism."
       }
     ]
   }

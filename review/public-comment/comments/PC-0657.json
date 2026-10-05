@@ -3,7 +3,7 @@
   "summary": "Context assumptions: The guidance is generally strong in recognising different levels of digital maturity, resource ava…",
   "comment": "Context assumptions: The guidance is generally strong in recognising different levels of digital maturity, resource availability and connectivity, so I do not see a major assumption that all countries start from similar conditions.\n\nHowever, implementation may still implicitly depend on institutional capacities that are uneven across settings: sustained governance of shared national components, clear assignment of data stewardship and decision rights, technical capacity to maintain standards and information models over time, and the ability to enforce consistent access and consent policies across fragmented or federated systems.\n\nIn lower-capacity settings, reliable connectivity, mature national identity infrastructure, specialist interoperability expertise and long-term financing may also be incomplete or unstable. I therefore suggest distinguishing more explicitly between capabilities that may mature progressively and minimum non-negotiable properties-particularly security, auditability, provenance and safe handling of conflicting data-that should remain required even at early stages of implementation.\n\nOffline and federated environments deserve particular attention: \"reliable synchronisation\" is necessary, but clinically significant conflicting updates need explicit minimum conflict-resolution and reconciliation rules.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "tbl:c-metadata-registries-and-foundati-lifelong-health-record-ed5e15",
+  "targetLabel": null,
   "tags": {
     "roles": [
       "feedback-provider"
@@ -48,14 +48,13 @@
       "raw": ""
     },
     "anchor": {
-      "targetLabel": "tbl:c-metadata-registries-and-foundati-lifelong-health-record-ed5e15",
-      "method": "quote",
-      "confidence": "low",
+      "targetLabel": null,
+      "method": "manual",
+      "confidence": "high",
       "candidates": [
-        "tbl:c-business-services-components-health-management-information-sy-0a3f5b",
-        "tbl:c-business-services-components-public-health-surveillance-platf-181696"
+        "tbl:c-metadata-registries-and-foundati-lifelong-health-record-ed5e15"
       ],
-      "note": "quotation found in the text"
+      "note": "about the whole document, by a placement agent reading the comment against the text (high): General context-assumptions answer; not about the LHR requirements table it was quote-matched to."
     },
     "type": "general",
     "text": "Context assumptions: The guidance is generally strong in recognising different levels of digital maturity, resource availability and connectivity, so I do not see a major assumption that all countries start from similar conditions.\n\nHowever, implementation may still implicitly depend on institutional capacities that are uneven across settings: sustained governance of shared national components, clear assignment of data stewardship and decision rights, technical capacity to maintain standards and information models over time, and the ability to enforce consistent access and consent policies across fragmented or federated systems.\n\nIn lower-capacity settings, reliable connectivity, mature national identity infrastructure, specialist interoperability expertise and long-term financing may also be incomplete or unstable. I therefore suggest distinguishing more explicitly between capabilities that may mature progressively and minimum non-negotiable properties-particularly security, auditability, provenance and safe handling of conflicting data-that should remain required even at early stages of implementation.\n\nOffline and federated environments deserve particular attention: \"reliable synchronisation\" is necessary, but clinically significant conflicting updates need explicit minimum conflict-resolution and reconciliation rules.",
@@ -73,6 +72,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 657"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "about the whole document, by a placement agent reading the comment against the text (high): General context-assumptions answer; not about the LHR requirements table it was quote-matched to."
       }
     ]
   }

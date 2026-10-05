@@ -48,10 +48,10 @@
     },
     "anchor": {
       "targetLabel": null,
-      "method": "unplaced",
-      "confidence": "low",
+      "method": "manual",
+      "confidence": "high",
       "candidates": [],
-      "note": "nothing in the citation resolved; triage places it"
+      "note": "about the whole document, by a placement agent reading the comment against the text (high): Online-form strengths."
     },
     "type": "general",
     "text": "Strengths: To me, the greatest strength of the draft is that it treats digital health as national health-system infrastructure rather than as a collection of separate technology projects. Its goals-first approach connects the seven priority health goals to the capabilities, shared components and standards needed to achieve them. This traceability helps countries make investment and procurement decisions based on health outcomes rather than on whichever product or technology is currently available.\n\nThe distinction between foundational DPI and health-specific DPI is another major strength. The guidance encourages countries to reuse national identity, payment and data-exchange infrastructure where it exists, while recognising that healthcare requires additional capabilities such as clinical identity matching, granular consent, longitudinal records, semantic interoperability and provenance.\n\nI also value its practical and adaptable nature. REDDHI provides a direction of travel rather than imposing a rigid compliance model, and the guidance recognises that countries begin from very different levels of maturity. Its advice to assess existing systems, integrate before replacing them and progressively move away from fragmented programme-specific solutions is realistic and valuable.\n\nFinally, the draft brings architecture, governance, interoperability, equity, financing and AI readiness into one coherent framework. Treating interoperability as a cross-cutting capability, emphasising governed terminology and information models, and connecting FHIR and IHE standards with conformance testing are particularly strong. Its message that trustworthy AI depends on trusted, representative and well-governed data foundations is both timely and essential. Overall, the draft provides a strong basis for a globally aligned yet locally adaptable reference architecture that can support progress towards SDG 3 and, over time, secure interoperability across organisations and countries.",
@@ -68,6 +68,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 620"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "about the whole document, by a placement agent reading the comment against the text (high): Online-form strengths."
       }
     ]
   }

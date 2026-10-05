@@ -3,7 +3,7 @@
   "summary": "Two smaller points: Re the eight sub-goal of safeguards: reading this para, I don’t consider this as HF specific, actua…",
   "comment": "Two smaller points: Re the eight sub-goal of safeguards: reading this para, I don’t consider this as HF specific, actually not even health sector specific. So I suggest removing this as a sub-goal and shift it to a higher level wherever it would fit best. I have also removed the distinction between PFM (budget formation and budget monitoring – PS: budget execution is missing) and health coverage management. I tried to rephrase so that we can keep the subsequent sub-tasks (not sub-goals), but as PFM cuts across HF functions, and vice versa, and given that they operate on different dimensions, presenting them as these two domains in this way doesn’t work really.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": null,
+  "targetLabel": "sec:2-4-2",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -46,11 +46,11 @@
       "raw": ""
     },
     "anchor": {
-      "targetLabel": null,
-      "method": "unplaced",
+      "targetLabel": "sec:2-4-2",
+      "method": "manual",
       "confidence": "low",
       "candidates": [],
-      "note": "nothing in the citation resolved; triage places it"
+      "note": "placed on the section, by a placement agent reading the comment against the text (low): Health-financing sub-goals incl. safeguarding; §2.4.2 lists them, exact draft para unclear."
     },
     "text": "Two smaller points: Re the eight sub-goal of safeguards: reading this para, I don’t consider this as HF specific, actually not even health sector specific. So I suggest removing this as a sub-goal and shift it to a higher level wherever it would fit best. I have also removed the distinction between PFM (budget formation and budget monitoring – PS: budget execution is missing) and health coverage management. I tried to rephrase so that we can keep the subsequent sub-tasks (not sub-goals), but as PFM cuts across HF functions, and vice versa, and given that they operate on different dimensions, presenting them as these two domains in this way doesn’t work really.",
     "labels": {
@@ -65,6 +65,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 718"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the section, by a placement agent reading the comment against the text (low): Health-financing sub-goals incl. safeguarding; §2.4.2 lists them, exact draft para unclear."
       }
     ]
   }

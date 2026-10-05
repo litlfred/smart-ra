@@ -3,7 +3,7 @@
   "summary": "Section 3.6.4 recommends the International Patient Summary (IPS) as the cross-border exchange standard for the minimum …",
   "comment": "Section 3.6.4 recommends the International Patient Summary (IPS) as the cross-border exchange standard for the minimum health data set. The IPS is named without noting that SNOMED CT is the primary clinical terminology binding in the IPS specification. The HL7 FHIR IPS Implementation Guide binds clinical findings, procedures, and allergies to SNOMED CT value sets. Countries implementing IPS conformance will therefore require SNOMED CT (or GPS) for clinical coding regardless of whether the Terminology Service section makes that explicit.\n\nThis is a direct, normative dependency that should be stated. Omitting it allows a country to read §3.6.4 and the Terminology Service component description independently, without understanding that IPS conformance effectively mandates SNOMED CT.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "prose:3-6-3-61768e",
+  "targetLabel": "prose:3-6-4-a6fcda",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -51,11 +51,13 @@
       "raw": "§3.6.4 p.87–88 l.line 942 and Appendix C Terminology Service, §1"
     },
     "anchor": {
-      "targetLabel": "prose:3-6-3-61768e",
-      "method": "page-line",
-      "confidence": "low",
-      "candidates": [],
-      "note": "p.87–88 l.line 942 and Appendix C Terminology Service, §1 read as the PDF page; section 3.6.4 does NOT agree"
+      "targetLabel": "prose:3-6-4-a6fcda",
+      "method": "manual",
+      "confidence": "high",
+      "candidates": [
+        "prose:3-6-3-61768e"
+      ],
+      "note": "placed on the block, by a placement agent reading the comment against the text (high): Cites 3.6.4 line 942 on IPS; this block (l.941-951) names the IPS"
     },
     "type": "technical",
     "text": "Section 3.6.4 recommends the International Patient Summary (IPS) as the cross-border exchange standard for the minimum health data set. The IPS is named without noting that SNOMED CT is the primary clinical terminology binding in the IPS specification. The HL7 FHIR IPS Implementation Guide binds clinical findings, procedures, and allergies to SNOMED CT value sets. Countries implementing IPS conformance will therefore require SNOMED CT (or GPS) for clinical coding regardless of whether the Terminology Service section makes that explicit.\n\nThis is a direct, normative dependency that should be stated. Omitting it allows a country to read §3.6.4 and the Terminology Service component description independently, without understanding that IPS conformance effectively mandates SNOMED CT.",
@@ -72,6 +74,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 230"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the block, by a placement agent reading the comment against the text (high): Cites 3.6.4 line 942 on IPS; this block (l.941-951) names the IPS"
       }
     ]
   }

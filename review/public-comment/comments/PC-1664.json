@@ -3,7 +3,7 @@
   "summary": "The relationship among the Workforce Registry, Facility Registry, and mCSD is useful, but mCSD also depends on organisa…",
   "comment": "The relationship among the Workforce Registry, Facility Registry, and mCSD is useful, but mCSD also depends on organisations, practitioner roles, healthcare services, endpoints, and locations. [draft-for-...idance.pdf | PDF]",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "prose:c-metadata-registries-and-foundati-health-facility-registry-c3f1f4",
+  "targetLabel": "prose:c-metadata-registries-and-foundati-health-workforce-registry-6ccb44",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -51,11 +51,13 @@
       "raw": "§Health Workforce Registry, 4 p.136-137 l.Lines 304-312"
     },
     "anchor": {
-      "targetLabel": "prose:c-metadata-registries-and-foundati-health-facility-registry-c3f1f4",
-      "method": "page-line",
-      "confidence": "low",
-      "candidates": [],
-      "note": "p.136-137 l.Lines 304-312 read as the PDF page; section 4 does NOT agree"
+      "targetLabel": "prose:c-metadata-registries-and-foundati-health-workforce-registry-6ccb44",
+      "method": "manual",
+      "confidence": "high",
+      "candidates": [
+        "prose:c-metadata-registries-and-foundati-health-facility-registry-c3f1f4"
+      ],
+      "note": "placed on the block, by a placement agent reading the comment against the text (high): HWR l.309-313: Facility Registry peer dependency and mCSD joint query."
     },
     "text": "The relationship among the Workforce Registry, Facility Registry, and mCSD is useful, but mCSD also depends on organisations, practitioner roles, healthcare services, endpoints, and locations. [draft-for-...idance.pdf | PDF]",
     "suggestedRevision": "Align the component boundaries with the full mCSD model and explain where each entity is governed and how joint discovery is provided.",
@@ -71,6 +73,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--EY-review row 900"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the block, by a placement agent reading the comment against the text (high): HWR l.309-313: Facility Registry peer dependency and mCSD joint query."
       }
     ]
   }

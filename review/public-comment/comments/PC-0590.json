@@ -51,10 +51,10 @@
     },
     "anchor": {
       "targetLabel": null,
-      "method": "unplaced",
-      "confidence": "low",
+      "method": "manual",
+      "confidence": "medium",
       "candidates": [],
-      "note": "nothing in the citation resolved; triage places it"
+      "note": "about the whole document, by a placement agent reading the comment against the text (medium): Drafting note clarifying the page-count wording of another row."
     },
     "text": "The 241-page figure is the full PDF. The narrative guidance ends at p.110; pp.111–241 are references and Appendices A–F. The comment now states this so the length criticism cannot be deflected by pointing out that most of the document is reference material.",
     "suggestedRevision": "Amended. Revert if you prefer the original blunt wording.",
@@ -70,6 +70,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 590"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "about the whole document, by a placement agent reading the comment against the text (medium): Drafting note clarifying the page-count wording of another row."
       }
     ]
   }

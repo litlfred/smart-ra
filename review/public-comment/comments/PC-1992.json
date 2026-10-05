@@ -3,7 +3,7 @@
   "summary": "Improved transparency and reduced claims disputes are plausible but depend on comprehensible rules, operational alignme…",
   "comment": "Improved transparency and reduced claims disputes are plausible but depend on comprehensible rules, operational alignment, and public access.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "sec:c-business-services-components-benefits-package-registry",
+  "targetLabel": "prose:c-business-services-components-benefits-package-registry-3ff245",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -51,13 +51,13 @@
       "raw": "§Benefits Package Registry, 2 p.186 l.Rationale"
     },
     "anchor": {
-      "targetLabel": "sec:c-business-services-components-benefits-package-registry",
-      "method": "section",
-      "confidence": "low",
+      "targetLabel": "prose:c-business-services-components-benefits-package-registry-3ff245",
+      "method": "manual",
+      "confidence": "medium",
       "candidates": [
-        "sec:c-business-services-components-benefits-package-registry-distinguishing-the-benefits-pack"
+        "sec:c-business-services-components-benefits-package-registry"
       ],
-      "note": "section named \"Benefits Package Registry\""
+      "note": "placed on the block, by a placement agent reading the comment against the text (medium): BPR rationale list (claims validation, transparency)."
     },
     "text": "Improved transparency and reduced claims disputes are plausible but depend on comprehensible rules, operational alignment, and public access.",
     "suggestedRevision": "Qualify the claims and identify the conditions needed to realise them.",
@@ -73,6 +73,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--EY-review row 1228"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the block, by a placement agent reading the comment against the text (medium): BPR rationale list (claims validation, transparency)."
       }
     ]
   }

@@ -3,7 +3,7 @@
   "summary": "Facility and workforce registries support provider identity and qualification, but empanelment and contracting are oper…",
   "comment": "Facility and workforce registries support provider identity and qualification, but empanelment and contracting are operational financing relationships.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "sec:c-business-services-components-benefits-package-registry",
+  "targetLabel": "prose:c-business-services-components-benefits-package-registry-e359e0",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -51,13 +51,13 @@
       "raw": "§Benefits Package Registry, 4 p.187 l.Relationship to Facility and Workforce Registries"
     },
     "anchor": {
-      "targetLabel": "sec:c-business-services-components-benefits-package-registry",
-      "method": "section",
-      "confidence": "low",
+      "targetLabel": "prose:c-business-services-components-benefits-package-registry-e359e0",
+      "method": "manual",
+      "confidence": "high",
       "candidates": [
-        "sec:c-business-services-components-benefits-package-registry-distinguishing-the-benefits-pack"
+        "sec:c-business-services-components-benefits-package-registry"
       ],
-      "note": "section named \"Benefits Package Registry\""
+      "note": "placed on the block, by a placement agent reading the comment against the text (high): BPR relationships list, Health Facility Registry / empanelment bullet."
     },
     "text": "Facility and workforce registries support provider identity and qualification, but empanelment and contracting are operational financing relationships.",
     "suggestedRevision": "Keep empanelment and contract status in financing or contract-management systems, referencing authoritative facility and workforce identifiers.",
@@ -73,6 +73,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--EY-review row 1233"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the block, by a placement agent reading the comment against the text (high): BPR relationships list, Health Facility Registry / empanelment bullet."
       }
     ]
   }

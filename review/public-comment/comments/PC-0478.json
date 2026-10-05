@@ -3,7 +3,7 @@
   "summary": "The country examples are all cases of progress. Without cases where this approach was attempted and did not deliver, a …",
   "comment": "The country examples are all cases of progress. Without cases where this approach was attempted and did not deliver, a reader cannot calibrate risk and the guidance is open to the charge of selecting on outcome. The most instructive experiences in this field are the unsuccessful ones.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "prose:c-business-services-components-public-health-surveillance-platf-fe9ea4",
+  "targetLabel": "sec:d-2",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -51,11 +51,13 @@
       "raw": "§Appendix D p.231 l.91"
     },
     "anchor": {
-      "targetLabel": "prose:c-business-services-components-public-health-surveillance-platf-fe9ea4",
-      "method": "page-line",
-      "confidence": "low",
-      "candidates": [],
-      "note": "p.231 l.91 read as the PDF page; section D does NOT agree"
+      "targetLabel": "sec:d-2",
+      "method": "manual",
+      "confidence": "high",
+      "candidates": [
+        "prose:c-business-services-components-public-health-surveillance-platf-fe9ea4"
+      ],
+      "note": "placed on the section, by a placement agent reading the comment against the text (high): About the Appendix D country examples as a set (all success cases)."
     },
     "type": "general",
     "text": "The country examples are all cases of progress. Without cases where this approach was attempted and did not deliver, a reader cannot calibrate risk and the guidance is open to the charge of selecting on outcome. The most instructive experiences in this field are the unsuccessful ones.",
@@ -72,6 +74,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 478"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the section, by a placement agent reading the comment against the text (high): About the Appendix D country examples as a set (all success cases)."
       }
     ]
   }

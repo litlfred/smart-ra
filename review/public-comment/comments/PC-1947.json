@@ -3,7 +3,7 @@
   "summary": "The specification risks making a sophisticated repository platform a prerequisite for semantic governance.",
   "comment": "The specification risks making a sophisticated repository platform a prerequisite for semantic governance.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "prose:c-metadata-registries-and-foundati-logical-information-model-reposi-73f642",
+  "targetLabel": "sec:c-metadata-registries-and-foundati-logical-information-model-reposi",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -51,15 +51,13 @@
       "raw": "§LIMR overall p.172-176 l.Complete component"
     },
     "anchor": {
-      "targetLabel": "prose:c-metadata-registries-and-foundati-logical-information-model-reposi-73f642",
-      "method": "page",
-      "confidence": "low",
+      "targetLabel": "sec:c-metadata-registries-and-foundati-logical-information-model-reposi",
+      "method": "manual",
+      "confidence": "high",
       "candidates": [
-        "prose:c-metadata-registries-and-foundati-logical-information-model-reposi-3cee94",
-        "prose:c-metadata-registries-and-foundati-logical-information-model-reposi-458279",
-        "prose:c-metadata-registries-and-foundati-logical-information-model-reposi-d1ef6d"
+        "prose:c-metadata-registries-and-foundati-logical-information-model-reposi-73f642"
       ],
-      "note": "p.172-176 read as the printed page, no line resolved"
+      "note": "placed on the section, by a placement agent reading the comment against the text (high): Comment on the LIMR component as a whole."
     },
     "text": "The specification risks making a sophisticated repository platform a prerequisite for semantic governance.",
     "suggestedRevision": "State explicitly that governance, identifiers, versioning, approval, and publication are required from the outset, while tooling can mature progressively.",
@@ -75,6 +73,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--EY-review row 1183"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the section, by a placement agent reading the comment against the text (high): Comment on the LIMR component as a whole."
       }
     ]
   }

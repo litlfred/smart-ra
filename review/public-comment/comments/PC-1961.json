@@ -3,7 +3,7 @@
   "summary": "The requirements do not clearly distinguish deterministic rules, statistical models, and AI-based decision support.",
   "comment": "The requirements do not clearly distinguish deterministic rules, statistical models, and AI-based decision support.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "sec:c-business-services-components-computable-decision-support-engi",
+  "targetLabel": "tbl:c-business-services-components-computable-decision-support-engi-4b7f45",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -51,13 +51,13 @@
       "raw": "§CDSE, 5 p.179-181 l.Requirements table"
     },
     "anchor": {
-      "targetLabel": "sec:c-business-services-components-computable-decision-support-engi",
-      "method": "section",
-      "confidence": "low",
+      "targetLabel": "tbl:c-business-services-components-computable-decision-support-engi-4b7f45",
+      "method": "manual",
+      "confidence": "high",
       "candidates": [
-        "sec:d-1-computable-decision-support-engi"
+        "sec:c-business-services-components-computable-decision-support-engi"
       ],
-      "note": "section named \"Computable Decision Support Engine\""
+      "note": "placed on the block, by a placement agent reading the comment against the text (high): CDSE functional requirements table."
     },
     "text": "The requirements do not clearly distinguish deterministic rules, statistical models, and AI-based decision support.",
     "suggestedRevision": "Define separate requirement profiles according to logic type, autonomy, risk, evidence, evaluation, explainability, and monitoring.",
@@ -73,6 +73,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--EY-review row 1197"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the block, by a placement agent reading the comment against the text (high): CDSE functional requirements table."
       }
     ]
   }

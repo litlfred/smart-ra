@@ -3,7 +3,7 @@
   "summary": "Dependency and impact analysis are not sufficiently explicit, although terminology changes can affect profiles, data mo…",
   "comment": "Dependency and impact analysis are not sufficiently explicit, although terminology changes can affect profiles, data models, decision logic, measures, and historical data.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "sec:c-metadata-registries-and-foundati-terminology-service",
+  "targetLabel": "prose:c-metadata-registries-and-foundati-terminology-service-3a8e2d",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -51,13 +51,13 @@
       "raw": "§Terminology Service, 3 p.168 l.Core attributes"
     },
     "anchor": {
-      "targetLabel": "sec:c-metadata-registries-and-foundati-terminology-service",
-      "method": "section",
-      "confidence": "low",
+      "targetLabel": "prose:c-metadata-registries-and-foundati-terminology-service-3a8e2d",
+      "method": "manual",
+      "confidence": "medium",
       "candidates": [
-        "sec:d-1-terminology-service-and-logical"
+        "sec:c-metadata-registries-and-foundati-terminology-service"
       ],
-      "note": "section named \"Terminology Service\""
+      "note": "placed on the block, by a placement agent reading the comment against the text (medium): TS core attributes list (lifecycle management)."
     },
     "text": "Dependency and impact analysis are not sufficiently explicit, although terminology changes can affect profiles, data models, decision logic, measures, and historical data.",
     "suggestedRevision": "Make dependency management and impact analysis mandatory for changes to widely used concepts, value sets, mappings, and editions.",
@@ -73,6 +73,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--EY-review row 1148"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the block, by a placement agent reading the comment against the text (medium): TS core attributes list (lifecycle management)."
       }
     ]
   }

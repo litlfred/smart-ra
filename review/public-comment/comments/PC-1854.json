@@ -3,7 +3,7 @@
   "summary": "Facility and workforce identifiers provide provenance, but organisation, device, laboratory, pharmacy, payer, and sourc…",
   "comment": "Facility and workforce identifiers provide provenance, but organisation, device, laboratory, pharmacy, payer, and source-system identities may also be required.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "sec:c-metadata-registries-and-foundati-lifelong-health-record",
+  "targetLabel": "prose:c-metadata-registries-and-foundati-lifelong-health-record-884b9b",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -51,13 +51,13 @@
       "raw": "§Lifelong Health Record, 4 p.159 l.Relationship to other systems"
     },
     "anchor": {
-      "targetLabel": "sec:c-metadata-registries-and-foundati-lifelong-health-record",
-      "method": "section",
-      "confidence": "low",
+      "targetLabel": "prose:c-metadata-registries-and-foundati-lifelong-health-record-884b9b",
+      "method": "manual",
+      "confidence": "high",
       "candidates": [
-        "sec:d-1-lifelong-health-record"
+        "sec:c-metadata-registries-and-foundati-lifelong-health-record"
       ],
-      "note": "section named \"Lifelong Health Record\""
+      "note": "placed on the block, by a placement agent reading the comment against the text (high): LHR relationship para on facility/workforce identifiers for provenance."
     },
     "text": "Facility and workforce identifiers provide provenance, but organisation, device, laboratory, pharmacy, payer, and source-system identities may also be required.",
     "suggestedRevision": "Include all relevant provenance actors using authoritative identifiers and clearly identify the source for organisation records, which remains a gap in the component catalogue.",
@@ -73,6 +73,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--EY-review row 1090"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the block, by a placement agent reading the comment against the text (high): LHR relationship para on facility/workforce identifiers for provenance."
       }
     ]
   }

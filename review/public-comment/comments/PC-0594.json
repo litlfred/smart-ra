@@ -51,10 +51,10 @@
     },
     "anchor": {
       "targetLabel": null,
-      "method": "unplaced",
-      "confidence": "low",
+      "method": "manual",
+      "confidence": "medium",
       "candidates": [],
-      "note": "nothing in the citation resolved; triage places it"
+      "note": "about the whole document, by a placement agent reading the comment against the text (medium): Drafting note about page references added to the submission."
     },
     "text": "Page references have been added for every comment, using the document's printed page numbers. Front matter (executive summary, glossary) is shown as i–iii; the narrative body runs 1–110; Appendix D country examples are 229–235.",
     "suggestedRevision": "Please spot-check the references against the points you intended to make.",
@@ -70,6 +70,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 594"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "about the whole document, by a placement agent reading the comment against the text (medium): Drafting note about page references added to the submission."
       }
     ]
   }

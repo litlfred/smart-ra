@@ -3,7 +3,7 @@
   "summary": "The examples are useful for explaining the architecture, but they largely demonstrate the architecture through health-s…",
   "comment": "The examples are useful for explaining the architecture, but they largely demonstrate the architecture through health-system/clinical goals. A more operational example could help bridge the gap between the reference model and implementation.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "prose:2-3-4813b9",
+  "targetLabel": "sec:3-3",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -50,11 +50,13 @@
       "raw": "§Section 3.3 p.48-52 l.152-193"
     },
     "anchor": {
-      "targetLabel": "prose:2-3-4813b9",
-      "method": "page-line",
-      "confidence": "low",
-      "candidates": [],
-      "note": "p.48-52 l.152-193 read as the PDF page; section 3.3 does NOT agree"
+      "targetLabel": "sec:3-3",
+      "method": "manual",
+      "confidence": "high",
+      "candidates": [
+        "prose:2-3-4813b9"
+      ],
+      "note": "placed on the section, by a placement agent reading the comment against the text (high): Cites §3.3 lines 152-193, the worked examples as a whole; asks for an additional operational example."
     },
     "type": "technical",
     "text": "The examples are useful for explaining the architecture, but they largely demonstrate the architecture through health-system/clinical goals. A more operational example could help bridge the gap between the reference model and implementation.",
@@ -71,6 +73,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 349"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the section, by a placement agent reading the comment against the text (high): Cites §3.3 lines 152-193, the worked examples as a whole; asks for an additional operational example."
       }
     ]
   }

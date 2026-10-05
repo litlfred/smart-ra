@@ -3,7 +3,7 @@
   "summary": "Centralised, federated, and hybrid models are recognised, but their relative prerequisites, risks, and operational resp…",
   "comment": "Centralised, federated, and hybrid models are recognised, but their relative prerequisites, risks, and operational responsibilities are not compared systematically.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "sec:c-metadata-registries-and-foundati-lifelong-health-record",
+  "targetLabel": "prose:c-metadata-registries-and-foundati-lifelong-health-record-dd59dc",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -51,13 +51,13 @@
       "raw": "§Lifelong Health Record, 4 p.159-160 l.Implementation patterns"
     },
     "anchor": {
-      "targetLabel": "sec:c-metadata-registries-and-foundati-lifelong-health-record",
-      "method": "section",
-      "confidence": "low",
+      "targetLabel": "prose:c-metadata-registries-and-foundati-lifelong-health-record-dd59dc",
+      "method": "manual",
+      "confidence": "medium",
       "candidates": [
-        "sec:d-1-lifelong-health-record"
+        "sec:c-metadata-registries-and-foundati-lifelong-health-record"
       ],
-      "note": "section named \"Lifelong Health Record\""
+      "note": "placed on the block, by a placement agent reading the comment against the text (medium): Paragraph naming centralised/federated/hybrid LHR implementation models."
     },
     "text": "Centralised, federated, and hybrid models are recognised, but their relative prerequisites, risks, and operational responsibilities are not compared systematically.",
     "suggestedRevision": "Add a decision table covering governance, connectivity, source maturity, latency, availability, consent enforcement, data consistency, privacy, cost, local capacity, and disaster recovery.",
@@ -73,6 +73,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--EY-review row 1096"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the block, by a placement agent reading the comment against the text (medium): Paragraph naming centralised/federated/hybrid LHR implementation models."
       }
     ]
   }

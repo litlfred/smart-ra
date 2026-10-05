@@ -3,7 +3,7 @@
   "summary": "The component may imply that clinical guidance can be translated straightforwardly into deterministic rules. Guidance o…",
   "comment": "The component may imply that clinical guidance can be translated straightforwardly into deterministic rules. Guidance often contains uncertainty, judgement, exceptions, and contextual conditions.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "sec:c-business-services-components-computable-decision-support-engi",
+  "targetLabel": "prose:c-business-services-components-computable-decision-support-engi-d41d4b",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -51,13 +51,13 @@
       "raw": "§CDSE, 1 p.177 l.Purpose and scope"
     },
     "anchor": {
-      "targetLabel": "sec:c-business-services-components-computable-decision-support-engi",
-      "method": "section",
-      "confidence": "low",
+      "targetLabel": "prose:c-business-services-components-computable-decision-support-engi-d41d4b",
+      "method": "manual",
+      "confidence": "medium",
       "candidates": [
-        "sec:d-1-computable-decision-support-engi"
+        "sec:c-business-services-components-computable-decision-support-engi"
       ],
-      "note": "section named \"Computable Decision Support Engine\""
+      "note": "placed on the block, by a placement agent reading the comment against the text (medium): CDSE what-it-is paragraph on clinical judgement."
     },
     "text": "The component may imply that clinical guidance can be translated straightforwardly into deterministic rules. Guidance often contains uncertainty, judgement, exceptions, and contextual conditions.",
     "suggestedRevision": "State that only suitable recommendations should be made computable and that clinical interpretation, limitations, and human judgement must be preserved.",
@@ -73,6 +73,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--EY-review row 1186"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the block, by a placement agent reading the comment against the text (medium): CDSE what-it-is paragraph on clinical judgement."
       }
     ]
   }

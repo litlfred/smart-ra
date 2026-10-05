@@ -3,7 +3,7 @@
   "summary": "SNOMED International formally offers to serve as an International SGI Reference Partner for WHO and ITU in the implemen…",
   "comment": "SNOMED International formally offers to serve as an International SGI Reference Partner for WHO and ITU in the implementation of the DPI-H framework. As the steward of SNOMED CT, explicitly named in Section 3.4.5 and the REDDHI Open Standards list as foundational to the DPI-H Terminology Service, SNOMED International has a direct organisational interest in, and responsibility for, the success of national SGI implementations. SNOMED International's NRC programme, Snowstorm server, SNOMED CT Browser, and global member network constitute the resources countries will need to implement SGI at scale. SNOMED International would welcome the establishment of a formal SDO Technical Advisory Group to develop SGI implementation guidance alongside WHO and ITU.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "prose:3-2-00e672",
+  "targetLabel": "sec:3-4-5",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -51,11 +51,13 @@
       "raw": "§3.4.5 / Overall p.57 l.373+"
     },
     "anchor": {
-      "targetLabel": "prose:3-2-00e672",
-      "method": "page-line",
-      "confidence": "low",
-      "candidates": [],
-      "note": "p.57 l.373+ read as the PDF page; section 3.4.5 does NOT agree"
+      "targetLabel": "sec:3-4-5",
+      "method": "manual",
+      "confidence": "high",
+      "candidates": [
+        "prose:3-2-00e672"
+      ],
+      "note": "placed on the section, by a placement agent reading the comment against the text (high): Cites 3.4.5 and asks to add SNOMED International as SGI reference partner"
     },
     "type": "general",
     "text": "SNOMED International formally offers to serve as an International SGI Reference Partner for WHO and ITU in the implementation of the DPI-H framework. As the steward of SNOMED CT, explicitly named in Section 3.4.5 and the REDDHI Open Standards list as foundational to the DPI-H Terminology Service, SNOMED International has a direct organisational interest in, and responsibility for, the success of national SGI implementations. SNOMED International's NRC programme, Snowstorm server, SNOMED CT Browser, and global member network constitute the resources countries will need to implement SGI at scale. SNOMED International would welcome the establishment of a formal SDO Technical Advisory Group to develop SGI implementation guidance alongside WHO and ITU.",
@@ -72,6 +74,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 227"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the section, by a placement agent reading the comment against the text (high): Cites 3.4.5 and asks to add SNOMED International as SGI reference partner"
       }
     ]
   }

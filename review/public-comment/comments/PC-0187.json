@@ -3,7 +3,7 @@
   "summary": "The document acknowledges AI cost and sustainability challenges but provides no practical guidance on financing models.…",
   "comment": "The document acknowledges AI cost and sustainability challenges but provides no practical guidance on financing models. Countries need to understand how to fund AI adoption sustainably, including through shared infrastructure models, public-private partnerships, and integration with existing DPI-H investments.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "prose:4-3-4-83c937",
+  "targetLabel": "prose:5-4-4-3957e6",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -50,11 +50,13 @@
       "raw": "§5.4.4 p.108 l.170 - 183"
     },
     "anchor": {
-      "targetLabel": "prose:4-3-4-83c937",
-      "method": "page-line",
-      "confidence": "low",
-      "candidates": [],
-      "note": "p.108 l.170 - 183 read as the PDF page; section 5.4.4 does NOT agree"
+      "targetLabel": "prose:5-4-4-3957e6",
+      "method": "manual",
+      "confidence": "high",
+      "candidates": [
+        "prose:4-3-4-83c937"
+      ],
+      "note": "placed on the block, by a placement agent reading the comment against the text (high): Cites 5.4.4 l.170-183 on AI cost and sustainability; this block opens 5.4.4"
     },
     "type": "general",
     "text": "The document acknowledges AI cost and sustainability challenges but provides no practical guidance on financing models. Countries need to understand how to fund AI adoption sustainably, including through shared infrastructure models, public-private partnerships, and integration with existing DPI-H investments.",
@@ -71,6 +73,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 187"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the block, by a placement agent reading the comment against the text (high): Cites 5.4.4 l.170-183 on AI cost and sustainability; this block opens 5.4.4"
       }
     ]
   }

@@ -3,7 +3,7 @@
   "summary": "Please include these terms in the Glossary.",
   "comment": "Please include these terms in the Glossary.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": null,
+  "targetLabel": "sec:glossary-lead",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -46,11 +46,11 @@
       "raw": ""
     },
     "anchor": {
-      "targetLabel": null,
-      "method": "unplaced",
+      "targetLabel": "sec:glossary-lead",
+      "method": "manual",
       "confidence": "low",
       "candidates": [],
-      "note": "nothing in the citation resolved; triage places it"
+      "note": "placed on the section, by a placement agent reading the comment against the text (low): Uncited request to add unspecified terms to the Glossary."
     },
     "text": "Please include these terms in the Glossary.",
     "assignees": [],
@@ -62,6 +62,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--HWF-review row 5"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the section, by a placement agent reading the comment against the text (low): Uncited request to add unspecified terms to the Glossary."
       }
     ]
   }

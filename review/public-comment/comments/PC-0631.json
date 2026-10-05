@@ -49,10 +49,10 @@
     },
     "anchor": {
       "targetLabel": null,
-      "method": "unplaced",
-      "confidence": "low",
+      "method": "manual",
+      "confidence": "high",
       "candidates": [],
-      "note": "nothing in the citation resolved; triage places it"
+      "note": "about the whole document, by a placement agent reading the comment against the text (high): Online-form overall impression on central vs local approach."
     },
     "type": "general",
     "text": "Overall impression: The guidance overstates the role of central architecture in driving digital transformation, whereas experience in health systems suggests that successful capabilities more often emerge through local implementation and are standardised after demonstrating value. This risks encouraging investment in architecture and governance exercises that produce either generic strategic statements or burdensome compliance specifications, at the expense of funding practical implementations that generate evidence, adoption and learning.",
@@ -69,6 +69,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 631"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "about the whole document, by a placement agent reading the comment against the text (high): Online-form overall impression on central vs local approach."
       }
     ]
   }

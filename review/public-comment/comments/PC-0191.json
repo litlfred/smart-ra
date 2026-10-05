@@ -3,7 +3,7 @@
   "summary": "The document correctly identifies the need for an investment case and sustainability but does not provide a specific st…",
   "comment": "The document correctly identifies the need for an investment case and sustainability but does not provide a specific strategy for transitioning from donor-funded (project-based) models to domestically financed, service-oriented models. This transition is a critical challenge for LMICs.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "prose:4-5-3-466dad",
+  "targetLabel": "sec:4-6",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -50,11 +50,13 @@
       "raw": "§4.6, 4.6.2 p.102 l.461 - 473"
     },
     "anchor": {
-      "targetLabel": "prose:4-5-3-466dad",
-      "method": "page-line",
-      "confidence": "low",
-      "candidates": [],
-      "note": "p.102 l.461 - 473 read as the printed page; section 4.6 does NOT agree"
+      "targetLabel": "sec:4-6",
+      "method": "manual",
+      "confidence": "medium",
+      "candidates": [
+        "prose:4-5-3-466dad"
+      ],
+      "note": "placed on the section, by a placement agent reading the comment against the text (medium): Cites 4.6 and 4.6.2 asking for a donor-to-domestic financing transition strategy"
     },
     "type": "general",
     "text": "The document correctly identifies the need for an investment case and sustainability but does not provide a specific strategy for transitioning from donor-funded (project-based) models to domestically financed, service-oriented models. This transition is a critical challenge for LMICs.",
@@ -71,6 +73,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 191"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the section, by a placement agent reading the comment against the text (medium): Cites 4.6 and 4.6.2 asking for a donor-to-domestic financing transition strategy"
       }
     ]
   }

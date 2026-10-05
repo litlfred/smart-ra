@@ -3,7 +3,7 @@
   "summary": "The relationship between SGI and clinical AI is not fully explained.",
   "comment": "The relationship between SGI and clinical AI is not fully explained.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": null,
+  "targetLabel": "sec:3-4-5",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -51,11 +51,11 @@
       "raw": "§SGI and Clinical AI Governance p.Relevant Section l.Relevant Lines"
     },
     "anchor": {
-      "targetLabel": null,
-      "method": "unplaced",
+      "targetLabel": "sec:3-4-5",
+      "method": "manual",
       "confidence": "low",
       "candidates": [],
-      "note": "nothing in the citation resolved; triage places it"
+      "note": "placed on the section, by a placement agent reading the comment against the text (low): Relationship of SGI to clinical AI; placed on the SGI section"
     },
     "type": "technical",
     "text": "The relationship between SGI and clinical AI is not fully explained.",
@@ -72,6 +72,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 96"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the section, by a placement agent reading the comment against the text (low): Relationship of SGI to clinical AI; placed on the SGI section"
       }
     ]
   }

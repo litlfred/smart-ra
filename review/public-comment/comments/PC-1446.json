@@ -3,7 +3,7 @@
   "summary": "Appendices A and B are much less developed than the detailed technical component appendices. This creates an imbalance …",
   "comment": "Appendices A and B are much less developed than the detailed technical component appendices. This creates an imbalance between institutional and technical guidance.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "prose:a-a373cc",
+  "targetLabel": "sec:a",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -51,13 +51,13 @@
       "raw": "§Appendices A-B overall p.112-113 l.Entire appendices"
     },
     "anchor": {
-      "targetLabel": "prose:a-a373cc",
-      "method": "page",
-      "confidence": "low",
+      "targetLabel": "sec:a",
+      "method": "manual",
+      "confidence": "medium",
       "candidates": [
-        "tbl:a-e44ef4"
+        "prose:a-a373cc"
       ],
-      "note": "p.112-113 read as the printed page, no line resolved"
+      "note": "placed on the section, by a placement agent reading the comment against the text (medium): About Appendices A-B overall; placed on Appendix A (no shared parent)."
     },
     "text": "Appendices A and B are much less developed than the detailed technical component appendices. This creates an imbalance between institutional and technical guidance.",
     "suggestedRevision": "Expand the stakeholder and health-system mappings sufficiently to support governance, implementation, equity assessment, and investment planning, while keeping them concise and usable.",
@@ -73,6 +73,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--EY-review row 682"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the section, by a placement agent reading the comment against the text (medium): About Appendices A-B overall; placed on Appendix A (no shared parent)."
       }
     ]
   }

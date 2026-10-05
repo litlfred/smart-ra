@@ -3,7 +3,7 @@
   "summary": "The implementation guidance does not address what happens when a DPI-H component operator fails, withdraws or is discon…",
   "comment": "The implementation guidance does not address what happens when a DPI-H component operator fails, withdraws or is discontinued. For infrastructure on which a statutory right depends this is not a residual risk; it determines whether the right is real.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "prose:3-7-1-aef1b3",
+  "targetLabel": "sec:4-2-2",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -51,11 +51,13 @@
       "raw": "§4.2.2 p.90 l.113"
     },
     "anchor": {
-      "targetLabel": "prose:3-7-1-aef1b3",
-      "method": "page-line",
-      "confidence": "low",
-      "candidates": [],
-      "note": "p.90 l.113 read as the PDF page; section 4.2.2 does NOT agree"
+      "targetLabel": "sec:4-2-2",
+      "method": "manual",
+      "confidence": "medium",
+      "candidates": [
+        "prose:3-7-1-aef1b3"
+      ],
+      "note": "placed on the section, by a placement agent reading the comment against the text (medium): Cites §4.2.2 l.113 (start of phased implementation); requests continuity-of-supply guidance not tied to one paragraph."
     },
     "type": "general",
     "text": "The implementation guidance does not address what happens when a DPI-H component operator fails, withdraws or is discontinued. For infrastructure on which a statutory right depends this is not a residual risk; it determines whether the right is real.",
@@ -72,6 +74,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 460"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the section, by a placement agent reading the comment against the text (medium): Cites §4.2.2 l.113 (start of phased implementation); requests continuity-of-supply guidance not tied to one paragraph."
       }
     ]
   }

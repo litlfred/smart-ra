@@ -3,7 +3,7 @@
   "summary": "The language needs to aligned with NHWA approach. Countries are encouraged to create a national classification of occup…",
   "comment": "The language needs to aligned with NHWA approach. Countries are encouraged to create a national classification of occupations that can be mapped to ISC0-08. Refer to Annex 2 in NHWA Handbook https://www.who.int/publications/i/item/9789240081291",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": null,
+  "targetLabel": "prose:c-metadata-registries-and-foundati-health-workforce-registry-ff688e",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -46,11 +46,11 @@
       "raw": ""
     },
     "anchor": {
-      "targetLabel": null,
-      "method": "unplaced",
-      "confidence": "low",
+      "targetLabel": "prose:c-metadata-registries-and-foundati-health-workforce-registry-ff688e",
+      "method": "manual",
+      "confidence": "high",
       "candidates": [],
-      "note": "nothing in the citation resolved; triage places it"
+      "note": "placed on the block, by a placement agent reading the comment against the text (high): NHWA national occupation classification mapped to ISCO; occupational classification bullet."
     },
     "text": "The language needs to aligned with NHWA approach. Countries are encouraged to create a national classification of occupations that can be mapped to ISC0-08. Refer to Annex 2 in NHWA Handbook https://www.who.int/publications/i/item/9789240081291",
     "assignees": [],
@@ -62,6 +62,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--HWF-review row 47"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the block, by a placement agent reading the comment against the text (high): NHWA national occupation classification mapped to ISCO; occupational classification bullet."
       }
     ]
   }

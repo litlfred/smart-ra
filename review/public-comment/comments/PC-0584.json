@@ -3,7 +3,7 @@
   "summary": "The document is detailed and should be completed with the recommendations above. The executive summary needs improvemen…",
   "comment": "The document is detailed and should be completed with the recommendations above. The executive summary needs improvement — it does not cover the subject well and should be long enough to do so.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "prose:executive-summary-lead-e900bf",
+  "targetLabel": "sec:executive-summary-lead",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -50,15 +50,13 @@
       "raw": "§General / Front matter p.i–iii; 1–110"
     },
     "anchor": {
-      "targetLabel": "prose:executive-summary-lead-e900bf",
-      "method": "page",
-      "confidence": "low",
+      "targetLabel": "sec:executive-summary-lead",
+      "method": "manual",
+      "confidence": "high",
       "candidates": [
-        "prose:executive-summary-lead-01831f",
-        "prose:executive-summary-lead-7df30d",
-        "fig:1"
+        "prose:executive-summary-lead-e900bf"
       ],
-      "note": "p.i–iii; 1–110 read as the printed page, no line resolved"
+      "note": "placed on the section, by a placement agent reading the comment against the text (high): Asks to expand the Executive Summary."
     },
     "type": "editorial",
     "text": "The document is detailed and should be completed with the recommendations above. The executive summary needs improvement — it does not cover the subject well and should be long enough to do so.",
@@ -75,6 +73,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 584"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the section, by a placement agent reading the comment against the text (high): Asks to expand the Executive Summary."
       }
     ]
   }

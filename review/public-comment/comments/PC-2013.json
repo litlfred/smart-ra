@@ -3,7 +3,7 @@
   "summary": "Claims that shared HMIS reduces reporting burden depend on indicator harmonisation, workflow redesign, data reuse, and …",
   "comment": "Claims that shared HMIS reduces reporting burden depend on indicator harmonisation, workflow redesign, data reuse, and programme agreement.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "sec:c-business-services-components-health-management-information-sy",
+  "targetLabel": "prose:c-business-services-components-health-management-information-sy-4260da",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -51,13 +51,13 @@
       "raw": "§HMIS, 2 p.190 l.Rationale"
     },
     "anchor": {
-      "targetLabel": "sec:c-business-services-components-health-management-information-sy",
-      "method": "section",
-      "confidence": "low",
+      "targetLabel": "prose:c-business-services-components-health-management-information-sy-4260da",
+      "method": "manual",
+      "confidence": "high",
       "candidates": [
-        "sec:d-1-health-management-information-se"
+        "sec:c-business-services-components-health-management-information-sy"
       ],
-      "note": "section named \"Health Management Information System\""
+      "note": "placed on the block, by a placement agent reading the comment against the text (high): HMIS §2 rationale; first outcome bullet claims reduced reporting burden."
     },
     "text": "Claims that shared HMIS reduces reporting burden depend on indicator harmonisation, workflow redesign, data reuse, and programme agreement.",
     "suggestedRevision": "Qualify the claim and require measurement of actual reporting burden and duplicate data entry.",
@@ -73,6 +73,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--EY-review row 1249"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the block, by a placement agent reading the comment against the text (high): HMIS §2 rationale; first outcome bullet claims reduced reporting burden."
       }
     ]
   }

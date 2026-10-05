@@ -3,7 +3,7 @@
   "summary": "The Semantic Governance Infrastructure describes intake, review, publication, distribution and lifecycle management, bu…",
   "comment": "The Semantic Governance Infrastructure describes intake, review, publication, distribution and lifecycle management, but it does not provide a clear maturity pathway for creating new professional clinical content. There is a risk that a technically convened group could publish content before adequate evidence synthesis, professional/public consensus, clinical validation and implementation testing.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "prose:3-4-5-aef916",
+  "targetLabel": "sec:3-4-5",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -52,14 +52,13 @@
       "raw": "§3.4.5; Appendix F p.57–59; 241–250 l.373–442; Appendix F capability tables"
     },
     "anchor": {
-      "targetLabel": "prose:3-4-5-aef916",
-      "method": "page-line",
-      "confidence": "low",
+      "targetLabel": "sec:3-4-5",
+      "method": "manual",
+      "confidence": "medium",
       "candidates": [
-        "prose:3-4-5-474cc6",
-        "prose:3-4-5-f2a242"
+        "prose:3-4-5-aef916"
       ],
-      "note": "p.57–59; 241–250 l.373–442; Appendix F capability tables read as the printed page; section F does NOT agree"
+      "note": "placed on the section, by a placement agent reading the comment against the text (medium): Cites 3.4.5 l.373-442 and Appendix F on SGI content-development pathway; spans the section"
     },
     "type": "technical",
     "text": "The Semantic Governance Infrastructure describes intake, review, publication, distribution and lifecycle management, but it does not provide a clear maturity pathway for creating new professional clinical content. There is a risk that a technically convened group could publish content before adequate evidence synthesis, professional/public consensus, clinical validation and implementation testing.",
@@ -76,6 +75,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 267"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the section, by a placement agent reading the comment against the text (medium): Cites 3.4.5 l.373-442 and Appendix F on SGI content-development pathway; spans the section"
       }
     ]
   }

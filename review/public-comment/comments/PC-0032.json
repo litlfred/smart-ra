@@ -3,7 +3,7 @@
   "summary": "There is geographic imbalance in the country examples. There is no Southeast Asian, Pacific, or Central/West Asian exam…",
   "comment": "There is geographic imbalance in the country examples. There is no Southeast Asian, Pacific, or Central/West Asian example. Moreover, of the 13 countries, 7 are high-income.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": null,
+  "targetLabel": "sec:d-2",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -49,11 +49,11 @@
       "raw": "§Are the country and regional implementation examples accurate and useful? Please flag any inaccuracies, with a source where possible."
     },
     "anchor": {
-      "targetLabel": null,
-      "method": "unplaced",
-      "confidence": "low",
+      "targetLabel": "sec:d-2",
+      "method": "manual",
+      "confidence": "high",
       "candidates": [],
-      "note": "nothing in the citation resolved; triage places it"
+      "note": "placed on the section, by a placement agent reading the comment against the text (high): About the geographic balance of the country implementation examples (D.2)"
     },
     "type": "general",
     "text": "There is geographic imbalance in the country examples. There is no Southeast Asian, Pacific, or Central/West Asian example. Moreover, of the 13 countries, 7 are high-income.",
@@ -70,6 +70,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 32"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the section, by a placement agent reading the comment against the text (high): About the geographic balance of the country implementation examples (D.2)"
       }
     ]
   }

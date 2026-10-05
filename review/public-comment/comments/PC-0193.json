@@ -3,7 +3,7 @@
   "summary": "The document lists financing approaches but could provide more detailed guidance on how DPI-H components integrate with…",
   "comment": "The document lists financing approaches but could provide more detailed guidance on how DPI-H components integrate with national health insurance (NHI) and public financial management (PFM) systems. This is essential for countries implementing health financing reforms.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "prose:4-2-2-62927f",
+  "targetLabel": "prose:4-6-3-a21b35",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -50,11 +50,13 @@
       "raw": "§4.6.3 p.103 l.475 - 486"
     },
     "anchor": {
-      "targetLabel": "prose:4-2-2-62927f",
-      "method": "page-line",
-      "confidence": "low",
-      "candidates": [],
-      "note": "p.103 l.475 - 486 read as the PDF page; section 4.6.3 does NOT agree"
+      "targetLabel": "prose:4-6-3-a21b35",
+      "method": "manual",
+      "confidence": "medium",
+      "candidates": [
+        "prose:4-2-2-62927f"
+      ],
+      "note": "placed on the block, by a placement agent reading the comment against the text (medium): Cites 4.6.3 l.475-486 on the list of financing approaches; this block is that list"
     },
     "type": "general",
     "text": "The document lists financing approaches but could provide more detailed guidance on how DPI-H components integrate with national health insurance (NHI) and public financial management (PFM) systems. This is essential for countries implementing health financing reforms.",
@@ -71,6 +73,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 193"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the block, by a placement agent reading the comment against the text (medium): Cites 4.6.3 l.475-486 on the list of financing approaches; this block is that list"
       }
     ]
   }

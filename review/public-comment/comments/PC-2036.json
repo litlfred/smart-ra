@@ -3,7 +3,7 @@
   "summary": "Public-health surveillance can stigmatise communities or be repurposed for immigration, policing, or political control.",
   "comment": "Public-health surveillance can stigmatise communities or be repurposed for immigration, policing, or political control.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "sec:c-business-services-components-public-health-surveillance-platf",
+  "targetLabel": "prose:c-business-services-components-public-health-surveillance-platf-377702",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -51,13 +51,13 @@
       "raw": "§PHSP, 3 p.195 l.Core attributes"
     },
     "anchor": {
-      "targetLabel": "sec:c-business-services-components-public-health-surveillance-platf",
-      "method": "section",
+      "targetLabel": "prose:c-business-services-components-public-health-surveillance-platf-377702",
+      "method": "manual",
       "confidence": "low",
       "candidates": [
-        "sec:d-1-public-health-surveillance-platf"
+        "sec:c-business-services-components-public-health-surveillance-platf"
       ],
-      "note": "section named \"Public Health Surveillance Platform\""
+      "note": "placed on the block, by a placement agent reading the comment against the text (low): Cites PHSP §3; core attributes generally (safeguards)."
     },
     "text": "Public-health surveillance can stigmatise communities or be repurposed for immigration, policing, or political control.",
     "suggestedRevision": "Require human-rights impact assessment, community safeguards, controlled cross-sector disclosure, anti-discrimination measures, oversight, and redress.",
@@ -73,6 +73,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--EY-review row 1272"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the block, by a placement agent reading the comment against the text (low): Cites PHSP §3; core attributes generally (safeguards)."
       }
     ]
   }

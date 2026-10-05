@@ -3,7 +3,7 @@
   "summary": "Sustaining a high-performing digital public infrastructure requires continuous, long-term operational funding to preven…",
   "comment": "Sustaining a high-performing digital public infrastructure requires continuous, long-term operational funding to prevent system drift. This funding is only politically and economically defensible if it is mathematically justified by the avoidance of high-cost clinical complications. Treating operational maintenance as an isolated IT cost center makes infrastructure vulnerable to budget cuts that trigger technical decay.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "chap:ch5-future-proofing-the-architecture",
+  "targetLabel": "sec:4-6-1",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -50,11 +50,13 @@
       "raw": "§Chapter 5 l.Sustainability & Business Case"
     },
     "anchor": {
-      "targetLabel": "chap:ch5-future-proofing-the-architecture",
-      "method": "section",
+      "targetLabel": "sec:4-6-1",
+      "method": "manual",
       "confidence": "low",
-      "candidates": [],
-      "note": "chapter 5 only"
+      "candidates": [
+        "chap:ch5-future-proofing-the-architecture"
+      ],
+      "note": "placed on the section, by a placement agent reading the comment against the text (low): Cites Chapter 5 but is about the investment/business case for recurrent funding, in 4.6.1"
     },
     "type": "general",
     "text": "Sustaining a high-performing digital public infrastructure requires continuous, long-term operational funding to prevent system drift. This funding is only politically and economically defensible if it is mathematically justified by the avoidance of high-cost clinical complications. Treating operational maintenance as an isolated IT cost center makes infrastructure vulnerable to budget cuts that trigger technical decay.",
@@ -71,6 +73,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 314"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the section, by a placement agent reading the comment against the text (low): Cites Chapter 5 but is about the investment/business case for recurrent funding, in 4.6.1"
       }
     ]
   }

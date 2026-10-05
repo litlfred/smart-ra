@@ -3,7 +3,7 @@
   "summary": "High availability is required without distinguishing authoring, publication, validation, lookup, and bulk-distribution …",
   "comment": "High availability is required without distinguishing authoring, publication, validation, lookup, and bulk-distribution services.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "sec:c-metadata-registries-and-foundati-terminology-service",
+  "targetLabel": "tbl:c-metadata-registries-and-foundati-terminology-service-817b54",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -51,13 +51,13 @@
       "raw": "§Terminology Service, 5 p.170-171 l.Availability requirement"
     },
     "anchor": {
-      "targetLabel": "sec:c-metadata-registries-and-foundati-terminology-service",
-      "method": "section",
-      "confidence": "low",
+      "targetLabel": "tbl:c-metadata-registries-and-foundati-terminology-service-817b54",
+      "method": "manual",
+      "confidence": "high",
       "candidates": [
-        "sec:d-1-terminology-service-and-logical"
+        "sec:c-metadata-registries-and-foundati-terminology-service"
       ],
-      "note": "section named \"Terminology Service\""
+      "note": "placed on the block, by a placement agent reading the comment against the text (high): TS requirements table, row 24 performance and availability."
     },
     "text": "High availability is required without distinguishing authoring, publication, validation, lookup, and bulk-distribution services.",
     "suggestedRevision": "Define separate service classes and permit local caches or packages where continuous national connectivity is unavailable.",
@@ -73,6 +73,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--EY-review row 1158"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the block, by a placement agent reading the comment against the text (high): TS requirements table, row 24 performance and availability."
       }
     ]
   }

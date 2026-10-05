@@ -3,7 +3,7 @@
   "summary": "HMIS commonly denotes the broader people, processes, governance, data, and technologies supporting management informati…",
   "comment": "HMIS commonly denotes the broader people, processes, governance, data, and technologies supporting management information, not one application component.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "sec:c-business-services-components-health-management-information-sy",
+  "targetLabel": "tbl:c-business-services-components-health-management-information-sy-1fdc32",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -51,13 +51,13 @@
       "raw": "§HMIS, architecture placement p.190 l.Architecture placement"
     },
     "anchor": {
-      "targetLabel": "sec:c-business-services-components-health-management-information-sy",
-      "method": "section",
-      "confidence": "low",
+      "targetLabel": "tbl:c-business-services-components-health-management-information-sy-1fdc32",
+      "method": "manual",
+      "confidence": "high",
       "candidates": [
-        "sec:d-1-health-management-information-se"
+        "sec:c-business-services-components-health-management-information-sy"
       ],
-      "note": "section named \"Health Management Information System\""
+      "note": "placed on the block, by a placement agent reading the comment against the text (high): HMIS architecture placement/naming; the TERMINOLOGY AND SCOPE box places HMIS in business services layer."
     },
     "text": "HMIS commonly denotes the broader people, processes, governance, data, and technologies supporting management information, not one application component.",
     "suggestedRevision": "Rename the logical component Aggregate Health Information and Indicator Service, or clarify that it represents only the reusable digital services within the wider HMIS.",
@@ -73,6 +73,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--EY-review row 1245"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the block, by a placement agent reading the comment against the text (high): HMIS architecture placement/naming; the TERMINOLOGY AND SCOPE box places HMIS in business services layer."
       }
     ]
   }

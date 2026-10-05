@@ -3,7 +3,7 @@
   "summary": "Alert fatigue, automation bias, overreliance, missing data, and inappropriate use outside the intended context are not …",
   "comment": "Alert fatigue, automation bias, overreliance, missing data, and inappropriate use outside the intended context are not sufficiently addressed.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "sec:c-business-services-components-computable-decision-support-engi",
+  "targetLabel": "prose:c-business-services-components-computable-decision-support-engi-97cc2b",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -51,13 +51,13 @@
       "raw": "§CDSE, 3 p.178-179 l.Core attributes"
     },
     "anchor": {
-      "targetLabel": "sec:c-business-services-components-computable-decision-support-engi",
-      "method": "section",
-      "confidence": "low",
+      "targetLabel": "prose:c-business-services-components-computable-decision-support-engi-97cc2b",
+      "method": "manual",
+      "confidence": "medium",
       "candidates": [
-        "sec:d-1-computable-decision-support-engi"
+        "sec:c-business-services-components-computable-decision-support-engi"
       ],
-      "note": "section named \"Computable Decision Support Engine\""
+      "note": "placed on the block, by a placement agent reading the comment against the text (medium): CDSE core attributes list mentions alert fatigue."
     },
     "text": "Alert fatigue, automation bias, overreliance, missing data, and inappropriate use outside the intended context are not sufficiently addressed.",
     "suggestedRevision": "Require human-factors testing, alert governance, override capture, missing-data handling, contraindication logic, and monitoring of user response and harm.",
@@ -73,6 +73,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--EY-review row 1193"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the block, by a placement agent reading the comment against the text (medium): CDSE core attributes list mentions alert fatigue."
       }
     ]
   }

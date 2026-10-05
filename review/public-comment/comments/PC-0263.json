@@ -3,7 +3,7 @@
   "summary": "The architecture promotes capture-once/reuse-many-times and supports secondary use, but it does not provide a single as…",
   "comment": "The architecture promotes capture-once/reuse-many-times and supports secondary use, but it does not provide a single assurance pattern for the quality of source data or the governance of controlled analysis and outputs. Registries, routine reporting, dashboards and administrative datasets may otherwise be treated as ground truth without sufficient evidence of coverage, denominator quality, timeliness or validation.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "prose:5-2-b8b815",
+  "targetLabel": "sec:5-2",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -51,15 +51,13 @@
       "raw": "§5.2; Appendix C- LHR; Appendix C- HMIS p.105–106; 161; 212–213 l.42–83; LHR requirement 16; 97–104; 159–167"
     },
     "anchor": {
-      "targetLabel": "prose:5-2-b8b815",
-      "method": "page-line",
+      "targetLabel": "sec:5-2",
+      "method": "manual",
       "confidence": "low",
       "candidates": [
-        "prose:5-2-dcb8d1",
-        "prose:5-2-cc2994",
-        "prose:5-1-ea0e4f"
+        "prose:5-2-b8b815"
       ],
-      "note": "p.105–106; 161; 212–213 l.42–83; LHR requirement 16; 97–104; 159–167 read as the printed page; section C does NOT agree"
+      "note": "placed on the section, by a placement agent reading the comment against the text (low): Cites 5.2 l.42-83 plus LHR and HMIS requirements on data-source assurance; placed on 5.2"
     },
     "type": "technical",
     "text": "The architecture promotes capture-once/reuse-many-times and supports secondary use, but it does not provide a single assurance pattern for the quality of source data or the governance of controlled analysis and outputs. Registries, routine reporting, dashboards and administrative datasets may otherwise be treated as ground truth without sufficient evidence of coverage, denominator quality, timeliness or validation.",
@@ -76,6 +74,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 263"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the section, by a placement agent reading the comment against the text (low): Cites 5.2 l.42-83 plus LHR and HMIS requirements on data-source assurance; placed on 5.2"
       }
     ]
   }

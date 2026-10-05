@@ -3,7 +3,7 @@
   "summary": "Importing external terminology content without validation can introduce invalid versions, licence violations, duplicate…",
   "comment": "Importing external terminology content without validation can introduce invalid versions, licence violations, duplicate systems, or compromised packages.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "sec:c-metadata-registries-and-foundati-terminology-service",
+  "targetLabel": "tbl:c-metadata-registries-and-foundati-terminology-service-817b54",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -51,13 +51,13 @@
       "raw": "§Terminology Service, 5 p.169 l.Import requirement"
     },
     "anchor": {
-      "targetLabel": "sec:c-metadata-registries-and-foundati-terminology-service",
-      "method": "section",
-      "confidence": "low",
+      "targetLabel": "tbl:c-metadata-registries-and-foundati-terminology-service-817b54",
+      "method": "manual",
+      "confidence": "high",
       "candidates": [
-        "sec:d-1-terminology-service-and-logical"
+        "sec:c-metadata-registries-and-foundati-terminology-service"
       ],
-      "note": "section named \"Terminology Service\""
+      "note": "placed on the block, by a placement agent reading the comment against the text (high): TS requirements table, import rows (1, 4, 6, 9)."
     },
     "text": "Importing external terminology content without validation can introduce invalid versions, licence violations, duplicate systems, or compromised packages.",
     "suggestedRevision": "Require source authentication, licence verification, integrity checks, namespace validation, staging, quality review, approval, and rollback before publication.",
@@ -73,6 +73,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--EY-review row 1153"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the block, by a placement agent reading the comment against the text (high): TS requirements table, import rows (1, 4, 6, 9)."
       }
     ]
   }

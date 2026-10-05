@@ -47,10 +47,10 @@
     },
     "anchor": {
       "targetLabel": null,
-      "method": "unplaced",
-      "confidence": "low",
+      "method": "manual",
+      "confidence": "medium",
       "candidates": [],
-      "note": "nothing in the citation resolved; triage places it"
+      "note": "about the whole document, by a placement agent reading the comment against the text (medium): General point that the RA is not a prescribed end-state."
     },
     "text": "We should be explicit that this is a reference architecture rather than a prescribed end-state EA. Its purpose is to provide a set of capabilities and design considerations that countries can adapt according to their own context, and implementation priorities. Estonia evolved within the context of mature digital governance, infrastructure, and capability. Not where most countries would start. Countries are at different stages of their interoperability journey, and many will require shared interoperability capabilities to reduce complexity, support consistent policy, and accelerate adoption. The aspirations overtime could be greater distribution of responsibilities across participating systems. In my views, countries may choose a lighter or more capability rich interoperability layer based on their context - reference architecture should guide design thinking and considerations, not prescribe it.",
     "labels": {
@@ -65,6 +65,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 719"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "about the whole document, by a placement agent reading the comment against the text (medium): General point that the RA is not a prescribed end-state."
       }
     ]
   }

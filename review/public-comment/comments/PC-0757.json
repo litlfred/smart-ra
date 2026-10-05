@@ -3,7 +3,7 @@
   "summary": "We support the National Digital Architect as a lasting in-government role. We recommend also naming a transitional comp…",
   "comment": "We support the National Digital Architect as a lasting in-government role. We recommend also naming a transitional composition/integration (\"weaver\") function that assembles DPGs into a working national stack and owns the seams before a national curator exists, handed off as capacity grows. WHO supplies the blueprint; composing it into a working, accountable stack is a distinct capability.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "chap:ch4-implementing-a-national-digital",
+  "targetLabel": "sec:4-2-4",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -48,11 +48,13 @@
       "raw": "§Ch.4; §4.2.4 National Digital Architect (p.88–103) l.C18"
     },
     "anchor": {
-      "targetLabel": "chap:ch4-implementing-a-national-digital",
-      "method": "section",
-      "confidence": "low",
-      "candidates": [],
-      "note": "chapter 4 only"
+      "targetLabel": "sec:4-2-4",
+      "method": "manual",
+      "confidence": "high",
+      "candidates": [
+        "chap:ch4-implementing-a-national-digital"
+      ],
+      "note": "placed on the section, by a placement agent reading the comment against the text (high): Cites §4.2.4 National Digital Architect."
     },
     "text": "We support the National Digital Architect as a lasting in-government role. We recommend also naming a transitional composition/integration (\"weaver\") function that assembles DPGs into a working national stack and owns the seams before a national curator exists, handed off as capacity grows. WHO supplies the blueprint; composing it into a working, accountable stack is a distinct capability.",
     "labels": {
@@ -68,6 +70,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 757"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the section, by a placement agent reading the comment against the text (high): Cites §4.2.4 National Digital Architect."
       }
     ]
   }

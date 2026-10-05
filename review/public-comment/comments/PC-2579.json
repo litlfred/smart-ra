@@ -3,7 +3,7 @@
   "summary": "Note that reporting on NHWA is a byproduct, the original purpose is that quality HWF is generated that can be used to i…",
   "comment": "Note that reporting on NHWA is a byproduct, the original purpose is that quality HWF is generated that can be used to inform national HWF planning and policymaking.Suggest revising this to \"enabling Ministries of Health to generate accurate and reliable health workforce data that can be used to inform national planning and policymaking processes as well as meet their national and international reporting obligations using registry data\".",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": null,
+  "targetLabel": "prose:c-metadata-registries-and-foundati-health-workforce-registry-ff688e",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -46,11 +46,11 @@
       "raw": ""
     },
     "anchor": {
-      "targetLabel": null,
-      "method": "unplaced",
-      "confidence": "low",
+      "targetLabel": "prose:c-metadata-registries-and-foundati-health-workforce-registry-ff688e",
+      "method": "manual",
+      "confidence": "high",
       "candidates": [],
-      "note": "nothing in the citation resolved; triage places it"
+      "note": "placed on the block, by a placement agent reading the comment against the text (high): Rewrites \"enabling Ministries of Health to meet ... reporting obligations using registry data\" - last bullet."
     },
     "text": "Note that reporting on NHWA is a byproduct, the original purpose is that quality HWF is generated that can be used to inform national HWF planning and policymaking.Suggest revising this to \"enabling Ministries of Health to generate accurate and reliable health workforce data that can be used to inform national planning and policymaking processes as well as meet their national and international reporting obligations using registry data\".",
     "assignees": [],
@@ -62,6 +62,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--HWF-review row 58"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the block, by a placement agent reading the comment against the text (high): Rewrites \"enabling Ministries of Health to meet ... reporting obligations using registry data\" - last bullet."
       }
     ]
   }

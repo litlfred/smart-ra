@@ -3,7 +3,7 @@
   "summary": "what does this term \"non-intelligent identifier\" mean? do we have any reference to support this recommendation?",
   "comment": "what does this term \"non-intelligent identifier\" mean? do we have any reference to support this recommendation?",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "prose:c-metadata-registries-and-foundati-client-registry-3516a9",
+  "targetLabel": "prose:c-metadata-registries-and-foundati-health-workforce-registry-ff688e",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -46,14 +46,13 @@
       "raw": ""
     },
     "anchor": {
-      "targetLabel": "prose:c-metadata-registries-and-foundati-client-registry-3516a9",
-      "method": "quote",
-      "confidence": "low",
+      "targetLabel": "prose:c-metadata-registries-and-foundati-health-workforce-registry-ff688e",
+      "method": "manual",
+      "confidence": "high",
       "candidates": [
-        "tbl:c-metadata-registries-and-foundati-health-facility-registry-ef6169",
-        "prose:c-metadata-registries-and-foundati-health-workforce-registry-ff688e"
+        "prose:c-metadata-registries-and-foundati-client-registry-3516a9"
       ],
-      "note": "quotation found in the text"
+      "note": "placed on the block, by a placement agent reading the comment against the text (high): \"Non-intelligent identifier\" is in the HWF unique-identifier bullet; previous Client Registry notes placement was wrong."
     },
     "text": "what does this term \"non-intelligent identifier\" mean? do we have any reference to support this recommendation?",
     "assignees": [],
@@ -65,6 +64,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--HWF-review row 43"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the block, by a placement agent reading the comment against the text (high): \"Non-intelligent identifier\" is in the HWF unique-identifier bullet; previous Client Registry notes placement was wrong."
       }
     ]
   }

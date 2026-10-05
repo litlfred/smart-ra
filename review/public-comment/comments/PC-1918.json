@@ -3,7 +3,7 @@
   "summary": "Versioning is required but does not distinguish code-system version, value-set version, expansion parameters, mapping v…",
   "comment": "Versioning is required but does not distinguish code-system version, value-set version, expansion parameters, mapping version, package version, and publication status.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "sec:c-metadata-registries-and-foundati-terminology-service",
+  "targetLabel": "tbl:c-metadata-registries-and-foundati-terminology-service-817b54",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -51,13 +51,13 @@
       "raw": "§Terminology Service, 5 p.169 l.Version requirement"
     },
     "anchor": {
-      "targetLabel": "sec:c-metadata-registries-and-foundati-terminology-service",
-      "method": "section",
-      "confidence": "low",
+      "targetLabel": "tbl:c-metadata-registries-and-foundati-terminology-service-817b54",
+      "method": "manual",
+      "confidence": "high",
       "candidates": [
-        "sec:d-1-terminology-service-and-logical"
+        "sec:c-metadata-registries-and-foundati-terminology-service"
       ],
-      "note": "section named \"Terminology Service\""
+      "note": "placed on the block, by a placement agent reading the comment against the text (high): TS requirements table, versioning rows 3 and 8."
     },
     "text": "Versioning is required but does not distinguish code-system version, value-set version, expansion parameters, mapping version, package version, and publication status.",
     "suggestedRevision": "Define version semantics for each artefact type and require reproducible historical resolution.",
@@ -73,6 +73,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--EY-review row 1154"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the block, by a placement agent reading the comment against the text (high): TS requirements table, versioning rows 3 and 8."
       }
     ]
   }

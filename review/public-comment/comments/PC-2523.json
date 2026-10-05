@@ -47,10 +47,10 @@
     },
     "anchor": {
       "targetLabel": null,
-      "method": "unplaced",
-      "confidence": "low",
+      "method": "manual",
+      "confidence": "high",
       "candidates": [],
-      "note": "nothing in the citation resolved; triage places it"
+      "note": "about the whole document, by a placement agent reading the comment against the text (high): Reviewer meta-note listing the sections HWF reviewed."
     },
     "text": "HWF sections to be reviewed:1.5 health workforce goal (page 32)2.4.1 how each health goal is articulated (page 49)Appendix C Health workforce registry (page 146)Appendix E: 2 support a capable well-distributed health workforce (page 247)",
     "assignees": [],
@@ -62,6 +62,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--HWF-review row 2"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "about the whole document, by a placement agent reading the comment against the text (high): Reviewer meta-note listing the sections HWF reviewed."
       }
     ]
   }

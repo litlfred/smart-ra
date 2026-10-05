@@ -50,10 +50,10 @@
     },
     "anchor": {
       "targetLabel": null,
-      "method": "unplaced",
-      "confidence": "low",
+      "method": "manual",
+      "confidence": "medium",
       "candidates": [],
-      "note": "nothing in the citation resolved; triage places it"
+      "note": "about the whole document, by a placement agent reading the comment against the text (medium): Whole document: asks why ICD-11, ICHI and ICF are not core data standards"
     },
     "type": "general",
     "text": "Why is WHO not recommending all three of their own Family of International Classifications as core data standards? ICD-11, ICHI and ICF.  All three classifications now also have a terminological common foundation. \n\nI would also recommend including ICD-O as well.",
@@ -69,6 +69,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 318"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "about the whole document, by a placement agent reading the comment against the text (medium): Whole document: asks why ICD-11, ICHI and ICF are not core data standards"
       }
     ]
   }

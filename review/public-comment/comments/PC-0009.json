@@ -3,7 +3,7 @@
   "summary": "The section correctly stresses trusted data foundations but does not distinguish structured clinical-data exchange from…",
   "comment": "The section correctly stresses trusted data foundations but does not distinguish structured clinical-data exchange from the transport, storage and lifecycle management of diagnostic images.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "prose:c-metadata-registries-and-foundati-client-registry-95ffd8",
+  "targetLabel": "sec:5-2",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -51,15 +51,13 @@
       "raw": "§5.2 p.115-116 l.42-70"
     },
     "anchor": {
-      "targetLabel": "prose:c-metadata-registries-and-foundati-client-registry-95ffd8",
-      "method": "page-line",
-      "confidence": "low",
+      "targetLabel": "sec:5-2",
+      "method": "manual",
+      "confidence": "medium",
       "candidates": [
-        "prose:c-metadata-registries-and-foundati-client-registry-96338d",
-        "prose:c-metadata-registries-and-foundati-client-registry-ae597c",
-        "prose:c-metadata-registries-and-foundati-client-registry-61cc42"
+        "prose:c-metadata-registries-and-foundati-client-registry-95ffd8"
       ],
-      "note": "p.115-116 l.42-70 read as the printed page; section 5.2 does NOT agree"
+      "note": "placed on the section, by a placement agent reading the comment against the text (medium): Cites 5.2 l.42-70 (trusted data foundations), spanning three blocks; current Client Registry placement was a page mismatch"
     },
     "type": "technical",
     "text": "The section correctly stresses trusted data foundations but does not distinguish structured clinical-data exchange from the transport, storage and lifecycle management of diagnostic images.",
@@ -77,6 +75,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 9"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the section, by a placement agent reading the comment against the text (medium): Cites 5.2 l.42-70 (trusted data foundations), spanning three blocks; current Client Registry placement was a page mismatch"
       }
     ]
   }

@@ -3,7 +3,7 @@
   "summary": "Health systems chronically overspend on initial builds and underspend on ongoing operations. Without dedicated, recurri…",
   "comment": "Health systems chronically overspend on initial builds and underspend on ongoing operations. Without dedicated, recurring operational funding to manage software version alignment, continuous semantic normalization, local code mapping, and compliance auditing, shared national infrastructure inevitably degrades back into fragmented, non-comparable silos once short-term capital grants run out.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "chap:ch5-future-proofing-the-architecture",
+  "targetLabel": "sec:4-6",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -50,11 +50,13 @@
       "raw": "§Chapter 5 l.Operational Financing"
     },
     "anchor": {
-      "targetLabel": "chap:ch5-future-proofing-the-architecture",
-      "method": "section",
+      "targetLabel": "sec:4-6",
+      "method": "manual",
       "confidence": "low",
-      "candidates": [],
-      "note": "chapter 5 only"
+      "candidates": [
+        "chap:ch5-future-proofing-the-architecture"
+      ],
+      "note": "placed on the section, by a placement agent reading the comment against the text (low): Cites Chapter 5 but is about operational financing guidance, which lives in 4.6"
     },
     "type": "general",
     "text": "Health systems chronically overspend on initial builds and underspend on ongoing operations. Without dedicated, recurring operational funding to manage software version alignment, continuous semantic normalization, local code mapping, and compliance auditing, shared national infrastructure inevitably degrades back into fragmented, non-comparable silos once short-term capital grants run out.",
@@ -71,6 +73,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 313"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the section, by a placement agent reading the comment against the text (low): Cites Chapter 5 but is about operational financing guidance, which lives in 4.6"
       }
     ]
   }

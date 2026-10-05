@@ -3,7 +3,7 @@
   "summary": "The draft addresses open standards, model substitutability, national control and vendor lock-in. Whole-life assurance w…",
   "comment": "The draft addresses open standards, model substitutability, national control and vendor lock-in. Whole-life assurance would be stronger if it explicitly covered not only technical data portability but semantic portability, continuity of governed content, supplier exit and decommissioning. A country may possess its data but still be unable to interpret or safely migrate it if models, bindings, transformation logic or audit history are proprietary or incomplete.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "prose:2-3-7d4652",
+  "targetLabel": "prose:2-3-4a5169",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -51,13 +51,13 @@
       "raw": "§2.3; 5.4.4; Appendix C- LIMR p.35; 109; 179 l.381–389; 177–194; LIMR governance items 3–7"
     },
     "anchor": {
-      "targetLabel": "prose:2-3-7d4652",
-      "method": "page-line",
-      "confidence": "low",
+      "targetLabel": "prose:2-3-4a5169",
+      "method": "manual",
+      "confidence": "medium",
       "candidates": [
-        "prose:2-3-4a5169"
+        "prose:2-3-7d4652"
       ],
-      "note": "p.35; 109; 179 l.381–389; 177–194; LIMR governance items 3–7 read as the printed page; section C does NOT agree"
+      "note": "placed on the block, by a placement agent reading the comment against the text (medium): Cites 2.3 p.35 l.381-389 on vendor lock-in/portability; this block is l.381-389"
     },
     "type": "technical",
     "text": "The draft addresses open standards, model substitutability, national control and vendor lock-in. Whole-life assurance would be stronger if it explicitly covered not only technical data portability but semantic portability, continuity of governed content, supplier exit and decommissioning. A country may possess its data but still be unable to interpret or safely migrate it if models, bindings, transformation logic or audit history are proprietary or incomplete.",
@@ -74,6 +74,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 264"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the block, by a placement agent reading the comment against the text (medium): Cites 2.3 p.35 l.381-389 on vendor lock-in/portability; this block is l.381-389"
       }
     ]
   }

@@ -3,7 +3,7 @@
   "summary": "Workflow integration remains the responsibility of point-of-care applications, but the boundary is not sufficiently exp…",
   "comment": "Workflow integration remains the responsibility of point-of-care applications, but the boundary is not sufficiently explicit.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "sec:c-business-services-components-computable-decision-support-engi",
+  "targetLabel": "prose:c-business-services-components-computable-decision-support-engi-c75f33",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -51,13 +51,13 @@
       "raw": "§CDSE, 4 p.179 l.Relationship to point-of-care systems"
     },
     "anchor": {
-      "targetLabel": "sec:c-business-services-components-computable-decision-support-engi",
-      "method": "section",
-      "confidence": "low",
+      "targetLabel": "prose:c-business-services-components-computable-decision-support-engi-c75f33",
+      "method": "manual",
+      "confidence": "medium",
       "candidates": [
-        "sec:d-1-computable-decision-support-engi"
+        "sec:c-business-services-components-computable-decision-support-engi"
       ],
-      "note": "section named \"Computable Decision Support Engine\""
+      "note": "placed on the block, by a placement agent reading the comment against the text (medium): CDSE separation of decision logic from consuming applications."
     },
     "text": "Workflow integration remains the responsibility of point-of-care applications, but the boundary is not sufficiently explicit.",
     "suggestedRevision": "State that the CDSE exposes governed decision services or artefacts, while local applications manage presentation, workflow, user interaction, and final accountable action.",
@@ -73,6 +73,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--EY-review row 1196"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the block, by a placement agent reading the comment against the text (medium): CDSE separation of decision logic from consuming applications."
       }
     ]
   }

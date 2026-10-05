@@ -49,10 +49,10 @@
     },
     "anchor": {
       "targetLabel": null,
-      "method": "unplaced",
-      "confidence": "low",
+      "method": "manual",
+      "confidence": "high",
       "candidates": [],
-      "note": "nothing in the citation resolved; triage places it"
+      "note": "about the whole document, by a placement agent reading the comment against the text (high): Online-form answer on the component set."
     },
     "type": "general",
     "text": "DPI-H components (right set): Some of the buildoing blocks are there, but they all assume a organisational information empowerment model, with rights access managed centrally, with no nod to the opportunity for patientr empowerment of rights access pro-actively enabled at the healthcare edge.",
@@ -70,6 +70,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 605"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "about the whole document, by a placement agent reading the comment against the text (high): Online-form answer on the component set."
       }
     ]
   }

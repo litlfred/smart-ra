@@ -3,7 +3,7 @@
   "summary": "AI use – we would like a broader discussion across our national agencies before commenting on this chapter",
   "comment": "AI use – we would like a broader discussion across our national agencies before commenting on this chapter",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "chap:ch5-future-proofing-the-architecture",
+  "targetLabel": "sec:ch5-future-proofing-the-architecture-lead",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -49,11 +49,13 @@
       "raw": "§Chapter 5"
     },
     "anchor": {
-      "targetLabel": "chap:ch5-future-proofing-the-architecture",
-      "method": "section",
-      "confidence": "low",
-      "candidates": [],
-      "note": "chapter 5 only"
+      "targetLabel": "sec:ch5-future-proofing-the-architecture-lead",
+      "method": "manual",
+      "confidence": "high",
+      "candidates": [
+        "chap:ch5-future-proofing-the-architecture"
+      ],
+      "note": "placed on the section, by a placement agent reading the comment against the text (high): Cites Chapter 5 (AI) as a whole"
     },
     "text": "AI use – we would like a broader discussion across our national agencies before commenting on this chapter",
     "labels": {
@@ -69,6 +71,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 336"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the section, by a placement agent reading the comment against the text (high): Cites Chapter 5 (AI) as a whole"
       }
     ]
   }

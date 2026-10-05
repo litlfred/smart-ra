@@ -3,7 +3,7 @@
   "summary": "The document correctly asserts that AI depends on foundational  data infrastructure but doesn’t define a structured mul…",
   "comment": "The document correctly asserts that AI depends on foundational  data infrastructure but doesn’t define a structured multi-layered framework or roadmap to guide its adoption.\nCountries would benefit from a blueprint of sorts for them to understand the critical investments (e.g., compute infrastructure, data governance, applications, etc) and how to go about setting them up.\nA defined/custom AI capability stack guide in understanding how DPI-H relate to AI infrastructure",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "prose:5-1-ea0e4f",
+  "targetLabel": "sec:ch5-future-proofing-the-architecture-lead",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -50,13 +50,13 @@
       "raw": "§5.2, 5.4.1 p.104 - 107 l.24 - 70, \n142 - 153"
     },
     "anchor": {
-      "targetLabel": "prose:5-1-ea0e4f",
-      "method": "page-line",
-      "confidence": "low",
+      "targetLabel": "sec:ch5-future-proofing-the-architecture-lead",
+      "method": "manual",
+      "confidence": "medium",
       "candidates": [
-        "prose:ch5-future-proofing-the-architecture-lead-9dcc4c"
+        "prose:5-1-ea0e4f"
       ],
-      "note": "p.104 - 107 l.24 - 70, \n142 - 153 read as the printed page; section 5.2 does NOT agree"
+      "note": "placed on the section, by a placement agent reading the comment against the text (medium): Cites 5.2 and 5.4.1 and proposes a new chapter 5 sub-section for an AI capability framework"
     },
     "type": "technical",
     "text": "The document correctly asserts that AI depends on foundational  data infrastructure but doesn’t define a structured multi-layered framework or roadmap to guide its adoption.\nCountries would benefit from a blueprint of sorts for them to understand the critical investments (e.g., compute infrastructure, data governance, applications, etc) and how to go about setting them up.\nA defined/custom AI capability stack guide in understanding how DPI-H relate to AI infrastructure",
@@ -73,6 +73,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 184"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the section, by a placement agent reading the comment against the text (medium): Cites 5.2 and 5.4.1 and proposes a new chapter 5 sub-section for an AI capability framework"
       }
     ]
   }

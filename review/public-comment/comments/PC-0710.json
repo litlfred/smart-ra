@@ -3,7 +3,7 @@
   "summary": "Among the proposed components there is no component for the shared, multi-professional care plan — the living object st…",
   "comment": "Among the proposed components there is no component for the shared, multi-professional care plan — the living object stating who does what, when, and towards which goals for a specific person. 'Care plan' appears only in passing inside other components, never as an architectural object with its own repository, governance and exchange rules. Of the three recognised kinds of continuity of care — informational (data follows the person), management (one coherent shared plan), relational (being cared for by people who know you) — the draft covers essentially only the first and equates it with the whole.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "chap:ch3-the-reference-architecture-for-d",
+  "targetLabel": "sec:3-5",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -47,11 +47,13 @@
       "raw": "§Component catalogue (Ch. 3; App. C); goals on continuity of care"
     },
     "anchor": {
-      "targetLabel": "chap:ch3-the-reference-architecture-for-d",
-      "method": "section",
-      "confidence": "low",
-      "candidates": [],
-      "note": "chapter 3 only"
+      "targetLabel": "sec:3-5",
+      "method": "manual",
+      "confidence": "medium",
+      "candidates": [
+        "chap:ch3-the-reference-architecture-for-d"
+      ],
+      "note": "placed on the section, by a placement agent reading the comment against the text (medium): Proposes a new Shared Care Plan component for the component catalogue (§3.5)."
     },
     "text": "Among the proposed components there is no component for the shared, multi-professional care plan — the living object stating who does what, when, and towards which goals for a specific person. 'Care plan' appears only in passing inside other components, never as an architectural object with its own repository, governance and exchange rules. Of the three recognised kinds of continuity of care — informational (data follows the person), management (one coherent shared plan), relational (being cared for by people who know you) — the draft covers essentially only the first and equates it with the whole.",
     "suggestedRevision": "Add a Shared Care Plan component to the catalogue: a governed repository and exchange rules for multi-professional, cross-organisational, long-term plans (building on existing patterns such as FHIR CarePlan and the International Patient Summary), as the architectural carrier of management continuity.",
@@ -68,6 +70,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 710"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the section, by a placement agent reading the comment against the text (medium): Proposes a new Shared Care Plan component for the component catalogue (§3.5)."
       }
     ]
   }

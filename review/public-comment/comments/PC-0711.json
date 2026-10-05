@@ -3,7 +3,7 @@
   "summary": "The draft's implicit care model is episodic and programme-centric (HIV, TB, immunisation examples). Across 254 pages, '…",
   "comment": "The draft's implicit care model is episodic and programme-centric (HIV, TB, immunisation examples). Across 254 pages, 'integrated care', 'social care' and 'long-term care' do not appear; 'caregiver' appears once; 'chronic' four times. The person with multiple chronic conditions whose care spans health and social services over years — precisely the population that most needs shared infrastructure — is absent as a design case.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "chap:ch1-introduction",
+  "targetLabel": null,
   "tags": {
     "roles": [
       "feedback-provider"
@@ -47,11 +47,13 @@
       "raw": "§Ch. 1 (framing and examples); actor definitions throughout"
     },
     "anchor": {
-      "targetLabel": "chap:ch1-introduction",
-      "method": "section",
-      "confidence": "low",
-      "candidates": [],
-      "note": "chapter 1 only"
+      "targetLabel": null,
+      "method": "manual",
+      "confidence": "medium",
+      "candidates": [
+        "chap:ch1-introduction"
+      ],
+      "note": "about the whole document, by a placement agent reading the comment against the text (medium): Care-model framing 'throughout' (cites Ch.1 generally); no chapter-level label for Ch.1."
     },
     "text": "The draft's implicit care model is episodic and programme-centric (HIV, TB, immunisation examples). Across 254 pages, 'integrated care', 'social care' and 'long-term care' do not appear; 'caregiver' appears once; 'chronic' four times. The person with multiple chronic conditions whose care spans health and social services over years — precisely the population that most needs shared infrastructure — is absent as a design case.",
     "suggestedRevision": "Include integrated, long-term and social care explicitly in the framing and priority use cases; add social-care professionals and informal caregivers to the recognised actors; and include a worked example of a multimorbid person supported by a multi-professional, cross-organisational team over time.",
@@ -68,6 +70,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 711"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "about the whole document, by a placement agent reading the comment against the text (medium): Care-model framing 'throughout' (cites Ch.1 generally); no chapter-level label for Ch.1."
       }
     ]
   }

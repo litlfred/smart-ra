@@ -3,7 +3,7 @@
   "summary": "Governance is framed around data quality; §3.4 says nothing about privacy, consent, minimisation, purpose-limitation, o…",
   "comment": "Governance is framed around data quality; §3.4 says nothing about privacy, consent, minimisation, purpose-limitation, or access control (those live only in principles VIII–IX). We recommend treating data protection as a core governance dimension alongside data quality — good governance answers not only \"is the data good?\" but \"is it collected, shared, and accessed lawfully, minimally, and with consent?\"",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": null,
+  "targetLabel": "sec:3-4",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -48,11 +48,11 @@
       "raw": "§Governanc e principle I (p.31); §3.4 (p.53–63) l.C8"
     },
     "anchor": {
-      "targetLabel": null,
-      "method": "unplaced",
-      "confidence": "low",
+      "targetLabel": "sec:3-4",
+      "method": "manual",
+      "confidence": "medium",
       "candidates": [],
-      "note": "nothing in the citation resolved; triage places it"
+      "note": "placed on the section, by a placement agent reading the comment against the text (medium): Says §3.4 governance omits data protection; principle I also cited."
     },
     "text": "Governance is framed around data quality; §3.4 says nothing about privacy, consent, minimisation, purpose-limitation, or access control (those live only in principles VIII–IX). We recommend treating data protection as a core governance dimension alongside data quality — good governance answers not only \"is the data good?\" but \"is it collected, shared, and accessed lawfully, minimally, and with consent?\"",
     "labels": {
@@ -68,6 +68,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 746"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the section, by a placement agent reading the comment against the text (medium): Says §3.4 governance omits data protection; principle I also cited."
       }
     ]
   }

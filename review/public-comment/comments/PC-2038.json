@@ -3,7 +3,7 @@
   "summary": "Contact-tracing and case-management workflows are operational, high-volume, and event-specific.",
   "comment": "Contact-tracing and case-management workflows are operational, high-volume, and event-specific.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "sec:c-business-services-components-public-health-surveillance-platf",
+  "targetLabel": "prose:c-business-services-components-public-health-surveillance-platf-377702",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -51,13 +51,13 @@
       "raw": "§PHSP, 3 p.195 l.Core attributes"
     },
     "anchor": {
-      "targetLabel": "sec:c-business-services-components-public-health-surveillance-platf",
-      "method": "section",
-      "confidence": "low",
+      "targetLabel": "prose:c-business-services-components-public-health-surveillance-platf-377702",
+      "method": "manual",
+      "confidence": "high",
       "candidates": [
-        "sec:d-1-public-health-surveillance-platf"
+        "sec:c-business-services-components-public-health-surveillance-platf"
       ],
-      "note": "section named \"Public Health Surveillance Platform\""
+      "note": "placed on the block, by a placement agent reading the comment against the text (high): Cites PHSP §3; \"Case registration\" and \"Contact tracing\" bullets."
     },
     "text": "Contact-tracing and case-management workflows are operational, high-volume, and event-specific.",
     "suggestedRevision": "Treat them as consuming applications unless a reusable cross-hazard workflow capability is clearly justified and bounded.",
@@ -73,6 +73,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--EY-review row 1274"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the block, by a placement agent reading the comment against the text (high): Cites PHSP §3; \"Case registration\" and \"Contact tracing\" bullets."
       }
     ]
   }

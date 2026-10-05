@@ -3,7 +3,7 @@
   "summary": "The section requires a minimum actor and role set, but the examples remain institution-centred. A national role schema …",
   "comment": "The section requires a minimum actor and role set, but the examples remain institution-centred. A national role schema should distinguish the individual from people acting with or for the individual. Relationship alone must not confer access: a spouse, adult child, caregiver, legal guardian and assisted-access agent may each have different authority, scope and duration.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "prose:5-2-b8b815",
+  "targetLabel": "prose:4-3-2-513f61",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -51,11 +51,13 @@
       "raw": "§4.3.2 — Actors and Roles: Defining Who Participates p.105–106 l.285–305"
     },
     "anchor": {
-      "targetLabel": "prose:5-2-b8b815",
-      "method": "page-line",
-      "confidence": "low",
-      "candidates": [],
-      "note": "p.105–106 l.285–305 read as the printed page; section 4.3.2 does NOT agree"
+      "targetLabel": "prose:4-3-2-513f61",
+      "method": "manual",
+      "confidence": "high",
+      "candidates": [
+        "prose:5-2-b8b815"
+      ],
+      "note": "placed on the block, by a placement agent reading the comment against the text (high): Cites 4.3.2 l.285-305 on the minimum actor/role set; this paragraph defines the minimum actors and roles"
     },
     "type": "technical",
     "text": "The section requires a minimum actor and role set, but the examples remain institution-centred. A national role schema should distinguish the individual from people acting with or for the individual. Relationship alone must not confer access: a spouse, adult child, caregiver, legal guardian and assisted-access agent may each have different authority, scope and duration.",
@@ -73,6 +75,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 41"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the block, by a placement agent reading the comment against the text (high): Cites 4.3.2 l.285-305 on the minimum actor/role set; this paragraph defines the minimum actors and roles"
       }
     ]
   }

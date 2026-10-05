@@ -3,7 +3,7 @@
   "summary": "Deisgn the field to capture/link to Place of training - national trained /foreign trained",
   "comment": "Deisgn the field to capture/link to Place of training - national trained /foreign trained",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": null,
+  "targetLabel": "prose:c-metadata-registries-and-foundati-health-workforce-registry-ff688e",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -46,11 +46,11 @@
       "raw": ""
     },
     "anchor": {
-      "targetLabel": null,
-      "method": "unplaced",
-      "confidence": "low",
+      "targetLabel": "prose:c-metadata-registries-and-foundati-health-workforce-registry-ff688e",
+      "method": "manual",
+      "confidence": "medium",
       "candidates": [],
-      "note": "nothing in the citation resolved; triage places it"
+      "note": "placed on the block, by a placement agent reading the comment against the text (medium): Place of training (national/foreign); qualification bullet."
     },
     "text": "Deisgn the field to capture/link to Place of training - national trained /foreign trained",
     "assignees": [],
@@ -62,6 +62,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--HWF-review row 53"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the block, by a placement agent reading the comment against the text (medium): Place of training (national/foreign); qualification bullet."
       }
     ]
   }

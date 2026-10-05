@@ -3,7 +3,7 @@
   "summary": "Emergency access is not fully testable without defined triggers, permitted data scope, user warnings, documentation, re…",
   "comment": "Emergency access is not fully testable without defined triggers, permitted data scope, user warnings, documentation, review, and notification.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "sec:c-metadata-registries-and-foundati-lifelong-health-record",
+  "targetLabel": "tbl:c-metadata-registries-and-foundati-lifelong-health-record-ed5e15",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -51,13 +51,13 @@
       "raw": "§Lifelong Health Record, 5 p.161 l.Break-glass requirement"
     },
     "anchor": {
-      "targetLabel": "sec:c-metadata-registries-and-foundati-lifelong-health-record",
-      "method": "section",
-      "confidence": "low",
+      "targetLabel": "tbl:c-metadata-registries-and-foundati-lifelong-health-record-ed5e15",
+      "method": "manual",
+      "confidence": "high",
       "candidates": [
-        "sec:d-1-lifelong-health-record"
+        "sec:c-metadata-registries-and-foundati-lifelong-health-record"
       ],
-      "note": "section named \"Lifelong Health Record\""
+      "note": "placed on the block, by a placement agent reading the comment against the text (high): LHR requirements table, row 13 mentions emergency access / break-glass."
     },
     "text": "Emergency access is not fully testable without defined triggers, permitted data scope, user warnings, documentation, review, and notification.",
     "suggestedRevision": "Publish a national emergency-access profile with positive, negative, misuse, audit, review, and revocation test cases.",
@@ -73,6 +73,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--EY-review row 1109"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the block, by a placement agent reading the comment against the text (high): LHR requirements table, row 13 mentions emergency access / break-glass."
       }
     ]
   }

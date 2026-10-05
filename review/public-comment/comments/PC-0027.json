@@ -50,10 +50,10 @@
     },
     "anchor": {
       "targetLabel": null,
-      "method": "unplaced",
-      "confidence": "low",
+      "method": "manual",
+      "confidence": "medium",
       "candidates": [],
-      "note": "nothing in the citation resolved; triage places it"
+      "note": "about the whole document, by a placement agent reading the comment against the text (medium): Online-form answer on the component set raising CRVS and security operations; spans the document"
     },
     "type": "technical",
     "text": "Civil registration appears only as an illustration under the birth-event-publish-subscribe example. CRVS should be named as a foundational dependency. Legal identity established at birth is what allows a person to enter UHC beneficiary rolls, and death registration helps protect the system from “ghost patients.” \n\nOn cybersecurity operations: Security is treated as a design principle but not as a standing operational capability that has recurring costs. A security operations and incident-response function is an institutional requirement that ministries need to secure continuous funding for.",
@@ -70,6 +70,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 27"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "about the whole document, by a placement agent reading the comment against the text (medium): Online-form answer on the component set raising CRVS and security operations; spans the document"
       }
     ]
   }

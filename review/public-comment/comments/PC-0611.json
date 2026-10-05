@@ -49,10 +49,10 @@
     },
     "anchor": {
       "targetLabel": null,
-      "method": "unplaced",
-      "confidence": "low",
+      "method": "manual",
+      "confidence": "high",
       "candidates": [],
-      "note": "nothing in the citation resolved; triage places it"
+      "note": "about the whole document, by a placement agent reading the comment against the text (high): Online-form answer on the component set, listing several missing components."
     },
     "type": "general",
     "text": "DPI-H components (right set): Mostly right (registries, LHR, TS, LIMR), but incomplete: add enforceable Consent; claims adjudication with Benefits Package; product track-and-trace; security/IAM plane beyond RBAC; AI inference controls if AI is in scope.",
@@ -70,6 +70,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 611"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "about the whole document, by a placement agent reading the comment against the text (high): Online-form answer on the component set, listing several missing components."
       }
     ]
   }

@@ -47,10 +47,10 @@
     },
     "anchor": {
       "targetLabel": null,
-      "method": "unplaced",
-      "confidence": "low",
+      "method": "manual",
+      "confidence": "medium",
       "candidates": [],
-      "note": "nothing in the citation resolved; triage places it"
+      "note": "about the whole document, by a placement agent reading the comment against the text (medium): General point that RA boxes are capabilities, not standalone systems."
     },
     "text": "From: https://www.digitalhealth.gov.au/sites/default/files/documents/csr-8169-health-connect-australia-architechture8.pdf: Australia offers a middle reference point. Not all interoperability capabilities should sit in a central ESB, and not all health specific capabilities should be pushed entirely to endpoints. Instead, it adopts an architecture in which nationally shared capabilities coexist with locally owned systems, with responsibilities distributed according to where they provide the greatest value – I feel this aligns with our current RA understanding as well.\n\nFinally, one key lesson from ‘OpenHIE discussions with countries’ is that each box is often interpreted as requiring a separate systems or procurements, kicking off another debate. It might be useful to clarify that these DPI-H RA boxes represent reference capabilities and not target state, standalone platforms. Smaller or more centralised countries may choose to consolidate multiple capabilities within a single solution/platform/system and still achieve the intended outcomes.",
     "labels": {
@@ -65,6 +65,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 720"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "about the whole document, by a placement agent reading the comment against the text (medium): General point that RA boxes are capabilities, not standalone systems."
       }
     ]
   }

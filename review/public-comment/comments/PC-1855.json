@@ -3,7 +3,7 @@
   "summary": "The relationship to the Terminology Service and LIMR is described at a high level but not connected to implementation g…",
   "comment": "The relationship to the Terminology Service and LIMR is described at a high level but not connected to implementation guides, validators, transformation specifications, and release management.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "sec:c-metadata-registries-and-foundati-lifelong-health-record",
+  "targetLabel": "prose:c-metadata-registries-and-foundati-lifelong-health-record-a31138",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -51,13 +51,13 @@
       "raw": "§Lifelong Health Record, 4 p.159 l.Relationship to other systems"
     },
     "anchor": {
-      "targetLabel": "sec:c-metadata-registries-and-foundati-lifelong-health-record",
-      "method": "section",
-      "confidence": "low",
+      "targetLabel": "prose:c-metadata-registries-and-foundati-lifelong-health-record-a31138",
+      "method": "manual",
+      "confidence": "medium",
       "candidates": [
-        "sec:d-1-lifelong-health-record"
+        "sec:c-metadata-registries-and-foundati-lifelong-health-record"
       ],
-      "note": "section named \"Lifelong Health Record\""
+      "note": "placed on the block, by a placement agent reading the comment against the text (medium): LHR relationship para on Terminology Service and LIMR."
     },
     "text": "The relationship to the Terminology Service and LIMR is described at a high level but not connected to implementation guides, validators, transformation specifications, and release management.",
     "suggestedRevision": "Add an artefact chain showing logical model, terminology binding, implementation profile, validation package, transformation specification, deployed version, and conformance evidence.",
@@ -73,6 +73,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--EY-review row 1091"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the block, by a placement agent reading the comment against the text (medium): LHR relationship para on Terminology Service and LIMR."
       }
     ]
   }

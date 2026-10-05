@@ -52,10 +52,10 @@
     },
     "anchor": {
       "targetLabel": null,
-      "method": "unplaced",
-      "confidence": "low",
+      "method": "manual",
+      "confidence": "medium",
       "candidates": [],
-      "note": "nothing in the citation resolved; triage places it"
+      "note": "about the whole document, by a placement agent reading the comment against the text (medium): Cross-cutting request to cover emergency care and blood services across goals and components; reviewer cites 'across the document'."
     },
     "type": "general",
     "text": "It may be useful for the draft to give more explicit consideration to include emergency care and blood-bank services within the proposed digital health architecture. Blood bank and transfusion services, as well as emergency medical response, are important areas within digital health (As reflected in WHO's classification of digital health interventions ID: 9789240081949) and could be reflected more clearly across the relevant priority goals and components. For example, the Facility Registry could consider including blood banks and ambulance/EMS stations within its illustrative facility types and services. Similarly, the Public Health Surveillance Platform and Product Registry could consider whether there are relevant use cases for these domains. It may also be worth considering whether emergency response and blood-bank services would benefit from a more explicitly defined business process or component, given their close relationship with several of the capabilities already described in the architecture. Making these linkages more explicit could help ensure that the architecture is sufficiently comprehensive across essential health-service delivery domains.",
@@ -72,6 +72,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 419"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "about the whole document, by a placement agent reading the comment against the text (medium): Cross-cutting request to cover emergency care and blood services across goals and components; reviewer cites 'across the document'."
       }
     ]
   }

@@ -52,10 +52,10 @@
     },
     "anchor": {
       "targetLabel": null,
-      "method": "unplaced",
-      "confidence": "low",
+      "method": "manual",
+      "confidence": "high",
       "candidates": [],
-      "note": "nothing in the citation resolved; triage places it"
+      "note": "about the whole document, by a placement agent reading the comment against the text (high): Document-wide style (em dashes)."
     },
     "text": "Excessive use of em dashes (\"—\") throughout the document.\nThe writing style appears overly AI-generated and can feel unnatural to readers.",
     "suggestedRevision": "Replace unnecessary em dashes with standard punctuation (full stops, commas, semicolons) and revise sentence structure where appropriate to achieve a more natural, professional tone.Aidaa",
@@ -71,6 +71,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--EY-review row 2"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "about the whole document, by a placement agent reading the comment against the text (high): Document-wide style (em dashes)."
       }
     ]
   }

@@ -3,7 +3,7 @@
   "summary": "The equity principle is strong on geographic, connectivity and institutional constraints, but it does not address user-…",
   "comment": "The equity principle is strong on geographic, connectivity and institutional constraints, but it does not address user-side capability constraints. Across the life course, people may experience changes in vision, hearing, dexterity, cognition, language, literacy and digital confidence. Unless these are treated as architectural concerns, a service may be technically available yet practically unusable. ITU-T F.780.2 already recognises accessibility requirements for telehealth services, including older persons with age-related disabilities.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "prose:2-3-cb8583",
+  "targetLabel": "prose:2-3-5d50f2",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -51,11 +51,13 @@
       "raw": "§1.4 — VII. Equity and Inclusion p.44 l.325–343"
     },
     "anchor": {
-      "targetLabel": "prose:2-3-cb8583",
-      "method": "page-line",
-      "confidence": "low",
-      "candidates": [],
-      "note": "p.44 l.325–343 read as the PDF page; section 1.4 does NOT agree"
+      "targetLabel": "prose:2-3-5d50f2",
+      "method": "manual",
+      "confidence": "high",
+      "candidates": [
+        "prose:2-3-cb8583"
+      ],
+      "note": "placed on the block, by a placement agent reading the comment against the text (high): Cites Equity and Inclusion principle l.325-343; this is the principle body starting l.326"
     },
     "type": "general",
     "text": "The equity principle is strong on geographic, connectivity and institutional constraints, but it does not address user-side capability constraints. Across the life course, people may experience changes in vision, hearing, dexterity, cognition, language, literacy and digital confidence. Unless these are treated as architectural concerns, a service may be technically available yet practically unusable. ITU-T F.780.2 already recognises accessibility requirements for telehealth services, including older persons with age-related disabilities.",
@@ -86,6 +88,13 @@
         "by": "review-log",
         "task": "Process_PublicComment#Task_EditorDecides",
         "note": "the log's status was \"Accepted\""
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the block, by a placement agent reading the comment against the text (high): Cites Equity and Inclusion principle l.325-343; this is the principle body starting l.326"
       }
     ]
   }

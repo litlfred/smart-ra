@@ -3,7 +3,7 @@
   "summary": "I am proposing  a text to be included «A ‘non-intelligent identifier’ carries no embedded meaning (no encoded district,…",
   "comment": "I am proposing  a text to be included «A ‘non-intelligent identifier’ carries no embedded meaning (no encoded district, cadre, or facility code) and does not change when a worker's name, employer, or location changes. This keeps the identifier stable over a worker's whole career rather than requiring reassignment whenever an underlying attribute changes. »",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "prose:c-metadata-registries-and-foundati-client-registry-3516a9",
+  "targetLabel": "prose:c-metadata-registries-and-foundati-health-workforce-registry-ff688e",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -46,14 +46,13 @@
       "raw": ""
     },
     "anchor": {
-      "targetLabel": "prose:c-metadata-registries-and-foundati-client-registry-3516a9",
-      "method": "quote",
-      "confidence": "low",
+      "targetLabel": "prose:c-metadata-registries-and-foundati-health-workforce-registry-ff688e",
+      "method": "manual",
+      "confidence": "high",
       "candidates": [
-        "tbl:c-metadata-registries-and-foundati-health-facility-registry-ef6169",
-        "prose:c-metadata-registries-and-foundati-health-workforce-registry-ff688e"
+        "prose:c-metadata-registries-and-foundati-client-registry-3516a9"
       ],
-      "note": "quotation found in the text"
+      "note": "placed on the block, by a placement agent reading the comment against the text (high): Proposed definition of non-intelligent identifier mirrors the HWF identifier bullet (persistent across name, employer changes)."
     },
     "text": "I am proposing  a text to be included «A ‘non-intelligent identifier’ carries no embedded meaning (no encoded district, cadre, or facility code) and does not change when a worker's name, employer, or location changes. This keeps the identifier stable over a worker's whole career rather than requiring reassignment whenever an underlying attribute changes. »",
     "assignees": [],
@@ -65,6 +64,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--HWF-review row 44"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the block, by a placement agent reading the comment against the text (high): Proposed definition of non-intelligent identifier mirrors the HWF identifier bullet (persistent across name, employer changes)."
       }
     ]
   }

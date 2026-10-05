@@ -49,10 +49,10 @@
     },
     "anchor": {
       "targetLabel": null,
-      "method": "unplaced",
-      "confidence": "low",
+      "method": "manual",
+      "confidence": "high",
       "candidates": [],
-      "note": "nothing in the citation resolved; triage places it"
+      "note": "about the whole document, by a placement agent reading the comment against the text (high): Online-form reason for disagreement, document-wide."
     },
     "type": "general",
     "text": "Reason for disagreement: The document is focussed on high-level concepts and does not underline that a) interoperability is an arising property of local implementations and b) concrete testing and implementation examples are not a procedural afterthought, but the starting point of developing digital infrastructure, and finally c) the homogenisation process that leads to bottom-up interoperability is missing entirely, as the assumption is for a top-down process in the first place.",
@@ -69,6 +69,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 632"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "about the whole document, by a placement agent reading the comment against the text (high): Online-form reason for disagreement, document-wide."
       }
     ]
   }

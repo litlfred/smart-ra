@@ -3,7 +3,7 @@
   "summary": "My other main comment is on the beneficiary registry. I remember that we had once discussed this in one of the Friday m…",
   "comment": "My other main comment is on the beneficiary registry. I remember that we had once discussed this in one of the Friday meetings. Even then, I was not fully following and unclear what the group members had in mind. I cannot relate this to our HF framework and core HF functions. I would appreciate if we can again take 10 minutes at the next Friday meeting and quickly review/reflect.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": null,
+  "targetLabel": "sec:c-business-services-components-benefits-package-registry-distinguishing-the-benefits-pack",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -46,11 +46,11 @@
       "raw": ""
     },
     "anchor": {
-      "targetLabel": null,
-      "method": "unplaced",
+      "targetLabel": "sec:c-business-services-components-benefits-package-registry-distinguishing-the-benefits-pack",
+      "method": "manual",
       "confidence": "low",
       "candidates": [],
-      "note": "nothing in the citation resolved; triage places it"
+      "note": "placed on the section, by a placement agent reading the comment against the text (low): Questions the Beneficiary Registry concept, described in this App. C subsection."
     },
     "text": "My other main comment is on the beneficiary registry. I remember that we had once discussed this in one of the Friday meetings. Even then, I was not fully following and unclear what the group members had in mind. I cannot relate this to our HF framework and core HF functions. I would appreciate if we can again take 10 minutes at the next Friday meeting and quickly review/reflect.",
     "labels": {
@@ -65,6 +65,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 716"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the section, by a placement agent reading the comment against the text (low): Questions the Beneficiary Registry concept, described in this App. C subsection."
       }
     ]
   }

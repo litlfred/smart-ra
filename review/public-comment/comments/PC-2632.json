@@ -3,7 +3,7 @@
   "summary": "This platform could be used for surveillance of all public health events, not just epidemics and climate events.",
   "comment": "This platform could be used for surveillance of all public health events, not just epidemics and climate events.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": null,
+  "targetLabel": "sec:c-business-services-components-public-health-surveillance-platf",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -46,11 +46,11 @@
       "raw": ""
     },
     "anchor": {
-      "targetLabel": null,
-      "method": "unplaced",
-      "confidence": "low",
+      "targetLabel": "sec:c-business-services-components-public-health-surveillance-platf",
+      "method": "manual",
+      "confidence": "medium",
       "candidates": [],
-      "note": "nothing in the citation resolved; triage places it"
+      "note": "placed on the section, by a placement agent reading the comment against the text (medium): \"This platform\" should cover all public health events; Public Health Surveillance Platform section."
     },
     "text": "This platform could be used for surveillance of all public health events, not just epidemics and climate events.",
     "assignees": [],
@@ -62,6 +62,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--HWF-review row 111"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the section, by a placement agent reading the comment against the text (medium): \"This platform\" should cover all public health events; Public Health Surveillance Platform section."
       }
     ]
   }

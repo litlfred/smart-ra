@@ -47,10 +47,10 @@
     },
     "anchor": {
       "targetLabel": null,
-      "method": "unplaced",
-      "confidence": "low",
+      "method": "manual",
+      "confidence": "high",
       "candidates": [],
-      "note": "nothing in the citation resolved; triage places it"
+      "note": "about the whole document, by a placement agent reading the comment against the text (high): Requests a dedicated private-sector section across the document."
     },
     "text": "I saw several references to private sector, it would be good to have a specific section on the private sector to show the specific elements to consider for it. From my understanding, this is (with military, worth the thinking as well) the most difficult element to incorporate in any digital architecture. It has its specificity and rational that could be worth highlighting. Why would private sector join, and even contribute to funding an infrastructure which is design for public purpose? The private sector (military sector is the same) logic needs to be analysed, discussed, and incorporate so that there are mutual benefits. The data protection would have particular components to consider both for avoiding the private sector to make a commercial use of the architecture, but also for the public sector to use an architecture with private sector to conduct retaliation on some elements such as dual practice.",
     "assignees": [],
@@ -62,6 +62,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--HWF-review row 31"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "about the whole document, by a placement agent reading the comment against the text (high): Requests a dedicated private-sector section across the document."
       }
     ]
   }

@@ -3,7 +3,7 @@
   "summary": "Foundational DPI is repeatedly presented as identity, payments, and data exchange. These are common DPI categories, but…",
   "comment": "Foundational DPI is repeatedly presented as identity, payments, and data exchange. These are common DPI categories, but the formulation may be read as an exhaustive taxonomy and excludes trust services, digital credentials, consent, geospatial infrastructure, and notification services that some countries may treat as foundational.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "prose:2-1-4a32c0",
+  "targetLabel": "prose:1-2-540f32",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -51,11 +51,13 @@
       "raw": "§1.2 p.24 l.Lines 173-184"
     },
     "anchor": {
-      "targetLabel": "prose:2-1-4a32c0",
-      "method": "page-line",
-      "confidence": "low",
-      "candidates": [],
-      "note": "p.24 l.Lines 173-184 read as the printed page; section 1.2 does NOT agree"
+      "targetLabel": "prose:1-2-540f32",
+      "method": "manual",
+      "confidence": "high",
+      "candidates": [
+        "prose:2-1-4a32c0"
+      ],
+      "note": "placed on the block, by a placement agent reading the comment against the text (high): §1.2 lines 173-184: 'identity, payments, and data exchange' paragraph (l.174)."
     },
     "text": "Foundational DPI is repeatedly presented as identity, payments, and data exchange. These are common DPI categories, but the formulation may be read as an exhaustive taxonomy and excludes trust services, digital credentials, consent, geospatial infrastructure, and notification services that some countries may treat as foundational.",
     "suggestedRevision": "Clarify that identity, payments, and data exchange are the principal foundational DPI categories considered by this guidance, but that national DPI portfolios may include additional shared capabilities.",
@@ -71,6 +73,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--EY-review row 6"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the block, by a placement agent reading the comment against the text (high): §1.2 lines 173-184: 'identity, payments, and data exchange' paragraph (l.174)."
       }
     ]
   }

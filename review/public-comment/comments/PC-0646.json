@@ -49,10 +49,10 @@
     },
     "anchor": {
       "targetLabel": null,
-      "method": "unplaced",
-      "confidence": "low",
+      "method": "manual",
+      "confidence": "high",
       "candidates": [],
-      "note": "nothing in the citation resolved; triage places it"
+      "note": "about the whole document, by a placement agent reading the comment against the text (high): Online-form overall impression (last-mile perspective across document)."
     },
     "type": "general",
     "text": "Overall impression: The draft is technically thorough and well-structured, covering the architecture landscape comprehensively. However, it reads primarily from the perspective of national governments and large institutions, and would benefit from stronger guidance on how the architecture applies at the last mile, where community health workers, offline environments, and resource-constrained field operations are the reality for the majority of the populations this infrastructure is meant to serve.",
@@ -69,6 +69,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 646"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "about the whole document, by a placement agent reading the comment against the text (high): Online-form overall impression (last-mile perspective across document)."
       }
     ]
   }

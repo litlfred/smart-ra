@@ -51,10 +51,10 @@
     },
     "anchor": {
       "targetLabel": null,
-      "method": "unplaced",
-      "confidence": "low",
+      "method": "manual",
+      "confidence": "medium",
       "candidates": [],
-      "note": "nothing in the citation resolved; triage places it"
+      "note": "about the whole document, by a placement agent reading the comment against the text (medium): Drafting note to the submitter about how a REDDHI compliment was reframed, not about document text."
     },
     "text": "Your original comment 5 read \"REDDHI framework outstanding — our compliments.\" The consolidated row keeps the praise but reframes it as a criticism (\"not given the prominence it deserves\", tables \"need more explanation\") and types it Technical. Only rows 11 and 19 now read as pure compliments.",
     "suggestedRevision": "(a) Restore as a pure compliment, as you originally wrote it; (b) split into two rows — one compliment on REDDHI/STAC, one Technical comment asking for more prominence and explanation; (c) leave as drafted. Please indicate preference.",
@@ -70,6 +70,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 588"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "about the whole document, by a placement agent reading the comment against the text (medium): Drafting note to the submitter about how a REDDHI compliment was reframed, not about document text."
       }
     ]
   }

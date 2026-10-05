@@ -3,7 +3,7 @@
   "summary": "Institutional licensing responsibilities — A managed service cannot grant rights absent from the applicable terms. Appl…",
   "comment": "Institutional licensing responsibilities — A managed service cannot grant rights absent from the applicable terms. Apply the published WHO terms of use for ICD-11 content and software (https://icd.who.int/en/docs/ICD11-license.pdf), as revised from time to time, separately to content and software; verify the terms in force at publication. Translations, mappings and supplementary metadata require source-specific treatment. See C037; unpublished draft agreements are not substituted for operative terms.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "sec:c-metadata-registries-and-foundati-terminology-service",
+  "targetLabel": "tbl:c-metadata-registries-and-foundati-terminology-service-eb8233",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -48,13 +48,13 @@
       "raw": "§Terminology Service, Governance p.171 l.A18.04"
     },
     "anchor": {
-      "targetLabel": "sec:c-metadata-registries-and-foundati-terminology-service",
-      "method": "section",
-      "confidence": "low",
+      "targetLabel": "tbl:c-metadata-registries-and-foundati-terminology-service-eb8233",
+      "method": "manual",
+      "confidence": "high",
       "candidates": [
-        "sec:d-1-terminology-service-and-logical"
+        "sec:c-metadata-registries-and-foundati-terminology-service"
       ],
-      "note": "section named \"Terminology Service\""
+      "note": "placed on the block, by a placement agent reading the comment against the text (high): Cites TS Governance; the GOVERNANCE box (expertise list, licensing item 4, release management)."
     },
     "text": "Institutional licensing responsibilities — A managed service cannot grant rights absent from the applicable terms. Apply the published WHO terms of use for ICD-11 content and software (https://icd.who.int/en/docs/ICD11-license.pdf), as revised from time to time, separately to content and software; verify the terms in force at publication. Translations, mappings and supplementary metadata require source-specific treatment. See C037; unpublished draft agreements are not substituted for operative terms.",
     "suggestedRevision": "Replace whole item: (4) Licensing obligations. Governance should identify the applicable terms, accountable parties, and recurring costs for each selected content source and software component. WHO's published ICD-11 content and software terms should be documented alongside those of other suppliers. Free access or a royalty-free software licence should not be described as permission to alter the international classification. Licence compliance should be monitored throughout deployment and exchange.",
@@ -70,6 +70,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--CAT-WHO-FIC row 53"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the block, by a placement agent reading the comment against the text (high): Cites TS Governance; the GOVERNANCE box (expertise list, licensing item 4, release management)."
       }
     ]
   }

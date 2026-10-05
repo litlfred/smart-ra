@@ -49,10 +49,10 @@
     },
     "anchor": {
       "targetLabel": null,
-      "method": "unplaced",
-      "confidence": "low",
+      "method": "manual",
+      "confidence": "high",
       "candidates": [],
-      "note": "nothing in the citation resolved; triage places it"
+      "note": "about the whole document, by a placement agent reading the comment against the text (high): Online-form context assumptions (long-term care)."
     },
     "type": "general",
     "text": "Context assumptions: In a care setting, such as Long term Care spanning years across multiple organisations mostly including care at home, where those organisations are too small/fragmented to understand how to manage their integration suppliers and insufficiently capable on information governance as a core skill (instead emphasising care and clinical skills over digital). Empowering patients through this same architectural semantic model should be covered, especially in the consent management and governance sections.",
@@ -70,6 +70,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 606"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "about the whole document, by a placement agent reading the comment against the text (high): Online-form context assumptions (long-term care)."
       }
     ]
   }

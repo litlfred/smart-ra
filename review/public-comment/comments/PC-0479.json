@@ -3,7 +3,7 @@
   "summary": "No EU/EEA member state with a federated, market-based delivery system appears among the examples, and the Netherlands i…",
   "comment": "No EU/EEA member state with a federated, market-based delivery system appears among the examples, and the Netherlands is absent altogether. It is an unusually informative case because it separates technical maturity from ordering capacity: high digitisation, mature standards, twenty years of national programmes, and persistent discontinuity of information between providers.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "prose:c-business-services-components-public-health-surveillance-platf-a0d870",
+  "targetLabel": "sec:d-2",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -51,11 +51,13 @@
       "raw": "§Appendix D p.229 l.23"
     },
     "anchor": {
-      "targetLabel": "prose:c-business-services-components-public-health-surveillance-platf-a0d870",
-      "method": "page-line",
-      "confidence": "low",
-      "candidates": [],
-      "note": "p.229 l.23 read as the PDF page; section D does NOT agree"
+      "targetLabel": "sec:d-2",
+      "method": "manual",
+      "confidence": "high",
+      "candidates": [
+        "prose:c-business-services-components-public-health-surveillance-platf-a0d870"
+      ],
+      "note": "placed on the section, by a placement agent reading the comment against the text (high): Asks to add the Netherlands to the Appendix D country examples."
     },
     "type": "general",
     "text": "No EU/EEA member state with a federated, market-based delivery system appears among the examples, and the Netherlands is absent altogether. It is an unusually informative case because it separates technical maturity from ordering capacity: high digitisation, mature standards, twenty years of national programmes, and persistent discontinuity of information between providers.",
@@ -72,6 +74,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 479"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the section, by a placement agent reading the comment against the text (high): Asks to add the Netherlands to the Appendix D country examples."
       }
     ]
   }

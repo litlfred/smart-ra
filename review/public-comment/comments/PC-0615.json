@@ -3,7 +3,7 @@
   "summary": "Country / regional examples: Cannot validate here; current examples are too thin and overstate transferability. Strengt…",
   "comment": "Country / regional examples: Cannot validate here; current examples are too thin and overstate transferability. Strengthen with component mapping, failure modes, cost/governance, and applicability class (high-connectivity vs constrained). Keep tool lists illustrative, not endorsed.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": null,
+  "targetLabel": "sec:d",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -48,11 +48,11 @@
       "raw": ""
     },
     "anchor": {
-      "targetLabel": null,
-      "method": "unplaced",
-      "confidence": "low",
+      "targetLabel": "sec:d",
+      "method": "manual",
+      "confidence": "medium",
       "candidates": [],
-      "note": "nothing in the citation resolved; triage places it"
+      "note": "placed on the section, by a placement agent reading the comment against the text (medium): Online-form answer specifically about the Appendix D country examples and tool lists."
     },
     "type": "general",
     "text": "Country / regional examples: Cannot validate here; current examples are too thin and overstate transferability. Strengthen with component mapping, failure modes, cost/governance, and applicability class (high-connectivity vs constrained). Keep tool lists illustrative, not endorsed.",
@@ -70,6 +70,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 615"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the section, by a placement agent reading the comment against the text (medium): Online-form answer specifically about the Appendix D country examples and tool lists."
       }
     ]
   }

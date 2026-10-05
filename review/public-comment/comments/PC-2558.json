@@ -3,7 +3,7 @@
   "summary": "Worth mentioning here that a national HRHIS is a system of systems - it includes HWF registry, HRIS, LMS (covering the …",
   "comment": "Worth mentioning here that a national HRHIS is a system of systems - it includes HWF registry, HRIS, LMS (covering the gamut of pre-service and continuing education), payroll, etc. It also involves diversification and triangulation with multiple data sources, such as Census, labour force surveys, etc. So in order to monitor the entire aspects of the health labour market, a health workforce registry in itself is not sufficient.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": null,
+  "targetLabel": "sec:c-metadata-registries-and-foundati-health-workforce-registry",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -46,11 +46,11 @@
       "raw": ""
     },
     "anchor": {
-      "targetLabel": null,
-      "method": "unplaced",
-      "confidence": "low",
+      "targetLabel": "sec:c-metadata-registries-and-foundati-health-workforce-registry",
+      "method": "manual",
+      "confidence": "medium",
       "candidates": [],
-      "note": "nothing in the citation resolved; triage places it"
+      "note": "placed on the section, by a placement agent reading the comment against the text (medium): HRHIS as system of systems / registry alone insufficient; applies to the HWF Registry framing, exact paragraph unclear."
     },
     "text": "Worth mentioning here that a national HRHIS is a system of systems - it includes HWF registry, HRIS, LMS (covering the gamut of pre-service and continuing education), payroll, etc. It also involves diversification and triangulation with multiple data sources, such as Census, labour force surveys, etc. So in order to monitor the entire aspects of the health labour market, a health workforce registry in itself is not sufficient.",
     "assignees": [],
@@ -62,6 +62,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--HWF-review row 37"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the section, by a placement agent reading the comment against the text (medium): HRHIS as system of systems / registry alone insufficient; applies to the HWF Registry framing, exact paragraph unclear."
       }
     ]
   }

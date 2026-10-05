@@ -3,7 +3,7 @@
   "summary": "Reproducibility requires the same input, rule set, configuration, reference data, and time context, not merely the same…",
   "comment": "Reproducibility requires the same input, rule set, configuration, reference data, and time context, not merely the same rule identifier.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "sec:c-business-services-components-computable-decision-support-engi",
+  "targetLabel": "tbl:c-business-services-components-computable-decision-support-engi-4b7f45",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -51,13 +51,13 @@
       "raw": "§CDSE, 5 p.179 l.Rule execution requirement"
     },
     "anchor": {
-      "targetLabel": "sec:c-business-services-components-computable-decision-support-engi",
-      "method": "section",
-      "confidence": "low",
+      "targetLabel": "tbl:c-business-services-components-computable-decision-support-engi-4b7f45",
+      "method": "manual",
+      "confidence": "medium",
       "candidates": [
-        "sec:d-1-computable-decision-support-engi"
+        "sec:c-business-services-components-computable-decision-support-engi"
       ],
-      "note": "section named \"Computable Decision Support Engine\""
+      "note": "placed on the block, by a placement agent reading the comment against the text (medium): CDSE requirements table (rule execution/versioning rows)."
     },
     "text": "Reproducibility requires the same input, rule set, configuration, reference data, and time context, not merely the same rule identifier.",
     "suggestedRevision": "Require recording of every dependency needed to reproduce an execution result.",
@@ -73,6 +73,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--EY-review row 1198"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the block, by a placement agent reading the comment against the text (medium): CDSE requirements table (rule execution/versioning rows)."
       }
     ]
   }

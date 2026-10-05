@@ -3,7 +3,7 @@
   "summary": "The component needs a complete computable-guidance conformance package.",
   "comment": "The component needs a complete computable-guidance conformance package.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "prose:c-metadata-registries-and-foundati-terminology-service-3a8e2d",
+  "targetLabel": "sec:c-business-services-components-computable-decision-support-engi",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -51,15 +51,13 @@
       "raw": "§CDSE overall p.177-181 l.Complete component"
     },
     "anchor": {
-      "targetLabel": "prose:c-metadata-registries-and-foundati-terminology-service-3a8e2d",
-      "method": "page",
-      "confidence": "low",
+      "targetLabel": "sec:c-business-services-components-computable-decision-support-engi",
+      "method": "manual",
+      "confidence": "high",
       "candidates": [
-        "prose:c-metadata-registries-and-foundati-terminology-service-13a304",
-        "prose:c-metadata-registries-and-foundati-terminology-service-638c02",
-        "prose:c-metadata-registries-and-foundati-terminology-service-ee8e2f"
+        "prose:c-metadata-registries-and-foundati-terminology-service-3a8e2d"
       ],
-      "note": "p.177-181 read as the PDF page, no line resolved"
+      "note": "placed on the section, by a placement agent reading the comment against the text (high): Comment on the CDSE component as a whole (was on a TS block)."
     },
     "text": "The component needs a complete computable-guidance conformance package.",
     "suggestedRevision": "Publish knowledge-artefact profiles, execution-service interfaces, test cases, reference patients, expected outputs, safety requirements, dependency metadata, and monitoring standards.",
@@ -75,6 +73,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--EY-review row 1204"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the section, by a placement agent reading the comment against the text (high): Comment on the CDSE component as a whole (was on a TS block)."
       }
     ]
   }

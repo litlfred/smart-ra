@@ -48,10 +48,10 @@
     },
     "anchor": {
       "targetLabel": null,
-      "method": "unplaced",
-      "confidence": "low",
+      "method": "manual",
+      "confidence": "high",
       "candidates": [],
-      "note": "nothing in the citation resolved; triage places it"
+      "note": "about the whole document, by a placement agent reading the comment against the text (high): Online-form overall impression."
     },
     "type": "general",
     "text": "Overall impression: The draft is timely, ambitious and technically strong, providing a much-needed bridge between national health goals and the shared, governed, standards-based infrastructure needed to achieve them. With progress towards UN SDG 3 remaining uneven, the world needs a globally aligned yet locally adaptable health reference architecture, one capable of enabling truly paperless, person-centred health records and secure semantic interoperability not only between systems, but ultimately across countries.",
@@ -68,6 +68,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 616"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "about the whole document, by a placement agent reading the comment against the text (high): Online-form overall impression."
       }
     ]
   }

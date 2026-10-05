@@ -48,10 +48,10 @@
     },
     "anchor": {
       "targetLabel": null,
-      "method": "unplaced",
-      "confidence": "low",
+      "method": "manual",
+      "confidence": "medium",
       "candidates": [],
-      "note": "nothing in the citation resolved; triage places it"
+      "note": "about the whole document, by a placement agent reading the comment against the text (medium): Two points: Appendix E placeholder mappings and uneven Appendix D examples; spans the document."
     },
     "type": "general",
     "text": "Reason for disagreement: 1.  I disagree Mapping to seven health goals because the the goals-first methodology is a major strength, but the detailed mappings referred to in Section 2.4 and Appendix E are not present in the supplied review PDF. Appendix E contains placeholder references rather than the populated goal-to-capability-to-component matrices. This prevents reviewers from verifying traceability and determining whether the mappings are accurate and complete. Please embed the matrices or provide clearly functioning links to the complete mapping artefacts.\n\n2. Country and regional examples - I have selecteds as neither agree or disagree because, the examples are directionally useful but uneven in depth, evidence and precision. A standard case-study format should distinguish strategy, pilot, partial implementation and population-scale operation, and include architecture pattern, governance model, standards used, coverage, measurable outcomes, limitations and dated authoritative sources. The England example should be verified or narrowed, as it may conflate nationally governed medicines terminology with centrally governed pharmaceutical decision-support logic.",
@@ -68,6 +68,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 617"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "about the whole document, by a placement agent reading the comment against the text (medium): Two points: Appendix E placeholder mappings and uneven Appendix D examples; spans the document."
       }
     ]
   }

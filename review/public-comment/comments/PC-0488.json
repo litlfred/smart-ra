@@ -3,7 +3,7 @@
   "summary": "The eight governance principles correspond closely to Elinor Ostrom's design principles for durable common-pool resourc…",
   "comment": "The eight governance principles correspond closely to Elinor Ostrom's design principles for durable common-pool resource institutions, but the correspondence is not drawn, so the empirical basis is unavailable to the reader. Three of Ostrom's principles are absent from the list altogether.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "prose:3-1-26b106",
+  "targetLabel": "sec:3-4-2",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -51,11 +51,13 @@
       "raw": "§3.4.2 p.54 l.249"
     },
     "anchor": {
-      "targetLabel": "prose:3-1-26b106",
-      "method": "page-line",
-      "confidence": "low",
-      "candidates": [],
-      "note": "p.54 l.249 read as the PDF page; section 3.4.2 does NOT agree"
+      "targetLabel": "sec:3-4-2",
+      "method": "manual",
+      "confidence": "high",
+      "candidates": [
+        "prose:3-1-26b106"
+      ],
+      "note": "placed on the section, by a placement agent reading the comment against the text (high): About the eight governance principles of §3.4.2 as a list."
     },
     "type": "general",
     "text": "The eight governance principles correspond closely to Elinor Ostrom's design principles for durable common-pool resource institutions, but the correspondence is not drawn, so the empirical basis is unavailable to the reader. Three of Ostrom's principles are absent from the list altogether.",
@@ -72,6 +74,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 488"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the section, by a placement agent reading the comment against the text (high): About the eight governance principles of §3.4.2 as a list."
       }
     ]
   }

@@ -3,7 +3,7 @@
   "summary": "Care should not fail solely because a remote decision-support service is unavailable.",
   "comment": "Care should not fail solely because a remote decision-support service is unavailable.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "sec:c-business-services-components-computable-decision-support-engi",
+  "targetLabel": "tbl:c-business-services-components-computable-decision-support-engi-4b7f45",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -51,13 +51,13 @@
       "raw": "§CDSE, 5 p.180-181 l.Availability requirement"
     },
     "anchor": {
-      "targetLabel": "sec:c-business-services-components-computable-decision-support-engi",
-      "method": "section",
-      "confidence": "low",
+      "targetLabel": "tbl:c-business-services-components-computable-decision-support-engi-4b7f45",
+      "method": "manual",
+      "confidence": "high",
       "candidates": [
-        "sec:d-1-computable-decision-support-engi"
+        "sec:c-business-services-components-computable-decision-support-engi"
       ],
-      "note": "section named \"Computable Decision Support Engine\""
+      "note": "placed on the block, by a placement agent reading the comment against the text (high): CDSE requirements table rows 22, 24-25 fail-safe and availability."
     },
     "text": "Care should not fail solely because a remote decision-support service is unavailable.",
     "suggestedRevision": "Require safe failure, local fallback, cached guidance where appropriate, clear unavailability indicators, and continuation of care without unsupported automation.",
@@ -73,6 +73,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--EY-review row 1202"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the block, by a placement agent reading the comment against the text (high): CDSE requirements table rows 22, 24-25 fail-safe and availability."
       }
     ]
   }

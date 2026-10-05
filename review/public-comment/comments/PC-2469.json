@@ -3,7 +3,7 @@
   "summary": "Identify the planning-figure adaptation — Distinguishes the proposed extension from reproduced source wording. This cha…",
   "comment": "Identify the planning-figure adaptation — Distinguishes the proposed extension from reproduced source wording. This changes the caption, so it is separately assignable from the figure artwork. No assertion is made that the proposed wording is a verbatim DIIG quotation.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": null,
+  "targetLabel": "fig:1",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -48,11 +48,11 @@
       "raw": "§Figure 1 caption p.1 l.A28.03"
     },
     "anchor": {
-      "targetLabel": null,
-      "method": "unplaced",
-      "confidence": "low",
+      "targetLabel": "fig:1",
+      "method": "manual",
+      "confidence": "high",
       "candidates": [],
-      "note": "nothing in the citation resolved; triage places it"
+      "note": "placed on the block, by a placement agent reading the comment against the text (high): Figure 1 caption on printed p.1."
     },
     "text": "Identify the planning-figure adaptation — Distinguishes the proposed extension from reproduced source wording. This changes the caption, so it is separately assignable from the figure artwork. No assertion is made that the proposed wording is a verbatim DIIG quotation.",
     "suggestedRevision": "Append caption sentence when A28.01 is applied; retain the existing caption and any source attribution: Phase 01 is adapted here to include data workflows, data uses and reporting obligations.",
@@ -68,6 +68,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--CAT-WHO-FIC row 12"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the block, by a placement agent reading the comment against the text (high): Figure 1 caption on printed p.1."
       }
     ]
   }

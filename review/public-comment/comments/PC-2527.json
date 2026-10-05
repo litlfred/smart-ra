@@ -3,7 +3,7 @@
   "summary": "Global strategy on digital health 2020-2027. Geneva: World Health Organization; 2025. https://iris.who.int/handle/10665…",
   "comment": "Global strategy on digital health 2020-2027. Geneva: World Health Organization; 2025. https://iris.who.int/handle/10665/383924",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": null,
+  "targetLabel": "prose:1-1-f1f11b",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -46,11 +46,11 @@
       "raw": ""
     },
     "anchor": {
-      "targetLabel": null,
-      "method": "unplaced",
-      "confidence": "low",
+      "targetLabel": "prose:1-1-f1f11b",
+      "method": "manual",
+      "confidence": "medium",
       "candidates": [],
-      "note": "nothing in the citation resolved; triage places it"
+      "note": "placed on the block, by a placement agent reading the comment against the text (medium): Supplies updated reference for the Global Strategy on Digital Health cited (footnote 2) in this paragraph."
     },
     "text": "Global strategy on digital health 2020-2027. Geneva: World Health Organization; 2025. https://iris.who.int/handle/10665/383924",
     "assignees": [],
@@ -62,6 +62,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--HWF-review row 6"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the block, by a placement agent reading the comment against the text (medium): Supplies updated reference for the Global Strategy on Digital Health cited (footnote 2) in this paragraph."
       }
     ]
   }

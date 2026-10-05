@@ -3,7 +3,7 @@
   "summary": "4.6.3 addresses financing sources only and contains no underlying cost structure. DIIG in costing section warning — tha…",
   "comment": "4.6.3 addresses financing sources only and contains no underlying cost structure. DIIG in costing section warning — that budgets \"frequently underestimated\" because they focus on demonstration/deployment costs and omit long-term O&M — is exactly the risk a \"Sustain and evolve\" / recurrent-financing section should be guarding against, but 4.6.3 never uses the concept or term, and never warns against front-loaded budgeting.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "prose:4-2-2-62927f",
+  "targetLabel": "sec:4-6-3",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -51,11 +51,13 @@
       "raw": "§4.6 Financing and Partnerships p.92-93 l.547-600"
     },
     "anchor": {
-      "targetLabel": "prose:4-2-2-62927f",
-      "method": "page-line",
-      "confidence": "low",
-      "candidates": [],
-      "note": "p.92-93 l.547-600 read as the printed page; section 4.6 does NOT agree"
+      "targetLabel": "sec:4-6-3",
+      "method": "manual",
+      "confidence": "medium",
+      "candidates": [
+        "prose:4-2-2-62927f"
+      ],
+      "note": "placed on the section, by a placement agent reading the comment against the text (medium): Cites 4.6 l.547-600 and discusses 4.6.3 financing approaches lacking cost structure"
     },
     "type": "general",
     "text": "4.6.3 addresses financing sources only and contains no underlying cost structure. DIIG in costing section warning — that budgets \"frequently underestimated\" because they focus on demonstration/deployment costs and omit long-term O&M — is exactly the risk a \"Sustain and evolve\" / recurrent-financing section should be guarding against, but 4.6.3 never uses the concept or term, and never warns against front-loaded budgeting.",
@@ -72,6 +74,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 120"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the section, by a placement agent reading the comment against the text (medium): Cites 4.6 l.547-600 and discusses 4.6.3 financing approaches lacking cost structure"
       }
     ]
   }

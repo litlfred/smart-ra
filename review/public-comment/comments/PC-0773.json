@@ -3,7 +3,7 @@
   "summary": "The statement that the economic cost of fragmentation “grows quadratically” is only strictly valid under an all-to-all …",
   "comment": "The statement that the economic cost of fragmentation “grows quadratically” is only strictly valid under an all-to-all point-to-point integration model. Not every system necessarily connects to every other system.",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "prose:2-2-2-2c4d7e",
+  "targetLabel": "prose:1-3-1-6d4429",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -51,11 +51,13 @@
       "raw": "§1.3.1 p.28 l.Lines 283-290"
     },
     "anchor": {
-      "targetLabel": "prose:2-2-2-2c4d7e",
-      "method": "page-line",
-      "confidence": "low",
-      "candidates": [],
-      "note": "p.28 l.Lines 283-290 read as the printed page; section 1.3.1 does NOT agree"
+      "targetLabel": "prose:1-3-1-6d4429",
+      "method": "manual",
+      "confidence": "high",
+      "candidates": [
+        "prose:2-2-2-2c4d7e"
+      ],
+      "note": "placed on the block, by a placement agent reading the comment against the text (high): §1.3.1 l.283-290: 'grows quadratically' paragraph."
     },
     "type": "technical",
     "text": "The statement that the economic cost of fragmentation “grows quadratically” is only strictly valid under an all-to-all point-to-point integration model. Not every system necessarily connects to every other system.",
@@ -69,6 +71,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--EY-review row 9"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the block, by a placement agent reading the comment against the text (high): §1.3.1 l.283-290: 'grows quadratically' paragraph."
       }
     ]
   }

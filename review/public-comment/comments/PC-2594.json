@@ -3,7 +3,7 @@
   "summary": "Suggestion to include: Data elements needed for HWF planning are based on different data elements some that are obtaine…",
   "comment": "Suggestion to include: Data elements needed for HWF planning are based on different data elements some that are obtained from other registry that look at service demands etc. the WISN tool for example, requires the workload /service demand estimates. Could this be incorporated in the relevant registry, if possible.https://www.who.int/tools/wisn",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": null,
+  "targetLabel": "tbl:c-metadata-registries-and-foundati-health-workforce-registry-f926bd",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -46,11 +46,11 @@
       "raw": ""
     },
     "anchor": {
-      "targetLabel": null,
-      "method": "unplaced",
-      "confidence": "low",
+      "targetLabel": "tbl:c-metadata-registries-and-foundati-health-workforce-registry-f926bd",
+      "method": "manual",
+      "confidence": "medium",
       "candidates": [],
-      "note": "nothing in the citation resolved; triage places it"
+      "note": "placed on the block, by a placement agent reading the comment against the text (medium): Suggests WISN planning data elements for the minimum dataset."
     },
     "text": "Suggestion to include: Data elements needed for HWF planning are based on different data elements some that are obtained from other registry that look at service demands etc. the WISN tool for example, requires the workload /service demand estimates. Could this be incorporated in the relevant registry, if possible.https://www.who.int/tools/wisn",
     "assignees": [],
@@ -62,6 +62,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--HWF-review row 73"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the block, by a placement agent reading the comment against the text (medium): Suggests WISN planning data elements for the minimum dataset."
       }
     ]
   }

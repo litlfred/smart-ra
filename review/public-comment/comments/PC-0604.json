@@ -49,10 +49,10 @@
     },
     "anchor": {
       "targetLabel": null,
-      "method": "unplaced",
-      "confidence": "low",
+      "method": "manual",
+      "confidence": "high",
       "candidates": [],
-      "note": "nothing in the citation resolved; triage places it"
+      "note": "about the whole document, by a placement agent reading the comment against the text (high): Online-form reason for disagreement, document-wide."
     },
     "type": "general",
     "text": "Reason for disagreement: You have not clearly identified the need and opportunity for decentralised deployments as part of the infrastructure mix, nor have you sufficiently reflected the need for patient empowerment in a next generation health systems architecture, for example for prevention, or self-managed care which are critical components of a broad clinical system architecture.",
@@ -69,6 +69,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 604"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "about the whole document, by a placement agent reading the comment against the text (high): Online-form reason for disagreement, document-wide."
       }
     ]
   }

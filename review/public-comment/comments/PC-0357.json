@@ -3,7 +3,7 @@
   "summary": "Suggest also referencing how health can strengthen/create foundational DPIs",
   "comment": "Suggest also referencing how health can strengthen/create foundational DPIs",
   "createdAt": "2026-10-05T10:22:19.026Z",
-  "targetLabel": "prose:5-1-ea0e4f",
+  "targetLabel": "tbl:c-metadata-registries-and-foundati-client-registry-2c2640",
   "tags": {
     "roles": [
       "feedback-provider"
@@ -50,11 +50,13 @@
       "raw": "§Appendix C p.115 l.45"
     },
     "anchor": {
-      "targetLabel": "prose:5-1-ea0e4f",
-      "method": "page-line",
-      "confidence": "low",
-      "candidates": [],
-      "note": "p.115 l.45 read as the PDF page; section C does NOT agree"
+      "targetLabel": "tbl:c-metadata-registries-and-foundati-client-registry-2c2640",
+      "method": "manual",
+      "confidence": "high",
+      "candidates": [
+        "prose:5-1-ea0e4f"
+      ],
+      "note": "placed on the block, by a placement agent reading the comment against the text (high): Suggested text edits the 'Where one does not...' sentence in the Client Registry architecture-placement table (App. C p.115)."
     },
     "type": "general",
     "text": "Suggest also referencing how health can strengthen/create foundational DPIs",
@@ -71,6 +73,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "dpi-h-master-log--Master-log row 357"
+      },
+      {
+        "at": "2026-10-05T10:32:41.778Z",
+        "transition": "reassign",
+        "by": "placement-agent",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "placed on the block, by a placement agent reading the comment against the text (high): Suggested text edits the 'Where one does not...' sentence in the Client Registry architecture-placement table (App. C p.115)."
       }
     ]
   }
