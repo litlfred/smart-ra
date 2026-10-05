@@ -5,7 +5,7 @@
     {
       "id": "folio",
       "path": "folio/",
-      "graphKinds": [
+      "graphTypologies": [
         "folio"
       ],
       "description": "The content of Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector — its document, chapters and blocks."
@@ -13,7 +13,7 @@
     {
       "id": "library",
       "path": "library/",
-      "graphKinds": [
+      "graphTypologies": [
         "library"
       ],
       "description": "Source material, frozen. who-dpi-h-reference-architecture-draft-v1/ holds the review version exactly as circulated (line-numbered PDF and .docx), plus the extraction (docx-structure.json) and the page/line map (pdf-line-map.json) the folio and every public comment's anchor are derived from. Never edited to answer a comment."
@@ -21,7 +21,7 @@
     {
       "id": "public-comments",
       "path": "review/public-comment/",
-      "graphKinds": [
+      "graphTypologies": [
         "todo-items"
       ],
       "description": "The public-review record: one folio-public-comment/v1 file per comment (comments/PC-0042.json), one manifest per intake batch (batches/), and config.json naming the editors and review committee. A public comment is a todo kind, so anything that reads todos reads these. Moved only by folio-assistant-core/scripts/public-comment.ts. The original spreadsheets hold reviewers' emails and are NOT kept here."
@@ -29,7 +29,7 @@
     {
       "id": "uploads",
       "path": "uploads/",
-      "graphKinds": [
+      "graphTypologies": [
         "uploads"
       ],
       "description": "Inbox for material not yet ingested."
