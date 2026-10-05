@@ -14,7 +14,7 @@ export default chapter({
     section({
       title: "3.1 The architecture description approach",
       label: "sec:3-1",
-      blocks: ["p-3-1-a6fc7f", "p-3-1-785029", "p-3-1-2a6c0e", "p-3-1-9c8edd", "p-3-1-a16aa9", "t-3-1", "f-3-1-795acd", "f-3-1-10ed95", "f-3-1-73b84f", "f-3-1-d93ca2", "f-3-1-74e356", "f-3-1-16433b", "f-3-1-7920b7", "f-3-1-fd7fbe", "f-3-1-cf7996", "p-3-1-81060e", "p-3-1-26b106", "t-3-2", "f-3-1-91e0e2", "f-3-1-f710a5", "f-3-1-56ad6f", "f-3-1-db6ea6", "p-3-1-cd6131", "f-3-1-26093d", "p-3-1-a6a9c4", "p-3-1-380550", "p-3-1-6a6807", "t-3-3"],
+      blocks: ["p-3-1-a6fc7f", "p-3-1-785029", "p-3-1-2a6c0e", "p-3-1-9c8edd", "p-3-1-a16aa9", "t-3-1", "p-3-1-81060e", "p-3-1-26b106", "t-3-2", "p-3-1-cd6131", "f-3-1-26093d", "p-3-1-a6a9c4", "p-3-1-380550", "p-3-1-6a6807", "t-3-3"],
     }),
     section({
       title: "3.2 Reading and navigating the reference architecture",
