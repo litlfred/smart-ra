@@ -33,9 +33,10 @@ Why, in as many lines as needed.
 
 Use `decide:` instead of `recommend:` for the editor's decision. The codes are
 `accepted`, `accepted-modified`, `not-accepted`, `noted` and `deferred`. Every
-code except `accepted` needs a reason. Only logins listed in
-[`review/public-comment/config.json`](review/public-comment/config.json) are
-recorded.
+code except `accepted` needs a reason. A recommendation is recorded from any
+collaborator on this repository, and a decision only from its owner. To change
+who counts, add `committee` or `editors` login lists to
+[`review/public-comment/config.json`](review/public-comment/config.json).
 
 **Changes** are made on feature branches. Each one may answer several comments,
 and each pull request gets a staging preview at
