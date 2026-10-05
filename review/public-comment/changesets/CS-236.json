@@ -9,8 +9,15 @@
     "PC-0045",
     "PC-0690"
   ],
-  "status": "proposed",
-  "issues": [],
+  "status": "incorporated",
+  "issue": 10,
+  "issues": [
+    10
+  ],
+  "pr": {
+    "number": 9,
+    "branch": "claude/confident-bardeen-inaarx"
+  },
   "proposedBy": "claude-agent",
   "proposedAt": "2026-10-05T14:39:26.609Z",
   "history": [
@@ -18,6 +25,17 @@
       "at": "2026-10-05T14:39:26.609Z",
       "by": "claude-agent",
       "what": "proposed with 4 comment(s)"
+    },
+    {
+      "at": "2026-10-05T15:18:24.978Z",
+      "by": "litlfred",
+      "what": "PR #9 merged",
+      "url": "https://github.com/litlfred/smart-ra/pull/9"
+    },
+    {
+      "at": "2026-10-05T15:18:24.978Z",
+      "by": "litlfred",
+      "what": "issue #10 opened"
     }
   ]
 }

@@ -21,7 +21,7 @@
     "references": [],
     "artefacts": []
   },
-  "status": "decided",
+  "status": "incorporated",
   "priority": "high",
   "origin": "human",
   "$schema": "folio-public-comment/v1",
@@ -72,7 +72,11 @@
       "code": "accepted",
       "reason": "",
       "by": "review-log",
-      "at": "2026-10-05T10:22:19.026Z"
+      "at": "2026-10-05T10:22:19.026Z",
+      "changeSet": {
+        "branch": "claude/confident-bardeen-inaarx",
+        "pr": 9
+      }
     },
     "history": [
       {
@@ -95,6 +99,13 @@
         "by": "placement-agent",
         "task": "Process_PublicComment#Task_Triage",
         "note": "placed on the block, by a placement agent reading the comment against the text (high): Cites Data Ownership, Access and Control principle l.346-360; this is its body starting l.347"
+      },
+      {
+        "at": "2026-10-05T15:18:24.978Z",
+        "transition": "incorporate",
+        "by": "litlfred",
+        "task": "Process_PublicComment#Task_Incorporate",
+        "note": "merged in PR #9"
       }
     ]
   }
