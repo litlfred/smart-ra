@@ -1,0 +1,81 @@
+{
+  "id": "pc-0584",
+  "summary": "The document is detailed and should be completed with the recommendations above. The executive summary needs improvemen…",
+  "comment": "The document is detailed and should be completed with the recommendations above. The executive summary needs improvement — it does not cover the subject well and should be long enough to do so.",
+  "createdAt": "2026-10-05T10:22:19.026Z",
+  "targetLabel": "prose:executive-summary-lead-e900bf",
+  "tags": {
+    "roles": [
+      "feedback-provider"
+    ],
+    "processes": [
+      "Process_PublicComment"
+    ],
+    "tasks": [
+      {
+        "process": "Process_PublicComment",
+        "task": "Task_Ingest"
+      }
+    ],
+    "identities": [],
+    "references": [],
+    "artefacts": []
+  },
+  "status": "received",
+  "priority": "medium",
+  "origin": "human",
+  "$schema": "folio-public-comment/v1",
+  "public": {
+    "ref": "PC-0584",
+    "source": {
+      "channel": "comment-matrix",
+      "batch": "dpi-h-master-log--Master-log",
+      "sha256": "1b9bbe685b0d23e87e61a95caea94ccf592b71ff16961d7261d2a8d2f61442b1",
+      "sheet": "Master log",
+      "row": 584,
+      "entry": "583",
+      "series": "dpi-h-master-log",
+      "receivedAt": "2026-10-05T10:22:19.026Z"
+    },
+    "reviewer": {
+      "id": "r-b6196052f8",
+      "name": "Peter van de Kerkhof",
+      "organisation": "Interational Psoriasis Council",
+      "country": "Worldwide",
+      "acknowledge": true
+    },
+    "citation": {
+      "section": "General / Front matter",
+      "page": "i–iii; 1–110",
+      "raw": "§General / Front matter p.i–iii; 1–110"
+    },
+    "anchor": {
+      "targetLabel": "prose:executive-summary-lead-e900bf",
+      "method": "page",
+      "confidence": "low",
+      "candidates": [
+        "prose:executive-summary-lead-01831f",
+        "prose:executive-summary-lead-7df30d",
+        "fig:1"
+      ],
+      "note": "p.i–iii; 1–110 read as the printed page, no line resolved"
+    },
+    "type": "editorial",
+    "text": "The document is detailed and should be completed with the recommendations above. The executive summary needs improvement — it does not cover the subject well and should be long enough to do so.",
+    "suggestedRevision": "Expand the executive summary so it covers the subject adequately, and incorporate the recommendations made in the comments above.",
+    "labels": {
+      "TWG consideration? AI categorisation": "Editorial"
+    },
+    "assignees": [],
+    "recommendations": [],
+    "history": [
+      {
+        "at": "2026-10-05T10:22:19.026Z",
+        "transition": "ingest",
+        "by": "intake",
+        "task": "Process_PublicComment#Task_Ingest",
+        "note": "dpi-h-master-log--Master-log row 584"
+      }
+    ]
+  }
+}

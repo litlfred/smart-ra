@@ -1,0 +1,68 @@
+{
+  "id": "pc-2631",
+  "summary": "This is also important for immunization (eg. VPD surveillance. AEFI surveillance), maternal and newborn health (MPDSR),…",
+  "comment": "This is also important for immunization (eg. VPD surveillance. AEFI surveillance), maternal and newborn health (MPDSR), etc",
+  "createdAt": "2026-10-05T10:22:19.026Z",
+  "targetLabel": null,
+  "tags": {
+    "roles": [
+      "feedback-provider"
+    ],
+    "processes": [
+      "Process_PublicComment"
+    ],
+    "tasks": [
+      {
+        "process": "Process_PublicComment",
+        "task": "Task_Ingest"
+      }
+    ],
+    "identities": [],
+    "references": [],
+    "artefacts": []
+  },
+  "status": "received",
+  "priority": "medium",
+  "origin": "human",
+  "$schema": "folio-public-comment/v1",
+  "public": {
+    "ref": "PC-2631",
+    "source": {
+      "channel": "narrative",
+      "batch": "dpi-h-master-log--HWF-review",
+      "sha256": "1b9bbe685b0d23e87e61a95caea94ccf592b71ff16961d7261d2a8d2f61442b1",
+      "sheet": "HWF review",
+      "row": 110,
+      "entry": "109",
+      "series": "dpi-h-master-log",
+      "receivedAt": "2026-10-05T10:22:19.026Z"
+    },
+    "reviewer": {
+      "id": "r-204787cd1e",
+      "organisation": "WHO Health Workforce Dept",
+      "country": "(not stated)"
+    },
+    "citation": {
+      "raw": ""
+    },
+    "anchor": {
+      "targetLabel": null,
+      "method": "unplaced",
+      "confidence": "low",
+      "candidates": [],
+      "note": "nothing in the citation resolved; triage places it"
+    },
+    "text": "This is also important for immunization (eg. VPD surveillance. AEFI surveillance), maternal and newborn health (MPDSR), etc",
+    "assignees": [],
+    "recommendations": [],
+    "history": [
+      {
+        "at": "2026-10-05T10:22:19.026Z",
+        "transition": "ingest",
+        "by": "intake",
+        "task": "Process_PublicComment#Task_Ingest",
+        "note": "dpi-h-master-log--HWF-review row 110"
+      }
+    ]
+  }
+}

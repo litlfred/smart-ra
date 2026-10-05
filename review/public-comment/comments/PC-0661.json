@@ -1,0 +1,76 @@
+{
+  "id": "pc-0661",
+  "summary": "Add at the end of the paragraph \"Given the existing fragmentation in the HIS, DPI-H also provides the means to integrat…",
+  "comment": "Add at the end of the paragraph \"Given the existing fragmentation in the HIS, DPI-H also provides the means to integrate information across existing disconnected components of the HIS.\"",
+  "createdAt": "2026-10-05T10:22:19.026Z",
+  "targetLabel": null,
+  "tags": {
+    "roles": [
+      "feedback-provider"
+    ],
+    "processes": [
+      "Process_PublicComment"
+    ],
+    "tasks": [
+      {
+        "process": "Process_PublicComment",
+        "task": "Task_Ingest"
+      }
+    ],
+    "identities": [],
+    "references": [],
+    "artefacts": []
+  },
+  "status": "received",
+  "priority": "medium",
+  "origin": "human",
+  "$schema": "folio-public-comment/v1",
+  "public": {
+    "ref": "PC-0661",
+    "source": {
+      "channel": "online-form",
+      "batch": "dpi-h-master-log--Master-log",
+      "sha256": "1b9bbe685b0d23e87e61a95caea94ccf592b71ff16961d7261d2a8d2f61442b1",
+      "sheet": "Master log",
+      "row": 661,
+      "entry": "660",
+      "series": "dpi-h-master-log",
+      "receivedAt": "2026-10-05T10:22:19.026Z"
+    },
+    "reviewer": {
+      "id": "r-555bd070ac",
+      "name": "Martin Bratschi",
+      "organisation": "Vital Strategies",
+      "country": "Switzerland",
+      "acknowledge": true
+    },
+    "citation": {
+      "section": "Executive Summaruy",
+      "lines": "12",
+      "raw": "§Executive Summaruy l.12"
+    },
+    "anchor": {
+      "targetLabel": null,
+      "method": "unplaced",
+      "confidence": "low",
+      "candidates": [],
+      "note": "nothing in the citation resolved; triage places it"
+    },
+    "text": "Add at the end of the paragraph \"Given the existing fragmentation in the HIS, DPI-H also provides the means to integrate information across existing disconnected components of the HIS.\"",
+    "labels": {
+      "Stakeholder type": "Development partner, donor or implementing agency",
+      "TWG consideration? AI categorisation": "Core architects"
+    },
+    "assignees": [],
+    "recommendations": [],
+    "history": [
+      {
+        "at": "2026-10-05T10:22:19.026Z",
+        "transition": "ingest",
+        "by": "intake",
+        "task": "Process_PublicComment#Task_Ingest",
+        "note": "dpi-h-master-log--Master-log row 661"
+      }
+    ]
+  }
+}

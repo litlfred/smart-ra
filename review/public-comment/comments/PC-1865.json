@@ -1,0 +1,79 @@
+{
+  "id": "pc-1865",
+  "summary": "The requirements do not clearly distinguish obligations for record sources, the LHR service, consuming applications, id…",
+  "comment": "The requirements do not clearly distinguish obligations for record sources, the LHR service, consuming applications, identity services, terminology services, and consent or policy services.",
+  "createdAt": "2026-10-05T10:22:19.026Z",
+  "targetLabel": "sec:c-metadata-registries-and-foundati-lifelong-health-record",
+  "tags": {
+    "roles": [
+      "feedback-provider"
+    ],
+    "processes": [
+      "Process_PublicComment"
+    ],
+    "tasks": [
+      {
+        "process": "Process_PublicComment",
+        "task": "Task_Ingest"
+      }
+    ],
+    "identities": [],
+    "references": [],
+    "artefacts": []
+  },
+  "status": "received",
+  "priority": "medium",
+  "origin": "human",
+  "$schema": "folio-public-comment/v1",
+  "public": {
+    "ref": "PC-1865",
+    "source": {
+      "channel": "comment-matrix",
+      "batch": "dpi-h-master-log--EY-review",
+      "sha256": "1b9bbe685b0d23e87e61a95caea94ccf592b71ff16961d7261d2a8d2f61442b1",
+      "sheet": "EY review",
+      "row": 1101,
+      "entry": "1100",
+      "series": "dpi-h-master-log",
+      "receivedAt": "2026-10-05T10:22:19.026Z"
+    },
+    "reviewer": {
+      "id": "r-5b56e4d01e",
+      "name": "Michael Anywar",
+      "organisation": "EY DHEC",
+      "country": "Germany",
+      "acknowledge": true
+    },
+    "citation": {
+      "section": "Lifelong Health Record, 5",
+      "page": "160-163",
+      "lines": "Requirements table",
+      "raw": "§Lifelong Health Record, 5 p.160-163 l.Requirements table"
+    },
+    "anchor": {
+      "targetLabel": "sec:c-metadata-registries-and-foundati-lifelong-health-record",
+      "method": "section",
+      "confidence": "low",
+      "candidates": [
+        "sec:d-1-lifelong-health-record"
+      ],
+      "note": "section named \"Lifelong Health Record\""
+    },
+    "text": "The requirements do not clearly distinguish obligations for record sources, the LHR service, consuming applications, identity services, terminology services, and consent or policy services.",
+    "suggestedRevision": "Add an actor or responsible-component column and express every requirement from the perspective of the party that must implement it.",
+    "labels": {
+      "Comment type": "Q9 - Conformance and testing"
+    },
+    "assignees": [],
+    "recommendations": [],
+    "history": [
+      {
+        "at": "2026-10-05T10:22:19.026Z",
+        "transition": "ingest",
+        "by": "intake",
+        "task": "Process_PublicComment#Task_Ingest",
+        "note": "dpi-h-master-log--EY-review row 1101"
+      }
+    ]
+  }
+}
