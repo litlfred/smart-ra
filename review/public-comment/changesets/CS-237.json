@@ -1,4 +1,5 @@
 {
+  "$schema": "changeset/1.0.0",
   "id": "CS-237",
   "title": "Extend equity and digital-inclusion safeguards across the guidance",
   "requirements": "- Address variation in functional ability, language, literacy and digital capability as architectural concerns\n- Require a non-digital route of equivalent standing for functions on which rights or entitlements depend\n- Require assessment of distributional effects of major decisions (who gains access, who bears burden, who is excluded)\n- Add an inclusion workstream across profiling, procurement, testing, rollout and financing\n- Do not assume person and health worker share a language; cover assisted and non-digital pathways\n- Distinguish value that requires individual activation from value that does not\n- Address overlapping disadvantage and populations missing from formal datasets where lawful and proportionate\n- Address digital literacy of health workers and patients",
@@ -21,8 +22,8 @@
     11
   ],
   "pr": {
-    "number": 24,
-    "branch": "claude/exciting-ptolemy-se2d2a"
+    "number": 9,
+    "branch": "claude/confident-bardeen-inaarx"
   },
   "proposedBy": "claude-agent",
   "proposedAt": "2026-10-05T14:39:26.609Z",
@@ -42,13 +43,6 @@
       "at": "2026-10-05T15:18:24.978Z",
       "by": "litlfred",
       "what": "issue #11 opened"
-    },
-    {
-      "at": "2026-10-06T14:35:21.614Z",
-      "by": "litlfred",
-      "what": "PR #24 is making the change",
-      "url": "https://github.com/litlfred/smart-ra/pull/24"
     }
-  ],
-  "$schema": "changeset/1.0.0"
+  ]
 }
