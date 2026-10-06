@@ -1,0 +1,21 @@
+[
+  {
+    "$schema": "rendered-impact/v1",
+    "renderer": "document-site",
+    "method": "cone",
+    "base": "origin/main",
+    "head": "HEAD",
+    "inputs": [
+      "folio-assistant"
+    ],
+    "files": [],
+    "undetermined": [
+      {
+        "input": "folio-assistant",
+        "reason": "not a block the ChangeSet names, a media file, a manifest of a known document, or the comment store: may change any page",
+        "scope": "all",
+        "hash": "f3a7a4efb453adec3c2922d951a82f12da7ccd657ee5f2c2c69282099dd66ca1"
+      }
+    ]
+  }
+]
