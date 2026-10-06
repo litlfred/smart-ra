@@ -10,6 +10,10 @@ name: Staging preview
 # adds the public-comment dashboard (public-comments/) and shows each comment
 # beside the block it is about. A preview at STAGING/<branch>/ is the AFTER
 # side of every comment's deep link; main's site at the root is the BEFORE.
+# gen-node-kind-pages.ts then writes a page per node kind, per harness and per
+# node under en/<declaring>/<kind>/ (issue litlfred/folio-assistant#2195): the
+# change-sets with the comments each answers, and each comment with its
+# change-sets. It fails the build if any planned page does not resolve.
 
 on:
   pull_request:
@@ -31,7 +35,7 @@ jobs:
   staging:
     uses: litlfred/folio-assistant/.github/workflows/folio-staging.yml@main
     with:
-      build_command: 'bun run folio-assistant/folio-assistant-core/scripts/build-document-site.ts --out _site && bun run folio-assistant/folio-assistant-core/scripts/public-comment-site.ts --out _site'
+      build_command: 'bun run folio-assistant/folio-assistant-core/scripts/build-document-site.ts --out _site && bun run folio-assistant/folio-assistant-core/scripts/public-comment-site.ts --out _site && bun run folio-assistant/cat-harness/scripts/gen-node-kind-pages.ts --root . --out _site'
       site_dir: _site
       folio_dir: folio
       platform_dir: folio-assistant
