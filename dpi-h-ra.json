@@ -34,6 +34,32 @@
         "uploads"
       ],
       "description": "Inbox for material not yet ingested."
+    },
+    {
+      "id": "beans",
+      "path": "beans/",
+      "graphTypologies": [
+        "beans"
+      ],
+      "source": {
+        "kind": "branch",
+        "branch": "cat/dpi-h-ra/beans",
+        "keyedBy": "tip"
+      },
+      "description": "The work plan: one bean per Markdown file (prefix dpi-h-ra-, per .beans.yml). Kept on the tip-keyed state branch cat/dpi-h-ra/beans, mounted here; owner decision 2026-10-06. Until the separate cutover removes beans/ from main, main's copy is the source of truth and the branch is a seed (manifest.json: status seed, authoritative false)."
+    },
+    {
+      "id": "todos",
+      "path": "todos/",
+      "graphTypologies": [
+        "todos"
+      ],
+      "source": {
+        "kind": "branch",
+        "branch": "cat/dpi-h-ra/todos",
+        "keyedBy": "tip"
+      },
+      "description": "Todos: items, per-block feedback and review verdicts, as declared by todos/todos.json. Kept on the tip-keyed state branch cat/dpi-h-ra/todos, mounted here; owner decision 2026-10-06. Until the separate cutover removes todos/ from main, main's copy is the source of truth and the branch is a seed (manifest.json: status seed, authoritative false)."
     }
   ],
   "description": "The DPI-H Reference Architecture guidance (WHO/ITU), an L1 document: the draft for public comment as an editable document folio, its frozen review version in the library, and the public-comment adjudication record.",
