@@ -1,5 +1,4 @@
 {
-  "$schema": "changeset/1.0.0",
   "id": "CS-236",
   "title": "Model delegated and supported agency as a governed relationship",
   "requirements": "- Distinguish a relationship record from current authority to act\n- Recognise that people may act through supporters or authorised representatives\n- Include proxies, guardians and caregivers in the minimum actor set\n- State that the architecture should be able to represent and enforce delegation, with legal rules left to national law\n- Add delegated and supported access to the LHR requirements",
@@ -15,8 +14,8 @@
     10
   ],
   "pr": {
-    "number": 9,
-    "branch": "claude/confident-bardeen-inaarx"
+    "number": 24,
+    "branch": "claude/exciting-ptolemy-se2d2a"
   },
   "proposedBy": "claude-agent",
   "proposedAt": "2026-10-05T14:39:26.609Z",
@@ -36,6 +35,13 @@
       "at": "2026-10-05T15:18:24.978Z",
       "by": "litlfred",
       "what": "issue #10 opened"
+    },
+    {
+      "at": "2026-10-06T14:35:21.614Z",
+      "by": "litlfred",
+      "what": "PR #24 is making the change",
+      "url": "https://github.com/litlfred/smart-ra/pull/24"
     }
-  ]
+  ],
+  "$schema": "changeset/1.0.0"
 }
