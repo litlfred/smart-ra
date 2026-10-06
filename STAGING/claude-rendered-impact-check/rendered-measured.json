@@ -1,0 +1,118 @@
+{
+  "$schema": "rendered-measured/v1",
+  "status": "not-base",
+  "baseCommit": "b166ab75ffbae6a0f98d4340b9f28c3b862bb4bb",
+  "beforeCommit": "bcd7e92ab5b841eb8cec96d259bd7597f50df3bd",
+  "measured": {
+    "$schema": "rendered-impact/v1",
+    "renderer": "build-diff",
+    "method": "build-diff",
+    "base": "b166ab75ffbae6a0f98d4340b9f28c3b862bb4bb",
+    "inputs": [],
+    "files": [
+      {
+        "path": "assets/navbar/rail-1g9bv5sww1q.js",
+        "change": "removed",
+        "role": "data",
+        "via": []
+      },
+      {
+        "path": "assets/navbar/rail-1tz9x5lllq4.js",
+        "change": "added",
+        "role": "data",
+        "via": [],
+        "hash": "d4e3ac0464d5e2727caba941aa35684c4602ddfb5abdb0167049fb6397ee51f4"
+      },
+      {
+        "path": "dpi-h-ra/index.html",
+        "change": "changed",
+        "role": "content",
+        "via": [],
+        "hash": "6380946409f12cbee2cae07d8381a4ef15e669ac82f4aa1d5612e19c6135a039"
+      },
+      {
+        "path": "en/cat-harness/basic-cdn-site/index.html",
+        "change": "added",
+        "role": "content",
+        "via": [],
+        "hash": "4c50195859ab3f2bb526ed7c9faa6aa34b4058c7799ad1ce8c93928e308ae74c"
+      },
+      {
+        "path": "en/cat-harness/cdn-site/index.html",
+        "change": "added",
+        "role": "content",
+        "via": [],
+        "hash": "be7ac83ba1684b957bcc42a479889e4b35a75823b5b990a78034d99c4eeeaee3"
+      },
+      {
+        "path": "en/cat-harness/document-kind-coverage/index.html",
+        "change": "added",
+        "role": "content",
+        "via": [],
+        "hash": "01dde2fbc34e5af9ba73cdecf2b9cd3192fa4a6cde9375433ee99069a8d5bc12"
+      },
+      {
+        "path": "en/cat-harness/document-kind/index.html",
+        "change": "added",
+        "role": "content",
+        "via": [],
+        "hash": "261218903b8a846c5b88c5012693931127faab7936e9a73f4da922144840f876"
+      },
+      {
+        "path": "en/folio-assistant-core/changeset/dpi-h-ra/index.html",
+        "change": "changed",
+        "role": "content",
+        "via": [],
+        "hash": "6a758484036935f038c262090f10eede0795b49b031402765717b73b7e6293cd"
+      },
+      {
+        "path": "en/folio-assistant-core/changeset/index.html",
+        "change": "changed",
+        "role": "content",
+        "via": [],
+        "hash": "aa19a06921ac26762e4d24396b7dbdfee2493b6e441098b410c6f38d4845ac00"
+      },
+      {
+        "path": "index.html",
+        "change": "changed",
+        "role": "content",
+        "via": [],
+        "hash": "8094d99b5bf5725cb85762158cb3e01b827be1b504b25f060ce4095f4e3fbd23"
+      },
+      {
+        "path": "public-comments/index.html",
+        "change": "changed",
+        "role": "content",
+        "via": [],
+        "hash": "ef01e68bd56c07630e0c32e08e0a4fd0e3c927cde04807fdc7e5ad09f7844a30"
+      },
+      {
+        "path": "review/index.html",
+        "change": "changed",
+        "role": "content",
+        "via": [],
+        "hash": "f3baba17b5efa63ccd4dd47b020c3964726a71f2c4de7f4628f8a6d6446d6646"
+      }
+    ],
+    "undetermined": []
+  },
+  "check": {
+    "missed": [
+      "assets/navbar/rail-1g9bv5sww1q.js",
+      "assets/navbar/rail-1tz9x5lllq4.js",
+      "en/cat-harness/basic-cdn-site/index.html",
+      "en/cat-harness/cdn-site/index.html",
+      "en/cat-harness/document-kind-coverage/index.html",
+      "en/cat-harness/document-kind/index.html",
+      "en/folio-assistant-core/changeset/dpi-h-ra/index.html",
+      "en/folio-assistant-core/changeset/index.html",
+      "index.html",
+      "public-comments/index.html",
+      "review/index.html"
+    ],
+    "confirmed": [
+      "dpi-h-ra/index.html"
+    ],
+    "unconfirmed": []
+  }
+}

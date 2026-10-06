@@ -1,0 +1,43 @@
+{
+  "$schema": "folio-changeset/v1",
+  "folio": "folio",
+  "base": {
+    "ref": "origin/main",
+    "commit": "b166ab75ffbae6a0f98d4340b9f28c3b862bb4bb"
+  },
+  "head": {
+    "ref": "worktree",
+    "commit": null
+  },
+  "summary": {
+    "added": 0,
+    "removed": 0,
+    "changed": 1,
+    "unchanged": 932,
+    "renamed": 0,
+    "prose": 1,
+    "manifest": 0,
+    "moved": 0
+  },
+  "changes": [
+    {
+      "change": "changed",
+      "label": "prose:1-5-1-3c0865",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch1-introduction/p-1-5-1-3c0865.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch1-introduction::sec:1-5-1",
+        "index": 5
+      },
+      "head": {
+        "file": "dpi-h-ra/ch1-introduction/p-1-5-1-3c0865.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch1-introduction::sec:1-5-1",
+        "index": 5
+      }
+    }
+  ]
+}
