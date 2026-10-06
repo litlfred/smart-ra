@@ -1,13 +1,13 @@
 {
   "$schema": "rendered-measured/v1",
   "status": "not-base",
-  "baseCommit": "9e7be80980f5a68097b48dad00ab307d2bc43b64",
+  "baseCommit": "cdb21cc858ab9c837ed5145b76dadb11a7cdf3d8",
   "beforeCommit": "bcd7e92ab5b841eb8cec96d259bd7597f50df3bd",
   "measured": {
     "$schema": "rendered-impact/v1",
     "renderer": "build-diff",
     "method": "build-diff",
-    "base": "9e7be80980f5a68097b48dad00ab307d2bc43b64",
+    "base": "cdb21cc858ab9c837ed5145b76dadb11a7cdf3d8",
     "inputs": [],
     "files": [
       {
@@ -84,7 +84,7 @@
         "change": "changed",
         "role": "content",
         "via": [],
-        "hash": "23e32ee441432518bf19e0ddd969ebab4acd0704813c076ad6bd9328e082d7fc"
+        "hash": "d28bf89aa3e0dcebe0fdbe02dfbd0f19ef93c107aa84813f6bde90d4d7fee130"
       },
       {
         "path": "review/index.html",

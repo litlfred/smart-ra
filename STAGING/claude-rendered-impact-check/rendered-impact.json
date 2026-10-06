@@ -6,7 +6,6 @@
     "base": "origin/main",
     "head": "HEAD",
     "inputs": [
-      "beans/dpi-h-ra-7ss8--verify-the-rendered-impact-list-on-a-real-staging.md",
       "folio-assistant",
       "folio/dpi-h-ra/ch1-introduction/p-1-5-1-3c0865.md"
     ],
@@ -26,12 +25,6 @@
       }
     ],
     "undetermined": [
-      {
-        "input": "beans/dpi-h-ra-7ss8--verify-the-rendered-impact-list-on-a-real-staging.md",
-        "reason": "not a block the ChangeSet names, a media file, a manifest of a known document, or the comment store: may change any page",
-        "scope": "all",
-        "hash": "b60e85db8bea681091ce306c571d4cabfde0c264591ee1c9e6eadb72a149d669"
-      },
       {
         "input": "folio-assistant",
         "reason": "not a block the ChangeSet names, a media file, a manifest of a known document, or the comment store: may change any page",
