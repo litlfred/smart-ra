@@ -1,0 +1,20 @@
+{
+  "$schema": "state-manifest/v1",
+  "status": "seed",
+  "authoritative": false,
+  "subgraph": "beans",
+  "note": "Seeded from main for the owner's 2026-10-06 decision to branch-mount dpi-h-ra's `beans` subgraph per the harness's subgraph-source mechanism (cat-harness/skills/kg/kg-core/directory-conventions.md §\"Where a subgraph gets its content — `source`\"). The `beans` entry in dpi-h-ra.json declares `source: { kind: \"branch\", branch: \"cat/dpi-h-ra/beans\", keyedBy: \"tip\" }`. STILL `seed` AND `authoritative: false` ON PURPOSE: main still tracks beans/ (removing it needs a separate owner yes), so main remains the source of truth and this branch is a verified copy of main's beans/ tree, not the store. Refresh it with `bun run state:seed --id beans` before any cutover; the cutover's branch half is `state:seed --authoritative`. Branch name is instance-keyed, mirroring cat/cat-harness/beans; reconcile with folio_init's state-branch naming convention when that lands.",
+  "source": {
+    "ref": "main",
+    "sha": "bcd7e92ab5b841eb8cec96d259bd7597f50df3bd"
+  },
+  "seededAt": "2026-10-06T17:08:28Z",
+  "keyedBy": "tip",
+  "graphs": [
+    {
+      "path": "beans",
+      "tree": "ad5570b0e1cbfd43a6bf9cd318cb2557e1daa406",
+      "files": 2
+    }
+  ]
+}
