@@ -22,16 +22,11 @@ name: Public comment — tags, change-sets and their issues
 # `editors` or `committee` list in review/public-comment/config.json overrides
 # either. Anyone may discuss; only they move the record.
 
+# Manual trigger only (owner decision, 2026-10-06): GitHub workflows here are
+# defined, not run automatically. Start it from the Actions tab.
+# (workflow_call, if present, is kept so other repositories can call it.)
 on:
-  issue_comment:
-    types: [created, edited]
-  issues:
-    types: [opened, edited, closed, reopened]
-  # _target, so a PR from a fork can still move the record. Safe here: the job
-  # checks out the DEFAULT branch and never runs the PR's code; it reads only
-  # the PR's body, branch name and merge state from the event file.
-  pull_request_target:
-    types: [opened, edited, reopened, closed]
+  workflow_dispatch:
 
 permissions:
   contents: write

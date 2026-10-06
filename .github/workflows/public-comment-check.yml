@@ -9,11 +9,10 @@ name: Public comment — change-set records and their issues agree
 #              opened or closed as its status says, and a change-set decided
 #              outside GitHub gets its issue. Reports; never deletes.
 
+# Manual trigger only (owner decision, 2026-10-06): GitHub workflows here are
+# defined, not run automatically. Start it from the Actions tab.
+# (workflow_call, if present, is kept so other repositories can call it.)
 on:
-  pull_request:
-    paths: ["review/public-comment/**"]
-  schedule:
-    - cron: "17 3 * * *"
   workflow_dispatch:
 
 permissions:
