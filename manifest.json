@@ -1,0 +1,13 @@
+{
+  "$schema": "state-manifest/v1",
+  "status": "authoritative",
+  "authoritative": true,
+  "subgraph": "fsh-guts",
+  "keyedBy": "tip",
+  "graphs": [
+    {
+      "path": "fsh-guts"
+    }
+  ],
+  "note": "The fsh-guts subgraph of dpi-h-ra, kept off main from its first commit. Seeded 2026-10-06 to receive the snapshots of beans/ and todos/ that the cutover removed from main before cutovers deposited (owner: \"cutover dirs should go to fsh-guts\")."
+}
