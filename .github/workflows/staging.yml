@@ -35,7 +35,7 @@ jobs:
   staging:
     uses: litlfred/folio-assistant/.github/workflows/folio-staging.yml@main
     with:
-      build_command: 'bun run folio-assistant/folio-assistant-core/scripts/build-document-site.ts --out _site && bun run folio-assistant/folio-assistant-core/scripts/public-comment-site.ts --out _site && bun run folio-assistant/cat-harness/scripts/gen-node-kind-pages.ts --root . --out _site'
+      build_command: 'bun run folio-assistant/folio-assistant-core/scripts/build-document-site.ts --out _site && bun run folio-assistant/folio-assistant-core/scripts/public-comment-site.ts --out _site && bun run folio-assistant/folio-assistant-core/scripts/build-library-site.ts --out _site && bun run folio-assistant/cat-harness/scripts/gen-node-kind-pages.ts --root . --out _site'
       site_dir: _site
       folio_dir: folio
       platform_dir: folio-assistant
