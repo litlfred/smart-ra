@@ -21,7 +21,7 @@
     "references": [],
     "artefacts": []
   },
-  "status": "decided",
+  "status": "triaged",
   "priority": "medium",
   "origin": "human",
   "$schema": "public-comment/1.0.0",
@@ -66,12 +66,6 @@
     },
     "assignees": [],
     "recommendations": [],
-    "decision": {
-      "code": "not-accepted",
-      "reason": "The comment seems to judge the entire document based on just the introduction and a few examples in the introduction.",
-      "by": "review-log",
-      "at": "2026-10-05T10:22:19.026Z"
-    },
     "history": [
       {
         "at": "2026-10-05T10:22:19.026Z",
@@ -86,6 +80,13 @@
         "by": "review-log",
         "task": "Process_PublicComment#Task_EditorDecides",
         "note": "the log's status was \"Not accepted\""
+      },
+      {
+        "at": "2026-10-07T05:19:31.472Z",
+        "transition": "reopen",
+        "by": "litlfred",
+        "task": "Process_PublicComment#Task_EditorDecides",
+        "note": "the master log's status was imported as a decision (by review-log); it was the log's, not an editor's (owner, 2026-10-07: \"nothing has been decided\"). Back to triaged; the log's status stays in this history."
       }
     ]
   }
