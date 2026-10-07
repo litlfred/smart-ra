@@ -1,10 +1,9 @@
 name: Publish HTML Report
 
+# Manual trigger only (owner decision, 2026-10-06): GitHub workflows here are
+# defined, not run automatically. Start it from the Actions tab.
+# (workflow_call, if present, is kept so other repositories can call it.)
 on:
-  push:
-    paths:
-      - "archimate/**"
-      - ".github/workflows/archimate.yml"
   workflow_dispatch: # manual trigger
 
 jobs:

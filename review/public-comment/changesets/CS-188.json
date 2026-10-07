@@ -1,5 +1,4 @@
 {
-  "$schema": "changeset/1.0.0",
   "id": "CS-188",
   "title": "Bound the Benefits Package Registry against scheme operations",
   "requirements": "- Distinguish the Benefits Package Registry and other registries from enrolment, contracting, claims and payment systems\n- Define the BPR as the authoritative publication of benefit definitions, not an eligibility or adjudication engine\n- Limit the registry to authoritative benefit definitions and machine-readable rules\n- Require CBMS implementations to reconcile enrolment against the shared Client Registry identity\n- Separate workforce credential checks from contracting, empanelment and claim validity\n- Separate payment rails from decisions about correctness and authorisation; use measured language about fraud prevention\n- Keep enrolment, empanelment and contracting in operational systems that reference registries\n- State that enrolment, eligibility determination, contracting and adjudication sit in operational systems",
@@ -27,8 +26,15 @@
     "PC-2287",
     "PC-2289"
   ],
-  "status": "proposed",
-  "issues": [],
+  "status": "editing",
+  "issue": 18,
+  "issues": [
+    18
+  ],
+  "pr": {
+    "number": 16,
+    "branch": "claude/confident-bardeen-inaarx"
+  },
   "proposedBy": "claude-agent",
   "proposedAt": "2026-10-05T14:39:26.609Z",
   "history": [
@@ -36,6 +42,18 @@
       "at": "2026-10-05T14:39:26.609Z",
       "by": "claude-agent",
       "what": "proposed with 22 comment(s)"
+    },
+    {
+      "at": "2026-10-06T05:23:45.944Z",
+      "by": "litlfred",
+      "what": "PR #16 is making the change",
+      "url": "https://github.com/litlfred/smart-ra/pull/16"
+    },
+    {
+      "at": "2026-10-06T05:23:45.944Z",
+      "by": "litlfred",
+      "what": "issue #18 opened"
     }
-  ]
+  ],
+  "$schema": "changeset/1.0.0"
 }

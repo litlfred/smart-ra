@@ -15,13 +15,10 @@ name: Staging preview
 # change-sets with the comments each answers, and each comment with its
 # change-sets. It fails the build if any planned page does not resolve.
 
+# Manual trigger only (owner decision, 2026-10-06): GitHub workflows here are
+# defined, not run automatically. Start it from the Actions tab.
+# (workflow_call, if present, is kept so other repositories can call it.)
 on:
-  pull_request:
-    types: [opened, synchronize, reopened]
-  issue_comment:
-    types: [created, edited]
-  push:
-    branches: [main]
   workflow_dispatch:
 
 # What the reusable workflow needs, and no more: publish the preview, comment
@@ -35,7 +32,7 @@ jobs:
   staging:
     uses: litlfred/folio-assistant/.github/workflows/folio-staging.yml@main
     with:
-      build_command: 'bun run folio-assistant/folio-assistant-core/scripts/build-document-site.ts --out _site && bun run folio-assistant/folio-assistant-core/scripts/public-comment-site.ts --out _site && bun run folio-assistant/cat-harness/scripts/gen-node-kind-pages.ts --root . --out _site'
+      build_command: 'bun run folio-assistant/folio-assistant-core/scripts/build-document-site.ts --out _site && bun run folio-assistant/folio-assistant-core/scripts/public-comment-site.ts --out _site && bun run folio-assistant/folio-assistant-core/scripts/build-library-site.ts --out _site && bun run folio-assistant/cat-harness/scripts/gen-node-kind-pages.ts --root . --out _site'
       site_dir: _site
       folio_dir: folio
       platform_dir: folio-assistant

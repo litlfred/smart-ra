@@ -8,13 +8,10 @@
 name: FHIR CI Build
 
 # Controls when the action will run. 
+# Manual trigger only (owner decision, 2026-10-06): GitHub workflows here are
+# defined, not run automatically. Start it from the Actions tab.
+# (workflow_call, if present, is kept so other repositories can call it.)
 on:
-  # Triggers the workflow on push or pull request events for any main branch
-  push:
-    branches-ignore:    
-      - 'gh-pages'
-  pull_request:
-
   workflow_dispatch:
 
 jobs:

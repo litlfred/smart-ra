@@ -54,3 +54,9 @@ tramp
 # comment spreadsheets hold reviewers' emails and stay out of the repository.
 _site/
 review/public-comment/raw/
+# Kept on cat/dpi-h-ra/beans; mounted here by state:mount, never committed to main
+/beans/**
+# Kept on cat/dpi-h-ra/todos; mounted here by state:mount, never committed to main
+/todos/**
+# Kept on cat/dpi-h-ra/fsh-guts; mounted here by state:mount, never committed to main
+/fsh-guts/**
