@@ -1,13 +1,13 @@
 {
   "$schema": "rendered-measured/v1",
   "status": "not-base",
-  "baseCommit": "cdb21cc858ab9c837ed5145b76dadb11a7cdf3d8",
+  "baseCommit": "6ce7f0061bfbcc93c4fa465fe2feee4996a1de1e",
   "beforeCommit": "bcd7e92ab5b841eb8cec96d259bd7597f50df3bd",
   "measured": {
     "$schema": "rendered-impact/v1",
     "renderer": "build-diff",
     "method": "build-diff",
-    "base": "cdb21cc858ab9c837ed5145b76dadb11a7cdf3d8",
+    "base": "6ce7f0061bfbcc93c4fa465fe2feee4996a1de1e",
     "inputs": [],
     "files": [
       {
@@ -17,11 +17,11 @@
         "via": []
       },
       {
-        "path": "assets/navbar/rail-1tz9x5lllq4.js",
+        "path": "assets/navbar/rail-23tfpphd6vs.js",
         "change": "added",
         "role": "data",
         "via": [],
-        "hash": "d4e3ac0464d5e2727caba941aa35684c4602ddfb5abdb0167049fb6397ee51f4"
+        "hash": "5a0f379f315da449d4a6fe58a8b768978867e233c9c2f22f2e7cac63a4178a49"
       },
       {
         "path": "dpi-h-ra/blocks/000.json",
@@ -196,14 +196,14 @@
         "change": "changed",
         "role": "content",
         "via": [],
-        "hash": "3b742d2fc2e58db79b85b8ac14b208991c0b70c9d40730d91f0af7a353841772"
+        "hash": "c6712e8fa1e1ebdd15c43b8bd4fc7dc1545e3acff8075c73edf6688c6e4f9e30"
       },
       {
         "path": "dpi-h-ra/index.hydrated.html",
         "change": "added",
         "role": "content",
         "via": [],
-        "hash": "6274c1f5c2c0bcf7db2ce1eae7631c72c180879e4719ac339a80378f07a562da"
+        "hash": "31882bba13f29fe542b00e811fb496cec5e6766228b5fa4d77158b18339f98d8"
       },
       {
         "path": "dpi-h-ra/pc-notes.json",
@@ -255,11 +255,32 @@
         "hash": "aa19a06921ac26762e4d24396b7dbdfee2493b6e441098b410c6f38d4845ac00"
       },
       {
+        "path": "folio-assistant-core/library/index.html",
+        "change": "added",
+        "role": "content",
+        "via": [],
+        "hash": "7fcc7d747b3c3ba911c41dbd304b55c84e8448d3d65771797697d52de8540d24"
+      },
+      {
+        "path": "folio-assistant-core/library/who-dpi-h-reference-architecture-draft-v1/entries/who-dpi-h-reference-architecture-draft-v1.doc.json",
+        "change": "added",
+        "role": "data",
+        "via": [],
+        "hash": "3a50e53e01ce384cc6a566e2b9472f0d6478c30754bb705c21fb0fd90c5f305c"
+      },
+      {
+        "path": "folio-assistant-core/library/who-dpi-h-reference-architecture-draft-v1/index.html",
+        "change": "added",
+        "role": "content",
+        "via": [],
+        "hash": "3127c4d7e27984a908274b1febda951fbea8b62f91463fa440830503d4fc34db"
+      },
+      {
         "path": "index.html",
         "change": "changed",
         "role": "content",
         "via": [],
-        "hash": "d0b1d6ccdb660871f80310c74538018dc82703df240239247b493d5e7e902619"
+        "hash": "a31a460c03a089960a37c4f4bef3d8b3b382fc395d716cd669f6fb8670b98813"
       },
       {
         "path": "outline.json",
@@ -273,14 +294,14 @@
         "change": "changed",
         "role": "content",
         "via": [],
-        "hash": "acabd61092a6894411e47116a1ecf334921b26b1532ffd8cb02ed3816ab68800"
+        "hash": "305b356e18ca740b1c0354791b2a37f665788a4f12be5448427fdd2bd666f79b"
       },
       {
         "path": "review/index.html",
         "change": "changed",
         "role": "content",
         "via": [],
-        "hash": "a225ee4c64d3eb1708cec50aefe1cc838b65bcbeba52ba665689c7f1288db9b3"
+        "hash": "687b23b9e3856ad66b389b95dd16c29eeee712c1b1d82cb64b58ec1dd51219c9"
       }
     ],
     "undetermined": []
@@ -288,7 +309,7 @@
   "check": {
     "missed": [
       "assets/navbar/rail-1g9bv5sww1q.js",
-      "assets/navbar/rail-1tz9x5lllq4.js",
+      "assets/navbar/rail-23tfpphd6vs.js",
       "dpi-h-ra/blocks/000.json",
       "dpi-h-ra/blocks/001.json",
       "dpi-h-ra/blocks/002.json",
@@ -322,6 +343,9 @@
       "en/cat-harness/document-kind/index.html",
       "en/folio-assistant-core/changeset/dpi-h-ra/index.html",
       "en/folio-assistant-core/changeset/index.html",
+      "folio-assistant-core/library/index.html",
+      "folio-assistant-core/library/who-dpi-h-reference-architecture-draft-v1/entries/who-dpi-h-reference-architecture-draft-v1.doc.json",
+      "folio-assistant-core/library/who-dpi-h-reference-architecture-draft-v1/index.html",
       "index.html",
       "outline.json",
       "public-comments/index.html",
