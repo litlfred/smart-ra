@@ -21,7 +21,7 @@
     "references": [],
     "artefacts": []
   },
-  "status": "incorporated",
+  "status": "triaged",
   "priority": "medium",
   "origin": "human",
   "$schema": "public-comment/1.0.0",
@@ -68,16 +68,6 @@
     },
     "assignees": [],
     "recommendations": [],
-    "decision": {
-      "code": "accepted",
-      "reason": "",
-      "by": "review-log",
-      "at": "2026-10-05T10:22:19.026Z",
-      "changeSet": {
-        "branch": "claude/confident-bardeen-inaarx",
-        "pr": 9
-      }
-    },
     "history": [
       {
         "at": "2026-10-05T10:22:19.026Z",
@@ -106,6 +96,13 @@
         "by": "litlfred",
         "task": "Process_PublicComment#Task_Incorporate",
         "note": "merged in PR #9"
+      },
+      {
+        "at": "2026-10-07T05:19:31.272Z",
+        "transition": "reopen",
+        "by": "litlfred",
+        "task": "Process_PublicComment#Task_EditorDecides",
+        "note": "the master log's status was imported as a decision (by review-log); it was the log's, not an editor's (owner, 2026-10-07: \"nothing has been decided\"). Back to triaged; the log's status stays in this history."
       }
     ]
   }
