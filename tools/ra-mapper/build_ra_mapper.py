@@ -9,9 +9,9 @@ MODEL     .archimate file (Archi native XML, Open Group exchange XML, or a
 -l LABEL  optional label per model (same order); defaults to the model's name.
 
 Example:
-  python build_ra_mapper.py ../archimate/draft/WHOBaseFile.archimate \\
-         ../archimate/current/WHOBaseFile_prev.archimate \\
-         -l "WHO RA (draft)" "WHO RA (previous)" -o ../SMART-RA-Mapper.html
+  python build_ra_mapper.py ../archimate/0.2.0/WHOBaseFile.archimate \\
+         ../archimate/0.2.0-draft.3/WHOBaseFile.archimate \\
+         -l "WHO RA 0.2.0 (current)" "WHO RA 0.2.0-draft.3" -o ../SMART-RA-Mapper.html
 """
 import argparse, json, sys, zipfile, io, re
 import xml.etree.ElementTree as ET

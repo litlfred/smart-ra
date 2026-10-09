@@ -26,13 +26,10 @@ jobs:
         run: |
           cd tools/ra-mapper
 
-          # The current version (from archimate/current.txt) is listed first, so it
-          # becomes the mapper's default; the remaining version folders follow.
-          CURRENT=""
-          if [ -f ../../archimate/current.txt ]; then
-            CURRENT=$(head -n1 ../../archimate/current.txt | tr -d '[:space:]')
-            CURRENT="${CURRENT%/}"
-          fi
+          # The current version is the IG's (`version:` in sushi-config.yaml), listed
+          # first so it becomes the mapper's default; the other SemVer folders
+          # follow, newest first. See archimate/README.md.
+          CURRENT=$(sed -n 's/^version:[[:space:]]*\([^[:space:]#]*\).*/\1/p' ../../sushi-config.yaml | head -n1)
 
           MODELS=(); LABELS=()
           add() {
@@ -41,11 +38,14 @@ jobs:
             if [ -n "$m" ]; then MODELS+=("$m"); LABELS+=("$2"); fi
           }
 
-          [ -n "$CURRENT" ] && add "../../archimate/$CURRENT" "WHO RA ($CURRENT, current)"
-          for DIR in ../../archimate/*/; do
-            NAME=$(basename "$DIR")
+          if [ -n "$CURRENT" ] && [ -d "../../archimate/$CURRENT" ]; then
+            add "../../archimate/$CURRENT" "WHO RA $CURRENT (current)"
+          else
+            echo "::warning::sushi-config.yaml is at version '${CURRENT:-<none>}' but archimate/${CURRENT:-<none>}/ does not exist — the mapper has no current model."
+          fi
+          for NAME in $(ls ../../archimate | grep -E '^[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.-]+)?$' | sort -rV); do
             [ "$NAME" = "$CURRENT" ] && continue
-            add "$DIR" "WHO RA ($NAME)"
+            add "../../archimate/$NAME" "WHO RA $NAME"
           done
 
           echo "Building mapper with: ${LABELS[*]}"
