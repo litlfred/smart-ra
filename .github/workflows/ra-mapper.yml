@@ -1,20 +1,21 @@
 name: Build & Deploy RA Mapper
 
-# Re-rendered after every build of main (owner, 2026-10-09: "rerender post
-# build"), chained after the ArchiMate report rather than run beside it: both
-# deploy to gh-pages with peaceiris, which does not retry a rejected push.
-# The mapper reads the models, not the report, so it runs whether or not the
-# report succeeded.
+# Re-rendered after every successful build of main (owner, 2026-10-09:
+# "rerender post build"), chained after the staging build rather than run
+# beside it: both push to gh-pages, and peaceiris does not retry a rejected
+# push. The Archi HTML report this used to follow is gone (owner, 2026-10-09:
+# "do not do java 200mb"); the views are drawn by the staging build itself.
+# The mapper is Python and a single static page — no JVM.
 on:
   workflow_run:
-    workflows: ["Publish HTML Report"]
+    workflows: ["Staging preview"]
     types: [completed]
     branches: [main]
   workflow_dispatch:
 
 jobs:
   build-and-deploy:
-    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion != 'cancelled'
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     permissions:
       contents: write

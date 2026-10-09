@@ -1,0 +1,27 @@
+{
+  "$schema": "cat-archimate-config/v1",
+  "directory": "archimate",
+  "models": [
+    {
+      "id": "0.2.0",
+      "file": "0.2.0/WHOBaseFile.archimate",
+      "title": "WHO Reference Architecture 0.2.0",
+      "description": "The current ArchiMate model of the DPI-H reference architecture, for the IG's version 0.2.0 (sushi-config.yaml)."
+    },
+    {
+      "id": "0.2.0-draft.3",
+      "file": "0.2.0-draft.3/WHOBaseFile.archimate",
+      "title": "WHO Reference Architecture 0.2.0-draft.3"
+    },
+    {
+      "id": "0.2.0-draft.2",
+      "file": "0.2.0-draft.2/WHOBaseFile_prev.archimate",
+      "title": "WHO Reference Architecture 0.2.0-draft.2"
+    },
+    {
+      "id": "0.2.0-draft.1",
+      "file": "0.2.0-draft.1/WHO Base File.archimate",
+      "title": "WHO Reference Architecture 0.2.0-draft.1"
+    }
+  ]
+}

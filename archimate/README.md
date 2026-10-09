@@ -22,10 +22,22 @@ warn and publish no current model at `/archimate`.
 
 ## Published
 
-On every successful build of `main` (`.github/workflows/archimate.yml`, after
-the staging preview):
+Every staging build (each pull request, and every push to `main`) runs
+cat-harness's `archimate` subgraph over the models `cat-archimate.config.json`
+names — skill `archimate-models`, Tools `archimate-check` and
+`archimate-pages`:
 
-- `/archimate/<version>/` — Archi's HTML report for each folder;
-- `/archimate/` — the current version's report again;
-- `/mapper/` — the RA mapper (`.github/workflows/ra-mapper.yml`), current
-  version first.
+- `/archimate/` — every model;
+- `/archimate/<version>/` — a model's views, and its elements by layer;
+- `/archimate/<version>/views/<id>/` — a view, drawn as SVG from the model
+  (`…/views/<id>.svg`), every box a link to its element;
+- `/archimate/<version>/elements/<id>/`, `…/relationships/<id>/` — one page
+  and one JSON-LD IRI per element and relationship, keyed by Archi's id;
+- `/mapper/` — the RA mapper (`.github/workflows/ra-mapper.yml`, after a
+  successful build of `main`), current version first.
+
+**No Java.** The Archi command-line report that `archimate.yml` used to run
+(a JVM, a virtual display and a ~200 MB download per run) is gone (owner,
+2026-10-09). Draw in Archi on your own machine; commit the `.archimate`; the
+build does the rest. A pull request's preview is at
+`STAGING/<branch>/archimate/`.

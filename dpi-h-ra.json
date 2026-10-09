@@ -19,6 +19,14 @@
       "description": "Source material, frozen. who-dpi-h-reference-architecture-draft-v1/ holds the review version exactly as circulated (line-numbered PDF and .docx), plus the extraction (docx-structure.json) and the page/line map (pdf-line-map.json) the folio and every public comment's anchor are derived from. Never edited to answer a comment."
     },
     {
+      "id": "archimate",
+      "path": "archimate/",
+      "graphTypologies": [
+        "archimate"
+      ],
+      "description": "The ArchiMate models of the reference architecture, one folder per SemVer version (archimate/README.md), named by cat-archimate.config.json. cat-harness's archimate subgraph (skill archimate-models) gives every view, element and relationship a page and an IRI and draws every view as SVG — no Java, no Archi CLI; the staging build writes them into the site at /archimate/<version>/."
+    },
+    {
       "id": "public-comments",
       "path": "review/public-comment/",
       "graphTypologies": [
