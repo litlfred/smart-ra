@@ -1,13 +1,20 @@
 name: Build & Deploy RA Mapper
 
-# Manual trigger only (owner decision, 2026-10-06): GitHub workflows here are
-# defined, not run automatically. Start it from the Actions tab.
-# (workflow_call, if present, is kept so other repositories can call it.)
+# Re-rendered after every build of main (owner, 2026-10-09: "rerender post
+# build"), chained after the ArchiMate report rather than run beside it: both
+# deploy to gh-pages with peaceiris, which does not retry a rejected push.
+# The mapper reads the models, not the report, so it runs whether or not the
+# report succeeded.
 on:
+  workflow_run:
+    workflows: ["Publish HTML Report"]
+    types: [completed]
+    branches: [main]
   workflow_dispatch:
 
 jobs:
   build-and-deploy:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion != 'cancelled'
     runs-on: ubuntu-latest
     permissions:
       contents: write

@@ -1,13 +1,22 @@
 name: Publish HTML Report
 
-# Manual trigger only (owner decision, 2026-10-06): GitHub workflows here are
-# defined, not run automatically. Start it from the Actions tab.
-# (workflow_call, if present, is kept so other repositories can call it.)
+# Re-rendered after every build of main (owner, 2026-10-09: "rerender post
+# build"). The site build publishes at the gh-pages root and leaves
+# /archimate alone, but until now nothing ran this, so the report was never
+# published at all. It follows the staging run rather than racing it: both
+# push to gh-pages, and peaceiris has no retry on a rejected push.
+# The RA mapper follows this workflow in turn, for the same reason.
 on:
+  workflow_run:
+    workflows: ["Staging preview"]
+    types: [completed]
+    branches: [main]
   workflow_dispatch: # manual trigger
 
 jobs:
   build-and-deploy:
+    # A failed site build published nothing, so there is nothing to follow.
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     permissions:
       contents: write

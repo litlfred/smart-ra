@@ -15,10 +15,16 @@ name: Staging preview
 # change-sets with the comments each answers, and each comment with its
 # change-sets. It fails the build if any planned page does not resolve.
 
-# Manual trigger only (owner decision, 2026-10-06): GitHub workflows here are
-# defined, not run automatically. Start it from the Actions tab.
-# (workflow_call, if present, is kept so other repositories can call it.)
+# Runs as CI again (owner, 2026-10-09: "it needs CI"), reversing the
+# 2026-10-06 dispatch-only decision for this workflow: every pull request gets
+# its STAGING/<branch>/ preview, and every push to main republishes the root.
+# Dispatch stays, for the public-comment intake's GITHUB_TOKEN commits, which
+# cannot start a push run.
 on:
+  push:
+    branches: [main]
+  pull_request:
+    types: [opened, synchronize, reopened]
   workflow_dispatch:
 
 # What the reusable workflow needs, and no more: publish the preview, comment
