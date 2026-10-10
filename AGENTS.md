@@ -65,8 +65,8 @@ passing.
 
 The staging preview sweeps each pull request as well (`.github/workflows/staging.yml`),
 so the review page's QA column reports that build. `.github/workflows/qa-sweep.yml`
-runs the full sweep in CI, and `qa-sweep-nightly.yml` refreshes stale verdicts;
-both are dispatch-only until you enable their triggers. Criteria that need an
+runs the full sweep on every pull request (warn-only), and
+`qa-sweep-nightly.yml` refreshes stale verdicts by dispatch only. Criteria that need an
 agent's judgement (voice, exposition, adversarial review) are not run by the
 sweep; they stay unaudited until an agent records them.
 

@@ -6,9 +6,9 @@ Single-file web app for EIRA-style (ABB/SBB) conformance mapping against the WHO
 
     cd tools/ra-mapper
     python build_ra_mapper.py \
-        ../../archimate/draft/WHOBaseFile.archimate \
-        ../../archimate/current/WHOBaseFile_prev.archimate \
-        -l "WHO RA (draft)" "WHO RA (previous)" \
+        ../../archimate/0.2.0/WHOBaseFile.archimate \
+        ../../archimate/0.2.0-draft.3/WHOBaseFile.archimate \
+        -l "WHO RA 0.2.0 (current)" "WHO RA 0.2.0-draft.3" \
         -o ../SMART-RA-Mapper.html
 
 Pass any number of models (Archi `.archimate`, exchange XML, or zipped Archi archive);
