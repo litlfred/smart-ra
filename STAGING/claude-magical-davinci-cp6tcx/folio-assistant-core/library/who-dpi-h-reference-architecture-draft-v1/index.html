@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>try{var s=localStorage.getItem("fa-color-scheme");if(s==="light"||s==="dark")document.documentElement.setAttribute("data-fa-scheme",s)}catch(e){}</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector — the version published for public comment — library</title>
+<style>/* The block content panel — bean lrmo. Tokens only, so it follows the light
+   and dark palettes below rather than hardcoding either. */
+.lib-page #document .seg { margin: .2rem 0 .8rem; }
+.lib-page #document .seg button[aria-selected="true"] { font-weight: 600; }
+.lib-page #document .docbody { padding: 0 16px 8px; }
+.lib-page #document .dockw { padding: 4px 16px; }
+.lib-page #document p.kw, .lib-page #document .dockw p.kw { display: inline; margin: 0; }
+.lib-page #document .docsec p.kw { display: block; margin: 2px 0 6px; }
+.lib-page #document p.kw .pill { margin: 0 2px 2px 0; }
+.lib-page #document ul.toc, .lib-page #document ul.toc ul { list-style: none; margin: 0; padding-left: 1.1rem; }
+.lib-page #document ul.toc { padding-left: 0; }
+.lib-page #document ul.toc li { margin: .15rem 0; }
+.lib-page #document ul.toc li.leaf { padding-left: 1rem; }
+.lib-page #document ul.toc summary { cursor: pointer; }
+.lib-page #document td ul { margin: .3rem 0 0; padding-left: 1.1rem; }
+.lib-page #document .docsec { margin: 0 0 1rem; }
+.lib-page #document .docsec h3 { margin: .2rem 0 .3rem; font-size: 1rem; }
+.lib-page #document .sum { padding: .55rem .7rem; border: 1px dashed var(--line); border-radius: 6px; }
+.lib-page #document .sum p { margin: .35rem 0 0; }
+.lib-page #document td { white-space: normal; vertical-align: top; }
+.lib-page #blocks details > summary { cursor: pointer; }
+.lib-page #blocks .block-body { margin: .4rem 0 .2rem; }
+.lib-page #blocks .block-body pre {
+  white-space: pre-wrap; word-break: break-word; margin: 0;
+  padding: .55rem .7rem; background: var(--panel); border: 1px solid var(--line);
+  border-radius: 6px; font-size: 12.5px; line-height: 1.45; max-height: 22rem; overflow: auto;
+}
+.lib-page #blocks .block-body .note { margin: .35rem 0 0; font-size: 11.5px; color: var(--muted); }
+/* EXTRACT AND AGENT SUMMARY, SIDE BY SIDE -- owner, 2026-09-24: "the extract
+   of a node is shown, but no agentic summary". Beside, never instead: the
+   extract is the source's words and the summary is an agent's account of
+   them, so a reader must be able to hold one against the other. Two columns
+   where there is room, stacked on a phone, extract first either way. */
+.lib-page #blocks td { white-space: normal; vertical-align: top; }
+.lib-page #blocks td.bt { min-width: 15rem; }
+.lib-page #blocks .pair { display: grid; grid-template-columns: 1fr; gap: .6rem; }
+@media (min-width: 760px) { .lib-page #blocks .pair { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } }
+.lib-page #blocks .pair > div { min-width: 0; }
+.lib-page #blocks .lbl { margin: 0 0 .3rem; font-size: 11.5px; font-weight: 600; color: var(--muted);
+  text-transform: uppercase; letter-spacing: .04em; }
+.lib-page #blocks .sum { padding: .55rem .7rem; border: 1px dashed var(--line); border-radius: 6px;
+  font-size: 13px; line-height: 1.5; }
+.lib-page #blocks .sum p { margin: .35rem 0 0; }
+/* A WITHHELD ENTRY -- issue #1794. Said in words, styled as information
+   rather than as an error: not publishing a refused work is the system
+   working, and the banner is there so it is not mistaken for a gap. */
+.lib-page #blocks .wh-banner { margin: 8px 16px 12px; padding: .6rem .8rem; border: 1px solid var(--info);
+  background: var(--info-soft); border-radius: 8px; font-size: .86rem; line-height: 1.5; }
+.lib-page #blocks .wh-banner p { margin: 0 0 .35rem; }
+.lib-page #blocks .wh-banner p:last-child { margin: 0; }
+.lib-page #blocks .wh-line { color: var(--muted); font-size: .8rem; }
+/* THEMED, since 2026-10-07: every library page sits on the site's default
+   layout, inside the theme's content column, so this sheet styles ONE
+   wrapper. Every selector starts .lib-page, and there is no rule on body,
+   :root or a -- a rule there would restyle the theme on every page that
+   shares this file's reader. The palette is keyed on the scheme the SITE
+   paints (data-fa-scheme on html, set by head_custom.html's first-paint
+   block and by docs-ui.js's toggle), so it follows the reader's choice
+   rather than the OS alone. Dark is the default because the site's is.
+   --bg is the theme's own ground, which a sticky header must paint over. */
+.lib-page {
+  --bg:#27262b; --fg:#e8eaed; --muted:#a9b0b8; --line:#4a4950; --panel:#1f1e23;
+  --accent:#7fc7a1; --accent-soft:#16291f; --warn:#e0b25e; --warn-soft:#2a2213;
+  --info:#8db4ec; --info-soft:#1d2937; --box:#1f1e23;
+}
+html[data-fa-scheme="light"] .lib-page {
+  --bg:#fff; --fg:#17191c; --muted:#5b6168; --line:#d9dde2; --panel:#f6f7f9;
+  --accent:#276749; --accent-soft:#e6f2ec; --warn:#8a5300; --warn-soft:#fdf3e0;
+  --info:#1a5fb4; --info-soft:#e7eefb; --box:#fff;
+}
+.lib-page, .lib-page * { box-sizing:border-box; }
+/* The theme's list bullet is drawn by li::before in .main-content; the
+   table of contents is a tree, not a bulleted list. */
+.lib-page ul.toc li::before { content:none; }
+.lib-page .lib-head { padding:16px 0; border-bottom:1px solid var(--line); }
+.lib-page h1 { margin:0 0 6px; }
+.lib-page .badges { display:flex; flex-wrap:wrap; gap:8px; margin:8px 0 0; }
+.lib-page .badge { border:1px solid var(--line); border-radius:8px; padding:5px 10px; font-size:.82rem; background:var(--panel); }
+.lib-page .badge b { font-variant-numeric:tabular-nums; }
+.lib-page .badge.q b { color:var(--warn); }
+.lib-page .toolbar { padding:10px 0; display:flex; flex-wrap:wrap; gap:8px; align-items:center; border-bottom:1px solid var(--line); }
+.lib-page input, .lib-page select, .lib-page button { font:inherit; color:var(--fg); background:var(--box);
+  border:1px solid var(--line); border-radius:6px; padding:6px 9px; }
+.lib-page input { flex:1 1 200px; min-width:0; }
+.lib-page .seg { display:inline-flex; border:1px solid var(--line); border-radius:6px; overflow:hidden; }
+.lib-page .seg button { border:0; border-radius:0; background:transparent; cursor:pointer; padding:6px 12px; }
+.lib-page .seg button[aria-pressed="true"] { background:var(--accent-soft); color:var(--fg); font-weight:600; }
+.lib-page .lib-main { padding:0 0 40px; }
+.lib-page table { border-collapse:collapse; width:100%; font-size:.86rem; }
+/* min-width, border-left, background and font-size undo the theme's own
+   cell rules, which are type selectors and so lose to these. */
+.lib-page th, .lib-page td { text-align:left; padding:7px 10px; border:0; border-bottom:1px solid var(--line); white-space:nowrap;
+  min-width:0; background:transparent; font-size:inherit; }
+.lib-page th { position:sticky; top:0; background:var(--bg); color:var(--muted); font-size:.74rem;
+  text-transform:uppercase; letter-spacing:.04em; }
+.lib-page th button { border:0; background:transparent; padding:0; font:inherit; color:inherit;
+  cursor:pointer; text-transform:inherit; letter-spacing:inherit; }
+.lib-page th button:hover { color:var(--fg); text-decoration:underline; }
+.lib-page th[aria-sort] button::after { content:" ▲"; }
+.lib-page th[aria-sort="descending"] button::after { content:" ▼"; }
+.lib-page td.num { text-align:right; font-variant-numeric:tabular-nums; }
+.lib-page tbody tr:hover { background:var(--panel); }
+.lib-page .slug { font-family:ui-monospace, Menlo, monospace; }
+/* A row's secondary links -- source, README, a referenced entry's own -- are
+   24 px targets (WCAG 2.5.8). As plain inline text they were 16 px tall and
+   sat closer than 24 px to the title link beside them. */
+.lib-page a.src { display:inline-block; min-width:24px; min-height:24px; line-height:24px; }
+/* The row's PRIMARY links -- the title and the slug -- are 24 px targets too.
+   Fixing a.src alone left the title a 16 px inline box, and wherever the
+   title cell wrapped (a short title whose "source" link falls to the next
+   line, which depends on the fonts the runner has) that 24 px source link
+   sat 10.6 px below the title's centre: axe's target-size, serious, on
+   main's CI for cat-harness/nist-sp-800-207 ("Zero Trust Architecture").
+   A rule for the CLASS of link, not that entry: every listing link is a
+   24 px target whatever wraps next to it. */
+.lib-page a.lib-title, .lib-page a.lib-view { display:inline-block; min-height:24px; line-height:24px; }
+.lib-page .pill { display:inline-block; font-size:.7rem; padding:1px 7px; border-radius:999px;
+  border:1px solid var(--line); color:var(--muted); }
+.lib-page .pill.ok { color:var(--accent); background:var(--accent-soft); border-color:var(--accent); }
+.lib-page .pill.warn { color:var(--warn); background:var(--warn-soft); border-color:var(--warn); }
+.lib-page .pill.info { color:var(--info); background:var(--info-soft); border-color:var(--info); }
+.lib-page #desktop { display:grid; grid-template-columns:repeat(auto-fill, minmax(230px, 1fr));
+  gap:14px; padding:16px; }
+.lib-page .card { border:1px solid var(--line); border-radius:10px; background:var(--panel);
+  padding:12px; display:flex; flex-direction:column; gap:6px; }
+.lib-page .card h3 { margin:0; font-size:.92rem; line-height:1.3; }
+.lib-page .card .slug { font-size:.74rem; color:var(--muted); }
+.lib-page .card .rows { font-size:.78rem; color:var(--muted); display:grid;
+  grid-template-columns:auto 1fr; gap:1px 8px; margin-top:2px; }
+.lib-page .card .rows b { color:var(--fg); font-weight:600; font-variant-numeric:tabular-nums; }
+.lib-page .card .tags { display:flex; flex-wrap:wrap; gap:4px; margin-top:4px; }
+.lib-page .spine { height:6px; border-radius:3px; background:var(--accent); opacity:.65; }
+.lib-page .empty { color:var(--muted); padding:24px 16px; }
+.lib-page h2 { font-size:.95rem; margin:24px 0 4px; }
+.lib-page p.note { color:var(--muted); font-size:.82rem; margin:0 0 8px; }
+.lib-page .wrap { overflow:auto; }
+/* THE BOOK'S AVATAR, first in its row -- bean zrvt, issue #1006. A fixed box
+   so a row does not reflow when the cover arrives, and a glyph of the same
+   size when there is no picture, so "no cover" never looks like a broken one. */
+.lib-page .lib-ava { display:inline-flex; align-items:center; justify-content:center;
+  width:34px; height:46px; margin-right:8px; vertical-align:middle; flex:0 0 auto;
+  border:1px solid var(--line); background:var(--panel); overflow:hidden; }
+.lib-page .lib-ava img { width:100%; height:100%; object-fit:cover; display:block; }
+.lib-page .lib-ava svg { width:22px; height:22px; fill:none; stroke:var(--muted); stroke-width:1.6; }
+.lib-page td.lib-first { white-space:nowrap; }
+.lib-page .card .lib-ava { width:56px; height:76px; }
+/* THE LISTING FITS MORE OF ITSELF, AND SAYS WHEN IT DOES NOT -- bean gnqa,
+   findings 1 and 2. Measured 2026-10-02 at 1280 px: a 3636 px table in a
+   1224 px box, every cell nowrap, so the title and source path alone were
+   2,000 px and nine of thirteen columns sat past the right edge with
+   nothing on screen saying so. The long TEXT cells now wrap inside a
+   bounded width; the short numeric and pill cells keep nowrap, because a
+   count broken over two lines is harder to read than one scrolled to. */
+.lib-page #listing td.lib-first { white-space:normal; min-width:13rem; max-width:17rem; }
+.lib-page #listing td.t-title { white-space:normal; min-width:14rem; max-width:22rem; }
+.lib-page #listing td.t-title a.lib-title { display:inline-flex; align-items:center; min-height:24px; }
+.lib-page #listing td.t-source { white-space:normal; min-width:9rem; max-width:14rem; }
+.lib-page #listing td.t-source .slug { overflow-wrap:anywhere; }
+.lib-page #listing td.t-source .pill { white-space:nowrap; }
+.lib-page #queue td.slug { white-space:normal; overflow-wrap:anywhere; min-width:12rem; max-width:24rem; }
+/* "Referenced by" OPENS rather than hovers -- finding 6. A title tooltip is
+   unreachable by touch and by keyboard; a details element is both. */
+.lib-page details.refs > summary { cursor:pointer; list-style:none; display:inline-flex; align-items:center; min-height:28px; }
+.lib-page details.refs > summary::-webkit-details-marker { display:none; }
+.lib-page details.refs > summary .pill::after { content:" \25B8"; }
+.lib-page details.refs[open] > summary .pill::after { content:" \25BE"; }
+.lib-page details.refs ul { margin:.3rem 0 0; padding-left:1rem; font-size:.72rem; color:var(--muted);
+  white-space:normal; overflow-wrap:anywhere; max-width:22rem; }
+/* THE EDGE CUE AT DESKTOP WIDTH. narrow-viewport.css fades a table's
+   overflowing edge below 800 px; above it the scroll box is .wrap, and it
+   had mask-image none. Same mask, same scroll-driven animation, so a box
+   that does not overflow shows no fade. */
+@media (min-width: 800px) {
+  /* The entry's identity stays in view while the reader scrolls to its
+     numbers: the first column is pinned to the scroll box's left edge. */
+  .lib-page #listing th:first-child, .lib-page #listing td.lib-first { position:sticky; left:0; z-index:1;
+    background:var(--bg); box-shadow:1px 0 0 var(--line); }
+  .lib-page #listing th:first-child { z-index:2; }
+  @supports (animation-timeline: scroll()) {
+    /* Right edge only: the pinned first column already shows what is to
+       the left, and a left fade would dim the entry's own name. */
+    .lib-page #listing.wrap, .lib-page #queue.wrap {
+      mask-image: linear-gradient(to right,
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+}
+/* ON A PHONE A ROW IS A CARD -- finding 2. At 390 px a sideways-scrolling
+   table showed one column of thirteen: the cover, the slug and a button,
+   none of the metadata the listing exists for. Each row now lays its cells
+   out in a two-column grid, every cell labelled from its own header, and
+   the header row stays as the SORT controls. Overrides narrow-viewport.css
+   by id, which outranks its type selector. */
+@media (max-width: 799.98px) {
+  .lib-page #listing table, .lib-page #queue table { display:block; mask-image:none; animation:none; overflow:visible; }
+  .lib-page #listing thead, .lib-page #queue thead, .lib-page #listing tbody, .lib-page #queue tbody { display:block; }
+  .lib-page #listing thead tr, .lib-page #queue thead tr { display:flex; flex-wrap:wrap; gap:2px 12px; padding:6px 10px; }
+  .lib-page #listing thead th, .lib-page #queue thead th { position:static; border:0; padding:2px 0; }
+  .lib-page #listing thead tr::before { content:"Sort by"; font-size:.74rem; color:var(--muted); align-self:center; }
+  .lib-page #listing tbody tr, .lib-page #queue tbody tr { display:grid; grid-template-columns:1fr 1fr; gap:2px 10px;
+    padding:10px; border-bottom:1px solid var(--line); }
+  .lib-page #listing tbody td, .lib-page #queue tbody td { display:block; border:0; padding:2px 0; white-space:normal;
+    min-width:0; max-width:none; text-align:left; overflow-wrap:anywhere; }
+  .lib-page #listing td.lib-first, .lib-page #listing td.t-title, .lib-page #listing td.t-source, .lib-page #listing td.t-refs, .lib-page #queue td.slug { grid-column:1 / -1; }
+  .lib-page #listing td[data-label]::before, .lib-page #queue td[data-label]::before { content:attr(data-label);
+    display:block; font-size:.66rem; letter-spacing:.04em; text-transform:uppercase; color:var(--muted); }
+  .lib-page #listing td.lib-first::before, .lib-page #listing td.t-title::before { content:none; }
+}
+
+body { max-width: 72rem; margin: 0 auto; padding: 1rem 16px; }
+.doc-actions a { margin-left: .4em; font-size: .8rem; font-weight: normal; }
+</style>
+<link rel="stylesheet" href="https://litlfred.github.io/folio-assistant/assets/css/navbar.css"><script src="../../../assets/navbar/rail-29o1lvmlrxo.js" defer></script><script src="https://litlfred.github.io/folio-assistant/assets/js/navbar.js" defer></script><link rel="stylesheet" href="https://litlfred.github.io/folio-assistant/assets/css/navbar-row.css"><script src="https://litlfred.github.io/folio-assistant/assets/js/navbar-row.js" defer></script><link rel="stylesheet" href="https://litlfred.github.io/folio-assistant/assets/css/docs-ui.css" data-fa-platform-ui><script src="https://litlfred.github.io/folio-assistant/assets/js/docs-ui.js" defer data-fa-platform-ui></script></head>
+<body><div data-fa-staging-banner lang="en" dir="ltr" style="background:#4F6F52;color:#fff;padding:8px 16px;font-size:14px;text-align:center;position:fixed;top:0;left:0;right:0;box-sizing:border-box;z-index:2147483001;font-family:system-ui">🔀 <b>FEATURE BRANCH</b> <span data-fa-staging-detail>— loading build details…</span></div><style>:root{--fa-staging-offset:0px}body{margin:0}.side-bar,.fa-nav{top:var(--fa-staging-offset,0px)!important}html{padding-top:var(--fa-staging-offset,0px)}</style><script>(function(){
+function el(t,a,x){var e=document.createElement(t);if(a)for(var k in a)e.setAttribute(k,a[k]);if(x!=null)e.textContent=x;return e;}
+function link(href,text,extra){var a=el('a',{href:href,style:'color:#fff;text-decoration:underline'},text);if(extra)a.setAttribute('style',a.getAttribute('style')+';'+extra);return a;}
+function chip(text){return el('span',{style:"font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:rgba(0,0,0,.22);color:#fff;padding:1px 6px;border-radius:3px"},text);}
+function sep(){return document.createTextNode(' \u00b7 ');}
+function root(){var m=location.pathname.match(/^(.*\/STAGING\/[^/]+\/)/);return m?m[1]:null;}
+function measure(){var b=document.querySelector('[data-fa-staging-banner]');if(!b)return;document.documentElement.style.setProperty('--fa-staging-offset',b.getBoundingClientRect().height+'px');}
+function fill(d,f,r){
+  while(d.firstChild)d.removeChild(d.firstChild);
+  d.appendChild(document.createTextNode('\u2014 '));
+  var b=link(f.branchUrl,'');b.appendChild(chip(f.branch));d.appendChild(b);
+  d.appendChild(sep());d.appendChild(document.createTextNode('commit '));d.appendChild(chip(f.sha));
+  d.appendChild(sep());d.appendChild(document.createTextNode('built '+f.built));
+  d.appendChild(sep());d.appendChild(link(f.prUrl,'PR #'+f.pr));
+  if(f.issue){d.appendChild(sep());d.appendChild(link(f.issueUrl,'issue #'+f.issue));}
+  d.appendChild(sep());
+  var rel=location.pathname.slice(r.length);
+  if(rel===''||rel.charAt(rel.length-1)==='/')rel+='index.html';
+  if(!f.mainPagesKnown){
+    d.appendChild(link(f.mainSite+'/','compare with '+(f.beforeRef||'main')+' \u2197'));
+  }else if(f.newPages.indexOf(rel)>=0){
+    d.appendChild(link(f.mainSite+'/',(f.beforeRef||'main')+' \u2197'));
+    d.appendChild(document.createTextNode(' '));
+    d.appendChild(el('span',{style:'opacity:.85'},'(new page)'));
+  }else{
+    d.appendChild(link(f.mainSite+'/'+rel,'compare with '+(f.beforeRef||'main')+' \u2197'));
+  }
+  d.appendChild(sep());d.appendChild(link(f.runUrl,'build log'));
+  stamp(f);
+  measure();
+}
+function stamp(f){
+  var p=document.querySelector('.fa-build-stamp');if(!p)return;
+  while(p.firstChild)p.removeChild(p.firstChild);
+  p.appendChild(document.createTextNode('deployed '));
+  var a=link(f.runUrl,'');a.appendChild(el('code',null,f.sha));p.appendChild(a);
+  p.appendChild(document.createTextNode(' · '+f.built));
+}
+function go(){
+  measure();
+  var d=document.querySelector('[data-fa-staging-detail]');if(!d)return;
+  var r=root();
+  if(!r){d.textContent='\u2014 build details unavailable (not served from a preview path)';return;}
+  fetch(r+'staging.json',{cache:'no-store'}).then(function(x){if(!x.ok)throw 0;return x.json();})
+    .then(function(f){fill(d,f,r);})
+    .catch(function(){d.textContent='\u2014 build details unavailable';measure();});
+}
+measure();
+if(document.readyState!=='loading')go();else document.addEventListener('DOMContentLoaded',go);
+window.addEventListener('resize',measure);window.addEventListener('load',measure);
+})();</script><script type="application/json" id="fa-navbar-row" data-fa-root="../../..">{"icons":["close","todos","beans","fsh-guts","launcher"],"hrefs":{"fsh-guts":"https://litlfred.github.io/folio-assistant/fsh-guts/"},"notes":{"todos":"this site declares no todos graph","beans":"this site declares no beans graph"},"folders":[{"kind":"bean-defs","label":"Bean definitions","note":"no viewer yet"},{"kind":"bean-notes","label":"Bean notes","note":"no viewer yet"},{"kind":"beans","label":"Beans","note":"no viewer yet"},{"kind":"block-kinds","label":"Block kinds","note":"no viewer yet"},{"kind":"cat-harness","label":"Harness graph","note":"no viewer yet"},{"kind":"code","label":"Code","note":"no viewer yet"},{"kind":"docs","label":"Docs","path":"https://litlfred.github.io/folio-assistant/cat-harness/auto-docs/index/docs/folio-assistant-core-docs/"},{"kind":"folio","label":"Folio","note":"no viewer yet"},{"kind":"glossary","label":"Glossary","path":"https://litlfred.github.io/folio-assistant/glossary/"},{"kind":"library","label":"Library","path":"https://litlfred.github.io/folio-assistant/cat-harness/library/folio-assistant-core/"},{"kind":"memory","label":"Memory","note":"no viewer yet"},{"kind":"methodology","label":"Methodologies","path":"https://litlfred.github.io/folio-assistant/methodologies/"},{"kind":"processes","label":"Processes","path":"https://litlfred.github.io/folio-assistant/processes/"},{"kind":"qa","label":"QA","note":"no viewer yet"},{"kind":"schemas","label":"Schemas","note":"no viewer yet"},{"kind":"skills","label":"Skills","path":"https://litlfred.github.io/folio-assistant/cat-harness/auto-docs/index/skills/core-skills/"},{"kind":"tools","label":"Tools","note":"no viewer yet"},{"kind":"translation-sources","label":"Translation sources","path":"https://litlfred.github.io/folio-assistant/translation-status/"},{"kind":"typologies","label":"Graph typologies","note":"no viewer yet"},{"kind":"validators","label":"Validators","note":"no viewer yet"},{"kind":"voices","label":"Voices","path":"https://litlfred.github.io/folio-assistant/cat-harness/voices/folio-assistant-core/"},{"kind":"workflow-state","label":"Workflow state","note":"no viewer yet"}],"whose":{"fsh-guts":"the platform's: this site declares no fsh-guts graph"}}</script><script type="application/json" id="fa-rail" data-fa-root="https://litlfred.github.io/folio-assistant" data-fa-to-root="../../..">{"data":"rail-29o1lvmlrxo","documentIndex":{"label":"Contents","icon":"§","items":[{"label":"Front matter","icon":"▸","href":"#sec-sec-front-matter"},{"label":"1.1 About the Reference Architecture for health Digital Public Infrastructure (DPI-H) Guidance","icon":"▸","href":"#sec-sec-000-11-about-the-reference-architecture-for-health-d"},{"label":"1.1.1 What is a reference architecture, and why does it matter for the health sector?","icon":"·","href":"#sec-sec-001-111-what-is-a-reference-architecture-and-why-doe","depth":1},{"label":"1.1.2 Understanding Digital Public Infrastructure (DPI) and health Digital Public Infrastructure (DPI-H)","icon":"·","href":"#sec-sec-002-112-understanding-digital-public-infrastructure","depth":1},{"label":"1.1.3 Building on existing foundations","icon":"·","href":"#sec-sec-003-113-building-on-existing-foundations","depth":1},{"label":"1.1.4 Who can benefit from this guidance?","icon":"·","href":"#sec-sec-004-114-who-can-benefit-from-this-guidance","depth":1},{"label":"1.2 Why health needs more than foundational DPI","icon":"▸","href":"#sec-sec-005-12-why-health-needs-more-than-foundational-dpi"},{"label":"1.2.1 Identity DPI and Identification in Healthcare","icon":"·","href":"#sec-sec-006-121-identity-dpi-and-identification-in-healthcar","depth":1},{"label":"1.2.2 Data exchange DPI and Interoperability in the health sector","icon":"·","href":"#sec-sec-007-122-data-exchange-dpi-and-interoperability-in-th","depth":1},{"label":"1.2.3 Payments DPI and financial transactions in the health sector","icon":"·","href":"#sec-sec-008-123-payments-dpi-and-financial-transactions-in-t","depth":1},{"label":"1.3 Value of DPI-H","icon":"▸","href":"#sec-sec-009-13-value-of-dpi-h"},{"label":"1.3.1 The Cost of Fragmentation","icon":"·","href":"#sec-sec-010-131-the-cost-of-fragmentation","depth":1},{"label":"1.3.2 What DPI-H Makes Possible","icon":"·","href":"#sec-sec-011-132-what-dpi-h-makes-possible","depth":1},{"label":"1.3.3 Value Across Stakeholders","icon":"·","href":"#sec-sec-012-133-value-across-stakeholders","depth":1},{"label":"1.4 DPI-H Principles","icon":"▸","href":"#sec-sec-013-14-dpi-h-principles"},{"label":"1.5 The Seven Priority Health Sector Goals","icon":"▸","href":"#sec-sec-014-15-the-seven-priority-health-sector-goals"},{"label":"1.5.1 The Health Sector Goals","icon":"·","href":"#sec-sec-015-151-the-health-sector-goals","depth":1},{"label":"2.1 The Reference Architecture Scope","icon":"▸","href":"#sec-sec-016-21-the-reference-architecture-scope"},{"label":"2.1.1 Metadata registries and foundational components","icon":"·","href":"#sec-sec-017-211-metadata-registries-and-foundational-compone","depth":1},{"label":"2.1.2 Business services layer","icon":"·","href":"#sec-sec-018-212-business-services-layer","depth":1},{"label":"2.1.3 Relationship to foundational DPI","icon":"·","href":"#sec-sec-019-213-relationship-to-foundational-dpi","depth":1},{"label":"2.2 Resilient Essential Data and Digital Health Infrastructure (REDDHI)","icon":"▸","href":"#sec-sec-020-22-resilient-essential-data-and-digital-health-i"},{"label":"2.2.1 What REDDHI is and its foundational core","icon":"·","href":"#sec-sec-021-221-what-reddhi-is-and-its-foundational-core","depth":1},{"label":"2.2.2 The enabling conditions for REDDHI","icon":"·","href":"#sec-sec-022-222-the-enabling-conditions-for-reddhi","depth":1},{"label":"2.4 Methodology: Mapping Health Goals to DPI-H","icon":"▸","href":"#sec-sec-023-24-methodology-mapping-health-goals-to-dpi-h"},{"label":"2.4.1 How each health goal is articulated","icon":"·","href":"#sec-sec-024-241-how-each-health-goal-is-articulated","depth":1},{"label":"2.4.2 Worked example: Advance Efficient and Equitable Health Financing","icon":"·","href":"#sec-sec-025-242-worked-example-advance-efficient-and-equitab","depth":1},{"label":"3.1 The architecture description approach","icon":"▸","href":"#sec-sec-026-31-the-architecture-description-approach"},{"label":"3.3 The reference architecture in practice","icon":"▸","href":"#sec-sec-027-33-the-reference-architecture-in-practice"},{"label":"3.4 Governance of Digital Health Architectures and DPI-H","icon":"▸","href":"#sec-sec-028-34-governance-of-digital-health-architectures-an"},{"label":"3.4.1 Purpose and framing","icon":"·","href":"#sec-sec-029-341-purpose-and-framing","depth":1},{"label":"3.4.2 Governance principles","icon":"·","href":"#sec-sec-030-342-governance-principles","depth":1},{"label":"3.4.3 Strategic governance","icon":"·","href":"#sec-sec-031-343-strategic-governance","depth":1},{"label":"3.4.4 Operational governance","icon":"·","href":"#sec-sec-032-344-operational-governance","depth":1},{"label":"3.4.5 Semantic Governance Infrastructure","icon":"·","href":"#sec-sec-033-345-semantic-governance-infrastructure","depth":1},{"label":"3.4.6 Regional governance considerations","icon":"·","href":"#sec-sec-034-346-regional-governance-considerations","depth":1},{"label":"3.4.7 Governance maturity considerations","icon":"·","href":"#sec-sec-035-347-governance-maturity-considerations","depth":1},{"label":"3.5 DPI-H Application Components","icon":"▸","href":"#sec-sec-036-35-dpi-h-application-components"},{"label":"3.5.1 What Distinguishes a DPI-H Application Component","icon":"·","href":"#sec-sec-037-351-what-distinguishes-a-dpi-h-application-compo","depth":1},{"label":"3.5.2 How each component is described","icon":"·","href":"#sec-sec-038-352-how-each-component-is-described","depth":1},{"label":"3.5.3 How the components are organised","icon":"·","href":"#sec-sec-039-353-how-the-components-are-organised","depth":1},{"label":"3.6 Interoperability Architecture within DPI-H","icon":"▸","href":"#sec-sec-042-36-interoperability-architecture-within-dpi-h"},{"label":"3.6.1 Interoperability as a capability, not just a component","icon":"·","href":"#sec-sec-043-361-interoperability-as-a-capability-not-just-a","depth":1},{"label":"3.6.2 Data and health content standards","icon":"·","href":"#sec-sec-044-362-data-and-health-content-standards","depth":1},{"label":"3.6.3 Interoperability between DPI-H and foundational DPI","icon":"·","href":"#sec-sec-045-363-interoperability-between-dpi-h-and-foundatio","depth":1},{"label":"3.6.4 Cross-border health data flows","icon":"·","href":"#sec-sec-046-364-cross-border-health-data-flows","depth":1},{"label":"3.6.5 Conformance","icon":"·","href":"#sec-sec-047-365-conformance","depth":1},{"label":"3.7 Conformance and Testing across Architecture and Components","icon":"▸","href":"#sec-sec-048-37-conformance-and-testing-across-architecture-a"},{"label":"3.7.1 Purpose","icon":"·","href":"#sec-sec-049-371-purpose","depth":1},{"label":"3.7.2 The model","icon":"·","href":"#sec-sec-050-372-the-model","depth":1},{"label":"3.7.3 Alignment with IHE profiles","icon":"·","href":"#sec-sec-051-373-alignment-with-ihe-profiles","depth":1},{"label":"3.7.4 Planning testing from the architecture","icon":"·","href":"#sec-sec-052-374-planning-testing-from-the-architecture","depth":1},{"label":"3.7.5 Validating goals and adoption","icon":"·","href":"#sec-sec-053-375-validating-goals-and-adoption","depth":1},{"label":"3.7.6 Constructs and their counterparts","icon":"·","href":"#sec-sec-054-376-constructs-and-their-counterparts","depth":1},{"label":"4.1 Understanding the Starting Point","icon":"▸","href":"#sec-sec-055-41-understanding-the-starting-point"},{"label":"4.1.1 No Country Starts from Zero","icon":"·","href":"#sec-sec-056-411-no-country-starts-from-zero","depth":1},{"label":"4.1.2 Assessing Where You Are","icon":"·","href":"#sec-sec-057-412-assessing-where-you-are","depth":1},{"label":"4.2 Charting a Path to REDDHI","icon":"▸","href":"#sec-sec-058-42-charting-a-path-to-reddhi"},{"label":"4.2.1 Different Entry Points toward REDDHI","icon":"·","href":"#sec-sec-059-421-different-entry-points-toward-reddhi","depth":1},{"label":"4.2.2 A Phased Implementation Approach","icon":"·","href":"#sec-sec-060-422-a-phased-implementation-approach","depth":1},{"label":"4.2.3 Navigating Legacy Systems","icon":"·","href":"#sec-sec-061-423-navigating-legacy-systems","depth":1},{"label":"4.2.4 The Role of the National Digital Architect","icon":"·","href":"#sec-sec-062-424-the-role-of-the-national-digital-architect","depth":1},{"label":"4.3 Profiles and Specifications for Implementation","icon":"▸","href":"#sec-sec-063-43-profiles-and-specifications-for-implementatio"},{"label":"4.3.1 Design Data Structures and Data Models First","icon":"·","href":"#sec-sec-064-431-design-data-structures-and-data-models-first","depth":1},{"label":"4.3.2 Actors and Roles: Defining Who Participates","icon":"·","href":"#sec-sec-065-432-actors-and-roles-defining-who-participates","depth":1},{"label":"4.3.3 Services and Transactions: FHIR as the Recommended Framework","icon":"·","href":"#sec-sec-066-433-services-and-transactions-fhir-as-the-recomm","depth":1},{"label":"4.3.4 Integration Interfaces with Foundational DPI","icon":"·","href":"#sec-sec-067-434-integration-interfaces-with-foundational-dpi","depth":1},{"label":"4.3.4 Interoperability Implementation Pathways","icon":"·","href":"#sec-sec-068-434-interoperability-implementation-pathways","depth":1},{"label":"4.3.5 Minimum Conformance and Testing","icon":"·","href":"#sec-sec-069-435-minimum-conformance-and-testing","depth":1},{"label":"4.4 Measuring Progress and Impact","icon":"▸","href":"#sec-sec-070-44-measuring-progress-and-impact"},{"label":"4.4.1 Assessing impact: Are goals being achieved?","icon":"·","href":"#sec-sec-071-441-assessing-impact-are-goals-being-achieved","depth":1},{"label":"4.4.2 Tracking progress over time","icon":"·","href":"#sec-sec-072-442-tracking-progress-over-time","depth":1},{"label":"4.5 Roles, Skills, and Capacity","icon":"▸","href":"#sec-sec-073-45-roles-skills-and-capacity"},{"label":"4.5.1 How to Use This Architecture","icon":"·","href":"#sec-sec-074-451-how-to-use-this-architecture","depth":1},{"label":"4.5.2 The Roles and Skills Needed to Build and Govern the Architecture","icon":"·","href":"#sec-sec-075-452-the-roles-and-skills-needed-to-build-and-gov","depth":1},{"label":"4.5.3 Building and Sustaining National Capacity","icon":"·","href":"#sec-sec-076-453-building-and-sustaining-national-capacity","depth":1},{"label":"4.6 Financing and Partnerships","icon":"▸","href":"#sec-sec-077-46-financing-and-partnerships"},{"label":"4.6.1 The Investment Case","icon":"·","href":"#sec-sec-078-461-the-investment-case","depth":1},{"label":"4.6.2 Sustainability by Design","icon":"·","href":"#sec-sec-079-462-sustainability-by-design","depth":1},{"label":"4.6.3 Approaches to Financing","icon":"·","href":"#sec-sec-080-463-approaches-to-financing","depth":1},{"label":"5.1 Emerging technologies and the foundations they depend on","icon":"▸","href":"#sec-sec-081-51-emerging-technologies-and-the-foundations-the"},{"label":"5.3 Where artificial intelligence can support the health system","icon":"▸","href":"#sec-sec-082-53-where-artificial-intelligence-can-support-the"},{"label":"5.4 Readiness, oversight, and responsible adoption","icon":"▸","href":"#sec-sec-083-54-readiness-oversight-and-responsible-adoption"},{"label":"5.4.1 What AI readiness means","icon":"·","href":"#sec-sec-084-541-what-ai-readiness-means","depth":1},{"label":"5.4.2 Trustworthy AI in a health setting","icon":"·","href":"#sec-sec-085-542-trustworthy-ai-in-a-health-setting","depth":1},{"label":"5.4.3 Equity and safety","icon":"·","href":"#sec-sec-086-543-equity-and-safety","depth":1},{"label":"5.4.4 Cost, sustainability, and commercial pressure","icon":"·","href":"#sec-sec-087-544-cost-sustainability-and-commercial-pressure","depth":1},{"label":"5.5 Keeping the architecture open and adaptable","icon":"▸","href":"#sec-sec-088-55-keeping-the-architecture-open-and-adaptable"},{"label":"Appendix A","icon":"▸","href":"#sec-sec-089-appendix-a"},{"label":"Appendix B","icon":"▸","href":"#sec-sec-090-appendix-b"},{"label":"Metadata registries and foundational components","icon":"·","href":"#sec-sec-091-metadata-registries-and-foundational-components","depth":1},{"label":"Business Services Components","icon":"·","href":"#sec-sec-099-business-services-components","depth":1},{"label":"Appendix D: Country and Regional Implementation Examples","icon":"▸","href":"#sec-sec-106-appendix-d-country-and-regional-implementation-e"},{"label":"Appendix E: Health Goals to DPI Mapping","icon":"▸","href":"#sec-sec-128-appendix-e-health-goals-to-dpi-mapping"},{"label":"Appendix F: Semantic Governance Infrastructure: capability details","icon":"▸","href":"#sec-sec-129-appendix-f-semantic-governance-infrastructure-ca"}],"collapsible":true,"open":true}}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../">smart-ra</a></nav>
+<p><a href="../">Library</a></p>
+<h1>Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector — the version published for public comment</h1>
+<p class="note">A frozen source: the library keeps it exactly as published. Edits are made in the folio, and each section's ✎ edit opens the folio block made from it.</p>
+<section id="document"><p class="note">Loading the document…</p></section><script type="application/json" data-fa-visualiser-nav>[{"label":"Front matter","href":"#sec-sec-front-matter"},{"label":"1.1 About the Reference Architecture for health Digital Public Infrastructure (DPI-H) Guidance","href":"#sec-sec-000-11-about-the-reference-architecture-for-health-d","items":[{"label":"1.1.1 What is a reference architecture, and why does it matter for the health sector?","href":"#sec-sec-001-111-what-is-a-reference-architecture-and-why-doe"},{"label":"1.1.2 Understanding Digital Public Infrastructure (DPI) and health Digital Public Infrastructure (DPI-H)","href":"#sec-sec-002-112-understanding-digital-public-infrastructure"},{"label":"1.1.3 Building on existing foundations","href":"#sec-sec-003-113-building-on-existing-foundations"},{"label":"1.1.4 Who can benefit from this guidance?","href":"#sec-sec-004-114-who-can-benefit-from-this-guidance"}]},{"label":"1.2 Why health needs more than foundational DPI","href":"#sec-sec-005-12-why-health-needs-more-than-foundational-dpi","items":[{"label":"1.2.1 Identity DPI and Identification in Healthcare","href":"#sec-sec-006-121-identity-dpi-and-identification-in-healthcar"},{"label":"1.2.2 Data exchange DPI and Interoperability in the health sector","href":"#sec-sec-007-122-data-exchange-dpi-and-interoperability-in-th"},{"label":"1.2.3 Payments DPI and financial transactions in the health sector","href":"#sec-sec-008-123-payments-dpi-and-financial-transactions-in-t"}]},{"label":"1.3 Value of DPI-H","href":"#sec-sec-009-13-value-of-dpi-h","items":[{"label":"1.3.1 The Cost of Fragmentation","href":"#sec-sec-010-131-the-cost-of-fragmentation"},{"label":"1.3.2 What DPI-H Makes Possible","href":"#sec-sec-011-132-what-dpi-h-makes-possible"},{"label":"1.3.3 Value Across Stakeholders","href":"#sec-sec-012-133-value-across-stakeholders"}]},{"label":"1.4 DPI-H Principles","href":"#sec-sec-013-14-dpi-h-principles"},{"label":"1.5 The Seven Priority Health Sector Goals","href":"#sec-sec-014-15-the-seven-priority-health-sector-goals","items":[{"label":"1.5.1 The Health Sector Goals","href":"#sec-sec-015-151-the-health-sector-goals"}]},{"label":"2.1 The Reference Architecture Scope","href":"#sec-sec-016-21-the-reference-architecture-scope","items":[{"label":"2.1.1 Metadata registries and foundational components","href":"#sec-sec-017-211-metadata-registries-and-foundational-compone"},{"label":"2.1.2 Business services layer","href":"#sec-sec-018-212-business-services-layer"},{"label":"2.1.3 Relationship to foundational DPI","href":"#sec-sec-019-213-relationship-to-foundational-dpi"}]},{"label":"2.2 Resilient Essential Data and Digital Health Infrastructure (REDDHI)","href":"#sec-sec-020-22-resilient-essential-data-and-digital-health-i","items":[{"label":"2.2.1 What REDDHI is and its foundational core","href":"#sec-sec-021-221-what-reddhi-is-and-its-foundational-core"},{"label":"2.2.2 The enabling conditions for REDDHI","href":"#sec-sec-022-222-the-enabling-conditions-for-reddhi"}]},{"label":"2.4 Methodology: Mapping Health Goals to DPI-H","href":"#sec-sec-023-24-methodology-mapping-health-goals-to-dpi-h","items":[{"label":"2.4.1 How each health goal is articulated","href":"#sec-sec-024-241-how-each-health-goal-is-articulated"},{"label":"2.4.2 Worked example: Advance Efficient and Equitable Health Financing","href":"#sec-sec-025-242-worked-example-advance-efficient-and-equitab"}]},{"label":"3.1 The architecture description approach","href":"#sec-sec-026-31-the-architecture-description-approach"},{"label":"3.3 The reference architecture in practice","href":"#sec-sec-027-33-the-reference-architecture-in-practice"},{"label":"3.4 Governance of Digital Health Architectures and DPI-H","href":"#sec-sec-028-34-governance-of-digital-health-architectures-an","items":[{"label":"3.4.1 Purpose and framing","href":"#sec-sec-029-341-purpose-and-framing"},{"label":"3.4.2 Governance principles","href":"#sec-sec-030-342-governance-principles"},{"label":"3.4.3 Strategic governance","href":"#sec-sec-031-343-strategic-governance"},{"label":"3.4.4 Operational governance","href":"#sec-sec-032-344-operational-governance"},{"label":"3.4.5 Semantic Governance Infrastructure","href":"#sec-sec-033-345-semantic-governance-infrastructure"},{"label":"3.4.6 Regional governance considerations","href":"#sec-sec-034-346-regional-governance-considerations"},{"label":"3.4.7 Governance maturity considerations","href":"#sec-sec-035-347-governance-maturity-considerations"}]},{"label":"3.5 DPI-H Application Components","href":"#sec-sec-036-35-dpi-h-application-components","items":[{"label":"3.5.1 What Distinguishes a DPI-H Application Component","href":"#sec-sec-037-351-what-distinguishes-a-dpi-h-application-compo"},{"label":"3.5.2 How each component is described","href":"#sec-sec-038-352-how-each-component-is-described"},{"label":"3.5.3 How the components are organised","href":"#sec-sec-039-353-how-the-components-are-organised"}]},{"label":"3.6 Interoperability Architecture within DPI-H","href":"#sec-sec-042-36-interoperability-architecture-within-dpi-h","items":[{"label":"3.6.1 Interoperability as a capability, not just a component","href":"#sec-sec-043-361-interoperability-as-a-capability-not-just-a"},{"label":"3.6.2 Data and health content standards","href":"#sec-sec-044-362-data-and-health-content-standards"},{"label":"3.6.3 Interoperability between DPI-H and foundational DPI","href":"#sec-sec-045-363-interoperability-between-dpi-h-and-foundatio"},{"label":"3.6.4 Cross-border health data flows","href":"#sec-sec-046-364-cross-border-health-data-flows"},{"label":"3.6.5 Conformance","href":"#sec-sec-047-365-conformance"}]},{"label":"3.7 Conformance and Testing across Architecture and Components","href":"#sec-sec-048-37-conformance-and-testing-across-architecture-a","items":[{"label":"3.7.1 Purpose","href":"#sec-sec-049-371-purpose"},{"label":"3.7.2 The model","href":"#sec-sec-050-372-the-model"},{"label":"3.7.3 Alignment with IHE profiles","href":"#sec-sec-051-373-alignment-with-ihe-profiles"},{"label":"3.7.4 Planning testing from the architecture","href":"#sec-sec-052-374-planning-testing-from-the-architecture"},{"label":"3.7.5 Validating goals and adoption","href":"#sec-sec-053-375-validating-goals-and-adoption"},{"label":"3.7.6 Constructs and their counterparts","href":"#sec-sec-054-376-constructs-and-their-counterparts"}]},{"label":"4.1 Understanding the Starting Point","href":"#sec-sec-055-41-understanding-the-starting-point","items":[{"label":"4.1.1 No Country Starts from Zero","href":"#sec-sec-056-411-no-country-starts-from-zero"},{"label":"4.1.2 Assessing Where You Are","href":"#sec-sec-057-412-assessing-where-you-are"}]},{"label":"4.2 Charting a Path to REDDHI","href":"#sec-sec-058-42-charting-a-path-to-reddhi","items":[{"label":"4.2.1 Different Entry Points toward REDDHI","href":"#sec-sec-059-421-different-entry-points-toward-reddhi"},{"label":"4.2.2 A Phased Implementation Approach","href":"#sec-sec-060-422-a-phased-implementation-approach"},{"label":"4.2.3 Navigating Legacy Systems","href":"#sec-sec-061-423-navigating-legacy-systems"},{"label":"4.2.4 The Role of the National Digital Architect","href":"#sec-sec-062-424-the-role-of-the-national-digital-architect"}]},{"label":"4.3 Profiles and Specifications for Implementation","href":"#sec-sec-063-43-profiles-and-specifications-for-implementatio","items":[{"label":"4.3.1 Design Data Structures and Data Models First","href":"#sec-sec-064-431-design-data-structures-and-data-models-first"},{"label":"4.3.2 Actors and Roles: Defining Who Participates","href":"#sec-sec-065-432-actors-and-roles-defining-who-participates"},{"label":"4.3.3 Services and Transactions: FHIR as the Recommended Framework","href":"#sec-sec-066-433-services-and-transactions-fhir-as-the-recomm"},{"label":"4.3.4 Integration Interfaces with Foundational DPI","href":"#sec-sec-067-434-integration-interfaces-with-foundational-dpi"},{"label":"4.3.4 Interoperability Implementation Pathways","href":"#sec-sec-068-434-interoperability-implementation-pathways"},{"label":"4.3.5 Minimum Conformance and Testing","href":"#sec-sec-069-435-minimum-conformance-and-testing"}]},{"label":"4.4 Measuring Progress and Impact","href":"#sec-sec-070-44-measuring-progress-and-impact","items":[{"label":"4.4.1 Assessing impact: Are goals being achieved?","href":"#sec-sec-071-441-assessing-impact-are-goals-being-achieved"},{"label":"4.4.2 Tracking progress over time","href":"#sec-sec-072-442-tracking-progress-over-time"}]},{"label":"4.5 Roles, Skills, and Capacity","href":"#sec-sec-073-45-roles-skills-and-capacity","items":[{"label":"4.5.1 How to Use This Architecture","href":"#sec-sec-074-451-how-to-use-this-architecture"},{"label":"4.5.2 The Roles and Skills Needed to Build and Govern the Architecture","href":"#sec-sec-075-452-the-roles-and-skills-needed-to-build-and-gov"},{"label":"4.5.3 Building and Sustaining National Capacity","href":"#sec-sec-076-453-building-and-sustaining-national-capacity"}]},{"label":"4.6 Financing and Partnerships","href":"#sec-sec-077-46-financing-and-partnerships","items":[{"label":"4.6.1 The Investment Case","href":"#sec-sec-078-461-the-investment-case"},{"label":"4.6.2 Sustainability by Design","href":"#sec-sec-079-462-sustainability-by-design"},{"label":"4.6.3 Approaches to Financing","href":"#sec-sec-080-463-approaches-to-financing"}]},{"label":"5.1 Emerging technologies and the foundations they depend on","href":"#sec-sec-081-51-emerging-technologies-and-the-foundations-the"},{"label":"5.3 Where artificial intelligence can support the health system","href":"#sec-sec-082-53-where-artificial-intelligence-can-support-the"},{"label":"5.4 Readiness, oversight, and responsible adoption","href":"#sec-sec-083-54-readiness-oversight-and-responsible-adoption","items":[{"label":"5.4.1 What AI readiness means","href":"#sec-sec-084-541-what-ai-readiness-means"},{"label":"5.4.2 Trustworthy AI in a health setting","href":"#sec-sec-085-542-trustworthy-ai-in-a-health-setting"},{"label":"5.4.3 Equity and safety","href":"#sec-sec-086-543-equity-and-safety"},{"label":"5.4.4 Cost, sustainability, and commercial pressure","href":"#sec-sec-087-544-cost-sustainability-and-commercial-pressure"}]},{"label":"5.5 Keeping the architecture open and adaptable","href":"#sec-sec-088-55-keeping-the-architecture-open-and-adaptable"},{"label":"Appendix A","href":"#sec-sec-089-appendix-a"},{"label":"Appendix B","href":"#sec-sec-090-appendix-b","items":[{"label":"Metadata registries and foundational components","href":"#sec-sec-091-metadata-registries-and-foundational-components"},{"label":"Business Services Components","href":"#sec-sec-099-business-services-components"}]},{"label":"Appendix D: Country and Regional Implementation Examples","href":"#sec-sec-106-appendix-d-country-and-regional-implementation-e"},{"label":"Appendix E: Health Goals to DPI Mapping","href":"#sec-sec-128-appendix-e-health-goals-to-dpi-mapping"},{"label":"Appendix F: Semantic Governance Infrastructure: capability details","href":"#sec-sec-129-appendix-f-semantic-governance-infrastructure-ca"}]</script>
+<noscript><p>This page draws the document from <a href="entries/who-dpi-h-reference-architecture-draft-v1.doc.json">its JSON</a>; it needs JavaScript.</p></noscript>
+<script>
+function $(i){ return document.getElementById(i); }
+function esc(s){ return String(s==null?"":s).replace(/[&<>"']/g,function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]; }); }
+var DATA_HREF = new URL("./index.json", location.href).href;
+(() => {
+  if (window.faEditLinks) return;
+  function faBlockUrls(c, b) {
+  var enc = encodeURIComponent;
+  var path = b.source.split("/").map(enc).join("/");
+  var branch = c.branch || "main";
+  var repo = b.repo || c.repo;
+  var src = "https://github.com/" + repo + "/blob/" + branch + "/" + path + (b.line ? "#L" + b.line : "");
+  var url = c.siteUrl && b.page ? c.siteUrl.replace(/\/$/, "") + "/" + b.page + "#" + enc(b.label) : (b.pageUrl || "");
+  var values = { block: b.label, section: b.section || "", source: b.source, page: b.page || "", url: url, content: c.content || "" };
+  var q = new URLSearchParams();
+  q.set("title", "Feedback" + (c.content ? " [" + c.content + "]" : "") + ": " + (b.section ? b.section + " — " : "") + b.label);
+  if (c.labels && c.labels.length) q.set("labels", c.labels.join(","));
+  if (c.template) {
+    q.set("template", c.template);
+    (c.templateFields || []).forEach(function (f) { if (values[f]) q.set(f, values[f]); });
+  } else {
+    var facts = c.content ? ["**Content:** \u0060" + c.content + "\u0060"] : [];
+    facts.push("**Block:** \u0060" + b.label + "\u0060");
+    if (b.section) facts.push("**Section:** " + b.section);
+    facts.push("**Source:** " + src);
+    if (url) facts.push("**On the site:** " + url);
+    q.set("body", facts.concat(["", "**Type:** general | technical | editorial", "", "**Comment:**", "", "", "**Proposed change:**", ""]).join("\n"));
+  }
+  return { edit: "https://github.com/" + repo + "/edit/" + branch + "/" + path, source: src, feedback: "https://github.com/" + c.repo + "/issues/new?" + q };
+}
+  let cfg = null;
+  const config = () => {
+    if (cfg) return cfg;
+    const el = document.getElementById("fa-edit-cfg");
+    if (el) cfg = JSON.parse(el.textContent);
+    else {
+      const meta = (n) => { const m = document.querySelector('meta[name="' + n + '"]'); return m ? m.content : undefined; };
+      cfg = { repo: meta("fa-repo"), branch: meta("fa-branch") || "main" };
+    }
+    return cfg;
+  };
+  // A link that names a GitHub file but carries no facts (a generator wrote
+  // its href from data, e.g. sourceLinks) gives them up from its own URL.
+  const GH = /^https:\/\/github\.com\/([^/]+\/[^/]+)\/(?:blob|edit)\/([^/]+)\/([^#?]+)(?:#L(\d+))?$/;
+  const adopt = (a) => {
+    const m = GH.exec(a.getAttribute("href") || "");
+    if (!m) return false;
+    a.dataset.repo = m[1]; a.dataset.branch = m[2];
+    a.dataset.src = m[3].split("/").map(decodeURIComponent).join("/");
+    if (m[4]) a.dataset.line = m[4];
+    return true;
+  };
+  const ready = (host) => {
+    if (host.dataset.ready) return;
+    if (!host.dataset.src && !(host.matches("a[data-fa-link]") && adopt(host))) return;
+    const c0 = config();
+    const c = host.dataset.branch ? Object.assign({}, c0, { branch: host.dataset.branch }) : c0;
+    if (!c.repo && !host.dataset.repo) return;
+    host.dataset.ready = "1";
+    const label = host.dataset.block || host.dataset.src;
+    const u = faBlockUrls(c, { label: label, source: host.dataset.src, section: host.dataset.sec,
+      line: host.dataset.line ? Number(host.dataset.line) : undefined, repo: host.dataset.repo, page: host.dataset.page || c.page,
+      pageUrl: location.href.split("#")[0] + "#" + encodeURIComponent(label) });
+    const links = host.matches("a[data-fa-link]") ? [host] : host.querySelectorAll("a[data-fa-link]");
+    // Only this host's own links: a nested host (a Lean link inside a block's row) fills itself.
+    for (const a of links) if ((a === host || a.closest("[data-src]") === host) && u[a.dataset.faLink]) a.href = u[a.dataset.faLink];
+  };
+  const fill = (root) => { for (const h of (root || document).querySelectorAll("[data-src], a[data-fa-link]")) ready(h); };
+  // A page that learns its repository later (the folio site reads it from its outline) says so here.
+  const configure = (c) => { cfg = c; };
+  window.faEditLinks = { urls: faBlockUrls, fill: fill, configure: configure };
+  for (const ev of ["pointerover", "focusin", "touchstart"])
+    document.addEventListener(ev, (e) => { const h = e.target.closest && e.target.closest("[data-src], a[data-fa-link]"); if (h) ready(h); }, { passive: true });
+})();
+
+/* THE DOCUMENT PANEL -- issue #2302. See scripts/lib/library-document.ts. */
+var DOC = null, DOC_ID = null, DOC_TAB = "contents";
+function docHref(id){
+  var dir = DATA_HREF.slice(0, DATA_HREF.lastIndexOf("/") + 1);
+  return dir + "entries/" + encodeURIComponent(id) + ".doc.json";
+}
+function pageText(phys, label){
+  /* The label a reader sees first; the physical index beside it when they
+     differ, because that is what a PDF viewer's page box takes. */
+  if (phys == null) return "\u2014";
+  return label && String(label) !== String(phys) ? esc(label) + ' <span class="note">(p' + phys + ')</span>' : 'p' + phys;
+}
+function confPill(c, ev){
+  if (c == null) return "";
+  var cls = c >= 0.8 ? "ok" : c >= 0.6 ? "info" : "warn";
+  return '<span class="pill ' + cls + '" title="' + esc((ev || []).join(", ")) + '">' + c.toFixed(2) + '</span>';
+}
+function notRecorded(what){
+  return '<p class="empty">' + esc(what) + ' not recorded for this entry \u2014 it was ingested before this field existed. Re-ingest to add it.</p>';
+}
+function docContents(d){
+  if (!d.toc.length) return '<p class="empty">No table of contents: the PDF carries no outline and none could be inferred.</p>';
+  var how = d.tocSource === "outline" ? "the PDF\u2019s own outline"
+    : "inferred (" + esc(d.tocMethod || "unknown") + "); each entry\u2019s confidence and the evidence behind it are shown";
+  /* A TREE OF <details>, collapsed to the top level so the document's shape
+     is visible at a glance (owner, 2026-10-06: "TOC collapsible and start
+     collapsed - hard to see overview"). Native <details>: keyboard and
+     screen-reader behaviour with no script. */
+  var bySec = {};
+  d.sections.forEach(function(s){ bySec[s.id] = s; });
+  function line(e){
+    var t = (e.number ? esc(e.number) + ' ' : '') + esc(e.title);
+    var link = e.section ? '<a href="#sec-' + esc(e.section) + '" data-sec="' + esc(e.section) + '">' + t + '</a>' : t;
+    var s = e.section && bySec[e.section];
+    return link + ' <span class="note">' + pageText(e.page, e.pageLabel) + '</span> ' + confPill(e.confidence, e.evidence) +
+      (s && s.edit && d.links ? ' ' + editHost(s) : '');
+  }
+  /* Build a node list first, so a level can see how many siblings it has.
+     A node that is the ONLY one at its level starts open: an outline whose
+     single root is the book's title would otherwise collapse to one line
+     (9789241548960-eng). The tree opens down to the first level that
+     branches \u2014 the chapters \u2014 and no further. */
+  var i = 0;
+  function nodes(level){
+    var out = [];
+    while (i < d.toc.length && d.toc[i].level >= level) {
+      var e = d.toc[i++];
+      out.push({ e: e, kids: (i < d.toc.length && d.toc[i].level > e.level) ? nodes(e.level + 1) : [] });
+    }
+    return out;
+  }
+  function render(ns){
+    var only = ns.length === 1;
+    return ns.map(function(n){
+      return n.kids.length
+        ? '<li><details' + (only ? ' open' : '') + '><summary>' + line(n.e) + '</summary><ul>' + render(n.kids) + '</ul></details></li>'
+        : '<li class="leaf">' + line(n.e) + '</li>';
+    }).join("");
+  }
+  var tree = render(nodes(d.toc[0].level));
+  return '<p class="note">Source: ' + how + '. ' + d.toc.length + ' entries.</p>' +
+    '<p><button type="button" data-toc="open">Expand all</button> <button type="button" data-toc="close">Collapse all</button></p>' +
+    '<ul class="toc">' + tree + '</ul>';
+}
+function docPages(d){
+  if (!d.pageLabels) return notRecorded("Page labels");
+  var secAt = {}, figAt = {};
+  d.sections.forEach(function(s){ if (s.pageStart != null) (secAt[s.pageStart] = secAt[s.pageStart] || []).push(s); });
+  (d.figures || []).forEach(function(f){ (figAt[f.page] = figAt[f.page] || []).push(f); });
+  return '<table><thead><tr><th>page</th><th>printed label</th><th>sections starting</th><th>figures &amp; tables</th></tr></thead><tbody>' +
+    d.pageLabels.map(function(p){
+      var secs = (secAt[p.physical] || []).map(function(s){
+        return '<a href="#sec-' + esc(s.id) + '" data-sec="' + esc(s.id) + '">' + esc((s.number ? s.number + ' ' : '') + s.title) + '</a>'; }).join('<br>');
+      var figs = (figAt[p.physical] || []).map(function(f){ return esc(f.kind + ' ' + f.number); }).join(', ');
+      var lab = p.label ? esc(p.label) + ' <span class="note">' + esc(p.source) + '</span>' : '<span class="note">none printed</span>';
+      return '<tr><td class="num">' + p.physical + '</td><td>' + lab + '</td><td>' + secs + '</td><td>' + figs + '</td></tr>';
+    }).join("") + '</tbody></table>';
+}
+function docFigures(d){
+  if (!d.figures) return notRecorded("Figures and tables");
+  if (!d.figures.length) return '<p class="empty">No captions found. Nothing failed \u2014 none opens a line with a label and number.</p>';
+  var gaps = (d.checks.figureSequenceGaps || []);
+  return (gaps.length ? '<p class="note">Numbering gaps in the document: ' + esc(gaps.join(", ")) + '.</p>' : '') +
+    '<table><thead><tr><th>kind</th><th>no.</th><th>caption</th><th>page</th><th>confidence</th></tr></thead><tbody>' +
+    d.figures.map(function(f){
+      return '<tr><td>' + esc(f.kind) + '</td><td>' + esc(f.number) + '</td><td>' + (f.title ? esc(f.title) : '<span class="note">withheld</span>') +
+        '</td><td>' + pageText(f.page, f.pageLabel) + '</td><td>' + confPill(f.confidence, f.evidence) + '</td></tr>';
+    }).join("") + '</tbody></table>';
+}
+function chips(ks){
+  /* A keyword a heading also names is marked: the document saying it of itself. */
+  if (!ks || !ks.length) return "";
+  return '<p class="kw">' + ks.map(function(k){
+    return '<span class="pill' + (k.heading ? ' ok' : '') + '"' + (k.heading ? ' title="also named by a heading"' : '') + '>' + esc(k.term) + '</span>';
+  }).join(" ") + '</p>';
+}
+/* LINKS -- bean zcak, from the shared recipe (edit-links, bean v433). The
+   library is frozen, so [source] and [feedback] are about the library's own
+   section file, and [edit] opens the folio block MATERIALISED from the
+   section, when there is one. Each is its own host, so the runtime builds
+   every href from that host's data-src and nothing else. */
+function editHost(s){
+  return '<span class="doc-actions" data-src="' + esc(s.edit.path) + '" data-block="' + esc(s.edit.label) + '">' +
+    '<a data-fa-link="edit" title="Edit the folio block made from this section (the library copy is frozen)">\u270E edit</a></span>';
+}
+function secActions(d, s){
+  if (!d.links) return '';
+  var t = (s.number ? s.number + ' ' : '') + s.title;
+  return ' <span class="doc-actions" data-src="' + esc(d.links.dir + '/sections/' + s.id + '.md') + '" data-block="' + esc(s.id) +
+    '" data-sec="' + esc(t) + '"><a data-fa-link="source" title="This section as extracted, on GitHub">source</a> ' +
+    '<a data-fa-link="feedback" title="Give feedback on this section (opens a GitHub issue)">\u{1f4e3} feedback</a></span>' +
+    (s.edit ? ' ' + editHost(s) : '');
+}
+function docSections(d){
+  if (!d.sections.length) return '<p class="empty">No sections.</p>';
+  return d.sections.map(function(s){
+    var range = s.pageStart == null ? "" : pageText(s.pageStart, s.labelStart) +
+      (s.pageEnd != null && s.pageEnd !== s.pageStart ? ' \u2013 ' + pageText(s.pageEnd, s.labelEnd) : '');
+    var body = s.summary
+      ? '<div class="sum"><span class="pill info">summary \u00B7 ' + esc(s.summary.status) + '</span><p>' + esc(s.summary.text) + '</p></div>'
+      : s.extract
+        ? '<div class="sum"><span class="pill">extract \u2014 the section\u2019s own opening text' + (s.extractCut ? ', cut' : '') + '</span><p>' + esc(s.extract) + (s.extractCut ? '\u2026' : '') + '</p></div>'
+        : '<p class="note">' + (d.withheld ? 'Withheld \u2014 no text published; no summary yet.' : 'No text and no summary.') + '</p>';
+    return '<article id="sec-' + esc(s.id) + '" class="docsec"><h3>' + esc((s.number ? s.number + ' ' : '') + s.title) +
+      ' <span class="note">' + range + ' \u00B7 ' + s.words + ' words</span>' + secActions(d, s) + '</h3>' + chips(s.keywords) + body + '</article>';
+  }).join("");
+}
+function docChecks(d){
+  var c = d.checks, rows = [];
+  function row(name, n, items){
+    var cell = !items || !items.length ? '<span class="note">none</span>'
+      : '<details><summary>' + items.length + (n > items.length ? ' of ' + n : '') + ' shown</summary><ul>' +
+        items.map(function(i){ return '<li>' + esc(i) + '</li>'; }).join("") + '</ul></details>';
+    rows.push('<tr><td>' + esc(name) + '</td><td class="num">' + n + '</td><td>' + cell + '</td></tr>');
+  }
+  if (c.tocAlignment) {
+    var names = { listed_not_found: "On the contents page, not found in the body",
+      found_not_listed: "Numbered in the body, missing from the contents page", page_mismatch: "Page differs from the contents page" };
+    Object.keys(names).forEach(function(k){ var v = c.tocAlignment[k]; if (v) row(names[k], v.count, v.items); });
+  }
+  if (c.figureSequenceGaps) row("Figure and table numbering gaps", c.figureSequenceGaps.length, c.figureSequenceGaps);
+  if (c.pageLabelConflicts) row("Page-label conflicts (built-in label vs printed)", c.pageLabelConflicts.count, c.pageLabelConflicts.items);
+  if (!rows.length) return '<p class="empty">No checks recorded for this entry.</p>';
+  return '<p class="note">Findings about the DOCUMENT, reported and never corrected \u2014 drafts drift.</p>' +
+    '<table><thead><tr><th>check</th><th>count</th><th>items</th></tr></thead><tbody>' + rows.join("") + '</tbody></table>';
+}
+var DOC_TABS = [["contents","Contents",docContents],["pages","Pages",docPages],["figures","Figures & tables",docFigures],["sections","Sections",docSections],["checks","Checks",docChecks]];
+function renderDocument(id, d, err){
+  var el = $("document");
+  /* No structure.json: nothing in this schema to show, a determined answer
+     served as a file (absent: true), never a 404 to tell from a failure. */
+  if (!err && d && d.absent) { el.hidden = true; return; }
+  el.hidden = false;
+  if (err) { el.innerHTML = '<h2>Document</h2><p class="empty">Could not read the document view for ' + esc(id) + ' \u2014 ' + esc(err) + '. This is a failure to read, not an empty document.</p>'; return; }
+  DOC = d; DOC_ID = id;
+  if (d.links && window.faEditLinks) window.faEditLinks.configure({ repo: d.links.repo, branch: d.links.branch, content: id });
+  var tab = DOC_TABS.filter(function(t){ return t[0] === DOC_TAB; })[0] || DOC_TABS[0];
+  var whole = d.links ? ' <span class="doc-actions" data-src="' + esc(d.links.dir) + '" data-block="' + esc(id) + '"><a data-fa-link="source">source</a> ' +
+    '<a data-fa-link="feedback" title="Give feedback on this document (opens a GitHub issue)">\u{1f4e3} feedback</a></span>' : '';
+  el.innerHTML = '<h2>Document \u2014 ' + esc(d.title || id) + ' <span class="note">(' + d.pages + ' pages)</span>' + whole + '</h2>' +
+    '<div class="seg" role="tablist" aria-label="Document view">' + DOC_TABS.map(function(t){
+      return '<button type="button" role="tab" aria-selected="' + (t[0] === tab[0]) + '" data-tab="' + t[0] + '">' + esc(t[1]) + '</button>';
+    }).join("") + '</div>' + (d.keywords && d.keywords.length ? '<div class="dockw"><span class="note">Keywords (LSI):</span> ' + chips(d.keywords) + '</div>' : '') +
+    '<div class="docbody" role="tabpanel">' + tab[2](d) + '</div>';
+  Array.prototype.forEach.call(el.querySelectorAll("[data-tab]"), function(b){
+    b.addEventListener("click", function(){ DOC_TAB = b.getAttribute("data-tab"); renderDocument(id, DOC, null); });
+  });
+  Array.prototype.forEach.call(el.querySelectorAll("[data-toc]"), function(b){
+    b.addEventListener("click", function(){
+      var open = b.getAttribute("data-toc") === "open";
+      Array.prototype.forEach.call(el.querySelectorAll("ul.toc details"), function(x){ x.open = open; });
+    });
+  });
+  /* Hrefs now, not on first hover: a keyboard reader tabs to these links. */
+  if (d.links && window.faEditLinks) window.faEditLinks.fill(el);
+  /* A section link from any tab opens the Sections tab at that section. Only
+     <a>: a link HOST carries data-sec too (its section's name, for an issue). */
+  Array.prototype.forEach.call(el.querySelectorAll("a[data-sec]:not([data-fa-link])"), function(a){
+    a.addEventListener("click", function(ev){
+      ev.preventDefault(); DOC_TAB = "sections"; renderDocument(id, DOC, null);
+      var t = document.getElementById("sec-" + a.getAttribute("data-sec")); if (t) t.scrollIntoView();
+    });
+  });
+}
+/* An address naming a section (#sec-<id>), from the rail's contents or a
+   link from anywhere, opens the Sections tab at it: the section exists only
+   on that tab, so a bare fragment would scroll to nothing. */
+function openSectionFromHash(){
+  var h = decodeURIComponent(location.hash || "");
+  if (h.indexOf("#sec-") !== 0 || !DOC) return;
+  if (DOC_TAB !== "sections") { DOC_TAB = "sections"; renderDocument(DOC_ID, DOC, null); }
+  var t = document.getElementById(h.slice(1)); if (t) t.scrollIntoView();
+}
+window.addEventListener("hashchange", openSectionFromHash);
+function loadDocument(id){
+  fetch(docHref(id), {cache: "no-store"})
+    .then(function(r){ if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+    .then(function(d){ renderDocument(id, d, null); openSectionFromHash(); })
+    .catch(function(e){ renderDocument(id, null, String(e && e.message || e)); });
+}
+
+loadDocument("who-dpi-h-reference-architecture-draft-v1");
+</script>
+</body>
+</html>
