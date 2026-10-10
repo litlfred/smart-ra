@@ -6,11 +6,9 @@ name: Build & Deploy RA Mapper
 # push. The Archi HTML report this used to follow is gone (owner, 2026-10-09:
 # "do not do java 200mb"); the views are drawn by the staging build itself.
 # The mapper is Python and a single static page — no JVM.
+# By hand only from 2026-10-10 (bean n3h9): the staging build it chained
+# after no longer runs on push.
 on:
-  workflow_run:
-    workflows: ["Staging preview"]
-    types: [completed]
-    branches: [main]
   workflow_dispatch:
 
 jobs:
