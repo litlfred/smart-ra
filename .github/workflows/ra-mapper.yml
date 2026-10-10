@@ -52,11 +52,14 @@ jobs:
           echo "Building mapper with: ${LABELS[*]}"
           python3 build_ra_mapper.py "${MODELS[@]}" -l "${LABELS[@]}" -o SMART-RA-Mapper.html
 
+      # A page goes under the page locale, en/ (folio-assistant#2527), as the
+      # staging build's pages do. The old mapper/ copy on gh-pages is not
+      # removed by this job (keep_files) and is not forwarded.
       - name: Prepare deploy layout
         run: |
-          mkdir -p deploy_output/mapper
-          cp tools/ra-mapper/SMART-RA-Mapper.html deploy_output/mapper/index.html
-          cp tools/ra-mapper/SMART-RA-Mapper.html deploy_output/mapper/SMART-RA-Mapper.html
+          mkdir -p deploy_output/en/mapper
+          cp tools/ra-mapper/SMART-RA-Mapper.html deploy_output/en/mapper/index.html
+          cp tools/ra-mapper/SMART-RA-Mapper.html deploy_output/en/mapper/SMART-RA-Mapper.html
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4
