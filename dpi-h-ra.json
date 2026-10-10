@@ -24,14 +24,14 @@
       "graphTypologies": [
         "archimate"
       ],
-      "description": "The ArchiMate models of the reference architecture, one folder per SemVer version (archimate/README.md), named by cat-archimate.config.json. cat-harness's archimate subgraph (skill archimate-models) gives every view, element and relationship a page and an IRI and draws every view as SVG — no Java, no Archi CLI; the staging build writes them into the site at /archimate/<version>/.",
+      "description": "The ArchiMate models of the reference architecture, one folder per SemVer version (archimate/README.md), named by cat-archimate.config.json. cat-harness's archimate subgraph (skill archimate-models; its scripts are in cat-harness-tools) gives every view, element and relationship a page and an IRI and draws every view as SVG — no Java, no Archi CLI; the staging build writes the pages into the site at /en/archimate/<version>/ (pages are under the page locale, folio-assistant#2527) and their data — the SVG drawings and the JSON-LD IRIs — at /archimate/<version>/.",
       "coverage": {
         "visualiser": [
           {
-            "ref": "archimate/index.html",
+            "ref": "en/archimate/index.html",
             "title": "ArchiMate models",
             "writer": [
-              "folio-assistant/cat-harness/archimate/scripts/gen-archimate-pages.ts"
+              "folio-assistant/cat-harness-tools/archimate/scripts/gen-archimate-pages.ts"
             ]
           }
         ]
