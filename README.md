@@ -16,11 +16,11 @@ the Health Sector* (draft v1.0, for public comment) is held here as an
 editable document, with every public comment placed on the paragraph it is
 about.
 
-- **Read the document, with its comments:** https://litlfred.github.io/smart-ra/dpi-h-ra/
-- **Open comments dashboard:** https://litlfred.github.io/smart-ra/public-comments/
+- **Read the document, with its comments:** https://litlfred.github.io/smart-ra/en/dpi-h-ra/
+- **Open comments dashboard:** https://litlfred.github.io/smart-ra/en/folio-assistant-core/public-comments/folio/dpi-h-ra/
 - **ArchiMate models** — every view drawn, every element and relationship with
-  its own page: https://litlfred.github.io/smart-ra/archimate/ (the RA mapper:
-  https://litlfred.github.io/smart-ra/mapper/). How they are versioned and
+  its own page: https://litlfred.github.io/smart-ra/en/archimate/ (the RA mapper:
+  https://litlfred.github.io/smart-ra/en/mapper/). How they are versioned and
   built: [`archimate/README.md`](archimate/README.md).
 - **The review version as circulated** (line-numbered PDF and .docx):
   [`library/who-dpi-h-reference-architecture-draft-v1/`](library/who-dpi-h-reference-architecture-draft-v1/)

@@ -7,7 +7,8 @@ name: Staging preview
 #
 # The site is built by the platform's build-document-site.ts: one page per
 # document, with an anchor on every labelled block. public-comment-site.ts then
-# adds the public-comment dashboard (public-comments/) and shows each comment
+# adds the public-comment dashboard
+# (en/folio-assistant-core/public-comments/folio/dpi-h-ra/) and shows each comment
 # beside the block it is about. A preview at STAGING/<branch>/ is the AFTER
 # side of every comment's deep link; main's site at the root is the BEFORE.
 # gen-node-kind-pages.ts then writes a page per node kind, per harness and per
@@ -15,7 +16,8 @@ name: Staging preview
 # change-sets with the comments each answers, and each comment with its
 # change-sets. It fails the build if any planned page does not resolve.
 # Last, cat-harness's archimate subgraph (skill `archimate-models`) checks the
-# ArchiMate models and writes /archimate/: every view drawn as SVG, every view,
+# ArchiMate models and writes /en/archimate/ (the pages) and /archimate/ (the
+# SVG drawings and JSON-LD they draw from): every view drawn as SVG, every view,
 # element and relationship a page and an IRI. No Java, no Archi CLI.
 
 # Runs as CI again (owner, 2026-10-09: "it needs CI"), reversing the
