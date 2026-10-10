@@ -1,0 +1,49 @@
+[
+  {
+    "$schema": "rendered-impact/v1",
+    "renderer": "document-site",
+    "method": "cone",
+    "base": "origin/main",
+    "head": "HEAD",
+    "inputs": [
+      ".github/workflows/ra-mapper.yml",
+      ".github/workflows/staging.yml",
+      "README.md",
+      "archimate/README.md",
+      "dpi-h-ra.json"
+    ],
+    "files": [],
+    "undetermined": [
+      {
+        "input": ".github/workflows/ra-mapper.yml",
+        "reason": "not a block the ChangeSet names, a media file, a manifest of a known document, or the comment store: may change any page",
+        "scope": "all",
+        "hash": "b37287da96aa119c75eba7d5cebf57780d2583dd6a35ec8bd71be7ecf24284d4"
+      },
+      {
+        "input": ".github/workflows/staging.yml",
+        "reason": "not a block the ChangeSet names, a media file, a manifest of a known document, or the comment store: may change any page",
+        "scope": "all",
+        "hash": "d389d2c014c8795521e2bd03cf4ece90592bea20863ed4c3133be3c1cb2f1181"
+      },
+      {
+        "input": "README.md",
+        "reason": "not a block the ChangeSet names, a media file, a manifest of a known document, or the comment store: may change any page",
+        "scope": "all",
+        "hash": "fd0cd4b756564681fc255604bf78571cf4ee72d1dc576e2425b6801c085a6d59"
+      },
+      {
+        "input": "archimate/README.md",
+        "reason": "not a block the ChangeSet names, a media file, a manifest of a known document, or the comment store: may change any page",
+        "scope": "all",
+        "hash": "eaebd54374ba8974119f60af28b974ac49221bf41d2cf031d92f7f272c207257"
+      },
+      {
+        "input": "dpi-h-ra.json",
+        "reason": "not a block the ChangeSet names, a media file, a manifest of a known document, or the comment store: may change any page",
+        "scope": "all",
+        "hash": "4278bcc3da6fef8ecac220007a842b1fd43df7cbd348465cf2780b0c77a5e3ce"
+      }
+    ]
+  }
+]

@@ -1,0 +1,38 @@
+{
+  "$schema": "rendered-measured/v1",
+  "status": "known",
+  "baseCommit": "68956f2bce3379d5920f0a31355d3423fa369bc4",
+  "beforeCommit": "68956f2bce3379d5920f0a31355d3423fa369bc4",
+  "measured": {
+    "$schema": "rendered-impact/v1",
+    "renderer": "build-diff",
+    "method": "build-diff",
+    "base": "68956f2bce3379d5920f0a31355d3423fa369bc4",
+    "inputs": [],
+    "files": [
+      {
+        "path": "folio-assistant-core/public-comments/folio/dpi-h-ra/index.html",
+        "change": "changed",
+        "role": "content",
+        "via": [],
+        "hash": "3916b89666415a73c3d10fdefd06399ef85650fad38a408ffdd8e47cccb24e3c"
+      },
+      {
+        "path": "index.html",
+        "change": "changed",
+        "role": "content",
+        "via": [],
+        "hash": "550990c5ab06fecc8f81f54168790abb0ae3ab82b4230dc2fa9fa3bc779cd7ba"
+      }
+    ],
+    "undetermined": []
+  },
+  "check": {
+    "missed": [
+      "folio-assistant-core/public-comments/folio/dpi-h-ra/index.html",
+      "index.html"
+    ],
+    "confirmed": [],
+    "unconfirmed": []
+  }
+}
