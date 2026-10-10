@@ -27,23 +27,24 @@ cat-harness's `archimate` subgraph over the models `cat-archimate.config.json`
 names — skill `archimate-models`, Tools `archimate-check` and
 `archimate-pages`:
 
-- `/en/archimate/` — every model;
-- `/en/archimate/<version>/` — a model's views, and its elements by layer;
-- `/en/archimate/<version>/views/<id>/` — a view, drawn as SVG from the
+- `/en/dpi-h-ra/archimate/` — every model;
+- `/en/dpi-h-ra/archimate/<version>/` — a model's views, and its elements by layer;
+- `/en/dpi-h-ra/archimate/<version>/views/<id>/` — a view, drawn as SVG from the
   model (`/archimate/<version>/views/<id>.svg`), every box a link to its
   element;
-- `/en/archimate/<version>/elements/<id>/`, `…/relationships/<id>/` — one
+- `/en/dpi-h-ra/archimate/<version>/elements/<id>/`, `…/relationships/<id>/` — one
   page per element and relationship, keyed by Archi's id, with its JSON-LD IRI
   at `/archimate/<version>/elements/<id>.jsonld` (and `…/relationships/`);
 - `/en/mapper/` — the RA mapper (`.github/workflows/ra-mapper.yml`, after a
   successful build of `main`), current version first.
 
-Pages are under the page locale, `/en/` (folio-assistant#2527); the data they
-draw from — the SVG drawings and the JSON-LD — keeps its address under
-`/archimate/`.
+The pages are at the route of the visualiser `dpi-h-ra.json` declares for the
+`archimate-pages` Tool, `/<locale>/<harness>/<visualiser>/` (owner, 2026-10-09;
+folio-assistant#2527); the data they draw from — the SVG drawings and the
+JSON-LD — keeps its address under `/archimate/`, so no IRI moves.
 
 **No Java.** The Archi command-line report that `archimate.yml` used to run
 (a JVM, a virtual display and a ~200 MB download per run) is gone (owner,
 2026-10-09). Draw in Archi on your own machine; commit the `.archimate`; the
 build does the rest. A pull request's preview is at
-`STAGING/<branch>/en/archimate/`.
+`STAGING/<branch>/en/dpi-h-ra/archimate/`.

@@ -19,7 +19,7 @@ about.
 - **Read the document, with its comments:** https://litlfred.github.io/smart-ra/en/dpi-h-ra/
 - **Open comments dashboard:** https://litlfred.github.io/smart-ra/en/folio-assistant-core/public-comments/folio/dpi-h-ra/
 - **ArchiMate models** — every view drawn, every element and relationship with
-  its own page: https://litlfred.github.io/smart-ra/en/archimate/ (the RA mapper:
+  its own page: https://litlfred.github.io/smart-ra/en/dpi-h-ra/archimate/ (the RA mapper:
   https://litlfred.github.io/smart-ra/en/mapper/). How they are versioned and
   built: [`archimate/README.md`](archimate/README.md).
 - **The review version as circulated** (line-numbered PDF and .docx):

@@ -16,7 +16,8 @@ name: Staging preview
 # change-sets with the comments each answers, and each comment with its
 # change-sets. It fails the build if any planned page does not resolve.
 # Last, cat-harness's archimate subgraph (skill `archimate-models`) checks the
-# ArchiMate models and writes /en/archimate/ (the pages) and /archimate/ (the
+# ArchiMate models and writes /en/dpi-h-ra/archimate/ (the pages, at the route
+# of the visualiser dpi-h-ra.json declares) and /archimate/ (the
 # SVG drawings and JSON-LD they draw from): every view drawn as SVG, every view,
 # element and relationship a page and an IRI. No Java, no Archi CLI.
 
