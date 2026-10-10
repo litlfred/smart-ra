@@ -6,158 +6,37 @@
     "base": "origin/main",
     "head": "HEAD",
     "inputs": [
-      ".github/workflows/archimate.yml",
+      ".github/workflows/qa-sweep-nightly.yml",
       ".github/workflows/qa-sweep.yml",
-      ".github/workflows/ra-mapper.yml",
-      ".github/workflows/staging.yml",
-      "AGENTS.md",
-      "README.md",
-      "archimate/0.2.0-draft.1/WHO Base File.archimate",
-      "archimate/0.2.0-draft.2/WHOBaseFile_prev.archimate",
-      "archimate/0.2.0-draft.3/WHOBaseFile.archimate",
-      "archimate/0.2.0/WHOBaseFile.archimate",
-      "archimate/README.md",
-      "archimate/cat-archimate.config.json",
-      "archimate/current.txt",
-      "archimate/v3/WHOBaseFile.archimate",
-      "dpi-h-ra.json",
-      "folio-assistant",
-      "tools/ra-mapper/README.md",
-      "tools/ra-mapper/build_ra_mapper.py"
+      ".github/workflows/section-title-audit.yml",
+      ".github/workflows/staging.yml"
     ],
     "files": [],
     "undetermined": [
       {
-        "input": ".github/workflows/archimate.yml",
+        "input": ".github/workflows/qa-sweep-nightly.yml",
         "reason": "not a block the ChangeSet names, a media file, a manifest of a known document, or the comment store: may change any page",
         "scope": "all",
-        "hash": "a7870e3f14563d0b97dc48266937d10a8206847338ccafbc829c489c6f7a9ef7"
+        "hash": "283ec38a894ee3177116380297911474a090ae1abf053e0c0cbea3ece503bfde"
       },
       {
         "input": ".github/workflows/qa-sweep.yml",
         "reason": "not a block the ChangeSet names, a media file, a manifest of a known document, or the comment store: may change any page",
         "scope": "all",
-        "hash": "dd90d22b502846fec2611870dccc2fbff9876689570180f4ef45d4bad9622bd9"
+        "hash": "ea19a6545d7f53642077496d801a7a7d19a85097e12849a9fc65e5fdcdbf5b1d"
       },
       {
-        "input": ".github/workflows/ra-mapper.yml",
+        "input": ".github/workflows/section-title-audit.yml",
         "reason": "not a block the ChangeSet names, a media file, a manifest of a known document, or the comment store: may change any page",
         "scope": "all",
-        "hash": "cd559ab7104583089dd1f064b6323545ca318f9a204ddb31f51ac72621f4ebd0"
+        "hash": "88cdf196e97f9df7c6cbba146619f2f4a8fcdae1b32c68caf4990babeafa6eca"
       },
       {
         "input": ".github/workflows/staging.yml",
         "reason": "not a block the ChangeSet names, a media file, a manifest of a known document, or the comment store: may change any page",
         "scope": "all",
-        "hash": "03965abcec155e0c5febe95bc7684d6476a6038db4e10d62a1108c117122485a"
-      },
-      {
-        "input": "AGENTS.md",
-        "reason": "not a block the ChangeSet names, a media file, a manifest of a known document, or the comment store: may change any page",
-        "scope": "all",
-        "hash": "1f3b1ea4aae9ba1badfb4211c7fb38dd9f88bc51897ecae9dd15c7e3a3f953e1"
-      },
-      {
-        "input": "README.md",
-        "reason": "not a block the ChangeSet names, a media file, a manifest of a known document, or the comment store: may change any page",
-        "scope": "all",
-        "hash": "77cbd7f62bc8ce319ceeda7694ea85e57a727bba8243606a31d11a2806b65c15"
-      },
-      {
-        "input": "archimate/0.2.0-draft.1/WHO Base File.archimate",
-        "reason": "not a block the ChangeSet names, a media file, a manifest of a known document, or the comment store: may change any page",
-        "scope": "all",
-        "hash": "77e359f5fbd293c9f322d4cb57d9465eaeb442a8f6f00da8764e42bf4f536918"
-      },
-      {
-        "input": "archimate/0.2.0-draft.2/WHOBaseFile_prev.archimate",
-        "reason": "not a block the ChangeSet names, a media file, a manifest of a known document, or the comment store: may change any page",
-        "scope": "all",
-        "hash": "71177fb049bee13e716c6bb7b116a814080eeb513199d91525d94732a26efe45"
-      },
-      {
-        "input": "archimate/0.2.0-draft.3/WHOBaseFile.archimate",
-        "reason": "not a block the ChangeSet names, a media file, a manifest of a known document, or the comment store: may change any page",
-        "scope": "all",
-        "hash": "7c2a18661d4fd9c9478898a238e6dc631fd4a23f63c25a5b5b1d46657622c20b"
-      },
-      {
-        "input": "archimate/0.2.0/WHOBaseFile.archimate",
-        "reason": "not a block the ChangeSet names, a media file, a manifest of a known document, or the comment store: may change any page",
-        "scope": "all",
-        "hash": "519202aeb6cdee37a7d68af1f4805e21cd354ebe13021782a7515d83458e58cf"
-      },
-      {
-        "input": "archimate/README.md",
-        "reason": "not a block the ChangeSet names, a media file, a manifest of a known document, or the comment store: may change any page",
-        "scope": "all",
-        "hash": "b4fdbeaa42a25b9ebd3d8173aba25d4bf947cfe016980c3b96322959b406f123"
-      },
-      {
-        "input": "archimate/cat-archimate.config.json",
-        "reason": "not a block the ChangeSet names, a media file, a manifest of a known document, or the comment store: may change any page",
-        "scope": "all",
-        "hash": "9572c8383553d9aac5a9e859c5dab3d23ee27e0e8079d272c0c14d82eb98b01f"
-      },
-      {
-        "input": "archimate/current.txt",
-        "reason": "not a block the ChangeSet names, a media file, a manifest of a known document, or the comment store: may change any page",
-        "scope": "all",
-        "hash": "80a26bb90f2f7333e1ed30399ae0e13d40163f27e59fb441eb5987b891aeeb94"
-      },
-      {
-        "input": "archimate/v3/WHOBaseFile.archimate",
-        "reason": "not a block the ChangeSet names, a media file, a manifest of a known document, or the comment store: may change any page",
-        "scope": "all",
-        "hash": "2e96e6c37ba05557944eabf008c42c604f2f4aea3dbe6ad52249bfa59b872f47"
-      },
-      {
-        "input": "dpi-h-ra.json",
-        "reason": "not a block the ChangeSet names, a media file, a manifest of a known document, or the comment store: may change any page",
-        "scope": "all",
-        "hash": "4690ef94f6cb60cd175f51aac86e1cd948a5ecdceebaf3aab4a003df2629a619"
-      },
-      {
-        "input": "folio-assistant",
-        "reason": "not a block the ChangeSet names, a media file, a manifest of a known document, or the comment store: may change any page",
-        "scope": "all",
-        "hash": "f3a7a4efb453adec3c2922d951a82f12da7ccd657ee5f2c2c69282099dd66ca1"
-      },
-      {
-        "input": "tools/ra-mapper/README.md",
-        "reason": "not a block the ChangeSet names, a media file, a manifest of a known document, or the comment store: may change any page",
-        "scope": "all",
-        "hash": "7a5da700feec9422a19c68fbece68106ebf040aad73b0596f828eddde1f871a8"
-      },
-      {
-        "input": "tools/ra-mapper/build_ra_mapper.py",
-        "reason": "not a block the ChangeSet names, a media file, a manifest of a known document, or the comment store: may change any page",
-        "scope": "all",
-        "hash": "409149a713e22178b99d45f69b24af7b5819f6985d38d05f8fbc8898b7069eb2"
+        "hash": "8e54581af526ba1d8b12d44d5e0dd2e843e35cfcccf93baf5a4259bf7063e385"
       }
     ]
-  },
-  {
-    "$schema": "rendered-impact/v1",
-    "renderer": "library-site",
-    "method": "cone",
-    "base": "origin/main",
-    "head": "HEAD",
-    "inputs": [
-      "library/dpi4health-hrh-archimate/DPI4Health.archimate",
-      "library/dpi4health-hrh-archimate/README.md"
-    ],
-    "files": [
-      {
-        "path": "folio-assistant-core/library/dpi4health-hrh-archimate/entries/dpi4health-hrh-archimate.doc.json",
-        "change": "changed",
-        "role": "data",
-        "via": [
-          "library/dpi4health-hrh-archimate/DPI4Health.archimate"
-        ],
-        "hash": "5d5a7c68b441e58f3107fb6a5ddd474050cdb6d6f3eb67a9348f2bc117fa289f"
-      }
-    ],
-    "undetermined": []
   }
 ]
