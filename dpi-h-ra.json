@@ -24,18 +24,7 @@
       "graphTypologies": [
         "archimate"
       ],
-      "description": "The ArchiMate models of the reference architecture, one folder per SemVer version (archimate/README.md), named by cat-archimate.config.json. cat-harness's archimate subgraph (skill archimate-models) gives every view, element and relationship a page and an IRI and draws every view as SVG — no Java, no Archi CLI; the staging build writes them into the site at /archimate/<version>/.",
-      "coverage": {
-        "visualiser": [
-          {
-            "ref": "archimate/index.html",
-            "title": "ArchiMate models",
-            "writer": [
-              "folio-assistant/cat-harness/archimate/scripts/gen-archimate-pages.ts"
-            ]
-          }
-        ]
-      }
+      "description": "The ArchiMate models of the reference architecture, one folder per SemVer version (archimate/README.md), named by cat-archimate.config.json. cat-harness's archimate subgraph (skill archimate-models; its scripts are in cat-harness-tools) gives every view, element and relationship a page and an IRI and draws every view as SVG — no Java, no Archi CLI; the staging build writes the pages into the site at /en/dpi-h-ra/archimate/<version>/ (the route of the archimate visualiser declared in `visualisers`, under the page locale, folio-assistant#2527) and their data — the SVG drawings and the JSON-LD IRIs — at /archimate/<version>/."
     },
     {
       "id": "public-comments",
@@ -92,6 +81,19 @@
         "keyedBy": "tip"
       },
       "description": "The trashcan that is kept: deprecated and removed content, each node declaring itself folio-fsh-guts/v1 with where it came from. Kept on the tip-keyed state branch cat/dpi-h-ra/fsh-guts, mounted here, never rendered. Holds the snapshots of beans/ and todos/ as main last tracked them before their 2026-10-06 cutover (owner: \"cutover dirs should go to fsh-guts\")."
+    }
+  ],
+  "visualisers": [
+    {
+      "id": "archimate",
+      "renderedBy": "archimate-pages",
+      "covers": [
+        "archimate"
+      ],
+      "title": "ArchiMate models",
+      "writer": [
+        "folio-assistant/cat-harness-tools/archimate/scripts/gen-archimate-pages.ts"
+      ]
     }
   ],
   "description": "The DPI-H Reference Architecture guidance (WHO/ITU), an L1 document: the draft for public comment as an editable document folio, its frozen review version in the library, and the public-comment adjudication record.",
