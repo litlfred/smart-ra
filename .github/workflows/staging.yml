@@ -23,11 +23,11 @@ name: Staging preview
 # its STAGING/<branch>/ preview, and every push to main republishes the root.
 # Dispatch stays, for the public-comment intake's GITHUB_TOKEN commits, which
 # cannot start a push run.
+# Agent-run from 2026-10-10 (owner: "agent-run as well", bean n3h9): the
+# harnessed site is built and published by an agent, so this workflow no
+# longer runs on push or pull request. Dispatch stays, for the public-comment
+# intake's GITHUB_TOKEN commits and for a by-hand preview.
 on:
-  push:
-    branches: [main]
-  pull_request:
-    types: [opened, synchronize, reopened]
   workflow_dispatch:
 
 # What the reusable workflow needs, and no more: publish the preview, comment

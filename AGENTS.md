@@ -63,8 +63,9 @@ those files with the edit they are about**: a verdict is keyed on the block's
 content hash, so one that is older than its block reads as stale, never as
 passing.
 
-The staging preview sweeps each pull request as well (`.github/workflows/staging.yml`),
-so the review page's QA column reports that build. `.github/workflows/qa-sweep.yml`
+The staging preview (`.github/workflows/staging.yml`) runs by hand only since
+2026-10-10: the site is built and published by an agent (bean n3h9). When it
+runs, the review page's QA column reports that build. `.github/workflows/qa-sweep.yml`
 runs the full sweep on every pull request (warn-only), and
 `qa-sweep-nightly.yml` refreshes stale verdicts by dispatch only. Criteria that need an
 agent's judgement (voice, exposition, adversarial review) are not run by the
