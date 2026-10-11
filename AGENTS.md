@@ -49,6 +49,8 @@ beans/                    the work plan
 
 ## Commands
 
+The platform's layers are also remote-mounted at the repository root (`index.config.json`, locked in `index.lock.json`): `smart-base/`, `fhir-harness/`, `folio-assistant-core/`, `cat-harness/`, `cat-harness-tools/`, `bootstrap/`, `bootstrap-tools/`. Run `bun run cat-harness-tools/scripts/remote-mount.ts` to lay them down. The `folio-assistant/` submodule stays until the workflows below move onto the mounts (bean n3h9).
+
 ```sh
 bun run folio-assistant/cat-harness/src/index.ts --stdio --repo .   # the MCP server
 bun run folio-assistant/cat-harness/src/index.ts --check-deps       # what's installed
