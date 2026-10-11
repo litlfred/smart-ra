@@ -24,5 +24,5 @@ if [ ! -f cat-harness-tools/scripts/session-start-coord-sweep.sh ]; then
 fi
 
 [ -f cat-harness-tools/scripts/session-start-coord-sweep.sh ] &&
-  exec bash cat-harness-tools/scripts/session-start-coord-sweep.sh
+  exec bash "$PWD/cat-harness-tools/scripts/session-start-coord-sweep.sh"
 echo "the platform's mounts are not on disk: run \`bun run cat-harness-tools/scripts/remote-mount.ts\`"
