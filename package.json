@@ -8,6 +8,7 @@
     "site:node-kinds": "bun run cat-harness-tools/scripts/gen-node-kind-pages.ts --root . --out",
     "check:archimate": "bun run cat-harness-tools/archimate/scripts/check-archimate.ts --instance .",
     "site:archimate": "bun run cat-harness-tools/archimate/scripts/gen-archimate-pages.ts --instance . --out",
-    "site:mapper": "bash tools/ra-mapper/build-site.sh"
+    "site:mapper": "bash tools/ra-mapper/build-site.sh",
+    "site:redirects": "bash tools/site-redirects.sh"
   }
 }

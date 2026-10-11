@@ -67,6 +67,7 @@ bun run cat-harness-tools/scripts/build-instance-site.ts --root . --instance dpi
   --pre check:archimate \
   --source-step site:document --source-step site:public-comment \
   --source-step site:library --source-step site:archimate --source-step site:mapper \
+  --source-step site:redirects \
   --site-step site:node-kinds \
   [--staging <branch>] [--publish --remote <git url>]
 ```
