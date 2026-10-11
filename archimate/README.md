@@ -33,8 +33,8 @@ names — skill `archimate-models`, Tools `archimate-check` and
   (`…/views/<id>.svg`), every box a link to its element;
 - `/archimate/<version>/elements/<id>/`, `…/relationships/<id>/` — one page
   and one JSON-LD IRI per element and relationship, keyed by Archi's id;
-- `/mapper/` — the RA mapper (`.github/workflows/ra-mapper.yml`, after a
-  successful build of `main`), current version first.
+- `/mapper/` — the RA mapper (`tools/ra-mapper/build-site.sh`, the site
+  build's `site:mapper` step), current version first.
 
 **No Java.** The Archi command-line report that `archimate.yml` used to run
 (a JVM, a virtual display and a ~200 MB download per run) is gone (owner,

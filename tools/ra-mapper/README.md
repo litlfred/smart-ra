@@ -23,6 +23,6 @@ that share IDs.
 ## Deployment
 
 The app is one self-contained HTML file — host anywhere static
-(GitHub Pages via `.github/workflows/ra-mapper.yml`, share by email, USB, etc.).
+(the site's `mapper/`, built by `build-site.sh` as the `site:mapper` step; share by email, USB, etc.).
 User work autosaves in the browser; the exported ArchiMate exchange XML is the
 durable, shareable artifact.
