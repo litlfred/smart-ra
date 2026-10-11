@@ -2,7 +2,7 @@
 
 This is a **folio**: the content repository. The authoring platform —
 skills, schemas, MCP tools, the publication pipeline — is
-[folio-assistant](https://github.com/litlfred/folio-assistant.git), checked out at `folio-assistant/`.
+[folio-assistant](https://github.com/litlfred/folio-assistant.git): its layers are remote-mounted at the repository root (see **Commands**).
 
 This file is the **agent-generic** source of truth, read natively by Claude
 Code, Gemini CLI, Antigravity, Cursor and Copilot. `CLAUDE.md` and
@@ -43,13 +43,13 @@ folio/schema/            re-export shim for the platform's builders
 test/results/block-qa/     QA verdicts, one per block, mirroring folio/ (machine-written — never hand-edit)
 library/                   ingested source documents (read-only reference)
 uploads/                   source PDFs, for offline citation verification
-folio-assistant/              the platform
+smart-base/ … folio-assistant-sci/   the platform's layers, remote-mounted (gitignored)
 beans/                    the work plan
 ```
 
 ## Commands
 
-The platform's layers are remote-mounted at the repository root (`index.config.json`, locked in `index.lock.json`): `smart-base/`, `fhir-harness/`, `folio-assistant-core/`, `cat-harness/`, `cat-harness-tools/`, `bootstrap/`, `bootstrap-tools/`, `folio-assistant-sci/` (it declares the `paper` content adapter that core's block kinds and voices name, bean bzwk). Every workflow mounts them through `.github/actions/mount-layers`. The `folio-assistant/` submodule is left only for the MCP and editor settings, and goes next (bean n3h9).
+The platform's layers are remote-mounted at the repository root (`index.config.json`, locked in `index.lock.json`): `smart-base/`, `fhir-harness/`, `folio-assistant-core/`, `cat-harness/`, `cat-harness-tools/`, `bootstrap/`, `bootstrap-tools/`, `folio-assistant-sci/` (it declares the `paper` content adapter that core's block kinds and voices name, bean bzwk). Every workflow mounts them through `.github/actions/mount-layers`, and a session through `.claude/hooks/session-start.sh` when they are absent; `.mcp.json` runs the MCP server from the `cat-harness-tools/` mount. There is no `folio-assistant/` submodule any more (bean n3h9).
 
 ```sh
 bun run cat-harness-tools/scripts/remote-mount.ts                 # lay the mounts down
@@ -95,7 +95,7 @@ sweep; they stay unaudited until an agent records them.
 session sees it. Claim before you work; never resolve a sibling's bean.
 
 ```sh
-folio-assistant/cat-harness/scripts/install-beans.sh
+cat-harness-tools/scripts/install-beans.sh
 beans list
 beans create "<title>"
 beans <id> --status in-progress
@@ -135,7 +135,7 @@ downstream of this document and is not part of the folio.
   version, so comments still resolve after edits. Do not re-run the extraction
   over the folio.
 - **Public comments** are adjudicated with the platform's `public-comment`
-  skill and `folio-assistant/folio-assistant-core/scripts/public-comment.ts`.
+  skill and `folio-assistant-core/scripts/public-comment.ts`.
   The record is `review/public-comment/`, and the process is
   `public-comment.bpmn`:
   - triage and placement: review coordinator;

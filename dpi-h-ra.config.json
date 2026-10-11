@@ -1,23 +1,23 @@
 {
   "contentType": "document",
   "adapter": "document",
-  "adapterModule": "./folio-assistant/folio-assistant-core/adapters/document/index.ts",
+  "adapterModule": "./folio-assistant-core/adapters/document/index.ts",
   "dependencies": {
     "folioAssistant": [
       {
         "name": "folio-assistant-core",
-        "path": "folio-assistant/folio-assistant-core"
+        "path": "folio-assistant-core"
       },
       {
         "name": "smart-base",
-        "path": "folio-assistant/smart-base"
+        "path": "smart-base"
       }
     ]
   },
   "feedbackDir": ".folio-feedback",
   "skills": ".claude/skills/local",
   "viewer": {
-    "dir": "folio-assistant/cat-harness/viewer",
+    "dir": "cat-harness-tools/viewer",
     "port": 8080
   },
   "readme": {
