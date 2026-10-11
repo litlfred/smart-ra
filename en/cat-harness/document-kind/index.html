@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-<script data-folio-saved-scheme>try{var s=localStorage.getItem("fa-color-scheme");if(s==="light"||s==="dark")document.documentElement.setAttribute("data-fa-scheme",s)}catch(e){}</script>
+<script data-folio-saved-scheme>try{var s=localStorage.getItem("fa-color-scheme");if(s!=="light"&&s!=="dark"&&window.matchMedia&&window.matchMedia("(prefers-color-scheme: light)").matches)s="light";if(s==="light"||s==="dark")document.documentElement.setAttribute("data-fa-scheme",s)}catch(e){}</script>
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -111,15 +111,34 @@
 
 </style>
 </head>
-<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../.." data-fa-to-root="../../..">{"data":"rail-236f2lkqha2","here":"/en/cat-harness/document-kind/","documentIndex":{"label":"document-kind","icon":"§","items":[{"label":"document-kind","icon":"▸"}],"collapsible":true,"open":true}}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../">folio-assistant</a></nav><script type="application/json" data-fa-visualiser-nav>[{"label":"document-kind","items":[]}]</script>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../.." data-fa-to-root="../../..">{"data":"rail-236f2lkqha2","here":"/en/cat-harness/document-kind/","documentIndex":{"label":"document-kind","icon":"§","items":[{"label":"document-kind","icon":"▸"},{"label":"By harness","icon":"·","href":"#by-harness","depth":1},{"label":"By structure","icon":"·","href":"#by-structure","depth":1},{"label":"Nodes","icon":"·","href":"#nodes","depth":1},{"label":"smart-base","icon":"▸","href":"smart-base/"}],"collapsible":true,"open":true}}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../">folio-assistant</a></nav><script type="application/json" data-fa-visualiser-nav>[{"label":"document-kind","items":[{"label":"By harness","href":"#by-harness"},{"label":"By structure","href":"#by-structure"},{"label":"Nodes","href":"#nodes"}]},{"label":"smart-base","href":"smart-base/"}]</script>
 <main>
 <h1 id="nk-title">document-kind</h1>
-<p class="m">Node kind <code>document-kind/1.0.0</code>, declared by <b>cat-harness</b>. 0 node(s).</p>
+<p class="m">Node kind <code>document-kind/1.0.0</code>, declared by <b>cat-harness</b>. 4 node(s).</p>
 
+<h2 id="by-harness">By harness</h2><ul class="tiles"><li><b>4</b><a href="smart-base/">smart-base</a></li></ul>
+<h2 id="by-structure">By structure</h2><ul class="tiles"><li><b>1</b>fixed</li><li><b>3</b>semi-fixed</li></ul>
 
-
-
-<p>No node of this kind on this site yet.</p>
+<h2 id="nodes">Nodes</h2>
+<p><span class="m"><span id="shown">4</span> of 4 shown</span></p>
+<div class="clip"><table>
+<thead><tr><th>Node</th><th>Harness</th><th>id</th><th>title</th><th>description</th><th>structure</th><th>extends</th></tr></thead>
+<tbody>
+<tr data-kind="document-kind" data-harness="smart-base"><td class="p"><a href="smart-base/document-kinds/dak/">document-kinds/dak</a></td><td class="s">smart-base</td><td class="s">dak</td><td class="t">Digital Adaptation Kit (DAK)</td><td class="t">The L2 layer of a WHO SMART Guideline: the ten components that make a guideline&#39;s recommendations operational, ahead of the L3 FHIR IG that…</td><td class="s">fixed</td><td class="t"></td></tr>
+<tr data-kind="document-kind" data-harness="smart-base"><td class="p"><a href="smart-base/document-kinds/dth/">document-kinds/dth</a></td><td class="s">smart-base</td><td class="s">dth</td><td class="t">Digital Transformation Handbook (DTH)</td><td class="t">A WHO guidance publication on digitalising one area of a health system — an L1 publication whose body is a planning method rather than reco…</td><td class="s">semi-fixed</td><td class="t">l1</td></tr>
+<tr data-kind="document-kind" data-harness="smart-base"><td class="p"><a href="smart-base/document-kinds/l1/">document-kinds/l1</a></td><td class="s">smart-base</td><td class="s">l1</td><td class="t">L1 narrative publication</td><td class="t">The narrative layer of the WHO SMART Guidelines: &quot;traditional guidelines and guidance&quot; (Mehl 2021). Only the frame a WHO guideline and a Di…</td><td class="s">semi-fixed</td><td class="t"></td></tr>
+<tr data-kind="document-kind" data-harness="smart-base"><td class="p"><a href="smart-base/document-kinds/l1-guideline/">document-kinds/l1-guideline</a></td><td class="s">smart-base</td><td class="s">l1-guideline</td><td class="t">WHO guideline (L1)</td><td class="t">An L1 publication containing recommendations for clinical practice or public health policy, structured as the WHO Handbook for Guideline De…</td><td class="s">semi-fixed</td><td class="t">l1</td></tr>
+</tbody></table></div>
 </main>
+<script>
+(function(){
+  var sels=document.querySelectorAll('select[data-filter]'), rows=document.querySelectorAll('tbody tr[data-kind]');
+  var out=document.getElementById('shown');
+  function apply(){ var n=0; rows.forEach(function(r){ var ok=true;
+    sels.forEach(function(s){ if(s.value && r.getAttribute('data-'+s.getAttribute('data-filter'))!==s.value) ok=false; });
+    r.hidden=!ok; if(ok) n++; }); if(out) out.textContent=String(n); }
+  sels.forEach(function(s){ s.addEventListener('change',apply); });
+})();
+</script>
 </body>
 </html>

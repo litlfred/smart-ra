@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-<script data-folio-saved-scheme>try{var s=localStorage.getItem("fa-color-scheme");if(s==="light"||s==="dark")document.documentElement.setAttribute("data-fa-scheme",s)}catch(e){}</script>
+<script data-folio-saved-scheme>try{var s=localStorage.getItem("fa-color-scheme");if(s!=="light"&&s!=="dark"&&window.matchMedia&&window.matchMedia("(prefers-color-scheme: light)").matches)s="light";if(s==="light"||s==="dark")document.documentElement.setAttribute("data-fa-scheme",s)}catch(e){}</script>
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
