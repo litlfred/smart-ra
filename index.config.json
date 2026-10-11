@@ -204,6 +204,28 @@
           }
         }
       }
+    },
+    {
+      "name": "folio-assistant-sci",
+      "source": {
+        "remote": {
+          "repository": "litlfred/folio-assistant-sci",
+          "ref": "5bc2c90bbf29759d480330aa457885719cef1054",
+          "overrides": {
+            "folio-assistant-sci": {
+              "whole": true
+            }
+          },
+          "trust": {
+            "consent": {
+              "by": "litlfred",
+              "on": "2026-10-11",
+              "ref": "5bc2c90bbf29759d480330aa457885719cef1054",
+              "evidence": "owner, session_017fFnGmbJcfqqrHXz9oqxdG 2026-10-10/11: 'keep migrating environment', 'repin as needed' — folio-assistant-sci declares the `paper` content adapter that folio-assistant-core's block kinds and voices name, so the platform QA cannot load without it (layering defect, bean filed)"
+            }
+          }
+        }
+      }
     }
   ]
 }
