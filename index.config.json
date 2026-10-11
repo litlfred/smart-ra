@@ -110,7 +110,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness",
-          "ref": "07b9989349bbfadb94ceb56ea887d4abc37909bc",
+          "ref": "e890428d42a4e83f7d906c5348c4167c4c370373",
           "overrides": {
             "cat-harness": {
               "whole": true
@@ -125,9 +125,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-10",
-              "ref": "07b9989349bbfadb94ceb56ea887d4abc37909bc",
-              "evidence": "owner, session_017fFnGmbJcfqqrHXz9oqxdG 2026-10-10: 'you can work on the litlfred/smart-* go ahead and harness them with index.config.json' and 'keep going. keep migrating environment' — dpi-h-ra (litlfred/smart-ra) mounts smart-base and its closure at each repository's main (bean n3h9)"
+              "on": "2026-10-11",
+              "ref": "e890428d42a4e83f7d906c5348c4167c4c370373",
+              "evidence": "owner, session_017fFnGmbJcfqqrHXz9oqxdG 2026-10-11: 'repin as neede. merge all ready green next 4hrs, continue' — repin cat-harness to e890428 (litlfred/cat-harness#133: the build-instance-site Tool's siteStep input), alongside cat-harness-tools bbfc3c5"
             }
           }
         }
@@ -138,7 +138,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness-tools",
-          "ref": "8a95dda076534d5ba2348024644d981de0a1ea03",
+          "ref": "bbfc3c583274361bc540fb18d74877c35757c3c7",
           "overrides": {
             "cat-harness-tools": {
               "whole": true
@@ -150,9 +150,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-10",
-              "ref": "8a95dda076534d5ba2348024644d981de0a1ea03",
-              "evidence": "owner, session_017fFnGmbJcfqqrHXz9oqxdG 2026-10-10: 'you can work on the litlfred/smart-* go ahead and harness them with index.config.json' and 'keep going. keep migrating environment' — dpi-h-ra (litlfred/smart-ra) mounts smart-base and its closure at each repository's main (bean n3h9)"
+              "on": "2026-10-11",
+              "ref": "bbfc3c583274361bc540fb18d74877c35757c3c7",
+              "evidence": "owner, session_017fFnGmbJcfqqrHXz9oqxdG 2026-10-11: 'repin as neede. merge all ready green next 4hrs, continue' — repin cat-harness-tools to bbfc3c5 (litlfred/cat-harness-tools#107: build-instance-site --site-step; the review page's static root link), so the site builds from the mounts (bean n3h9)"
             }
           }
         }
@@ -227,5 +227,8 @@
         }
       }
     }
-  ]
+  ],
+  "site": {
+    "landing": "dpi-h-ra"
+  }
 }
