@@ -60,3 +60,14 @@ review/public-comment/raw/
 /todos/**
 # Kept on cat/dpi-h-ra/fsh-guts; mounted here by state:mount, never committed to main
 /fsh-guts/**
+
+# BEGIN index mounts (generated from index.config.json — do not edit)
+/smart-base/
+/fhir-harness/
+/folio-assistant-core/
+/cat-harness/
+/cat-harness-tools/
+/bootstrap/
+/bootstrap-tools/
+/folio-assistant-sci/
+# END index mounts
