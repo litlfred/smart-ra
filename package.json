@@ -1,0 +1,12 @@
+{
+  "name": "smart-ra",
+  "private": true,
+  "scripts": {
+    "site:document": "bun run folio-assistant-core/scripts/build-document-site.ts --out",
+    "site:public-comment": "bun run folio-assistant-core/scripts/public-comment-site.ts --out",
+    "site:library": "bun run folio-assistant-core/scripts/build-library-site.ts --out",
+    "site:node-kinds": "bun run cat-harness-tools/scripts/gen-node-kind-pages.ts --root . --out",
+    "check:archimate": "bun run cat-harness-tools/archimate/scripts/check-archimate.ts --instance .",
+    "site:archimate": "bun run cat-harness-tools/archimate/scripts/gen-archimate-pages.ts --instance . --out"
+  }
+}

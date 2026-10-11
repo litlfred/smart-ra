@@ -49,13 +49,30 @@ beans/                    the work plan
 
 ## Commands
 
-The platform's layers are also remote-mounted at the repository root (`index.config.json`, locked in `index.lock.json`): `smart-base/`, `fhir-harness/`, `folio-assistant-core/`, `cat-harness/`, `cat-harness-tools/`, `bootstrap/`, `bootstrap-tools/`, `folio-assistant-sci/` (it declares the `paper` content adapter that core's block kinds and voices name). Run `bun run cat-harness-tools/scripts/remote-mount.ts` to lay them down. The `folio-assistant/` submodule stays until the workflows below move onto the mounts (bean n3h9).
+The platform's layers are remote-mounted at the repository root (`index.config.json`, locked in `index.lock.json`): `smart-base/`, `fhir-harness/`, `folio-assistant-core/`, `cat-harness/`, `cat-harness-tools/`, `bootstrap/`, `bootstrap-tools/`, `folio-assistant-sci/` (it declares the `paper` content adapter that core's block kinds and voices name, bean bzwk). Every workflow mounts them through `.github/actions/mount-layers`. The `folio-assistant/` submodule is left only for the MCP and editor settings, and goes next (bean n3h9).
 
 ```sh
-bun run folio-assistant/cat-harness/src/index.ts --stdio --repo .   # the MCP server
-bun run folio-assistant/cat-harness/src/index.ts --check-deps       # what's installed
-bun run folio-assistant/cat-harness/content/pipeline/qa-sweep.ts folio  # QA every block
+bun run cat-harness-tools/scripts/remote-mount.ts                 # lay the mounts down
+bun run cat-harness-tools/src/index.ts --stdio --repo .           # the MCP server
+bun run cat-harness-tools/content/pipeline/qa-sweep.ts folio      # QA every block
 ```
+
+**The site** — the document, the public-comment dashboard, the library, the
+node-kind pages and the ArchiMate models — is built and published by an agent,
+never by a workflow (owner, 2026-10-10; bean n3h9). The scripts it runs are
+this repository's `package.json`:
+
+```sh
+bun run cat-harness-tools/scripts/build-instance-site.ts --root . --instance dpi-h-ra \
+  --pre check:archimate \
+  --source-step site:document --source-step site:public-comment \
+  --source-step site:library --source-step site:archimate \
+  --site-step site:node-kinds \
+  [--staging <branch>] [--publish --remote <git url>]
+```
+
+`--staging <branch>` builds the preview at `STAGING/<branch>/`; without it the
+root. It publishes only with `--publish`, and only once every link resolves.
 
 ## QA — every block is checked from the first commit
 
@@ -65,9 +82,8 @@ those files with the edit they are about**: a verdict is keyed on the block's
 content hash, so one that is older than its block reads as stale, never as
 passing.
 
-The staging preview (`.github/workflows/staging.yml`) runs by hand only since
-2026-10-10: the site is built and published by an agent (bean n3h9). When it
-runs, the review page's QA column reports that build. `.github/workflows/qa-sweep.yml`
+The staging preview is built and published by an agent (see **The site**
+above); the review page's QA column reports that build. `.github/workflows/qa-sweep.yml`
 runs the full sweep on every pull request (warn-only), and
 `qa-sweep-nightly.yml` refreshes stale verdicts by dispatch only. Criteria that need an
 agent's judgement (voice, exposition, adversarial review) are not run by the
