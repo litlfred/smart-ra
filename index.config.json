@@ -138,7 +138,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness-tools",
-          "ref": "3c44f769fe698915972556816984601d1944ae8c",
+          "ref": "57721f678074a7e41c44d5c1a3ecefaf9cf5a7f9",
           "overrides": {
             "cat-harness-tools": {
               "whole": true
@@ -151,8 +151,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-10-12",
-              "ref": "3c44f769fe698915972556816984601d1944ae8c",
-              "evidence": "owner, 2026-10-12 (session_0152Nknwuu7QA2mPXnbPtRyP): 'repin+merge when green for next 3 hours. continue' — 903f608 -> tools main with litlfred/cat-harness-tools#158 (stage-local hands a declared site.build to build-instance-site)"
+              "ref": "57721f678074a7e41c44d5c1a3ecefaf9cf5a7f9",
+              "evidence": "owner, 2026-10-12 (session_0152Nknwuu7QA2mPXnbPtRyP): 'repin+mergen when green next 2 hrs' — 3c44f76 -> tools main, with litlfred/cat-harness-tools#161 (remote mounts install deps without breaking fixity)"
             }
           }
         }
