@@ -138,7 +138,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness-tools",
-          "ref": "903f608d6e2985b4b3e4ca8b16b776623a4310e8",
+          "ref": "3c44f769fe698915972556816984601d1944ae8c",
           "overrides": {
             "cat-harness-tools": {
               "whole": true
@@ -151,8 +151,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-10-12",
-              "ref": "903f608d6e2985b4b3e4ca8b16b776623a4310e8",
-              "evidence": "owner, session_017fFnGmbJcfqqrHXz9oqxdG 2026-10-11/12: 'repin as neede. merge all ready green next 4hrs, continue' — repinned to current main after bean bzwk (core declares its own `document` adapter, sci its `mathpaper`; folio-assistant-core#65, folio-assistant-sci#15, cat-harness#165, cat-harness-tools#149), which also lets this folio drop the folio-assistant-sci mount"
+              "ref": "3c44f769fe698915972556816984601d1944ae8c",
+              "evidence": "owner, 2026-10-12 (session_0152Nknwuu7QA2mPXnbPtRyP): 'repin+merge when green for next 3 hours. continue' — 903f608 -> tools main with litlfred/cat-harness-tools#158 (stage-local hands a declared site.build to build-instance-site)"
             }
           }
         }
