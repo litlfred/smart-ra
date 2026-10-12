@@ -138,7 +138,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness-tools",
-          "ref": "bbfc3c583274361bc540fb18d74877c35757c3c7",
+          "ref": "6b89bd87bfe33f398bd9b399d151a13b56bebbb3",
           "overrides": {
             "cat-harness-tools": {
               "whole": true
@@ -150,9 +150,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-11",
-              "ref": "bbfc3c583274361bc540fb18d74877c35757c3c7",
-              "evidence": "owner, session_017fFnGmbJcfqqrHXz9oqxdG 2026-10-11: 'repin as neede. merge all ready green next 4hrs, continue' — repin cat-harness-tools to bbfc3c5 (litlfred/cat-harness-tools#107: build-instance-site --site-step; the review page's static root link), so the site builds from the mounts (bean n3h9)"
+              "on": "2026-10-12",
+              "ref": "6b89bd87bfe33f398bd9b399d151a13b56bebbb3",
+              "evidence": "owner, session 2026-10-12 (session_0152Nknwuu7QA2mPXnbPtRyP), on moving smart-ra's cat-harness-tools pin up to include litlfred/cat-harness-tools#118: 'do so' — bbfc3c5 -> tools main"
             }
           }
         }
