@@ -110,7 +110,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness",
-          "ref": "73ff1830854d0bc863868e9286d2551d219d8f00",
+          "ref": "263d88e3a8c7b1d5851bde8f16ea52b4d0073fcb",
           "overrides": {
             "cat-harness": {
               "whole": true
@@ -126,8 +126,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-10-12",
-              "ref": "73ff1830854d0bc863868e9286d2551d219d8f00",
-              "evidence": "owner, session_017fFnGmbJcfqqrHXz9oqxdG 2026-10-11/12: 'repin as neede. merge all ready green next 4hrs, continue' — repinned to current main after bean bzwk (core declares its own `document` adapter, sci its `mathpaper`; folio-assistant-core#65, folio-assistant-sci#15, cat-harness#165, cat-harness-tools#149), which also lets this folio drop the folio-assistant-sci mount"
+              "ref": "263d88e3a8c7b1d5851bde8f16ea52b4d0073fcb",
+              "evidence": "owner, 2026-10-12 (session_0152Nknwuu7QA2mPXnbPtRyP): 'repin+mergen when green next 2 hrs' — 73ff183 -> cat-harness main, which tools 2f7f3c2 needs (mount-trust withConsent)"
             }
           }
         }
@@ -138,7 +138,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness-tools",
-          "ref": "3c44f769fe698915972556816984601d1944ae8c",
+          "ref": "2f7f3c2b3b2681c6560f3efa6de05f96b0e85bf3",
           "overrides": {
             "cat-harness-tools": {
               "whole": true
@@ -151,8 +151,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-10-12",
-              "ref": "3c44f769fe698915972556816984601d1944ae8c",
-              "evidence": "owner, 2026-10-12 (session_0152Nknwuu7QA2mPXnbPtRyP): 'repin+merge when green for next 3 hours. continue' — 903f608 -> tools main with litlfred/cat-harness-tools#158 (stage-local hands a declared site.build to build-instance-site)"
+              "ref": "2f7f3c2b3b2681c6560f3efa6de05f96b0e85bf3",
+              "evidence": "owner, 2026-10-12 (session_0152Nknwuu7QA2mPXnbPtRyP): 'repin+mergen when green next 2 hrs' — 3c44f76 -> tools main, with litlfred/cat-harness-tools#161 and #172 (mount installs with --omit dev) (remote mounts install deps without breaking fixity)"
             }
           }
         }
