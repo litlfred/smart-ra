@@ -43,13 +43,13 @@ folio/schema/            re-export shim for the platform's builders
 test/results/block-qa/     QA verdicts, one per block, mirroring folio/ (machine-written — never hand-edit)
 library/                   ingested source documents (read-only reference)
 uploads/                   source PDFs, for offline citation verification
-smart-base/ … folio-assistant-sci/   the platform's layers, remote-mounted (gitignored)
+smart-base/ … bootstrap-tools/   the platform's layers, remote-mounted (gitignored)
 beans/                    the work plan
 ```
 
 ## Commands
 
-The platform's layers are remote-mounted at the repository root (`index.config.json`, locked in `index.lock.json`): `smart-base/`, `fhir-harness/`, `folio-assistant-core/`, `cat-harness/`, `cat-harness-tools/`, `bootstrap/`, `bootstrap-tools/`, `folio-assistant-sci/` (it declares the `paper` content adapter that core's block kinds and voices name, bean bzwk). Every workflow mounts them through `.github/actions/mount-layers`, and a session through `.claude/hooks/session-start.sh` when they are absent; `.mcp.json` runs the MCP server from the `cat-harness-tools/` mount. There is no `folio-assistant/` submodule any more (bean n3h9).
+The platform's layers are remote-mounted at the repository root (`index.config.json`, locked in `index.lock.json`): `smart-base/`, `fhir-harness/`, `folio-assistant-core/`, `cat-harness/`, `cat-harness-tools/`, `bootstrap/`, `bootstrap-tools/`. `folio-assistant-sci/` is no longer mounted: core declares its own `document` adapter since bean bzwk (2026-10-12), so a document folio needs nothing from sci. Every workflow mounts them through `.github/actions/mount-layers`, and a session through `.claude/hooks/session-start.sh` when they are absent; `.mcp.json` runs the MCP server from the `cat-harness-tools/` mount. There is no `folio-assistant/` submodule any more (bean n3h9).
 
 ```sh
 bun run cat-harness-tools/scripts/remote-mount.ts                 # lay the mounts down
