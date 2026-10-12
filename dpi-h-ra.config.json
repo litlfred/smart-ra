@@ -23,5 +23,23 @@
   "readme": {
     "linkStyle": "blob",
     "publishRef": "gh-pages"
+  },
+  "site": {
+    "build": {
+      "pre": [
+        "check:archimate"
+      ],
+      "sourceSteps": [
+        "site:document",
+        "site:public-comment",
+        "site:library",
+        "site:archimate",
+        "site:mapper",
+        "site:redirects"
+      ],
+      "siteSteps": [
+        "site:node-kinds"
+      ]
+    }
   }
 }
