@@ -54,7 +54,7 @@ The platform's layers are remote-mounted at the repository root (`index.config.j
 ```sh
 bun run cat-harness-tools/scripts/remote-mount.ts                 # lay the mounts down
 bun run cat-harness-tools/src/index.ts --stdio --repo .           # the MCP server
-bun run cat-harness-tools/content/pipeline/qa-sweep.ts folio      # QA every block
+bun run cat-harness-tools/pipeline/qa-sweep.ts folio      # QA every block
 ```
 
 **The site** — the document, the public-comment dashboard, the library, the
