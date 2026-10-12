@@ -63,17 +63,20 @@ never by a workflow (owner, 2026-10-10; bean n3h9). The scripts it runs are
 this repository's `package.json`:
 
 ```sh
-bun run cat-harness-tools/scripts/build-instance-site.ts --root . --instance dpi-h-ra \
-  --pre check:archimate \
-  --source-step site:document --source-step site:public-comment \
-  --source-step site:library --source-step site:archimate --source-step site:mapper \
-  --source-step site:redirects \
-  --site-step site:node-kinds \
-  [--staging <branch>] [--publish --remote <git url>]
+bun run cat-harness-tools/scripts/stage-local.ts --repo . [--plan | --dry-run]
 ```
 
-`--staging <branch>` builds the preview at `STAGING/<branch>/`; without it the
-root. It publishes only with `--publish`, and only once every link resolves.
+The steps are declared once, in `dpi-h-ra.config.json` under `site.build`:
+`pre` (the gate, `check:archimate`), `sourceSteps` (run before Jekyll, into
+the site source) and `siteSteps` (run after Jekyll, on the built site). The
+command reads them from there. On `main` it publishes the root, keeping
+`STAGING/` and `_render-log/`; on any other branch it publishes the preview at
+`STAGING/<branch>/`. `--plan` prints what it would do, and `--dry-run` builds
+without publishing. Either way it publishes only once every link resolves.
+It is the same command for every agent-run repository, folio or IG (owner,
+2026-10-10: "one consolidated workflow"). It hands this one to
+`build-instance-site.ts --instance dpi-h-ra`, which can also be run directly;
+any step flag given there replaces the declared recipe.
 
 ## QA — every block is checked from the first commit
 
