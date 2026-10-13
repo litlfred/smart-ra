@@ -127,6 +127,7 @@
 <dt>iriBase</dt><dd>https://litlfred.github.io/cat-harness/</dd>
 <dt>_title_comment</dt><dd>The HUMAN display name, for the LHS navbar&#39;s harness tabs. Owner, 2026-09-21: &quot;harnesses should list the names (they should be named in schmeas, e.g. cat-boostrap should be named &#39;Boostrap&#39;, f-a =&gt; Folio Assistant, cat-harness =&gt; C@T Harness)&quot;. `name` stays the machine identifier that filenames, `needs` edges and `declaredBy` resolve against; `title` is what a reader sees and nothing resolves against. Bean t3n8. THIS ONE WAS WRONG RATHER THAN ABSENT: it declared `title: &quot;folio-assistant&quot;`, the ROOT instance&#39;s name, so two instances carried one title and `disambiguate()` correctly qualified this tab to &quot;folio-assistant (cat-harness)&quot; — the label the owner reported. The disambiguator behaved as designed; the declaration was the defect.</dd>
 <dt>title</dt><dd>C@T Harness</dd>
+<dt>skillPrefix</dt><dd>cat</dd>
 <dt>description</dt><dd>computable adjudication and agentic test harness
 
 caaat-harness
@@ -824,6 +825,14 @@ ca&amp;at-harness
     ]
   },
   {
+    &quot;id&quot;: &quot;test-plans&quot;,
+    &quot;path&quot;: &quot;test/plans/&quot;,
+    &quot;description&quot;: &quot;Test plans this instance certifies against — one `test-plan/v1` document per plan (`schemas/test-plan.ts`). Content, not state: a process reads a plan and never writes it, and the run points at the plan, never the reverse. The runs and reports a plan&#39;s execution produces go to the `qa-reports` branch with the rest of `test/results/`, and the certification decision to `test/attestations/` (owner ruling D2). First declared for dogfood plan #1, `crdm-detect-evaluation` (bean `folio-assistant-ff09`). Declared WITH its files, per bean dh4f.&quot;,
+    &quot;graphTypologies&quot;: [
+      &quot;test-plan&quot;
+    ]
+  },
+  {
     &quot;id&quot;: &quot;health&quot;,
     &quot;path&quot;: &quot;test/health/results/&quot;,
     &quot;description&quot;: &quot;Repository health reports — what the daily sweep under `test/health/` wrote. One `health-report/v1` document, declaring itself with a `$schema` tag rather than being duck-typed by path: a directory is a PLACE TO LOOK and the files inside say what they are. A SEPARATE graph from `qa`, and the line between them is about the SUBJECT, not the producer: a QA verdict judges an artefact this repository produced, against criteria that artefact is supposed to meet; a health report judges the REPOSITORY ITSELF — how big it has grown, how much of the publish branch the review previews occupy, whether the work plan has duplicates in it. Folding it into `qa` would leave a consumer asking for verdicts about this instance&#39;s content holding a fact about its clone. NOTE the path: it was `tests/health/results/` when this graph landed in #395, because this repository then had BOTH `test/` (the `qa` graph) and `tests/` (the Playwright e2e specs), and the owner asked for `tests/health`. #395 flagged that inconsistency in `skills/kg/kg-core/directory-conventions.md` rather than resolving it, since relocating a declared directory as a side effect of adding a check is the `dh4f` shape, where a consumer scans nothing and reports a clean run over it. The owner settled it on `test/` the same day and it moved as its own change — bean `auap`, PR #400. The `id` here is unchanged, deliberately: an inheriting instance overrides on the entry&#39;s id and never on its path, so `health` still binds after the relocation. The e2e specs came to the declaration rather than the declaration to the specs, because `testDir` is one line of one config file and a declared path is what every downstream override resolves against.&quot;,
@@ -901,6 +910,23 @@ ca&amp;at-harness
       &quot;folio&quot;
     ],
     &quot;description&quot;: &quot;Authored content of this instance itself, rendered to a website. Holds the landing sticky — the instance&#39;s own description and its onboarding links, as a page-global note rather than text composited into the backdrop.&quot;
+  },
+  {
+    &quot;id&quot;: &quot;folio-render&quot;,
+    &quot;path&quot;: &quot;folio-render/&quot;,
+    &quot;graphTypologies&quot;: [
+      &quot;cat-harness&quot;,
+      &quot;code&quot;
+    ],
+    &quot;description&quot;: &quot;The harness&#39;s own minimal folio renderer (bean ohx6, owner ruling 2026-10-10): `file-list.ts`, which renders the folio as the list of files it holds into `folio/index.md`, and the skill that says when to run it. Code and a skill, not folio content: the folio reader reads only `folio/*.json`, and the renderer skips this directory.&quot;
+  },
+  {
+    &quot;id&quot;: &quot;site-chrome&quot;,
+    &quot;path&quot;: &quot;site-chrome/&quot;,
+    &quot;graphTypologies&quot;: [
+      &quot;docs&quot;
+    ],
+    &quot;description&quot;: &quot;The SITE CHROME: the just-the-docs theme configuration (`_config.yml`&#39;s theme keys, the `Gemfile`), the generic includes every page pulls in (`head_custom`, `footer_custom`, `nav_footer_custom`, `mermaid_config`) and the stylesheets and scripts they load, in their Jekyll-relative places. Concern group `ui`. It is the BASE layer of the composed docs tree: declared BEFORE `docs`, so `compose-docs` lays it down first and `docs/` overlays it (later wins; `_config.yml` merged, parse-equal to the file it was cut from, ruling D1). Empty `_includes/generated/*` stand-ins let a site with no harness pages build. A downstream that wants the harness&#39;s look without its 3,456 pages mounts `site-chrome` and omits `docs`. Owner, 2026-10-09: *\&quot;go ahead with the cat-harness chrome subgraph\&quot;*; proposal `docs/proposals/semantic-subgraphs-2026-10-09.md`, slice 1. The harness pages&#39; own assets (`work-plan.*`, `process-index.js`, `slice-sqlite*`, `kg-render.js`, `vendor/sqlite-wasm`) stay in `docs/` (ruling D2).&quot;
   },
   {
     &quot;id&quot;: &quot;docs&quot;,
@@ -1291,8 +1317,8 @@ ca&amp;at-harness
         &quot;extensions&quot;: [
           &quot;.md&quot;
         ],
-        &quot;extractModule&quot;: &quot;content/pipeline/pot-extract.ts&quot;,
-        &quot;injectModule&quot;: &quot;content/pipeline/po-inject.ts&quot;
+        &quot;extractModule&quot;: &quot;pipeline/pot-extract.ts&quot;,
+        &quot;injectModule&quot;: &quot;pipeline/po-inject.ts&quot;
       }
     ],
     &quot;rtlSupported&quot;: true,

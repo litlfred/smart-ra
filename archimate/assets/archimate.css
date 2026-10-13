@@ -30,3 +30,6 @@ body { font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; margin: 
 .am-ends { font-size: 1.05rem; }
 .am-error { color: #b42318; font-weight: 600; }
 .am-links { margin-top: 2rem; font-size: .9rem; }
+@media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { color-scheme: dark; } }
+  :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }

@@ -159,7 +159,7 @@
       ],
       "skos:definition": [
         {
-          "@value": "Reference documents or rules supporting this check."
+          "@value": "The rules supporting this check, BY NAME — `skill:<name>` or `schema:<module>` — never by path. Code, which is addressed by path on purpose, is `code:<layer>/<module path>`. Paths went stale as skills moved between packages (two named a skill that no longer exists); a name is found wherever the declaration puts it (`check:declared-paths`, bean `rmi6` follow-up). `adversarial-checklist.test.ts` resolves every one."
         }
       ],
       "dcterms:source": "cat-harness/schemas/adversarial-checklist.ts#AdversarialChecklistItem.references",
@@ -7177,6 +7177,25 @@
       "skos:note": "candidate"
     },
     {
+      "@id": "https://litlfred.github.io/cat-harness/0.1.0/ns#glossary/kg-schema-fields/cat-harness.catharnessdeclaration.skillprefix",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/cat-harness/0.1.0/ns#glossary/kg-schema-fields"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "CatHarnessDeclaration.skillPrefix"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "The prefix this harness's skills get when installed into an agent host — see {@link CatHarnessDeclarationSchema}'s `skillPrefix` (bean `x4mt`)."
+        }
+      ],
+      "dcterms:source": "cat-harness/schemas/cat-harness.ts#CatHarnessDeclaration.skillPrefix",
+      "skos:note": "candidate"
+    },
+    {
       "@id": "https://litlfred.github.io/cat-harness/0.1.0/ns#glossary/kg-schema-fields/cat-harness.catharnessdeclaration.source",
       "@type": "skos:Concept",
       "skos:inScheme": {
@@ -10666,7 +10685,7 @@
       ],
       "skos:definition": [
         {
-          "@value": "The generic pipeline slot this fills (`content/pipeline/pipeline-plugins.ts`); the key into the table."
+          "@value": "The generic pipeline slot this fills (`pipeline/pipeline-plugins.ts`); the key into the table."
         }
       ],
       "dcterms:source": "cat-harness/schemas/contribution-nodes.ts#PipelinePluginNodeSchema.slot",
@@ -10989,7 +11008,7 @@
       ],
       "skos:definition": [
         {
-          "@value": "What fills it. Shape is fixed per kind by `content/pipeline/pipeline-plugins.ts`."
+          "@value": "What fills it. Shape is fixed per kind by `pipeline/pipeline-plugins.ts`."
         }
       ],
       "dcterms:source": "cat-harness/schemas/contributions.ts#PipelinePluginContribution.implementation",
@@ -18881,6 +18900,120 @@
       "skos:note": "candidate"
     },
     {
+      "@id": "https://litlfred.github.io/cat-harness/0.1.0/ns#glossary/kg-schema-fields/health-report.pagesservingobservationschema.observedat",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/cat-harness/0.1.0/ns#glossary/kg-schema-fields"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "PagesServingObservationSchema.observedAt"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "ISO 8601, when the CI job fetched the site."
+        }
+      ],
+      "dcterms:source": "cat-harness/schemas/health-report.ts#PagesServingObservationSchema.observedAt",
+      "skos:note": "candidate"
+    },
+    {
+      "@id": "https://litlfred.github.io/cat-harness/0.1.0/ns#glossary/kg-schema-fields/health-report.pagesservingobservationschema.run",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/cat-harness/0.1.0/ns#glossary/kg-schema-fields"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "PagesServingObservationSchema.run"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "The workflow run that made the observation, for a reader to open."
+        }
+      ],
+      "dcterms:source": "cat-harness/schemas/health-report.ts#PagesServingObservationSchema.run",
+      "skos:note": "candidate"
+    },
+    {
+      "@id": "https://litlfred.github.io/cat-harness/0.1.0/ns#glossary/kg-schema-fields/health-report.pagesservingobservationschema.site",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/cat-harness/0.1.0/ns#glossary/kg-schema-fields"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "PagesServingObservationSchema.site"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "The published site's root URL."
+        }
+      ],
+      "dcterms:source": "cat-harness/schemas/health-report.ts#PagesServingObservationSchema.site",
+      "skos:note": "candidate"
+    },
+    {
+      "@id": "https://litlfred.github.io/cat-harness/0.1.0/ns#glossary/kg-schema-fields/health-report.pagesservingurlschema.bytes",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/cat-harness/0.1.0/ns#glossary/kg-schema-fields"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "PagesServingUrlSchema.bytes"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "Bytes in the response body."
+        }
+      ],
+      "dcterms:source": "cat-harness/schemas/health-report.ts#PagesServingUrlSchema.bytes",
+      "skos:note": "candidate"
+    },
+    {
+      "@id": "https://litlfred.github.io/cat-harness/0.1.0/ns#glossary/kg-schema-fields/health-report.pagesservingurlschema.expectedpage",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/cat-harness/0.1.0/ns#glossary/kg-schema-fields"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "PagesServingUrlSchema.expectedPage"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "Whether the body is the page asked for, rather than Pages' own 404."
+        }
+      ],
+      "dcterms:source": "cat-harness/schemas/health-report.ts#PagesServingUrlSchema.expectedPage",
+      "skos:note": "candidate"
+    },
+    {
+      "@id": "https://litlfred.github.io/cat-harness/0.1.0/ns#glossary/kg-schema-fields/health-report.pagesservingurlschema.status",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/cat-harness/0.1.0/ns#glossary/kg-schema-fields"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "PagesServingUrlSchema.status"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "HTTP status of the final response."
+        }
+      ],
+      "dcterms:source": "cat-harness/schemas/health-report.ts#PagesServingUrlSchema.status",
+      "skos:note": "candidate"
+    },
+    {
       "@id": "https://litlfred.github.io/cat-harness/0.1.0/ns#glossary/kg-schema-fields/id-lookup.identry.id",
       "@type": "skos:Concept",
       "skos:inScheme": {
@@ -22814,6 +22947,44 @@
       "skos:note": "candidate"
     },
     {
+      "@id": "https://litlfred.github.io/cat-harness/0.1.0/ns#glossary/kg-schema-fields/openapi.openapiconfigschema.documents",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/cat-harness/0.1.0/ns#glossary/kg-schema-fields"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "OpenApiConfigSchema.documents"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "Documents read from a repository (`openapi-ingest-source`)."
+        }
+      ],
+      "dcterms:source": "cat-harness/openapi/schemas/openapi.ts#OpenApiConfigSchema.documents",
+      "skos:note": "candidate"
+    },
+    {
+      "@id": "https://litlfred.github.io/cat-harness/0.1.0/ns#glossary/kg-schema-fields/openapi.openapiconfigschema.rendered",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/cat-harness/0.1.0/ns#glossary/kg-schema-fields"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "OpenApiConfigSchema.rendered"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "Documents read from a published spec URL (`openapi-ingest-rendered`)."
+        }
+      ],
+      "dcterms:source": "cat-harness/openapi/schemas/openapi.ts#OpenApiConfigSchema.rendered",
+      "skos:note": "candidate"
+    },
+    {
       "@id": "https://litlfred.github.io/cat-harness/0.1.0/ns#glossary/kg-schema-fields/openapi.openapioperation.declaredid",
       "@type": "skos:Concept",
       "skos:inScheme": {
@@ -22925,6 +23096,25 @@
         }
       ],
       "dcterms:source": "cat-harness/openapi/schemas/openapi.ts#OpenApiProvenanceSchema.operations",
+      "skos:note": "candidate"
+    },
+    {
+      "@id": "https://litlfred.github.io/cat-harness/0.1.0/ns#glossary/kg-schema-fields/openapi.openapirenderedsourceschema.url",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/cat-harness/0.1.0/ns#glossary/kg-schema-fields"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "OpenApiRenderedSourceSchema.url"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "The published spec's URL: an OpenAPI 3 JSON document, served over https."
+        }
+      ],
+      "dcterms:source": "cat-harness/openapi/schemas/openapi.ts#OpenApiRenderedSourceSchema.url",
       "skos:note": "candidate"
     },
     {
@@ -23061,6 +23251,25 @@
       "skos:note": "candidate"
     },
     {
+      "@id": "https://litlfred.github.io/cat-harness/0.1.0/ns#glossary/kg-schema-fields/pdf-structure.pdfdiagnosticsschema.latex_overlay",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/cat-harness/0.1.0/ns#glossary/kg-schema-fields"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "PdfDiagnosticsSchema.latex_overlay"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "What `latex-math-overlay.py` did: the main `.tex` file it read, how many sections it found there and how many PDF sections took their text from it, the three gates it applied, and a per-section record of each match."
+        }
+      ],
+      "dcterms:source": "cat-harness/schemas/pdf-structure.ts#PdfDiagnosticsSchema.latex_overlay",
+      "skos:note": "candidate"
+    },
+    {
       "@id": "https://litlfred.github.io/cat-harness/0.1.0/ns#glossary/kg-schema-fields/pdf-structure.pdfdiagnosticsschema.page_label_conflicts",
       "@type": "skos:Concept",
       "skos:inScheme": {
@@ -23149,7 +23358,7 @@
       ],
       "skos:definition": [
         {
-          "@value": "Which inference produced an inferred TOC (issue #2302): a printed contents page, heading styles read from font metrics, or the text-pattern heuristic that OCR'd text falls back to."
+          "@value": "Which inference produced an inferred TOC (issue #2302): a printed contents page, heading styles read from font metrics, the text-pattern heuristic that OCR'd text falls back to, or `latex`: the `\\section` commands of the paper's own LaTeX source, each placed on its PDF page (cat-harness-tools `_latex_headings.py`)."
         }
       ],
       "dcterms:source": "cat-harness/schemas/pdf-structure.ts#PdfDiagnosticsSchema.toc_inferred_method",
@@ -23267,6 +23476,63 @@
         }
       ],
       "dcterms:source": "cat-harness/schemas/pdf-structure.ts#PdfSectionSchema.label_start",
+      "skos:note": "candidate"
+    },
+    {
+      "@id": "https://litlfred.github.io/cat-harness/0.1.0/ns#glossary/kg-schema-fields/pdf-structure.pdfsourceschema.math_source",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/cat-harness/0.1.0/ns#glossary/kg-schema-fields"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "PdfSourceSchema.math_source"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "Where the entry's MATHEMATICS comes from, written by `latex-math-overlay.py`: `latex` when at least one section's text was replaced by the paper's own LaTeX, `text-layer` when the overlay ran and none passed its gates. Absent when the overlay never ran."
+        }
+      ],
+      "dcterms:source": "cat-harness/schemas/pdf-structure.ts#PdfSourceSchema.math_source",
+      "skos:note": "candidate"
+    },
+    {
+      "@id": "https://litlfred.github.io/cat-harness/0.1.0/ns#glossary/kg-schema-fields/pdf-structure.pdfsourceschema.runcontext",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/cat-harness/0.1.0/ns#glossary/kg-schema-fields"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "PdfSourceSchema.runContext"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "WHICH SOFTWARE produced the text, cited by digest: the `folio-run-context/v1` of the run that wrote it (`schemas/run-context.ts`), reused rather than restated — the one optional `runContext: { sha256 }` reference that `docs/proposals/tool-releases-2026-10-07.md` gives every run and report record (owner, C1 = a)."
+        }
+      ],
+      "dcterms:source": "cat-harness/schemas/pdf-structure.ts#PdfSourceSchema.runContext",
+      "skos:note": "candidate"
+    },
+    {
+      "@id": "https://litlfred.github.io/cat-harness/0.1.0/ns#glossary/kg-schema-fields/pdf-structure.pdfstructureschema.duplicate_of",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/cat-harness/0.1.0/ns#glossary/kg-schema-fields"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "PdfStructureSchema.duplicate_of"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "The library holds some works more than once (a preprint beside its published version, one PDF under two names). The duplicate copy names the entry to prefer in `duplicate_of` and says why in `duplicate_note`; the preferred entry lists its copies in `duplicate_copies`. Adjudicated in qou `docs/audits/library-duplicate-ledger.json`."
+        }
+      ],
+      "dcterms:source": "cat-harness/schemas/pdf-structure.ts#PdfStructureSchema.duplicate_of",
       "skos:note": "candidate"
     },
     {
@@ -29426,6 +29692,101 @@
       "skos:note": "candidate"
     },
     {
+      "@id": "https://litlfred.github.io/cat-harness/0.1.0/ns#glossary/kg-schema-fields/state-manifest.routemanifestschema.gate",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/cat-harness/0.1.0/ns#glossary/kg-schema-fields"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "RouteManifestSchema.gate"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "The command that checks the generator's output."
+        }
+      ],
+      "dcterms:source": "cat-harness/schemas/state-manifest.ts#RouteManifestSchema.gate",
+      "skos:note": "candidate"
+    },
+    {
+      "@id": "https://litlfred.github.io/cat-harness/0.1.0/ns#glossary/kg-schema-fields/state-manifest.routemanifestschema.writer",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/cat-harness/0.1.0/ns#glossary/kg-schema-fields"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "RouteManifestSchema.writer"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "The ONE generator that writes it."
+        }
+      ],
+      "dcterms:source": "cat-harness/schemas/state-manifest.ts#RouteManifestSchema.writer",
+      "skos:note": "candidate"
+    },
+    {
+      "@id": "https://litlfred.github.io/cat-harness/0.1.0/ns#glossary/kg-schema-fields/state-manifest.tipmanifestschema.authoritative",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/cat-harness/0.1.0/ns#glossary/kg-schema-fields"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "TipManifestSchema.authoritative"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "True when THIS branch, not `main`, is where readers must look."
+        }
+      ],
+      "dcterms:source": "cat-harness/schemas/state-manifest.ts#TipManifestSchema.authoritative",
+      "skos:note": "candidate"
+    },
+    {
+      "@id": "https://litlfred.github.io/cat-harness/0.1.0/ns#glossary/kg-schema-fields/state-manifest.tipmanifestschema.source",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/cat-harness/0.1.0/ns#glossary/kg-schema-fields"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "TipManifestSchema.source"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "The commit the content was seeded from."
+        }
+      ],
+      "dcterms:source": "cat-harness/schemas/state-manifest.ts#TipManifestSchema.source",
+      "skos:note": "candidate"
+    },
+    {
+      "@id": "https://litlfred.github.io/cat-harness/0.1.0/ns#glossary/kg-schema-fields/state-manifest.tipmanifestschema.subgraph",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/cat-harness/0.1.0/ns#glossary/kg-schema-fields"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "TipManifestSchema.subgraph"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "The subgraph it holds. Absent only on the retired multi-graph `state` branch."
+        }
+      ],
+      "dcterms:source": "cat-harness/schemas/state-manifest.ts#TipManifestSchema.subgraph",
+      "skos:note": "candidate"
+    },
+    {
       "@id": "https://litlfred.github.io/cat-harness/0.1.0/ns#glossary/kg-schema-fields/sticky-contribution.declaredcontribution.alsowritten",
       "@type": "skos:Concept",
       "skos:inScheme": {
@@ -30224,6 +30585,101 @@
       "skos:note": "candidate"
     },
     {
+      "@id": "https://litlfred.github.io/cat-harness/0.1.0/ns#glossary/kg-schema-fields/sweep-mark.sweepmarkschema.by",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/cat-harness/0.1.0/ns#glossary/kg-schema-fields"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "SweepMarkSchema.by"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "Who ran it, so a reader can ask: a session URL or id. Absent when the runner did not know."
+        }
+      ],
+      "dcterms:source": "cat-harness/schemas/sweep-mark.ts#SweepMarkSchema.by",
+      "skos:note": "candidate"
+    },
+    {
+      "@id": "https://litlfred.github.io/cat-harness/0.1.0/ns#glossary/kg-schema-fields/sweep-mark.sweepmarkschema.check",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/cat-harness/0.1.0/ns#glossary/kg-schema-fields"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "SweepMarkSchema.check"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "The check this marks, by its `cat` command name — `session-staleness`. Also the file's stem."
+        }
+      ],
+      "dcterms:source": "cat-harness/schemas/sweep-mark.ts#SweepMarkSchema.check",
+      "skos:note": "candidate"
+    },
+    {
+      "@id": "https://litlfred.github.io/cat-harness/0.1.0/ns#glossary/kg-schema-fields/sweep-mark.sweepmarkschema.checkedat",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/cat-harness/0.1.0/ns#glossary/kg-schema-fields"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "SweepMarkSchema.checkedAt"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "When the check last read its input, ISO-8601 with a zone."
+        }
+      ],
+      "dcterms:source": "cat-harness/schemas/sweep-mark.ts#SweepMarkSchema.checkedAt",
+      "skos:note": "candidate"
+    },
+    {
+      "@id": "https://litlfred.github.io/cat-harness/0.1.0/ns#glossary/kg-schema-fields/sweep-mark.sweepmarkschema.findings",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/cat-harness/0.1.0/ns#glossary/kg-schema-fields"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "SweepMarkSchema.findings"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "How many findings it reported."
+        }
+      ],
+      "dcterms:source": "cat-harness/schemas/sweep-mark.ts#SweepMarkSchema.findings",
+      "skos:note": "candidate"
+    },
+    {
+      "@id": "https://litlfred.github.io/cat-harness/0.1.0/ns#glossary/kg-schema-fields/sweep-mark.sweepmarkschema.read",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/cat-harness/0.1.0/ns#glossary/kg-schema-fields"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "SweepMarkSchema.read"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "How many subjects the run read — sessions, for `session-staleness`. Zero is a real answer."
+        }
+      ],
+      "dcterms:source": "cat-harness/schemas/sweep-mark.ts#SweepMarkSchema.read",
+      "skos:note": "candidate"
+    },
+    {
       "@id": "https://litlfred.github.io/cat-harness/0.1.0/ns#glossary/kg-schema-fields/tabular-csvw.csvwcolumnschema.datatype",
       "@type": "skos:Concept",
       "skos:inScheme": {
@@ -30243,6 +30699,63 @@
       "skos:note": "candidate"
     },
     {
+      "@id": "https://litlfred.github.io/cat-harness/0.1.0/ns#glossary/kg-schema-fields/tabular-csvw.csvwcolumnschema.fac-group",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/cat-harness/0.1.0/ns#glossary/kg-schema-fields"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "CsvwColumnSchema.fac:group"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "The upper row of a two-row header: the label spanning this column, e.g. a decision table's `Inputs` or `Output`. Absent for a one-row header. CSVW has no column groups, so `toCsvw` drops it (bean folio-core-scn4)."
+        }
+      ],
+      "dcterms:source": "cat-harness/schemas/tabular-csvw.ts#CsvwColumnSchema.fac:group",
+      "skos:note": "candidate"
+    },
+    {
+      "@id": "https://litlfred.github.io/cat-harness/0.1.0/ns#glossary/kg-schema-fields/tabular-csvw.csvwtableschema.fac-merged",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/cat-harness/0.1.0/ns#glossary/kg-schema-fields"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "CsvwTableSchema.fac:merged"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "Merged cell ranges inside the table, A1 notation, e.g. `K8:K25`."
+        }
+      ],
+      "dcterms:source": "cat-harness/schemas/tabular-csvw.ts#CsvwTableSchema.fac:merged",
+      "skos:note": "candidate"
+    },
+    {
+      "@id": "https://litlfred.github.io/cat-harness/0.1.0/ns#glossary/kg-schema-fields/tabular-csvw.csvwtableschema.fac-preamble",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/cat-harness/0.1.0/ns#glossary/kg-schema-fields"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "CsvwTableSchema.fac:preamble"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "Key/value rows ABOVE the header that describe the table rather than belong to it, in sheet order: a DAK decision table's `Decision ID`, `Business rule`, `Trigger`. Not CSVW `notes`, whose objects are JSON-LD annotations a standard reader interprets; these are the source's own labels, verbatim (bean folio-core-scn4)."
+        }
+      ],
+      "dcterms:source": "cat-harness/schemas/tabular-csvw.ts#CsvwTableSchema.fac:preamble",
+      "skos:note": "candidate"
+    },
+    {
       "@id": "https://litlfred.github.io/cat-harness/0.1.0/ns#glossary/kg-schema-fields/tabular-csvw.csvwtableschema.fac-stub",
       "@type": "skos:Concept",
       "skos:inScheme": {
@@ -30259,6 +30772,25 @@
         }
       ],
       "dcterms:source": "cat-harness/schemas/tabular-csvw.ts#CsvwTableSchema.fac:stub",
+      "skos:note": "candidate"
+    },
+    {
+      "@id": "https://litlfred.github.io/cat-harness/0.1.0/ns#glossary/kg-schema-fields/tabular-csvw.csvwtableschema.fac-wildcard",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/cat-harness/0.1.0/ns#glossary/kg-schema-fields"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "CsvwTableSchema.fac:wildcard"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "The cell values meaning \"any value matches\" — a decision table's don't-care. A list: the WHO IMMZ workbook writes `–` and `-`, and 18 of its 86 decision tables use both. A wildcard is a rule, not data: it is not evidence for a column's datatype, and it is not CSVW `null` (absent), which would read a don't-care as a missing value."
+        }
+      ],
+      "dcterms:source": "cat-harness/schemas/tabular-csvw.ts#CsvwTableSchema.fac:wildcard",
       "skos:note": "candidate"
     },
     {
