@@ -44,4 +44,12 @@ jobs:
           git config --global user.email "noreply@anthropic.com"
 
       - name: Build and publish with stage-local
-        run: bun run cat-harness-tools/scripts/stage-local.ts --repo . ${{ inputs.plan && '--plan' || '' }}
+        # The job log is not readable from an agent's container (its storage
+        # host is not reachable), so a failure's last lines are also raised as
+        # annotations, which the checks API serves.
+        run: |
+          set -o pipefail
+          if ! bun run cat-harness-tools/scripts/stage-local.ts --repo . ${{ inputs.plan && '--plan' || '' }} 2>&1 | tee "$RUNNER_TEMP/stage-local.log"; then
+            grep -v '^|' "$RUNNER_TEMP/stage-local.log" | tail -n 40 | cut -c1-900 | sed 's/^/::error::/'
+            exit 1
+          fi
