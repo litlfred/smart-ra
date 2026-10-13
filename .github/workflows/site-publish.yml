@@ -50,6 +50,7 @@ jobs:
         run: |
           set -o pipefail
           if ! bun run cat-harness-tools/scripts/stage-local.ts --repo . ${{ inputs.plan && '--plan' || '' }} 2>&1 | tee "$RUNNER_TEMP/stage-local.log"; then
-            grep -v '^|' "$RUNNER_TEMP/stage-local.log" | tail -n 40 | cut -c1-900 | sed 's/^/::error::/'
+            # At most 10 annotations a step: the lines that say what failed.
+            grep -v '^|' "$RUNNER_TEMP/stage-local.log" | grep -E '✗|[Ee]rror|unresolved|failed|Cannot|not found|refus' | grep -v DEPRECATION | tail -n 9 | cut -c1-900 | sed 's/^/::error::/'
             exit 1
           fi
