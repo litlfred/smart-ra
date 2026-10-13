@@ -1,0 +1,47 @@
+name: Site publish (by hand)
+
+# The site is agent-run (owner, 2026-10-10; bean n3h9): an agent builds and
+# publishes it with `stage-local.ts`. This workflow runs that SAME command on a
+# GitHub runner, for a session whose container cannot reach rubygems.org and so
+# cannot install Jekyll (owner, 2026-10-13: "github egress?"). It is the
+# agent's command, not a second recipe: the steps stay declared once, in
+# dpi-h-ra.config.json under site.build.
+#
+# Dispatch only. On main it publishes the gh-pages root (keeping STAGING/ and
+# _render-log/); on any other branch, the preview at STAGING/<branch>/.
+on:
+  workflow_dispatch:
+    inputs:
+      plan:
+        description: "Only print what would run (--plan)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: site-publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: ./.github/actions/mount-layers
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+
+      - name: Identify the publishing commit's author
+        run: |
+          git config --global user.name "Claude"
+          git config --global user.email "noreply@anthropic.com"
+
+      - name: Build and publish with stage-local
+        run: bun run cat-harness-tools/scripts/stage-local.ts --repo . ${{ inputs.plan && '--plan' || '' }}
