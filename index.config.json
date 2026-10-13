@@ -82,7 +82,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/folio-assistant-core",
-          "ref": "edcf19a5be923bad75e427af0eb598dc324a21a3",
+          "ref": "499a01ee2f382fc924eafae7b0c1c29cb8491f44",
           "overrides": {
             "folio-assistant-core": {
               "whole": true
@@ -97,9 +97,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-12",
-              "ref": "edcf19a5be923bad75e427af0eb598dc324a21a3",
-              "evidence": "owner, session_017fFnGmbJcfqqrHXz9oqxdG 2026-10-11/12: 'repin as neede. merge all ready green next 4hrs, continue' — repinned to current main after bean bzwk (core declares its own `document` adapter, sci its `mathpaper`; folio-assistant-core#65, folio-assistant-sci#15, cat-harness#165, cat-harness-tools#149), which also lets this folio drop the folio-assistant-sci mount"
+              "on": "2026-10-13",
+              "ref": "499a01ee2f382fc924eafae7b0c1c29cb8491f44",
+              "evidence": "owner (litlfred) chose '1. Merge, re-pin, republish' in session https://claude.ai/code/session_01N1TXehPMFogQba6sg4JSWV on 2026-10-13, after core#74, cat-harness-tools#178, smart-ra#50"
             }
           }
         }
@@ -138,7 +138,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness-tools",
-          "ref": "63f4363530e29bb21646d3576d0567bce0dca9ff",
+          "ref": "031c9359fdd1d42c6ca45520d2bdbf66fe824841",
           "overrides": {
             "cat-harness-tools": {
               "whole": true
@@ -150,9 +150,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-12",
-              "ref": "63f4363530e29bb21646d3576d0567bce0dca9ff",
-              "evidence": "2026-10-12, owner in the session chat: \"extend merge+repin window 1 hr\" (repin+merge when green)"
+              "on": "2026-10-13",
+              "ref": "031c9359fdd1d42c6ca45520d2bdbf66fe824841",
+              "evidence": "owner (litlfred) chose '1. Merge, re-pin, republish' in session https://claude.ai/code/session_01N1TXehPMFogQba6sg4JSWV on 2026-10-13, after core#74, cat-harness-tools#178, smart-ra#50"
             }
           }
         }
