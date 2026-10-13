@@ -38,10 +38,16 @@ jobs:
         with:
           ruby-version: "3.3"
 
-      - name: Identify the publishing commit's author
+      - name: Identify the publishing commit's author, and let it push
+        # The publisher clones gh-pages into a temporary directory, which does
+        # not inherit the checkout's credentials: the job token goes in the
+        # global config instead.
+        env:
+          TOKEN: ${{ github.token }}
         run: |
           git config --global user.name "Claude"
           git config --global user.email "noreply@anthropic.com"
+          git config --global url."https://x-access-token:${TOKEN}@github.com/".insteadOf "https://github.com/"
 
       - name: Build and publish with stage-local
         # The job log is not readable from an agent's container (its storage
