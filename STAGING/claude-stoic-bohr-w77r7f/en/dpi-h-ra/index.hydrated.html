@@ -7710,7 +7710,7 @@ The figure below illustrates how these capabilities relate in practice: a change
   const bar = document.createElement("div");
   bar.className = "pc-bar";
   bar.innerHTML = '<a href="' + esc(meta.dashboard) + '">Public comments</a>: ' + total + " shown in this document, " + open + " open";
-  const main = document.querySelector("main") || document.body;
+  const main = document.querySelector(".fa-doc") || document.querySelector("main") || document.body;
   main.prepend(bar);
 })();
 </script>
