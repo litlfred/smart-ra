@@ -82,7 +82,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/folio-assistant-core",
-          "ref": "499a01ee2f382fc924eafae7b0c1c29cb8491f44",
+          "ref": "ce9a95b755b676f2ca858edf879e0df7c7fd3ac3",
           "overrides": {
             "folio-assistant-core": {
               "whole": true
@@ -97,9 +97,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-13",
-              "ref": "499a01ee2f382fc924eafae7b0c1c29cb8491f44",
-              "evidence": "owner (litlfred) chose '1. Merge, re-pin, republish' in session https://claude.ai/code/session_01N1TXehPMFogQba6sg4JSWV on 2026-10-13, after core#74, cat-harness-tools#178, smart-ra#50"
+              "on": "2026-10-14",
+              "ref": "ce9a95b755b676f2ca858edf879e0df7c7fd3ac3",
+              "evidence": "owner (litlfred) chose '3' (full layout on the home page now, document pages next) in session https://claude.ai/code/session_01Pc8vSeXCwp5Ckvmz56cMDs on 2026-10-14, for folio-assistant-core#75"
             }
           }
         }
@@ -138,7 +138,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness-tools",
-          "ref": "031c9359fdd1d42c6ca45520d2bdbf66fe824841",
+          "ref": "410a203e4e02ce5dd668001054e89133109248d8",
           "overrides": {
             "cat-harness-tools": {
               "whole": true
@@ -150,9 +150,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-13",
-              "ref": "031c9359fdd1d42c6ca45520d2bdbf66fe824841",
-              "evidence": "owner (litlfred) chose '1. Merge, re-pin, republish' in session https://claude.ai/code/session_01N1TXehPMFogQba6sg4JSWV on 2026-10-13, after core#74, cat-harness-tools#178, smart-ra#50"
+              "on": "2026-10-14",
+              "ref": "410a203e4e02ce5dd668001054e89133109248d8",
+              "evidence": "owner (litlfred) chose '1' (re-pin to the Graphs-rail fix, declare the published viewers, republish) in session https://claude.ai/code/session_01Pc8vSeXCwp5Ckvmz56cMDs on 2026-10-14, for cat-harness-tools#182"
             }
           }
         }
