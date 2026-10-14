@@ -82,7 +82,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/folio-assistant-core",
-          "ref": "ce9a95b755b676f2ca858edf879e0df7c7fd3ac3",
+          "ref": "99e30173130c8c9f40e736324c265d7e0c0c2346",
           "overrides": {
             "folio-assistant-core": {
               "whole": true
@@ -98,8 +98,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-10-14",
-              "ref": "ce9a95b755b676f2ca858edf879e0df7c7fd3ac3",
-              "evidence": "owner (litlfred) chose '3' (full layout on the home page now, document pages next) in session https://claude.ai/code/session_01Pc8vSeXCwp5Ckvmz56cMDs on 2026-10-14, for folio-assistant-core#75"
+              "ref": "99e30173130c8c9f40e736324c265d7e0c0c2346",
+              "evidence": "owner (litlfred) chose '1. Merge #56, core #76, smart-hiv #5; I publish (Rec.)' in session https://claude.ai/code/session_01HASyYFZaS45Q7EtJErhq2V on 2026-10-14, after folio-assistant-core#76 (a person's routing entry rules on an unmapped human label)"
             }
           }
         }
