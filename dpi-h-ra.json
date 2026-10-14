@@ -8,7 +8,18 @@
       "graphTypologies": [
         "folio"
       ],
-      "description": "The content of Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector — its document, chapters and blocks."
+      "description": "The content of Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector — its document, chapters and blocks.",
+      "coverage": {
+        "visualiser": [
+          {
+            "ref": "en/dpi-h-ra/index.html",
+            "title": "The document",
+            "writer": [
+              "folio-assistant-core/scripts/build-document-site.ts"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "library",
@@ -16,7 +27,18 @@
       "graphTypologies": [
         "library"
       ],
-      "description": "Source material, frozen. who-dpi-h-reference-architecture-draft-v1/ holds the review version exactly as circulated (line-numbered PDF and .docx), plus the extraction (docx-structure.json) and the page/line map (pdf-line-map.json) the folio and every public comment's anchor are derived from. Never edited to answer a comment."
+      "description": "Source material, frozen. who-dpi-h-reference-architecture-draft-v1/ holds the review version exactly as circulated (line-numbered PDF and .docx), plus the extraction (docx-structure.json) and the page/line map (pdf-line-map.json) the folio and every public comment's anchor are derived from. Never edited to answer a comment.",
+      "coverage": {
+        "visualiser": [
+          {
+            "ref": "en/folio-assistant-core/library/index.html",
+            "title": "Library",
+            "writer": [
+              "folio-assistant-core/scripts/build-library-site.ts"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "archimate",
@@ -44,7 +66,18 @@
         "todo-items",
         "public-comments"
       ],
-      "description": "The public-review record: one public-comment/1.0.0 file per comment (comments/PC-0042.json), one changeset/1.0.0 file per change-set (changesets/CS-012.json), one manifest per intake batch (batches/), and config.json naming the editors and review committee. A public comment is a todo kind, so anything that reads todos reads these. Moved only by folio-assistant-core/scripts/public-comment.ts. The original spreadsheets hold reviewers' emails and are NOT kept here."
+      "description": "The public-review record: one public-comment/1.0.0 file per comment (comments/PC-0042.json), one changeset/1.0.0 file per change-set (changesets/CS-012.json), one manifest per intake batch (batches/), and config.json naming the editors and review committee. A public comment is a todo kind, so anything that reads todos reads these. Moved only by folio-assistant-core/scripts/public-comment.ts. The original spreadsheets hold reviewers' emails and are NOT kept here.",
+      "coverage": {
+        "visualiser": [
+          {
+            "ref": "en/folio-assistant-core/public-comments/folio/dpi-h-ra/index.html",
+            "title": "Public comments",
+            "writer": [
+              "folio-assistant-core/scripts/public-comment-site.ts"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "uploads",
