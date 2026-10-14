@@ -110,7 +110,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness",
-          "ref": "9712ed14962e2f286138632ebf3d27a7e9962e9c",
+          "ref": "858fa6df7443252c0c9ff3083505c5f4c9f14fe5",
           "overrides": {
             "cat-harness": {
               "whole": true
@@ -125,9 +125,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-12",
-              "ref": "9712ed14962e2f286138632ebf3d27a7e9962e9c",
-              "evidence": "2026-10-12, owner in the session chat: \"extend merge+repin window 1 hr\" (repin+merge when green)"
+              "on": "2026-10-14",
+              "ref": "858fa6df7443252c0c9ff3083505c5f4c9f14fe5",
+              "evidence": "owner (litlfred) chose '1. Yes, re-pin + publish (Rec.)' in session https://claude.ai/code/session_01HASyYFZaS45Q7EtJErhq2V on 2026-10-14, after cat-harness-tools#181 and cat-harness#189 (edit-links direct hover and keyboard focus)"
             }
           }
         }
@@ -138,7 +138,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness-tools",
-          "ref": "031c9359fdd1d42c6ca45520d2bdbf66fe824841",
+          "ref": "0d58b974b0128481cf97c12619b0deb66d8148f8",
           "overrides": {
             "cat-harness-tools": {
               "whole": true
@@ -150,9 +150,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-13",
-              "ref": "031c9359fdd1d42c6ca45520d2bdbf66fe824841",
-              "evidence": "owner (litlfred) chose '1. Merge, re-pin, republish' in session https://claude.ai/code/session_01N1TXehPMFogQba6sg4JSWV on 2026-10-13, after core#74, cat-harness-tools#178, smart-ra#50"
+              "on": "2026-10-14",
+              "ref": "0d58b974b0128481cf97c12619b0deb66d8148f8",
+              "evidence": "owner (litlfred) chose '1. Yes, re-pin + publish (Rec.)' in session https://claude.ai/code/session_01HASyYFZaS45Q7EtJErhq2V on 2026-10-14, after cat-harness-tools#181 and cat-harness#189 (edit-links direct hover and keyboard focus)"
             }
           }
         }
