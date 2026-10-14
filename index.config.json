@@ -138,7 +138,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness-tools",
-          "ref": "031c9359fdd1d42c6ca45520d2bdbf66fe824841",
+          "ref": "12ae1c7feaa2c264de7986cca1de9abc7cd57e9e",
           "overrides": {
             "cat-harness-tools": {
               "whole": true
@@ -150,9 +150,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-13",
-              "ref": "031c9359fdd1d42c6ca45520d2bdbf66fe824841",
-              "evidence": "owner (litlfred) chose '1. Merge, re-pin, republish' in session https://claude.ai/code/session_01N1TXehPMFogQba6sg4JSWV on 2026-10-13, after core#74, cat-harness-tools#178, smart-ra#50"
+              "on": "2026-10-14",
+              "ref": "12ae1c7feaa2c264de7986cca1de9abc7cd57e9e",
+              "evidence": "owner (litlfred) chose '1' (re-pin to the Graphs-rail fix, declare the published viewers, republish) in session https://claude.ai/code/session_01Pc8vSeXCwp5Ckvmz56cMDs on 2026-10-14, for cat-harness-tools#182"
             }
           }
         }
