@@ -14,7 +14,7 @@
     {
       "harness": "folio-assistant-core",
       "repository": "litlfred/folio-assistant-core",
-      "ref": "419010c504e7b8244d48521192be4590b343b440"
+      "ref": "ce9a95b755b676f2ca858edf879e0df7c7fd3ac3"
     },
     {
       "harness": "cat-harness",
@@ -24,7 +24,7 @@
     {
       "harness": "cat-harness-tools",
       "repository": "litlfred/cat-harness-tools",
-      "ref": "12ae1c7feaa2c264de7986cca1de9abc7cd57e9e"
+      "ref": "410a203e4e02ce5dd668001054e89133109248d8"
     },
     {
       "harness": "bootstrap",
@@ -128,7 +128,7 @@
     {
       "instance": "cat-harness-tools",
       "repository": "litlfred/cat-harness-tools",
-      "sha": "12ae1c7feaa2c264de7986cca1de9abc7cd57e9e",
+      "sha": "410a203e4e02ce5dd668001054e89133109248d8",
       "upstreamRoot": "",
       "path": "cat-harness-tools",
       "via": "cat-harness-tools",
@@ -142,7 +142,7 @@
           "id": "*",
           "path": "cat-harness-tools",
           "upstreamPath": ".",
-          "treeDigest": "6328639534e8d5d27b70ab874695b606e85e755f0280f101c89971b796b0628e",
+          "treeDigest": "fbd2f24a8afc72272c7618d63cc590facc2ae377d93aaed743ae796e16ebc121",
           "files": 2361
         }
       ],
@@ -150,7 +150,7 @@
         "basis": "consent",
         "by": "litlfred",
         "on": "2026-10-14",
-        "ref": "12ae1c7feaa2c264de7986cca1de9abc7cd57e9e",
+        "ref": "410a203e4e02ce5dd668001054e89133109248d8",
         "approver": "unverified"
       }
     },
@@ -186,7 +186,7 @@
     {
       "instance": "folio-assistant-core",
       "repository": "litlfred/folio-assistant-core",
-      "sha": "419010c504e7b8244d48521192be4590b343b440",
+      "sha": "ce9a95b755b676f2ca858edf879e0df7c7fd3ac3",
       "upstreamRoot": "",
       "path": "folio-assistant-core",
       "via": "folio-assistant-core",
@@ -208,7 +208,7 @@
         "basis": "consent",
         "by": "litlfred",
         "on": "2026-10-14",
-        "ref": "419010c504e7b8244d48521192be4590b343b440",
+        "ref": "ce9a95b755b676f2ca858edf879e0df7c7fd3ac3",
         "approver": "unverified"
       }
     },
