@@ -14,7 +14,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/smart-base",
-          "ref": "f1bcb146b214896156bce63c15e92003c78f3368",
+          "ref": "941d35ac678d741da336b0b40f664b9a802ac483",
           "overrides": {
             "smart-base": {
               "path": "smart-base",
@@ -35,6 +35,8 @@
                 "smart-base-findings",
                 "smart-base-external-schemas",
                 "smart-base-platform",
+                "smart-base-typologies",
+                "smart-base-validators",
                 "smart-base-schemas",
                 "smart-base-content",
                 "smart-base-scripts",
@@ -47,9 +49,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-10",
-              "ref": "f1bcb146b214896156bce63c15e92003c78f3368",
-              "evidence": "owner, session_017fFnGmbJcfqqrHXz9oqxdG 2026-10-10: 'you can work on the litlfred/smart-* go ahead and harness them with index.config.json' and 'keep going. keep migrating environment' — dpi-h-ra (litlfred/smart-ra) mounts smart-base and its closure at each repository's main (bean n3h9)"
+              "on": "2026-10-14",
+              "ref": "941d35ac678d741da336b0b40f664b9a802ac483",
+              "evidence": "owner, session 2026-10-14 (session_01Pc8vSeXCwp5Ckvmz56cMDs): 'merge when green, repin and publish smart-trust' / '1 2' — every layer to its merged main"
             }
           }
         }
@@ -60,7 +62,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/fhir-harness",
-          "ref": "346ecd0bc7eb69e608bd0185a58ecb25acf2642e",
+          "ref": "e9906e92ae99844598347b1cf2cd71d07c08787a",
           "overrides": {
             "fhir-harness": {
               "whole": true
@@ -69,9 +71,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-10",
-              "ref": "346ecd0bc7eb69e608bd0185a58ecb25acf2642e",
-              "evidence": "owner, session_017fFnGmbJcfqqrHXz9oqxdG 2026-10-10: 'you can work on the litlfred/smart-* go ahead and harness them with index.config.json' and 'keep going. keep migrating environment' — dpi-h-ra (litlfred/smart-ra) mounts smart-base and its closure at each repository's main (bean n3h9)"
+              "on": "2026-10-14",
+              "ref": "e9906e92ae99844598347b1cf2cd71d07c08787a",
+              "evidence": "owner, session 2026-10-14 (session_01Pc8vSeXCwp5Ckvmz56cMDs): 'merge when green, repin and publish smart-trust' / '1 2' — every layer to its merged main"
             }
           }
         }
@@ -82,7 +84,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/folio-assistant-core",
-          "ref": "99e30173130c8c9f40e736324c265d7e0c0c2346",
+          "ref": "789175ad9a270cb1feb7440252e1c201dbc457ab",
           "overrides": {
             "folio-assistant-core": {
               "whole": true
@@ -98,8 +100,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-10-14",
-              "ref": "99e30173130c8c9f40e736324c265d7e0c0c2346",
-              "evidence": "owner (litlfred) chose '1. Merge #56, core #76, smart-hiv #5; I publish (Rec.)' in session https://claude.ai/code/session_01HASyYFZaS45Q7EtJErhq2V on 2026-10-14, after folio-assistant-core#76 (a person's routing entry rules on an unmapped human label)"
+              "ref": "789175ad9a270cb1feb7440252e1c201dbc457ab",
+              "evidence": "owner, session 2026-10-14 (session_01Pc8vSeXCwp5Ckvmz56cMDs): 'merge when green, repin and publish smart-trust' / '1 2' — every layer to its merged main"
             }
           }
         }
@@ -110,7 +112,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness",
-          "ref": "858fa6df7443252c0c9ff3083505c5f4c9f14fe5",
+          "ref": "c9683bd815d16d6bb2d724a5c4fca8730dc8f115",
           "overrides": {
             "cat-harness": {
               "whole": true
@@ -126,8 +128,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-10-14",
-              "ref": "858fa6df7443252c0c9ff3083505c5f4c9f14fe5",
-              "evidence": "owner (litlfred) chose '1. Yes, re-pin + publish (Rec.)' in session https://claude.ai/code/session_01HASyYFZaS45Q7EtJErhq2V on 2026-10-14, after cat-harness-tools#181 and cat-harness#189 (edit-links direct hover and keyboard focus)"
+              "ref": "c9683bd815d16d6bb2d724a5c4fca8730dc8f115",
+              "evidence": "owner, session 2026-10-14 (session_01Pc8vSeXCwp5Ckvmz56cMDs): 'merge when green, repin and publish smart-trust' / '1 2' — every layer to its merged main"
             }
           }
         }
@@ -138,7 +140,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness-tools",
-          "ref": "84e00d0bd9d0837d7b0fea4c4162b5be37c157a4",
+          "ref": "7698ce940a28232a60c38735ad1ff1fcd2ddcd21",
           "overrides": {
             "cat-harness-tools": {
               "whole": true
@@ -151,8 +153,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-10-14",
-              "ref": "84e00d0bd9d0837d7b0fea4c4162b5be37c157a4",
-              "evidence": "owner (litlfred) chose '2' (link the sidebar Folders) in session https://claude.ai/code/session_01Pc8vSeXCwp5Ckvmz56cMDs on 2026-10-14, for cat-harness-tools#185"
+              "ref": "7698ce940a28232a60c38735ad1ff1fcd2ddcd21",
+              "evidence": "owner, session 2026-10-14 (session_01Pc8vSeXCwp5Ckvmz56cMDs): 'merge when green, repin and publish smart-trust' / '1 2' — every layer to its merged main"
             }
           }
         }
@@ -163,7 +165,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/bootstrap",
-          "ref": "7d7d75411d9e022214f28ad5b04438e537d23347",
+          "ref": "5b10f5c5dc8f0553f38a0643b2cd144a287202ce",
           "overrides": {
             "bootstrap": {
               "whole": true
@@ -172,9 +174,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-10",
-              "ref": "7d7d75411d9e022214f28ad5b04438e537d23347",
-              "evidence": "owner, session_017fFnGmbJcfqqrHXz9oqxdG 2026-10-10: 'you can work on the litlfred/smart-* go ahead and harness them with index.config.json' and 'keep going. keep migrating environment' — dpi-h-ra (litlfred/smart-ra) mounts smart-base and its closure at each repository's main (bean n3h9)"
+              "on": "2026-10-14",
+              "ref": "5b10f5c5dc8f0553f38a0643b2cd144a287202ce",
+              "evidence": "owner, session 2026-10-14 (session_01Pc8vSeXCwp5Ckvmz56cMDs): 'merge when green, repin and publish smart-trust' / '1 2' — every layer to its merged main"
             }
           }
         }
@@ -185,7 +187,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/bootstrap-tools",
-          "ref": "18da84de86f88b32a3ce5972f2649b7c98c044a5",
+          "ref": "c97f099285d990527ac21cd16b6198867cd0a321",
           "overrides": {
             "bootstrap-tools": {
               "whole": true
@@ -197,9 +199,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-10",
-              "ref": "18da84de86f88b32a3ce5972f2649b7c98c044a5",
-              "evidence": "owner, session_017fFnGmbJcfqqrHXz9oqxdG 2026-10-10: 'you can work on the litlfred/smart-* go ahead and harness them with index.config.json' and 'keep going. keep migrating environment' — dpi-h-ra (litlfred/smart-ra) mounts smart-base and its closure at each repository's main (bean n3h9)"
+              "on": "2026-10-14",
+              "ref": "c97f099285d990527ac21cd16b6198867cd0a321",
+              "evidence": "owner, session 2026-10-14 (session_01Pc8vSeXCwp5Ckvmz56cMDs): 'merge when green, repin and publish smart-trust' / '1 2' — every layer to its merged main"
             }
           }
         }
