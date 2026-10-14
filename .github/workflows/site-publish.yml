@@ -31,6 +31,9 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          # The job token is set once, globally, in the step below. Two
+          # Authorization headers for github.com make every request fail.
+          persist-credentials: false
 
       - uses: ./.github/actions/mount-layers
 
@@ -41,13 +44,17 @@ jobs:
       - name: Identify the publishing commit's author, and let it push
         # The publisher clones gh-pages into a temporary directory, which does
         # not inherit the checkout's credentials: the job token goes in the
-        # global config instead.
+        # global config instead -- as a request HEADER, never in a URL. An
+        # insteadOf rewrite put it in `git remote get-url origin`, and from
+        # there into every page of the site (2026-10-14).
         env:
           TOKEN: ${{ github.token }}
         run: |
           git config --global user.name "Claude"
           git config --global user.email "noreply@anthropic.com"
-          git config --global url."https://x-access-token:${TOKEN}@github.com/".insteadOf "https://github.com/"
+          auth=$(printf 'x-access-token:%s' "$TOKEN" | base64 -w0)
+          echo "::add-mask::$auth"
+          git config --global http.https://github.com/.extraheader "AUTHORIZATION: basic $auth"
 
       - name: Build and publish with stage-local
         # The job log is not readable from an agent's container (its storage
