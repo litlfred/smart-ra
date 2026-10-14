@@ -1,6 +1,6 @@
 {
  "$schema": "twg-routing/0.1",
- "description": "TWG sub-group routing for comments the master log did not categorise (DPI-H comment categorisation skill requirements v0.1, uploads/). A human categorisation column in the log always wins; an entry here whose `by` is a person wins over the log's AI column. The agent adds entries and never changes one (REQ-17, REQ-26): to override, edit `category` and set `by` to your GitHub login.",
+ "description": "TWG sub-group routing for comments the master log did not categorise (DPI-H comment categorisation skill requirements v0.1, uploads/). A human categorisation column in the log wins when it names a category; an entry here whose `by` is a person wins over the log's AI column. The agent adds entries and never changes one (REQ-17, REQ-26): to override, edit `category` and set `by` to your GitHub login.",
  "taxonomy": "0.1",
  "instructionsSha256": "2414d57ea1b6ef4d92b438b1a996f4e35d5e83994c245ad4476c7422931e0e85",
  "runs": [
@@ -19571,6 +19571,18 @@
    "by": "claude-agent",
    "at": "2026-10-13",
    "input": "531240350ce4423e"
+  },
+  "PC-0013": {
+   "category": "Metadata registries",
+   "rationale": "Ruled by the editor: the log's human label \"HWF team\" means Health Workforce, whose registry sits in the Metadata registries sub-group.",
+   "by": "litlfred",
+   "at": "2026-10-14"
+  },
+  "PC-0020": {
+   "category": "Core architects",
+   "rationale": "Ruled by the editor: the log's human label \"Maybe - editorial?\" names no category; the comment asks for a new country-driven principle, more than an editorial fix.",
+   "by": "litlfred",
+   "at": "2026-10-14"
   }
  }
 }
