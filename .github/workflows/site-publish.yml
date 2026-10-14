@@ -5,7 +5,7 @@ name: Site publish (by hand)
 # GitHub runner, for a session whose container cannot reach rubygems.org and so
 # cannot install Jekyll (owner, 2026-10-13: "github egress?"). It is the
 # agent's command, not a second recipe: the steps stay declared once, in
-# dpi-h-ra.config.json under site.build.
+# index.config.json, in the dpi-h-ra entry under site.build.
 #
 # Dispatch only. On main it publishes the gh-pages root (keeping STAGING/ and
 # _render-log/); on any other branch, the preview at STAGING/<branch>/.
