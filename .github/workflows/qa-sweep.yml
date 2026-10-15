@@ -63,7 +63,7 @@ jobs:
       - name: QA sweep (warn-only on baseline criticals)
         continue-on-error: true
         run: |
-          bun run "$FA_TOOLS/content/pipeline/qa-sweep.ts" "folio" --ci 2>&1 | tee /tmp/qa-sweep.log
+          bun run "$FA_TOOLS/pipeline/qa-sweep.ts" "folio" --ci 2>&1 | tee /tmp/qa-sweep.log
           echo ""
           echo "Sweep exit code: ${PIPESTATUS[0]}"
 
@@ -76,7 +76,7 @@ jobs:
           for axis in one-voice proof canonical compute detangler bibliography; do
             echo ""
             echo "── axis: $axis ─────────────────────────────────"
-            bun run "$FA_TOOLS/content/pipeline/qa-sweep.ts" "folio" \
+            bun run "$FA_TOOLS/pipeline/qa-sweep.ts" "folio" \
               --axis "$axis" --json 2>/dev/null \
               | python3 "$FA_TOOLS/scripts/ci/qa-axis-summary.py" \
                 2>&1 | tee "/tmp/qa-axis-$axis.log"
@@ -85,7 +85,7 @@ jobs:
       - name: QA staleness map
         continue-on-error: true
         run: |
-          bun run "$FA_TOOLS/content/pipeline/qa-staleness.ts" "folio" --ci 2>&1 | tee /tmp/qa-staleness.log
+          bun run "$FA_TOOLS/pipeline/qa-staleness.ts" "folio" --ci 2>&1 | tee /tmp/qa-staleness.log
 
       # Schema sanity — every committed .qa.json must declare the v1
       # schema marker. Strict (fails the workflow on shape drift).
