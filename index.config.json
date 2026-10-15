@@ -57,7 +57,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/smart-base",
-          "ref": "941d35ac678d741da336b0b40f664b9a802ac483",
+          "ref": "96e43858f0e190380a571469ced640957f2916e6",
           "overrides": {
             "smart-base": {
               "path": "smart-base",
@@ -81,7 +81,7 @@
                 "smart-base-typologies",
                 "smart-base-validators",
                 "smart-base-schemas",
-                "smart-base-content",
+                "smart-base-pipeline",
                 "smart-base-scripts",
                 "smart-base-skills",
                 "smart-base-scenarios",
@@ -92,9 +92,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-14",
-              "ref": "941d35ac678d741da336b0b40f664b9a802ac483",
-              "evidence": "owner, session 2026-10-14 (session_01Pc8vSeXCwp5Ckvmz56cMDs): 'merge when green, repin and publish smart-trust' / '1 2' — every layer to its merged main"
+              "on": "2026-10-15",
+              "ref": "96e43858f0e190380a571469ced640957f2916e6",
+              "evidence": "owner, session 2026-10-15 (session_01Pc8vSeXCwp5Ckvmz56cMDs): 'merge and repin open 3 hrs' (window to 12:00Z) — repin for cat-harness-tools#288 (#281: content root held to its own gate set)"
             }
           }
         }
@@ -105,7 +105,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/fhir-harness",
-          "ref": "e9906e92ae99844598347b1cf2cd71d07c08787a",
+          "ref": "9da809b0bc6ad75223b3b5b539cbdaad951e8625",
           "overrides": {
             "fhir-harness": {
               "whole": true
@@ -114,9 +114,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-14",
-              "ref": "e9906e92ae99844598347b1cf2cd71d07c08787a",
-              "evidence": "owner, session 2026-10-14 (session_01Pc8vSeXCwp5Ckvmz56cMDs): 'merge when green, repin and publish smart-trust' / '1 2' — every layer to its merged main"
+              "on": "2026-10-15",
+              "ref": "9da809b0bc6ad75223b3b5b539cbdaad951e8625",
+              "evidence": "owner, session 2026-10-15 (session_01Pc8vSeXCwp5Ckvmz56cMDs): 'merge and repin open 3 hrs' (window to 12:00Z) — repin for cat-harness-tools#288 (#281: content root held to its own gate set)"
             }
           }
         }
@@ -127,7 +127,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/folio-assistant-core",
-          "ref": "789175ad9a270cb1feb7440252e1c201dbc457ab",
+          "ref": "2c651f6095d84fcf2b57ce76675fb3b10b9e0528",
           "overrides": {
             "folio-assistant-core": {
               "whole": true
@@ -142,9 +142,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-14",
-              "ref": "789175ad9a270cb1feb7440252e1c201dbc457ab",
-              "evidence": "owner, session 2026-10-14 (session_01Pc8vSeXCwp5Ckvmz56cMDs): 'merge when green, repin and publish smart-trust' / '1 2' — every layer to its merged main"
+              "on": "2026-10-15",
+              "ref": "2c651f6095d84fcf2b57ce76675fb3b10b9e0528",
+              "evidence": "owner, session 2026-10-15 (session_01Pc8vSeXCwp5Ckvmz56cMDs): 'merge and repin open 3 hrs' (window to 12:00Z) — repin for cat-harness-tools#288 (#281: content root held to its own gate set)"
             }
           }
         }
@@ -155,7 +155,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness",
-          "ref": "c9683bd815d16d6bb2d724a5c4fca8730dc8f115",
+          "ref": "e41b0af3a4b8537837c0854709283fc5b4170a2f",
           "overrides": {
             "cat-harness": {
               "whole": true
@@ -170,9 +170,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-14",
-              "ref": "c9683bd815d16d6bb2d724a5c4fca8730dc8f115",
-              "evidence": "owner, session 2026-10-14 (session_01Pc8vSeXCwp5Ckvmz56cMDs): 'merge when green, repin and publish smart-trust' / '1 2' — every layer to its merged main"
+              "on": "2026-10-15",
+              "ref": "e41b0af3a4b8537837c0854709283fc5b4170a2f",
+              "evidence": "owner, session 2026-10-15 (session_01Pc8vSeXCwp5Ckvmz56cMDs): 'merge and repin open 3 hrs' (window to 12:00Z) — repin for cat-harness-tools#288 (#281: content root held to its own gate set)"
             }
           }
         }
@@ -183,7 +183,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness-tools",
-          "ref": "954ef7b03842233ae46f8494639f04077ec6ecfa",
+          "ref": "87d918de377b1d1300759cf648a11522e81aa423",
           "overrides": {
             "cat-harness-tools": {
               "whole": true
@@ -195,9 +195,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-14",
-              "ref": "954ef7b03842233ae46f8494639f04077ec6ecfa",
-              "evidence": "owner, session 2026-10-14 (session_01Pc8vSeXCwp5Ckvmz56cMDs): 'merge when green, repin and publish smart-trust' / '1 2' — every layer to its merged main"
+              "on": "2026-10-15",
+              "ref": "87d918de377b1d1300759cf648a11522e81aa423",
+              "evidence": "owner, session 2026-10-15 (session_01Pc8vSeXCwp5Ckvmz56cMDs): 'merge and repin open 3 hrs' (window to 12:00Z) — repin for cat-harness-tools#288 (#281: content root held to its own gate set)"
             }
           }
         }
@@ -208,7 +208,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/bootstrap",
-          "ref": "5b10f5c5dc8f0553f38a0643b2cd144a287202ce",
+          "ref": "bc304e8971f7c34d94cd75f5e17d0c4932c1f0a5",
           "overrides": {
             "bootstrap": {
               "whole": true
@@ -217,9 +217,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-14",
-              "ref": "5b10f5c5dc8f0553f38a0643b2cd144a287202ce",
-              "evidence": "owner, session 2026-10-14 (session_01Pc8vSeXCwp5Ckvmz56cMDs): 'merge when green, repin and publish smart-trust' / '1 2' — every layer to its merged main"
+              "on": "2026-10-15",
+              "ref": "bc304e8971f7c34d94cd75f5e17d0c4932c1f0a5",
+              "evidence": "owner, session 2026-10-15 (session_01Pc8vSeXCwp5Ckvmz56cMDs): 'merge and repin open 3 hrs' (window to 12:00Z) — repin for cat-harness-tools#288 (#281: content root held to its own gate set)"
             }
           }
         }
@@ -230,7 +230,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/bootstrap-tools",
-          "ref": "c97f099285d990527ac21cd16b6198867cd0a321",
+          "ref": "94e51ae297ea039cf5f3b5055e01c85149578f48",
           "overrides": {
             "bootstrap-tools": {
               "whole": true
@@ -242,9 +242,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-14",
-              "ref": "c97f099285d990527ac21cd16b6198867cd0a321",
-              "evidence": "owner, session 2026-10-14 (session_01Pc8vSeXCwp5Ckvmz56cMDs): 'merge when green, repin and publish smart-trust' / '1 2' — every layer to its merged main"
+              "on": "2026-10-15",
+              "ref": "94e51ae297ea039cf5f3b5055e01c85149578f48",
+              "evidence": "owner, session 2026-10-15 (session_01Pc8vSeXCwp5Ckvmz56cMDs): 'merge and repin open 3 hrs' (window to 12:00Z) — repin for cat-harness-tools#288 (#281: content root held to its own gate set)"
             }
           }
         }
