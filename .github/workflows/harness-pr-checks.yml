@@ -30,9 +30,9 @@ concurrency:
 
 jobs:
   checks:
-    uses: litlfred/cat-harness-tools/.github/workflows/layer-pr-checks.yml@main
+    uses: litlfred/cat-harness-tools/.github/workflows/layer-pr-checks.yml@claude/gate-inputs-since-junit-cat
     with:
       mode: index
       instance: dpi-h-ra
       path-in-repo: .
-      tools-ref: main
+      tools-ref: claude/gate-inputs-since-junit-cat
