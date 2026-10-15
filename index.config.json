@@ -48,8 +48,7 @@
           ],
           "siteSteps": [
             "site:node-kinds"
-          ],
-          "coverage": "report"
+          ]
         }
       }
     },
@@ -106,7 +105,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/fhir-harness",
-          "ref": "9da809b0bc6ad75223b3b5b539cbdaad951e8625",
+          "ref": "f87828622593684a1d65258201769ea6faf65f80",
           "overrides": {
             "fhir-harness": {
               "whole": true
@@ -116,8 +115,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-10-15",
-              "ref": "9da809b0bc6ad75223b3b5b539cbdaad951e8625",
-              "evidence": "owner, session 2026-10-15 (session_01Pc8vSeXCwp5Ckvmz56cMDs): 'merge and repin open 3 hrs' (window to 12:00Z) — repin for cat-harness-tools#288 (#281: content root held to its own gate set)"
+              "ref": "f87828622593684a1d65258201769ea6faf65f80",
+              "evidence": "owner litlfred in session 014Pq7zmjpZqyyb75xLcCDjX, 2026-10-15: merge and repin window to 20:55; re-pin fhir-harness f878286 (#101 restores ig-pages --instance/--site declarations)"
             }
           }
         }
@@ -184,7 +183,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness-tools",
-          "ref": "4c15ab326bd55f421083941e25d2fbc55af7bfc6",
+          "ref": "06d470d502a80cf1b8206e16b2fe5cad7aded272",
           "overrides": {
             "cat-harness-tools": {
               "whole": true
@@ -197,8 +196,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-10-15",
-              "ref": "4c15ab326bd55f421083941e25d2fbc55af7bfc6",
-              "evidence": "owner litlfred in session 014Pq7zmjpZqyyb75xLcCDjX, 2026-10-15: merge and repin window to 17:55; re-pin cat-harness-tools 4c15ab326bd55f421083941e25d2fbc55af7bfc6 (#328: pages with no layout get the theme default, so the 106 bare pages get chrome)"
+              "ref": "06d470d502a80cf1b8206e16b2fe5cad7aded272",
+              "evidence": "owner litlfred in session 014Pq7zmjpZqyyb75xLcCDjX, 2026-10-15: \"extend merge and repin 3 hrs\" (to 20:55); re-pin cat-harness-tools 06d470d (#335 tools page renders no Liquid) and fhir-harness 17ede0a (#100 ig-pages writes artifact-index into a per-repo site)"
             }
           }
         }
