@@ -269,18 +269,18 @@
   {
     &quot;id&quot;: &quot;core-qa-checkers&quot;,
     &quot;path&quot;: &quot;qa-checkers/&quot;,
-    &quot;description&quot;: &quot;The QA checkers this layer&#39;s code provides, one `folio-qa-checker/v1` node per criterion, registered for a folio through its dependency tree by `loadContributions` (bean riit, step 3b). One today: `recommendation-strength-resolves` (bean 55ao), naming `RECOMMENDATION_CHECKERS` in `content/pipeline/qa-checkers-recommendation.ts`. The criterion itself is declared in cat-harness-tools&#39; QA registry with `checker_contributed`.&quot;,
+    &quot;description&quot;: &quot;The QA checkers this layer&#39;s code provides, one `folio-qa-checker/v1` node per criterion, registered for a folio through its dependency tree by `loadContributions` (bean riit, step 3b). One today: `recommendation-strength-resolves` (bean 55ao), naming `RECOMMENDATION_CHECKERS` in `pipeline/qa-checkers-recommendation.ts`. The criterion itself is declared in cat-harness-tools&#39; QA registry with `checker_contributed`.&quot;,
     &quot;graphTypologies&quot;: [
       &quot;qa-checkers&quot;
     ]
   },
   {
-    &quot;id&quot;: &quot;core-content&quot;,
-    &quot;path&quot;: &quot;content/&quot;,
+    &quot;id&quot;: &quot;core-pipeline&quot;,
+    &quot;path&quot;: &quot;pipeline/&quot;,
     &quot;graphTypologies&quot;: [
       &quot;code&quot;
     ],
-    &quot;description&quot;: &quot;`content/pipeline/qa-checkers-recommendation.ts`, the automated checker `qa-checkers/recommendation-strength-resolves.json` names (`RECOMMENDATION_CHECKERS`). Under `content/pipeline/` because that is where the harness&#39;s `imports` input-site looks for a contributed checker, as smart-base&#39;s `content/` holds its DAK checkers.&quot;
+    &quot;description&quot;: &quot;`pipeline/qa-checkers-recommendation.ts`, the automated checker `qa-checkers/recommendation-strength-resolves.json` names (`RECOMMENDATION_CHECKERS`). Under `pipeline/` because that is where the harness&#39;s `imports` input-site looks for a contributed checker, as sci&#39;s cost checkers and smart-base&#39;s DAK checkers are; it was `content/pipeline/` until every layer&#39;s pipeline moved to `pipeline/` (owner, 2026-10-14).&quot;
   },
   {
     &quot;id&quot;: &quot;folio-assistant-core-typologies&quot;,
@@ -453,6 +453,11 @@
   &quot;cat-harness&quot;,
   &quot;cat-harness-tools&quot;
 ]</pre></dd>
+<dt>_jsonldPrefixes_comment</dt><dd>The external vocabularies this instance&#39;s JSON-LD speaks (cat-harness schemas/jsonld-prefixes.ts; bean folio-assistant-63q4, owner 2026-10-14). BIBO and FaBiO type and describe reference nodes (schemas/reference.ts, referenceToJsonLd); dcterms comes from cat-harness, which this instance needs, so it is not repeated here.</dd>
+<dt>jsonldPrefixes</dt><dd><pre>{
+  &quot;bibo&quot;: &quot;http://purl.org/ontology/bibo/&quot;,
+  &quot;fabio&quot;: &quot;http://purl.org/spar/fabio/&quot;
+}</pre></dd>
 <dt>_contentAdapters_comment</dt><dd>Declared HERE, by the instance that ships the adapter, so cat-harness&#39;s composition root (`src/builtin-adapters.ts`) finds it by reading declarations instead of holding a `../folio-assistant-core/adapters/document/index.ts` path into the layer above it. That path was the last upward import out of cat-harness, and a variable one no static gate could see (bean p11x, `check:import-direction`).</dd>
 <dt>contentAdapters</dt><dd><pre>[
   {

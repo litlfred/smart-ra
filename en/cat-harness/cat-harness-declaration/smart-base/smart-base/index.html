@@ -140,7 +140,7 @@
   {
     &quot;id&quot;: &quot;smart-base-qa-checkers&quot;,
     &quot;path&quot;: &quot;qa-checkers/&quot;,
-    &quot;description&quot;: &quot;The dak adapter&#39;s automated QA checkers, one folio-qa-checker/v1 node per criterion, naming DAK_AUTOMATED_CHECKERS in content/pipeline/qa-checkers-dak.ts (bean riit, step 3b). Registered for a folio by loadContributions through its dependency tree; they replace the qaCheckers array contributions.ts returned.&quot;,
+    &quot;description&quot;: &quot;The dak adapter&#39;s automated QA checkers, one folio-qa-checker/v1 node per criterion, naming DAK_AUTOMATED_CHECKERS in pipeline/qa-checkers-dak.ts (bean riit, step 3b). Registered for a folio by loadContributions through its dependency tree; they replace the qaCheckers array contributions.ts returned.&quot;,
     &quot;graphTypologies&quot;: [
       &quot;qa-checkers&quot;
     ]
@@ -334,12 +334,12 @@
     &quot;description&quot;: &quot;The dak vocabulary in code: `dak-blocks.ts` (the block builders `content-adapters/dak.json` names), `dak-kinds.ts` and `dak-jsonld.ts` (read off `block-kinds/`), `dak-content-type.ts`, `dak.ts`, and the l2-dak-authoring skill&#39;s input/output JSON Schemas. Declared at the cutover (bean hupw) so a remote mount brings it: the mounted adapter and QA checkers name these modules.&quot;
   },
   {
-    &quot;id&quot;: &quot;smart-base-content&quot;,
-    &quot;path&quot;: &quot;content/&quot;,
+    &quot;id&quot;: &quot;smart-base-pipeline&quot;,
+    &quot;path&quot;: &quot;pipeline/&quot;,
     &quot;graphTypologies&quot;: [
       &quot;code&quot;
     ],
-    &quot;description&quot;: &quot;`content/pipeline/qa-checkers-dak.ts`, the automated DAK checkers `qa-checkers/` names (`DAK_AUTOMATED_CHECKERS`). Declared at the cutover (bean hupw) so a remote mount brings it.&quot;
+    &quot;description&quot;: &quot;`pipeline/qa-checkers-dak.ts`, the automated DAK checkers `qa-checkers/` names (`DAK_AUTOMATED_CHECKERS`). Declared at the cutover (bean hupw) so a remote mount brings it; it was `content/pipeline/` until every layer&#39;s pipeline moved to `pipeline/` (owner, 2026-10-14, the rnfl move cat-harness-tools made on 2026-10-12).&quot;
   },
   {
     &quot;id&quot;: &quot;smart-base-scripts&quot;,
@@ -442,13 +442,6 @@
     &quot;outputs&quot;: [],
     &quot;because&quot;: &quot;measured 2026-10-01 (bean xpcu); moved from cat-harness/scripts/task-io.ts to its owning instance 2026-10-06 (bean 0r7u)&quot;
   },
-  &quot;smart-base:l1-scenarios:measles:check&quot;: {
-    &quot;inputs&quot;: [
-      &quot;{tracked}&quot;
-    ],
-    &quot;outputs&quot;: [],
-    &quot;because&quot;: &quot;exits before either writeFileSync under `--check` -- measured 2026-10-10 (bean kvd2): a --check run leaves `git status` clean&quot;
-  },
   &quot;smart-base:smart-kg-l1:check&quot;: {
     &quot;outputs&quot;: [],
     &quot;writer&quot;: &quot;smart-base:smart-kg-l1:all&quot;,
@@ -467,8 +460,8 @@
         &quot;extensions&quot;: [
           &quot;.md&quot;
         ],
-        &quot;extractModule&quot;: &quot;content/pipeline/pot-extract.ts&quot;,
-        &quot;injectModule&quot;: &quot;content/pipeline/po-inject.ts&quot;
+        &quot;extractModule&quot;: &quot;pipeline/pot-extract.ts&quot;,
+        &quot;injectModule&quot;: &quot;pipeline/po-inject.ts&quot;
       },
       {
         &quot;id&quot;: &quot;plantuml&quot;,
@@ -515,8 +508,8 @@
         &quot;extensions&quot;: [
           &quot;.bpmn&quot;
         ],
-        &quot;extractModule&quot;: &quot;content/pipeline/bpmn-translate.ts&quot;,
-        &quot;injectModule&quot;: &quot;content/pipeline/bpmn-translate.ts&quot;,
+        &quot;extractModule&quot;: &quot;pipeline/bpmn-translate.ts&quot;,
+        &quot;injectModule&quot;: &quot;pipeline/bpmn-translate.ts&quot;,
         &quot;notes&quot;: &quot;Element names and &lt;documentation&gt;. Ids, sourceRef/targetRef, calledElement and the folio: extensions are NEVER offered for translation — a translated id disconnects the graph and a translated skill ref is exactly the dangling reference check:workflow-refs exists to catch. Re-render with `bun run cat render:bpmn` after injection. On overflow: measured 2026-09-18, a French set ~18% longer with every authored &amp;#10; break dropped re-wrapped to the same 3 lines, 42px of an 80px task box, because bpmn-js re-wraps regardless. The authored breaks are not load-bearing; if a diagram does overflow, the fix is its shape bounds, not the string.&quot;
       }
     ],

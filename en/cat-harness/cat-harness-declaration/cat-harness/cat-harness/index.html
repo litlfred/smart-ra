@@ -1271,11 +1271,754 @@ ca&amp;at-harness
     ]
   }
 ]</pre></dd>
+<dt>_builtAtPublish_comment</dt><dd>Owner, 2026-10-14 (B1, widened to state the same day: &#39;fix all, in proper way&#39;). The artefacts this instance serves and never commits: each is computed over the checkout&#39;s OTHER instances (`checkout`), which sit above this layer and which it cannot pin, or from a branch-kept graph (`state`), which moves without a commit — so no commit of cat-harness can hold it current, and a `:check` against committed bytes went red in the index on every re-pin. `derive:publish` runs each `writer` (a package script, `bun run cat &lt;script&gt;`) once, in THIS ORDER, after `state:mount` and before the site is composed — so a writer that reads another&#39;s output is listed after it (the slices read the todos index docs:pages writes); `.gitignore` carries one anchored line per path, and `schemas/built-at-publish.test.ts` keeps the two equal. The rule and the two causes are in `schemas/built-at-publish.ts`. NOT here, deliberately: this instance&#39;s OWN BPMN drawings (`docs/assets/img/workflows/&lt;own&gt;.svg`), which its README and authored pages embed on github.com and whose inputs are all its own; the 32 drawings of other instances&#39; diagrams are listed individually so the 67 own ones stay committed.</dd>
+<dt>builtAtPublish</dt><dd><pre>[
+  {
+    &quot;path&quot;: &quot;docs/cat-harness/auto-docs/&quot;,
+    &quot;writer&quot;: [
+      &quot;auto:docs&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;directory&quot;: &quot;auto-docs&quot;,
+    &quot;reason&quot;: &quot;every index page lists every instance&#39;s sub-graphs and their item counts, its own sub-graphs&#39; pages included (measured: a new page in who-iris/docs rewrote 12 of them)&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/cat-harness/published-graphs.md&quot;,
+    &quot;writer&quot;: [
+      &quot;handler:index&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;lists every graph the handler renders, by the instance whose material it shows&quot;
+  },
+  {
+    &quot;path&quot;: &quot;uml/overview/&quot;,
+    &quot;writer&quot;: [
+      &quot;uml:overview&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;one .puml/.mmd per instance in the checkout, and the QA tree it draws is branch-kept&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/uml/overview/&quot;,
+    &quot;writer&quot;: [
+      &quot;uml:overview&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;directory&quot;: &quot;uml-overview-pages&quot;,
+    &quot;reason&quot;: &quot;the pages of the same model&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/img/uml/overview/&quot;,
+    &quot;writer&quot;: [
+      &quot;uml:overview&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;directory&quot;: &quot;uml-overview-svgs&quot;,
+    &quot;reason&quot;: &quot;the drawings of the same model&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/subgraph/&quot;,
+    &quot;writer&quot;: [
+      &quot;subgraph:jsonld&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;one tree per framed instance, and the repository index lists every root (measured: a foreign skill&#39;s description rewrote 14 files)&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/payload/&quot;,
+    &quot;writer&quot;: [
+      &quot;subgraph:jsonld&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;content-addressed bodies of every framed instance&#39;s skills; a foreign edit moves the hash&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/reference/skill-instructions/&quot;,
+    &quot;writer&quot;: [
+      &quot;skills:docs&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;a page per skill of every instance (measured: drifted on fhir-harness and folio-assistant-core skills at the current pins)&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/en/cat-harness/processes/&quot;,
+    &quot;writer&quot;: [
+      &quot;processes:viz&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;a page per diagram of every instance, 32 of 100 of them other instances&#39; (measured: a foreign task name rewrote public-comment.md)&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/en/cat-harness/cat-harness-declaration/&quot;,
+    &quot;writer&quot;: [
+      &quot;node-kind:pages&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;a page per instance declaration in the checkout&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/glossary/cat-harness-tools--kg-tools.skos.jsonld&quot;,
+    &quot;writer&quot;: [
+      &quot;glossary:page&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;the SKOS export of another instance&#39;s glossary, which sits above this layer&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/glossary/fhir-harness--kg-bpmn-activities.skos.jsonld&quot;,
+    &quot;writer&quot;: [
+      &quot;glossary:page&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;the SKOS export of another instance&#39;s glossary, which sits above this layer&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/glossary/fhir-harness--kg-schema-fields.skos.jsonld&quot;,
+    &quot;writer&quot;: [
+      &quot;glossary:page&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;the SKOS export of another instance&#39;s glossary, which sits above this layer&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/glossary/fhir-harness--kg-skills.skos.jsonld&quot;,
+    &quot;writer&quot;: [
+      &quot;glossary:page&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;the SKOS export of another instance&#39;s glossary, which sits above this layer&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/glossary/fhir-harness--kg-tools.skos.jsonld&quot;,
+    &quot;writer&quot;: [
+      &quot;glossary:page&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;the SKOS export of another instance&#39;s glossary, which sits above this layer&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/glossary/folio-assistant-core--kg-bpmn-activities.skos.jsonld&quot;,
+    &quot;writer&quot;: [
+      &quot;glossary:page&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;the SKOS export of another instance&#39;s glossary, which sits above this layer&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/glossary/folio-assistant-core--kg-dmn-decisions.skos.jsonld&quot;,
+    &quot;writer&quot;: [
+      &quot;glossary:page&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;the SKOS export of another instance&#39;s glossary, which sits above this layer&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/glossary/folio-assistant-core--kg-schema-fields.skos.jsonld&quot;,
+    &quot;writer&quot;: [
+      &quot;glossary:page&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;the SKOS export of another instance&#39;s glossary, which sits above this layer&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/glossary/folio-assistant-core--kg-skills.skos.jsonld&quot;,
+    &quot;writer&quot;: [
+      &quot;glossary:page&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;the SKOS export of another instance&#39;s glossary, which sits above this layer&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/glossary/folio-assistant-core--kg-tools.skos.jsonld&quot;,
+    &quot;writer&quot;: [
+      &quot;glossary:page&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;the SKOS export of another instance&#39;s glossary, which sits above this layer&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/glossary/folio-assistant-core--platform.skos.jsonld&quot;,
+    &quot;writer&quot;: [
+      &quot;glossary:page&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;the SKOS export of another instance&#39;s glossary, which sits above this layer&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/glossary/folio-assistant-sci--kg-bpmn-activities.skos.jsonld&quot;,
+    &quot;writer&quot;: [
+      &quot;glossary:page&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;the SKOS export of another instance&#39;s glossary, which sits above this layer&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/glossary/folio-assistant-sci--kg-dmn-decisions.skos.jsonld&quot;,
+    &quot;writer&quot;: [
+      &quot;glossary:page&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;the SKOS export of another instance&#39;s glossary, which sits above this layer&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/glossary/folio-assistant-sci--kg-skills.skos.jsonld&quot;,
+    &quot;writer&quot;: [
+      &quot;glossary:page&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;the SKOS export of another instance&#39;s glossary, which sits above this layer&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/glossary/folio-assistant-sci--kg-tools.skos.jsonld&quot;,
+    &quot;writer&quot;: [
+      &quot;glossary:page&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;the SKOS export of another instance&#39;s glossary, which sits above this layer&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/glossary/smart-base--kg-bpmn-activities.skos.jsonld&quot;,
+    &quot;writer&quot;: [
+      &quot;glossary:page&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;the SKOS export of another instance&#39;s glossary, which sits above this layer&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/glossary/smart-base--kg-schema-fields.skos.jsonld&quot;,
+    &quot;writer&quot;: [
+      &quot;glossary:page&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;the SKOS export of another instance&#39;s glossary, which sits above this layer&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/glossary/smart-base--kg-skills.skos.jsonld&quot;,
+    &quot;writer&quot;: [
+      &quot;glossary:page&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;the SKOS export of another instance&#39;s glossary, which sits above this layer&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/glossary/smart-base--kg-tools.skos.jsonld&quot;,
+    &quot;writer&quot;: [
+      &quot;glossary:page&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;the SKOS export of another instance&#39;s glossary, which sits above this layer&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/glossary/who-iris--kg-skills.skos.jsonld&quot;,
+    &quot;writer&quot;: [
+      &quot;glossary:page&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;the SKOS export of another instance&#39;s glossary, which sits above this layer&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/glossary/who-iris--kg-tools.skos.jsonld&quot;,
+    &quot;writer&quot;: [
+      &quot;glossary:page&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;the SKOS export of another instance&#39;s glossary, which sits above this layer&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/glossary/who-iris--who-terms.skos.jsonld&quot;,
+    &quot;writer&quot;: [
+      &quot;glossary:page&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;the SKOS export of another instance&#39;s glossary, which sits above this layer&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/folio-assistant-core/&quot;,
+    &quot;writer&quot;: [
+      &quot;glossary:page&quot;,
+      &quot;bibliography:page&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;folio-assistant-core&#39;s glossary and bibliography, which sit above this layer; the bibliography is computed over every instance&#39;s references and catalogue directories&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/ar/folio-assistant-core/&quot;,
+    &quot;writer&quot;: [
+      &quot;glossary:page&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;its translated glossary index&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/es/folio-assistant-core/&quot;,
+    &quot;writer&quot;: [
+      &quot;glossary:page&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;its translated glossary index&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/fr/folio-assistant-core/&quot;,
+    &quot;writer&quot;: [
+      &quot;glossary:page&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;its translated glossary index&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/ru/folio-assistant-core/&quot;,
+    &quot;writer&quot;: [
+      &quot;glossary:page&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;its translated glossary index&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/zh/folio-assistant-core/&quot;,
+    &quot;writer&quot;: [
+      &quot;glossary:page&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;its translated glossary index&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/smart-base/&quot;,
+    &quot;writer&quot;: [
+      &quot;smart:pages&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;smart-base&#39;s IG artefact index, rendered by fhir-harness from the mounted IGs&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/_data/harness.json&quot;,
+    &quot;writer&quot;: [
+      &quot;docs:pages&quot;,
+      &quot;docs:harness&quot;
+    ],
+    &quot;because&quot;: &quot;state&quot;,
+    &quot;from&quot;: [
+      &quot;beans&quot;,
+      &quot;todos&quot;
+    ],
+    &quot;reason&quot;: &quot;tiles of every instance in the checkout, with the live open-beans and todos counts; docs:harness reads the counts docs:pages just wrote, so both come from one mount&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/_includes/generated/navbar-footer.html&quot;,
+    &quot;writer&quot;: [
+      &quot;navbar:include&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;the navbar row of every harness in the checkout, rendered from docs/_data/harness.json (listed just above, so built first); measured: at a new pin the committed copy went stale as soon as harness.json was built&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/cat-harness/kind-table.md&quot;,
+    &quot;writer&quot;: [
+      &quot;kind:table&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;one row per graph typology any instance in the checkout declares, from each kind&#39;s description; it was a region of skills/kg/kg-core/directory-conventions.md, which went stale at each re-pin that brought a new kind&quot;
+  },
+  {
+    &quot;path&quot;: &quot;site-chrome/assets/css/avatars.css&quot;,
+    &quot;writer&quot;: [
+      &quot;avatars:css&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;one avatar rule per graph typology any instance in the checkout declares (fhir-harness, folio-assistant-sci and smart-base each add kinds); measured: stale at the first re-pin that brought a layer&#39;s new kind&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/beans/&quot;,
+    &quot;writer&quot;: [
+      &quot;docs:pages&quot;
+    ],
+    &quot;because&quot;: &quot;state&quot;,
+    &quot;from&quot;: [
+      &quot;beans&quot;
+    ],
+    &quot;reason&quot;: &quot;the bean index and its open count, a snapshot of cat/cat-harness/beans (committed: 179 here against 190 in harness.json)&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/todos/count.json&quot;,
+    &quot;writer&quot;: [
+      &quot;docs:pages&quot;
+    ],
+    &quot;because&quot;: &quot;state&quot;,
+    &quot;from&quot;: [
+      &quot;todos&quot;
+    ],
+    &quot;reason&quot;: &quot;the open todos count&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/todos/index.json&quot;,
+    &quot;writer&quot;: [
+      &quot;docs:pages&quot;
+    ],
+    &quot;because&quot;: &quot;state&quot;,
+    &quot;from&quot;: [
+      &quot;todos&quot;
+    ],
+    &quot;reason&quot;: &quot;the todos index&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/qa/index.json&quot;,
+    &quot;writer&quot;: [
+      &quot;docs:pages&quot;
+    ],
+    &quot;because&quot;: &quot;state&quot;,
+    &quot;from&quot;: [
+      &quot;qa&quot;
+    ],
+    &quot;reason&quot;: &quot;the QA projection, from qa-reports&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/todos.json&quot;,
+    &quot;writer&quot;: [
+      &quot;docs:pages&quot;
+    ],
+    &quot;because&quot;: &quot;state&quot;,
+    &quot;from&quot;: [
+      &quot;todos&quot;
+    ],
+    &quot;reason&quot;: &quot;the todos graph&#39;s projection&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/todos.jsonld&quot;,
+    &quot;writer&quot;: [
+      &quot;docs:pages&quot;
+    ],
+    &quot;because&quot;: &quot;state&quot;,
+    &quot;from&quot;: [
+      &quot;todos&quot;
+    ],
+    &quot;reason&quot;: &quot;the same, as JSON-LD&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/todos/&quot;,
+    &quot;writer&quot;: [
+      &quot;docs:pages&quot;
+    ],
+    &quot;because&quot;: &quot;state&quot;,
+    &quot;from&quot;: [
+      &quot;todos&quot;
+    ],
+    &quot;reason&quot;: &quot;one page and node per todo&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/_data/todo_listing.json&quot;,
+    &quot;writer&quot;: [
+      &quot;docs:pages&quot;
+    ],
+    &quot;because&quot;: &quot;state&quot;,
+    &quot;from&quot;: [
+      &quot;todos&quot;
+    ],
+    &quot;reason&quot;: &quot;the todo listing&#39;s data&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/_includes/generated/todo-listing.html&quot;,
+    &quot;writer&quot;: [
+      &quot;docs:pages&quot;
+    ],
+    &quot;because&quot;: &quot;state&quot;,
+    &quot;from&quot;: [
+      &quot;todos&quot;
+    ],
+    &quot;reason&quot;: &quot;the todo listing include&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/_includes/generated/todo-listing/&quot;,
+    &quot;writer&quot;: [
+      &quot;docs:pages&quot;
+    ],
+    &quot;because&quot;: &quot;state&quot;,
+    &quot;from&quot;: [
+      &quot;todos&quot;
+    ],
+    &quot;reason&quot;: &quot;the per-page todo listing includes&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/slices/&quot;,
+    &quot;writer&quot;: [
+      &quot;slice:sqlite&quot;
+    ],
+    &quot;because&quot;: &quot;state&quot;,
+    &quot;from&quot;: [
+      &quot;beans&quot;,
+      &quot;todos&quot;
+    ],
+    &quot;reason&quot;: &quot;the kg slice is framed over the checkout, and the beans and todos slices over branch-kept graphs&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/img/workflows/atomic-mass-drift-check.svg&quot;,
+    &quot;writer&quot;: [
+      &quot;render:bpmn&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;a drawing of another instance&#39;s diagram, rendered from that instance&#39;s .bpmn at the index&#39;s pin&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/img/workflows/authoring-a-document.svg&quot;,
+    &quot;writer&quot;: [
+      &quot;render:bpmn&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;a drawing of another instance&#39;s diagram, rendered from that instance&#39;s .bpmn at the index&#39;s pin&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/img/workflows/authoring-a-paper.svg&quot;,
+    &quot;writer&quot;: [
+      &quot;render:bpmn&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;a drawing of another instance&#39;s diagram, rendered from that instance&#39;s .bpmn at the index&#39;s pin&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/img/workflows/board-open-close.svg&quot;,
+    &quot;writer&quot;: [
+      &quot;render:bpmn&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;a drawing of another instance&#39;s diagram, rendered from that instance&#39;s .bpmn at the index&#39;s pin&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/img/workflows/board-place-note.svg&quot;,
+    &quot;writer&quot;: [
+      &quot;render:bpmn&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;a drawing of another instance&#39;s diagram, rendered from that instance&#39;s .bpmn at the index&#39;s pin&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/img/workflows/board-relocate.svg&quot;,
+    &quot;writer&quot;: [
+      &quot;render:bpmn&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;a drawing of another instance&#39;s diagram, rendered from that instance&#39;s .bpmn at the index&#39;s pin&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/img/workflows/complete-initialization.svg&quot;,
+    &quot;writer&quot;: [
+      &quot;render:bpmn&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;a drawing of another instance&#39;s diagram, rendered from that instance&#39;s .bpmn at the index&#39;s pin&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/img/workflows/content-change-review.svg&quot;,
+    &quot;writer&quot;: [
+      &quot;render:bpmn&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;a drawing of another instance&#39;s diagram, rendered from that instance&#39;s .bpmn at the index&#39;s pin&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/img/workflows/content-lifecycle.svg&quot;,
+    &quot;writer&quot;: [
+      &quot;render:bpmn&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;a drawing of another instance&#39;s diagram, rendered from that instance&#39;s .bpmn at the index&#39;s pin&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/img/workflows/dak-l3-ig.svg&quot;,
+    &quot;writer&quot;: [
+      &quot;render:bpmn&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;a drawing of another instance&#39;s diagram, rendered from that instance&#39;s .bpmn at the index&#39;s pin&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/img/workflows/deep-document-research.svg&quot;,
+    &quot;writer&quot;: [
+      &quot;render:bpmn&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;a drawing of another instance&#39;s diagram, rendered from that instance&#39;s .bpmn at the index&#39;s pin&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/img/workflows/diig-investment-path.svg&quot;,
+    &quot;writer&quot;: [
+      &quot;render:bpmn&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;a drawing of another instance&#39;s diagram, rendered from that instance&#39;s .bpmn at the index&#39;s pin&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/img/workflows/discussion.svg&quot;,
+    &quot;writer&quot;: [
+      &quot;render:bpmn&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;a drawing of another instance&#39;s diagram, rendered from that instance&#39;s .bpmn at the index&#39;s pin&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/img/workflows/draft-to-publication.svg&quot;,
+    &quot;writer&quot;: [
+      &quot;render:bpmn&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;a drawing of another instance&#39;s diagram, rendered from that instance&#39;s .bpmn at the index&#39;s pin&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/img/workflows/editing-hci-validation.svg&quot;,
+    &quot;writer&quot;: [
+      &quot;render:bpmn&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;a drawing of another instance&#39;s diagram, rendered from that instance&#39;s .bpmn at the index&#39;s pin&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/img/workflows/evidence-retrieval.svg&quot;,
+    &quot;writer&quot;: [
+      &quot;render:bpmn&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;a drawing of another instance&#39;s diagram, rendered from that instance&#39;s .bpmn at the index&#39;s pin&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/img/workflows/getting-started.svg&quot;,
+    &quot;writer&quot;: [
+      &quot;render:bpmn&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;a drawing of another instance&#39;s diagram, rendered from that instance&#39;s .bpmn at the index&#39;s pin&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/img/workflows/human-agent-discussion.svg&quot;,
+    &quot;writer&quot;: [
+      &quot;render:bpmn&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;a drawing of another instance&#39;s diagram, rendered from that instance&#39;s .bpmn at the index&#39;s pin&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/img/workflows/ig-ast-delta-review.svg&quot;,
+    &quot;writer&quot;: [
+      &quot;render:bpmn&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;a drawing of another instance&#39;s diagram, rendered from that instance&#39;s .bpmn at the index&#39;s pin&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/img/workflows/ig-incremental-build.svg&quot;,
+    &quot;writer&quot;: [
+      &quot;render:bpmn&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;a drawing of another instance&#39;s diagram, rendered from that instance&#39;s .bpmn at the index&#39;s pin&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/img/workflows/ingest-build-l1-kg.svg&quot;,
+    &quot;writer&quot;: [
+      &quot;render:bpmn&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;a drawing of another instance&#39;s diagram, rendered from that instance&#39;s .bpmn at the index&#39;s pin&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/img/workflows/ingest-derive-content.svg&quot;,
+    &quot;writer&quot;: [
+      &quot;render:bpmn&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;a drawing of another instance&#39;s diagram, rendered from that instance&#39;s .bpmn at the index&#39;s pin&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/img/workflows/ingest-extract-structure.svg&quot;,
+    &quot;writer&quot;: [
+      &quot;render:bpmn&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;a drawing of another instance&#39;s diagram, rendered from that instance&#39;s .bpmn at the index&#39;s pin&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/img/workflows/ingest-l1-completeness-gate.svg&quot;,
+    &quot;writer&quot;: [
+      &quot;render:bpmn&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;a drawing of another instance&#39;s diagram, rendered from that instance&#39;s .bpmn at the index&#39;s pin&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/img/workflows/initialize-harness.svg&quot;,
+    &quot;writer&quot;: [
+      &quot;render:bpmn&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;a drawing of another instance&#39;s diagram, rendered from that instance&#39;s .bpmn at the index&#39;s pin&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/img/workflows/l1-document-ingestion.svg&quot;,
+    &quot;writer&quot;: [
+      &quot;render:bpmn&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;a drawing of another instance&#39;s diagram, rendered from that instance&#39;s .bpmn at the index&#39;s pin&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/img/workflows/l2-dak-authoring.svg&quot;,
+    &quot;writer&quot;: [
+      &quot;render:bpmn&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;a drawing of another instance&#39;s diagram, rendered from that instance&#39;s .bpmn at the index&#39;s pin&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/img/workflows/l3-fhir-pipeline.svg&quot;,
+    &quot;writer&quot;: [
+      &quot;render:bpmn&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;a drawing of another instance&#39;s diagram, rendered from that instance&#39;s .bpmn at the index&#39;s pin&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/img/workflows/lean-docs-publish.svg&quot;,
+    &quot;writer&quot;: [
+      &quot;render:bpmn&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;a drawing of another instance&#39;s diagram, rendered from that instance&#39;s .bpmn at the index&#39;s pin&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/img/workflows/log-message.svg&quot;,
+    &quot;writer&quot;: [
+      &quot;render:bpmn&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;a drawing of another instance&#39;s diagram, rendered from that instance&#39;s .bpmn at the index&#39;s pin&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/img/workflows/public-comment.svg&quot;,
+    &quot;writer&quot;: [
+      &quot;render:bpmn&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;a drawing of another instance&#39;s diagram, rendered from that instance&#39;s .bpmn at the index&#39;s pin&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/img/workflows/render-kg-to-github-pages.svg&quot;,
+    &quot;writer&quot;: [
+      &quot;render:bpmn&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;a drawing of another instance&#39;s diagram, rendered from that instance&#39;s .bpmn at the index&#39;s pin&quot;
+  }
+]</pre></dd>
 <dt>_needs_comment</dt><dd>The layer this instance sits on. Owner, 2026-09-20: &quot;So bootsteap, cat harness, fa-core, f-a, from bottom to top.&quot; Declared rather than hardcoded in the navbar, so the ordering is a fact of the repository and not of whichever consumer needed it first. `bootstrap-tools` added 2026-09-30 (bean `0lj4`, owner&#39;s ruling): bean `xsqm` moved that code OUT of this instance into its own, and this list was not updated with it, so 20 imports under `cat-harness/` reached an instance this file did not name. `allowedFromNeeds` gives a layer `{layer} U ancestors(layer)`, and `bootstrap-tools` is a SIBLING of `cat-harness` rather than an ancestor, so every one of those 20 was `wrong-direction` by the declared rule while four separate checks reported clean. The reverse arrow stays forbidden and is guarded by `check:tools-closure`.</dd>
 <dt>needs</dt><dd><pre>[
   &quot;bootstrap&quot;,
   &quot;bootstrap-tools&quot;
 ]</pre></dd>
+<dt>_jsonldPrefixes_comment</dt><dd>The external vocabularies this instance&#39;s JSON-LD speaks (schemas/jsonld-prefixes.ts; bean folio-assistant-63q4, owner 2026-10-14). Measured 2026-10-14: these are emitted (doco, prov, dcterms by the block/library/site generators; skos by the glossary export; cito by block siblings; rdfs by the named-subgraph documents, through ns/subgraph/v1.jsonld&#39;s aliases). deo, oa, csvw and fhir are bound in CONTENT_CONTEXT but emitted by no code and no document, so they are not declared: the generated context will not carry them.</dd>
+<dt>jsonldPrefixes</dt><dd><pre>{
+  &quot;doco&quot;: &quot;http://purl.org/spar/doco/&quot;,
+  &quot;cito&quot;: &quot;http://purl.org/spar/cito/&quot;,
+  &quot;prov&quot;: &quot;http://www.w3.org/ns/prov#&quot;,
+  &quot;skos&quot;: &quot;http://www.w3.org/2004/02/skos/core#&quot;,
+  &quot;dcterms&quot;: &quot;http://purl.org/dc/terms/&quot;,
+  &quot;rdfs&quot;: &quot;http://www.w3.org/2000/01/rdf-schema#&quot;
+}</pre></dd>
 <dt>mountApprovers</dt><dd><pre>[
   &quot;litlfred&quot;
 ]</pre></dd>
