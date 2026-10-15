@@ -36,8 +36,7 @@
       "site": {
         "build": {
           "pre": [
-            "check:archimate",
-            "avatars:css"
+            "check:archimate"
           ],
           "sourceSteps": [
             "site:document",
@@ -184,7 +183,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness-tools",
-          "ref": "87d013b20d2ce699032bc2d86e2add2f0d98b716",
+          "ref": "2bc3a32ef4e183428acafabcbb0af44263a6da63",
           "overrides": {
             "cat-harness-tools": {
               "whole": true
@@ -197,8 +196,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-10-15",
-              "ref": "87d013b20d2ce699032bc2d86e2add2f0d98b716",
-              "evidence": "owner litlfred, 2026-10-15: \"publish smart-ra site\" and \"merge regardless CI. deal with aftermath\"; merge+repin window to 17:55 UTC (\"Extend merge and repin 3hrs\")"
+              "ref": "2bc3a32ef4e183428acafabcbb0af44263a6da63",
+              "evidence": "owner litlfred, 2026-10-15: \"publish smart-ra site\", \"merge regardless CI. deal with aftermath\"; merge+repin window to 17:55 UTC"
             }
           }
         }
