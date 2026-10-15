@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
+    }
+  ],
+  "@id": "library/who-dpi-h-reference-architecture-draft-v1/blocks/figure-img-p059-2",
+  "@type": [
+    "folio-assistant-core:Figure",
+    "doco:Figure"
+  ],
+  "kind": "figure",
+  "file": "../images/img-p059-2.png",
+  "pageStart": 59,
+  "pageEnd": 59,
+  "narrative": {
+    "text": "Figure 3.2. 'DPI-H Reference Architecture — Integrated View': a dense layered poster. From the top: strategic health goals (G1 trusted data foundations to G7 climate and epidemic resilience); cross-cutting governance; stakeholders; capabilities; the point-of-service and functional applications layer; the DPI-H layer of government-stewarded reusable components and the shared data layer of core registries (client, health record, workforce, location, products, terminology and logical information models), REDDHI components starred; the foundational DPI layer (identity, trust services, payments, data exchange, CRVS, geo-location); and the technology layer. An interoperability column at the right lists the information mediator, open standards and integration patterns. At this resolution most of the small text is not legible.",
+    "state": "draft",
+    "drafted_by": {
+      "kind": "agent",
+      "id": "claude",
+      "model": "claude-opus-5-5",
+      "session": "https://claude.ai/code/session_01Pc8vSeXCwp5Ckvmz56cMDs"
+    },
+    "drafted_at": "2026-10-15"
+  },
+  "derivedFrom": "library/who-dpi-h-reference-architecture-draft-v1/sections/sec-026",
+  "sourceDocument": "library/who-dpi-h-reference-architecture-draft-v1/manifest",
+  "provenance": "ingested"
+}
