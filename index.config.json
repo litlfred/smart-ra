@@ -184,7 +184,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness-tools",
-          "ref": "9cb31c0f6b01da52b737d58e6b4357d29d40da38",
+          "ref": "4c15ab326bd55f421083941e25d2fbc55af7bfc6",
           "overrides": {
             "cat-harness-tools": {
               "whole": true
@@ -197,8 +197,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-10-15",
-              "ref": "9cb31c0f6b01da52b737d58e6b4357d29d40da38",
-              "evidence": "owner litlfred in session 014Pq7zmjpZqyyb75xLcCDjX, 2026-10-15: merge and repin window to 17:55; \"do a\" (each repo publishes its own harness site, self + needs); re-pin cat-harness-tools 9cb31c0 (#324 per-repo build runs every declared visualiser writer), cat-harness 273030d (#278), folio-assistant-core cb76a1c (#117)"
+              "ref": "4c15ab326bd55f421083941e25d2fbc55af7bfc6",
+              "evidence": "owner litlfred in session 014Pq7zmjpZqyyb75xLcCDjX, 2026-10-15: merge and repin window to 17:55; re-pin cat-harness-tools 4c15ab326bd55f421083941e25d2fbc55af7bfc6 (#328: pages with no layout get the theme default, so the 106 bare pages get chrome)"
             }
           }
         }
