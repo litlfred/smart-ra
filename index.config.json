@@ -105,7 +105,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/fhir-harness",
-          "ref": "e9906e92ae99844598347b1cf2cd71d07c08787a",
+          "ref": "2aa1f8be1a6e2edfca99afdf4b82b954c7cc1d62",
           "overrides": {
             "fhir-harness": {
               "whole": true
@@ -114,9 +114,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-14",
-              "ref": "e9906e92ae99844598347b1cf2cd71d07c08787a",
-              "evidence": "owner, session 2026-10-14 (session_01Pc8vSeXCwp5Ckvmz56cMDs): 'merge when green, repin and publish smart-trust' / '1 2' — every layer to its merged main"
+              "on": "2026-10-15",
+              "ref": "2aa1f8be1a6e2edfca99afdf4b82b954c7cc1d62",
+              "evidence": "Owner litlfred, 2026-10-15 05:55 UTC session chat: 'merge and repin open 3 hrs' — re-pin cat-harness (>= 44c27fd, cat-harness#240), cat-harness-tools (>= #247) and fhir-harness (#77) to current mains so index.config.json may declare site.agentRun (smart-ra#62)"
             }
           }
         }
@@ -155,7 +155,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness",
-          "ref": "c9683bd815d16d6bb2d724a5c4fca8730dc8f115",
+          "ref": "e93233245d8293fb8dba7003e4ede0c60a3c0b91",
           "overrides": {
             "cat-harness": {
               "whole": true
@@ -170,9 +170,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-14",
-              "ref": "c9683bd815d16d6bb2d724a5c4fca8730dc8f115",
-              "evidence": "owner, session 2026-10-14 (session_01Pc8vSeXCwp5Ckvmz56cMDs): 'merge when green, repin and publish smart-trust' / '1 2' — every layer to its merged main"
+              "on": "2026-10-15",
+              "ref": "e93233245d8293fb8dba7003e4ede0c60a3c0b91",
+              "evidence": "Owner litlfred, 2026-10-15 05:55 UTC session chat: 'merge and repin open 3 hrs' — re-pin cat-harness (>= 44c27fd, cat-harness#240), cat-harness-tools (>= #247) and fhir-harness (#77) to current mains so index.config.json may declare site.agentRun (smart-ra#62)"
             }
           }
         }
@@ -183,7 +183,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness-tools",
-          "ref": "954ef7b03842233ae46f8494639f04077ec6ecfa",
+          "ref": "77946b72df364e63fc1608fb353c3cc18cfd06db",
           "overrides": {
             "cat-harness-tools": {
               "whole": true
@@ -195,9 +195,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-14",
-              "ref": "954ef7b03842233ae46f8494639f04077ec6ecfa",
-              "evidence": "owner, session 2026-10-14 (session_01Pc8vSeXCwp5Ckvmz56cMDs): 'merge when green, repin and publish smart-trust' / '1 2' — every layer to its merged main"
+              "on": "2026-10-15",
+              "ref": "77946b72df364e63fc1608fb353c3cc18cfd06db",
+              "evidence": "Owner litlfred, 2026-10-15 05:55 UTC session chat: 'merge and repin open 3 hrs' — re-pin cat-harness (>= 44c27fd, cat-harness#240), cat-harness-tools (>= #247) and fhir-harness (#77) to current mains so index.config.json may declare site.agentRun (smart-ra#62)"
             }
           }
         }
