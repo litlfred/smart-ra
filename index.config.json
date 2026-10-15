@@ -7,6 +7,49 @@
         "local": {
           "at": "."
         }
+      },
+      "contentType": "document",
+      "adapter": "document",
+      "adapterModule": "./folio-assistant-core/adapters/document/index.ts",
+      "dependencies": {
+        "folioAssistant": [
+          {
+            "name": "folio-assistant-core",
+            "path": "folio-assistant-core"
+          },
+          {
+            "name": "smart-base",
+            "path": "smart-base"
+          }
+        ]
+      },
+      "feedbackDir": ".folio-feedback",
+      "skills": ".claude/skills/local",
+      "viewer": {
+        "dir": "cat-harness-tools/viewer",
+        "port": 8080
+      },
+      "readme": {
+        "linkStyle": "blob",
+        "publishRef": "gh-pages"
+      },
+      "site": {
+        "build": {
+          "pre": [
+            "check:archimate"
+          ],
+          "sourceSteps": [
+            "site:document",
+            "site:public-comment",
+            "site:library",
+            "site:archimate",
+            "site:mapper",
+            "site:redirects"
+          ],
+          "siteSteps": [
+            "site:node-kinds"
+          ]
+        }
       }
     },
     {
@@ -14,7 +57,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/smart-base",
-          "ref": "f1bcb146b214896156bce63c15e92003c78f3368",
+          "ref": "96e43858f0e190380a571469ced640957f2916e6",
           "overrides": {
             "smart-base": {
               "path": "smart-base",
@@ -35,8 +78,10 @@
                 "smart-base-findings",
                 "smart-base-external-schemas",
                 "smart-base-platform",
+                "smart-base-typologies",
+                "smart-base-validators",
                 "smart-base-schemas",
-                "smart-base-content",
+                "smart-base-pipeline",
                 "smart-base-scripts",
                 "smart-base-skills",
                 "smart-base-scenarios",
@@ -47,9 +92,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-10",
-              "ref": "f1bcb146b214896156bce63c15e92003c78f3368",
-              "evidence": "owner, session_017fFnGmbJcfqqrHXz9oqxdG 2026-10-10: 'you can work on the litlfred/smart-* go ahead and harness them with index.config.json' and 'keep going. keep migrating environment' — dpi-h-ra (litlfred/smart-ra) mounts smart-base and its closure at each repository's main (bean n3h9)"
+              "on": "2026-10-15",
+              "ref": "96e43858f0e190380a571469ced640957f2916e6",
+              "evidence": "owner, session 2026-10-15 (session_01Pc8vSeXCwp5Ckvmz56cMDs): 'merge and repin open 3 hrs' (window to 12:00Z) — repin for cat-harness-tools#288 (#281: content root held to its own gate set)"
             }
           }
         }
@@ -60,7 +105,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/fhir-harness",
-          "ref": "346ecd0bc7eb69e608bd0185a58ecb25acf2642e",
+          "ref": "9da809b0bc6ad75223b3b5b539cbdaad951e8625",
           "overrides": {
             "fhir-harness": {
               "whole": true
@@ -69,9 +114,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-10",
-              "ref": "346ecd0bc7eb69e608bd0185a58ecb25acf2642e",
-              "evidence": "owner, session_017fFnGmbJcfqqrHXz9oqxdG 2026-10-10: 'you can work on the litlfred/smart-* go ahead and harness them with index.config.json' and 'keep going. keep migrating environment' — dpi-h-ra (litlfred/smart-ra) mounts smart-base and its closure at each repository's main (bean n3h9)"
+              "on": "2026-10-15",
+              "ref": "9da809b0bc6ad75223b3b5b539cbdaad951e8625",
+              "evidence": "owner, session 2026-10-15 (session_01Pc8vSeXCwp5Ckvmz56cMDs): 'merge and repin open 3 hrs' (window to 12:00Z) — repin for cat-harness-tools#288 (#281: content root held to its own gate set)"
             }
           }
         }
@@ -82,7 +127,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/folio-assistant-core",
-          "ref": "edcf19a5be923bad75e427af0eb598dc324a21a3",
+          "ref": "2c651f6095d84fcf2b57ce76675fb3b10b9e0528",
           "overrides": {
             "folio-assistant-core": {
               "whole": true
@@ -97,9 +142,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-12",
-              "ref": "edcf19a5be923bad75e427af0eb598dc324a21a3",
-              "evidence": "owner, session_017fFnGmbJcfqqrHXz9oqxdG 2026-10-11/12: 'repin as neede. merge all ready green next 4hrs, continue' — repinned to current main after bean bzwk (core declares its own `document` adapter, sci its `mathpaper`; folio-assistant-core#65, folio-assistant-sci#15, cat-harness#165, cat-harness-tools#149), which also lets this folio drop the folio-assistant-sci mount"
+              "on": "2026-10-15",
+              "ref": "2c651f6095d84fcf2b57ce76675fb3b10b9e0528",
+              "evidence": "owner, session 2026-10-15 (session_01Pc8vSeXCwp5Ckvmz56cMDs): 'merge and repin open 3 hrs' (window to 12:00Z) — repin for cat-harness-tools#288 (#281: content root held to its own gate set)"
             }
           }
         }
@@ -110,7 +155,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness",
-          "ref": "73ff1830854d0bc863868e9286d2551d219d8f00",
+          "ref": "e41b0af3a4b8537837c0854709283fc5b4170a2f",
           "overrides": {
             "cat-harness": {
               "whole": true
@@ -125,9 +170,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-12",
-              "ref": "73ff1830854d0bc863868e9286d2551d219d8f00",
-              "evidence": "owner, session_017fFnGmbJcfqqrHXz9oqxdG 2026-10-11/12: 'repin as neede. merge all ready green next 4hrs, continue' — repinned to current main after bean bzwk (core declares its own `document` adapter, sci its `mathpaper`; folio-assistant-core#65, folio-assistant-sci#15, cat-harness#165, cat-harness-tools#149), which also lets this folio drop the folio-assistant-sci mount"
+              "on": "2026-10-15",
+              "ref": "e41b0af3a4b8537837c0854709283fc5b4170a2f",
+              "evidence": "owner, session 2026-10-15 (session_01Pc8vSeXCwp5Ckvmz56cMDs): 'merge and repin open 3 hrs' (window to 12:00Z) — repin for cat-harness-tools#288 (#281: content root held to its own gate set)"
             }
           }
         }
@@ -138,7 +183,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness-tools",
-          "ref": "903f608d6e2985b4b3e4ca8b16b776623a4310e8",
+          "ref": "87d918de377b1d1300759cf648a11522e81aa423",
           "overrides": {
             "cat-harness-tools": {
               "whole": true
@@ -150,9 +195,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-12",
-              "ref": "903f608d6e2985b4b3e4ca8b16b776623a4310e8",
-              "evidence": "owner, session_017fFnGmbJcfqqrHXz9oqxdG 2026-10-11/12: 'repin as neede. merge all ready green next 4hrs, continue' — repinned to current main after bean bzwk (core declares its own `document` adapter, sci its `mathpaper`; folio-assistant-core#65, folio-assistant-sci#15, cat-harness#165, cat-harness-tools#149), which also lets this folio drop the folio-assistant-sci mount"
+              "on": "2026-10-15",
+              "ref": "87d918de377b1d1300759cf648a11522e81aa423",
+              "evidence": "owner, session 2026-10-15 (session_01Pc8vSeXCwp5Ckvmz56cMDs): 'merge and repin open 3 hrs' (window to 12:00Z) — repin for cat-harness-tools#288 (#281: content root held to its own gate set)"
             }
           }
         }
@@ -163,7 +208,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/bootstrap",
-          "ref": "7d7d75411d9e022214f28ad5b04438e537d23347",
+          "ref": "bc304e8971f7c34d94cd75f5e17d0c4932c1f0a5",
           "overrides": {
             "bootstrap": {
               "whole": true
@@ -172,9 +217,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-10",
-              "ref": "7d7d75411d9e022214f28ad5b04438e537d23347",
-              "evidence": "owner, session_017fFnGmbJcfqqrHXz9oqxdG 2026-10-10: 'you can work on the litlfred/smart-* go ahead and harness them with index.config.json' and 'keep going. keep migrating environment' — dpi-h-ra (litlfred/smart-ra) mounts smart-base and its closure at each repository's main (bean n3h9)"
+              "on": "2026-10-15",
+              "ref": "bc304e8971f7c34d94cd75f5e17d0c4932c1f0a5",
+              "evidence": "owner, session 2026-10-15 (session_01Pc8vSeXCwp5Ckvmz56cMDs): 'merge and repin open 3 hrs' (window to 12:00Z) — repin for cat-harness-tools#288 (#281: content root held to its own gate set)"
             }
           }
         }
@@ -185,7 +230,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/bootstrap-tools",
-          "ref": "18da84de86f88b32a3ce5972f2649b7c98c044a5",
+          "ref": "94e51ae297ea039cf5f3b5055e01c85149578f48",
           "overrides": {
             "bootstrap-tools": {
               "whole": true
@@ -197,9 +242,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-10",
-              "ref": "18da84de86f88b32a3ce5972f2649b7c98c044a5",
-              "evidence": "owner, session_017fFnGmbJcfqqrHXz9oqxdG 2026-10-10: 'you can work on the litlfred/smart-* go ahead and harness them with index.config.json' and 'keep going. keep migrating environment' — dpi-h-ra (litlfred/smart-ra) mounts smart-base and its closure at each repository's main (bean n3h9)"
+              "on": "2026-10-15",
+              "ref": "94e51ae297ea039cf5f3b5055e01c85149578f48",
+              "evidence": "owner, session 2026-10-15 (session_01Pc8vSeXCwp5Ckvmz56cMDs): 'merge and repin open 3 hrs' (window to 12:00Z) — repin for cat-harness-tools#288 (#281: content root held to its own gate set)"
             }
           }
         }

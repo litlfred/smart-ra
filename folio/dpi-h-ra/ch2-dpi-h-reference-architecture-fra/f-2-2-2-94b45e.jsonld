@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
+    }
+  ],
+  "@id": "papers/dpi-h-ra/blocks/fig-2-2-2-94b45e",
+  "@type": [
+    "folio-assistant-core:Figure",
+    "doco:Figure"
+  ],
+  "label": "fig:2-2-2-94b45e",
+  "kind": "figure",
+  "text": "f-2-2-2-94b45e.md",
+  "meta": {
+    "source": {
+      "library": "who-dpi-h-reference-architecture-draft-v1",
+      "seq": 139,
+      "page": 40,
+      "printedPage": "29",
+      "method": "inherited-page"
+    }
+  },
+  "provenance": "authored"
+}
