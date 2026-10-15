@@ -269,10 +269,18 @@
   {
     &quot;id&quot;: &quot;core-qa-checkers&quot;,
     &quot;path&quot;: &quot;qa-checkers/&quot;,
-    &quot;description&quot;: &quot;The QA checkers this layer&#39;s code provides, one `folio-qa-checker/v1` node per criterion, registered for a folio through its dependency tree by `loadContributions` (bean riit, step 3b). One today: `recommendation-strength-resolves` (bean 55ao), naming `RECOMMENDATION_CHECKERS` in `schemas/recommendation-strength.ts`. The criterion itself is declared in cat-harness-tools&#39; QA registry with `checker_contributed`.&quot;,
+    &quot;description&quot;: &quot;The QA checkers this layer&#39;s code provides, one `folio-qa-checker/v1` node per criterion, registered for a folio through its dependency tree by `loadContributions` (bean riit, step 3b). One today: `recommendation-strength-resolves` (bean 55ao), naming `RECOMMENDATION_CHECKERS` in `content/pipeline/qa-checkers-recommendation.ts`. The criterion itself is declared in cat-harness-tools&#39; QA registry with `checker_contributed`.&quot;,
     &quot;graphTypologies&quot;: [
       &quot;qa-checkers&quot;
     ]
+  },
+  {
+    &quot;id&quot;: &quot;core-content&quot;,
+    &quot;path&quot;: &quot;content/&quot;,
+    &quot;graphTypologies&quot;: [
+      &quot;code&quot;
+    ],
+    &quot;description&quot;: &quot;`content/pipeline/qa-checkers-recommendation.ts`, the automated checker `qa-checkers/recommendation-strength-resolves.json` names (`RECOMMENDATION_CHECKERS`). Under `content/pipeline/` because that is where the harness&#39;s `imports` input-site looks for a contributed checker, as smart-base&#39;s `content/` holds its DAK checkers.&quot;
   },
   {
     &quot;id&quot;: &quot;folio-assistant-core-typologies&quot;,
@@ -428,6 +436,16 @@
     ],
     &quot;title&quot;: &quot;Glossary&quot;,
     &quot;alias&quot;: &quot;glossary&quot;
+  },
+  {
+    &quot;id&quot;: &quot;bibliography&quot;,
+    &quot;renderedBy&quot;: &quot;bibliography-page&quot;,
+    &quot;coversKinds&quot;: [
+      &quot;references&quot;,
+      &quot;catalogue&quot;
+    ],
+    &quot;subgraphs&quot;: &quot;directory&quot;,
+    &quot;title&quot;: &quot;Bibliography&quot;
   }
 ]</pre></dd>
 <dt>_needs_comment</dt><dd>The layer this instance sits on. Owner, 2026-09-20: &quot;So bootsteap, cat harness, fa-core, f-a, from bottom to top.&quot; Declared rather than hardcoded in the navbar, so the ordering is a fact of the repository and not of whichever consumer needed it first. `cat-harness-tools` added 2026-10-01 on owner ruling C1 (epic 7x5n, bean rmi6): the tool implementation layer sits BELOW this one, so core may use it and it may never use core.</dd>
@@ -510,16 +528,6 @@
     &quot;notes&quot;: &quot;Base content type. All other types inherit Markdown translation.&quot;
   }
 ]</pre></dd>
-<dt>_gateExemptions_comment</dt><dd>Steps of folio-assistant&#39;s own workflows that CI runs and the gate set does not (bean 0r7u: the instance above the tools layer declares them, so the tools layer standalone never carries a stale entry).</dd>
-<dt>gateExemptions</dt><dd><pre>{
-  &quot;steps&quot;: [
-    {
-      &quot;match&quot;: &quot;qa:publish --add&quot;,
-      &quot;kind&quot;: &quot;ci-only&quot;,
-      &quot;reason&quot;: &quot;health-check.yml adds the daily pages-serving observation to the commit&#39;s qa-reports entry (bean 1dre): a WRITE of a network observation into the qa-reports branch, not a check; its add-only rule is covered by qa-store.test.ts in `bun test`&quot;
-    }
-  ]
-}</pre></dd>
 </dl>
 </main>
 </body>
