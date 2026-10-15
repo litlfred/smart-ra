@@ -57,7 +57,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/smart-base",
-          "ref": "96e43858f0e190380a571469ced640957f2916e6",
+          "ref": "41ed9b217b4539c80345ad6b3a7b01a32b36ceee",
           "overrides": {
             "smart-base": {
               "path": "smart-base",
@@ -83,6 +83,7 @@
                 "smart-base-schemas",
                 "smart-base-pipeline",
                 "smart-base-scripts",
+                "smart-base-kg",
                 "smart-base-skills",
                 "smart-base-scenarios",
                 "smart-base-code-lists"
@@ -93,8 +94,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-10-15",
-              "ref": "96e43858f0e190380a571469ced640957f2916e6",
-              "evidence": "owner, session 2026-10-15 (session_01Pc8vSeXCwp5Ckvmz56cMDs): 'merge and repin open 3 hrs' (window to 12:00Z) — repin for cat-harness-tools#288 (#281: content root held to its own gate set)"
+              "ref": "41ed9b217b4539c80345ad6b3a7b01a32b36ceee",
+              "evidence": "Owner litlfred, 2026-10-15 (17:30Z): 'merge and repin for next 3 hrs. keep draining'"
             }
           }
         }
@@ -105,7 +106,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/fhir-harness",
-          "ref": "f87828622593684a1d65258201769ea6faf65f80",
+          "ref": "4c7fa7ba11bad9172b45cf93c7b8821efe970d60",
           "overrides": {
             "fhir-harness": {
               "whole": true
@@ -115,8 +116,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-10-15",
-              "ref": "f87828622593684a1d65258201769ea6faf65f80",
-              "evidence": "owner litlfred in session 014Pq7zmjpZqyyb75xLcCDjX, 2026-10-15: merge and repin window to 20:55; re-pin fhir-harness f878286 (#101 restores ig-pages --instance/--site declarations)"
+              "ref": "4c7fa7ba11bad9172b45cf93c7b8821efe970d60",
+              "evidence": "Owner litlfred, 2026-10-15 (17:30Z): 'merge and repin for next 3 hrs. keep draining'"
             }
           }
         }
@@ -127,7 +128,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/folio-assistant-core",
-          "ref": "cb76a1cb093fb5fc2a8e04b1fee95c62de271f05",
+          "ref": "f412c113e5eae7b7d5eaff5188005dd3bd0315ff",
           "overrides": {
             "folio-assistant-core": {
               "whole": true
@@ -143,8 +144,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-10-15",
-              "ref": "cb76a1cb093fb5fc2a8e04b1fee95c62de271f05",
-              "evidence": "owner litlfred in session 014Pq7zmjpZqyyb75xLcCDjX, 2026-10-15: merge and repin window to 17:55; \"do a\" (each repo publishes its own harness site, self + needs); re-pin cat-harness-tools 9cb31c0 (#324 per-repo build runs every declared visualiser writer), cat-harness 273030d (#278), folio-assistant-core cb76a1c (#117)"
+              "ref": "f412c113e5eae7b7d5eaff5188005dd3bd0315ff",
+              "evidence": "Owner litlfred, 2026-10-15 (17:30Z): 'merge and repin for next 3 hrs. keep draining'"
             }
           }
         }
@@ -155,7 +156,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness",
-          "ref": "273030d35a6c96572659ea84ffd1e12d6eccb276",
+          "ref": "5463bf121d472bbda817c6e0a4a73a2945793164",
           "overrides": {
             "cat-harness": {
               "whole": true
@@ -171,8 +172,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-10-15",
-              "ref": "273030d35a6c96572659ea84ffd1e12d6eccb276",
-              "evidence": "owner litlfred in session 014Pq7zmjpZqyyb75xLcCDjX, 2026-10-15: merge and repin window to 17:55; \"do a\" (each repo publishes its own harness site, self + needs); re-pin cat-harness-tools 9cb31c0 (#324 per-repo build runs every declared visualiser writer), cat-harness 273030d (#278), folio-assistant-core cb76a1c (#117)"
+              "ref": "5463bf121d472bbda817c6e0a4a73a2945793164",
+              "evidence": "Owner litlfred, 2026-10-15 (17:30Z): 'merge and repin for next 3 hrs. keep draining'"
             }
           }
         }
@@ -183,7 +184,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness-tools",
-          "ref": "06d470d502a80cf1b8206e16b2fe5cad7aded272",
+          "ref": "3c1462defcdfdea8ced956fecd6d88fa63a4fd74",
           "overrides": {
             "cat-harness-tools": {
               "whole": true
@@ -196,8 +197,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-10-15",
-              "ref": "06d470d502a80cf1b8206e16b2fe5cad7aded272",
-              "evidence": "owner litlfred in session 014Pq7zmjpZqyyb75xLcCDjX, 2026-10-15: \"extend merge and repin 3 hrs\" (to 20:55); re-pin cat-harness-tools 06d470d (#335 tools page renders no Liquid) and fhir-harness 17ede0a (#100 ig-pages writes artifact-index into a per-repo site)"
+              "ref": "3c1462defcdfdea8ced956fecd6d88fa63a4fd74",
+              "evidence": "Owner litlfred, 2026-10-15 (17:30Z): 'merge and repin for next 3 hrs. keep draining'"
             }
           }
         }
@@ -208,7 +209,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/bootstrap",
-          "ref": "bc304e8971f7c34d94cd75f5e17d0c4932c1f0a5",
+          "ref": "9ecfb729b38b9196063fee76c6f7932f92502353",
           "overrides": {
             "bootstrap": {
               "whole": true
@@ -218,8 +219,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-10-15",
-              "ref": "bc304e8971f7c34d94cd75f5e17d0c4932c1f0a5",
-              "evidence": "owner, session 2026-10-15 (session_01Pc8vSeXCwp5Ckvmz56cMDs): 'merge and repin open 3 hrs' (window to 12:00Z) — repin for cat-harness-tools#288 (#281: content root held to its own gate set)"
+              "ref": "9ecfb729b38b9196063fee76c6f7932f92502353",
+              "evidence": "Owner litlfred, 2026-10-15 (17:30Z): 'merge and repin for next 3 hrs. keep draining'"
             }
           }
         }
@@ -230,7 +231,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/bootstrap-tools",
-          "ref": "94e51ae297ea039cf5f3b5055e01c85149578f48",
+          "ref": "7dc55773590bbc3158c877a3d61222aa7864006c",
           "overrides": {
             "bootstrap-tools": {
               "whole": true
@@ -243,8 +244,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-10-15",
-              "ref": "94e51ae297ea039cf5f3b5055e01c85149578f48",
-              "evidence": "owner, session 2026-10-15 (session_01Pc8vSeXCwp5Ckvmz56cMDs): 'merge and repin open 3 hrs' (window to 12:00Z) — repin for cat-harness-tools#288 (#281: content root held to its own gate set)"
+              "ref": "7dc55773590bbc3158c877a3d61222aa7864006c",
+              "evidence": "Owner litlfred, 2026-10-15 (17:30Z): 'merge and repin for next 3 hrs. keep draining'"
             }
           }
         }
