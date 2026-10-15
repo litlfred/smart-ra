@@ -1,0 +1,116 @@
+<blockquote class="note">
+  <p>Generated from <code class="language-plaintext highlighter-rouge">cat-harness/processes/sdlc/ci-health-watch.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a></p>
+</blockquote>
+
+<h1 id="is-ci-actually-working-on-the-default-branch">Is CI actually working on the default branch?</h1>
+
+<p><code class="language-plaintext highlighter-rouge">Process_CiHealth</code> · strict · 4 step(s)</p>
+
+<p>Is CI actually working on the default branch: record each workflow’s state on one tracking issue, and fail the job only when the state could not be determined. A WORKFLOW’S OUTCOME IS INVISIBLE FROM A CHECKOUT. Bean <code class="language-plaintext highlighter-rouge">xom7</code>: one workflow here fired on every push to <code class="language-plaintext highlighter-rouge">main</code> and FAILED ALL 30 TIMES OVER TWO MONTHS with nothing in the repository saying so. This is the backstop.</p>
+
+<p>WEEKLY, NOT DAILY, and the cadence is an argument rather than a default: the defect is “nobody noticed for two months”, not “nobody noticed for a day”, and the session-start sweep already covers every day somebody is working. A weekly run bounds the blind spot to seven days without turning the tracking issue into a feed.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Could we tell?</code> IS NOT SIMPLY THE EXIT CODE, and that is the subtlety worth drawing. <code class="language-plaintext highlighter-rouge">bun</code> exits 1 on an uncaught exception as well as on a live failure, so exit 1 alone does not separate “found something red” from “crashed”. The REPORT FILE separates them: <code class="language-plaintext highlighter-rouge">--out</code> writes it before any exit path, so a genuine red always has one and a crash before that point does not. Exit 1 with no report is reclassified as <code class="language-plaintext highlighter-rouge">unknown</code>. Without that, a crash would open a tracking issue quoting a stale file.</p>
+
+<p>THE THIRD STATE IS THE WHOLE POINT, AND IT IS THE ONLY ONE THAT FAILS THE JOB. Verified 2026-09-20 by reading the <code class="language-plaintext highlighter-rouge">if:</code> guards: <code class="language-plaintext highlighter-rouge">unknown</code> runs <code class="language-plaintext highlighter-rouge">exit 1</code>; a finding does NOT. A repository in trouble leaves this workflow GREEN and speaks through the tracking issue, while a sweep that could not look turns the job red. That inversion is deliberate and is invisible from the run list, which is the argument for drawing it.</p>
+
+<p>ONE TRACKING ISSUE, EDITED IN PLACE, never a comment and never a second issue — a feed nobody reads is the failure mode a watchdog invites. On <code class="language-plaintext highlighter-rouge">unknown</code> the issue is left UNTOUCHED: not closed, not opened, not edited. Closing it would assert the thing the sweep just failed to establish.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Ensure the tracking label exists</code> sits AFTER <code class="language-plaintext highlighter-rouge">Could we tell?</code> and before the split, because both issue paths need the label — the clean path filters on it too, and on a repository where nothing has ever gone wrong it would not otherwise exist. It is skipped on <code class="language-plaintext highlighter-rouge">unknown</code>, where neither path runs and a label hiccup must not be what fails the job.</p>
+
+<p><img src="../../../assets/img/workflows/ci-health-watch.svg" alt="BPMN diagram: Is CI actually working on the default branch?" style="max-width:100%" /></p>
+
+<h2 id="how-it-connects">How it connects</h2>
+
+<ul>
+  <li><strong>Called by:</strong> no call activity names this process</li>
+  <li><strong>Calls:</strong> none</li>
+  <li><strong>Presented on:</strong> no docs page section shows this diagram</li>
+</ul>
+
+<h2 id="lanes--who-acts">Lanes — who acts</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>lane</th>
+      <th>role</th>
+      <th>what it does here</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Scheduled log sweep</td>
+      <td><code class="language-plaintext highlighter-rouge">build-pipeline</code></td>
+      <td>Named a ‘sweep’ but every path through it writes something — the report file, the tracking label, and the issue itself (opened, edited or closed) — and keeping all three in one lane is what makes ‘one tracking issue, edited in place’ enforceable: a write split across lanes would leave two different actors able to touch the same issue with no ordering between them.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="steps">Steps</h2>
+
+<p>Every one of the 4 step(s) is documented.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>step</th>
+      <th>lane</th>
+      <th>skill / sub-process</th>
+      <th>what it does</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Run check:ci-health, WRITING the report file</strong><br /><code class="language-plaintext highlighter-rouge">Task_Check</code></td>
+      <td>Scheduled log sweep</td>
+      <td><code class="language-plaintext highlighter-rouge">ci-health</code></td>
+      <td>Run check:ci-health –out, writing the report file before any exit path. Exit 0 clean, 1 live failures, 2 could not check. bun also exits 1 on an uncaught exception, so an exit 1 with no report file is a crash and is treated as could-not-check.</td>
+    </tr>
+    <tr>
+      <td><strong>Ensure the tracking label exists</strong><br /><code class="language-plaintext highlighter-rouge">Task_Label</code></td>
+      <td>Scheduled log sweep</td>
+      <td><code class="language-plaintext highlighter-rouge">ci-health</code></td>
+      <td>Create the ci-health label with –force so it exists before either issue path runs — the close path filters on it too, and on a repository that has never had a finding it would not exist yet. Skipped on an unknown verdict.</td>
+    </tr>
+    <tr>
+      <td><strong>Close the tracking issue</strong><br /><code class="language-plaintext highlighter-rouge">Task_Close</code></td>
+      <td>Scheduled log sweep</td>
+      <td><code class="language-plaintext highlighter-rouge">ci-health</code></td>
+      <td>Clean: close the open ci-health issue, if any, saying why (main is clean). Runs only on a clean verdict — on unknown the issue is left untouched and the job fails instead, because could-not-check is never rendered as clean.</td>
+    </tr>
+    <tr>
+      <td><strong>Open or EDIT the one tracking issue</strong><br /><code class="language-plaintext highlighter-rouge">Task_Track</code></td>
+      <td>Scheduled log sweep</td>
+      <td><code class="language-plaintext highlighter-rouge">ci-health</code></td>
+      <td>Findings: EDIT the one open issue labelled ci-health if there is one, otherwise create it, with the report as the body. One issue edited in place, never a new issue or a comment per run, so the tracking issue never becomes a feed.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="decisions">Decisions</h2>
+
+<p>Every one of the 2 decision(s) is documented.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>decision</th>
+      <th>what decides it</th>
+      <th>branches</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Could we tell?</strong><br /><code class="language-plaintext highlighter-rouge">GW_Determined</code></td>
+      <td>Asked of the <code class="language-plaintext highlighter-rouge">verdict</code> output that the <code class="language-plaintext highlighter-rouge">check</code> step of .github/workflows/ci-health.yml writes, not of the raw exit code. <code class="language-plaintext highlighter-rouge">check:ci-health</code> exits 0 clean, 1 live failure(s), 2 could not check; an exit 1 with no report file is a crash and is reclassified as could-not-check, as is any other code. <code class="language-plaintext highlighter-rouge">no</code> is verdict == ‘unknown’: the last step runs <code class="language-plaintext highlighter-rouge">exit 1</code> and no issue step runs, so the tracking issue is left untouched. <code class="language-plaintext highlighter-rouge">yes</code> is verdict != ‘unknown’, the guard on the label step and so on both issue paths.</td>
+      <td><strong>no</strong> → Unknown — job RED, issue UNTOUCHED<br /><strong>yes</strong> → Ensure the tracking label exists</td>
+    </tr>
+    <tr>
+      <td><strong>Anything red on main?</strong><br /><code class="language-plaintext highlighter-rouge">GW_Finding</code></td>
+      <td>Asked of the same <code class="language-plaintext highlighter-rouge">verdict</code>, once it is known. <code class="language-plaintext highlighter-rouge">clean</code> is verdict == ‘clean’ (exit 0): the open <code class="language-plaintext highlighter-rouge">ci-health</code> issue, if there is one, is closed saying main is clean. <code class="language-plaintext highlighter-rouge">not clean</code> is verdict == ‘red’ (exit 1 with a report): the one open issue labelled <code class="language-plaintext highlighter-rouge">ci-health</code> is edited in place with the report as its body, or created if there is none. Neither branch fails the job — a red main speaks through the issue, not through this workflow’s status.</td>
+      <td><strong>clean</strong> → Close the tracking issue<br /><strong>not clean</strong> → Open or EDIT the one tracking issue</td>
+    </tr>
+  </tbody>
+</table>
+

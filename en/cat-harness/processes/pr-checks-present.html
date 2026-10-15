@@ -1,0 +1,120 @@
+<blockquote class="note">
+  <p>Generated from <code class="language-plaintext highlighter-rouge">cat-harness/processes/sdlc/pr-checks-present.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a></p>
+</blockquote>
+
+<h1 id="which-open-pull-requests-have-no-ci-run-on-their-head">Which open pull requests have no CI run on their head?</h1>
+
+<p><code class="language-plaintext highlighter-rouge">Process_PrChecksPresent</code> · strict · 5 step(s)</p>
+
+<p>Find the open pull requests whose head has no CI run, past an age gate, and say so on one tracking issue and once per head on the pull request. A PULL REQUEST WITH ZERO CHECKS IS INVISIBLE PRECISELY BECAUSE NOBODY IS LOOKING. Bean <code class="language-plaintext highlighter-rouge">3pqn</code>. <code class="language-plaintext highlighter-rouge">check:head-has-run</code> answers this for one commit when somebody remembers to ask; this is the half that asks when nobody does, which is the only placement that addresses the defect rather than the symptom.</p>
+
+<p>MEASURED 2026-09-20 over the six open pull requests here: TWO had no run of any kind on their head, both updated minutes earlier. A third of the open set, with nothing to merge on.</p>
+
+<p>THE 15-MINUTE AGE GATE IS THE DIFFERENCE BETWEEN USEFUL AND IGNORED. A head pushed thirty seconds ago legitimately has no run yet, and a sweep that reports those is one nobody reads — this bean’s own failure, reproduced by its fix. A younger head is NOT JUDGED rather than called clean, which is the third state again.</p>
+
+<p>ONLY <code class="language-plaintext highlighter-rouge">unknown</code> FAILS THE JOB. A finding records itself and the workflow stays GREEN, the same inversion as <code class="language-plaintext highlighter-rouge">ci-health</code>: the repository speaks through the tracking issue, while a sweep that could not look turns red. And a sweep blind on one pull request has not cleared the others, so ONE unreadable answer makes the whole run unknown — never a partial clean.</p>
+
+<p>TWO CHANNELS, ON THE OWNER’S INSTRUCTION, AND THEY BEHAVE DIFFERENTLY. The tracking issue is EDITED IN PLACE, never appended to. The per-PR comment is posted ONCE PER (PULL REQUEST, HEAD SHA), keyed by a marker in the body: hourly comments without that key would put twenty-four notifications a day on one unchanged pull request, which is how a warning gets muted.</p>
+
+<p><img src="../../../assets/img/workflows/pr-checks-present.svg" alt="BPMN diagram: Which open pull requests have no CI run on their head?" style="max-width:100%" /></p>
+
+<h2 id="how-it-connects">How it connects</h2>
+
+<ul>
+  <li><strong>Called by:</strong> <a href="merge-train.html">A merge train</a></li>
+  <li><strong>Calls:</strong> none</li>
+  <li><strong>Presented on:</strong> no docs page section shows this diagram</li>
+</ul>
+
+<h2 id="lanes--who-acts">Lanes — who acts</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>lane</th>
+      <th>role</th>
+      <th>what it does here</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Scheduled log sweep</td>
+      <td><code class="language-plaintext highlighter-rouge">build-pipeline</code></td>
+      <td>Three exit states, and the job’s own colour tracks none of them the way a reader would expect: a finding is fully recorded — issue tracked, PR commented — and the job still ends GREEN, because the finding is the repository’s problem to see in the tracking issue, not this lane’s to fail on. Only UNKNOWN turns the job itself RED, and one unreadable PR is enough to fail the whole sweep — this lane never reports a partial clean.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="steps">Steps</h2>
+
+<p>Every one of the 5 step(s) is documented.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>step</th>
+      <th>lane</th>
+      <th>skill / sub-process</th>
+      <th>what it does</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Ask, per open PR, whether its HEAD has a run — skipping heads younger than 15 min</strong><br /><code class="language-plaintext highlighter-rouge">Task_Sweep</code></td>
+      <td>Scheduled log sweep</td>
+      <td><code class="language-plaintext highlighter-rouge">ci-health</code></td>
+      <td>Run check:prs-have-runs –min-age-minutes 15, writing the report file first. A head younger than 15 minutes legitimately has no run yet and is skipped. Exit 0 clean, 1 findings, 2 could not determine; an exit 1 with no report file is a crash and is treated as could-not-determine.</td>
+    </tr>
+    <tr>
+      <td><strong>Ensure the tracking label exists</strong><br /><code class="language-plaintext highlighter-rouge">Task_Label</code></td>
+      <td>Scheduled log sweep</td>
+      <td><code class="language-plaintext highlighter-rouge">ci-health</code></td>
+      <td>Create the pr-no-checks label with –force so it exists before either issue path runs — the close path filters on it too, and on a repository that has never had a finding it would not exist yet. Skipped on an unknown verdict.</td>
+    </tr>
+    <tr>
+      <td><strong>Close the tracking issue</strong><br /><code class="language-plaintext highlighter-rouge">Task_Close</code></td>
+      <td>Scheduled log sweep</td>
+      <td><code class="language-plaintext highlighter-rouge">ci-health</code></td>
+      <td>Clean: close the open pr-no-checks issue, if any, saying why (every open pull request’s head now has a CI run). Runs only on a clean verdict — on unknown the issue is left untouched and the job fails instead, because could-not-check is never rendered as clean.</td>
+    </tr>
+    <tr>
+      <td><strong>Open or EDIT the one tracking issue</strong><br /><code class="language-plaintext highlighter-rouge">Task_Track</code></td>
+      <td>Scheduled log sweep</td>
+      <td><code class="language-plaintext highlighter-rouge">ci-health</code></td>
+      <td>Findings: EDIT the one open issue labelled pr-no-checks if there is one, otherwise create it, with the sweep’s report as the body. One issue edited in place, never a new issue or a comment per run, so the tracking issue never becomes a feed.</td>
+    </tr>
+    <tr>
+      <td><strong>Comment ONCE per (PR, head sha)</strong><br /><code class="language-plaintext highlighter-rouge">Task_Comment</code></td>
+      <td>Scheduled log sweep</td>
+      <td><code class="language-plaintext highlighter-rouge">issue-working</code></td>
+      <td>Comment on each affected open PR once per (PR, head sha): a hidden marker carrying the sha is checked first, so a re-run on the same head stays silent and a new push can be reported again. A PR that is no longer open is skipped.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="decisions">Decisions</h2>
+
+<p>Every one of the 2 decision(s) is documented.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>decision</th>
+      <th>what decides it</th>
+      <th>branches</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Could we tell?</strong><br /><code class="language-plaintext highlighter-rouge">GW_Determined</code></td>
+      <td>Asked of the <code class="language-plaintext highlighter-rouge">verdict</code> output of the <code class="language-plaintext highlighter-rouge">Sweep</code> step in .github/workflows/pr-checks-present.yml, which runs <code class="language-plaintext highlighter-rouge">check:prs-have-runs --min-age-minutes 15</code>. Exit 0 is clean, 1 findings, 2 could not determine; an exit 1 with no report file is a crash and is reclassified as could-not-determine, as is any other code. <code class="language-plaintext highlighter-rouge">no</code> is verdict == ‘unknown’: ‘Refuse to report success on an unchecked repository’ runs <code class="language-plaintext highlighter-rouge">exit 1</code> and the tracking issue is left untouched. <code class="language-plaintext highlighter-rouge">yes</code> is verdict != ‘unknown’, the guard on ensuring the <code class="language-plaintext highlighter-rouge">pr-no-checks</code> label.</td>
+      <td><strong>no</strong> → Unknown — job RED, issue UNTOUCHED<br /><strong>yes</strong> → Ensure the tracking label exists</td>
+    </tr>
+    <tr>
+      <td><strong>Any head with no run?</strong><br /><code class="language-plaintext highlighter-rouge">GW_Finding</code></td>
+      <td>Asked of the same <code class="language-plaintext highlighter-rouge">verdict</code>. <code class="language-plaintext highlighter-rouge">none</code> is verdict == ‘clean’: every open PR’s head older than 15 minutes has a run, and the tracking issue is closed. <code class="language-plaintext highlighter-rouge">one or more</code> is verdict == ‘findings’: the one tracking issue is opened or edited in place, and the workflow also comments once on each affected pull request.</td>
+      <td><strong>none</strong> → Close the tracking issue<br /><strong>one or more</strong> → Open or EDIT the one tracking issue</td>
+    </tr>
+  </tbody>
+</table>
+

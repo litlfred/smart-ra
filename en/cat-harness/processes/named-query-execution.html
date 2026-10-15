@@ -1,0 +1,143 @@
+<blockquote class="note">
+  <p>Generated from <code class="language-plaintext highlighter-rouge">cat-harness/processes/kg/named-query-execution.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a></p>
+</blockquote>
+
+<h1 id="execute-audited-named-queries-over-partitioned-w3c-n-quads-distributions">Execute audited named queries over partitioned W3C N-Quads distributions</h1>
+
+<p><code class="language-plaintext highlighter-rouge">Process_NamedQueryExecution</code> · strict · 7 step(s)</p>
+
+<p>Universal execution of audited named SPARQL queries against W3C RDF 1.1 N-Quads distributions across CLI, MCP, and Web runtimes. Governed by skill <code class="language-plaintext highlighter-rouge">named-query-execution</code> and schema <code class="language-plaintext highlighter-rouge">schemas/nquads-distribution.ts</code>.</p>
+
+<p>CRITICAL INVARIANTS:</p>
+<ol>
+  <li>FAIL-CLOSED GRAPH AVAILABILITY GUARD: Execution verifies all declared requiredSubgraphs are present in the Oxigraph store before SPARQL evaluation; missing partitions raise MissingPartitionError rather than returning silently incomplete results.</li>
+  <li>SPARQL INJECTION PREVENTION: Parameters are strictly validated against manifest NamedQueryDef parameter schemas; IRIs and literals are escaped and substituted into pre-audited templates.</li>
+  <li>UNIFIED THREE-SURFACE PARITY: Identical query semantics and result envelopes across CLI (bun run cat nquads:query), MCP (nquads-query tool), and Web (oxigraph-query-client.js).</li>
+  <li>SCOPED GRAPH MATCHING: Triple patterns match inside GRAPH ?g { … } or GRAPH <iri> { ... } to conform to W3C N-Quads 4th-slot named graph semantics.</iri></li>
+</ol>
+
+<p><img src="../../../assets/img/workflows/named-query-execution.svg" alt="BPMN diagram: Execute audited named queries over partitioned W3C N-Quads distributions" style="max-width:100%" /></p>
+
+<h2 id="how-it-connects">How it connects</h2>
+
+<ul>
+  <li><strong>Called by:</strong> no call activity names this process</li>
+  <li><strong>Calls:</strong> none</li>
+  <li><strong>Names the <code class="language-plaintext highlighter-rouge">named-query-execution</code> skill without calling this process:</strong> <a href="nquads-distribution.html">Package and distribute partitioned W3C N-Quads and named queries</a> — <code class="language-plaintext highlighter-rouge">activity-calls-skill-process</code> asks whether each should be a call activity.</li>
+  <li><strong>Presented on:</strong> no docs page section shows this diagram</li>
+</ul>
+
+<h2 id="lanes--who-acts">Lanes — who acts</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>lane</th>
+      <th>role</th>
+      <th>what it does here</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Query Caller (CLI / MCP / Web)</td>
+      <td><code class="language-plaintext highlighter-rouge">authoring-agent</code></td>
+      <td>The invoking entity (agent, CLI command, MCP tool call, or browser web client) requesting execution of an audited named query with typed arguments.</td>
+    </tr>
+    <tr>
+      <td>Universal Query Engine Runtime</td>
+      <td><code class="language-plaintext highlighter-rouge">build-pipeline</code></td>
+      <td>The Oxigraph in-memory RDF store runtime (Node/Bun oxigraph or browser oxigraph.js WASM) enforcing graph availability, parameter binding, and query evaluation.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="steps">Steps</h2>
+
+<p>Every one of the 7 step(s) is documented.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>step</th>
+      <th>lane</th>
+      <th>skill / sub-process</th>
+      <th>what it does</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Validate Arguments against Parameter Schema</strong><br /><code class="language-plaintext highlighter-rouge">A_ValidateParams</code></td>
+      <td>Query Caller (CLI / MCP / Web)</td>
+      <td><code class="language-plaintext highlighter-rouge">named-query-execution</code></td>
+      <td>Look up query definition by queryId in distribution manifest. Validate supplied arguments against parameter types, required fields, and pattern constraints.</td>
+    </tr>
+    <tr>
+      <td><strong>Reject Request with ValidationError</strong><br /><code class="language-plaintext highlighter-rouge">A_RejectInvalidArgs</code></td>
+      <td>Query Caller (CLI / MCP / Web)</td>
+      <td><code class="language-plaintext highlighter-rouge">named-query-execution</code></td>
+      <td>Abort execution immediately with detailed validation error describing missing or ill-typed arguments.</td>
+    </tr>
+    <tr>
+      <td><strong>Check Graph Availability Guard (requiredSubgraphs)</strong><br /><code class="language-plaintext highlighter-rouge">A_CheckSubgraphs</code></td>
+      <td>Universal Query Engine Runtime</td>
+      <td><code class="language-plaintext highlighter-rouge">named-query-execution</code></td>
+      <td>Inspect query definition requiredSubgraphs list. Verify that each required subgraph is currently loaded into the Oxigraph store.</td>
+    </tr>
+    <tr>
+      <td><strong>Fetch &amp; Ingest Missing Subgraphs (.nq.gz)</strong><br /><code class="language-plaintext highlighter-rouge">A_FetchPartitions</code></td>
+      <td>Universal Query Engine Runtime</td>
+      <td><code class="language-plaintext highlighter-rouge">named-query-execution</code></td>
+      <td>Fetch missing partition payloads over HTTP (servedRoute) or local files, decompress gzip streams, and ingest quads directly into store.</td>
+    </tr>
+    <tr>
+      <td><strong>Raise MissingPartitionError (Fail-Closed Guard)</strong><br /><code class="language-plaintext highlighter-rouge">A_RaiseMissingPartition</code></td>
+      <td>Universal Query Engine Runtime</td>
+      <td><code class="language-plaintext highlighter-rouge">named-query-execution</code></td>
+      <td>Fail execution fast: throw MissingPartitionError naming the required subgraphs that are absent. Never return silent partial answers.</td>
+    </tr>
+    <tr>
+      <td><strong>Bind Typed Parameters &amp; Execute SPARQL</strong><br /><code class="language-plaintext highlighter-rouge">A_BindExecute</code></td>
+      <td>Universal Query Engine Runtime</td>
+      <td><code class="language-plaintext highlighter-rouge">named-query-execution</code></td>
+      <td>Safely bind validated parameters into the audited SPARQL template with escaping. Execute SPARQL query against the Oxigraph store.</td>
+    </tr>
+    <tr>
+      <td><strong>Format Universal Result Response Envelope</strong><br /><code class="language-plaintext highlighter-rouge">A_FormatResponse</code></td>
+      <td>Universal Query Engine Runtime</td>
+      <td><code class="language-plaintext highlighter-rouge">named-query-execution</code></td>
+      <td>Serialize query results into NamedQueryResponseSchema envelope: queryId, executionTimeMs, rowCount, bindings (for SELECT), boolean (for ASK), or quads (for CONSTRUCT).</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="decisions">Decisions</h2>
+
+<p><strong>3</strong> of 3 decision(s) carry no documentation — <code class="language-plaintext highlighter-rouge">gateway-documented</code> lists them.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>decision</th>
+      <th>what decides it</th>
+      <th>branches</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Arguments valid?</strong><br /><code class="language-plaintext highlighter-rouge">GW_ValidParams</code></td>
+      <td>—</td>
+      <td><strong>Valid</strong> → Check Graph Availability Guard (requiredSubgraphs)<br /><strong>Invalid</strong> → Reject Request with ValidationError</td>
+    </tr>
+    <tr>
+      <td><strong>All required subgraphs loaded in store?</strong><br /><code class="language-plaintext highlighter-rouge">GW_SubgraphsLoaded</code></td>
+      <td>—</td>
+      <td><strong>All loaded</strong> → Bind Typed Parameters &amp; Execute SPARQL<br /><strong>Missing</strong> → Auto-fetch enabled &amp; source reachable?</td>
+    </tr>
+    <tr>
+      <td><strong>Auto-fetch enabled &amp; source reachable?</strong><br /><code class="language-plaintext highlighter-rouge">GW_AutoFetch</code></td>
+      <td>—</td>
+      <td><strong>Can fetch</strong> → Fetch &amp; Ingest Missing Subgraphs (.nq.gz)<br /><strong>Cannot fetch</strong> → Raise MissingPartitionError (Fail-Closed Guard)</td>
+    </tr>
+  </tbody>
+</table>
+

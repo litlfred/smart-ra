@@ -1,0 +1,144 @@
+<blockquote class="note">
+  <p>Generated from <code class="language-plaintext highlighter-rouge">cat-harness/processes/sdlc/bean-lifecycle.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a></p>
+</blockquote>
+
+<h1 id="agent-bean-lifecycle">Agent bean lifecycle</h1>
+
+<p><code class="language-plaintext highlighter-rouge">Process_BeanLifecycle</code> · strict · 8 step(s)</p>
+
+<p>The whole life of a work-plan item, and the rules that make one agent’s bean legible to another: check before you create, claim before you work, keep the body current as you go, and end it in a state that says why.</p>
+
+<p>You are in this process the moment durable work is identified — which is before the first tool call, not after the work is done. The second lane exists because a bean you did not open is not yours to close: coordination replaces a decision you are not entitled to make.</p>
+
+<p>The one irreversible thing is refused outright. Unwanted work is SCRAPPED with its reasons, never deleted, because a scrapped bean stops the next agent re-entering a dead end while a deleted one leaves a sibling unable to tell abandonment from accident.</p>
+
+<p><img src="../../../assets/img/workflows/bean-lifecycle.svg" alt="BPMN diagram: Agent bean lifecycle" style="max-width:100%" /></p>
+
+<h2 id="how-it-connects">How it connects</h2>
+
+<ul>
+  <li><strong>Called by:</strong> no call activity names this process</li>
+  <li><strong>Calls:</strong> none</li>
+  <li><strong>Presented on:</strong> no docs page section shows this diagram</li>
+</ul>
+
+<h2 id="lanes--who-acts">Lanes — who acts</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>lane</th>
+      <th>role</th>
+      <th>what it does here</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Agent (this session)</td>
+      <td><code class="language-plaintext highlighter-rouge">authoring-agent</code></td>
+      <td>Owns every transition on a bean it holds — check, create, claim, work, and the three-way outcome at the end — but GW_Owner is the one branch this lane cannot complete itself: the moment a bean turns out to be someone else’s, the only correct move is to leave the whole lifecycle to Lane_Sibling rather than resolve, scrap or edit it from here.</td>
+    </tr>
+    <tr>
+      <td>Sibling session or human (not yours to close)</td>
+      <td><code class="language-plaintext highlighter-rouge">sibling-session</code></td>
+      <td>The only task in this diagram with no <code class="language-plaintext highlighter-rouge">cat-harness.processes:bean</code> op at all — every other terminal action here writes something, and this one’s entire job is to write nothing to a bean it does not own, ending the lifecycle at End_NotYours rather than at the completion Lane_Agent reaches for its own beans.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="steps">Steps</h2>
+
+<p>Every one of the 8 step(s) is documented.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>step</th>
+      <th>lane</th>
+      <th>skill / sub-process</th>
+      <th>what it does</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Check before you create (exact-title search)</strong><br /><code class="language-plaintext highlighter-rouge">Task_CheckExists</code></td>
+      <td>Agent (this session)</td>
+      <td><code class="language-plaintext highlighter-rouge">todo-manager</code></td>
+      <td>STRICT. <code class="language-plaintext highlighter-rouge">beans create</code> is not idempotent: it mints a<br />fresh id every call and dedupes on nothing, so re-entering a step duplicates<br />the plan instead of no-op’ing. In the qou folio an unguarded re-run produced<br />14,688 duplicate beans — 92% of every open bean — which starved the<br />idle-backlog policy of signal and collided with 15 real ids.</td>
+    </tr>
+    <tr>
+      <td><strong>Create the bean (agent CLI, not an engine op)</strong><br /><code class="language-plaintext highlighter-rouge">Task_Create</code></td>
+      <td>Agent (this session)</td>
+      <td><code class="language-plaintext highlighter-rouge">todo-manager</code></td>
+      <td><code class="language-plaintext highlighter-rouge">beans create "&lt;title&gt;"</code>. This is the AGENT’s call.<br />The workflow engine has no <code class="language-plaintext highlighter-rouge">create</code> op — its vocabulary is claim, note and<br />resolve, all of which act on an instance’s existing bean.</td>
+    </tr>
+    <tr>
+      <td><strong>Leave it alone (coordinate instead)</strong><br /><code class="language-plaintext highlighter-rouge">Task_LeaveAlone</code></td>
+      <td>Sibling session or human (not yours to close)</td>
+      <td><code class="language-plaintext highlighter-rouge">bean-coordination</code></td>
+      <td>Never resolve, scrap or delete a bean another session<br />or a human owns. Claiming is how two sessions avoid picking the same item;<br />closing someone else’s is how one of them loses work it had not finished<br />reporting.</td>
+    </tr>
+    <tr>
+      <td><strong>Claim it (status: in-progress)</strong><br /><code class="language-plaintext highlighter-rouge">Task_Claim</code></td>
+      <td>Agent (this session)</td>
+      <td><code class="language-plaintext highlighter-rouge">bean-coordination</code></td>
+      <td>Idempotent. Claim BEFORE working, and note the branch,<br />so a sibling session can see the item is taken rather than discovering it by<br />collision.</td>
+    </tr>
+    <tr>
+      <td><strong>Work, keeping the body current (this is ‘edit’)</strong><br /><code class="language-plaintext highlighter-rouge">Task_Work</code></td>
+      <td>Agent (this session)</td>
+      <td><code class="language-plaintext highlighter-rouge">todo-manager</code></td>
+      <td>Editing a bean is not a separate ceremony: check off<br />todo items as they happen, append measurements with the command and date that<br />produced them, and record what you now know that the next agent does not. A<br />bean whose body is a title is a placeholder, not a plan.</td>
+    </tr>
+    <tr>
+      <td><strong>Complete (no unchecked todos left)</strong><br /><code class="language-plaintext highlighter-rouge">Task_Complete</code></td>
+      <td>Agent (this session)</td>
+      <td><code class="language-plaintext highlighter-rouge">todo-manager</code></td>
+      <td>Only once nothing is unchecked, and with a summary of<br />what changed. The engine’s <code class="language-plaintext highlighter-rouge">resolve</code> completes a bean only after the instance<br />itself has completed — whether work is done is a judgement, and a bean is not<br />closed on someone else’s say-so.</td>
+    </tr>
+    <tr>
+      <td><strong>Scrap with reasons NEVER delete</strong><br /><code class="language-plaintext highlighter-rouge">Task_Scrap</code></td>
+      <td>Agent (this session)</td>
+      <td><code class="language-plaintext highlighter-rouge">todo-manager</code></td>
+      <td><code class="language-plaintext highlighter-rouge">status: scrapped</code>, plus a “Reasons for Scrapping”<br />section. This is what “disable” means here — the CLI has no disabled state;<br />its vocabulary is draft, todo, in-progress, completed, scrapped.<br />DELETION IS NEVER THE ANSWER, even though <code class="language-plaintext highlighter-rouge">beans delete</code> exists. A scrapped<br />bean records that the work was considered and rejected, and why; a deleted one<br />leaves a sibling session unable to tell abandonment from accident, and leaves<br />the next agent free to re-open the same dead end.</td>
+    </tr>
+    <tr>
+      <td><strong>Record the blocker and hand back</strong><br /><code class="language-plaintext highlighter-rouge">Task_RecordBlocker</code></td>
+      <td>Agent (this session)</td>
+      <td><code class="language-plaintext highlighter-rouge">bean-coordination</code></td>
+      <td>Blocked is not scrapped. Set <code class="language-plaintext highlighter-rouge">--blocked-by</code>, say in the<br />body what would unblock it, and return it to <code class="language-plaintext highlighter-rouge">todo</code> so it is visible to whoever<br />can act. An in-progress bean nobody is progressing reads as active work.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="decisions">Decisions</h2>
+
+<p>Every one of the 3 decision(s) is documented.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>decision</th>
+      <th>what decides it</th>
+      <th>branches</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Already exists?</strong><br /><code class="language-plaintext highlighter-rouge">GW_Exists</code></td>
+      <td>Answered by the exact-title check before it (<code class="language-plaintext highlighter-rouge">todo-manager</code> §’Check before you create’): <code class="language-plaintext highlighter-rouge">beans list --json --search</code> followed by an exact comparison of titles, since <code class="language-plaintext highlighter-rouge">--search</code> is fuzzy. <code class="language-plaintext highlighter-rouge">no</code> (0 exact matches) creates the bean. <code class="language-plaintext highlighter-rouge">yes</code> (1 or more) does not create a second one — <code class="language-plaintext highlighter-rouge">beans create</code> mints a fresh id every call and dedupes on nothing — and asks whose the existing bean is.</td>
+      <td><strong>no</strong> → Create the bean (agent CLI, not an engine op)<br /><strong>yes</strong> → Whose bean?</td>
+    </tr>
+    <tr>
+      <td><strong>Whose bean?</strong><br /><code class="language-plaintext highlighter-rouge">GW_Owner</code></td>
+      <td>Answered from the existing bean and its surroundings (<code class="language-plaintext highlighter-rouge">bean-coordination</code>). <code class="language-plaintext highlighter-rouge">someone else's</code> means a sibling is mid-flight on it: a claim naming a branch, a recent note, or an open PR. That bean is left alone and the lifecycle ends here. <code class="language-plaintext highlighter-rouge">mine / unclaimed</code> claims it. A claim is branch-local, so check the bean’s status on origin/main and the open PRs naming it, not only the copy on your branch.</td>
+      <td><strong>someone else’s</strong> → Leave it alone (coordinate instead)<br /><strong>mine / unclaimed</strong> → Claim it (status: in-progress)</td>
+    </tr>
+    <tr>
+      <td><strong>Outcome?</strong><br /><code class="language-plaintext highlighter-rouge">GW_Outcome</code></td>
+      <td>The performer’s judgement on the work, and one of three recorded endings. <code class="language-plaintext highlighter-rouge">done</code>: complete it only when no todo is unchecked, with a summary of what changed. <code class="language-plaintext highlighter-rouge">not wanted</code>: set it <code class="language-plaintext highlighter-rouge">scrapped</code> with a ‘Reasons for Scrapping’ section — never delete. <code class="language-plaintext highlighter-rouge">blocked</code>: record what it waits on with <code class="language-plaintext highlighter-rouge">--blocked-by</code>, say what would unblock it, and return it to <code class="language-plaintext highlighter-rouge">todo</code>, because an in-progress bean nobody is progressing reads as active work.</td>
+      <td><strong>done</strong> → Complete (no unchecked todos left)<br /><strong>not wanted</strong> → Scrap with reasons NEVER delete<br /><strong>blocked</strong> → Record the blocker and hand back</td>
+    </tr>
+  </tbody>
+</table>
+

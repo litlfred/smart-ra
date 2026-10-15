@@ -1,0 +1,183 @@
+<blockquote class="note">
+  <p>Generated from <code class="language-plaintext highlighter-rouge">folio-assistant-core/processes/conduct/getting-started.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a></p>
+</blockquote>
+
+<h1 id="getting-started">Getting started</h1>
+
+<p><code class="language-plaintext highlighter-rouge">Process_GettingStarted</code> · strict · 13 step(s)</p>
+
+<p>Somebody said “create a folio”: work out which request they meant, with the branch computed by a decision table that may answer “ask”, and what has to be true before anything is written. folio-assistant — getting started: from “create a folio” to a live site.</p>
+
+<p>“Create a folio” is five different requests. Gateway_Intent computes which one
+from decisions/folio-intent.dmn rather than letting the agent assume, and <code class="language-plaintext highlighter-rouge">ask</code>
+is one of the outcomes the table can return. Gateway_Live applies the same
+construction to publication, with <code class="language-plaintext highlighter-rouge">unknown</code> kept distinct from <code class="language-plaintext highlighter-rouge">not-yet</code>.</p>
+
+<p>Source of truth: this file. The SVG under docs/assets/img/workflows/ is
+generated from it by <code class="language-plaintext highlighter-rouge">bun run cat render:bpmn</code> — never hand-edit the SVG.</p>
+
+<p><em>No rendered diagram — run <code class="language-plaintext highlighter-rouge">bun run cat render:bpmn</code>.</em></p>
+
+<h2 id="how-it-connects">How it connects</h2>
+
+<ul>
+  <li><strong>Called by:</strong> no call activity names this process</li>
+  <li><strong>Calls:</strong> none</li>
+  <li><strong>Presented on:</strong> no docs page section shows this diagram</li>
+</ul>
+
+<h2 id="lanes--who-acts">Lanes — who acts</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>lane</th>
+      <th>role</th>
+      <th>what it does here</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>User (person)</td>
+      <td><code class="language-plaintext highlighter-rouge">user</code></td>
+      <td>Answers the one question Gateway_Intent cannot compute for itself — “ask” is one of five outcomes decisions/folio-intent.dmn can return — and, only on the overlay path, three further questions a repo scan cannot answer on its own: what to import, where it goes, and who does the importing.</td>
+    </tr>
+    <tr>
+      <td>Onboarding agent (system)</td>
+      <td><code class="language-plaintext highlighter-rouge">onboarding-agent</code></td>
+      <td>Every write in this diagram belongs to this lane, and each sits behind the non-relaxable read-first gate: nothing is created or scaffolded until Gateway_Intent has classified what was actually asked for, which is what stands between this lane and writing over somebody’s existing project.</td>
+    </tr>
+    <tr>
+      <td>Work plan (beans)</td>
+      <td><code class="language-plaintext highlighter-rouge">work-plan</code></td>
+      <td>Seeds one bean per top-level content object the author named, positioned after scaffolding but before the Pages probe — a work plan exists for a folio whose publication status is not yet known, rather than waiting on that answer.</td>
+    </tr>
+    <tr>
+      <td>Publish — GitHub Pages</td>
+      <td><code class="language-plaintext highlighter-rouge">publish-target</code></td>
+      <td>Provisions the gh-pages branch before Pages is switched on (Task_ProvisionGhPages, #2417), derives the URL, and holds the report that follows it: “unprovisioned” routes back to provisioning, and “live”, “not-yet” and “unknown” are reached by exclusive branches of one DMN-computed gateway, and this lane is what keeps a failed probe from being reported as the softer “not-yet” it would be tempting to default to.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="steps">Steps</h2>
+
+<p>Every one of the 13 step(s) is documented.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>step</th>
+      <th>lane</th>
+      <th>skill / sub-process</th>
+      <th>what it does</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Detect the interaction modality</strong><br /><code class="language-plaintext highlighter-rouge">Task_DetectModality</code></td>
+      <td>Onboarding agent (system)</td>
+      <td><code class="language-plaintext highlighter-rouge">interaction-modality</code></td>
+      <td>Before the first question is asked, establish HOW to ask it: audio, ordinary chat, selectable options for a user with limited hand function, large-type for low vision. A user who finds the questions unusable never reaches the rest of this diagram.</td>
+    </tr>
+    <tr>
+      <td><strong>Read the repository facts</strong><br /><code class="language-plaintext highlighter-rouge">Task_ReadFacts</code></td>
+      <td>Onboarding agent (system)</td>
+      <td><code class="language-plaintext highlighter-rouge">getting-started</code></td>
+      <td>Mechanical, read-only: does the instance’s config (its <code class="language-plaintext highlighter-rouge">index.config.json</code> entry; a legacy <code class="language-plaintext highlighter-rouge">&lt;name&gt;.config.json</code> only as a fallback) declare a contentType, does the working tree hold somebody’s existing project, and what has the user actually said. These are the three inputs to folio-intent.dmn. Non-relaxable: scaffolding without looking first is how a folio gets written over somebody’s project.</td>
+    </tr>
+    <tr>
+      <td><strong>Choose from the offered options</strong><br /><code class="language-plaintext highlighter-rouge">Task_AskIntent</code></td>
+      <td>User (person)</td>
+      <td><code class="language-plaintext highlighter-rouge">interaction-modality</code><br /><code class="language-plaintext highlighter-rouge">getting-started</code></td>
+      <td>The question is presented as a short list of selectable options, never as free prose, and the list names the top-level content types the agent knows about. The answer becomes the statedIntent fact and the table is evaluated again — the user’s answer is read as evidence, like any other fact.</td>
+    </tr>
+    <tr>
+      <td><strong>Scan the repo for content worth importing</strong><br /><code class="language-plaintext highlighter-rouge">Task_ScanRepo</code></td>
+      <td>Onboarding agent (system)</td>
+      <td><code class="language-plaintext highlighter-rouge">repo-conversion</code><br /><code class="language-plaintext highlighter-rouge">document-intake</code></td>
+      <td>Read-only. Classifies candidates into library/ (external source) and content/ (authored here), and reports what it could not classify as its own bucket rather than forcing every file into one of the two.</td>
+    </tr>
+    <tr>
+      <td><strong>Import what, where, and who does it</strong><br /><code class="language-plaintext highlighter-rouge">Task_ConfirmImport</code></td>
+      <td>User (person)</td>
+      <td><code class="language-plaintext highlighter-rouge">repo-conversion</code><br /><code class="language-plaintext highlighter-rouge">dispatch-agent</code></td>
+      <td>Three questions the scan cannot answer: import these or not; library or content for each group; leave the files where they are or reorganize to declutter. Plus whether to dispatch one ingestion agent or a small swarm. Non-relaxable: nobody’s files are moved or imported on inference.</td>
+    </tr>
+    <tr>
+      <td><strong>Create the repository</strong><br /><code class="language-plaintext highlighter-rouge">Task_CreateRepo</code></td>
+      <td>Onboarding agent (system)</td>
+      <td><code class="language-plaintext highlighter-rouge">repo-conversion</code></td>
+      <td>Only on the new-repo branch, and only after the user has named it. An empty working directory is scaffolded in place instead.</td>
+    </tr>
+    <tr>
+      <td><strong>Scaffold the folio (folio_init)</strong><br /><code class="language-plaintext highlighter-rouge">Task_Scaffold</code></td>
+      <td>Onboarding agent (system)</td>
+      <td><code class="language-plaintext highlighter-rouge">getting-started</code></td>
+      <td>content/, uploads/, library/, the first manifests, <slug>.json and index.config.json (the instance's config inline in its entry; no <slug>.config.json, bean ymvt), the builder shim, AGENTS.md with its stubs, .mcp.json, the session-start hook and the beans store. Refuses rather than overwrites when a folio is already present.</slug></slug></td>
+    </tr>
+    <tr>
+      <td><strong>Seed the work plan</strong><br /><code class="language-plaintext highlighter-rouge">Task_SeedPlan</code></td>
+      <td>Work plan (beans)</td>
+      <td><code class="language-plaintext highlighter-rouge">todo-manager</code></td>
+      <td>The first beans: what the author said they want to get started on, one bean per top-level content object they named.</td>
+    </tr>
+    <tr>
+      <td><strong>Provision gh-pages</strong><br /><code class="language-plaintext highlighter-rouge">Task_ProvisionGhPages</code></td>
+      <td>Publish — GitHub Pages</td>
+      <td><code class="language-plaintext highlighter-rouge">getting-started</code></td>
+      <td>Before Pages is switched on, make sure the gh-pages branch exists — the semantics of A_Provision in bootstrap-tools’ render-kg-to-github-pages.bpmn, first half. <code class="language-plaintext highlighter-rouge">git ls-remote --heads origin gh-pages</code>; if absent, <code class="language-plaintext highlighter-rouge">bun run cat-harness/scripts/pages-bootstrap.ts --provision</code> pushes an orphan gh-pages holding a placeholder index.html and .nojekyll (idempotent; never forced; the script creates no remote branch without the flag). Then Settings → Pages → “Deploy from a branch: gh-pages, / (root)” — not “GitHub Actions” when the publish workflow pushes gh-pages. Every publishing path reaches this step: new-repo, overlay and add-folio, and an overlay or new repo that remote-mounts its dependencies (litlfred/test, provisioned at 860f9c2). Owner, 2026-10-01: “need to create gh-pages branch before can turn on”; 2026-10-07: “need to create gh-pages before can deploy” (#2417).</td>
+    </tr>
+    <tr>
+      <td><strong>Start the Pages build and derive the URL</strong><br /><code class="language-plaintext highlighter-rouge">Task_PagesBootstrap</code></td>
+      <td>Publish — GitHub Pages</td>
+      <td><code class="language-plaintext highlighter-rouge">getting-started</code></td>
+      <td>scripts/pages-bootstrap.ts: check the gh-pages branch first (absent is <code class="language-plaintext highlighter-rouge">unprovisioned</code>), derive the site URL from the git remote or the instance’s config (its index.config.json entry), report whether a publish workflow exists and the Pages source it needs, and optionally probe until the site answers.</td>
+    </tr>
+    <tr>
+      <td><strong>Hand over the live link</strong><br /><code class="language-plaintext highlighter-rouge">Task_ReportUrl</code></td>
+      <td>Publish — GitHub Pages</td>
+      <td><code class="language-plaintext highlighter-rouge">getting-started</code></td>
+      <td>Confirmed live. The link is given as a link, and the author is told what is on it.</td>
+    </tr>
+    <tr>
+      <td><strong>Say where it will be</strong><br /><code class="language-plaintext highlighter-rouge">Task_ReportPending</code></td>
+      <td>Publish — GitHub Pages</td>
+      <td><code class="language-plaintext highlighter-rouge">getting-started</code></td>
+      <td>A measured 404. The author is told the address and that the first build has not landed there yet — which is useful, and is not the same as being told it is live.</td>
+    </tr>
+    <tr>
+      <td><strong>Say it could not be confirmed</strong><br /><code class="language-plaintext highlighter-rouge">Task_ReportUnknown</code></td>
+      <td>Publish — GitHub Pages</td>
+      <td><code class="language-plaintext highlighter-rouge">getting-started</code></td>
+      <td>No URL, no probe, or a failed request. Reported as “could not check”, never as “not yet” and never as “live”.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="decisions">Decisions</h2>
+
+<p>Every one of the 2 decision(s) is documented.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>decision</th>
+      <th>what decides it</th>
+      <th>branches</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>What is the user asking for?</strong><br /><code class="language-plaintext highlighter-rouge">Gateway_Intent</code></td>
+      <td>Computed, not chosen. decisions/folio-intent.dmn returns one of five branches from statedIntent, isFolio and repoHasContent. Non-relaxable: this gateway IS the fix.</td>
+      <td><strong>ask</strong> → Choose from the offered options<br /><strong>overlay</strong> → Scan the repo for content worth importing<br /><strong>new-repo</strong> → Create the repository<br /><strong>new-content</strong> → Handed to content authoring<br /><strong>add-folio</strong> → Scaffold the folio (folio_init)</td>
+    </tr>
+    <tr>
+      <td><strong>Is the site answering?</strong><br /><code class="language-plaintext highlighter-rouge">Gateway_Live</code></td>
+      <td>Computed from decisions/pages-live-gate.dmn. Four outcomes: <code class="language-plaintext highlighter-rouge">unprovisioned</code> (no gh-pages branch — back to Task_ProvisionGhPages) is checked first, and <code class="language-plaintext highlighter-rouge">unknown</code> is not a softer <code class="language-plaintext highlighter-rouge">not-yet</code>.</td>
+      <td><strong>live</strong> → Hand over the live link<br /><strong>not-yet</strong> → Say where it will be<br /><strong>unknown</strong> → Say it could not be confirmed<br /><strong>unprovisioned</strong> → Provision gh-pages</td>
+    </tr>
+  </tbody>
+</table>
+

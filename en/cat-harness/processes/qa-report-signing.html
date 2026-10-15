@@ -1,0 +1,127 @@
+<blockquote class="note">
+  <p>Generated from <code class="language-plaintext highlighter-rouge">cat-harness/processes/sdlc/qa-report-signing.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a></p>
+</blockquote>
+
+<h1 id="qa-report-signing">QA report signing</h1>
+
+<p><code class="language-plaintext highlighter-rouge">Process_QaReportSigning</code> · strict · 6 step(s)</p>
+
+<p>Attesting a QA report: build the test run, work out what the performer can actually reach, and sign — over the API where that is available, or as release authority where it is not.</p>
+
+<p>You are in this process when a report needs to become evidence somebody else can rely on. The reach resolution before the gateway is the point: the route is CHOSEN from what the signer can do, not assumed, and the process records which route signed it so a reader of the attestation can tell.</p>
+
+<p>A signature whose route is unrecorded is a signature whose weight cannot be judged later, which is why that step is drawn rather than left implicit.</p>
+
+<p><img src="../../../assets/img/workflows/qa-report-signing.svg" alt="BPMN diagram: QA report signing" style="max-width:100%" /></p>
+
+<h2 id="how-it-connects">How it connects</h2>
+
+<ul>
+  <li><strong>Called by:</strong> <a href="test-plan-execution.html">Test-plan execution</a></li>
+  <li><strong>Calls:</strong> none</li>
+  <li><strong>Presented on:</strong> no docs page section shows this diagram</li>
+</ul>
+
+<h2 id="lanes--who-acts">Lanes — who acts</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>lane</th>
+      <th>role</th>
+      <th>what it does here</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Validation and QA (mechanical + agents)</td>
+      <td><code class="language-plaintext highlighter-rouge">validation-pipeline</code></td>
+      <td>Owns everything except the act of signing: it builds the hashable run, computes the two facts — effectiveReach and whether the API is configured — that Gateway_SigningRoute’s table reads rather than a hand-asserted choice, and after either route returns, records which one fired. The record is what lets a later reader know which trust assumption they are relying on without having to ask.</td>
+    </tr>
+    <tr>
+      <td>Attestation service (API)</td>
+      <td><code class="language-plaintext highlighter-rouge">attestation-service</code></td>
+      <td>Reached only from the DMN table’s one row where both egress and a configured endpoint are true — everything else in Gateway_SigningRoute’s table routes around this lane entirely, so its presence in a trace is itself already the answer to whether egress existed. It carries exactly one task and no branch of its own, because the routing decision was already made before this lane was entered.</td>
+    </tr>
+    <tr>
+      <td>Human signer</td>
+      <td><code class="language-plaintext highlighter-rouge">publication-manager</code></td>
+      <td>Deleting this lane’s role binding is not a documentation nicety: <code class="language-plaintext highlighter-rouge">check:fallback-roles</code> DERIVES the fallback role from whichever lane holds a task only a person can fill, so removing it turns that check red rather than merely undocumented. The gate that sends work here fires BEFORE any API attempt, never after one fails — an air-gapped host has no degraded mode to retry into, so this lane is a routing destination, not a retry path.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="steps">Steps</h2>
+
+<p>Every one of the 6 step(s) is documented.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>step</th>
+      <th>lane</th>
+      <th>skill / sub-process</th>
+      <th>what it does</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Build the test run [folio-test-run/v1]</strong><br /><code class="language-plaintext highlighter-rouge">Task_BuildRun</code></td>
+      <td>Validation and QA (mechanical + agents)</td>
+      <td><code class="language-plaintext highlighter-rouge">qa-report-signing</code><br /><code class="language-plaintext highlighter-rouge">content-test</code></td>
+      <td>Assemble the run record the signature will cover: the data hash and the process hash, each all-or-nothing. An UNKNOWN_HASH never reproduces another unknown, so a run that could not be hashed is signable only as what it is — unverifiable.</td>
+    </tr>
+    <tr>
+      <td><strong>Resolve the performer’s reach [effectiveReach + signing-api probe]</strong><br /><code class="language-plaintext highlighter-rouge">Task_ResolveReach</code></td>
+      <td>Validation and QA (mechanical + agents)</td>
+      <td><code class="language-plaintext highlighter-rouge">qa-report-signing</code></td>
+      <td>Compute the two facts the gateway reads: effectiveReach(deployment, actor) from schemas/actor-reach.ts, and whether the signing-api capability is configured. Undeclared reach resolves to “unknown” rather than to the deployment’s value — an aggregate does not determine a member.</td>
+    </tr>
+    <tr>
+      <td><strong>Sign over the API</strong><br /><code class="language-plaintext highlighter-rouge">Task_ApiSign</code></td>
+      <td>Attestation service (API)</td>
+      <td><code class="language-plaintext highlighter-rouge">qa-report-signing</code></td>
+      <td>The attestation service signs the run hashes. Reached only from the one table row that has both egress and a configured endpoint.</td>
+    </tr>
+    <tr>
+      <td><strong>Sign as release authority</strong><br /><code class="language-plaintext highlighter-rouge">Task_HumanSign</code></td>
+      <td>Human signer</td>
+      <td><code class="language-plaintext highlighter-rouge">qa-report-signing</code></td>
+      <td>A person attests the run hashes out of band. This is a userTask, not a serviceTask, and the distinction is enforced: <code class="language-plaintext highlighter-rouge">fulfilmentKindsForBpmnType</code> will not let a system actor fill it, which is what stops the air-gapped route quietly becoming another machine route.</td>
+    </tr>
+    <tr>
+      <td><strong>Record which route signed it</strong><br /><code class="language-plaintext highlighter-rouge">Task_RecordAttestation</code></td>
+      <td>Validation and QA (mechanical + agents)</td>
+      <td><code class="language-plaintext highlighter-rouge">qa-report-signing</code></td>
+      <td>The attestation records the route, not only the signature. A reader who cannot tell an API signature from a human one cannot tell which trust assumption they are relying on.</td>
+    </tr>
+    <tr>
+      <td><strong>Store the signed report on qa-reports</strong><br /><code class="language-plaintext highlighter-rouge">Task_StoreSigned</code></td>
+      <td>Validation and QA (mechanical + agents)</td>
+      <td><code class="language-plaintext highlighter-rouge">qa-reports</code></td>
+      <td>The signed report, its signature and the route that produced it are written TOGETHER into the <code class="language-plaintext highlighter-rouge">qa-reports</code> entry keyed by the commit the report judged (<code class="language-plaintext highlighter-rouge">main/&lt;sha&gt;/</code> or <code class="language-plaintext highlighter-rouge">pr/&lt;n&gt;/&lt;sha&gt;/</code>), through <code class="language-plaintext highlighter-rouge">scripts/qa-store.ts</code> — never committed to main and never pushed by hand (arc <code class="language-plaintext highlighter-rouge">3fva</code>, owner ruling D1). A signature kept apart from the bytes it covers attests nothing a reader can check. A certification DECISION taken on the report is a separate node that stays on main beside <code class="language-plaintext highlighter-rouge">test/attestations/</code> (ruling D5, default (a)); it is not written here.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="decisions">Decisions</h2>
+
+<p>Every one of the 1 decision(s) is documented.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>decision</th>
+      <th>what decides it</th>
+      <th>branches</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Which signing route?</strong><br /><code class="language-plaintext highlighter-rouge">Gateway_SigningRoute</code></td>
+      <td>Answered by the performer’s resolved reach (effectiveReach plus the signing-api probe). <code class="language-plaintext highlighter-rouge">api</code> signs over the API; <code class="language-plaintext highlighter-rouge">human</code> has a release authority sign.</td>
+      <td><strong>api</strong> → Sign over the API<br /><strong>human</strong> → Sign as release authority</td>
+    </tr>
+  </tbody>
+</table>
+

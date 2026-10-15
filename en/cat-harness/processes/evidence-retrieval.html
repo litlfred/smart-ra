@@ -1,0 +1,157 @@
+<blockquote class="note">
+  <p>Generated from <code class="language-plaintext highlighter-rouge">folio-assistant-core/processes/content/evidence-retrieval.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a></p>
+</blockquote>
+
+<h1 id="evidence-for-a-recommendation">Evidence for a recommendation</h1>
+
+<p><code class="language-plaintext highlighter-rouge">Process_EvidenceRetrieval</code> · strict · 10 step(s)</p>
+
+<p>Frame a question for a recommendation, retrieve and appraise evidence from trusted sources, and either attach it or record the gap. The author reviews the guidance already in their content, frames the question as PICO, retrieves candidate evidence across three classes (trusted L1 sources, trusted L2/L3 content, data repositories), verifies each candidate’s authority against the publishing body’s own API, grades the body of evidence, and either attaches it to the recommendation or records the gap. STRAWPERSON: registries, grading system and API bindings are not fixed here.</p>
+
+<p><em>No rendered diagram — run <code class="language-plaintext highlighter-rouge">bun run cat render:bpmn</code>.</em></p>
+
+<h2 id="how-it-connects">How it connects</h2>
+
+<ul>
+  <li><strong>Called by:</strong> <a href="editing-hci-validation.html">Editing and HCI validation</a></li>
+  <li><strong>Calls:</strong> none</li>
+  <li><strong>Presented on:</strong> no docs page section shows this diagram</li>
+</ul>
+
+<h2 id="lanes--who-acts">Lanes — who acts</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>lane</th>
+      <th>role</th>
+      <th>what it does here</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Author / guideline developer (person)</td>
+      <td><code class="language-plaintext highlighter-rouge">author</code></td>
+      <td>Brackets the machine work rather than doing it: frames the PICO before Lane_Agent fans out across evidence classes, then is the only lane that grades what comes back and decides whether it is sufficient for a recommendation — retrieval and authority-checking are delegated, but the judgement that turns evidence into a claim never leaves this lane.</td>
+    </tr>
+    <tr>
+      <td>Evidence agent (system)</td>
+      <td><code class="language-plaintext highlighter-rouge">evidence-agent</code></td>
+      <td>The appraisal in the role’s own description happens elsewhere in this diagram: this lane only fans out in parallel across the three evidence classes and joins the candidates, while grading is Lane_Author’s call and authority is Lane_Trusted’s — so what it owns here is coverage, not judgement.</td>
+    </tr>
+    <tr>
+      <td>Trusted registries and observatories (external)</td>
+      <td><code class="language-plaintext highlighter-rouge">external-registry</code></td>
+      <td>Task_VerifyAuthority and its gateway sit here rather than with Lane_Agent because the decision is not this instance’s call — it is a readout of what the external API returns, and the moment that answer is uncertain or absent, Lane_WorkPlan opens a bean rather than this lane inventing a verdict.</td>
+    </tr>
+    <tr>
+      <td>Work plan — beans (shared)</td>
+      <td><code class="language-plaintext highlighter-rouge">work-plan</code></td>
+      <td>Catches two different shortfalls at two different severities: an unverified citation is noted but the process continues into grading, while an insufficient body of evidence ends the process at its own event — so only the second is fatal, and both stay visible in the work plan rather than one being silently absorbed into the other.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="steps">Steps</h2>
+
+<p>Every one of the 10 step(s) is documented.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>step</th>
+      <th>lane</th>
+      <th>skill / sub-process</th>
+      <th>what it does</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Review the guidance already in this content</strong><br /><code class="language-plaintext highlighter-rouge">Task_ReviewExisting</code></td>
+      <td>Author / guideline developer (person)</td>
+      <td><code class="language-plaintext highlighter-rouge">content-review</code></td>
+      <td>The author reads what the document, DAK or IG ALREADY says on this question, before looking outward. A recommendation that contradicts a sibling recommendation in the same artefact is a defect no external evidence will reveal.</td>
+    </tr>
+    <tr>
+      <td><strong>Frame the question as PICO</strong><br /><code class="language-plaintext highlighter-rouge">Task_FramePico</code></td>
+      <td>Author / guideline developer (person)</td>
+      <td><code class="language-plaintext highlighter-rouge">content-author</code></td>
+      <td>Population, Intervention, Comparator, Outcome. The PICO is what makes the search reproducible and the evidence auditable: without it, ‘we looked for evidence’ is not a claim anyone can check. WHO guideline development states the question this way before any retrieval.</td>
+    </tr>
+    <tr>
+      <td><strong>Search trusted SOURCES — L1</strong><br /><code class="language-plaintext highlighter-rouge">Task_L1Sources</code></td>
+      <td>Evidence agent (system)</td>
+      <td><code class="language-plaintext highlighter-rouge">document-intake</code></td>
+      <td>Ingested primary literature under library/: the sections/*.md tree and, where a document was scanned, ocr/page-NNN.txt. NOTE the known blind spot — a document OCR’d but never re-run through pdf-structure.py has only a stub in sections/, so a sections-only search misses it.</td>
+    </tr>
+    <tr>
+      <td><strong>Search trusted CONTENT — L2 DAKs, L3 IGs</strong><br /><code class="language-plaintext highlighter-rouge">Task_L2L3Content</code></td>
+      <td>Evidence agent (system)</td>
+      <td><code class="language-plaintext highlighter-rouge">document-intake</code><br /><code class="language-plaintext highlighter-rouge">document-intake</code><br /><code class="language-plaintext highlighter-rouge">document-intake</code></td>
+      <td>Already-adjudicated guidance: WHO SMART DAKs at L2 and FHIR Implementation Guides at L3. A recommendation adopted in a published DAK is evidence of a different kind from a primary study – it is a prior decision, with its own provenance, and must be cited as that rather than laundered into primary evidence.<br />NOT YET SKILL-BACKED. This step named <code class="language-plaintext highlighter-rouge">corpus-search</code>, which has never<br />existed. It is not <code class="language-plaintext highlighter-rouge">corpus-grep</code>, whose job is the pre-declaration check<br />that something really is an open gap — searching adjudicated L2/L3 content<br />for evidence is a different task, so pointing the ref there would have been<br />a plausible-looking wrong answer. Left uncovered until the skill is written.</td>
+    </tr>
+    <tr>
+      <td><strong>Query data repositories and statistical datasets</strong><br /><code class="language-plaintext highlighter-rouge">Task_DataRepos</code></td>
+      <td>Evidence agent (system)</td>
+      <td><code class="language-plaintext highlighter-rouge">document-intake</code><br /><code class="language-plaintext highlighter-rouge">document-intake</code><br /><code class="language-plaintext highlighter-rouge">document-intake</code></td>
+      <td>Indicator and microdata sources. Distinct from the two above because the unit of evidence is a MEASUREMENT with a population, a period and a method, not a claim in prose.</td>
+    </tr>
+    <tr>
+      <td><strong>Verify authority against the observatory / registry API</strong><br /><code class="language-plaintext highlighter-rouge">Task_VerifyAuthority</code></td>
+      <td>Trusted registries and observatories (external)</td>
+      <td>—</td>
+      <td>Each candidate is resolved against the standard API of the body that publishes it, so that ‘authoritative’ is a RESOLVED FACT rather than an assertion in the citation. What is checked: that the identifier resolves at the publisher; that the retrieved record matches what the citation claims; that the version and date are the ones cited; and that the publisher is one this folio has declared trusted. STRAWPERSON: the concrete registry list and endpoints are not settled here – see the cat-harness.processes:policy note.</td>
+    </tr>
+    <tr>
+      <td><strong>Open a bean for the unverified citation</strong><br /><code class="language-plaintext highlighter-rouge">Task_RecordUnverified</code></td>
+      <td>Work plan — beans (shared)</td>
+      <td><code class="language-plaintext highlighter-rouge">todo-manager</code></td>
+      <td>An unresolvable citation is not dropped and not silently kept. It becomes a tracked item, so the gap is visible in the work plan rather than surviving as a footnote nobody re-checks.</td>
+    </tr>
+    <tr>
+      <td><strong>Appraise and grade the body of evidence</strong><br /><code class="language-plaintext highlighter-rouge">Task_AppraiseGrade</code></td>
+      <td>Author / guideline developer (person)</td>
+      <td><code class="language-plaintext highlighter-rouge">evidence-appraisal</code></td>
+      <td>Certainty of evidence per the grading system the folio declares. The grade attaches to the BODY of evidence for one PICO question, not to an individual citation – which is why this step is after the join and not inside the fan-out.</td>
+    </tr>
+    <tr>
+      <td><strong>Record the evidence gap</strong><br /><code class="language-plaintext highlighter-rouge">Task_RecordGap</code></td>
+      <td>Work plan — beans (shared)</td>
+      <td><code class="language-plaintext highlighter-rouge">todo-manager</code></td>
+      <td>Insufficient evidence is a RESULT. It is recorded as such – an honest gap the guideline can state – rather than being closed by weakening the recommendation until the available evidence supports it.</td>
+    </tr>
+    <tr>
+      <td><strong>Attach the evidence to the recommendation</strong><br /><code class="language-plaintext highlighter-rouge">Task_AttachEvidence</code></td>
+      <td>Author / guideline developer (person)</td>
+      <td><code class="language-plaintext highlighter-rouge">content-author</code></td>
+      <td>The PICO, the graded body of evidence, each verified citation and its resolved authority record are written onto the recommendation block, so a reader can retrace the whole chain from the sentence back to the source.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="decisions">Decisions</h2>
+
+<p>Every one of the 2 decision(s) is documented.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>decision</th>
+      <th>what decides it</th>
+      <th>branches</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Authority confirmed?</strong><br /><code class="language-plaintext highlighter-rouge">Gateway_Authoritative</code></td>
+      <td>Answered by checking the source against the observatory or registry API: is its authority confirmed? <code class="language-plaintext highlighter-rouge">no</code> opens a bean for the unverified citation; <code class="language-plaintext highlighter-rouge">yes</code> goes on to appraise and grade the evidence.</td>
+      <td><strong>no</strong> → Open a bean for the unverified citation<br /><strong>yes</strong> → Appraise and grade the body of evidence</td>
+    </tr>
+    <tr>
+      <td><strong>Sufficient for a recommendation?</strong><br /><code class="language-plaintext highlighter-rouge">Gateway_Sufficient</code></td>
+      <td>Answered by the appraisal: is the graded evidence enough to support a recommendation? <code class="language-plaintext highlighter-rouge">no</code> records the evidence gap; <code class="language-plaintext highlighter-rouge">yes</code> attaches the evidence to the recommendation.</td>
+      <td><strong>no</strong> → Record the evidence gap<br /><strong>yes</strong> → Attach the evidence to the recommendation</td>
+    </tr>
+  </tbody>
+</table>
+

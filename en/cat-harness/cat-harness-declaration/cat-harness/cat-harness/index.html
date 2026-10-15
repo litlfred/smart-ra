@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-<script data-folio-saved-scheme>try{var s=localStorage.getItem("fa-color-scheme");if(s!=="light"&&s!=="dark"&&window.matchMedia&&window.matchMedia("(prefers-color-scheme: light)").matches)s="light";if(s==="light"||s==="dark")document.documentElement.setAttribute("data-fa-scheme",s)}catch(e){}</script>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -1271,7 +1271,7 @@ ca&amp;at-harness
     ]
   }
 ]</pre></dd>
-<dt>_builtAtPublish_comment</dt><dd>Owner, 2026-10-14 (B1, widened to state the same day: &#39;fix all, in proper way&#39;). The artefacts this instance serves and never commits: each is computed over the checkout&#39;s OTHER instances (`checkout`), which sit above this layer and which it cannot pin, or from a branch-kept graph (`state`), which moves without a commit — so no commit of cat-harness can hold it current, and a `:check` against committed bytes went red in the index on every re-pin. `derive:publish` runs each `writer` (a package script, `bun run cat &lt;script&gt;`) once, in THIS ORDER, after `state:mount` and before the site is composed — so a writer that reads another&#39;s output is listed after it (the slices read the todos index docs:pages writes); `.gitignore` carries one anchored line per path, and `schemas/built-at-publish.test.ts` keeps the two equal. The rule and the two causes are in `schemas/built-at-publish.ts`. NOT here, deliberately: this instance&#39;s OWN BPMN drawings (`docs/assets/img/workflows/&lt;own&gt;.svg`), which its README and authored pages embed on github.com and whose inputs are all its own; the 32 drawings of other instances&#39; diagrams are listed individually so the 67 own ones stay committed.</dd>
+<dt>_builtAtPublish_comment</dt><dd>Owner, 2026-10-14 (B1, widened to state the same day: &#39;fix all, in proper way&#39;). The artefacts this instance serves and never commits: each is computed over the checkout&#39;s OTHER instances (`checkout`), which sit above this layer and which it cannot pin, or from a branch-kept graph (`state`), which moves without a commit — so no commit of cat-harness can hold it current, and a `:check` against committed bytes went red in the index on every re-pin. `derive:publish` runs each `writer` (a package script, `bun run cat &lt;script&gt;`) once, in THIS ORDER, after `state:mount` and before the site is composed — so a writer that reads another&#39;s output is listed after it (the slices read the todos index docs:pages writes); `.gitignore` carries one anchored line per path, and `schemas/built-at-publish.test.ts` keeps the two equal. The rule and the two causes are in `schemas/built-at-publish.ts`. NOT here, deliberately: this instance&#39;s OWN BPMN drawings (`docs/assets/img/workflows/&lt;own&gt;.svg`), which its README and authored pages embed on github.com and whose inputs are all its own; the 37 drawings of other instances&#39; diagrams are listed individually so the 67 own ones stay committed.</dd>
 <dt>builtAtPublish</dt><dd><pre>[
   {
     &quot;path&quot;: &quot;docs/cat-harness/auto-docs/&quot;,
@@ -1339,14 +1339,6 @@ ca&amp;at-harness
     ],
     &quot;because&quot;: &quot;checkout&quot;,
     &quot;reason&quot;: &quot;a page per skill of every instance (measured: drifted on fhir-harness and folio-assistant-core skills at the current pins)&quot;
-  },
-  {
-    &quot;path&quot;: &quot;docs/en/cat-harness/processes/&quot;,
-    &quot;writer&quot;: [
-      &quot;processes:viz&quot;
-    ],
-    &quot;because&quot;: &quot;checkout&quot;,
-    &quot;reason&quot;: &quot;a page per diagram of every instance, 32 of 100 of them other instances&#39; (measured: a foreign task name rewrote public-comment.md)&quot;
   },
   {
     &quot;path&quot;: &quot;docs/en/cat-harness/cat-harness-declaration/&quot;,
@@ -1590,6 +1582,14 @@ ca&amp;at-harness
     &quot;reason&quot;: &quot;smart-base&#39;s IG artefact index, rendered by fhir-harness from the mounted IGs&quot;
   },
   {
+    &quot;path&quot;: &quot;ns/context/v1.jsonld&quot;,
+    &quot;writer&quot;: [
+      &quot;jsonld:contexts&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;this instance&#39;s JSON-LD @context, generated from the prefixes its documents use (published ones included, which docs/subgraph/ and the SKOS exports above are) flattened with the prefix tables of the instances it needs, read at the checkout&#39;s pins (bean folio-assistant-63q4)&quot;
+  },
+  {
     &quot;path&quot;: &quot;docs/_data/harness.json&quot;,
     &quot;writer&quot;: [
       &quot;docs:pages&quot;,
@@ -1600,7 +1600,10 @@ ca&amp;at-harness
       &quot;beans&quot;,
       &quot;todos&quot;
     ],
-    &quot;reason&quot;: &quot;tiles of every instance in the checkout, with the live open-beans and todos counts; docs:harness reads the counts docs:pages just wrote, so both come from one mount&quot;
+    &quot;reads&quot;: [
+      &quot;docs&quot;
+    ],
+    &quot;reason&quot;: &quot;tiles of every instance in the checkout, with the live open-beans and todos counts; docs:harness reads the counts docs:pages just wrote, so both come from one mount, and reads every instance&#39;s docs directories, some of which (smart-trust&#39;s docs/) an instance above builds at publish, so derive:publish runs it after their writers (reads, owner A1 2026-10-15)&quot;
   },
   {
     &quot;path&quot;: &quot;docs/_includes/generated/navbar-footer.html&quot;,
@@ -1893,6 +1896,14 @@ ca&amp;at-harness
     &quot;reason&quot;: &quot;a drawing of another instance&#39;s diagram, rendered from that instance&#39;s .bpmn at the index&#39;s pin&quot;
   },
   {
+    &quot;path&quot;: &quot;docs/assets/img/workflows/ig-ast-cache.svg&quot;,
+    &quot;writer&quot;: [
+      &quot;render:bpmn&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;a drawing of another instance&#39;s diagram, rendered from that instance&#39;s .bpmn at the index&#39;s pin&quot;
+  },
+  {
     &quot;path&quot;: &quot;docs/assets/img/workflows/ig-ast-delta-review.svg&quot;,
     &quot;writer&quot;: [
       &quot;render:bpmn&quot;
@@ -1957,6 +1968,14 @@ ca&amp;at-harness
     &quot;reason&quot;: &quot;a drawing of another instance&#39;s diagram, rendered from that instance&#39;s .bpmn at the index&#39;s pin&quot;
   },
   {
+    &quot;path&quot;: &quot;docs/assets/img/workflows/l2-component-edit-review.svg&quot;,
+    &quot;writer&quot;: [
+      &quot;render:bpmn&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;a drawing of another instance&#39;s diagram, rendered from that instance&#39;s .bpmn at the index&#39;s pin&quot;
+  },
+  {
     &quot;path&quot;: &quot;docs/assets/img/workflows/l2-dak-authoring.svg&quot;,
     &quot;writer&quot;: [
       &quot;render:bpmn&quot;
@@ -1997,12 +2016,44 @@ ca&amp;at-harness
     &quot;reason&quot;: &quot;a drawing of another instance&#39;s diagram, rendered from that instance&#39;s .bpmn at the index&#39;s pin&quot;
   },
   {
+    &quot;path&quot;: &quot;docs/assets/img/workflows/questionnaire-wireframe-review.svg&quot;,
+    &quot;writer&quot;: [
+      &quot;render:bpmn&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;a drawing of another instance&#39;s diagram, rendered from that instance&#39;s .bpmn at the index&#39;s pin&quot;
+  },
+  {
     &quot;path&quot;: &quot;docs/assets/img/workflows/render-kg-to-github-pages.svg&quot;,
     &quot;writer&quot;: [
       &quot;render:bpmn&quot;
     ],
     &quot;because&quot;: &quot;checkout&quot;,
     &quot;reason&quot;: &quot;a drawing of another instance&#39;s diagram, rendered from that instance&#39;s .bpmn at the index&#39;s pin&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/img/workflows/SGAuthoring.DAKLifecycle.svg&quot;,
+    &quot;writer&quot;: [
+      &quot;render:bpmn&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;a drawing of another instance&#39;s diagram, rendered from that instance&#39;s .bpmn at the index&#39;s pin&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/img/workflows/smart-guideline-end-to-end.svg&quot;,
+    &quot;writer&quot;: [
+      &quot;render:bpmn&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;a drawing of another instance&#39;s diagram, rendered from that instance&#39;s .bpmn at the index&#39;s pin&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/en/cat-harness/processes/&quot;,
+    &quot;writer&quot;: [
+      &quot;processes:viz&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;a page per diagram of every instance, 32 of 100 of them other instances&#39; (measured: a foreign task name rewrote public-comment.md); listed after the render:bpmn drawings, because its Findings section reports which diagrams have one&quot;
   }
 ]</pre></dd>
 <dt>_needs_comment</dt><dd>The layer this instance sits on. Owner, 2026-09-20: &quot;So bootsteap, cat harness, fa-core, f-a, from bottom to top.&quot; Declared rather than hardcoded in the navbar, so the ordering is a fact of the repository and not of whichever consumer needed it first. `bootstrap-tools` added 2026-09-30 (bean `0lj4`, owner&#39;s ruling): bean `xsqm` moved that code OUT of this instance into its own, and this list was not updated with it, so 20 imports under `cat-harness/` reached an instance this file did not name. `allowedFromNeeds` gives a layer `{layer} U ancestors(layer)`, and `bootstrap-tools` is a SIBLING of `cat-harness` rather than an ancestor, so every one of those 20 was `wrong-direction` by the declared rule while four separate checks reported clean. The reverse arrow stays forbidden and is guarded by `check:tools-closure`.</dd>

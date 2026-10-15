@@ -1,0 +1,89 @@
+<blockquote class="note">
+  <p>Generated from <code class="language-plaintext highlighter-rouge">cat-harness/processes/sdlc/jsonld-drift-check.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a></p>
+</blockquote>
+
+<h1 id="are-the-jsonld-siblings-still-in-sync-with-their-ts-manifests">Are the .jsonld siblings still in sync with their .ts manifests?</h1>
+
+<p><code class="language-plaintext highlighter-rouge">Process_JsonLdDrift</code> · strict · 1 step(s)</p>
+
+<p>Check that the committed <code class="language-plaintext highlighter-rouge">.jsonld</code> siblings are still in sync with the <code class="language-plaintext highlighter-rouge">.ts</code> manifests they are generated from. A GENERATED FILE THAT IS COMMITTED CAN GO STALE, AND A STALE ONE IS CONSULTED. Five <code class="language-plaintext highlighter-rouge">--check</code> runs in one job: the JSON-LD context, the block siblings, the library nodes, the site graph, and the label-resolution tests. Each regenerates from the <code class="language-plaintext highlighter-rouge">.ts</code> manifest that owns it and fails on any difference.</p>
+
+<p>They are drawn as ONE task rather than five, because they are independent of each other and sequential only because a single job runs them. Five boxes would assert an ordering the workflow does not have.</p>
+
+<p>THIS DIAGRAM IS DELIBERATELY SMALL, AND SAYING SO IS PART OF IT. Bean <code class="language-plaintext highlighter-rouge">7yvd</code> warns that “a diagram that is drawn once and then drifts is worse than none, because it is consulted”, so each of the six was read before being drawn and classified by whether it says anything the YAML does not. <code class="language-plaintext highlighter-rouge">docs-site</code>, <code class="language-plaintext highlighter-rouge">ci-health</code>, <code class="language-plaintext highlighter-rouge">health-check</code> and <code class="language-plaintext highlighter-rouge">code-quality-gates</code> do — a full-replace compensation pair, two three-state verdict gateways, five independent parallel jobs. THIS ONE DOES NOT: it is one job with no branch and no compensation path, and dressing it up as more would be decoration that still has to be maintained.</p>
+
+<p>IT EARNS A DIAGRAM FOR A DIFFERENT REASON. Without one its job names no node (<code class="language-plaintext highlighter-rouge"># bpmn-node:</code> in the workflow), so <code class="language-plaintext highlighter-rouge">check:workflow-coverage</code> has nothing to compare and a job added here would tell nobody. That is drift detection rather than exposition, and it is worth the file on its own — but the two are not the same thing, and a reader who opens this expecting the second should be told which they are getting.</p>
+
+<p><img src="../../../assets/img/workflows/jsonld-drift-check.svg" alt="BPMN diagram: Are the .jsonld siblings still in sync with their .ts manifests?" style="max-width:100%" /></p>
+
+<h2 id="how-it-connects">How it connects</h2>
+
+<ul>
+  <li><strong>Called by:</strong> no call activity names this process</li>
+  <li><strong>Calls:</strong> none</li>
+  <li><strong>Presented on:</strong> no docs page section shows this diagram</li>
+</ul>
+
+<h2 id="lanes--who-acts">Lanes — who acts</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>lane</th>
+      <th>role</th>
+      <th>what it does here</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>CI/CD Pipeline</td>
+      <td><code class="language-plaintext highlighter-rouge">build-pipeline</code></td>
+      <td>The only lane, running the one task this diagram draws deliberately as a single box rather than five: the five checks it performs are independent of each other and only sequential because one job runs them, so five boxes would assert an ordering that does not exist. Its declared job is also the reason this diagram exists at all — without it, check:workflow-coverage would have nothing here to compare a real job against.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="steps">Steps</h2>
+
+<p>Every one of the 1 step(s) is documented.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>step</th>
+      <th>lane</th>
+      <th>skill / sub-process</th>
+      <th>what it does</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Regenerate the context, block, library and site graphs — and diff</strong><br /><code class="language-plaintext highlighter-rouge">Task_Check</code></td>
+      <td>CI/CD Pipeline</td>
+      <td>—</td>
+      <td>Run the five –check generators in one job — the JSON-LD context, block siblings, library nodes, site graph, then the label-resolution and emitter tests. Any committed .jsonld that differs from what its generator now produces fails the PR, because a stale generated file is still consulted.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="decisions">Decisions</h2>
+
+<p>Every one of the 1 decision(s) is documented.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>decision</th>
+      <th>what decides it</th>
+      <th>branches</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Did anything change?</strong><br /><code class="language-plaintext highlighter-rouge">GW_Drift</code></td>
+      <td>Answered by the diff Task_Check takes after regenerating the context, block, library and site graphs. No difference ends clean; any difference ends the job red, because a committed file is stale against its source.</td>
+      <td><strong>no — in sync</strong> → Every sibling in sync<br /><strong>yes — drifted</strong> → Job RED — the generated file is stale</td>
+    </tr>
+  </tbody>
+</table>
+

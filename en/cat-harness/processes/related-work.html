@@ -1,0 +1,91 @@
+<blockquote class="note">
+  <p>Generated from <code class="language-plaintext highlighter-rouge">cat-harness/processes/sdlc/related-work.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a></p>
+</blockquote>
+
+<h1 id="related-work-find-sort-summarize-ask-to-coordinate">Related work: find, sort, summarize, ask to coordinate</h1>
+
+<p><code class="language-plaintext highlighter-rouge">Process_RelatedWork</code> · strict · 5 step(s)</p>
+
+<p>Before new work takes shape, find the work it touches. When a requirement is initiated or updated through a human-agent chat (CRDM), or a method is adopted from a source, search the beans and the repository’s issues and open PRs for relevance. Categorize and summarize every hit, then ask the user whether and how to coordinate. Judgement decides the categories and the recommendation; the user decides the coordination. Owner, 2026-09-23 (issue #1023): ‘existing beans need to be searched for relevance and categorized (and summarized), same for issues (e.g. github). ask user if they want to coordinate. judgement is used to determine how’. Operating skill: related-work-coordination.</p>
+
+<p><img src="../../../assets/img/workflows/related-work.svg" alt="BPMN diagram: Related work: find, sort, summarize, ask to coordinate" style="max-width:100%" /></p>
+
+<h2 id="how-it-connects">How it connects</h2>
+
+<ul>
+  <li><strong>Called by:</strong> <a href="methodology-from-source.html">Adopt a methodology from a source document</a>, <a href="crdm-issue-linking.html">CRDM — link the work to an issue</a></li>
+  <li><strong>Calls:</strong> none</li>
+  <li><strong>Presented on:</strong> no docs page section shows this diagram</li>
+</ul>
+
+<h2 id="lanes--who-acts">Lanes — who acts</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>lane</th>
+      <th>role</th>
+      <th>what it does here</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Agent</td>
+      <td><code class="language-plaintext highlighter-rouge">authoring-agent</code></td>
+      <td>Searches, sorts and summarizes, and recommends. It never links, blocks, merges or comments on another piece of work before the user has answered, because coordinating is a commitment on behalf of the work’s owners.</td>
+    </tr>
+    <tr>
+      <td>User</td>
+      <td><code class="language-plaintext highlighter-rouge">user</code></td>
+      <td>Answers one question: coordinate or not, and how. The question arrives with its context, options and a recommendation, so it can be answered without opening anything (interaction-modality §4.1).</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="steps">Steps</h2>
+
+<p><strong>1</strong> of 5 step(s) carry no documentation — <code class="language-plaintext highlighter-rouge">activity-documented</code> lists them.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>step</th>
+      <th>lane</th>
+      <th>skill / sub-process</th>
+      <th>what it does</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Search beans for relevance</strong><br /><code class="language-plaintext highlighter-rouge">A_SearchBeans</code></td>
+      <td>Agent</td>
+      <td><code class="language-plaintext highlighter-rouge">related-work-coordination</code></td>
+      <td>beans list –json / beans query over titles AND bodies, open and recently completed. A completed bean is evidence of a decision already made.</td>
+    </tr>
+    <tr>
+      <td><strong>Search issues and open PRs</strong><br /><code class="language-plaintext highlighter-rouge">A_SearchIssues</code></td>
+      <td>Agent</td>
+      <td><code class="language-plaintext highlighter-rouge">related-work-coordination</code></td>
+      <td>The repository’s issues (open and closed) and its open pull requests. An open PR touching the same files is the collision most worth finding early.</td>
+    </tr>
+    <tr>
+      <td><strong>Categorize and summarize</strong><br /><code class="language-plaintext highlighter-rouge">A_Categorize</code></td>
+      <td>Agent</td>
+      <td><code class="language-plaintext highlighter-rouge">related-work-coordination</code></td>
+      <td>Each hit gets a category (overlaps: coordinate; affected by; out of scope; unrelated) and a one-line summary with its state. Judgement, not a keyword score: say why each is in its category.</td>
+    </tr>
+    <tr>
+      <td><strong>Coordinate? How?</strong><br /><code class="language-plaintext highlighter-rouge">U_Coordinate</code></td>
+      <td>User</td>
+      <td>—</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td><strong>Record and act on the answer</strong><br /><code class="language-plaintext highlighter-rouge">A_Record</code></td>
+      <td>Agent</td>
+      <td><code class="language-plaintext highlighter-rouge">related-work-coordination</code></td>
+      <td>Write the chosen coordination where it will be found: bean links (–blocked-by, –parent), a line in the issue or PR body, or ‘note only’. A declined coordination is recorded too.</td>
+    </tr>
+  </tbody>
+</table>
+

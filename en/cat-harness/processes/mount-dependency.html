@@ -1,0 +1,122 @@
+<blockquote class="note">
+  <p>Generated from <code class="language-plaintext highlighter-rouge">cat-harness/processes/kg/mount-dependency.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a></p>
+</blockquote>
+
+<h1 id="remote-mount-a-dependency">Remote-mount a dependency</h1>
+
+<p><code class="language-plaintext highlighter-rouge">Process_MountDependency</code> · strict · 6 step(s)</p>
+
+<p>Laying a harness — and every instance it needs — down from another repository at a pinned commit, as declared directories, with a lock that says exactly what arrived.</p>
+
+<p>You are in this process whenever a folio or harness needs a layer it does not hold: a downstream folio built on a content layer above this harness, a separated instance whose foundation lives elsewhere. The downstream names the harness, its repository and a 40-character pin as a <code class="language-plaintext highlighter-rouge">source.remote</code> instance in its root <code class="language-plaintext highlighter-rouge">index.config.json</code> (legacy: <code class="language-plaintext highlighter-rouge">remoteMounts</code> on its declaration, never both); everything else is read from the harness’s own declaration at that pin.</p>
+
+<p>Every instance reached ends in one of three states — mounted, missing, could-not-determine — and the third is never reported as the first. The skill is <code class="language-plaintext highlighter-rouge">remote-mount</code>.</p>
+
+<p><img src="../../../assets/img/workflows/mount-dependency.svg" alt="BPMN diagram: Remote-mount a dependency" style="max-width:100%" /></p>
+
+<h2 id="how-it-connects">How it connects</h2>
+
+<ul>
+  <li><strong>Called by:</strong> no call activity names this process</li>
+  <li><strong>Calls:</strong> none</li>
+  <li><strong>Presented on:</strong> no docs page section shows this diagram</li>
+</ul>
+
+<h2 id="lanes--who-acts">Lanes — who acts</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>lane</th>
+      <th>role</th>
+      <th>what it does here</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Downstream author</td>
+      <td><code class="language-plaintext highlighter-rouge">author</code></td>
+      <td>A person decides WHICH harness and WHICH pin, and whether to override a default. Nothing below chooses a pin: a branch name is refused, and so is an abbreviated SHA.</td>
+    </tr>
+    <tr>
+      <td>Build pipeline</td>
+      <td><code class="language-plaintext highlighter-rouge">build-pipeline</code></td>
+      <td>Mechanical from the declaration on: the same declaration mounts the same bytes in every container, and only an override by id changes where or what.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="steps">Steps</h2>
+
+<p>Every one of the 6 step(s) is documented.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>step</th>
+      <th>lane</th>
+      <th>skill / sub-process</th>
+      <th>what it does</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Declare the mount: harness, repository, pin</strong><br /><code class="language-plaintext highlighter-rouge">Task_DeclareMount</code></td>
+      <td>Downstream author</td>
+      <td><code class="language-plaintext highlighter-rouge">remote-mount</code><br /><code class="language-plaintext highlighter-rouge">index-config</code></td>
+      <td>An instance <code class="language-plaintext highlighter-rouge">{ name, source: { remote: { repository, ref } } }</code> in the<br />downstream’s root <code class="language-plaintext highlighter-rouge">index.config.json</code>, written through<br /><code class="language-plaintext highlighter-rouge">writeDeclaredMounts</code>. A folio with no index still reads <code class="language-plaintext highlighter-rouge">remoteMounts</code><br />on its declaration; both at once is refused. <code class="language-plaintext highlighter-rouge">ref</code> is a full<br />40-character commit. Overrides, if any, are keyed by instance name and<br />then by directory id — never by path. The index itself is the<br />index-config skill’s.<br />Decide first whether you want a remote mount at all: reading another<br />graph without holding its code is a SUBSCRIPTION, not a mount.</td>
+    </tr>
+    <tr>
+      <td><strong>Resolve the closure at the pin</strong><br /><code class="language-plaintext highlighter-rouge">Task_ResolveClosure</code></td>
+      <td>Build pipeline</td>
+      <td><code class="language-plaintext highlighter-rouge">remote-mount</code></td>
+      <td>Fetch the pinned tree (shallow, blobless). Read the harness’s declaration<br />from it; for each <code class="language-plaintext highlighter-rouge">needs</code> name, find that instance in the same tree, else<br />follow a GITLINK at that tree as a pin into its own repository. A need<br />found in neither is missing; one the downstream already holds is local.<br />Paths and directories come from <code class="language-plaintext highlighter-rouge">mountDefaults</code> unless overridden.</td>
+    </tr>
+    <tr>
+      <td><strong>Mount each instance at its declared path</strong><br /><code class="language-plaintext highlighter-rouge">Task_MountInstances</code></td>
+      <td>Build pipeline</td>
+      <td><code class="language-plaintext highlighter-rouge">remote-mount</code></td>
+      <td>Sparse checkout of the declaration and the chosen directories, copied to<br />the mount path (by default the instance’s home path, so relative imports<br />and sibling discovery hold). Never onto tracked bytes; never onto a<br />directory no lock says this mount made; never over edits to a previous<br />mount — those are left untouched and reported.</td>
+    </tr>
+    <tr>
+      <td><strong>Write the lock</strong><br /><code class="language-plaintext highlighter-rouge">Task_WriteLock</code></td>
+      <td>Build pipeline</td>
+      <td><code class="language-plaintext highlighter-rouge">remote-mount</code></td>
+      <td><code class="language-plaintext highlighter-rouge">index.lock.json</code> beside the downstream’s <code class="language-plaintext highlighter-rouge">index.config.json</code> (the<br />legacy <code class="language-plaintext highlighter-rouge">&lt;instance&gt;.mount-lock.json</code> is still read, and is renamed<br />onto the new name when rewritten; both present is an error): the<br />pins it was written for, each instance’s repository, SHA and how the pin<br />was found, each directory’s tree digest — and what was NOT mounted, with<br />why, so an offline check cannot read a gap as clean.</td>
+    </tr>
+    <tr>
+      <td><strong>Re-render the agent surface</strong><br /><code class="language-plaintext highlighter-rouge">Task_RenderAgentSurface</code></td>
+      <td>Build pipeline</td>
+      <td><code class="language-plaintext highlighter-rouge">remote-mount</code><br /><code class="language-plaintext highlighter-rouge">agent-memory</code></td>
+      <td>When the lock changed, the layers an agent’s skills and memory are<br />generated from changed with it. <code class="language-plaintext highlighter-rouge">mount:remote</code> re-runs the generators<br />of what an agent actually reads — <code class="language-plaintext highlighter-rouge">skill:commands</code> (<code class="language-plaintext highlighter-rouge">.claude/commands/</code>)<br />and <code class="language-plaintext highlighter-rouge">agent-memory</code> (<code class="language-plaintext highlighter-rouge">.claude/agent-memory/</code> and the <code class="language-plaintext highlighter-rouge">.agents/</code> copies)<br />— from the checkout root, and a generator that fails fails the run.<br />A re-pin commit therefore carries the new layers AND the surface<br />rendered from them; shipping the first without the second is how<br />folio-assistant#2526 went red on three agent-memory tests. Owner,<br />2026-10-10: “it may have new agentic skills to re-render and add.<br />same for memory.”</td>
+    </tr>
+    <tr>
+      <td><strong>Check disk against lock against declaration</strong><br /><code class="language-plaintext highlighter-rouge">Task_CheckAgainstLock</code></td>
+      <td>Build pipeline</td>
+      <td><code class="language-plaintext highlighter-rouge">remote-mount</code><br /><code class="language-plaintext highlighter-rouge">ci-health</code></td>
+      <td><code class="language-plaintext highlighter-rouge">mount:remote:check</code>, with no network: the lock’s pins are the<br />declaration’s, and every locked directory is on disk and hashes to its<br />digest. Could-not-determine outranks missing, which outranks mounted.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="decisions">Decisions</h2>
+
+<p>Every one of the 1 decision(s) is documented.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>decision</th>
+      <th>what decides it</th>
+      <th>branches</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Every instance mounted or local?</strong><br /><code class="language-plaintext highlighter-rouge">GW_State</code></td>
+      <td>Read off the check’s aggregate state. <code class="language-plaintext highlighter-rouge">skipped</code> and <code class="language-plaintext highlighter-rouge">local</code> are answers; <code class="language-plaintext highlighter-rouge">missing</code> and <code class="language-plaintext highlighter-rouge">could-not-determine</code> are not.</td>
+      <td><strong>yes</strong> → The closure is on disk, pinned and locked<br /><strong>no</strong> → Reported loudly: missing / could not determine</td>
+    </tr>
+  </tbody>
+</table>
+

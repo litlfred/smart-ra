@@ -1,0 +1,164 @@
+<blockquote class="note">
+  <p>Generated from <code class="language-plaintext highlighter-rouge">cat-harness/processes/sdlc/merge-refusal.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a></p>
+</blockquote>
+
+<h1 id="a-refused-merge-train-member">A refused merge-train member</h1>
+
+<p><code class="language-plaintext highlighter-rouge">Process_MergeRefusal</code> · strict · 10 step(s)</p>
+
+<p>What a merge steward does with a PR it dropped from a merge train: its merge (<code class="language-plaintext highlighter-rouge">merge-base.bpmn</code>, run with <code class="language-plaintext highlighter-rouge">--no-regen</code>) refused an authored or undeclared conflict, or the train’s combined result failed a gate. Owner, 2026-10-02: “create a new bean (under appropriate epic/story…), hand it back to the sibling (use the agent-to-agent handoff process with a fail condition) for resolution, or dispatch an agent as appropriate.” Bean <code class="language-plaintext highlighter-rouge">zacz</code>; the discipline is in <code class="language-plaintext highlighter-rouge">merge-conflict-patterns</code> §”When a merge-train member is refused”.</p>
+
+<p>ONE INSTANCE PER REFUSED PR, started with <code class="language-plaintext highlighter-rouge">bean:</code> set to the refusal bean. The steward finds or creates that bean BEFORE starting the instance, because creating a bean is the agent’s own <code class="language-plaintext highlighter-rouge">beans create</code> call, deduplicated by the PR number in its title; the engine has no create op (<code class="language-plaintext highlighter-rouge">bean-lifecycle.bpmn</code>). A second refusal of the same PR loops back into this instance rather than opening a second bean.</p>
+
+<p><img src="../../../assets/img/workflows/merge-refusal.svg" alt="BPMN diagram: A refused merge-train member" style="max-width:100%" /></p>
+
+<h2 id="how-it-connects">How it connects</h2>
+
+<ul>
+  <li><strong>Called by:</strong> <a href="merge-to-main.html">Merge to main</a>, <a href="merge-train.html">A merge train</a></li>
+  <li><strong>Calls:</strong> none</li>
+  <li><strong>Presented on:</strong> no docs page section shows this diagram</li>
+</ul>
+
+<h2 id="lanes--who-acts">Lanes — who acts</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>lane</th>
+      <th>role</th>
+      <th>what it does here</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Merge steward</td>
+      <td><code class="language-plaintext highlighter-rouge">session-coordinator</code></td>
+      <td>Coordinator and verifier of the hand-back: records, hands back, takes back when the fail condition fires, and closes. Never edits the bean’s instructions after the executor claims it; later facts go to the PR.</td>
+    </tr>
+    <tr>
+      <td>Owning session</td>
+      <td><code class="language-plaintext highlighter-rouge">sibling-session</code></td>
+      <td>The session named in the PR’s <code class="language-plaintext highlighter-rouge">Claude-Session:</code> trailer. The executor of the hand-back: claims the refusal bean, fixes the PR, reports on the PR in the bean’s one-line formats.</td>
+    </tr>
+    <tr>
+      <td>Dispatched agent</td>
+      <td><code class="language-plaintext highlighter-rouge">authoring-agent</code></td>
+      <td>ONE agent with a modest budget, reached only when no live owner can be. May do what a declared pattern would have done; may NOT decide an authored conflict, which goes to the owner as a question.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="steps">Steps</h2>
+
+<p><strong>2</strong> of 10 step(s) carry no documentation — <code class="language-plaintext highlighter-rouge">activity-documented</code> lists them.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>step</th>
+      <th>lane</th>
+      <th>skill / sub-process</th>
+      <th>what it does</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Record the refusal on the bean</strong><br /><code class="language-plaintext highlighter-rouge">Task_Record</code></td>
+      <td>Merge steward</td>
+      <td><code class="language-plaintext highlighter-rouge">merge-conflict-patterns</code></td>
+      <td>The PR, the head sha the train used, the train and its other members, each refused path or failing gate and why. A repeat refusal goes under <code class="language-plaintext highlighter-rouge">## Attempts</code> with <code class="language-plaintext highlighter-rouge">--body-append</code>.</td>
+    </tr>
+    <tr>
+      <td><strong>Comment on the PR once, linking the bean</strong><br /><code class="language-plaintext highlighter-rouge">Task_Comment</code></td>
+      <td>Merge steward</td>
+      <td><code class="language-plaintext highlighter-rouge">merge-conflict-patterns</code></td>
+      <td>One comment per refused PR, edited in place on every later event.</td>
+    </tr>
+    <tr>
+      <td><strong>Hand back, with a fail condition</strong><br /><code class="language-plaintext highlighter-rouge">Task_HandBack</code></td>
+      <td>Merge steward</td>
+      <td><code class="language-plaintext highlighter-rouge">merge-conflict-patterns</code></td>
+      <td>The <code class="language-plaintext highlighter-rouge">agent-handoff</code> format (#1884): Roles, Report to (the PR), Done when, Fails if. The fail condition: no <code class="language-plaintext highlighter-rouge">started</code> line within 4 h, no push within 24 h, the session gone, or <code class="language-plaintext highlighter-rouge">blocked</code> on something it cannot settle. One line to the session; the instructions are in the bean.</td>
+    </tr>
+    <tr>
+      <td><strong>Fix the PR, report on the PR</strong><br /><code class="language-plaintext highlighter-rouge">Task_Fix</code></td>
+      <td>Owning session</td>
+      <td><code class="language-plaintext highlighter-rouge">prepare-merge</code></td>
+      <td>Claims the refusal bean, brings main in with <code class="language-plaintext highlighter-rouge">merge:main</code>, settles what it refused, pushes. Completed with the outcome <code class="language-plaintext highlighter-rouge">fail condition</code> by the steward when the condition fires first.</td>
+    </tr>
+    <tr>
+      <td><strong>Dispatch one agent, recorded on the bean</strong><br /><code class="language-plaintext highlighter-rouge">Task_Dispatch</code></td>
+      <td>Merge steward</td>
+      <td><code class="language-plaintext highlighter-rouge">dispatch-agent</code></td>
+      <td>Before the agent starts: the date, why the fail condition fired, the agent’s id, its budget. Never while the first writer may still be live. Two failed attempts with the same cause go to the owner instead.</td>
+    </tr>
+    <tr>
+      <td><strong>Merge main in, regenerate, fix mechanical gates</strong><br /><code class="language-plaintext highlighter-rouge">Task_AgentFix</code></td>
+      <td>Dispatched agent</td>
+      <td><code class="language-plaintext highlighter-rouge">merge-conflict-patterns</code></td>
+      <td>Merge commits only; never a force-push.</td>
+    </tr>
+    <tr>
+      <td><strong>Ask the owner on the PR, both sides quoted</strong><br /><code class="language-plaintext highlighter-rouge">Task_AskOwner</code></td>
+      <td>Dispatched agent</td>
+      <td><code class="language-plaintext highlighter-rouge">interaction-modality</code></td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td><strong>Re-enter a train on the new head</strong><br /><code class="language-plaintext highlighter-rouge">Task_Retrain</code></td>
+      <td>Merge steward</td>
+      <td><code class="language-plaintext highlighter-rouge">merge-conflict-patterns</code></td>
+      <td>The next train is the verifier: the executor’s own log is evidence, not the close.</td>
+    </tr>
+    <tr>
+      <td><strong>Close the bean, merge commit as evidence</strong><br /><code class="language-plaintext highlighter-rouge">Task_Close</code></td>
+      <td>Merge steward</td>
+      <td><code class="language-plaintext highlighter-rouge">bean-coordination</code></td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td><strong>Scrap the bean, with the reason</strong><br /><code class="language-plaintext highlighter-rouge">Task_Scrap</code></td>
+      <td>Merge steward</td>
+      <td><code class="language-plaintext highlighter-rouge">bean-coordination</code></td>
+      <td>The agent’s own <code class="language-plaintext highlighter-rouge">beans update --status scrapped</code>; never deleted.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="decisions">Decisions</h2>
+
+<p><strong>2</strong> of 4 decision(s) carry no documentation — <code class="language-plaintext highlighter-rouge">gateway-documented</code> lists them.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>decision</th>
+      <th>what decides it</th>
+      <th>branches</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Owning session live?</strong><br /><code class="language-plaintext highlighter-rouge">GW_Owner</code></td>
+      <td><code class="language-plaintext highlighter-rouge">no</code> when the session is archived, failed, or unknown to <code class="language-plaintext highlighter-rouge">get_session</code>, or the PR names none.</td>
+      <td><strong>yes</strong> → Hand back, with a fail condition<br /><strong>no</strong> → Dispatch one agent, recorded on the bean</td>
+    </tr>
+    <tr>
+      <td><strong>Fixed before the fail condition?</strong><br /><code class="language-plaintext highlighter-rouge">GW_FailCond</code></td>
+      <td>—</td>
+      <td><strong>yes</strong> → Re-enter a train on the new head<br /><strong>no</strong> → Dispatch one agent, recorded on the bean</td>
+    </tr>
+    <tr>
+      <td><strong>Needs an authored choice?</strong><br /><code class="language-plaintext highlighter-rouge">GW_Authored</code></td>
+      <td>Two siblings editing one bean, one script changed differently on both sides, a budget exceeded only in combination: each is a choice between authors.</td>
+      <td><strong>yes</strong> → Ask the owner on the PR, both sides quoted<br /><strong>no</strong> → Re-enter a train on the new head</td>
+    </tr>
+    <tr>
+      <td><strong>The PR’s fate?</strong><br /><code class="language-plaintext highlighter-rouge">GW_Fate</code></td>
+      <td>—</td>
+      <td><strong>landed</strong> → Close the bean, merge commit as evidence<br /><strong>refused again</strong> → Record the refusal on the bean<br /><strong>closed unmerged</strong> → Scrap the bean, with the reason</td>
+    </tr>
+  </tbody>
+</table>
+

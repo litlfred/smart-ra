@@ -1,0 +1,98 @@
+<blockquote class="note">
+  <p>Generated from <code class="language-plaintext highlighter-rouge">smart-base/processes/content/SGAuthoring.DAKLifecycle.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a></p>
+</blockquote>
+
+<h1 id="phase-1-planning">Phase 1: Planning</h1>
+
+<p><code class="language-plaintext highlighter-rouge">Process_Planning</code> · strict (defaulted) · 7 step(s)</p>
+
+<p>Plans a DAK: scope, team, method, sources, roadmap and consultations, then starts the sprint cycle.</p>
+
+<p><em>No rendered diagram — run <code class="language-plaintext highlighter-rouge">bun run cat render:bpmn</code>.</em></p>
+
+<h2 id="how-it-connects">How it connects</h2>
+
+<ul>
+  <li><strong>Called by:</strong> no call activity names this process</li>
+  <li><strong>Calls:</strong> none</li>
+  <li><strong>Presented on:</strong> no docs page section shows this diagram</li>
+</ul>
+
+<h2 id="lanes--who-acts">Lanes — who acts</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>lane</th>
+      <th>role</th>
+      <th>what it does here</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Programme Manager</td>
+      <td><code class="language-plaintext highlighter-rouge">programme-manager</code></td>
+      <td>The programme manager owns this pool end to end: it fixes the DAK’s scope, team (RACI) and source documents once, and its last task starts the sprint cycle that the Business Analyst pool picks up. Nothing here is revisited per sprint.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="steps">Steps</h2>
+
+<p><strong>7</strong> of 7 step(s) carry no documentation — <code class="language-plaintext highlighter-rouge">activity-documented</code> lists them.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>step</th>
+      <th>lane</th>
+      <th>skill / sub-process</th>
+      <th>what it does</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Define DAK scope, purpose, and target audience</strong><br /><code class="language-plaintext highlighter-rouge">Task_Scoping</code></td>
+      <td>Programme Manager</td>
+      <td><code class="language-plaintext highlighter-rouge">content-plan</code></td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td><strong>Form DAK development team and define RASCI matrix</strong><br /><code class="language-plaintext highlighter-rouge">Task_FormTeam</code></td>
+      <td>Programme Manager</td>
+      <td><code class="language-plaintext highlighter-rouge">raci</code></td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td><strong>Establish development process (Agile/Scrum) and tooling</strong><br /><code class="language-plaintext highlighter-rouge">Task_EstablishProcess</code></td>
+      <td>Programme Manager</td>
+      <td><code class="language-plaintext highlighter-rouge">methodology-adoption</code></td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td><strong>Gather source documents (guidelines, registers, policies)</strong><br /><code class="language-plaintext highlighter-rouge">Task_GatherDocs</code></td>
+      <td>Programme Manager</td>
+      <td><code class="language-plaintext highlighter-rouge">dak-l1-library</code></td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td><strong>Draft project roadmap, backlog, and sprint cadence</strong><br /><code class="language-plaintext highlighter-rouge">Task_PlanTimeline</code></td>
+      <td>Programme Manager</td>
+      <td><code class="language-plaintext highlighter-rouge">release-epic-planning</code></td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td><strong>Plan SME consultation schedule and format</strong><br /><code class="language-plaintext highlighter-rouge">Task_PlanConsultations</code></td>
+      <td>Programme Manager</td>
+      <td><code class="language-plaintext highlighter-rouge">content-plan</code></td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td><strong>Assign work and begin sprint cycle</strong><br /><code class="language-plaintext highlighter-rouge">Task_AssignWork</code></td>
+      <td>Programme Manager</td>
+      <td><code class="language-plaintext highlighter-rouge">todo-manager</code></td>
+      <td>—</td>
+    </tr>
+  </tbody>
+</table>
+

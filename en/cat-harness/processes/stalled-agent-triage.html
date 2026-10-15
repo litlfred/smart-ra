@@ -1,0 +1,102 @@
+<blockquote class="note">
+  <p>Generated from <code class="language-plaintext highlighter-rouge">cat-harness/processes/sdlc/stalled-agent-triage.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a></p>
+</blockquote>
+
+<h1 id="stalled-agent-triage-collect-handovers-consolidate-themes-recommend-re-route">Stalled-agent triage: collect handovers, consolidate themes, recommend, re-route</h1>
+
+<p><code class="language-plaintext highlighter-rouge">Process_StalledAgentTriage</code> · strict · 6 step(s)</p>
+
+<p>When agents stall (context exhausted, container lost, session timed out) their work is spread over PRs, branches, beans and process runs. Collect each agent’s handover report, or reconstruct one, group the work into 2-4 themes, recommend how to pick each up, let the user decide, then record it and re-route open PRs through the merge steward. Owner, 2026-10-02: ‘an incoming stalled agent triage process which needs to look at stalled agents (named or over a given time window from active PRs, branches, discussions, beans etc), try to get as many handover reports as possible, if many then consolidate the various workstreams into 2-4 themes, give recommendation on how to pick up the work as part of current/new workplan; if open PRs etc, coordinate with relevant agents (e.g. the Merge Manager)’. Operating skills: stalled-agent-triage, handover-report.</p>
+
+<p><img src="../../../assets/img/workflows/stalled-agent-triage.svg" alt="BPMN diagram: Stalled-agent triage: collect handovers, consolidate themes, recommend, re-route" style="max-width:100%" /></p>
+
+<h2 id="how-it-connects">How it connects</h2>
+
+<ul>
+  <li><strong>Called by:</strong> no call activity names this process</li>
+  <li><strong>Calls:</strong> none</li>
+  <li><strong>Presented on:</strong> no docs page section shows this diagram</li>
+</ul>
+
+<h2 id="lanes--who-acts">Lanes — who acts</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>lane</th>
+      <th>role</th>
+      <th>what it does here</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Triage agent</td>
+      <td><code class="language-plaintext highlighter-rouge">authoring-agent</code></td>
+      <td>Reads the footprint the stalled agents left, collects or reconstructs a handover report per agent, groups the work into 2-4 themes, and recommends. It never finishes, closes or deletes another agent’s work.</td>
+    </tr>
+    <tr>
+      <td>Merge steward</td>
+      <td><code class="language-plaintext highlighter-rouge">session-coordinator</code></td>
+      <td>Receives the open PRs that lost their driver: which are green and ready, which are mid-merge, which must be re-driven from their PR head.</td>
+    </tr>
+    <tr>
+      <td>User</td>
+      <td><code class="language-plaintext highlighter-rouge">user</code></td>
+      <td>Decides one theme at a time: continue, fold into the plan, new epic, park, or scrap.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="steps">Steps</h2>
+
+<p><strong>1</strong> of 6 step(s) carry no documentation — <code class="language-plaintext highlighter-rouge">activity-documented</code> lists them.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>step</th>
+      <th>lane</th>
+      <th>skill / sub-process</th>
+      <th>what it does</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Find the footprint</strong><br /><code class="language-plaintext highlighter-rouge">A_Footprint</code></td>
+      <td>Triage agent</td>
+      <td><code class="language-plaintext highlighter-rouge">stalled-agent-triage</code></td>
+      <td>handover notes (beans/notes, title ‘handover:’), open PRs and branches by session or time window, in-progress beans, workflow instances, last PR and issue comments. REST, one batched pass.</td>
+    </tr>
+    <tr>
+      <td><strong>Collect or reconstruct a handover report per agent</strong><br /><code class="language-plaintext highlighter-rouge">A_Collect</code></td>
+      <td>Triage agent</td>
+      <td><code class="language-plaintext highlighter-rouge">handover-report</code></td>
+      <td>Use the agent’s own report and check it against live state; if none, ask the agent if it is still reachable, else reconstruct with the handover-report template and mark it reconstructed. Unpushed state is unknown, never empty.</td>
+    </tr>
+    <tr>
+      <td><strong>Consolidate into 2-4 themes, with a recommendation each</strong><br /><code class="language-plaintext highlighter-rouge">A_Consolidate</code></td>
+      <td>Triage agent</td>
+      <td><code class="language-plaintext highlighter-rouge">stalled-agent-triage</code></td>
+      <td>Group by what the work delivers, not by agent. Each theme gets its epic, members, dependencies, risk, and one of: continue, fold in, new epic, park, scrap (owner only).</td>
+    </tr>
+    <tr>
+      <td><strong>Decide each theme</strong><br /><code class="language-plaintext highlighter-rouge">U_Decide</code></td>
+      <td>User</td>
+      <td>—</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td><strong>Record the triage and claim the picked-up work</strong><br /><code class="language-plaintext highlighter-rouge">A_Record</code></td>
+      <td>Triage agent</td>
+      <td><code class="language-plaintext highlighter-rouge">bean-coordination</code></td>
+      <td>A ‘triage: <date>' bean note on each theme's epic; new or re-parented beans; claims via beans:claim. Owning sessions still alive are notified before their branches are touched.</date></td>
+    </tr>
+    <tr>
+      <td><strong>Re-route open PRs that lost their driver</strong><br /><code class="language-plaintext highlighter-rouge">S_Reroute</code></td>
+      <td>Merge steward</td>
+      <td><code class="language-plaintext highlighter-rouge">coordinate</code></td>
+      <td>Green, up-to-date PRs join the queue; mid-merge branches are re-driven from the PR head, never guessed at; red PRs go back to the new driver.</td>
+    </tr>
+  </tbody>
+</table>
+

@@ -1,0 +1,156 @@
+<blockquote class="note">
+  <p>Generated from <code class="language-plaintext highlighter-rouge">folio-assistant-core/processes/content/content-lifecycle.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a></p>
+</blockquote>
+
+<h1 id="content-lifecycle">Content lifecycle</h1>
+
+<p><code class="language-plaintext highlighter-rouge">Process_Lifecycle</code> · strict · 8 step(s)</p>
+
+<p>One cycle of a folio from plan to retirement, calling editing and the draft-to-publication path as call activities. folio-assistant — the content lifecycle end to end, one cycle of a folio.
+Source of truth: this file. Open it in bpmn.io, Camunda Modeler, or any other
+BPMN 2.0 tool. The SVG under docs/assets/img/workflows/ is generated from it
+by <code class="language-plaintext highlighter-rouge">bun run cat render:bpmn</code> — never hand-edit the SVG.
+The <bootstrap.processes:skill> extension on an activity names the folio-assistant skill
+that implements it; <cat-harness.processes:bean> marks a step that reads or writes the shared
+work plan in beans/.</cat-harness.processes:bean></bootstrap.processes:skill></p>
+
+<p><em>No rendered diagram — run <code class="language-plaintext highlighter-rouge">bun run cat render:bpmn</code>.</em></p>
+
+<h2 id="how-it-connects">How it connects</h2>
+
+<ul>
+  <li><strong>Called by:</strong> no call activity names this process</li>
+  <li><strong>Calls:</strong> <a href="editing-hci-validation.html">Editing and HCI validation</a>, <a href="draft-to-publication.html">Draft, review and publish</a></li>
+  <li><strong>Presented on:</strong> no docs page section shows this diagram</li>
+</ul>
+
+<h2 id="lanes--who-acts">Lanes — who acts</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>lane</th>
+      <th>role</th>
+      <th>what it does here</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Programme manager</td>
+      <td><code class="language-plaintext highlighter-rouge">programme-manager</code></td>
+      <td>Opens and closes the cycle rather than running any of it: Task_Plan commits scope, team and artefacts before Lane_WorkPlan turns them into beans, and Task_Retire is reached only when Gateway_NextCycle finds nothing left to do — so this lane’s second appearance is a judgement that the cycle is actually finished, not a step inside it.</td>
+    </tr>
+    <tr>
+      <td>Work plan — beans (shared by humans and agents)</td>
+      <td><code class="language-plaintext highlighter-rouge">work-plan</code></td>
+      <td>Touched twice, not once: Task_SeedBeans converts the programme manager’s plan into trackable work at the start, and Task_FeedbackBeans converts triaged reader feedback into more of it at the end, immediately before Gateway_NextCycle asks whether to go around again — so this lane is what makes the lifecycle a LOOP rather than a line, carrying what closed one cycle into what opens the next.</td>
+    </tr>
+    <tr>
+      <td>Editors + authoring agents</td>
+      <td><code class="language-plaintext highlighter-rouge">editor</code></td>
+      <td>The single re-entry point for every round the cycle contains — Gateway_NextCycle’s ‘yes’ branch (H09) loops straight back here rather than to Task_Plan — so this lane runs once per proposed change, not once per cycle, and is where the accept decision on each of those changes is made before anything reaches the corpus-wide Task_Test.</td>
+    </tr>
+    <tr>
+      <td>Validation and QA (mechanical + agents)</td>
+      <td><code class="language-plaintext highlighter-rouge">validation-pipeline</code></td>
+      <td>The corpus-wide check no single block’s HCI validation gate can perform — cross-references, whole-folio build status, proof status and QA axes — sitting between the editor’s accept and the publication manager’s release, so a change that passed block-level review still has to clear folio-level checks before CallActivity_Publication ever runs.</td>
+    </tr>
+    <tr>
+      <td>Review team and SMEs</td>
+      <td><code class="language-plaintext highlighter-rouge">reviewer</code></td>
+      <td>The only reviewing this lane does happens AFTER publication, not before it: Task_Feedback triages what implementers and readers report on the LIVE folio, by severity and scope, and that triage — not a fresh review — is what Task_FeedbackBeans turns into the next cycle’s work.</td>
+    </tr>
+    <tr>
+      <td>Publication manager</td>
+      <td><code class="language-plaintext highlighter-rouge">publication-manager</code></td>
+      <td>The single point in the cycle where the corpus becomes public: reached only after Task_Test has cleared the whole folio, and its own outcome is what Task_Feedback then collects reactions to — so whatever this lane calls out to in draft-to-publication.bpmn is the last gate before readers see anything.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="steps">Steps</h2>
+
+<p>Every one of the 8 step(s) is documented.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>step</th>
+      <th>lane</th>
+      <th>skill / sub-process</th>
+      <th>what it does</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Plan scope, team, artifacts</strong><br /><code class="language-plaintext highlighter-rouge">Task_Plan</code></td>
+      <td>Programme manager</td>
+      <td><code class="language-plaintext highlighter-rouge">content-plan</code></td>
+      <td>Scope the work, identify artifacts and actors, form the team, set the timeline.</td>
+    </tr>
+    <tr>
+      <td><strong>Seed the work plan</strong><br /><code class="language-plaintext highlighter-rouge">Task_SeedBeans</code></td>
+      <td>Work plan — beans (shared by humans and agents)</td>
+      <td><code class="language-plaintext highlighter-rouge">todo-manager</code></td>
+      <td>The plan becomes beans. From here on, beans/ is the shared answer to ‘what is done, what is next’ — for humans and agents alike.</td>
+    </tr>
+    <tr>
+      <td><strong>Editing and HCI validation</strong><br /><code class="language-plaintext highlighter-rouge">CallActivity_Editing</code></td>
+      <td>Editors + authoring agents</td>
+      <td>calls <a href="editing-hci-validation.html">Editing and HCI validation</a><br /><code class="language-plaintext highlighter-rouge">content-author</code><br /><code class="language-plaintext highlighter-rouge">content-validate</code><br /><code class="language-plaintext highlighter-rouge">content-review</code></td>
+      <td>See editing-hci-validation.bpmn. Runs once per proposed change, not once per cycle.</td>
+    </tr>
+    <tr>
+      <td><strong>Integration test and QA sweep</strong><br /><code class="language-plaintext highlighter-rouge">Task_Test</code></td>
+      <td>Validation and QA (mechanical + agents)</td>
+      <td><code class="language-plaintext highlighter-rouge">content-test</code></td>
+      <td>Corpus-wide checks that a single-block gate cannot make: cross-references, build green, proof status, QA axes across the whole folio.</td>
+    </tr>
+    <tr>
+      <td><strong>Draft, review and publish</strong><br /><code class="language-plaintext highlighter-rouge">CallActivity_Publication</code></td>
+      <td>Publication manager</td>
+      <td>calls <a href="draft-to-publication.html">Draft, review and publish</a><br /><code class="language-plaintext highlighter-rouge">content-review</code><br /><code class="language-plaintext highlighter-rouge">content-publish</code></td>
+      <td>See draft-to-publication.bpmn.</td>
+    </tr>
+    <tr>
+      <td><strong>Triage published feedback</strong><br /><code class="language-plaintext highlighter-rouge">Task_Feedback</code></td>
+      <td>Review team and SMEs</td>
+      <td><code class="language-plaintext highlighter-rouge">content-feedback</code></td>
+      <td>Implementer and reader feedback on the published folio, triaged by severity and scope.</td>
+    </tr>
+    <tr>
+      <td><strong>File feedback as beans</strong><br /><code class="language-plaintext highlighter-rouge">Task_FeedbackBeans</code></td>
+      <td>Work plan — beans (shared by humans and agents)</td>
+      <td><code class="language-plaintext highlighter-rouge">todo-manager</code><br /><code class="language-plaintext highlighter-rouge">content-feedback</code></td>
+      <td>Triaged feedback re-enters the work plan as beans, which is how the next cycle knows what it is for.</td>
+    </tr>
+    <tr>
+      <td><strong>Retire or archive</strong><br /><code class="language-plaintext highlighter-rouge">Task_Retire</code></td>
+      <td>Programme manager</td>
+      <td><code class="language-plaintext highlighter-rouge">content-retire</code></td>
+      <td>No more content is planned: deprecate the folio. Post a deprecation notice and timeline, update its status metadata, archive it, point references at any successor, and remove it from active publication. The programme manager decides; retirement archives rather than deletes.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="decisions">Decisions</h2>
+
+<p>Every one of the 1 decision(s) is documented.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>decision</th>
+      <th>what decides it</th>
+      <th>branches</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>More content?</strong><br /><code class="language-plaintext highlighter-rouge">Gateway_NextCycle</code></td>
+      <td>Asked after feedback is filed as beans: is there more content to write for this folio? <code class="language-plaintext highlighter-rouge">yes</code> returns to editing and HCI validation; <code class="language-plaintext highlighter-rouge">no</code> retires or archives it.</td>
+      <td><strong>yes</strong> → Editing and HCI validation<br /><strong>no</strong> → Retire or archive</td>
+    </tr>
+  </tbody>
+</table>
+

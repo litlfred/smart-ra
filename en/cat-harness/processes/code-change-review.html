@@ -1,0 +1,162 @@
+<blockquote class="note">
+  <p>Generated from <code class="language-plaintext highlighter-rouge">cat-harness/processes/sdlc/code-change-review.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a></p>
+</blockquote>
+
+<h1 id="code-change-and-review">Code change and review</h1>
+
+<p><code class="language-plaintext highlighter-rouge">Process_CodeChangeReview</code> · strict · 11 step(s)</p>
+
+<p>Getting a change to the PLATFORM from “this is needed” to merged: claim the work, branch and announce it, make the change, prove it against the platform’s own gates, and carry it through review to a merge somebody else is not left holding.</p>
+
+<p>You are in this process for a change to folio-assistant itself. <code class="language-plaintext highlighter-rouge">content-change-review</code> is the same shape for a folio’s content, and the acceptance differs: here a code reviewer judges the engineering, there a review committee judges the editorial.</p>
+
+<p>The loop back through “root-cause the failure” is the point of drawing this at all. Red CI is not a state you report and leave; it is a state you re-enter the process from. The same is true of a review that is not clear.</p>
+
+<p><img src="../../../assets/img/workflows/code-change-review.svg" alt="BPMN diagram: Code change and review" style="max-width:100%" /></p>
+
+<h2 id="how-it-connects">How it connects</h2>
+
+<ul>
+  <li><strong>Called by:</strong> <a href="actor-role-administration.html">Actor and role administration</a></li>
+  <li><strong>Calls:</strong> <a href="merge-base.html">Merge the base branch in</a></li>
+  <li><strong>Presented on:</strong> no docs page section shows this diagram</li>
+</ul>
+
+<h2 id="lanes--who-acts">Lanes — who acts</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>lane</th>
+      <th>role</th>
+      <th>what it does here</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Authoring agent</td>
+      <td><code class="language-plaintext highlighter-rouge">authoring-agent</code></td>
+      <td>The <code class="language-plaintext highlighter-rouge">no-clean-run-over-an-empty-set</code> convention is bound at this lane specifically because this is the one lane that writes checks — Lane_Pipeline runs them and Lane_Reviewer reads someone else’s, so a check with nothing to assert over is this lane’s failure mode to guard against, nobody else’s. Every activity that is not mechanical execution (Lane_Pipeline) or an outside judgement (Lane_Reviewer) sits here, including both loop-backs — a red gate returns to Task_Implement through Task_Diagnose, and review findings return to it through Task_AddressReview — so this lane never hands work off without also owning what comes back.</td>
+    </tr>
+    <tr>
+      <td>CI/CD pipeline</td>
+      <td><code class="language-plaintext highlighter-rouge">build-pipeline</code></td>
+      <td>Exists as a separate lane for one reason: what it tests — the merge of head into base — is not a claim the Agent lane could make about its own tree, so GW_CIGreen has to be fed by an independent run rather than by the agent reporting its own gates as done.</td>
+    </tr>
+    <tr>
+      <td>Code reviewer</td>
+      <td><code class="language-plaintext highlighter-rouge">code-reviewer</code></td>
+      <td>Its verdict, not the agent’s own account of the diff, is what GW_ReviewClear reads: a finding routes the change back through Task_AddressReview to Task_Implement, and only a clear routes it forward to Task_PrepareMerge, so this lane alone determines which of those two paths a change takes.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="steps">Steps</h2>
+
+<p>Every one of the 11 step(s) is documented.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>step</th>
+      <th>lane</th>
+      <th>skill / sub-process</th>
+      <th>what it does</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Claim the work item</strong><br /><code class="language-plaintext highlighter-rouge">Task_ClaimBean</code></td>
+      <td>Authoring agent</td>
+      <td><code class="language-plaintext highlighter-rouge">bean-coordination</code></td>
+      <td>Claim before you work. A claim ANNOUNCES rather than reserves until<br />the PR exists, which is why the branch is announced at the next<br />step and not at the end.</td>
+    </tr>
+    <tr>
+      <td><strong>Branch, and announce it</strong><br /><code class="language-plaintext highlighter-rouge">Task_BranchAndAnnounce</code></td>
+      <td>Authoring agent</td>
+      <td><code class="language-plaintext highlighter-rouge">issue-working</code></td>
+      <td>Announce the branch WHEN IT IS CREATED, not when the work is done.<br />The gap between one agent’s view of an issue and everyone else’s is<br />what this closes.</td>
+    </tr>
+    <tr>
+      <td><strong>Make the change</strong><br /><code class="language-plaintext highlighter-rouge">Task_Implement</code></td>
+      <td>Authoring agent</td>
+      <td><code class="language-plaintext highlighter-rouge">continual-progress</code></td>
+      <td>The loop’s only open-ended step. Everything around it is procedure;<br />this is the work.</td>
+    </tr>
+    <tr>
+      <td><strong>Run the platform’s own gates</strong><br /><code class="language-plaintext highlighter-rouge">Task_RunGates</code></td>
+      <td>Authoring agent</td>
+      <td><code class="language-plaintext highlighter-rouge">platform-gates</code></td>
+      <td>Before pushing, not after CI says so. <code class="language-plaintext highlighter-rouge">bun test</code> passing is NOT the<br />gates passing: measured 2026-09-19, a green unit suite sat beside a<br /><code class="language-plaintext highlighter-rouge">tsc</code> failure and a missing <code class="language-plaintext highlighter-rouge">@graphNode</code> tag, and the second broke<br />a QA sidecar comparison as well — one cause, two symptoms, and an<br />agent running only the tests would have pushed all three.</td>
+    </tr>
+    <tr>
+      <td><strong>Commit, push, open the PR</strong><br /><code class="language-plaintext highlighter-rouge">Task_CommitAndOpenPR</code></td>
+      <td>Authoring agent</td>
+      <td><code class="language-plaintext highlighter-rouge">continual-progress</code><br /><code class="language-plaintext highlighter-rouge">before-after-preview</code><br /><code class="language-plaintext highlighter-rouge">staging-review</code></td>
+      <td>The PR opens at the FIRST commit, even on a stub, and permission is<br />never asked for it. Holding a green PR back for someone to look at<br />is not caution — it is a blocked reviewer. A change to a rendered<br />surface carries a before/after preview in the PR body<br />(skill before-after-preview).</td>
+    </tr>
+    <tr>
+      <td><strong>Root-cause the failure</strong><br /><code class="language-plaintext highlighter-rouge">Task_Diagnose</code></td>
+      <td>Authoring agent</td>
+      <td><code class="language-plaintext highlighter-rouge">ci-health</code></td>
+      <td>“Flake” is not a root cause. A red PR is work now, whatever its<br />review state — only a green, mergeable head waits on reviewers.</td>
+    </tr>
+    <tr>
+      <td><strong>Address the review</strong><br /><code class="language-plaintext highlighter-rouge">Task_AddressReview</code></td>
+      <td>Authoring agent</td>
+      <td><code class="language-plaintext highlighter-rouge">watch</code></td>
+      <td>Every finding is answered — implemented, or replied to with why<br />not. A design question does not excuse skipping the nits in the<br />same review.</td>
+    </tr>
+    <tr>
+      <td><strong>Prepare the merge, and watch it through</strong><br /><code class="language-plaintext highlighter-rouge">Task_PrepareMerge</code></td>
+      <td>Authoring agent</td>
+      <td>calls <a href="merge-base.html">Merge the base branch in</a><br /><code class="language-plaintext highlighter-rouge">prepare-merge</code></td>
+      <td><code class="language-plaintext highlighter-rouge">prepare-merge</code> brings the base in, re-runs the gates and pushes —<br />it does NOT merge. Bringing the base in IS <code class="language-plaintext highlighter-rouge">merge-base.bpmn</code><br />(<code class="language-plaintext highlighter-rouge">bun run cat merge:main</code>): conflicts a declared pattern covers are<br />resolved and proved by the gate set; anything else aborts the merge<br />and comes back to the agent (bean <code class="language-plaintext highlighter-rouge">y7b3</code>, #1707). <code class="language-plaintext highlighter-rouge">watch</code> follows the PR until it is merged or<br />closed, because webhooks do not reliably deliver CI success or a<br />merge-conflict transition.</td>
+    </tr>
+    <tr>
+      <td><strong>Record what was done, and close</strong><br /><code class="language-plaintext highlighter-rouge">Task_CloseBean</code></td>
+      <td>Authoring agent</td>
+      <td><code class="language-plaintext highlighter-rouge">todo-manager</code></td>
+      <td>A closed work item is read later by somebody deciding whether to<br />reopen the subject, so “completed” with nothing behind it cannot be<br />audited. An ISSUE is never closed on the agent’s own say-so.</td>
+    </tr>
+    <tr>
+      <td><strong>Run the gates against the merge of head into base</strong><br /><code class="language-plaintext highlighter-rouge">Task_RunCI</code></td>
+      <td>CI/CD pipeline</td>
+      <td>—</td>
+      <td>CI tests the MERGE, not the branch. That is why a locally green<br />tree can go red here: the agent’s tree and the merge result are<br />different trees, and the difference is invisible from a checkout.</td>
+    </tr>
+    <tr>
+      <td><strong>Review the change</strong><br /><code class="language-plaintext highlighter-rouge">Task_Review</code></td>
+      <td>Code reviewer</td>
+      <td><code class="language-plaintext highlighter-rouge">code-node-review</code><br /><code class="language-plaintext highlighter-rouge">staging-review</code></td>
+      <td>A human or an agent acting AS reviewer. Nothing is a reviewer;<br />somebody acts as one for the duration of this lane. For a rendered<br />change the reviewer reads the agent’s before/after preview rather<br />than building one. On agent-touched changes, an adversarial code review<br />evaluates against the RED FLAG taxonomy and writes a committed verdict.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="decisions">Decisions</h2>
+
+<p>Every one of the 2 decision(s) is documented.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>decision</th>
+      <th>what decides it</th>
+      <th>branches</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>CI green?</strong><br /><code class="language-plaintext highlighter-rouge">GW_CIGreen</code></td>
+      <td>Answered by the gates run against the merge of head into base. <code class="language-plaintext highlighter-rouge">green</code> goes to review; <code class="language-plaintext highlighter-rouge">red</code> goes to root-causing the failure first, since a red change is never waiting on review.</td>
+      <td><strong>green</strong> → Review the change<br /><strong>red</strong> → Root-cause the failure</td>
+    </tr>
+    <tr>
+      <td><strong>Review clear?</strong><br /><code class="language-plaintext highlighter-rouge">GW_ReviewClear</code></td>
+      <td>The reviewer’s result. <code class="language-plaintext highlighter-rouge">findings</code> go back to be addressed; <code class="language-plaintext highlighter-rouge">clear</code> goes to preparing the merge and watching it through.</td>
+      <td><strong>findings</strong> → Address the review<br /><strong>clear</strong> → Prepare the merge, and watch it through</td>
+    </tr>
+  </tbody>
+</table>
+

@@ -1,0 +1,138 @@
+<blockquote class="note">
+  <p>Generated from <code class="language-plaintext highlighter-rouge">cat-harness/processes/kg/nquads-distribution.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a></p>
+</blockquote>
+
+<h1 id="package-and-distribute-partitioned-w3c-n-quads-and-named-queries">Package and distribute partitioned W3C N-Quads and named queries</h1>
+
+<p><code class="language-plaintext highlighter-rouge">Process_NQuadsDistribution</code> · strict · 7 step(s)</p>
+
+<p>Extract, partition, package, and distribute knowledge graph datasets as W3C RDF 1.1 N-Quads with pre-compiled named SPARQL queries. Governed by skills <code class="language-plaintext highlighter-rouge">nquads-distribution</code> and <code class="language-plaintext highlighter-rouge">named-query-execution</code>, grounded in <code class="language-plaintext highlighter-rouge">schemas/nquads-distribution.ts</code>.</p>
+
+<p>CRITICAL INVARIANTS:</p>
+<ol>
+  <li>2-TIER SUBGRAPH ARCHITECTURE: A lightweight Spine backbone partition is loaded on startup, while bulky subgraphs (communities, workflow domains) are lazily fetched on demand.</li>
+  <li>UPSTREAM SKOLEMIZATION: Zero blank nodes across all partitions. Every node must carry a deterministic minted IRI.</li>
+  <li>PARTITION BUDGET CEILING: Partitions must strictly stay under 5 MB gzipped / 50k quads to protect browser heap and memory allocations.</li>
+  <li>GRAPH AVAILABILITY GUARD: Queries declare requiredSubgraphs; execution fails fast with MissingPartitionError rather than silently returning partial query results.</li>
+  <li>NO COMMITTED BINARY PAYLOADS: <code class="language-plaintext highlighter-rouge">.nq.gz</code> distribution payloads are gitignored, generated on demand or in CI, and served to Pages via ‘served: true’.</li>
+</ol>
+
+<p><img src="../../../assets/img/workflows/nquads-distribution.svg" alt="BPMN diagram: Package and distribute partitioned W3C N-Quads and named queries" style="max-width:100%" /></p>
+
+<h2 id="how-it-connects">How it connects</h2>
+
+<ul>
+  <li><strong>Called by:</strong> no call activity names this process</li>
+  <li><strong>Calls:</strong> none</li>
+  <li><strong>Presented on:</strong> no docs page section shows this diagram</li>
+</ul>
+
+<h2 id="lanes--who-acts">Lanes — who acts</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>lane</th>
+      <th>role</th>
+      <th>what it does here</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Knowledge Graph Engineer</td>
+      <td><code class="language-plaintext highlighter-rouge">platform-authoring-agent</code></td>
+      <td>The agent or engineer authoring or packaging the knowledge graph dataset: extracts RDF triples, skolemizes blank nodes, splits by subgraph topology, checks partition budgets, and tests named queries.</td>
+    </tr>
+    <tr>
+      <td>CI/CD Pipeline</td>
+      <td><code class="language-plaintext highlighter-rouge">build-pipeline</code></td>
+      <td>Automated CI validation and deployment pipeline: validates schema conformance, enforces graph availability guards, and publishes to GitHub Pages.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="steps">Steps</h2>
+
+<p>Every one of the 7 step(s) is documented.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>step</th>
+      <th>lane</th>
+      <th>skill / sub-process</th>
+      <th>what it does</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Extract &amp; Skolemize RDF Dataset</strong><br /><code class="language-plaintext highlighter-rouge">A_ExtractSkolemize</code></td>
+      <td>Knowledge Graph Engineer</td>
+      <td><code class="language-plaintext highlighter-rouge">nquads-distribution</code></td>
+      <td>Extract the target RDF triples and ensure strict upstream skolemization: transform every blank node into a deterministic IRI under the dataset namespace. Zero blank nodes allowed in serialized N-Quads.</td>
+    </tr>
+    <tr>
+      <td><strong>Stream W3C N-Quads into Subgraph Partitions</strong><br /><code class="language-plaintext highlighter-rouge">A_PartitionQuads</code></td>
+      <td>Knowledge Graph Engineer</td>
+      <td><code class="language-plaintext highlighter-rouge">nquads-distribution</code></td>
+      <td>Serialize lines conforming to W3C RDF 1.1 N-Quads (subject predicate object graphIri .). Split into Tier 1 Spine (routing backbone) and Tier 2 Subgraphs (communities, domains). Compress each into .nq.gz.</td>
+    </tr>
+    <tr>
+      <td><strong>Report Budget Finding; Refine Subgraph Splitting</strong><br /><code class="language-plaintext highlighter-rouge">A_ReportBudgetExcess</code></td>
+      <td>Knowledge Graph Engineer</td>
+      <td><code class="language-plaintext highlighter-rouge">nquads-distribution</code></td>
+      <td>Record the oversized partition on the coordinating bean. Refine subgraph partitioning boundary or split into finer subgraphs. Do not ship oversized partition.</td>
+    </tr>
+    <tr>
+      <td><strong>Declare Distribution Manifest &amp; Named Queries</strong><br /><code class="language-plaintext highlighter-rouge">A_DeclareManifest</code></td>
+      <td>Knowledge Graph Engineer</td>
+      <td><code class="language-plaintext highlighter-rouge">nquads-distribution</code><br /><code class="language-plaintext highlighter-rouge">named-query-execution</code></td>
+      <td>Write subgraph-manifest.json conforming to folio-nquads-distribution/v1. Declare datasetIri, servedRoute, spine, subgraphs, and audited named SPARQL queries with explicit requiredSubgraphs and typed parameter definitions.</td>
+    </tr>
+    <tr>
+      <td><strong>Verify Queries via CLI &amp; Test Graph Availability</strong><br /><code class="language-plaintext highlighter-rouge">A_VerifyQueries</code></td>
+      <td>Knowledge Graph Engineer</td>
+      <td><code class="language-plaintext highlighter-rouge">named-query-execution</code></td>
+      <td>Execute named queries using scripts/nquads-query.ts and the nquads-query MCP tool. Assert that missing partition triggers MissingPartitionError and typed parameters prevent injection.</td>
+    </tr>
+    <tr>
+      <td><strong>CI Gate Verification: Audit Manifest &amp; Schemas</strong><br /><code class="language-plaintext highlighter-rouge">A_GateCheck</code></td>
+      <td>CI/CD Pipeline</td>
+      <td><code class="language-plaintext highlighter-rouge">named-query-execution</code></td>
+      <td>Validate that subgraph-manifest.json conforms to NQuadsDistributionManifestSchema, all referenced partitions exist, and external schema w3c-n-quads is satisfied.</td>
+    </tr>
+    <tr>
+      <td><strong>Publish Distribution via ‘served: true’ to Pages</strong><br /><code class="language-plaintext highlighter-rouge">A_DeployPages</code></td>
+      <td>CI/CD Pipeline</td>
+      <td><code class="language-plaintext highlighter-rouge">nquads-distribution</code></td>
+      <td>Publish distribution directory to _site/ via mount-instance-docs.ts respecting ‘served: true’ declaration. Quads files become accessible identically to web clients and CLI/agent runners.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="decisions">Decisions</h2>
+
+<p><strong>1</strong> of 2 decision(s) carry no documentation — <code class="language-plaintext highlighter-rouge">gateway-documented</code> lists them.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>decision</th>
+      <th>what decides it</th>
+      <th>branches</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>All partitions under 5 MB / 50k quads budget?</strong><br /><code class="language-plaintext highlighter-rouge">GW_PartitionBudget</code></td>
+      <td>Enforce partition size ceiling: verify that no partition exceeds MAX_RECOMMENDED_PARTITION_BYTES (5 MB gzipped) or 50,000 quads. Protects browser V8 heap and mobile allocations.</td>
+      <td><strong>Under budget</strong> → Declare Distribution Manifest &amp; Named Queries<br /><strong>Over budget</strong> → Report Budget Finding; Refine Subgraph Splitting</td>
+    </tr>
+    <tr>
+      <td><strong>Gate passes?</strong><br /><code class="language-plaintext highlighter-rouge">GW_CiGreen</code></td>
+      <td>—</td>
+      <td><strong>Green</strong> → Publish Distribution via ‘served: true’ to Pages<br /><strong>Red</strong> → CI Gate Failed</td>
+    </tr>
+  </tbody>
+</table>
+

@@ -1,0 +1,128 @@
+<blockquote class="note">
+  <p>Generated from <code class="language-plaintext highlighter-rouge">fhir-harness/processes/content/ig-ast-cache.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a></p>
+</blockquote>
+
+<h1 id="an-ig-site-built-from-the-ast-on-its-cache-branch">An IG site, built from the AST on its cache branch</h1>
+
+<p><code class="language-plaintext highlighter-rouge">Process_IgAstCache</code> · advisory · 5 step(s)</p>
+
+<p>How an IG repository’s own site is published, and how the AST it is built from is kept current (skill <code class="language-plaintext highlighter-rouge">ig-build-pipeline</code> §”The AST cache lifecycle”). Owner, 2026-10-14: “i want AST to be used. it should be in cache branch”, and “that should be in fhir-harness then smart-* all use that”.</p>
+
+<p>THE RULE. An IG site is built from the IG Publisher AST read from the IG repository’s cache branch <code class="language-plaintext highlighter-rouge">cat/fhir-harness/fhir-ast/&lt;package id&gt;</code>, never from Publisher HTML. The publish refuses an AST that is not valid for the commit it publishes (<code class="language-plaintext highlighter-rouge">ig-cache.sh restore</code> then <code class="language-plaintext highlighter-rouge">verify</code>). A later commit that changes no IG input (<code class="language-plaintext highlighter-rouge">sushi-config.yaml</code>, <code class="language-plaintext highlighter-rouge">ig.ini</code>, <code class="language-plaintext highlighter-rouge">input/</code>) does not make the AST stale.</p>
+
+<p>THE REFRESH. The cache is written by ONE thing: fhir-harness’s reusable workflow <code class="language-plaintext highlighter-rouge">.github/workflows/ig-ast-refresh.yml</code>, which an IG repository’s Site publish calls as its first job (<code class="language-plaintext highlighter-rouge">ast</code>; template <code class="language-plaintext highlighter-rouge">templates/ig-repo-site/site-publish.yml</code>). It runs the Publisher through the AST exporter on a GitHub runner (Java, a 10 GB heap, tx.fhir.org), because an agent’s container cannot. It seeds the branch only from a commit on the default branch whose inputs equal the tip’s.</p>
+
+<p>WHAT IT DOES NOT CLAIM. A valid AST is a cache built from these inputs; it is not a release. Every page drawn from it carries the provisional mark (<code class="language-plaintext highlighter-rouge">ig-ast-delta</code>).</p>
+
+<p><em>No rendered diagram — run <code class="language-plaintext highlighter-rouge">bun run cat render:bpmn</code>.</em></p>
+
+<h2 id="how-it-connects">How it connects</h2>
+
+<ul>
+  <li><strong>Called by:</strong> no call activity names this process</li>
+  <li><strong>Calls:</strong> none</li>
+  <li><strong>Presented on:</strong> no docs page section shows this diagram</li>
+</ul>
+
+<h2 id="lanes--who-acts">Lanes — who acts</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>lane</th>
+      <th>role</th>
+      <th>what it does here</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Publication manager (owner, or the agent the owner delegates to)</td>
+      <td><code class="language-plaintext highlighter-rouge">publication-manager</code></td>
+      <td>Wants the IG’s site published, and is the only one who starts a runner: dispatching <code class="language-plaintext highlighter-rouge">ig-ast-refresh.yml</code> spends Actions minutes and writes a shared branch, so an agent never dispatches it on its own (<code class="language-plaintext highlighter-rouge">feature-staging</code> §”Agent-run repositories”). Accountable for asking for the refresh when the publish refuses a stale AST, rather than for publishing around it.</td>
+    </tr>
+    <tr>
+      <td>Site build (agent, stage-local)</td>
+      <td><code class="language-plaintext highlighter-rouge">build-pipeline</code></td>
+      <td>Restores the AST, judges it for the commit being published, and builds and publishes the site from it. Mechanical: it decides nothing a person must own, and it refuses rather than guesses — a stale or cannot-tell AST ends the publish.</td>
+    </tr>
+    <tr>
+      <td>AST refresh (GitHub runner: IG Publisher with the AST exporter)</td>
+      <td><code class="language-plaintext highlighter-rouge">ig-publisher-service</code></td>
+      <td>fhir-harness’s <code class="language-plaintext highlighter-rouge">ig-ast-refresh.yml</code>, run in the IG repository through its caller. Builds the IG once with the Publisher AST exporter and writes the cache branch. Builds no site, publishes nothing, dispatches nothing.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="steps">Steps</h2>
+
+<p>Every one of the 5 step(s) is documented.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>step</th>
+      <th>lane</th>
+      <th>skill / sub-process</th>
+      <th>what it does</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Restore the AST from its cache branch and judge it</strong><br /><code class="language-plaintext highlighter-rouge">Task_Restore</code></td>
+      <td>Site build (agent, stage-local)</td>
+      <td><code class="language-plaintext highlighter-rouge">ig-ast-delta</code><br /><code class="language-plaintext highlighter-rouge">ig-build-pipeline</code></td>
+      <td><code class="language-plaintext highlighter-rouge">ig-cache.sh restore --ig-root .</code> fetches <code class="language-plaintext highlighter-rouge">cat/fhir-harness/fhir-ast/&lt;package id&gt;</code> into <code class="language-plaintext highlighter-rouge">output-ast/</code> (with the Publisher’s <code class="language-plaintext highlighter-rouge">txcache/</code>), then <code class="language-plaintext highlighter-rouge">ig-cache.sh verify</code> runs <code class="language-plaintext highlighter-rouge">ig-ast.ts validity</code>: exit 0 valid, 1 stale-inputs (naming which input), 2 cannot-tell. A restore that finds no branch is a miss, judged as not valid. In an IG repository’s site route this is the first <code class="language-plaintext highlighter-rouge">pre</code> step, <code class="language-plaintext highlighter-rouge">ig-site:ast</code> (<code class="language-plaintext highlighter-rouge">ig-repo-site.ts ast</code>).</td>
+    </tr>
+    <tr>
+      <td><strong>Build and publish the site from the AST</strong><br /><code class="language-plaintext highlighter-rouge">Task_BuildSite</code></td>
+      <td>Site build (agent, stage-local)</td>
+      <td><code class="language-plaintext highlighter-rouge">ig-render-jekyll</code><br /><code class="language-plaintext highlighter-rouge">ig-build-pipeline</code></td>
+      <td>The site route’s steps, provided by the mounted layers and run by <code class="language-plaintext highlighter-rouge">stage-local.ts</code> → <code class="language-plaintext highlighter-rouge">build-instance-site.ts</code>: the landing layer’s IG API sidecars when it has the step (<code class="language-plaintext highlighter-rouge">ig-site:sidecars</code>), the artefact index from the AST and the thin pages with the IG composed at the root (<code class="language-plaintext highlighter-rouge">ig-site:compose</code>: <code class="language-plaintext highlighter-rouge">ast-to-artifact-index.ts</code>, <code class="language-plaintext highlighter-rouge">gen-ig-pages.ts --compiled-data ast-data</code>), the OpenAPI pages when the IG holds them (<code class="language-plaintext highlighter-rouge">ig-site:openapi</code>), the AST’s resources served as <code class="language-plaintext highlighter-rouge">ast-data/</code> and the build stamp (<code class="language-plaintext highlighter-rouge">ig-site:publisher-pages</code>). Published at the root from the default branch, as a preview otherwise.</td>
+    </tr>
+    <tr>
+      <td><strong>Dispatch the IG’s ig-ast-refresh.yml</strong><br /><code class="language-plaintext highlighter-rouge">Task_Dispatch</code></td>
+      <td>Publication manager (owner, or the agent the owner delegates to)</td>
+      <td><code class="language-plaintext highlighter-rouge">ig-build-pipeline</code></td>
+      <td>Actions → “IG AST refresh (by hand)” → Run workflow on the default branch, inputs <code class="language-plaintext highlighter-rouge">ref</code> = the default branch, <code class="language-plaintext highlighter-rouge">force</code> = false. The publish refused, so the verdict already says the cache is not valid; <code class="language-plaintext highlighter-rouge">force</code> is for a cache that is valid but suspected wrong.</td>
+    </tr>
+    <tr>
+      <td><strong>Build the IG with the Publisher AST exporter</strong><br /><code class="language-plaintext highlighter-rouge">Task_Export</code></td>
+      <td>AST refresh (GitHub runner: IG Publisher with the AST exporter)</td>
+      <td><code class="language-plaintext highlighter-rouge">ig-publisher-fork</code></td>
+      <td>The runner mounts the layers the IG repository’s <code class="language-plaintext highlighter-rouge">index.lock.json</code> pins, restores and judges the cache itself, and, when it is not valid, runs the caller’s optional <code class="language-plaintext highlighter-rouge">pre-export</code> overlay command, then <code class="language-plaintext highlighter-rouge">AstExportCli</code> (Tool <code class="language-plaintext highlighter-rouge">ig-ast-export</code>, <code class="language-plaintext highlighter-rouge">litlfred/fhir-ig-publisher</code> at the pinned <code class="language-plaintext highlighter-rouge">claude/ast-export</code> commit) with <code class="language-plaintext highlighter-rouge">-tx</code>. The inputs <code class="language-plaintext highlighter-rouge">pre-export</code> changed are put back and the AST is recorded against the clean commit’s input digest (<code class="language-plaintext highlighter-rouge">ig-ast.ts source-inputs</code>). The AST just built must itself be <code class="language-plaintext highlighter-rouge">valid</code> for the commit, or the run fails.</td>
+    </tr>
+    <tr>
+      <td><strong>Seed the cache branch (ig-cache seed –push)</strong><br /><code class="language-plaintext highlighter-rouge">Task_Seed</code></td>
+      <td>AST refresh (GitHub runner: IG Publisher with the AST exporter)</td>
+      <td><code class="language-plaintext highlighter-rouge">compiled-artefact-cache</code></td>
+      <td><code class="language-plaintext highlighter-rouge">ig-cache.sh seed --ig-root . --push</code>: one commit holding the AST, the Publisher’s expansions and <code class="language-plaintext highlighter-rouge">txcache/</code>, its subject recording the package, counts, Publisher version and source commit. Refused when the candidate is under 90% of the incumbent’s resources or edges (the no-shrink gate).</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="decisions">Decisions</h2>
+
+<p>Every one of the 2 decision(s) is documented.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>decision</th>
+      <th>what decides it</th>
+      <th>branches</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>AST valid for this commit?</strong><br /><code class="language-plaintext highlighter-rouge">GW_Valid</code></td>
+      <td>Answered by Task_Restore’s verdict. <code class="language-plaintext highlighter-rouge">valid</code> takes yes. <code class="language-plaintext highlighter-rouge">stale-inputs</code>, <code class="language-plaintext highlighter-rouge">cannot-tell</code> and a miss take no: the publish is refused, never drawn from Publisher HTML or from an AST of other inputs. The override (<code class="language-plaintext highlighter-rouge">SITE_ACCEPT_STALE_AST=1</code>, read by <code class="language-plaintext highlighter-rouge">ig-site:ast</code>) is for a preview only: on the root it still refuses.</td>
+      <td><strong>yes</strong> → Build and publish the site from the AST<br /><strong>no — refused: stale, cannot tell, miss</strong> → Dispatch the IG’s ig-ast-refresh.yml</td>
+    </tr>
+    <tr>
+      <td><strong>On the default branch, with its inputs?</strong><br /><code class="language-plaintext highlighter-rouge">GW_Seedable</code></td>
+      <td>Yes when the built commit is an ancestor of the default branch’s tip AND <code class="language-plaintext highlighter-rouge">sushi-config.yaml</code>, <code class="language-plaintext highlighter-rouge">ig.ini</code> and <code class="language-plaintext highlighter-rouge">input/</code> are the same at both. The cache is shared by every build of the IG, so an AST of other inputs never overwrites it.</td>
+      <td><strong>yes</strong> → Seed the cache branch (ig-cache seed –push)<br /><strong>no</strong> → AST kept as a run artifact; cache unchanged</td>
+    </tr>
+  </tbody>
+</table>
+

@@ -1,0 +1,106 @@
+<blockquote class="note">
+  <p>Generated from <code class="language-plaintext highlighter-rouge">cat-harness/processes/sdlc/publish-alert.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a></p>
+</blockquote>
+
+<h1 id="alert-the-publication-manager">Alert the publication manager</h1>
+
+<p><code class="language-plaintext highlighter-rouge">Process_PublishAlert</code> · strict · 4 step(s)</p>
+
+<p>One alert for every failure after the publish button — an incomplete export, a failed verification, a failed deploy, a lost preview — kept as a single tracking issue for the publication manager and closed by the next clean publish. Owner, 2026-09-23: “there is another alert needed for deployment failure. every step post ‘push the publish button’ should be same”. So this is ONE alert, called from every failure edge after the publish button — an incomplete export, a verification failure, a failed deploy, a lost preview — and it reaches the role that already owns the release: the publication manager.</p>
+
+<p><img src="../../../assets/img/workflows/publish-alert.svg" alt="BPMN diagram: Alert the publication manager" style="max-width:100%" /></p>
+
+<h2 id="how-it-connects">How it connects</h2>
+
+<ul>
+  <li><strong>Called by:</strong> <a href="docs-site-publish.html">Publishing the docs site, and keeping the previews alive</a></li>
+  <li><strong>Calls:</strong> none</li>
+  <li><strong>Presented on:</strong> no docs page section shows this diagram</li>
+</ul>
+
+<h2 id="lanes--who-acts">Lanes — who acts</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>lane</th>
+      <th>role</th>
+      <th>what it does here</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>CI/CD Pipeline</td>
+      <td><code class="language-plaintext highlighter-rouge">build-pipeline</code></td>
+      <td>The build pipeline, running unattended between the export and the deploy. Raises the one alert, the same way whichever step failed.</td>
+    </tr>
+    <tr>
+      <td>Publication manager</td>
+      <td><code class="language-plaintext highlighter-rouge">publication-manager</code></td>
+      <td>The existing publication-manager role: accountable for what is live, and so the one alerted when anything after the publish button fails. A person, because the triage is a judgement about a release.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="steps">Steps</h2>
+
+<p>Every one of the 4 step(s) is documented.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>step</th>
+      <th>lane</th>
+      <th>skill / sub-process</th>
+      <th>what it does</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Ensure the publication-manager label</strong><br /><code class="language-plaintext highlighter-rouge">A_Label</code></td>
+      <td>CI/CD Pipeline</td>
+      <td>—</td>
+      <td>The alert is a tracking issue labelled <code class="language-plaintext highlighter-rouge">publication-manager</code> — the role, not a person, because no actor declares a GitHub account for it. Whoever watches that label is alerted.</td>
+    </tr>
+    <tr>
+      <td><strong>Open the tracking issue, naming the failed step</strong><br /><code class="language-plaintext highlighter-rouge">A_Open</code></td>
+      <td>CI/CD Pipeline</td>
+      <td>—</td>
+      <td>Open the issue with the step that failed, the run link and — for a verification failure — the verifier report.</td>
+    </tr>
+    <tr>
+      <td><strong>Comment on the open issue, naming the step</strong><br /><code class="language-plaintext highlighter-rouge">A_Comment</code></td>
+      <td>CI/CD Pipeline</td>
+      <td>—</td>
+      <td>Add this failure to the open issue as a comment (which notifies), and refresh the body to the latest state.</td>
+    </tr>
+    <tr>
+      <td><strong>Triage the failure: hold or fix forward</strong><br /><code class="language-plaintext highlighter-rouge">U_Triage</code></td>
+      <td>Publication manager</td>
+      <td><code class="language-plaintext highlighter-rouge">publish-verification</code></td>
+      <td>The publication manager reads what failed and decides: hold the release, or fix forward and publish again. Nothing was deployed on a failure before the deploy; a failure after it (the deploy itself, or the previews lost) is live, and says so. The next successful publish closes the issue.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="decisions">Decisions</h2>
+
+<p>Every one of the 1 decision(s) is documented.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>decision</th>
+      <th>what decides it</th>
+      <th>branches</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>An alert already open?</strong><br /><code class="language-plaintext highlighter-rouge">GW_Open</code></td>
+      <td>Is a publication-manager tracking issue already open? <code class="language-plaintext highlighter-rouge">no</code> opens one; <code class="language-plaintext highlighter-rouge">yes</code> comments on it, because each failed publish is a new event the publication manager should be notified of — an edit alone would not notify.</td>
+      <td><strong>no</strong> → Open the tracking issue, naming the failed step<br /><strong>yes</strong> → Comment on the open issue, naming the step</td>
+    </tr>
+  </tbody>
+</table>
+

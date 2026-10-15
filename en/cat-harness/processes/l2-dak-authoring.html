@@ -1,0 +1,174 @@
+<blockquote class="note">
+  <p>Generated from <code class="language-plaintext highlighter-rouge">smart-base/processes/content/l2-dak-authoring.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a></p>
+</blockquote>
+
+<h1 id="l2-dak-authoring">L2 DAK authoring</h1>
+
+<p><code class="language-plaintext highlighter-rouge">Process_L2Dak</code> · advisory · 11 step(s)</p>
+
+<p>How a WHO SMART Guidelines L2 Digital Adaptation Kit is authored by a business analyst, a terminologist and a clinical SME under a programme manager. folio-assistant — authoring a WHO SMART Guidelines L2 Digital Adaptation Kit.
+Source of truth: this file. Open it in bpmn.io, Camunda Modeler, or any other
+BPMN 2.0 tool. The SVG under docs/assets/img/workflows/ is generated from it
+by <code class="language-plaintext highlighter-rouge">bun run cat render:bpmn</code> — never hand-edit the SVG.
+The <bootstrap.processes:skill> extension on an activity names the folio-assistant skill
+that implements it; <cat-harness.processes:bean> marks a step that reads or writes the shared
+work plan in beans/.
+Each of the six authoring tracks is a call into l2-component-edit-review.bpmn
+(Process_L2ComponentEditReview): the agent edits the component, checks, renders and stages it, and hands it on, while a
+person in the component's reviewing role reviews it alongside, never as a gate. The track's renderer, checker and reviewer
+are tabled in the skill l2-component-edit-review.</cat-harness.processes:bean></bootstrap.processes:skill></p>
+
+<p><em>No rendered diagram — run <code class="language-plaintext highlighter-rouge">bun run cat render:bpmn</code>.</em></p>
+
+<h2 id="how-it-connects">How it connects</h2>
+
+<ul>
+  <li><strong>Called by:</strong> no call activity names this process</li>
+  <li><strong>Calls:</strong> <a href="l2-component-edit-review.html">L2 component edit and review</a></li>
+  <li><strong>Names the <code class="language-plaintext highlighter-rouge">l2-dak-authoring</code> skill without calling this process:</strong> <a href="dak-l3-ig.html">L2 DAK to L3 FHIR IG</a>, <a href="smart-guideline-end-to-end.html">SMART Guideline end to end</a> — <code class="language-plaintext highlighter-rouge">activity-calls-skill-process</code> asks whether each should be a call activity.</li>
+  <li><strong>Presented on:</strong> no docs page section shows this diagram</li>
+</ul>
+
+<h2 id="lanes--who-acts">Lanes — who acts</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>lane</th>
+      <th>role</th>
+      <th>what it does here</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Programme manager / technical officer</td>
+      <td><code class="language-plaintext highlighter-rouge">programme-manager</code></td>
+      <td>Sets the scope once, before the fork into six parallel authoring tracks. The actors and processes enumerated here are what everything downstream, including the terminology and clinical lanes, is scoped against, and nothing later in this diagram revisits that boundary.</td>
+    </tr>
+    <tr>
+      <td>Work plan — beans (shared by humans and agents)</td>
+      <td><code class="language-plaintext highlighter-rouge">work-plan</code></td>
+      <td>A single claim made once, right after scoping and before the parallel fork. Unlike the per-edit lifecycle in editing-hci-validation, this diagram seeds one bean for the whole DAK and never returns here to log or resolve it, so tracking any one track’s own progress is not this lane’s concern.</td>
+    </tr>
+    <tr>
+      <td>Business analyst</td>
+      <td><code class="language-plaintext highlighter-rouge">business-analyst</code></td>
+      <td>Opens the parallel fork into six authoring tracks — five landing here, the sixth (terminology) crossing into a separate lane — and re-enters that same fork whenever clinical validation sends work back, so a fix after Gateway_Accurate revisits every track it is entangled with rather than patching only the one SME flagged. Performs the assemble-and-validate in parallel with clinical validation, not after it (owner, 2026-10-14: adjudication is QA, not a gate), and again after any rework. Before any of that, and before the work plan is seeded, builds the DAK’s L1 library from what its Component 1 cites, so every track starts with the guidance it operationalises already in the library and in the L1 graph.</td>
+    </tr>
+    <tr>
+      <td>Terminologist</td>
+      <td><code class="language-plaintext highlighter-rouge">terminologist</code></td>
+      <td>One parallel branch of the fork, producing bindings the other five tracks cite rather than author themselves, and calling the same edit-and-review subprocess as they do, with a different terminologist as its reviewer. Kept a separate lane rather than folded into the analyst’s because governance of a code binding is deliberately independent of the artefact that cites it.</td>
+    </tr>
+    <tr>
+      <td>Clinical SME</td>
+      <td><code class="language-plaintext highlighter-rouge">clinical-sme</code></td>
+      <td>Clinical validation runs beside assembly, not before it: it is QA, not a gate (owner, 2026-10-14). A “no” here does not return to the specific task that erred but loops back through Gateway_AuthorMerge into the fork itself, so this lane’s judgement — not the analyst’s — decides whether personas, BPMN, DMN, data dictionary and indicators all get revisited together.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="steps">Steps</h2>
+
+<p>Every one of the 11 step(s) is documented.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>step</th>
+      <th>lane</th>
+      <th>skill / sub-process</th>
+      <th>what it does</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Scope the DAK</strong><br /><code class="language-plaintext highlighter-rouge">Task_ScopeDak</code></td>
+      <td>Programme manager / technical officer</td>
+      <td><code class="language-plaintext highlighter-rouge">content-plan</code></td>
+      <td>Enumerate the processes, decisions and data elements the guideline implies; identify the actors.</td>
+    </tr>
+    <tr>
+      <td><strong>Build the L1 library from Component 1</strong><br /><code class="language-plaintext highlighter-rouge">Task_L1Library</code></td>
+      <td>Business analyst</td>
+      <td><code class="language-plaintext highlighter-rouge">dak-l1-library</code></td>
+      <td>Ingest the DAK into the library; it is L2, so it gets no L1 graph. Read Component 1 §1.2 for the sources it draws on (extract-dak-l1-references.ts –context-only), then fetch each L1 source on its own — fetch-dspace-item.ts for an IRIS handle, fetch-who-publication.ts for a who.int item page — and ingest it. Record whether each is L1 on its intake (declared &gt; context &gt; inferred; –record-context writes §1.2’s context). For each L1 source, run l1-specialise.ts: its publication, sections and elements as specialisations of its library nodes, since the library is upstream of L1. Validate with the smart-base Zod validator. Fidelity — does each citation name the source it resolves to — and a cited edition older than the one fetched are left to a person, never passed automatically.</td>
+    </tr>
+    <tr>
+      <td><strong>Seed the work plan</strong><br /><code class="language-plaintext highlighter-rouge">Task_SeedBeans</code></td>
+      <td>Work plan — beans (shared by humans and agents)</td>
+      <td><code class="language-plaintext highlighter-rouge">todo-manager</code></td>
+      <td>Turn the scope into beans on the shared work plan — one per DAK component, since a DAK is completed component by component. beans create is not idempotent: check for an existing bean before every create, or a re-run duplicates the plan.</td>
+    </tr>
+    <tr>
+      <td><strong>Personas and scenarios</strong><br /><code class="language-plaintext highlighter-rouge">Task_Personas</code></td>
+      <td>Business analyst</td>
+      <td>calls <a href="l2-component-edit-review.html">L2 component edit and review</a><br /><code class="language-plaintext highlighter-rouge">l2-dak-authoring</code><br /><code class="language-plaintext highlighter-rouge">l2-component-edit-review</code></td>
+      <td>Author the DAK’s personas and the user journeys (scenarios) they appear in, then have them reviewed: calls Process_L2ComponentEditReview with the personas-and-scenarios inputs of the skill l2-component-edit-review (checker: dak-swimlanes.ts and traceability to L1 recommendations; renderer: the persona card and a prose diff; reviewer: clinical SME). These are the DAK’s own actors, not this harness’s scenarios/roles.json — the two vocabularies must not be conflated.</td>
+    </tr>
+    <tr>
+      <td><strong>Business processes · BPMN 2.0</strong><br /><code class="language-plaintext highlighter-rouge">Task_Bpmn</code></td>
+      <td>Business analyst</td>
+      <td>calls <a href="l2-component-edit-review.html">L2 component edit and review</a><br /><code class="language-plaintext highlighter-rouge">bpmn-authoring</code><br /><code class="language-plaintext highlighter-rouge">l2-component-edit-review</code></td>
+      <td>Author the DAK’s L2 business processes as BPMN 2.0, with Diagram Interchange: a .bpmn with no x/y on its shapes parses and renders blank. Stay at L2 — reviewable by a clinician, not FHIR. Calls Process_L2ComponentEditReview with the BPMN inputs of the skill l2-component-edit-review (checker: bpmn-js import with no warnings, dak-swimlanes.ts, artefact-reachability; renderer: render:bpmn with a visual-diff before/after; reviewer: clinical SME).</td>
+    </tr>
+    <tr>
+      <td><strong>Decision logic · DMN tables</strong><br /><code class="language-plaintext highlighter-rouge">Task_Dmn</code></td>
+      <td>Business analyst</td>
+      <td>calls <a href="l2-component-edit-review.html">L2 component edit and review</a><br /><code class="language-plaintext highlighter-rouge">dmn-authoring</code><br /><code class="language-plaintext highlighter-rouge">l2-component-edit-review</code></td>
+      <td>Author the decision and scheduling logic as DMN tables, within the FEEL subset the interpreter implements (any, literals, comparisons, one-of). Ranges, not() and function calls are refused at load, so write inside the subset. Calls Process_L2ComponentEditReview with the DMN inputs of the skill l2-component-edit-review (checker: load, reachability, test cases; renderer: dmn2html table before/after, each rule beside its L1 citation; reviewer: clinical SME).</td>
+    </tr>
+    <tr>
+      <td><strong>Data dictionary and core data elements</strong><br /><code class="language-plaintext highlighter-rouge">Task_DataDict</code></td>
+      <td>Business analyst</td>
+      <td>calls <a href="l2-component-edit-review.html">L2 component edit and review</a><br /><code class="language-plaintext highlighter-rouge">l2-dak-authoring</code><br /><code class="language-plaintext highlighter-rouge">l2-component-edit-review</code></td>
+      <td>Author the data dictionary and core data elements for this component. Stay structured but not FHIR: a data element a clinician can review, from which L3 can later be derived rather than written twice. Calls Process_L2ComponentEditReview with the glossary inputs of the skill l2-component-edit-review (checker: check-dak-annexes.ts; renderer: the term diff from dak-data-dictionary-diff.ts and each form’s chosen wireframe; reviewer: clinical SME, terminologist for codes).</td>
+    </tr>
+    <tr>
+      <td><strong>Indicators and requirements</strong><br /><code class="language-plaintext highlighter-rouge">Task_Indicators</code></td>
+      <td>Business analyst</td>
+      <td>calls <a href="l2-component-edit-review.html">L2 component edit and review</a><br /><code class="language-plaintext highlighter-rouge">l2-dak-authoring</code><br /><code class="language-plaintext highlighter-rouge">l2-component-edit-review</code></td>
+      <td>Author the component’s indicators and its functional and non-functional requirements. These are the DAK’s requirements, distinct from skills/requirements/*.json, which are this harness’s own conformance obligations. Calls Process_L2ComponentEditReview with the indicators-and-requirements inputs of the skill l2-component-edit-review (checker: each names the persona and process it serves and traces to L1; renderer: prose diff; reviewer: business analyst with the programme manager).</td>
+    </tr>
+    <tr>
+      <td><strong>Terminology bindings</strong><br /><code class="language-plaintext highlighter-rouge">Task_Terminology</code></td>
+      <td>Terminologist</td>
+      <td>calls <a href="l2-component-edit-review.html">L2 component edit and review</a><br /><code class="language-plaintext highlighter-rouge">terminology-management</code><br /><code class="language-plaintext highlighter-rouge">l2-component-edit-review</code></td>
+      <td>ICD-11, SNOMED CT, LOINC bindings — governed separately from the artifacts that cite them. Calls Process_L2ComponentEditReview with the terminology inputs of the skill l2-component-edit-review (checker: bindings resolve and unmappedConcepts is reported; renderer: the term diff on the code columns; reviewer: a terminologist other than the one who bound it).</td>
+    </tr>
+    <tr>
+      <td><strong>Clinical validation</strong><br /><code class="language-plaintext highlighter-rouge">Task_SmeValidate</code></td>
+      <td>Clinical SME</td>
+      <td><code class="language-plaintext highlighter-rouge">content-review</code></td>
+      <td>Ground truth: does the DAK say what the guideline says? This is the whole-DAK reading, across components: whether the personas, processes, decisions, data elements and indicators tell one consistent story. Each component has already had its own review, forking off inside its track (Process_L2ComponentEditReview, skill l2-component-edit-review), so this step does not repeat those per-component reviews.</td>
+    </tr>
+    <tr>
+      <td><strong>Assemble and validate the DAK</strong><br /><code class="language-plaintext highlighter-rouge">Task_AssembleDak</code></td>
+      <td>Business analyst</td>
+      <td><code class="language-plaintext highlighter-rouge">content-validate</code></td>
+      <td>Assemble the validated components and run content validation: schemas, cross-component consistency and terminology bindings. The smart-base extractors read the authored artefacts; with SMART_BASE_HOME unset they report skip, never a clean run.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="decisions">Decisions</h2>
+
+<p>Every one of the 1 decision(s) is documented.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>decision</th>
+      <th>what decides it</th>
+      <th>branches</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Clinically accurate?</strong><br /><code class="language-plaintext highlighter-rouge">Gateway_Accurate</code></td>
+      <td>The clinical validator’s result. <code class="language-plaintext highlighter-rouge">changes needed</code> goes back to the author, and the reworked DAK is assembled again; <code class="language-plaintext highlighter-rouge">validated</code> records the adjudication. Assembly does not wait for this decision.</td>
+      <td><strong>changes needed</strong> → Gateway_AuthorMerge<br /><strong>validated</strong> → Clinically validated</td>
+    </tr>
+  </tbody>
+</table>
+

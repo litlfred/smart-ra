@@ -1,0 +1,158 @@
+<style>
+.lv-grid{display:flex;flex-wrap:wrap;gap:.75rem;margin:1rem 0}
+.lv-stat{flex:1 1 8rem;border:1px solid rgba(128,128,128,.35);border-radius:6px;padding:.5rem .7rem}
+.lv-stat b{display:block;font-size:1.25rem;line-height:1.2}
+.lv-stat span{font-size:.75rem;opacity:.75}
+.lv-pass{color:#5fd3b8;font-weight:600}.lv-fail{color:#ff9486;font-weight:600}.lv-na{opacity:.8}
+</style>
+
+<p>A <strong>latent semantic index</strong> places every unit of a prose graph — a library
+section, a skill, a bean — in a space built from which words occur
+together, so units that discuss the same thing in <em>different words</em> sit
+close. It is a retrieval aid: every neighbour and finding it reports is a
+<strong>proposal</strong>, never a relation the graph asserts.</p>
+
+<p>The method is <a href="../methodologies/">Latent Semantic Indexing</a> (node <code class="language-plaintext highlighter-rouge">lsi</code>), with
+<a href="../methodologies/">correspondence analysis</a> (node <code class="language-plaintext highlighter-rouge">correspondence-analysis</code>) as its parallel track;
+how to build, query and audit an index is the skill <code class="language-plaintext highlighter-rouge">lsi-indexing</code>.</p>
+
+<div class="lv-grid">
+<div class="lv-stat"><b>7</b><span>graphs that need an index</span></div>
+</div>
+
+<h2 id="which-graphs-need-an-index">Which graphs need an index</h2>
+
+<p>A graph needs one at 100 units and 20,000 words — a house threshold, with its
+basis in <code class="language-plaintext highlighter-rouge">scripts/lsi.ts</code>. Below it a graph is <strong>not judged</strong>, which is not
+the same as fine. The same verdict is <code class="language-plaintext highlighter-rouge">kg:audit</code>’s <code class="language-plaintext highlighter-rouge">tool-downstream-fresh</code> for the <code class="language-plaintext highlighter-rouge">lsi-index</code> Tool.</p>
+
+<p>Whether an index is <strong>fresh</strong> is a question about the store, not about
+this tree, so it is not on this committed page — the published one carries
+it, drawn from the evidence that build fetched.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>graph</th>
+      <th>needs one</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">bootstrap-tools/bootstrap-tools-skills</code></td>
+      <td><span class="lv-na">below the need-an-index threshold — not judged</span></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">bootstrap/skills</code></td>
+      <td><span class="lv-na">below the need-an-index threshold — not judged</span></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">cat-harness-tools/beans</code></td>
+      <td><span class="lv-na">state graph — indexed on demand, never committed</span></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">cat-harness/docs</code></td>
+      <td><strong>yes</strong></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">cat-harness/folio</code></td>
+      <td><span class="lv-na">below the need-an-index threshold — not judged</span></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">cat-harness/library</code></td>
+      <td><strong>yes</strong></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">cat-harness/memory</code></td>
+      <td><span class="lv-na">below the need-an-index threshold — not judged</span></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">cat-harness/methodologies</code></td>
+      <td><span class="lv-na">below the need-an-index threshold — not judged</span></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">cat-harness/policies</code></td>
+      <td><span class="lv-na">below the need-an-index threshold — not judged</span></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">cat-harness/site-chrome</code></td>
+      <td><span class="lv-na">below the need-an-index threshold — not judged</span></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">cat-harness/skills</code></td>
+      <td><strong>yes</strong></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">dpi-h-ra/folio</code></td>
+      <td><strong>yes</strong></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">dpi-h-ra/library</code></td>
+      <td><strong>yes</strong></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">fhir-harness/fhir-ig-skills</code></td>
+      <td><span class="lv-na">below the need-an-index threshold — not judged</span></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">fhir-harness/library</code></td>
+      <td><span class="lv-na">below the need-an-index threshold — not judged</span></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">folio-assistant-core/beans</code></td>
+      <td><span class="lv-na">state graph — indexed on demand, never committed</span></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">folio-assistant-core/core-library</code></td>
+      <td><span class="lv-na">below the need-an-index threshold — not judged</span></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">folio-assistant-core/core-methodologies</code></td>
+      <td><span class="lv-na">below the need-an-index threshold — not judged</span></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">folio-assistant-core/core-skills</code></td>
+      <td><span class="lv-na">below the need-an-index threshold — not judged</span></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">folio-assistant-core/folio-assistant-core-docs</code></td>
+      <td><span class="lv-na">below the need-an-index threshold — not judged</span></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">folio-assistant-core/folios</code></td>
+      <td><span class="lv-na">below the need-an-index threshold — not judged</span></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">folio-assistant-core/glossary</code></td>
+      <td><span class="lv-na">below the need-an-index threshold — not judged</span></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">folio-assistant-core/memory</code></td>
+      <td><span class="lv-na">below the need-an-index threshold — not judged</span></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">smart-base/library</code></td>
+      <td><strong>yes</strong></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">smart-base/methodologies</code></td>
+      <td><span class="lv-na">below the need-an-index threshold — not judged</span></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">smart-base/smart-base-docs</code></td>
+      <td><strong>yes</strong></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">smart-base/smart-base-findings</code></td>
+      <td><span class="lv-na">below the need-an-index threshold — not judged</span></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">smart-base/smart-base-skills</code></td>
+      <td><span class="lv-na">below the need-an-index threshold — not judged</span></td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<p>Generated by <code class="language-plaintext highlighter-rouge">bun run cat lsi:viz</code>, and this is the committed half: the front matter, the prose, and which graphs need an index — every part of it a function of the TREE. Each index’s freshness is a question about the store, and its size, retained share, dimension poles and findings are a function of the index’s CONTENT, which a one-sentence edit to any indexed graph moves. The docs-site build adds both with <code class="language-plaintext highlighter-rouge">--detail</code>, from the evidence it fetched for its own commit. Bean <code class="language-plaintext highlighter-rouge">tqjj</code>.</p>

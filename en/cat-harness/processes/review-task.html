@@ -1,0 +1,122 @@
+<blockquote class="note">
+  <p>Generated from <code class="language-plaintext highlighter-rouge">cat-harness/processes/content/review-task.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a></p>
+</blockquote>
+
+<h1 id="review-task">Review task</h1>
+
+<p><code class="language-plaintext highlighter-rouge">Process_Review</code> · advisory · 6 step(s)</p>
+
+<p>The generic review position: classify what changed, descend into the review that fits it, consolidate what comes back, and accept or send back.</p>
+
+<p>You are in this process for any change under review. It is a DISPATCHER — the actor takes on the inner lane’s role for the call path only — which is why prose and code can both be reviewed without either reviewer having to know the other’s criteria. A change that is both — prose and the code it describes — takes a branch of its own, which reviews the two against each other; the gateway is exclusive and takes exactly one branch, so the earlier wording, that such a change goes through both, described a route the diagram could not take (issue #1042).</p>
+
+<p>The accept-or-send-back decision lives here and nowhere beneath it. The subprocesses produce findings; this is the only lane entitled to turn findings into an outcome, and keeping that single makes “who decided” answerable.</p>
+
+<p><img src="../../../assets/img/workflows/review-task.svg" alt="BPMN diagram: Review task" style="max-width:100%" /></p>
+
+<h2 id="how-it-connects">How it connects</h2>
+
+<ul>
+  <li><strong>Called by:</strong> <a href="crdm-deliver.html">CRDM Phase 6 — implement, MVP, acceptance</a>, <a href="content-change-review.html">Content Change and Review</a>, <a href="l2-component-edit-review.html">L2 component edit and review</a>, <a href="smart-guideline-end-to-end.html">SMART Guideline end to end</a></li>
+  <li><strong>Calls:</strong> <a href="review-code.html">Code node review</a>, <a href="narrative-code-review.html">Prose and the code it describes</a>, <a href="review-narrative.html">Narrative review</a></li>
+  <li><strong>Presented on:</strong> no docs page section shows this diagram</li>
+</ul>
+
+<h2 id="lanes--who-acts">Lanes — who acts</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>lane</th>
+      <th>role</th>
+      <th>what it does here</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Reviewer / SME</td>
+      <td><code class="language-plaintext highlighter-rouge">reviewer</code></td>
+      <td>Makes exactly one decision on its own — what changed, at Task_ClassifyChange — and for everything after that descends into a subprocess, taking on the narrative- or code-reviewer role for that call path only rather than carrying both statically. A change that is both visits both subprocesses in turn, and neither role widens the other.</td>
+    </tr>
+    <tr>
+      <td>Editors + authoring agents</td>
+      <td><code class="language-plaintext highlighter-rouge">editor</code></td>
+      <td>Kept a separate lane on purpose, holding the one activity this diagram gives it: the reviewer who classified and judged the change is never the party that accepts it, so consolidated findings cross a lane boundary before anything is decided on them.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="steps">Steps</h2>
+
+<p>Every one of the 6 step(s) is documented.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>step</th>
+      <th>lane</th>
+      <th>skill / sub-process</th>
+      <th>what it does</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Classify what changed</strong><br /><code class="language-plaintext highlighter-rouge">Task_ClassifyChange</code></td>
+      <td>Reviewer / SME</td>
+      <td><code class="language-plaintext highlighter-rouge">content-review</code><br /><code class="language-plaintext highlighter-rouge">staging-review</code></td>
+      <td>Prose, code nodes, or both. This is the only decision the generic lane<br />makes on its own: everything after it is made inside a subprocess by<br />the role that lane binds.<br />Binds <code class="language-plaintext highlighter-rouge">content-review</code>, the same skill as Task_Consolidate in this lane,<br />since placement PR3 (bean <code class="language-plaintext highlighter-rouge">63wl</code>): it named <code class="language-plaintext highlighter-rouge">semantic-review-scoping</code>,<br />a paper skill folio-assistant-sci owns, which this harness diagram<br />cannot reach. A paper process that wants semantic scoping adds it by<br />calling this process.</td>
+    </tr>
+    <tr>
+      <td><strong>Narrative review</strong><br /><code class="language-plaintext highlighter-rouge">Call_NarrativeReview</code></td>
+      <td>Reviewer / SME</td>
+      <td>calls <a href="review-narrative.html">Narrative review</a></td>
+      <td>Descend into Process_NarrativeReview. The actor takes on the<br /><code class="language-plaintext highlighter-rouge">narrative-reviewer</code> lane for this call path only.</td>
+    </tr>
+    <tr>
+      <td><strong>Code node review</strong><br /><code class="language-plaintext highlighter-rouge">Call_CodeReview</code></td>
+      <td>Reviewer / SME</td>
+      <td>calls <a href="review-code.html">Code node review</a></td>
+      <td>Descend into Process_CodeReview. The actor takes on the <code class="language-plaintext highlighter-rouge">code-reviewer</code><br />lane for this call path only.</td>
+    </tr>
+    <tr>
+      <td><strong>Prose and the code it describes</strong><br /><code class="language-plaintext highlighter-rouge">Call_NarrativeCodeReview</code></td>
+      <td>Reviewer / SME</td>
+      <td>calls <a href="narrative-code-review.html">Prose and the code it describes</a></td>
+      <td>Descend into Process_NarrativeCodeReview: judge what the pair checks<br />could not settle (a stale pair, a false or undetermined claim), and<br />send a disagreement with a checker to adjudication. Issue #1042, stage C.</td>
+    </tr>
+    <tr>
+      <td><strong>Consolidate findings</strong><br /><code class="language-plaintext highlighter-rouge">Task_Consolidate</code></td>
+      <td>Reviewer / SME</td>
+      <td><code class="language-plaintext highlighter-rouge">content-review</code></td>
+      <td>One report from however many subprocesses ran. Findings are advice: a<br />reviewer cannot accept the change.</td>
+    </tr>
+    <tr>
+      <td><strong>Accept, or send back</strong><br /><code class="language-plaintext highlighter-rouge">Task_EditorDecides</code></td>
+      <td>Editors + authoring agents</td>
+      <td><code class="language-plaintext highlighter-rouge">content-validate</code></td>
+      <td>The editor’s lane, kept separate on purpose: the reviewer who judged the<br />change is not the position that accepts it.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="decisions">Decisions</h2>
+
+<p>Every one of the 1 decision(s) is documented.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>decision</th>
+      <th>what decides it</th>
+      <th>branches</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Prose, code, or both?</strong><br /><code class="language-plaintext highlighter-rouge">GW_Kind</code></td>
+      <td>What changed decides which review it gets, from Task_ClassifyChange’s scoping. Prose alone goes to narrative review and code nodes alone to code node review. A change touching BOTH SIDES OF A DECLARED PAIR — a diagram and the workflow it implements, a skill and the code beside it — goes to the pair review, which is the only branch that reads the two against each other. Exclusive, so exactly one branch is taken.</td>
+      <td><strong>prose</strong> → Narrative review<br /><strong>code nodes</strong> → Code node review<br /><strong>prose and the code it describes</strong> → Prose and the code it describes</td>
+    </tr>
+  </tbody>
+</table>
+

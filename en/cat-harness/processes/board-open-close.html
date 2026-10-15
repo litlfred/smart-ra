@@ -1,0 +1,128 @@
+<blockquote class="note">
+  <p>Generated from <code class="language-plaintext highlighter-rouge">folio-assistant-core/processes/ui/board-open-close.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a></p>
+</blockquote>
+
+<h1 id="board-open-and-close-content">Board: open and close content</h1>
+
+<p><code class="language-plaintext highlighter-rouge">Process_BoardOpenClose</code> · advisory · 7 step(s)</p>
+
+<p>What a reader does to a board and what the renderer does back: every card rests as its avatar, a window opens onto the one the reader chose, and it closes back to where it came from.</p>
+
+<p>You are in this process when the question is a READER’s — which card is open, what is raised, how to get back. Semantic zoom is in here too and is deliberately not the same mechanism: the threshold is resolved from the kind and applies itself by SIZE, while opening and closing are a person’s acts. Conflating them is how a board starts changing under somebody who did not touch it.</p>
+
+<p>The rule the diagram exists to hold is the one about the way back: an action whose inverse is not reachable is not a toggle, and a window that cannot be closed is a navigation dead end wearing a control’s clothes.</p>
+
+<p><em>No rendered diagram — run <code class="language-plaintext highlighter-rouge">bun run cat render:bpmn</code>.</em></p>
+
+<h2 id="how-it-connects">How it connects</h2>
+
+<ul>
+  <li><strong>Called by:</strong> no call activity names this process</li>
+  <li><strong>Calls:</strong> none</li>
+  <li><strong>Presented on:</strong> no docs page section shows this diagram</li>
+</ul>
+
+<h2 id="lanes--who-acts">Lanes — who acts</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>lane</th>
+      <th>role</th>
+      <th>what it does here</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Reader</td>
+      <td><code class="language-plaintext highlighter-rouge">user</code></td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>Board renderer</td>
+      <td><code class="language-plaintext highlighter-rouge">board-renderer</code></td>
+      <td>Acts and decides nothing: the start, the gateway and the end all sit in the reader’s lane, so every node here is downstream of a choice somebody else made. That split is the point — a renderer that chose what to open would put layout in charge of what the folio asserts.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="steps">Steps</h2>
+
+<p>Every one of the 7 step(s) is documented.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>step</th>
+      <th>lane</th>
+      <th>skill / sub-process</th>
+      <th>what it does</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Render every card as its avatar</strong><br /><code class="language-plaintext highlighter-rouge">A_RenderAvatars</code></td>
+      <td>Board renderer</td>
+      <td><code class="language-plaintext highlighter-rouge">board-windows</code></td>
+      <td>Render every card as its avatar — the starting state. Each content kind controls its own avatar; the board decides only that nothing starts open.</td>
+    </tr>
+    <tr>
+      <td><strong>Project a window onto the board</strong><br /><code class="language-plaintext highlighter-rouge">A_Open</code></td>
+      <td>Board renderer</td>
+      <td><code class="language-plaintext highlighter-rouge">board-windows</code></td>
+      <td>Project a window onto the board for the chosen card. A window is not the card grown large: it survives zooming out, and only [x] closes it. The frame is fixed ([x] always present, always in the same place); the kind fills in its declared controls.</td>
+    </tr>
+    <tr>
+      <td><strong>Raise the window the reader selected</strong><br /><code class="language-plaintext highlighter-rouge">A_Raise</code></td>
+      <td>Board renderer</td>
+      <td><code class="language-plaintext highlighter-rouge">board-windows</code></td>
+      <td>Raise the selected window to the top. Selecting ANY part raises it, not just a title bar. Z-order is session-only by stated default: no z is written to the layout, so a raise is never a file write.</td>
+    </tr>
+    <tr>
+      <td><strong>Close the window back to its avatar</strong><br /><code class="language-plaintext highlighter-rouge">A_Close</code></td>
+      <td>Board renderer</td>
+      <td><code class="language-plaintext highlighter-rouge">board-windows</code></td>
+      <td>[x] closes the window back to its avatar. Only a person’s [x] does this; a zoom-out never closes a window, or [x] and zooming become indistinguishable to the reader.</td>
+    </tr>
+    <tr>
+      <td><strong>Leave a reachable way back</strong><br /><code class="language-plaintext highlighter-rouge">A_OfferWayBack</code></td>
+      <td>Board renderer</td>
+      <td><code class="language-plaintext highlighter-rouge">board-windows</code></td>
+      <td>Leave the way back reachable: the collapsed window becomes a control in its own position and focus moves to it — left alone, focus lands on &lt;body&gt; and the keyboard position is lost. An action whose inverse is not reachable is not a toggle (bean l4zi).</td>
+    </tr>
+    <tr>
+      <td><strong>Resolve the kind’s zoom threshold</strong><br /><code class="language-plaintext highlighter-rouge">A_ResolveThreshold</code></td>
+      <td>Board renderer</td>
+      <td><code class="language-plaintext highlighter-rouge">board-windows</code></td>
+      <td>Resolve the semantic-zoom threshold for each card’s kind: the folio default unless the kind overrides it with a stated because. Return the source alongside the value, so a card that flipped too early can be traced to a decision or to a default.</td>
+    </tr>
+    <tr>
+      <td><strong>Swap cards below the threshold; leave open windows alone</strong><br /><code class="language-plaintext highlighter-rouge">A_SwapToAvatar</code></td>
+      <td>Board renderer</td>
+      <td><code class="language-plaintext highlighter-rouge">board-windows</code></td>
+      <td>Cards whose rendered width is strictly below the threshold swap to their avatar — automatic, driven by size. Open windows are left alone: semantic zoom and open/close are two mechanisms and must not be conflated.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="decisions">Decisions</h2>
+
+<p>Every one of the 1 decision(s) is documented.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>decision</th>
+      <th>what decides it</th>
+      <th>branches</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>What did the reader do?</strong><br /><code class="language-plaintext highlighter-rouge">GW_Act</code></td>
+      <td>Waits on the reader’s next action on the board. Opening a card projects a window; selecting a window raises it; <code class="language-plaintext highlighter-rouge">[x]</code> closes a window back to its avatar; resizing the board re-resolves each kind’s zoom threshold; leaving ends. Every branch but <code class="language-plaintext highlighter-rouge">leave</code> comes back here, which is what makes open and close a toggle.</td>
+      <td><strong>open a card</strong> → Project a window onto the board<br /><strong>select a window</strong> → Raise the window the reader selected<br /><strong>[x]</strong> → Close the window back to its avatar<br /><strong>resize the board</strong> → Resolve the kind’s zoom threshold<br /><strong>leave</strong> → The reader leaves the board</td>
+    </tr>
+  </tbody>
+</table>
+
