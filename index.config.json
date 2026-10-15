@@ -155,7 +155,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness",
-          "ref": "e41b0af3a4b8537837c0854709283fc5b4170a2f",
+          "ref": "1968cf5e52bb885810f0f4c9ca9c4ea3bb0b2574",
           "overrides": {
             "cat-harness": {
               "whole": true
@@ -171,8 +171,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-10-15",
-              "ref": "e41b0af3a4b8537837c0854709283fc5b4170a2f",
-              "evidence": "owner, session 2026-10-15 (session_01Pc8vSeXCwp5Ckvmz56cMDs): 'merge and repin open 3 hrs' (window to 12:00Z) — repin for cat-harness-tools#288 (#281: content root held to its own gate set)"
+              "ref": "1968cf5e52bb885810f0f4c9ca9c4ea3bb0b2574",
+              "evidence": "owner litlfred in session 014Pq7zmjpZqyyb75xLcCDjX, 2026-10-15: \"Extend merge and repin 3hrs\" / \"continue. merge regardless CI. deal with aftermath\" — re-pin to mains carrying cat-harness-tools#298 and cat-harness#265 for smart-ra#75"
             }
           }
         }
@@ -183,7 +183,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness-tools",
-          "ref": "2bc3a32ef4e183428acafabcbb0af44263a6da63",
+          "ref": "610460645613c650fa80af2daebd4befac50dee6",
           "overrides": {
             "cat-harness-tools": {
               "whole": true
@@ -196,8 +196,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-10-15",
-              "ref": "2bc3a32ef4e183428acafabcbb0af44263a6da63",
-              "evidence": "owner litlfred, 2026-10-15: \"publish smart-ra site\", \"merge regardless CI. deal with aftermath\"; merge+repin window to 17:55 UTC"
+              "ref": "610460645613c650fa80af2daebd4befac50dee6",
+              "evidence": "owner litlfred in session 014Pq7zmjpZqyyb75xLcCDjX, 2026-10-15: \"Extend merge and repin 3hrs\" / \"continue. merge regardless CI. deal with aftermath\" — re-pin to mains carrying cat-harness-tools#298 and cat-harness#265 for smart-ra#75"
             }
           }
         }
