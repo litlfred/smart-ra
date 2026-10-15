@@ -2364,7 +2364,7 @@
       "module": "fhir-harness/schemas/ig-artifact-jsonld.ts",
       "instance": "fhir-harness",
       "name": "ig-artifact-jsonld",
-      "graphNode": "undeclared",
+      "graphNode": "schema",
       "summary": "One FHIR IG artefact as a JSON-LD node — the asset an artefact's thin page",
       "isTest": false
     },
@@ -62413,6 +62413,36 @@
       "exported": true
     },
     {
+      "id": "fhir-harness/schemas/ig-artifact-jsonld.ts#indexAgrees",
+      "name": "indexAgrees",
+      "module": "fhir-harness/schemas/ig-artifact-jsonld.ts",
+      "kind": "undetermined",
+      "note": "( n: { \"schema:numberOfItems\": number; \"schema:hasPart\": { \"@type\": string; \"dcterms:identifier\": string }[] }, ctx: z.RefinementCtx, ): void => { if (n[\"schem…",
+      "doc": "The count is the list's length, and every entry's type agrees with its key. Shared by the schema and its node kind.",
+      "fields": [],
+      "extendsNames": [],
+      "values": [],
+      "refs": [],
+      "unresolved": [],
+      "external": [],
+      "exported": false
+    },
+    {
+      "id": "fhir-harness/schemas/ig-artifact-jsonld.ts#typeMatchesKey",
+      "name": "typeMatchesKey",
+      "module": "fhir-harness/schemas/ig-artifact-jsonld.ts",
+      "kind": "undetermined",
+      "note": "(n: { \"@type\": string; \"dcterms:identifier\": string }, ctx: z.RefinementCtx): void => { if (n[\"@type\"] !== `fhir:${n[\"dcterms:identifier\"].split(\"/\")[0]}`) { c…",
+      "doc": "The type and the key are two statements of one fact; a node whose two",
+      "fields": [],
+      "extendsNames": [],
+      "values": [],
+      "refs": [],
+      "unresolved": [],
+      "external": [],
+      "exported": false
+    },
+    {
       "id": "fhir-harness/schemas/ig-ast-dependencies.schema.json#IGASTDependenciesIgAstDependenciesV1",
       "name": "IGASTDependenciesIgAstDependenciesV1",
       "module": "fhir-harness/schemas/ig-ast-dependencies.schema.json",
@@ -80193,22 +80223,28 @@
       ]
     },
     {
-      "id": "folio-ig-artifact-index-jsonld/v1",
-      "source": "family",
-      "decl": "fhir-harness/schemas/ig-artifact-jsonld.ts#IgArtifactIndexJsonLdSchema",
+      "id": "folio-ig-artifact-index-jsonld",
+      "source": "node-kind",
       "instance": "fhir-harness",
+      "parents": [],
+      "subclasses": [],
       "typologies": [
         "ig-artifact-jsonld"
-      ]
+      ],
+      "page": "en/fhir-harness/folio-ig-artifact-index-jsonld/",
+      "note": "fhir-harness/schemas/ig-artifact-jsonld.ts#IgArtifactIndexJsonLdKind — an export this reader does not model as a declaration"
     },
     {
-      "id": "folio-ig-artifact-jsonld/v1",
-      "source": "family",
-      "decl": "fhir-harness/schemas/ig-artifact-jsonld.ts#IgArtifactJsonLdSchema",
+      "id": "folio-ig-artifact-jsonld",
+      "source": "node-kind",
       "instance": "fhir-harness",
+      "parents": [],
+      "subclasses": [],
       "typologies": [
         "ig-artifact-jsonld"
-      ]
+      ],
+      "page": "en/fhir-harness/folio-ig-artifact-jsonld/",
+      "note": "fhir-harness/schemas/ig-artifact-jsonld.ts#IgArtifactJsonLdKind — an export this reader does not model as a declaration"
     },
     {
       "id": "folio-ig-chrome/v2",
@@ -81000,5 +81036,6 @@
         "waiver"
       ]
     }
-  ]
+  ],
+  "sources": []
 }

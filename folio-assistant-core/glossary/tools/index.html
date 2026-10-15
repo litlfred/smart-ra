@@ -581,33 +581,33 @@
   them: those are versioned in their own URLs already.
 -->
 <!-- The harness icon row's own style, which railed pages load without docs-ui.css (beans `lhvt`, `9rq1`). -->
-<link rel="stylesheet" href="/smart-ra/assets/css/navbar-row.css?v=1792084267">
-<link rel="stylesheet" href="/smart-ra/assets/css/docs-ui.css?v=1792084267">
+<link rel="stylesheet" href="/smart-ra/assets/css/navbar-row.css?v=1792087391">
+<link rel="stylesheet" href="/smart-ra/assets/css/docs-ui.css?v=1792087391">
 <!-- Narrow viewports: wide content scrolls in its own box, never the page
      (bean `2r2n`). The standalone viewers inline the same file through
      `withViewerNav`, so both kinds of page read one set of rules. -->
-<link rel="stylesheet" href="/smart-ra/assets/css/narrow-viewport.css?v=1792084267">
+<link rel="stylesheet" href="/smart-ra/assets/css/narrow-viewport.css?v=1792087391">
 
 <!--
   The work-plan dashboard's styles, split from docs-ui.css so that
   `state-visualizer.ts` can inline exactly these bytes into the generated
   `<base>/<stub>/state-visualizer/` pages. One rule, two surfaces.
 -->
-<link rel="stylesheet" href="/smart-ra/assets/css/work-plan.css?v=1792084267">
+<link rel="stylesheet" href="/smart-ra/assets/css/work-plan.css?v=1792087391">
 <!-- Sticky themes. GENERATED from the theme nodes in `schemas/themes.ts` by
      `bun run cat themes:css`; `themes:css:check` fails the build when it is stale.
      Loaded AFTER docs-ui.css deliberately: it supplies the `--fa-sticky-*`
      roles that docs-ui.css consumes, and a custom property has to be set on a
      matching element before the rule reading it takes effect. -->
-<link rel="stylesheet" href="/smart-ra/assets/css/themes.css?v=1792084267">
+<link rel="stylesheet" href="/smart-ra/assets/css/themes.css?v=1792087391">
 <!-- UML overview colours: one class per graph typology, set on the Mermaid nodes
      that `scripts/gen-uml-overview.ts` writes into docs/uml/overview/. -->
-<link rel="stylesheet" href="/smart-ra/assets/css/uml.css?v=1792084267">
+<link rel="stylesheet" href="/smart-ra/assets/css/uml.css?v=1792087391">
 <!-- Kind avatars. GENERATED from `schemas/avatars.ts` by `bun run cat avatars:css`;
      `avatars:css:check` fails the build when it is stale. One stylesheet
      rather than 68 assets: the glyph is a mask and the colour is a property,
      so a scheme swap is a custom property and the trash state is a selector. -->
-<link rel="stylesheet" href="/smart-ra/assets/css/avatars.css?v=1792084267">
+<link rel="stylesheet" href="/smart-ra/assets/css/avatars.css?v=1792087391">
 
 <!--
   The kinds THIS INSTANCE DECLARES, for the avatar fan.
@@ -628,12 +628,12 @@
 <!-- BEFORE docs-ui.js and work-plan.js: both read window.faRender. -->
 <script src="/smart-ra/assets/js/kg-render.js" defer></script>
 <!-- BEFORE docs-ui.js, which calls it: the one drawing of the harness icon row (beans `lhvt`, `9rq1`). -->
-<script src="/smart-ra/assets/js/navbar-row.js?v=1792084267" defer></script>
-<script src="/smart-ra/assets/js/docs-ui.js?v=1792084267" defer></script>
+<script src="/smart-ra/assets/js/navbar-row.js?v=1792087391" defer></script>
+<script src="/smart-ra/assets/js/docs-ui.js?v=1792087391" defer></script>
 <!-- The edit, source and feedback links of every page, from the platform's one
   recipe (cat-harness-tools/src/core/edit-links.ts, bean v433): links carry their
   facts and this builds the hrefs. -->
-<script src="/smart-ra/assets/js/edit-links.js?v=1792084267" defer></script>
+<script src="/smart-ra/assets/js/edit-links.js?v=1792087391" defer></script>
 
 <!--
   The work-plan dashboard. SELF-MOUNTING on any page carrying
@@ -803,7 +803,7 @@
         <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
       </button><a href="/smart-ra/folio-assistant-core/glossary/" class="nav-list-link">Glossary</a><ul class="nav-list"><li class="nav-list-item"><a href="/smart-ra/folio-assistant-core/glossary/skills/" class="nav-list-link">Glossary: Skills</a></li><li class="nav-list-item"><a href="/smart-ra/folio-assistant-core/glossary/tools/" class="nav-list-link">Glossary: Tools</a></li><li class="nav-list-item"><a href="/smart-ra/folio-assistant-core/glossary/bpmn-activities/" class="nav-list-link">Glossary: BPMN activities</a></li><li class="nav-list-item"><a href="/smart-ra/folio-assistant-core/glossary/dmn-decisions/" class="nav-list-link">Glossary: DMN decisions</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Glossary: Schema fields submenu" aria-expanded="false">
         <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
-      </button><a href="/smart-ra/folio-assistant-core/glossary/schema-fields/" class="nav-list-link">Glossary: Schema fields</a><ul class="nav-list"><li class="nav-list-item"><a href="/smart-ra/folio-assistant-core/glossary/schema-fields/a-e/" class="nav-list-link">Glossary: Schema fields, A–E</a></li><li class="nav-list-item"><a href="/smart-ra/folio-assistant-core/glossary/schema-fields/f-l/" class="nav-list-link">Glossary: Schema fields, F–L</a></li><li class="nav-list-item"><a href="/smart-ra/folio-assistant-core/glossary/schema-fields/m-r/" class="nav-list-link">Glossary: Schema fields, M–R</a></li><li class="nav-list-item"><a href="/smart-ra/folio-assistant-core/glossary/schema-fields/s-z/" class="nav-list-link">Glossary: Schema fields, S–Z</a></li></ul></li></ul></li><li class="nav-list-item"><a href="/smart-ra/en/cat-harness/external-schemas/" class="nav-list-link">External schemas</a></li><li class="nav-list-item"><a href="/smart-ra/en/cat-harness/lsi/" class="nav-list-link">Latent semantic indexes</a></li><li class="nav-list-item"><a href="/smart-ra/en/cat-harness/methodologies/" class="nav-list-link">Methodologies</a></li><li class="nav-list-item"><a href="/smart-ra/en/dpi-h-ra/" class="nav-list-link">Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector</a></li><li class="nav-list-item"><a href="/smart-ra/en/cat-harness/tools/" class="nav-list-link">Tools</a></li></ul>
+      </button><a href="/smart-ra/folio-assistant-core/glossary/schema-fields/" class="nav-list-link">Glossary: Schema fields</a><ul class="nav-list"><li class="nav-list-item"><a href="/smart-ra/folio-assistant-core/glossary/schema-fields/a-e/" class="nav-list-link">Glossary: Schema fields, A–E</a></li><li class="nav-list-item"><a href="/smart-ra/folio-assistant-core/glossary/schema-fields/f-l/" class="nav-list-link">Glossary: Schema fields, F–L</a></li><li class="nav-list-item"><a href="/smart-ra/folio-assistant-core/glossary/schema-fields/m-r/" class="nav-list-link">Glossary: Schema fields, M–R</a></li><li class="nav-list-item"><a href="/smart-ra/folio-assistant-core/glossary/schema-fields/s-z/" class="nav-list-link">Glossary: Schema fields, S–Z</a></li></ul></li></ul></li><li class="nav-list-item"><a href="/smart-ra/en/cat-harness/external-schemas/" class="nav-list-link">External schemas</a></li><li class="nav-list-item"><a href="/smart-ra/en/cat-harness/lsi/" class="nav-list-link">Latent semantic indexes</a></li><li class="nav-list-item"><a href="/smart-ra/en/cat-harness/methodologies/" class="nav-list-link">Methodologies</a></li><li class="nav-list-item"><a href="/smart-ra/en/dpi-h-ra/" class="nav-list-link">Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector</a></li><li class="nav-list-item"><a href="/smart-ra/en/cat-harness/tools/" class="nav-list-link">Tools</a></li><li class="nav-list-item"><a href="/smart-ra/en/cat-harness/tools/cat-harness/" class="nav-list-link">Tools — cat-harness</a></li><li class="nav-list-item"><a href="/smart-ra/en/cat-harness/tools/cat-harness-tools/" class="nav-list-link">Tools — cat-harness-tools</a></li><li class="nav-list-item"><a href="/smart-ra/en/cat-harness/tools/fhir-harness/" class="nav-list-link">Tools — fhir-harness</a></li><li class="nav-list-item"><a href="/smart-ra/en/cat-harness/tools/folio-assistant-core/" class="nav-list-link">Tools — folio-assistant-core</a></li><li class="nav-list-item"><a href="/smart-ra/en/cat-harness/tools/smart-base/" class="nav-list-link">Tools — smart-base</a></li></ul>
   
 </nav>
 
@@ -1363,7 +1363,7 @@ Gates on the merged tree <span class="fa-gloss-status">candidate, extracted</spa
 Generate an IG instance's reader-facing pages from its artefact index <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
-<p>Write <code>&lt;instance&gt;/docs/</code> — an index page, one page per artefact, a page per over-large category and per menu group — from <code>fhir-artifact-index/index.json</code> (and <code>menu.json</code> when ingested), styled by the template chrome an owning instance ingested. Moved down to this layer because nothing in it was one IG's own (#1767); with <code>--summary</code> it writes an instance's landing page, opening with that instance's harness section. For an instance whose docs declare <code>igSite</code> (bean <code>mftp</code>) it writes no index, menu or category pages — the IG site's own replace them — and only a front-matter <code>artifacts.md</code> naming the Tool that drew it. Where an instance declares a visualiser <code>renderedBy: ig-pages</code>, it also writes that visualiser's route page, <code>&lt;base&gt;/&lt;instance&gt;/&lt;id&gt;/</code>, which opens the artefact index. For an IG whose SOURCE is at hand, <a href="#fhir-harness--kg-tools--build-ig-site"><code>build-ig-site</code></a> renders the IG's own pages instead; this is for an IG known only by what it published.</p>
+<p>Write <code>&lt;instance&gt;/docs/</code> — an index page, one page per artefact, a page per over-large category and per menu group — from <code>fhir-artifact-index/index.json</code> (and <code>menu.json</code> when ingested), styled by the template chrome an owning instance ingested. Moved down to this layer because nothing in it was one IG's own (#1767); with <code>--summary</code> it writes an instance's landing page, opening with that instance's harness section. For an instance whose docs declare <code>igSite</code> (bean <code>mftp</code>) it writes no index, menu or category pages — the IG site's own replace them — and only a front-matter <code>artifacts.md</code> naming the Tool that drew it. Where an instance declares a visualiser <code>renderedBy: ig-pages</code>, it also writes that visualiser's route page, <code>&lt;base&gt;/&lt;instance&gt;/&lt;id&gt;/</code>, which opens the artefact index; with <code>--site &lt;dir&gt;</code> it writes only those route pages, under that site. For an IG whose SOURCE is at hand, <a href="#fhir-harness--kg-tools--build-ig-site"><code>build-ig-site</code></a> renders the IG's own pages instead; this is for an IG known only by what it published.</p>
 <p class="fa-gloss-meta">Tools of fhir-harness · source <a href="https://github.com/litlfred/fhir-harness/blob/main/tools/index.ts"><code>fhir-harness/tools/index.ts#ig-pages</code></a></p>
 </dd>
 <dt id="cat-harness--kg-tools--auto-docs-viewer" data-fa-state="extracted" data-fa-gloss="">
@@ -2260,7 +2260,7 @@ Stage every IG whose instance records its source, one Jekyll site each <span cla
 Stage one IG as its own just-the-docs Jekyll site <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
-<p>Turn an IG source repository into ONE Jekyll source for just-the-docs, as the IG Publisher builds one IG per site: <code>input/pagecontent</code> pages with title, parent and order from <code>sushi-config.yaml</code> <code>pages:</code>, the files the Publisher resolves <code>&#123;% include %}</code> against, images, <code>_data/fhir.json</code> from <a href="#fhir-harness--kg-tools--ig-site-data"><code>ig-site-data</code></a>, and a <code>_config.yml</code>. The pages render unchanged, <code>&#123;&#123; site.data.fhir.* }}</code> included (bean <code>bamf</code>, owner's choice of one site per IG). With the IG's menu, the layout is the one every IG site wears (bean <code>mftp</code>): the IG's own top bar, the IG's TOC declared as the folio-assistant navbar's section (added by <code>rail-standalone-pages</code>), no sidebar of its own, an edit link per page, and per heading a source-line link and a pre-filled feedback issue.</p>
+<p>Turn an IG source repository into ONE Jekyll source for just-the-docs, as the IG Publisher builds one IG per site: <code>input/pagecontent</code> pages with title, parent and order from <code>sushi-config.yaml</code> <code>pages:</code>, the files the Publisher's include tags resolve against, images, <code>_data/fhir.json</code> from <a href="#fhir-harness--kg-tools--ig-site-data"><code>ig-site-data</code></a>, and a <code>_config.yml</code>. The pages render unchanged, including their references to the IG's site data (bean <code>bamf</code>, owner's choice of one site per IG). With the IG's menu, the layout is the one every IG site wears (bean <code>mftp</code>): the IG's own top bar, the IG's TOC declared as the folio-assistant navbar's section (added by <code>rail-standalone-pages</code>), no sidebar of its own, an edit link per page, and per heading a source-line link and a pre-filled feedback issue.</p>
 <p class="fa-gloss-meta">Tools of fhir-harness · source <a href="https://github.com/litlfred/fhir-harness/blob/main/tools/index.ts"><code>fhir-harness/tools/index.ts#build-ig-site</code></a></p>
 </dd>
 <dt id="cat-harness--kg-tools--staging-graph-viewer" data-fa-state="extracted" data-fa-gloss="">
