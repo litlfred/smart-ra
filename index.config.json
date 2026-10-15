@@ -48,7 +48,8 @@
           ],
           "siteSteps": [
             "site:node-kinds"
-          ]
+          ],
+          "coverage": "report"
         }
       }
     },
@@ -183,7 +184,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness-tools",
-          "ref": "610460645613c650fa80af2daebd4befac50dee6",
+          "ref": "6ac66fd25eb56eb528b55cedb0942179027d1dbe",
           "overrides": {
             "cat-harness-tools": {
               "whole": true
@@ -196,8 +197,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-10-15",
-              "ref": "610460645613c650fa80af2daebd4befac50dee6",
-              "evidence": "owner litlfred in session 014Pq7zmjpZqyyb75xLcCDjX, 2026-10-15: \"Extend merge and repin 3hrs\" / \"continue. merge regardless CI. deal with aftermath\" — re-pin to mains carrying cat-harness-tools#298 and cat-harness#265 for smart-ra#75"
+              "ref": "6ac66fd25eb56eb528b55cedb0942179027d1dbe",
+              "evidence": "owner litlfred in session 014Pq7zmjpZqyyb75xLcCDjX, 2026-10-15: merge and repin window to 17:55 (\"Extend merge and repin 3hrs\"); re-pin cat-harness-tools to main carrying #315 (library source links) and #317 (site coverage) for smart-ra"
             }
           }
         }
