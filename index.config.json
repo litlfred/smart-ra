@@ -184,7 +184,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness-tools",
-          "ref": "87d013b20d2ce699032bc2d86e2add2f0d98b716",
+          "ref": "fc0d86300665c2501c2b267cb85452452779671a",
           "overrides": {
             "cat-harness-tools": {
               "whole": true
@@ -197,8 +197,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-10-15",
-              "ref": "87d013b20d2ce699032bc2d86e2add2f0d98b716",
-              "evidence": "owner litlfred, 2026-10-15: \"publish smart-ra site\" and \"merge regardless CI. deal with aftermath\"; merge+repin window to 17:55 UTC (\"Extend merge and repin 3hrs\")"
+              "ref": "fc0d86300665c2501c2b267cb85452452779671a",
+              "evidence": "owner litlfred, 2026-10-15, in session: \"Turn on Auto-fix for PR 295, then re-pin smart-ra once it merges.\" then \"merge\" — repin for cat-harness-tools#295 (landing data resolves themes and layers in the checkout, never beside it)"
             }
           }
         }
