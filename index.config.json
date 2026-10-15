@@ -36,7 +36,8 @@
       "site": {
         "build": {
           "pre": [
-            "check:archimate"
+            "check:archimate",
+            "avatars:css"
           ],
           "sourceSteps": [
             "site:document",
