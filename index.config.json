@@ -105,7 +105,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/fhir-harness",
-          "ref": "2aa1f8be1a6e2edfca99afdf4b82b954c7cc1d62",
+          "ref": "40bb0aff90d99a8af02f2d99bb3f1f9c54b0e133",
           "overrides": {
             "fhir-harness": {
               "whole": true
@@ -115,8 +115,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-10-15",
-              "ref": "2aa1f8be1a6e2edfca99afdf4b82b954c7cc1d62",
-              "evidence": "Owner litlfred, 2026-10-15 05:55 UTC session chat: 'merge and repin open 3 hrs' — re-pin cat-harness (>= 44c27fd, cat-harness#240), cat-harness-tools (>= #247) and fhir-harness (#77) to current mains so index.config.json may declare site.agentRun (smart-ra#62)"
+              "ref": "40bb0aff90d99a8af02f2d99bb3f1f9c54b0e133",
+              "evidence": "owner litlfred, 2026-10-15 05:55 UTC, in the Claude Code session: \"merge and repin open 3 hrs\""
             }
           }
         }
@@ -183,7 +183,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness-tools",
-          "ref": "77946b72df364e63fc1608fb353c3cc18cfd06db",
+          "ref": "5b1c6c1960b2978392b7b841bc3f0a1581f5769f",
           "overrides": {
             "cat-harness-tools": {
               "whole": true
@@ -196,8 +196,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-10-15",
-              "ref": "77946b72df364e63fc1608fb353c3cc18cfd06db",
-              "evidence": "Owner litlfred, 2026-10-15 05:55 UTC session chat: 'merge and repin open 3 hrs' — re-pin cat-harness (>= 44c27fd, cat-harness#240), cat-harness-tools (>= #247) and fhir-harness (#77) to current mains so index.config.json may declare site.agentRun (smart-ra#62)"
+              "ref": "5b1c6c1960b2978392b7b841bc3f0a1581f5769f",
+              "evidence": "owner litlfred, 2026-10-15 05:55 UTC, in the Claude Code session: \"merge and repin open 3 hrs\""
             }
           }
         }
