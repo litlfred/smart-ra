@@ -75,7 +75,7 @@ jobs:
           for axis in "${AXIS_LIST[@]}"; do
             axis_trim="$(echo "$axis" | xargs)"
             echo "::group::axis $axis_trim"
-            bun run "$FA_TOOLS/content/pipeline/qa-sweep.ts" "folio" --axis "$axis_trim" --ci
+            bun run "$FA_TOOLS/pipeline/qa-sweep.ts" "folio" --axis "$axis_trim" --ci
             echo "::endgroup::"
           done
 
