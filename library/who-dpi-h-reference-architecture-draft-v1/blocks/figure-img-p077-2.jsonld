@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
+    }
+  ],
+  "@id": "library/who-dpi-h-reference-architecture-draft-v1/blocks/figure-img-p077-2",
+  "@type": [
+    "folio-assistant-core:Figure",
+    "doco:Figure"
+  ],
+  "kind": "figure",
+  "file": "../images/img-p077-2.png",
+  "pageStart": 77,
+  "pageEnd": 77,
+  "narrative": {
+    "text": "Figure 3.5 (page 77). 'DPI-H Reference Architecture': the layered view without the goals: point-of-service and functional applications at the top; the government-stewarded DPI-H layer of reusable components and the shared data layer of core registries, REDDHI components starred; the foundational DPI layer at the bottom; and an interoperability column with the information mediator, open standards and integration patterns. At this resolution most of the small text is not legible.",
+    "state": "draft",
+    "drafted_by": {
+      "kind": "agent",
+      "id": "claude",
+      "model": "claude-opus-5-5",
+      "session": "https://claude.ai/code/session_01Pc8vSeXCwp5Ckvmz56cMDs"
+    },
+    "drafted_at": "2026-10-15"
+  },
+  "derivedFrom": "library/who-dpi-h-reference-architecture-draft-v1/sections/sec-038",
+  "sourceDocument": "library/who-dpi-h-reference-architecture-draft-v1/manifest",
+  "provenance": "ingested"
+}

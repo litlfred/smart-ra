@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
+    }
+  ],
+  "@id": "library/who-dpi-h-reference-architecture-draft-v1/blocks/figure-img-p254-2",
+  "@type": [
+    "folio-assistant-core:Figure",
+    "doco:Figure"
+  ],
+  "kind": "figure",
+  "file": "../images/img-p254-2.png",
+  "pageStart": 254,
+  "pageEnd": 254,
+  "narrative": {
+    "text": "'Semantic governance capabilities, roles and supporting tools': five capabilities in sequence (Consume, Change requests, Change management, Publication, Monitoring). Above them are the roles and information objects each involves (Stakeholder, Author, Owner, Content, Upstream content, Management rules), and below them the supporting tools (change-request tooling, authoring, repository). A legend distinguishes capability, role or information object, and supporting tool.",
+    "state": "draft",
+    "drafted_by": {
+      "kind": "agent",
+      "id": "claude",
+      "model": "claude-opus-5-5",
+      "session": "https://claude.ai/code/session_01Pc8vSeXCwp5Ckvmz56cMDs"
+    },
+    "drafted_at": "2026-10-15"
+  },
+  "derivedFrom": "library/who-dpi-h-reference-architecture-draft-v1/sections/sec-129",
+  "sourceDocument": "library/who-dpi-h-reference-architecture-draft-v1/manifest",
+  "provenance": "ingested"
+}

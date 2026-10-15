@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
+    }
+  ],
+  "@id": "library/who-dpi-h-reference-architecture-draft-v1/blocks/figure-img-p056-2",
+  "@type": [
+    "folio-assistant-core:Figure",
+    "doco:Figure"
+  ],
+  "kind": "figure",
+  "file": "../images/img-p056-2.png",
+  "pageStart": 56,
+  "pageEnd": 56,
+  "narrative": {
+    "text": "Figure 3.1. A worked chain of realisation relationships, top to bottom: a Business Capability ('Identity maintained across services') is realised by an Application Service ('Resolving and matching identity'), which is realised by an Application Function ('Identity matching'), which is realised by an Application Component ('Client Registry'). Each link is a dashed 'realises' arrow, and a note beside each element gives the example.",
+    "state": "draft",
+    "drafted_by": {
+      "kind": "agent",
+      "id": "claude",
+      "model": "claude-opus-5-5",
+      "session": "https://claude.ai/code/session_01Pc8vSeXCwp5Ckvmz56cMDs"
+    },
+    "drafted_at": "2026-10-15"
+  },
+  "derivedFrom": "library/who-dpi-h-reference-architecture-draft-v1/sections/sec-026",
+  "sourceDocument": "library/who-dpi-h-reference-architecture-draft-v1/manifest",
+  "provenance": "ingested"
+}
