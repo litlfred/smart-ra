@@ -2631,7 +2631,8 @@
       "module": "folio-assistant-core/schemas/manifest-fields.ts",
       "instance": "folio-assistant-core",
       "name": "manifest-fields",
-      "graphNode": "undeclared",
+      "graphNode": "none",
+      "reason": "a text parser for block manifests' fields: it defines no schema",
       "summary": "A block manifest's fields, read from its TEXT: the object literal passed to",
       "isTest": false
     },
