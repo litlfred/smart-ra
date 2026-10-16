@@ -48,9 +48,13 @@
           ],
           "siteSteps": [
             "site:node-kinds"
+          ],
+          "keep": [
+            "ns"
           ]
         }
-      }
+      },
+      "_site_comment": "`site.build.keep`: `ns`, the JSON-LD context at ns/context/v1.jsonld that publish-instance-context writes onto gh-pages; the root publish keeps it."
     },
     {
       "name": "smart-base",
