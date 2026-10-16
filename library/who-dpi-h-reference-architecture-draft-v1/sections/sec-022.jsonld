@@ -1,6 +1,6 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/smart-ra/ns/context/v1.jsonld",
     {
       "@base": "https://litlfred.github.io/folio/"
     }
@@ -17,7 +17,7 @@
     "library/who-dpi-h-reference-architecture-draft-v1/blocks/figure-img-p041-2",
     "library/who-dpi-h-reference-architecture-draft-v1/blocks/figure-img-p048-2"
   ],
-  "derivedFrom": "library/who-dpi-h-reference-architecture-draft-v1/manifest",
-  "sourceDocument": "library/who-dpi-h-reference-architecture-draft-v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/dpi-h-ra/who-dpi-h-reference-architecture-draft-v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/dpi-h-ra/who-dpi-h-reference-architecture-draft-v1/manifest.jsonld",
   "provenance": "ingested"
 }
