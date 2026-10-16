@@ -608,6 +608,13 @@ ca&amp;at-harness
     &quot;role&quot;: &quot;package-manifest&quot;,
     &quot;title&quot;: &quot;package.json&quot;,
     &quot;description&quot;: &quot;The npm pre-packaging source manifest declaring package identity, exports, dependencies, scripts, and tarball whitelist.&quot;
+  },
+  {
+    &quot;id&quot;: &quot;unkinded-baseline&quot;,
+    &quot;src&quot;: &quot;node-kinds.baseline.json&quot;,
+    &quot;role&quot;: &quot;unkinded-baseline&quot;,
+    &quot;title&quot;: &quot;Unkinded families — cat-harness&quot;,
+    &quot;description&quot;: &quot;The families whose typology THIS instance declares (in code, BASE_GRAPH_TYPOLOGIES and its registrations, or in its archimate/ and openapi/ typologies graphs) that predate node kinds and may stay unkinded; `node-kinds:check` fails on any other. Owner, 2026-10-15: split out of docs/_data/node-kinds.json, which spanned every layer and is now built at publish, so each layer&#39;s families are judged by its own commit. Written by `bun run cat node-kinds`, which only shrinks it; `--accept-unkinded` grows it deliberately.&quot;
   }
 ]</pre></dd>
 <dt>_stub_comment</dt><dd>RENAMED from `folio-assistant` on 2026-09-21, on the owner&#39;s ruling, closing the collision issue #649 raised and bean `x3bd` flagged as settle-before-you-move. `artefactStub(d) = d.stub ?? d.name`, so this field is the ONLY stub declared anywhere in the tree — every other instance falls through to its `name`. While it read `folio-assistant` it was the string the REPOSITORY ROOT instance also carries as its `name`, so both resolved to `&lt;base&gt;/folio-assistant.jsonld`: two vocabularies, one path, and a reader dereferencing it got whichever layer answered. It is kept as an explicit field rather than deleted so the rename is visible where the collision was, and because `x3bd` records that this string names published artefacts (`.jsonld`, `.schema.json`, the viewer directory) rather than being cosmetic.</dd>
@@ -671,7 +678,7 @@ ca&amp;at-harness
     &quot;id&quot;: &quot;tools&quot;,
     &quot;_coverage_comment&quot;: &quot;`docs` pointed at `cat-harness/docs/concepts/skills.md` until 2026-09-22 — a page titled \&quot;Skills &amp; roles\&quot; whose headings are Skills, Roles and Capabilities, with no tools section in it. The tools graph had no documentation of its own and named a page about something else. That is worse than an absent ref, because an absent one is a legible gap while a ref that RESOLVES reports coverage: the check in force asks only whether the path exists, it did, and nothing ever flagged it. Found by applying the owner&#39;s instruction of 2026-09-21, \&quot;keep tools and skills separate!\&quot;. `tool-graph.md` is the prose; `tools/index.md` is the generated view, and the two are different objects rather than two names for one.&quot;,
     &quot;path&quot;: &quot;tools/&quot;,
-    &quot;description&quot;: &quot;Tool definitions, one subdirectory per contributing instance (tools/&lt;stub&gt;/) so a composed instance adds its own without colliding on a filename. tools/index.ts merges them and is the only path a consumer imports. Authored as .ts calling defineTool so a malformed node fails at tsc; the JSON-LD and JSON Schema renderings are generated.&quot;,
+    &quot;description&quot;: &quot;Tool definitions, one folder per Tool (tools/&lt;id&gt;/&lt;id&gt;.ts, bean tdir), shared helpers in tools/lib.ts. tools/index.ts loads the folders (toolsFromFolders) and is the only path a consumer imports. Authored as .ts calling defineTool so a malformed node fails at tsc; the JSON-LD and JSON Schema renderings are generated.&quot;,
     &quot;graphTypologies&quot;: [
       &quot;tools&quot;
     ],
@@ -1126,7 +1133,11 @@ ca&amp;at-harness
     &quot;renderedBy&quot;: &quot;folio-viewer&quot;,
     &quot;covers&quot;: [
       &quot;folio&quot;
-    ]
+    ],
+    &quot;coversKinds&quot;: [
+      &quot;folio&quot;
+    ],
+    &quot;subgraphs&quot;: &quot;instance&quot;
   },
   {
     &quot;id&quot;: &quot;auto-docs&quot;,
@@ -1154,9 +1165,10 @@ ca&amp;at-harness
   {
     &quot;id&quot;: &quot;tools&quot;,
     &quot;renderedBy&quot;: &quot;tools-viewer&quot;,
-    &quot;covers&quot;: [
+    &quot;coversKinds&quot;: [
       &quot;tools&quot;
     ],
+    &quot;subgraphs&quot;: &quot;instance&quot;,
     &quot;alias&quot;: &quot;tools&quot;
   },
   {
@@ -1198,6 +1210,13 @@ ca&amp;at-harness
     &quot;covers&quot;: [
       &quot;beans&quot;
     ],
+    &quot;coversKinds&quot;: [
+      &quot;beans&quot;,
+      &quot;bean-defs&quot;,
+      &quot;bean-notes&quot;,
+      &quot;workflow-state&quot;
+    ],
+    &quot;subgraphs&quot;: &quot;instance&quot;,
     &quot;alias&quot;: &quot;beans&quot;
   },
   {
@@ -1219,27 +1238,94 @@ ca&amp;at-harness
   {
     &quot;id&quot;: &quot;qa&quot;,
     &quot;renderedBy&quot;: &quot;state-viewer&quot;,
-    &quot;covers&quot;: [
+    &quot;coversKinds&quot;: [
       &quot;qa&quot;
     ],
-    &quot;title&quot;: &quot;QA results&quot;,
+    &quot;subgraphs&quot;: &quot;instance&quot;,
+    &quot;title&quot;: &quot;QA&quot;,
     &quot;alias&quot;: &quot;qa&quot;
   },
   {
     &quot;id&quot;: &quot;health&quot;,
     &quot;renderedBy&quot;: &quot;state-viewer&quot;,
-    &quot;covers&quot;: [
+    &quot;coversKinds&quot;: [
       &quot;health&quot;
     ],
+    &quot;subgraphs&quot;: &quot;instance&quot;,
     &quot;alias&quot;: &quot;health&quot;
   },
   {
     &quot;id&quot;: &quot;attestations&quot;,
     &quot;renderedBy&quot;: &quot;state-viewer&quot;,
-    &quot;covers&quot;: [
+    &quot;coversKinds&quot;: [
       &quot;attestations&quot;
     ],
+    &quot;subgraphs&quot;: &quot;instance&quot;,
     &quot;alias&quot;: &quot;attestations&quot;
+  },
+  {
+    &quot;id&quot;: &quot;graph-typologies&quot;,
+    &quot;renderedBy&quot;: &quot;state-viewer&quot;,
+    &quot;coversKinds&quot;: [
+      &quot;typologies&quot;
+    ],
+    &quot;subgraphs&quot;: &quot;instance&quot;,
+    &quot;title&quot;: &quot;Graph typologies&quot;
+  },
+  {
+    &quot;id&quot;: &quot;validators&quot;,
+    &quot;renderedBy&quot;: &quot;state-viewer&quot;,
+    &quot;coversKinds&quot;: [
+      &quot;validators&quot;
+    ],
+    &quot;subgraphs&quot;: &quot;instance&quot;,
+    &quot;title&quot;: &quot;Validators&quot;
+  },
+  {
+    &quot;id&quot;: &quot;qa-checkers&quot;,
+    &quot;renderedBy&quot;: &quot;state-viewer&quot;,
+    &quot;coversKinds&quot;: [
+      &quot;qa-checkers&quot;
+    ],
+    &quot;subgraphs&quot;: &quot;instance&quot;,
+    &quot;title&quot;: &quot;QA checkers&quot;
+  },
+  {
+    &quot;id&quot;: &quot;block-kinds&quot;,
+    &quot;renderedBy&quot;: &quot;state-viewer&quot;,
+    &quot;coversKinds&quot;: [
+      &quot;block-kinds&quot;
+    ],
+    &quot;subgraphs&quot;: &quot;instance&quot;,
+    &quot;title&quot;: &quot;Block kinds&quot;
+  },
+  {
+    &quot;id&quot;: &quot;content-adapters&quot;,
+    &quot;renderedBy&quot;: &quot;state-viewer&quot;,
+    &quot;coversKinds&quot;: [
+      &quot;content-adapters&quot;
+    ],
+    &quot;subgraphs&quot;: &quot;instance&quot;,
+    &quot;title&quot;: &quot;Content adapters&quot;
+  },
+  {
+    &quot;id&quot;: &quot;code-lists&quot;,
+    &quot;renderedBy&quot;: &quot;state-viewer&quot;,
+    &quot;coversKinds&quot;: [
+      &quot;code-list&quot;
+    ],
+    &quot;subgraphs&quot;: &quot;instance&quot;,
+    &quot;title&quot;: &quot;Code lists&quot;
+  },
+  {
+    &quot;id&quot;: &quot;code&quot;,
+    &quot;renderedBy&quot;: &quot;state-viewer&quot;,
+    &quot;coversKinds&quot;: [
+      &quot;code&quot;
+    ],
+    &quot;subgraphs&quot;: &quot;instance&quot;,
+    &quot;title&quot;: &quot;Code&quot;,
+    &quot;alias&quot;: &quot;code&quot;
   },
   {
     &quot;id&quot;: &quot;swimlane-glossary&quot;,
@@ -1333,12 +1419,43 @@ ca&amp;at-harness
     &quot;reason&quot;: &quot;content-addressed bodies of every framed instance&#39;s skills; a foreign edit moves the hash&quot;
   },
   {
+    &quot;path&quot;: &quot;docs/assets/library/jsonld/smart-base/9789240116191-eng/l1-extraction/&quot;,
+    &quot;writer&quot;: [
+      &quot;library:viz&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reads&quot;: [
+      &quot;library&quot;
+    ],
+    &quot;reason&quot;: &quot;byte copies of the l1-extraction sub-graph declared inside another instance&#39;s library entry, published beside the entry&#39;s manifest (bean 8pzh); the bytes are that instance&#39;s at the checkout&#39;s pin (owner, 2026-10-15, H1). Listed after docs/subgraph/, because the library pages link the subgraph index only when it is on disk&quot;
+  },
+  {
     &quot;path&quot;: &quot;docs/reference/skill-instructions/&quot;,
     &quot;writer&quot;: [
       &quot;skills:docs&quot;
     ],
     &quot;because&quot;: &quot;checkout&quot;,
     &quot;reason&quot;: &quot;a page per skill of every instance (measured: drifted on fhir-harness and folio-assistant-core skills at the current pins)&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/_data/node-kinds.json&quot;,
+    &quot;writer&quot;: [
+      &quot;node-kinds&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reads&quot;: [
+      &quot;typologies&quot;,
+      &quot;validators&quot;
+    ],
+    &quot;reason&quot;: &quot;the node-kind table: every node kind and unkinded family the typologies and validator nodes of EVERY instance in the checkout declare. Owner, 2026-10-15: built at publish, and the ratchet it carried moved to each instance&#39;s own `unkinded-baseline` asset (this instance&#39;s is node-kinds.baseline.json). Listed before node-kind:pages, which renders it, so it is written first&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/en/cat-harness/node-kind-index/&quot;,
+    &quot;writer&quot;: [
+      &quot;node-kind:pages&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;the node-kind-index kind&#39;s pages: its one node is docs/_data/node-kinds.json, listed just above and built at publish, which the node page renders verbatim (measured: the committed page went stale the day the table was regenerated, ci72 2026-10-15)&quot;
   },
   {
     &quot;path&quot;: &quot;docs/en/cat-harness/cat-harness-declaration/&quot;,
@@ -1590,6 +1707,101 @@ ca&amp;at-harness
     &quot;reason&quot;: &quot;this instance&#39;s JSON-LD @context, generated from the prefixes its documents use (published ones included, which docs/subgraph/ and the SKOS exports above are) flattened with the prefix tables of the instances it needs, read at the checkout&#39;s pins (bean folio-assistant-63q4)&quot;
   },
   {
+    &quot;path&quot;: &quot;docs/en/cat-harness/tools/&quot;,
+    &quot;writer&quot;: [
+      &quot;tools:viz&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reads&quot;: [
+      &quot;tools&quot;,
+      &quot;skills&quot;
+    ],
+    &quot;reason&quot;: &quot;the tools viewer (bean folio-assistant-1nu0): the full KG and one page per instance in the checkout declaring a tools graph, each Tool joined to the skills of every instance and linked to their published pages, so it is a function of the index&#39;s pins (owner, 2026-10-15). Listed after docs/reference/skill-instructions/, whose pages it links only when they are on disk, and before docs/_data/harness.json, whose tiles open its pages&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/en/cat-harness/lsi/&quot;,
+    &quot;writer&quot;: [
+      &quot;lsi:viz&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reads&quot;: [
+      &quot;library&quot;,
+      &quot;skills&quot;,
+      &quot;beans&quot;,
+      &quot;folio&quot;,
+      &quot;docs&quot;,
+      &quot;methodology&quot;,
+      &quot;memory&quot;,
+      &quot;policies&quot;,
+      &quot;glossary&quot;
+    ],
+    &quot;reason&quot;: &quot;the LSI viewer: which declared prose graphs of every instance in the checkout need an index (needOf over the tree), so it moves with the index&#39;s pins, not with this commit&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/en/cat-harness/translation-status/&quot;,
+    &quot;writer&quot;: [
+      &quot;translation:status&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reads&quot;: [
+      &quot;translation-sources&quot;
+    ],
+    &quot;reason&quot;: &quot;the translation status page: this instance&#39;s catalogues and, beside them, those of every other instance in the checkout declaring a translation-sources directory&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/translation-status/&quot;,
+    &quot;writer&quot;: [
+      &quot;translation:status&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reads&quot;: [
+      &quot;translation-sources&quot;
+    ],
+    &quot;reason&quot;: &quot;the projection the translation status page renders, and the tile count docs:harness reads: written with the page, from the same checkout&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/en/cat-harness/schemas/&quot;,
+    &quot;writer&quot;: [
+      &quot;schema:viz&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reads&quot;: [
+      &quot;schemas&quot;
+    ],
+    &quot;reason&quot;: &quot;the schemas viewer: the full KG and one page per instance in the checkout declaring a schemas graph&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/schemas/index.json&quot;,
+    &quot;writer&quot;: [
+      &quot;schema:viz&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reads&quot;: [
+      &quot;schemas&quot;
+    ],
+    &quot;reason&quot;: &quot;the schema index the schemas viewer loads: every type and field of every instance&#39;s schemas directory in the checkout&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/en/cat-harness/methodologies/&quot;,
+    &quot;writer&quot;: [
+      &quot;methodologies:viz&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reads&quot;: [
+      &quot;methodology&quot;,
+      &quot;library&quot;
+    ],
+    &quot;reason&quot;: &quot;the methodologies viewer: every declared methodology node in the checkout, its evidence resolved against every declared library&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/subscriptions/&quot;,
+    &quot;writer&quot;: [
+      &quot;subscriptions:viz&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;the subscriptions page: the known substrates and subscriptions every instance declaration in the checkout states (planned repositories, associated harnesses), not this instance&#39;s alone&quot;
+  },
+  {
     &quot;path&quot;: &quot;docs/_data/harness.json&quot;,
     &quot;writer&quot;: [
       &quot;docs:pages&quot;,
@@ -1672,6 +1884,372 @@ ca&amp;at-harness
       &quot;qa&quot;
     ],
     &quot;reason&quot;: &quot;the QA projection, from qa-reports&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/folio/folio-assistant-core/&quot;,
+    &quot;writer&quot;: [
+      &quot;folio:viz&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;another instance&#39;s folio-graph projection (bean folio-assistant-1nu0): one per instance in the checkout holding a folio directory, other than this one&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/assets/folio/who-iris/&quot;,
+    &quot;writer&quot;: [
+      &quot;folio:viz&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;another instance&#39;s folio-graph projection (bean folio-assistant-1nu0): one per instance in the checkout holding a folio directory, other than this one&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/en/cat-harness/beans/index.html&quot;,
+    &quot;writer&quot;: [
+      &quot;state:visualizer&quot;
+    ],
+    &quot;because&quot;: &quot;state&quot;,
+    &quot;from&quot;: [
+      &quot;beans&quot;
+    ],
+    &quot;reason&quot;: &quot;the beans dashboard: the live board drawn from the beans projection docs:pages publishes, and a list of every state graph tagged by what the build published (owner, 2026-10-15)&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/en/cat-harness/todos/index.html&quot;,
+    &quot;writer&quot;: [
+      &quot;state:visualizer&quot;
+    ],
+    &quot;because&quot;: &quot;state&quot;,
+    &quot;from&quot;: [
+      &quot;todos&quot;
+    ],
+    &quot;reason&quot;: &quot;the todos dashboard: the live board drawn from the todos projection docs:pages publishes, and a list of every state graph tagged by what the build published (owner, 2026-10-15)&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/en/cat-harness/qa/index.html&quot;,
+    &quot;writer&quot;: [
+      &quot;state:visualizer&quot;
+    ],
+    &quot;because&quot;: &quot;state&quot;,
+    &quot;from&quot;: [
+      &quot;qa&quot;
+    ],
+    &quot;reason&quot;: &quot;the QA dashboard: family counts over test/results/, which lives on qa-reports, and a list of every state graph tagged by what the build published (owner, 2026-10-15)&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/en/cat-harness/health/index.html&quot;,
+    &quot;writer&quot;: [
+      &quot;state:visualizer&quot;
+    ],
+    &quot;because&quot;: &quot;state&quot;,
+    &quot;from&quot;: [
+      &quot;health&quot;
+    ],
+    &quot;reason&quot;: &quot;the health dashboard: its graph is drawn on per-instance pages built at publish, and its state and sibling list are tagged by what the build published (owner, 2026-10-15)&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/en/cat-harness/attestations/index.html&quot;,
+    &quot;writer&quot;: [
+      &quot;state:visualizer&quot;
+    ],
+    &quot;because&quot;: &quot;state&quot;,
+    &quot;from&quot;: [
+      &quot;attestations&quot;
+    ],
+    &quot;reason&quot;: &quot;the attestations dashboard: its graph is drawn on per-instance pages built at publish, and its state and sibling list are tagged by what the build published (owner, 2026-10-15)&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/en/cat-harness/issue-marks/index.html&quot;,
+    &quot;writer&quot;: [
+      &quot;state:visualizer&quot;
+    ],
+    &quot;because&quot;: &quot;state&quot;,
+    &quot;from&quot;: [
+      &quot;issue-marks&quot;
+    ],
+    &quot;reason&quot;: &quot;the issue-marks dashboard: a graph kept on cat/cat-harness/issue-marks, and a list of every state graph tagged by what the build published (owner, 2026-10-15)&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/en/cat-harness/swimlane-glossary/index.html&quot;,
+    &quot;writer&quot;: [
+      &quot;state:visualizer&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;the swimlane-glossary dashboard: a list of every state graph tagged by what the build published, which other instances&#39; pins and the publish-time pages decide (owner, 2026-10-15)&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/en/cat-harness/uploads-queue/index.html&quot;,
+    &quot;writer&quot;: [
+      &quot;state:visualizer&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;the uploads-queue dashboard: a list of every state graph tagged by what the build published, which other instances&#39; pins and the publish-time pages decide (owner, 2026-10-15)&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/en/cat-harness/beans/cat-harness/&quot;,
+    &quot;writer&quot;: [
+      &quot;state:visualizer&quot;
+    ],
+    &quot;because&quot;: &quot;state&quot;,
+    &quot;from&quot;: [
+      &quot;beans&quot;
+    ],
+    &quot;reason&quot;: &quot;the repository store&#39;s own page (bean folio-assistant-750a): its open beans, notes and workflow instances, which the board&#39;s client does not draw; the rows of its parts (bean-defs, bean-notes, workflow-state) open it&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/en/cat-harness/beans/cat-harness-tools/&quot;,
+    &quot;writer&quot;: [
+      &quot;state:visualizer&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;another instance&#39;s own work plan (bean folio-assistant-1nu0): one page per instance in the checkout holding a beans store of its own&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/en/cat-harness/beans/folio-assistant-core/&quot;,
+    &quot;writer&quot;: [
+      &quot;state:visualizer&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;another instance&#39;s own work plan (bean folio-assistant-1nu0): one page per instance in the checkout holding a beans store of its own&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/en/cat-harness/folio/folio-assistant-core/&quot;,
+    &quot;writer&quot;: [
+      &quot;folio:viz&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;another instance&#39;s folio-graph page (bean folio-assistant-1nu0): one per instance in the checkout holding a folio directory, other than this one&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/en/cat-harness/folio/who-iris/&quot;,
+    &quot;writer&quot;: [
+      &quot;folio:viz&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;another instance&#39;s folio-graph page (bean folio-assistant-1nu0): one per instance in the checkout holding a folio directory, other than this one&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/en/cat-harness/qa/cat-harness/&quot;,
+    &quot;writer&quot;: [
+      &quot;state:visualizer&quot;
+    ],
+    &quot;because&quot;: &quot;state&quot;,
+    &quot;from&quot;: [
+      &quot;qa&quot;
+    ],
+    &quot;reason&quot;: &quot;this instance&#39;s own QA results page (bean folio-assistant-1nu0): it projects test/results/, which lives on qa-reports&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/en/cat-harness/qa/cat-harness-tools/&quot;,
+    &quot;writer&quot;: [
+      &quot;state:visualizer&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;another instance&#39;s QA results page (bean folio-assistant-1nu0): one per instance in the checkout holding a qa directory, projecting that instance&#39;s test/results/&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/en/cat-harness/qa/fhir-harness/&quot;,
+    &quot;writer&quot;: [
+      &quot;state:visualizer&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;another instance&#39;s QA results page (bean folio-assistant-1nu0): one per instance in the checkout holding a qa directory, projecting that instance&#39;s test/results/&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/en/cat-harness/qa/folio-assistant-core/&quot;,
+    &quot;writer&quot;: [
+      &quot;state:visualizer&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;another instance&#39;s QA results page (bean folio-assistant-1nu0): one per instance in the checkout holding a qa directory, projecting that instance&#39;s test/results/&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/en/cat-harness/qa/folio-assistant-sci/&quot;,
+    &quot;writer&quot;: [
+      &quot;state:visualizer&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;another instance&#39;s QA results page (bean folio-assistant-1nu0): one per instance in the checkout holding a qa directory, projecting that instance&#39;s test/results/&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/en/cat-harness/qa/smart-base/&quot;,
+    &quot;writer&quot;: [
+      &quot;state:visualizer&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;another instance&#39;s QA results page (bean folio-assistant-1nu0): one per instance in the checkout holding a qa directory, projecting that instance&#39;s test/results/&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/en/cat-harness/qa/who-iris/&quot;,
+    &quot;writer&quot;: [
+      &quot;state:visualizer&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;another instance&#39;s QA results page (bean folio-assistant-1nu0): one per instance in the checkout holding a qa directory, projecting that instance&#39;s test/results/&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/en/cat-harness/health/cat-harness/&quot;,
+    &quot;writer&quot;: [
+      &quot;state:visualizer&quot;
+    ],
+    &quot;because&quot;: &quot;state&quot;,
+    &quot;from&quot;: [
+      &quot;health&quot;
+    ],
+    &quot;reason&quot;: &quot;this instance&#39;s own health page (bean folio-assistant-1nu0): it projects test/health/results/, which the daily sweep writes and nothing commits&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/en/cat-harness/health/cat-harness-tools/&quot;,
+    &quot;writer&quot;: [
+      &quot;state:visualizer&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;another instance&#39;s health page (bean folio-assistant-1nu0): one per instance in the checkout holding a health directory, projecting that instance&#39;s health reports&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/en/cat-harness/health/folio-assistant-core/&quot;,
+    &quot;writer&quot;: [
+      &quot;state:visualizer&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;another instance&#39;s health page (bean folio-assistant-1nu0): one per instance in the checkout holding a health directory, projecting that instance&#39;s health reports&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/en/cat-harness/health/who-iris/&quot;,
+    &quot;writer&quot;: [
+      &quot;state:visualizer&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;another instance&#39;s health page (bean folio-assistant-1nu0): one per instance in the checkout holding a health directory, projecting that instance&#39;s health reports&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/en/cat-harness/attestations/cat-harness/&quot;,
+    &quot;writer&quot;: [
+      &quot;state:visualizer&quot;
+    ],
+    &quot;because&quot;: &quot;state&quot;,
+    &quot;from&quot;: [
+      &quot;attestations&quot;
+    ],
+    &quot;reason&quot;: &quot;this instance&#39;s own attestations page (bean folio-assistant-1nu0): a projection of test/attestations/, rebuilt each publish rather than committed beside it&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/en/cat-harness/attestations/folio-assistant-sci/&quot;,
+    &quot;writer&quot;: [
+      &quot;state:visualizer&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;another instance&#39;s attestations page (bean folio-assistant-1nu0): one per instance in the checkout holding an attestations directory, projecting that instance&#39;s test/attestations/&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/en/cat-harness/graph-typologies/&quot;,
+    &quot;writer&quot;: [
+      &quot;state:visualizer&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;the graph-typologies registry pages (bean folio-assistant-k7ro): a hub and one page per instance in the checkout holding a directory of the kind, each listing that instance&#39;s nodes&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/en/cat-harness/validators/&quot;,
+    &quot;writer&quot;: [
+      &quot;state:visualizer&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;the validators registry pages (bean folio-assistant-k7ro): a hub and one page per instance in the checkout holding a directory of the kind, each listing that instance&#39;s nodes&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/en/cat-harness/qa-checkers/&quot;,
+    &quot;writer&quot;: [
+      &quot;state:visualizer&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;the qa-checkers registry pages (bean folio-assistant-k7ro): a hub and one page per instance in the checkout holding a directory of the kind, each listing that instance&#39;s nodes&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/en/cat-harness/block-kinds/&quot;,
+    &quot;writer&quot;: [
+      &quot;state:visualizer&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;the block-kinds registry pages (bean folio-assistant-k7ro): a hub and one page per instance in the checkout holding a directory of the kind, each listing that instance&#39;s nodes&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/en/cat-harness/content-adapters/&quot;,
+    &quot;writer&quot;: [
+      &quot;state:visualizer&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;the content-adapters registry pages (bean folio-assistant-k7ro): a hub and one page per instance in the checkout holding a directory of the kind, each listing that instance&#39;s nodes&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/en/cat-harness/code-lists/&quot;,
+    &quot;writer&quot;: [
+      &quot;state:visualizer&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;the code-lists registry pages (bean folio-assistant-k7ro): a hub and one page per instance in the checkout holding a directory of the kind, each listing that instance&#39;s nodes&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/en/cat-harness/code/bootstrap-tools/&quot;,
+    &quot;writer&quot;: [
+      &quot;state:visualizer&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;an instance&#39;s code page (bean folio-assistant-svgx): one per instance in the checkout declaring a code directory, listing its files linked to GitHub at the commit the index pins&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/en/cat-harness/code/cat-harness/&quot;,
+    &quot;writer&quot;: [
+      &quot;state:visualizer&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;an instance&#39;s code page (bean folio-assistant-svgx): one per instance in the checkout declaring a code directory, listing its files linked to GitHub at the commit the index pins&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/en/cat-harness/code/cat-harness-tools/&quot;,
+    &quot;writer&quot;: [
+      &quot;state:visualizer&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;an instance&#39;s code page (bean folio-assistant-svgx): one per instance in the checkout declaring a code directory, listing its files linked to GitHub at the commit the index pins&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/en/cat-harness/code/fhir-harness/&quot;,
+    &quot;writer&quot;: [
+      &quot;state:visualizer&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;an instance&#39;s code page (bean folio-assistant-svgx): one per instance in the checkout declaring a code directory, listing its files linked to GitHub at the commit the index pins&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/en/cat-harness/code/folio-assistant-core/&quot;,
+    &quot;writer&quot;: [
+      &quot;state:visualizer&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;an instance&#39;s code page (bean folio-assistant-svgx): one per instance in the checkout declaring a code directory, listing its files linked to GitHub at the commit the index pins&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/en/cat-harness/code/folio-assistant-sci/&quot;,
+    &quot;writer&quot;: [
+      &quot;state:visualizer&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;an instance&#39;s code page (bean folio-assistant-svgx): one per instance in the checkout declaring a code directory, listing its files linked to GitHub at the commit the index pins&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/en/cat-harness/code/smart-base/&quot;,
+    &quot;writer&quot;: [
+      &quot;state:visualizer&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;an instance&#39;s code page (bean folio-assistant-svgx): one per instance in the checkout declaring a code directory, listing its files linked to GitHub at the commit the index pins&quot;
+  },
+  {
+    &quot;path&quot;: &quot;docs/en/cat-harness/code/who-iris/&quot;,
+    &quot;writer&quot;: [
+      &quot;state:visualizer&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;an instance&#39;s code page (bean folio-assistant-svgx): one per instance in the checkout declaring a code directory, listing its files linked to GitHub at the commit the index pins&quot;
   },
   {
     &quot;path&quot;: &quot;docs/todos.json&quot;,
