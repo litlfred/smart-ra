@@ -1,11 +1,11 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/smart-ra/ns/context/v1.jsonld",
     {
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "library/who-dpi-h-reference-architecture-draft-v1/manifest",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/dpi-h-ra/who-dpi-h-reference-architecture-draft-v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
