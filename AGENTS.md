@@ -2,7 +2,7 @@
 
 This is a **folio**: the content repository. The authoring platform —
 skills, schemas, MCP tools, the publication pipeline — is
-[folio-assistant](https://github.com/litlfred/folio-assistant.git), checked out at `folio-assistant/`.
+[folio-assistant](https://github.com/litlfred/folio-assistant.git): its layers are remote-mounted at the repository root (see **Commands**).
 
 This file is the **agent-generic** source of truth, read natively by Claude
 Code, Gemini CLI, Antigravity, Cursor and Copilot. `CLAUDE.md` and
@@ -43,17 +43,40 @@ folio/schema/            re-export shim for the platform's builders
 test/results/block-qa/     QA verdicts, one per block, mirroring folio/ (machine-written — never hand-edit)
 library/                   ingested source documents (read-only reference)
 uploads/                   source PDFs, for offline citation verification
-folio-assistant/              the platform
+smart-base/ … bootstrap-tools/   the platform's layers, remote-mounted (gitignored)
 beans/                    the work plan
 ```
 
 ## Commands
 
+The platform's layers are remote-mounted at the repository root (`index.config.json`, locked in `index.lock.json`): `smart-base/`, `fhir-harness/`, `folio-assistant-core/`, `cat-harness/`, `cat-harness-tools/`, `bootstrap/`, `bootstrap-tools/`. `folio-assistant-sci/` is no longer mounted: core declares its own `document` adapter since bean bzwk (2026-10-12), so a document folio needs nothing from sci. Every workflow mounts them through `.github/actions/mount-layers`, and a session through `.claude/hooks/session-start.sh` when they are absent; `.mcp.json` runs the MCP server from the `cat-harness-tools/` mount. There is no `folio-assistant/` submodule any more (bean n3h9).
+
 ```sh
-bun run folio-assistant/cat-harness/src/index.ts --stdio --repo .   # the MCP server
-bun run folio-assistant/cat-harness/src/index.ts --check-deps       # what's installed
-bun run folio-assistant/cat-harness/content/pipeline/qa-sweep.ts folio  # QA every block
+bun run cat-harness-tools/scripts/remote-mount.ts                 # lay the mounts down
+bun run cat-harness-tools/src/index.ts --stdio --repo .           # the MCP server
+bun run cat-harness-tools/pipeline/qa-sweep.ts folio      # QA every block
 ```
+
+**The site** — the document, the public-comment dashboard, the library, the
+node-kind pages, the ArchiMate models and the RA mapper (`mapper/`) — is built and published by an agent,
+never by a workflow (owner, 2026-10-10; bean n3h9). The scripts it runs are
+this repository's `package.json`:
+
+```sh
+bun run cat-harness-tools/scripts/stage-local.ts --repo . [--plan | --dry-run]
+```
+
+The steps are declared once, in `index.config.json` (the `dpi-h-ra` entry) under `site.build`:
+`pre` (the gate, `check:archimate`), `sourceSteps` (run before Jekyll, into
+the site source) and `siteSteps` (run after Jekyll, on the built site). The
+command reads them from there. On `main` it publishes the root, keeping
+`STAGING/` and `_render-log/`; on any other branch it publishes the preview at
+`STAGING/<branch>/`. `--plan` prints what it would do, and `--dry-run` builds
+without publishing. Either way it publishes only once every link resolves.
+It is the same command for every agent-run repository, folio or IG (owner,
+2026-10-10: "one consolidated workflow"). It hands this one to
+`build-instance-site.ts --instance dpi-h-ra`, which can also be run directly;
+any step flag given there replaces the declared recipe.
 
 ## QA — every block is checked from the first commit
 
@@ -63,8 +86,8 @@ those files with the edit they are about**: a verdict is keyed on the block's
 content hash, so one that is older than its block reads as stale, never as
 passing.
 
-The staging preview sweeps each pull request as well (`.github/workflows/staging.yml`),
-so the review page's QA column reports that build. `.github/workflows/qa-sweep.yml`
+The staging preview is built and published by an agent (see **The site**
+above); the review page's QA column reports that build. `.github/workflows/qa-sweep.yml`
 runs the full sweep on every pull request (warn-only), and
 `qa-sweep-nightly.yml` refreshes stale verdicts by dispatch only. Criteria that need an
 agent's judgement (voice, exposition, adversarial review) are not run by the
@@ -76,7 +99,7 @@ sweep; they stay unaudited until an agent records them.
 session sees it. Claim before you work; never resolve a sibling's bean.
 
 ```sh
-folio-assistant/cat-harness/scripts/install-beans.sh
+cat-harness-tools/scripts/install-beans.sh
 beans list
 beans create "<title>"
 beans <id> --status in-progress
@@ -116,7 +139,7 @@ downstream of this document and is not part of the folio.
   version, so comments still resolve after edits. Do not re-run the extraction
   over the folio.
 - **Public comments** are adjudicated with the platform's `public-comment`
-  skill and `folio-assistant/folio-assistant-core/scripts/public-comment.ts`.
+  skill and `folio-assistant-core/scripts/public-comment.ts`.
   The record is `review/public-comment/`, and the process is
   `public-comment.bpmn`:
   - triage and placement: review coordinator;

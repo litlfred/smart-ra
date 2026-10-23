@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/smart-ra/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
+    }
+  ],
+  "@id": "library/who-dpi-h-reference-architecture-draft-v1/blocks/figure-img-p073-2",
+  "@type": [
+    "folio-assistant-core:Figure",
+    "doco:Figure"
+  ],
+  "kind": "figure",
+  "file": "../images/img-p073-2.png",
+  "pageStart": 73,
+  "pageEnd": 73,
+  "narrative": {
+    "text": "Figure 3.4.3. 'NHDD Framework: Content Structure': five stacked bars, from reference and administrative code sets (SNOMED, ICD, HL7), through curated concept sources and interface terminologies (CIEL, IMO), country-level subsets, organisation-level dictionaries, down to facility-level dictionaries such as formularies. A downward arrow at the left says international standards are selected and customised for country use and adapted for local implementation; an upward arrow at the right reads 'Submissions / Feedback to Standards' and 'Responsive Local & National Governance'.",
+    "state": "draft",
+    "drafted_by": {
+      "kind": "agent",
+      "id": "claude",
+      "model": "claude-opus-5-5",
+      "session": "https://claude.ai/code/session_01Pc8vSeXCwp5Ckvmz56cMDs"
+    },
+    "drafted_at": "2026-10-15"
+  },
+  "derivedFrom": "library/who-dpi-h-reference-architecture-draft-v1/sections/sec-033",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/dpi-h-ra/who-dpi-h-reference-architecture-draft-v1/manifest.jsonld",
+  "provenance": "ingested"
+}

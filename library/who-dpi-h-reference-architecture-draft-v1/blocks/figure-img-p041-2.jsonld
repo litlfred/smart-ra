@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/smart-ra/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/0.1.0/ns#"
+    }
+  ],
+  "@id": "library/who-dpi-h-reference-architecture-draft-v1/blocks/figure-img-p041-2",
+  "@type": [
+    "folio-assistant-core:Figure",
+    "doco:Figure"
+  ],
+  "kind": "figure",
+  "file": "../images/img-p041-2.png",
+  "pageStart": 41,
+  "pageEnd": 41,
+  "narrative": {
+    "text": "Figure 2.2. An infographic titled 'REDDHI — Resilient Essential Data & Digital Health Infrastructure', subtitled 'a direction of travel, not a fixed destination or a single system'. Panels explain why 'resilient' (survives funding volatility, reduces vendor dependency, long-term sustainability, local capacity) and why 'essential' (minimum capabilities, a foundation for many use cases, investment efficiency, a subset of the national architecture); the full-STAC foundations (Standards such as HL7 FHIR, ICD, SNOMED CT, LOINC and CQL; open-source Technologies; DPI-based Architectures; WHO SMART Guidelines Content); REDDHI's role in the national architecture; five objectives; and the guiding principles as a set of tags.",
+    "state": "draft",
+    "drafted_by": {
+      "kind": "agent",
+      "id": "claude",
+      "model": "claude-opus-5-5",
+      "session": "https://claude.ai/code/session_01Pc8vSeXCwp5Ckvmz56cMDs"
+    },
+    "drafted_at": "2026-10-15"
+  },
+  "derivedFrom": "library/who-dpi-h-reference-architecture-draft-v1/sections/sec-022",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/dpi-h-ra/who-dpi-h-reference-architecture-draft-v1/manifest.jsonld",
+  "provenance": "ingested"
+}
