@@ -22,22 +22,29 @@ warn and publish no current model at `/archimate`.
 
 ## Published
 
-Every staging build (each pull request, and every push to `main`) runs
+Every site build (the root on `main`, and each branch's preview) runs
 cat-harness's `archimate` subgraph over the models `cat-archimate.config.json`
 names — skill `archimate-models`, Tools `archimate-check` and
-`archimate-pages`:
+`archimate-pages`. The pages sit under the harness, at `/en/dpi-h-ra/archimate/`,
+because `dpi-h-ra.json` declares the `archimate` visualiser there; the data
+they draw from stays at `/archimate/`:
 
-- `/archimate/` — every model;
-- `/archimate/<version>/` — a model's views, and its elements by layer;
-- `/archimate/<version>/views/<id>/` — a view, drawn as SVG from the model
-  (`…/views/<id>.svg`), every box a link to its element;
-- `/archimate/<version>/elements/<id>/`, `…/relationships/<id>/` — one page
-  and one JSON-LD IRI per element and relationship, keyed by Archi's id;
+- `/en/dpi-h-ra/archimate/` — every model;
+- `/en/dpi-h-ra/archimate/<version>/` — a model's views, and its elements by
+  layer;
+- `/en/dpi-h-ra/archimate/<version>/views/<id>/` — a view, drawn as SVG from
+  the model, every box a link to its element;
+- `/en/dpi-h-ra/archimate/<version>/elements/<id>/`, `…/relationships/<id>/` —
+  one page per element and relationship, keyed by Archi's id;
+- `/archimate/` — the data the pages are drawn from: a `.json` and `.jsonld`
+  per version, and under `/archimate/<version>/` the model plus a `.json` and
+  `.jsonld` per view, element and relationship (one JSON-LD IRI each), and an
+  `.svg` per view;
 - `/mapper/` — the RA mapper (`tools/ra-mapper/build-site.sh`, the site
   build's `site:mapper` step), current version first.
 
 **No Java.** The Archi command-line report that `archimate.yml` used to run
 (a JVM, a virtual display and a ~200 MB download per run) is gone (owner,
 2026-10-09). Draw in Archi on your own machine; commit the `.archimate`; the
-build does the rest. A pull request's preview is at
-`STAGING/<branch>/archimate/`.
+build does the rest. A branch's preview has the same paths under
+`STAGING/<branch>/`, so its pages are at `STAGING/<branch>/en/dpi-h-ra/archimate/`.
