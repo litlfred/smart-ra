@@ -61,7 +61,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/smart-base",
-          "ref": "061d221f1750faa76fd38a1e940be7ddc49debf7",
+          "ref": "cf6b597e81d672722ebd1afe005c18d3cb70834f",
           "overrides": {
             "smart-base": {
               "path": "smart-base",
@@ -80,8 +80,7 @@
                 "smart-base-docs",
                 "smart-base-document-kinds",
                 "smart-base-findings",
-                "smart-base-external-schemas",
-                "smart-base-platform",
+                                "smart-base-platform",
                 "smart-base-typologies",
                 "smart-base-validators",
                 "smart-base-schemas",
@@ -97,9 +96,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-16",
-              "ref": "061d221f1750faa76fd38a1e940be7ddc49debf7",
-              "evidence": "Owner litlfred, 2026-10-16 (06:52Z), on a decision card in project Folio Assistant: 'Yes, repin both' to 'Approve repinning smart-ra and smart-base to each layer's current main, recorded as your consent?'; then 'merge and repin window open 3 hrs'"
+              "on": "2026-10-26",
+              "ref": "cf6b597e81d672722ebd1afe005c18d3cb70834f",
+              "evidence": "owner litlfred, 2026-10-26 10:00Z card \"A. Merge and re-publish smart-ra\" (re-pin onto the faster suggest editor, cat-harness-tools#775 / cat-harness#612); 10:37Z \"merge/repin window open 6 hours\" (to 16:37Z)"
             }
           }
         }
@@ -110,7 +109,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/fhir-harness",
-          "ref": "122e16e3b1d4253203a3a3cd0fa6e838c95b7ca2",
+          "ref": "341fbc7b7ee1ffcd3b9dd804762723e6faf1ead5",
           "overrides": {
             "fhir-harness": {
               "whole": true
@@ -119,9 +118,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-16",
-              "ref": "122e16e3b1d4253203a3a3cd0fa6e838c95b7ca2",
-              "evidence": "owner, 2026-10-16: \"c\" (re-pin and republish smart-base and smart-ra on the newest layers); window to 09:10Z"
+              "on": "2026-10-26",
+              "ref": "341fbc7b7ee1ffcd3b9dd804762723e6faf1ead5",
+              "evidence": "owner litlfred, 2026-10-26 10:00Z card \"A. Merge and re-publish smart-ra\" (re-pin onto the faster suggest editor, cat-harness-tools#775 / cat-harness#612); 10:37Z \"merge/repin window open 6 hours\" (to 16:37Z)"
             }
           }
         }
@@ -132,7 +131,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/folio-assistant-core",
-          "ref": "9a9894c2c26a4c2ced8c83d6038065507dc73104",
+          "ref": "0d0b4596dd9286525c6d6b32a1b1c6509d723160",
           "overrides": {
             "folio-assistant-core": {
               "whole": true
@@ -147,9 +146,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-16",
-              "ref": "9a9894c2c26a4c2ced8c83d6038065507dc73104",
-              "evidence": "Owner litlfred, 2026-10-16 (06:52Z), on a decision card in project Folio Assistant: 'Yes, repin both' to 'Approve repinning smart-ra and smart-base to each layer's current main, recorded as your consent?'; then 'merge and repin window open 3 hrs'; 08:51Z 'Merge now' on cat-harness-tools#394; 09:40Z 'Extend 2 hrs'; 11:05Z 'Extend to 13:00'"
+              "on": "2026-10-26",
+              "ref": "0d0b4596dd9286525c6d6b32a1b1c6509d723160",
+              "evidence": "owner litlfred, 2026-10-26 10:00Z card \"A. Merge and re-publish smart-ra\" (re-pin onto the faster suggest editor, cat-harness-tools#775 / cat-harness#612); 10:37Z \"merge/repin window open 6 hours\" (to 16:37Z)"
             }
           }
         }
@@ -160,7 +159,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness",
-          "ref": "49309d684151daab2e87610ab7f62722c0b2dd49",
+          "ref": "89f2d426b260213d830dc0fc12fe080df541593c",
           "overrides": {
             "cat-harness": {
               "whole": true
@@ -175,9 +174,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-16",
-              "ref": "49309d684151daab2e87610ab7f62722c0b2dd49",
-              "evidence": "Owner litlfred, 2026-10-16 (06:52Z), on a decision card in project Folio Assistant: 'Yes, repin both' to 'Approve repinning smart-ra and smart-base to each layer's current main, recorded as your consent?'; then 'merge and repin window open 3 hrs'"
+              "on": "2026-10-26",
+              "ref": "89f2d426b260213d830dc0fc12fe080df541593c",
+              "evidence": "owner litlfred, 2026-10-26 10:00Z card \"A. Merge and re-publish smart-ra\" (re-pin onto the faster suggest editor, cat-harness-tools#775 / cat-harness#612); 10:37Z \"merge/repin window open 6 hours\" (to 16:37Z)"
             }
           }
         }
@@ -188,7 +187,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness-tools",
-          "ref": "71b289f79238493762d7e70376c8f5f07a38043c",
+          "ref": "bd7ae7f8df986ad409caa824fafd183d520191e9",
           "overrides": {
             "cat-harness-tools": {
               "whole": true
@@ -200,9 +199,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-16",
-              "ref": "71b289f79238493762d7e70376c8f5f07a38043c",
-              "evidence": "Owner litlfred, 2026-10-16 (06:52Z), on a decision card in project Folio Assistant: 'Yes, repin both' to 'Approve repinning smart-ra and smart-base to each layer's current main, recorded as your consent?'; then 'merge and repin window open 3 hrs'; 08:51Z 'Merge now' on cat-harness-tools#394; 09:40Z 'Extend 2 hrs'"
+              "on": "2026-10-26",
+              "ref": "bd7ae7f8df986ad409caa824fafd183d520191e9",
+              "evidence": "owner litlfred, 2026-10-26 10:00Z card \"A. Merge and re-publish smart-ra\" (re-pin onto the faster suggest editor, cat-harness-tools#775 / cat-harness#612); 10:37Z \"merge/repin window open 6 hours\" (to 16:37Z)"
             }
           }
         }
@@ -213,7 +212,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/bootstrap",
-          "ref": "9ecfb729b38b9196063fee76c6f7932f92502353",
+          "ref": "02dfd19f6cbc6a532f6ba9c0ffedaef0a3775dd3",
           "overrides": {
             "bootstrap": {
               "whole": true
@@ -222,9 +221,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-15",
-              "ref": "9ecfb729b38b9196063fee76c6f7932f92502353",
-              "evidence": "Owner litlfred, 2026-10-15 (17:30Z): 'merge and repin for next 3 hrs. keep draining'"
+              "on": "2026-10-26",
+              "ref": "02dfd19f6cbc6a532f6ba9c0ffedaef0a3775dd3",
+              "evidence": "owner litlfred, 2026-10-26 10:00Z card \"A. Merge and re-publish smart-ra\" (re-pin onto the faster suggest editor, cat-harness-tools#775 / cat-harness#612); 10:37Z \"merge/repin window open 6 hours\" (to 16:37Z)"
             }
           }
         }
@@ -235,7 +234,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/bootstrap-tools",
-          "ref": "7dc55773590bbc3158c877a3d61222aa7864006c",
+          "ref": "1584c10dd06edf3e6ebe909de11327d56aa0456c",
           "overrides": {
             "bootstrap-tools": {
               "whole": true
@@ -247,9 +246,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-15",
-              "ref": "7dc55773590bbc3158c877a3d61222aa7864006c",
-              "evidence": "Owner litlfred, 2026-10-15 (17:30Z): 'merge and repin for next 3 hrs. keep draining'"
+              "on": "2026-10-26",
+              "ref": "1584c10dd06edf3e6ebe909de11327d56aa0456c",
+              "evidence": "owner litlfred, 2026-10-26 10:00Z card \"A. Merge and re-publish smart-ra\" (re-pin onto the faster suggest editor, cat-harness-tools#775 / cat-harness#612); 10:37Z \"merge/repin window open 6 hours\" (to 16:37Z)"
             }
           }
         }
