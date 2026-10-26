@@ -92,8 +92,8 @@
   button.linklike { border: 0; padding: 0; min-height: 0; background: none; color: var(--link); text-decoration: underline; cursor: pointer; font: inherit; text-align: left; }
   h2:focus-visible { outline: 3px solid var(--link); outline-offset: 2px; }
 </style>
-<link rel="stylesheet" href="../../assets/css/navbar.css"><script src="../../assets/navbar/rail-1uyszomhxv5.js" defer></script><script src="../../assets/js/navbar.js" defer></script><script src="../../assets/navbar/row-22em0x7vod8.js" defer></script><link rel="stylesheet" href="../../assets/css/navbar-row.css"><script src="../../assets/js/navbar-row.js" defer></script><script src="../../assets/js/vendor/lunr.min.js" defer></script><script src="../../assets/js/just-the-docs.js" defer></script><link rel="stylesheet" href="../../assets/page-layout.css" data-fa-page-layout><script src="../../assets/page-layout.js" defer data-fa-page-layout></script><meta name="fa-platform-base" content="https://litlfred.github.io/folio-assistant" data-fa-platform-ui><link rel="stylesheet" href="../../assets/css/docs-ui.css" data-fa-platform-ui><script src="../../assets/js/docs-ui.js" defer data-fa-platform-ui></script><meta name="fa-pinned-data" content="../.."></head>
-<body><script type="application/json" id="fa-navbar-row" data-fa-root="../.." data-fa-row-src="row-22em0x7vod8"></script><script type="application/json" id="fa-rail" data-fa-root="https://litlfred.github.io/folio-assistant" data-fa-to-root="../..">{"data":"rail-1uyszomhxv5","here":"/en/review/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../">Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector</a></nav><div id="main-header" class="main-header fa-site-bar fa-page-bar"><a class="fa-page-bar-home" href="../../">Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector</a><div class="search" role="search"><div class="search-input-wrap"><input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search this site" autocomplete="off"><label for="search-input" class="search-label"><span class="sr-only">Search this site</span></label></div><div id="search-results" class="search-results"></div></div><span class="fa-page-bar-locale" data-fa-slot="locale"></span></div>
+<link rel="stylesheet" href="../../assets/css/navbar.css"><script src="../../assets/navbar/rail-1uu2yi3osvq.js" defer></script><script src="../../assets/js/navbar.js" defer></script><script src="../../assets/navbar/row-93q9ssnloj.js" defer></script><link rel="stylesheet" href="../../assets/css/navbar-row.css"><script src="../../assets/js/navbar-row.js" defer></script><script src="../../assets/js/vendor/lunr.min.js" defer></script><script src="../../assets/js/just-the-docs.js" defer></script><link rel="stylesheet" href="../../assets/page-layout.css" data-fa-page-layout><script src="../../assets/page-layout.js" defer data-fa-page-layout></script><meta name="fa-platform-base" content="https://litlfred.github.io/folio-assistant" data-fa-platform-ui><link rel="stylesheet" href="../../assets/css/docs-ui.css" data-fa-platform-ui><script src="../../assets/js/docs-ui.js" defer data-fa-platform-ui></script><meta name="fa-pinned-data" content="../.."></head>
+<body><script type="application/json" id="fa-navbar-row" data-fa-root="../.." data-fa-row-src="row-93q9ssnloj"></script><script type="application/json" id="fa-rail" data-fa-root="https://litlfred.github.io/folio-assistant" data-fa-to-root="../..">{"data":"rail-1uu2yi3osvq","here":"/en/review/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../">Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector</a></nav><div id="main-header" class="main-header fa-site-bar fa-page-bar"><a class="fa-page-bar-home" href="../../">Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector</a><div class="search" role="search"><div class="search-input-wrap"><input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search this site" autocomplete="off"><label for="search-input" class="search-label"><span class="sr-only">Search this site</span></label></div><div id="search-results" class="search-results"></div></div><span class="fa-page-bar-locale" data-fa-slot="locale"></span></div>
 <div class="layout">
 <aside id="navpane" aria-label="Navigation"></aside>
 <main>
@@ -108,7 +108,7 @@
   <button type="button" id="nextu">Next unreviewed (u)</button>
   <a id="all-documents" href="../../index.html">All documents</a>
 </div>
-<div class="viewrow"><label for="view">Show every change as</label> <select id="view"></select></div>
+<div class="viewrow"><label for="view">Show every change as</label> <select id="view"></select> <label for="comment-filter">Show comments</label> <select id="comment-filter"></select></div>
 <section aria-labelledby="rendered-h"><h2 id="rendered-h">Rendered pages this change alters</h2><div id="rendered" class="muted">Loading the rendered impact…</div></section>
 <div id="heat" class="heatwrap" tabindex="0" role="region" aria-label="Heat map: where to look first"></div>
 <div id="changes"></div>
@@ -119,6 +119,17 @@ var LOCALES = ["en"];
 var reviewSiteRoot = function reviewSiteRoot(pathname, locales) {
   const segs = String(pathname || "").split("/");
   return segs.length >= 4 && locales.indexOf(segs[segs.length - 3]) >= 0 ? "../../" : "../";
+};
+var matchesCommentFilter = function matchesCommentFilter(status, kind, filter) {
+  if (!filter)
+    return !0;
+  if (filter === "open-addressed")
+    return status === "open" || status === "addressed";
+  if (filter.indexOf("status:") === 0)
+    return status === filter.slice(7);
+  if (filter.indexOf("kind:") === 0)
+    return kind === filter.slice(5);
+  return !0;
 };
 var RENDERERS = [{"id":"word","label":"Word diff of the source","description":"The block's Markdown with removed words struck through and added words marked. Shows exactly what the author typed.","needs":["text"],"defaultFor":["*"]},{"id":"inline","label":"Inline, as rendered","description":"The block as a reader sees it now, with added words marked and removed words struck through where they were.","needs":["text"],"defaultFor":["prose","remark","definition","example","recommendation"]},{"id":"visual","label":"Pictures, before and after","description":"A picture of the block on the published page and on this preview, with a slider between them and a view that marks every changed pixel. For figures, diagrams and tables, whose markup says little.","needs":["screenshots"],"defaultFor":["table","figure","diagram","equation","simulator"]},{"id":"side-by-side","label":"Side by side","description":"The published page and this preview next to each other, each scrolled to the block. For tables, figures and anything whose layout is the change.","needs":["pages"],"defaultFor":["table","figure","diagram","equation","simulator"]},{"id":"fields","label":"Fields, before and after","description":"The block's fields side by side, one row each, with every added, removed and changed field named. For structured blocks — a persona, a requirement, a data element — whose source diff is unreadable.","needs":["structure"],"defaultFor":["@structured"]}];
 var wordDiff = function wordDiff(a, b, limit = 4000000) {
@@ -909,7 +920,18 @@ var renderMeasured = function renderMeasured(box, model) {
     }
     return doc + "/index.html";
   }
+  // A ChangeSet whose blocks are not a folio's says where each one is on the
+  // site itself: `page` (site-relative; "" when the block is on no page,
+  // such as an IG's source file) and `anchor` (the element id, when it is not
+  // the label). An IG's preview writes them (fhir-harness ig-review-data).
+  function safePage(p) {
+    return /^[A-Za-z0-9._\/-]+$/.test(p) && p.split("/").every(function (s) { return s && !/^\.+$/.test(s); });
+  }
   function href(base, at, label) {
+    if (at && typeof at.page === "string") {
+      if (!at.page || !safePage(at.page)) return null;
+      return base + at.page + (at.anchor ? "#" + encodeURIComponent(at.anchor) : "");
+    }
     var doc = docOf(at);
     return doc == null ? null : base + docPage(doc) + "#" + encodeURIComponent(label);
   }
@@ -974,10 +996,16 @@ var renderMeasured = function renderMeasured(box, model) {
   function commentEl(c) {
     var d = el("div", null, "comment");
     var r = c.review || {};
+    d.setAttribute("data-status", c.status || "");
+    d.setAttribute("data-kind", r.kind || "");
     d.appendChild(el("span", (r.kind || "comment") + ", " + c.status, "kind"));
     d.appendChild(el("span", (r.reviewer || "?") + " as " + (r.role || "reviewer") + ": "));
     d.appendChild(el("span", c.summary));
     if (r.anchoredFrom && r.anchoredFrom.length) d.appendChild(el("span", " (made on " + r.anchoredFrom.join(", ") + ")", "muted"));
+    if (r.decision) {
+      if (/^https?:\/\//.test(r.decision)) { d.appendChild(el("span", " (")); var da = el("a", "decision"); da.href = r.decision; d.appendChild(da); d.appendChild(el("span", ")")); }
+      else d.appendChild(el("span", " (decision: " + r.decision + ")", "muted"));
+    }
     if (r.commentUrl) { d.appendChild(el("span", " ")); var a = el("a", "read on the pull request"); a.href = r.commentUrl; d.appendChild(a); }
     // Deciding it is a pull-request comment too (bean 423d, owner 2026-10-15):
     // the page is static and writes nothing. The words offered are the moves
@@ -994,7 +1022,7 @@ var renderMeasured = function renderMeasured(box, model) {
     }
     return d;
   }
-  // From each status, the decisions the review-comment table allows (folio-assistant-core review-comment.ts).
+  // From each status, the decisions the review-comment table allows (the content core's review-comment.ts).
   var DECIDE = { open: ["addressed", "adjudicated", "withdrawn"], addressed: ["resolved", "reopened", "adjudicated", "withdrawn"] };
   function commentList(cs) {
     var box = el("div", null, "comments");
@@ -1116,6 +1144,40 @@ var renderMeasured = function renderMeasured(box, model) {
   viewAll.value = loadView();
   if (viewAll.value !== loadView()) viewAll.value = "";
   viewAll.addEventListener("change", function () { saveView(viewAll.value); applyView(viewAll.value); });
+
+  var COMMENT_FILTERS = [
+    ["", "All comments"],
+    ["open-addressed", "Open and addressed"],
+    ["status:open", "Open"],
+    ["status:addressed", "Addressed"],
+    ["status:resolved", "Resolved"],
+    ["status:adjudicated", "Adjudicated"],
+    ["status:withdrawn", "Withdrawn"],
+    ["kind:defect", "Defects"],
+    ["kind:question", "Questions"],
+    ["kind:suggestion", "Suggestions"],
+    ["kind:editorial", "Editorial"]
+  ];
+  var commentFilter = document.getElementById("comment-filter");
+  COMMENT_FILTERS.forEach(function (f) { var o = el("option", f[1]); o.value = f[0]; commentFilter.appendChild(o); });
+  function applyCommentFilter(f, announce) {
+    var boxes = list.querySelectorAll(".comments");
+    var shownCount = 0;
+    var totalCount = 0;
+    for (var i = 0; i < boxes.length; i++) {
+      var cs = boxes[i].querySelectorAll(".comment");
+      var boxShown = 0;
+      for (var j = 0; j < cs.length; j++) {
+        totalCount++;
+        var ok = matchesCommentFilter(cs[j].getAttribute("data-status") || "", cs[j].getAttribute("data-kind") || "", f);
+        cs[j].hidden = !ok;
+        if (ok) { boxShown++; shownCount++; }
+      }
+      boxes[i].hidden = !boxShown;
+    }
+    if (announce) status.textContent = "Showing " + shownCount + " of " + totalCount + " review comment(s).";
+  }
+  commentFilter.addEventListener("change", function () { applyCommentFilter(commentFilter.value, true); });
 
   function get(url) {
     return fetch(url).then(function (r) { if (!r.ok) throw new Error(String(r.status)); return r.json(); });
@@ -1289,6 +1351,7 @@ var renderMeasured = function renderMeasured(box, model) {
       }
       if (!txt && cs.changes.length) summary.textContent += " No change text on this build, so only the views of the pages" + (visualFile ? " and the pictures" : "") + " are available.";
       applyView(viewAll.value);
+      applyCommentFilter(commentFilter.value, false);
       // The heat map (qbfi), above the list it indexes.
       var heat = computeHeat({ changes: cs.changes, comments: rc ? rc.comments : null, blocks: blocksFile, qa: qaFile ? qaFile.blocks : null, verdicts: rc && Array.isArray(rc.verdicts) ? rc.verdicts : null });
       if (heat.rows.length) {

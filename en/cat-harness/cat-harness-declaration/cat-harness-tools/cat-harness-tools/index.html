@@ -32,7 +32,7 @@
   label { margin-right:1rem; }
   @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
 </style>
-<link rel="stylesheet" href="../../../../../assets/css/navbar.css"><script src="../../../../../assets/navbar/rail-1l23b3av7pg.js" defer></script><script src="../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+<link rel="stylesheet" href="../../../../../assets/css/navbar.css"><script src="../../../../../assets/navbar/rail-15maa9s5ggh.js" defer></script><script src="../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
 /* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
  *
  * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
@@ -111,7 +111,7 @@
 
 </style>
 </head>
-<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../.." data-fa-to-root="../../../../..">{"data":"rail-1l23b3av7pg","here":"/en/cat-harness/cat-harness-declaration/cat-harness-tools/cat-harness-tools/","documentIndex":{"label":"cat-harness-tools","icon":"§","items":[{"label":"cat-harness-declaration","icon":"▸","href":"../../"},{"label":"cat-harness-tools","icon":"▸","href":"../"},{"label":"cat-harness-tools","icon":"▸"},{"label":"Fields","icon":"·","href":"#fields","depth":1}],"collapsible":true,"open":true}}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../">folio-assistant</a></nav><script type="application/json" data-fa-visualiser-nav>[{"label":"cat-harness-declaration","href":"../../"},{"label":"cat-harness-tools","href":"../"},{"label":"cat-harness-tools","items":[{"label":"Fields","href":"#fields"}]}]</script>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../.." data-fa-to-root="../../../../..">{"data":"rail-15maa9s5ggh","here":"/en/cat-harness/cat-harness-declaration/cat-harness-tools/cat-harness-tools/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../">folio-assistant</a></nav>
 <main>
 <h1 id="nk-title">C@T Harness Tools</h1>
 <p class="m">A <a href="../../">cat-harness-declaration</a> node held by <a href="../">cat-harness-tools</a>, at <code>cat-harness-tools/cat-harness-tools.json</code>.</p>
@@ -142,9 +142,25 @@
     ]
   },
   {
+    &quot;id&quot;: &quot;cat-harness-tools-ui&quot;,
+    &quot;path&quot;: &quot;ui/&quot;,
+    &quot;description&quot;: &quot;The standalone tool pages the MCP server serves at `/ui/` (`adapters/mcp-server/server.ts`): the bibliography QA, glossary curator and source-relevance pages, their index and shared stylesheet. Static HTML with no build step. Declared 2026-10-24 under bean `0uu2` (owner, card \&quot;A. Declare and keep\&quot;): every top-level directory is a declared subgraph, and before this nothing named it, so a consumer scanning the declaration could not see it.&quot;,
+    &quot;graphTypologies&quot;: [
+      &quot;code&quot;
+    ]
+  },
+  {
+    &quot;id&quot;: &quot;cat-harness-tools-viewer&quot;,
+    &quot;path&quot;: &quot;viewer/&quot;,
+    &quot;description&quot;: &quot;The content viewer the MCP server serves at `/viewer/` (`adapters/mcp-server/server.ts`, `VIEWER_DIR`): one HTML page carrying the whole single-page app, which reads `/api/folio` and opens the first paper the folio lists. A platform viewer, not folio content: it names no folio, and `test/test-server.e2e.ts` and `scripts/tests/ui/viewer-script.test.ts` assert it. Declared 2026-10-24 under bean `0uu2` (owner, card \&quot;A. Declare and keep\&quot;), when its last hardcoded folio name (`quantum-observable-universe`, the `qou-viewer` package name, now `folio-content-viewer`, because `folio-viewer` is already the folio graph&#39;s registered viewer Tool) was removed.&quot;,
+    &quot;graphTypologies&quot;: [
+      &quot;code&quot;
+    ]
+  },
+  {
     &quot;id&quot;: &quot;cat-harness-tools-schemas&quot;,
     &quot;path&quot;: &quot;schemas/&quot;,
-    &quot;description&quot;: &quot;Tests of cat-harness&#39;s schemas that exercise tools code: the sixteen `cat-harness/schemas/*.test.ts` files that imported `scripts/`, `src/`, `pipeline/` or `test/support/`, moved first (bean `70lx`, batch B0) so that no later batch of the code move leaves a harness file importing into this layer. The Zod sources they test stay in cat-harness and follow in stage 1b (bean `8lcl`). `code`, not `schemas`: nothing here is a schema definition.&quot;,
+    &quot;description&quot;: &quot;Tests of cat-harness&#39;s schemas that exercise tools code: the sixteen `cat-harness/schemas/*.test.ts` files that imported `scripts/`, `src/`, `pipeline/` or `test/support/`, moved first (bean `70lx`, batch B0) so that no later batch of the code move leaves a harness file importing into this layer. The Zod sources they test stay in cat-harness and follow in stage 1b (bean `8lcl`). `code`, not `schemas`: nothing here is a schema definition but one, `verdict-record.schema.json`, the record the `judge-tree` Tool writes (cat-harness-tools#399), kept beside the dependency-free validator in `scripts/lib/judge-tree.ts` that implements it until its Zod source joins the others in cat-harness.&quot;,
     &quot;graphTypologies&quot;: [
       &quot;code&quot;
     ]
@@ -163,7 +179,7 @@
   {
     &quot;id&quot;: &quot;cat-harness-tools-id-lookup&quot;,
     &quot;path&quot;: &quot;id-lookup/&quot;,
-    &quot;description&quot;: &quot;The identifier-lookup CLIENT a reader&#39;s browser runs: `lookup.js` (plain ES module, no dependencies) with its hand-written `lookup.d.ts`, and a one-form `index.html` told which index to open by `?index=&lt;directory&gt;`. The indexes themselves are generated output hosted by the instance each is about (`who-iris/id-lookup/`), never here. JavaScript, so it never sits under the plain docs pipeline. Moved from large-datasets (bean `j7ql`).&quot;,
+    &quot;description&quot;: &quot;The identifier-lookup CLIENT a reader&#39;s browser runs: `lookup.js` (plain ES module, no dependencies) with its hand-written `lookup.d.ts`, and a one-form `index.html` told which index to open by `?index=&lt;directory&gt;`. The indexes themselves are generated output hosted by the instance each is about (its own `id-lookup/`), never here. JavaScript, so it never sits under the plain docs pipeline. Moved from large-datasets (bean `j7ql`).&quot;,
     &quot;graphTypologies&quot;: [
       &quot;code&quot;
     ],
@@ -188,9 +204,17 @@
     ]
   },
   {
+    &quot;id&quot;: &quot;cat-harness-tools-types&quot;,
+    &quot;path&quot;: &quot;types/&quot;,
+    &quot;description&quot;: &quot;Ambient type declarations for untyped dependencies: `bpmn-moddle.d.ts` and `dmn-moddle.d.ts`. This layer&#39;s `tsconfig.json` includes `types/**/*.d.ts`, and so does folio-assistant-core&#39;s (`../cat-harness-tools/types/**/*.d.ts`), so the path is a contract with a layer above and stays where it is. Declared 2026-10-24 under bean `0uu2`, where the owner ruled to keep it in place and declare it rather than fold it into `src/`.&quot;,
+    &quot;graphTypologies&quot;: [
+      &quot;code&quot;
+    ]
+  },
+  {
     &quot;id&quot;: &quot;cat-harness-tools-tools&quot;,
     &quot;path&quot;: &quot;tools/&quot;,
-    &quot;description&quot;: &quot;`discover.ts`, the reader that finds every declared `tools` graph&#39;s Tool nodes by asking the declarations (bean `p0za`), and `index.ts`, this layer&#39;s own `tools` graph: the Tool nodes whose in-process module is code here (`bpmn-engine`), declared beside that code so the module path is instance-relative (owner, 2026-10-14: \&quot;Move the node to tools\&quot;). Every other Tool node, the shell-invoked ones included, stays declared in `cat-harness/tools/`. Undeclared until 2026-10-14, so a remote mount (which lays down declared directories only) left it out and `folio-assistant-core`&#39;s `glossary-extract.ts`, which imports it, had nothing to import; declared now as a named `code` subgraph, which is also what exports it by package name (`scripts/package-exports.ts`, bean `7pvn`).&quot;,
+    &quot;description&quot;: &quot;`discover.ts`, the reader that finds every declared `tools` graph&#39;s Tool nodes by asking the declarations (bean `p0za`), and `index.ts`, this layer&#39;s own `tools` graph: the Tool nodes whose in-process module is code here (`bpmn-engine`), declared beside that code so the module path is instance-relative (owner, 2026-10-14: \&quot;Move the node to tools\&quot;). Every other Tool node, the shell-invoked ones included, stays declared in `cat-harness/tools/`. Undeclared until 2026-10-14, so a remote mount (which lays down declared directories only) left it out and the content core&#39;s `glossary-extract.ts`, which imports it, had nothing to import; declared now as a named `code` subgraph, which is also what exports it by package name (`scripts/package-exports.ts`, bean `7pvn`).&quot;,
     &quot;graphTypologies&quot;: [
       &quot;tools&quot;,
       &quot;code&quot;
@@ -205,6 +229,15 @@
     ]
   },
   {
+    &quot;id&quot;: &quot;cat-harness-tools-libraries&quot;,
+    &quot;path&quot;: &quot;libraries/&quot;,
+    &quot;title&quot;: &quot;Software libraries&quot;,
+    &quot;description&quot;: &quot;The outside libraries this layer&#39;s code imports: one `software-library/1.0.0` node per dependency in `package.json`, with the version and sha512 that `bun.lock` pins, the registry tarball, the SPDX licence read from the installed package, the range, whether it is a dev dependency, the files that import it (`usedBy`) and the `types/*.d.ts` shim that types it (bpmn-moddle, dmn-moddle). GENERATED, never hand-edited: `bun run cat libraries:derive` writes it and `libraries:check` fails on a stale node, an import no node names, and a shim no node names. The kind is cat-harness&#39;s (bean `jbvi`, option D: one outside-software core shared with `tool-release`); this layer keeps its own nodes because it pins its own versions.&quot;,
+    &quot;graphTypologies&quot;: [
+      &quot;software-library&quot;
+    ]
+  },
+  {
     &quot;id&quot;: &quot;beans&quot;,
     &quot;path&quot;: &quot;beans/&quot;,
     &quot;description&quot;: &quot;The work plan for cat-harness-tools.&quot;,
@@ -216,14 +249,6 @@
     &quot;id&quot;: &quot;cat-harness-tools-pipeline&quot;,
     &quot;path&quot;: &quot;pipeline/&quot;,
     &quot;description&quot;: &quot;The content pipeline — build, render, QA checkers and generators over a folio&#39;s content graph — moved here from `cat-harness/content/pipeline/` by bean `70lx` (stage 1a). Its QA script sidecars stayed in the harness, under `test/results/script-sidecars/`, because they are the harness&#39;s QA state.&quot;,
-    &quot;graphTypologies&quot;: [
-      &quot;code&quot;
-    ]
-  },
-  {
-    &quot;id&quot;: &quot;cat-harness-tools-content-pipeline-link&quot;,
-    &quot;path&quot;: &quot;content/&quot;,
-    &quot;description&quot;: &quot;TRANSITIONAL, and holds no file of its own: one symlink, `content/pipeline -&gt; ../pipeline`, left by bean `rnfl` PR 1 (#146, 2026-10-12) when the content pipeline moved up to `pipeline/`, so that the other repositories&#39; commands that still name `cat-harness-tools/content/pipeline/...` (smart-ra&#39;s AGENTS.md `qa-sweep`, and the scaffold `folio_init` writes until a folio repins) keep resolving. Declared because a remote mount lays down DECLARED directories only: undeclared, a downstream that mounts this layer by its defaults got `pipeline/` but no `content/`, and every one of those commands failed there while passing in this checkout (task #10, gap a). It exists, so this is not the `dh4f` shape. The symlink is not hashed by the mount digest (a link is not content), so the directory locks as zero files; that is correct. Remove this entry in the same change that removes the symlink, once no repository names the old path.&quot;,
     &quot;graphTypologies&quot;: [
       &quot;code&quot;
     ]

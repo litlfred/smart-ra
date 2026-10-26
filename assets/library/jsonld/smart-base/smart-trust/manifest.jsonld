@@ -1,6 +1,6 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/smart-base/ns/context/v1.jsonld",
     {
       "@base": "https://litlfred.github.io/folio/"
     }
@@ -12,7 +12,7 @@
   "title": "WHO SMART Trust",
   "contains": [],
   "provenance": "ingested",
-  "inSubgraph": "http://smart.who.int/base/smart-base.jsonld#directory/library",
+  "inSubgraph": "http://smart.who.int/base/directory/library",
   "licenceRecord": {
     "status": "unknown",
     "searched": [

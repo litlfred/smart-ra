@@ -1,6 +1,6 @@
 {
   "@context": [
-    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    "https://litlfred.github.io/smart-base/ns/context/v1.jsonld",
     {
       "@base": "https://litlfred.github.io/folio/"
     }
@@ -79,7 +79,7 @@
     "library/9789240081949-eng/sections/page-066"
   ],
   "provenance": "ingested",
-  "inSubgraph": "http://smart.who.int/base/smart-base.jsonld#directory/library",
+  "inSubgraph": "http://smart.who.int/base/directory/library",
   "meta": {
     "doc_id": "9789240081949-eng",
     "title_source": "editorial",
