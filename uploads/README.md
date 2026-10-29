@@ -25,6 +25,10 @@ the evidence behind it.
 - **Audio extraction**: `ffmpeg -i uploads/output.mp4 -vn -ac 1 -ar 16000 -c:a pcm_s16le output.wav` (FFmpeg 9.0.2 / `Lavf63.1.102`, 16 kHz mono 16-bit PCM, 1,028.992 s, 32,927,822 bytes), WAV SHA-256 `e63fba5ee95c5c2e973ed8cc1739bb409978713c6f883c2cc374132fe49fef01`
 - **Invocation**: `./build/bin/whisper-cli -m models/ggml-base.bin -f output.wav -oj -of output.whisper-base`
 
+### Library entry (`folio-assistant-1r0p`)
+
+`library/crdm-walkthrough-2026-10-06/` files this recording: `recording.json` (title, date, language and speakers from the Teams record; `source.sha256` is `output.mp4` above) and `transcript/en.json`, the `whisper.cpp` transcript as it came out, in state `draft`. Written by `cat-harness-tools/scripts/recording-transcript.py`. Translations go beside it as `transcript/<lang>.json`; names it mishears (`Carl Lightner`, `Ginny`) are a reviewer's to correct.
+
 ### Agreement with Microsoft Teams exports
 
 Word-level comparison after lower-casing and stripping punctuation (`meeting-recording.py compare`, `difflib.SequenceMatcher` with `autojunk=False`):
