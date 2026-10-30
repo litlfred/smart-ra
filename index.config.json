@@ -61,7 +61,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/who-iris",
-          "ref": "e1da89f7522e0b298d4efbdb8e2e1c4d7437fe0c",
+          "ref": "bdadee3d159a27d58834133872e20ec631665f6c",
           "overrides": {
             "who-iris": {
               "whole": true
@@ -86,8 +86,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-10-30",
-              "ref": "e1da89f7522e0b298d4efbdb8e2e1c4d7437fe0c",
-              "evidence": "who-iris#124 fixed the unpublished core dependency that blocked the smart-ra publish; owner card 2026-10-30T19:33Z 'Republish now'; merge window +3 hrs at 19:21Z (to ~22:38Z); main tip e1da89f (IRIS assets #108, dark replica #110, navbar #112, direction #114 #118, CI #116). Window: litlfred 2026-10-30 11:13Z 'merge and repin window open for 4 horus', extended 16:37Z 'merge window +3 hrs' (to ~19:38Z), extended 19:21Z 'merge window + 3hrs' (to ~22:38Z)."
+              "ref": "bdadee3d159a27d58834133872e20ec631665f6c",
+              "evidence": "who-iris#133 gave the catalogue forwarding stub a <body>, which unblocked every smart-ra staging build (staging-banner refuses a page with none); merge window reopened by litlfred 2026-10-30 22:51Z 'emrge winfow + 3 hts' (to ~01:51Z); main tip bdadee3."
             }
           }
         }
