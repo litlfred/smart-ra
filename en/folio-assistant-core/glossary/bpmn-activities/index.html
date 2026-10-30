@@ -14,7 +14,7 @@
 
     .site-nav > ul.nav-list:first-child > li > a,
     
-    .site-nav > ul.nav-list:first-child > li > ul > li:not(:nth-child(6)) > a,
+    .site-nav > ul.nav-list:first-child > li > ul > li:not(:nth-child(8)) > a,
     .site-nav > ul.nav-list:first-child > li > ul > li > ul > li a {
       background-image: none;
     }
@@ -24,14 +24,14 @@
       background-image: none;
     }
 
-    .site-nav > ul.nav-list:first-child > li:nth-child(2) > ul > li:nth-child(6) > a {
+    .site-nav > ul.nav-list:first-child > li:nth-child(2) > ul > li:nth-child(8) > a {
       font-weight: 600;
       text-decoration: none;
     }.site-nav > ul.nav-list:first-child > li:nth-child(2) > button svg,
-    .site-nav > ul.nav-list:first-child > li:nth-child(2) > ul > li:nth-child(6) > button svg {
+    .site-nav > ul.nav-list:first-child > li:nth-child(2) > ul > li:nth-child(8) > button svg {
       transform: rotate(-90deg);
     }.site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(2) > ul.nav-list,
-    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(2) > ul.nav-list > li.nav-list-item:nth-child(6) > ul.nav-list {
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(2) > ul.nav-list > li.nav-list-item:nth-child(8) > ul.nav-list {
       display: block;
     }
   </style>
@@ -156,7 +156,7 @@
   `mark-small` in `harness.json`, and it went unread: nothing in this
   repo ever emitted a favicon at all, `rel="icon"` included. It also could
   not have driven this lookup as declared — `imagesForRole()`
-  (`schemas/kg-node.ts`) requires an image's `layout` field, which neither
+  (`schemas/kg/kg-node.ts`) requires an image's `layout` field, which neither
   mark entry carries, so a `browser-icon`-role lookup returns nothing. Reusing
   the already-resolved `icon` (the same field `title.html` reads) sidesteps
   that and, more importantly, is what was asked for: the sidebar mark and the
@@ -607,7 +607,7 @@
 -->
 <!-- The harness icon row's own style, which railed pages load without docs-ui.css (beans `lhvt`, `9rq1`). -->
 <link rel="stylesheet" href="../../../../assets/css/navbar-row.css?v=7d7d00921e0f">
-<link rel="stylesheet" href="../../../../assets/css/docs-ui.css?v=c5f675d4c764">
+<link rel="stylesheet" href="../../../../assets/css/docs-ui.css?v=6071ae228cf3">
 <!-- Narrow viewports: wide content scrolls in its own box, never the page
      (bean `2r2n`). The standalone viewers inline the same file through
      `withViewerNav`, so both kinds of page read one set of rules. -->
@@ -618,21 +618,21 @@
   `state-visualizer.ts` can inline exactly these bytes into the generated
   `<base>/<stub>/state-visualizer/` pages. One rule, two surfaces.
 -->
-<link rel="stylesheet" href="../../../../assets/css/work-plan.css?v=30bf7780ce27">
-<!-- Sticky themes. GENERATED from the theme nodes in `schemas/themes.ts` by
+<link rel="stylesheet" href="../../../../assets/css/work-plan.css?v=ed3e33f033fe">
+<!-- Sticky themes. GENERATED from the theme nodes in `schemas/ui/themes.ts` by
      `bun run cat themes:css`; `themes:css:check` fails the build when it is stale.
      Loaded AFTER docs-ui.css deliberately: it supplies the `--fa-sticky-*`
      roles that docs-ui.css consumes, and a custom property has to be set on a
      matching element before the rule reading it takes effect. -->
-<link rel="stylesheet" href="../../../../assets/css/themes.css?v=a7f81b62eded">
+<link rel="stylesheet" href="../../../../assets/css/themes.css?v=37c8ab192a5f">
 <!-- UML overview colours: one class per graph typology, set on the Mermaid nodes
      that `scripts/gen-uml-overview.ts` writes into docs/uml/overview/. -->
 <link rel="stylesheet" href="../../../../assets/css/uml.css?v=e677f91cbf66">
-<!-- Kind avatars. GENERATED from `schemas/avatars.ts` by `bun run cat avatars:css`;
+<!-- Kind avatars. GENERATED from `schemas/content/avatars.ts` by `bun run cat avatars:css`;
      `avatars:css:check` fails the build when it is stale. One stylesheet
      rather than 68 assets: the glyph is a mask and the colour is a property,
      so a scheme swap is a custom property and the trash state is a selector. -->
-<link rel="stylesheet" href="../../../../assets/css/avatars.css?v=699212580934">
+<link rel="stylesheet" href="../../../../assets/css/avatars.css?v=780d571c53c1">
 
 <!--
   The kinds THIS INSTANCE DECLARES, for the avatar fan.
@@ -666,7 +666,7 @@
 <script src="../../../../assets/js/kg-render.js" defer></script>
 <!-- BEFORE docs-ui.js, which calls it: the one drawing of the harness icon row (beans `lhvt`, `9rq1`). -->
 <script src="../../../../assets/js/navbar-row.js?v=7dce6a7e2ab0" defer></script>
-<script src="../../../../assets/js/docs-ui.js?v=9c88eef1c243" defer></script>
+<script src="../../../../assets/js/docs-ui.js?v=8b5567635976" defer></script>
 <!-- The edit, source and feedback links of every page, from the platform's one
   recipe (cat-harness-tools/src/core/edit-links.ts, bean v433): links carry their
   facts and this builds the hrefs. -->
@@ -755,9 +755,9 @@
   is broken when it is doing exactly what it can.
 -->
 
-<link rel="stylesheet" href="../../../../assets/css/navbar.css"><script src="../../../../assets/navbar/rail-1uu2yi3osvq.js" defer></script><script src="../../../../assets/js/navbar.js" defer></script><link rel="stylesheet" href="../../../../assets/page-layout.css" data-fa-page-layout><script src="../../../../assets/page-layout.js" defer data-fa-page-layout></script><meta name="fa-pinned-data" content="../../../.."></head>
+<link rel="stylesheet" href="../../../../assets/css/navbar.css"><script src="../../../../assets/navbar/rail-1nr7jo2rxsc.js" defer></script><script src="../../../../assets/js/navbar.js" defer></script><link rel="stylesheet" href="../../../../assets/page-layout.css" data-fa-page-layout><script src="../../../../assets/page-layout.js" defer data-fa-page-layout></script><meta name="fa-pinned-data" content="../../../.."></head>
 
-<body><script type="application/json" id="fa-rail" data-fa-root="https://litlfred.github.io/folio-assistant" data-fa-to-root="../../../..">{"data":"rail-1uu2yi3osvq","here":"/en/folio-assistant-core/glossary/bpmn-activities/","documentIndex":{"label":"On this page","icon":"§","items":[{"href":"#letter-0-9","label":"0–9"},{"href":"#letter-A","label":"A"},{"href":"#letter-B","label":"B"},{"href":"#letter-C","label":"C"},{"href":"#letter-D","label":"D"},{"href":"#letter-E","label":"E"},{"href":"#letter-F","label":"F"},{"href":"#letter-G","label":"G"},{"href":"#letter-H","label":"H"},{"href":"#letter-I","label":"I"},{"href":"#letter-J","label":"J"},{"href":"#letter-K","label":"K"},{"href":"#letter-L","label":"L"},{"href":"#letter-M","label":"M"},{"href":"#letter-N","label":"N"},{"href":"#letter-O","label":"O"},{"href":"#letter-P","label":"P"},{"href":"#letter-Q","label":"Q"},{"href":"#letter-R","label":"R"},{"href":"#letter-S","label":"S"},{"href":"#letter-T","label":"T"},{"href":"#letter-U","label":"U"},{"href":"#letter-V","label":"V"},{"href":"#letter-W","label":"W"}],"collapsible":true}}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../">Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector</a></nav>
+<body><script type="application/json" id="fa-rail" data-fa-root="https://litlfred.github.io/folio-assistant" data-fa-to-root="../../../..">{"data":"rail-1nr7jo2rxsc","here":"/en/folio-assistant-core/glossary/bpmn-activities/","documentIndex":{"label":"On this page","icon":"§","items":[{"href":"#letter-0-9","label":"0–9"},{"href":"#letter-A","label":"A"},{"href":"#letter-B","label":"B"},{"href":"#letter-C","label":"C"},{"href":"#letter-D","label":"D"},{"href":"#letter-E","label":"E"},{"href":"#letter-F","label":"F"},{"href":"#letter-G","label":"G"},{"href":"#letter-H","label":"H"},{"href":"#letter-I","label":"I"},{"href":"#letter-J","label":"J"},{"href":"#letter-K","label":"K"},{"href":"#letter-L","label":"L"},{"href":"#letter-M","label":"M"},{"href":"#letter-N","label":"N"},{"href":"#letter-O","label":"O"},{"href":"#letter-P","label":"P"},{"href":"#letter-Q","label":"Q"},{"href":"#letter-R","label":"R"},{"href":"#letter-S","label":"S"},{"href":"#letter-T","label":"T"},{"href":"#letter-U","label":"U"},{"href":"#letter-V","label":"V"},{"href":"#letter-W","label":"W"}],"collapsible":true}}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../">Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector</a></nav>
   <a class="skip-to-main" href="#main-content">Skip to main content</a>
   <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
   <symbol id="svg-link" viewBox="0 0 24 24">
@@ -873,24 +873,24 @@
 
 <p>Candidate terms extracted from every BPMN task and call activity: <code class="language-plaintext highlighter-rouge">name</code> as the label, its own <code class="language-plaintext highlighter-rouge">&lt;documentation&gt;</code> as the definition, the element id as the code. Each is the asset’s own text, verbatim and not curated, and carries the badge “candidate, extracted”. A person promotes one by authoring it. Authored terms are on their owning instance’s page, and those pages, the counts and the sources are linked from the <a href="../../../../en/folio-assistant-core/glossary/">glossary index</a>.</p>
 
-<p>From: bootstrap 38 (<a href="../../../../assets/glossary/bootstrap--kg-bpmn-activities.skos.jsonld">SKOS</a>) · bootstrap-tools 7 (<a href="../../../../assets/glossary/bootstrap-tools--kg-bpmn-activities.skos.jsonld">SKOS</a>) · cat-harness 567 (<a href="../../../../assets/glossary/cat-harness--kg-bpmn-activities.skos.jsonld">SKOS</a>) · fhir-harness 45 (<a href="../../../../assets/glossary/fhir-harness--kg-bpmn-activities.skos.jsonld">SKOS</a>) · folio-assistant-core 178 (<a href="../../../../assets/glossary/folio-assistant-core--kg-bpmn-activities.skos.jsonld">SKOS</a>) · smart-base 117 (<a href="../../../../assets/glossary/smart-base--kg-bpmn-activities.skos.jsonld">SKOS</a>).</p>
+<p>From: bootstrap 38 (<a href="../../../../assets/glossary/bootstrap--kg-bpmn-activities.skos.jsonld">SKOS</a>) · bootstrap-tools 7 (<a href="../../../../assets/glossary/bootstrap-tools--kg-bpmn-activities.skos.jsonld">SKOS</a>) · cat-harness 577 (<a href="../../../../assets/glossary/cat-harness--kg-bpmn-activities.skos.jsonld">SKOS</a>) · fhir-harness 45 (<a href="../../../../assets/glossary/fhir-harness--kg-bpmn-activities.skos.jsonld">SKOS</a>) · folio-assistant-core 207 (<a href="../../../../assets/glossary/folio-assistant-core--kg-bpmn-activities.skos.jsonld">SKOS</a>) · smart-base 117 (<a href="../../../../assets/glossary/smart-base--kg-bpmn-activities.skos.jsonld">SKOS</a>) · who-iris 34 (<a href="../../../../assets/glossary/who-iris--kg-bpmn-activities.skos.jsonld">SKOS</a>).</p>
 
-<p><strong>Size:</strong> this page holds 952 terms and is 889 KB before compression, fetched in one request, within its budget of 1.0 MB. There is no search index: the filter below runs over this page, and the A–Z bar jumps within it.</p>
+<p><strong>Size:</strong> this page holds 1025 terms and is 958 KB before compression, fetched in one request, within its budget of 1.0 MB. There is no search index: the filter below runs over this page, and the A–Z bar jumps within it.</p>
 
 <div class="table-wrapper"><table class="fa-gloss-mapping">
 <caption>Already somebody else's concept? — <code>check:term-mapping</code>, bean <code>7wou</code></caption>
 <thead><tr><th>target</th><th>mapped</th><th>unmapped</th><th>undetermined</th><th>why undetermined</th></tr></thead>
-<tbody><tr><td><code>fhir</code></td><td>0</td><td>731</td><td>0</td><td>—</td></tr><tr><td><code>skos</code></td><td>0</td><td>731</td><td>0</td><td>—</td></tr></tbody>
+<tbody><tr><td><code>fhir</code></td><td>0</td><td>851</td><td>0</td><td>—</td></tr><tr><td><code>skos</code></td><td>0</td><td>851</td><td>0</td><td>—</td></tr></tbody>
 </table></div>
 <p class="fa-gloss-mapping-note"><strong>Undetermined is never “no match”.</strong> 
 A vocabulary that could not be reached has said nothing, and the column above keeps that 
 apart from a checked miss. The counts are reported and not graded: an unmapped candidate may 
 be a term this corpus is right to coin.</p>
-<p class="fa-gloss-mapping-perterm"><strong>Per term.</strong> Every term on this page is in no single state on <code>fhir</code>, so each entry states its own, and in no single state on <code>skos</code>, so each entry states its own, unless its entry says otherwise. 952 entries say otherwise.</p>
+<p class="fa-gloss-mapping-perterm"><strong>Per term.</strong> Every term on this page is in no single state on <code>fhir</code>, so each entry states its own, and in no single state on <code>skos</code>, so each entry states its own, unless its entry says otherwise. 1025 entries say otherwise.</p>
 
 <p><label for="fa-gloss-q">Filter terms</label>
 <input id="fa-gloss-q" type="search" autocomplete="off" style="min-height:44px;width:100%;max-width:32rem" /></p>
-<p aria-live="polite"><span id="fa-gloss-n">952</span> shown</p>
+<p aria-live="polite"><span id="fa-gloss-n">1025</span> shown</p>
 
 <nav aria-label="Letters"><a href="#letter-0-9">0–9</a> <a href="#letter-A">A</a> <a href="#letter-B">B</a> <a href="#letter-C">C</a> <a href="#letter-D">D</a> <a href="#letter-E">E</a> <a href="#letter-F">F</a> <a href="#letter-G">G</a> <a href="#letter-H">H</a> <a href="#letter-I">I</a> <a href="#letter-J">J</a> <a href="#letter-K">K</a> <a href="#letter-L">L</a> <a href="#letter-M">M</a> <a href="#letter-N">N</a> <a href="#letter-O">O</a> <a href="#letter-P">P</a> <a href="#letter-Q">Q</a> <a href="#letter-R">R</a> <a href="#letter-S">S</a> <a href="#letter-T">T</a> <a href="#letter-U">U</a> <a href="#letter-V">V</a> <a href="#letter-W">W</a></nav>
 <h2 id="letter-0-9">
@@ -1508,7 +1508,7 @@ Agent review of the change [content-review] <span class="fa-gloss-status">candid
 Agree each change-set's requirements on its issue <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
-<p>A change-set gets its primary GitHub issue the first time somebody engages with it (the Discuss form, a recommendation or decision on one of its comments, a mention, a PR), opened by the folio's public-comment workflow; any number of other issues may discuss it and are linked. People agree the requirements there, and the committee or editor changes the record with cs-add / cs-remove / cs-title / cs-requirements / cs-merge / cs-split / cs-close / cs-new. The issue's change-set section is rendered from the record and put back if hand-edited; the nightly reconcile keeps every issue in line. The issue is for requirements; the PR that closes it is for preview, review and approval.</p>
+<p>A change-set gets its primary GitHub issue the first time somebody engages with it (the Discuss form, a recommendation or decision on one of its comments, a mention, a PR), opened by the folio's public-comment workflow; any number of other issues may discuss it and are linked. People agree the requirements there, and the committee or editor changes the record with cs-add / cs-remove / cs-title / cs-requirements / cs-committee / cs-merge / cs-split / cs-close / cs-new. The issue's change-set section is rendered from the record and put back if hand-edited; the nightly reconcile keeps every issue in line. The issue is for requirements; the PR that closes it is for preview, review and approval.</p>
 <p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/public-comment.bpmn"><code>folio-assistant-core/processes/content/public-comment.bpmn#Task_GroupChangeSets</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
@@ -1892,7 +1892,7 @@ Author FHIR profiles <span class="fa-gloss-status">candidate, extracted</span>
 Author fixed set in test-data-fixed/ with $schema test-data-fixed/1.0.0 <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
-<p>Write the curated <code>records</code> and optional <code>citations</code> with <code>$schema: &quot;test-data-fixed/1.0.0&quot;</code> and <code>kind: &quot;fixed&quot;</code> into the instance's declared <code>test-data-fixed</code> directory (<code>schemas/test-data.ts</code>). Recipe fields (<code>template</code>, <code>params</code>, <code>seed</code>) are refused by the strict schema.</p>
+<p>Write the curated <code>records</code> and optional <code>citations</code> with <code>$schema: &quot;test-data-fixed/1.0.0&quot;</code> and <code>kind: &quot;fixed&quot;</code> into the instance's declared <code>test-data-fixed</code> directory (<code>schemas/sdlc/test-data.ts</code>). Recipe fields (<code>template</code>, <code>params</code>, <code>seed</code>) are refused by the strict schema.</p>
 <p class="fa-gloss-meta">BPMN activities of cat-harness · source <a href="https://github.com/litlfred/cat-harness/blob/main/processes/sdlc/test-data-curation.bpmn"><code>cat-harness/processes/sdlc/test-data-curation.bpmn#Task_CurateFixed</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
@@ -2178,6 +2178,14 @@ Build the entry [tree + manifest] <span class="fa-gloss-status">candidate, extra
 <p class="fa-gloss-meta">BPMN activities of cat-harness · source <a href="https://github.com/litlfred/cat-harness/blob/main/processes/sdlc/qa-publish.bpmn"><code>cat-harness/processes/sdlc/qa-publish.bpmn#Task_BuildEntry</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
+<dt id="who-iris--kg-bpmn-activities--process_iriscdninitialload.call_buildgraph" data-fa-state="extracted" data-fa-gloss="">
+Build the graph partitions <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>The platform process nquads-distribution (cat-harness): spine plus one partition per community, zero blank nodes, sorted N-Quads.</p>
+<p class="fa-gloss-meta">BPMN activities of who-iris · source <a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-initial-load.bpmn"><code>who-iris/processes/iris-cdn-initial-load.bpmn#Call_BuildGraph</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>fhir</code> · <code>skos</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>skos</code></p>
+</dd>
 <dt id="fhir-harness--kg-bpmn-activities--process_igastcache.task_export" data-fa-state="extracted" data-fa-gloss="">
 Build the IG with the Publisher AST exporter [ig-publisher-fork] <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
@@ -2209,6 +2217,14 @@ Build the L1 library from Component 1 [dak-l1-library] <span class="fa-gloss-sta
 <p>Ingest the DAK into the library; it is L2, so it gets no L1 graph. Read Component 1 §1.2 for the sources it draws on (extract-dak-l1-references.ts --context-only), then fetch each L1 source on its own — fetch-dspace-item.ts for an IRIS handle, fetch-who-publication.ts for a who.int item page — and ingest it. Record whether each is L1 on its intake (declared &gt; context &gt; inferred; --record-context writes §1.2's context). For each L1 source, run l1-specialise.ts: its publication, sections and elements as specialisations of its library nodes, since the library is upstream of L1. Validate with the smart-base Zod validator. Fidelity — does each citation name the source it resolves to — and a cited edition older than the one fetched are left to a person, never passed automatically.</p>
 <p class="fa-gloss-meta">BPMN activities of smart-base · source <a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/l2-dak-authoring.bpmn"><code>smart-base/processes/content/l2-dak-authoring.bpmn#Task_L1Library</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>smart-base</code> on <code>fhir</code> · <code>skos</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>smart-base</code> on <code>skos</code></p>
+</dd>
+<dt id="cat-harness--kg-bpmn-activities--process_beandrain.drain_buildqueue" data-fa-state="extracted" data-fa-gloss="">
+Build the queue, grouped by owner <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Read every bean copy, not only the one this checkout mounts; where copies disagree the newest <code>updated_at</code> wins and the disagreement is listed. Leave out goals and epics, blocked beans, closed or draft ones, owner-held or parked ones, and beans the drainers cannot reach — each with its reason, so nothing vanishes silently. Group the rest by owner in priority order, mark beans other agents hold as skip, and write one shared queue file. The <code>drain-queue</code> Tool (bean n7x7) builds this; until it is defined, the step is the skill's.</p>
+<p class="fa-gloss-meta">BPMN activities of cat-harness · source <a href="https://github.com/litlfred/cat-harness/blob/main/processes/sdlc/bean-drain.bpmn"><code>cat-harness/processes/sdlc/bean-drain.bpmn#Drain_BuildQueue</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="cat-harness--kg-bpmn-activities--process_qareportsigning.task_buildrun" data-fa-state="extracted" data-fa-gloss="">
 Build the test run [folio-test-run/v1] <span class="fa-gloss-status">candidate, extracted</span>
@@ -2396,6 +2412,14 @@ Choose subgraphs, the asset policy, harnesses <span class="fa-gloss-status">cand
 <p class="fa-gloss-meta">BPMN activities of cat-harness · source <a href="https://github.com/litlfred/cat-harness/blob/main/processes/library/subscribe-kg.bpmn"><code>cat-harness/processes/library/subscribe-kg.bpmn#Task_Choose</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
+<dt id="folio-assistant-core--kg-bpmn-activities--process_gettingstarted.task_chooseharnessed" data-fa-state="extracted" data-fa-gloss="">
+Choose what the harness reads <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>The person picks which of the content markers the scan found the harness declares in index.config.json, and nothing is declared unpicked. A PERSON'S STEP: the scan's <code>markers</code> that are not yet declared are offered as selectable options — one per marker, each with its paths and what declaring it means, plus &quot;none of these&quot; — and the person picks which parts of the repository to load into the KG. A tap card where the host has one; otherwise a numbered pick-list with a stated default. Never a typed reply. The default declares NOTHING: a harness that declared every marker it found would be slurping the repository, which is what this step exists to prevent. Only the picks reach Task_Scaffold, which declares exactly those in index.config.json. With no undeclared marker found, nothing is asked. The same question is put after setup by running the scan with <code>--markers</code> (repo-conversion §2a).</p>
+<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/conduct/getting-started.bpmn"><code>folio-assistant-core/processes/conduct/getting-started.bpmn#Task_ChooseHarnessed</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
 <dt id="cat-harness--kg-bpmn-activities--process_nquadsdistribution.a_gatecheck" data-fa-state="extracted" data-fa-gloss="">
 CI Gate Verification: Audit Manifest &amp; Schemas <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
@@ -2482,6 +2506,14 @@ Close issue ONLY on BA authorisation <span class="fa-gloss-status">candidate, ex
 <dd>
 <p>Reachable only through BA_Confirm, which is the BA saying every criterion is met. An agent must never close an issue without that explicit authorisation — the gate is the preceding task, and this name says so rather than leaving a reader to trace the flow for it.</p>
 <p class="fa-gloss-meta">BPMN activities of cat-harness · source <a href="https://github.com/litlfred/cat-harness/blob/main/processes/process/crdm-close.bpmn"><code>cat-harness/processes/process/crdm-close.bpmn#A_Close</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="cat-harness--kg-bpmn-activities--process_beandrain.drain_close" data-fa-state="extracted" data-fa-gloss="">
+Close the bean [bean-close] <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Process_BeanClose on the bean just worked: complete and archive it on evidence, scrap it with its reasons, or record its blocker and hand it back to <code>todo</code>. On every bean copy. More of the drain follows, so on the drain's own bean the engine notes rather than resolves (see the process comment); then the drainer takes the next bean.</p>
+<p class="fa-gloss-meta">BPMN activities of cat-harness · source <a href="https://github.com/litlfred/cat-harness/blob/main/processes/sdlc/bean-drain.bpmn"><code>cat-harness/processes/sdlc/bean-drain.bpmn#Drain_Close</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="cat-harness--kg-bpmn-activities--process_beanlifecycle.call_beanclose" data-fa-state="extracted" data-fa-gloss="">
@@ -2700,6 +2732,14 @@ Close the bean [bean-close] <span class="fa-gloss-status">candidate, extracted</
 <p class="fa-gloss-meta">BPMN activities of cat-harness · source <a href="https://github.com/litlfred/cat-harness/blob/main/processes/library/subscribe-kg.bpmn"><code>cat-harness/processes/library/subscribe-kg.bpmn#Call_BeanClose_2</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
+<dt id="cat-harness--kg-bpmn-activities--process_testdatacuration.call_beanclose" data-fa-state="extracted" data-fa-gloss="">
+Close the bean [bean-close] <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Process_BeanClose: end the bean in a state that says why — complete and archive it, scrap it with its reasons and archive it, or record the blocker and hand it back. The one place resolve and archive are drawn; placed straight before the end so the engine's resolve sees nothing left but the archive step.</p>
+<p class="fa-gloss-meta">BPMN activities of cat-harness · source <a href="https://github.com/litlfred/cat-harness/blob/main/processes/sdlc/test-data-curation.bpmn"><code>cat-harness/processes/sdlc/test-data-curation.bpmn#Call_BeanClose</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
 <dt id="cat-harness--kg-bpmn-activities--process_testplanexecution.call_beanclose" data-fa-state="extracted" data-fa-gloss="">
 Close the bean [bean-close] <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
@@ -2786,6 +2826,22 @@ Close the bean [bean-close] <span class="fa-gloss-status">candidate, extracted</
 <dd>
 <p>Process_BeanClose: end the bean in a state that says why — complete and archive it, scrap it with its reasons and archive it, or record the blocker and hand it back. The one place resolve and archive are drawn (bean m8gz, owner 2026-10-24); placed straight before the end so the engine's resolve sees nothing left but the archive step.</p>
 <p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/authoring-a-document.bpmn"><code>folio-assistant-core/processes/content/authoring-a-document.bpmn#Call_BeanClose</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="folio-assistant-core--kg-bpmn-activities--process_dsadocumentlifecycle.call_beancloseended" data-fa-state="extracted" data-fa-gloss="">
+Close the bean [bean-close] <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Process_BeanClose: end the bean in a state that says why — complete and archive it, scrap it with its reasons and archive it, or record the blocker and hand it back. The one place resolve and archive are drawn (bean m8gz, owner 2026-10-24); placed straight before the end so the engine's resolve sees nothing left but the archive step.</p>
+<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/dsa-document-lifecycle.bpmn"><code>folio-assistant-core/processes/content/dsa-document-lifecycle.bpmn#Call_BeanCloseEnded</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="folio-assistant-core--kg-bpmn-activities--process_dsadocumentlifecycle.call_beanclosepublished" data-fa-state="extracted" data-fa-gloss="">
+Close the bean [bean-close] <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Process_BeanClose: end the bean in a state that says why — complete and archive it, scrap it with its reasons and archive it, or record the blocker and hand it back. The one place resolve and archive are drawn (bean m8gz, owner 2026-10-24); placed straight before the end so the engine's resolve sees nothing left but the archive step.</p>
+<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/dsa-document-lifecycle.bpmn"><code>folio-assistant-core/processes/content/dsa-document-lifecycle.bpmn#Call_BeanClosePublished</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_editing.call_beanclose" data-fa-state="extracted" data-fa-gloss="">
@@ -3020,6 +3076,30 @@ Commit into the corpus <span class="fa-gloss-status">candidate, extracted</span>
 <p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/editing-hci-validation.bpmn"><code>folio-assistant-core/processes/content/editing-hci-validation.bpmn#Task_Commit</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
+<dt id="who-iris--kg-bpmn-activities--process_iriscdnsignpublish.task_publishtags" data-fa-state="extracted" data-fa-gloss="">
+Commit tag files and signature, last <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>One commit to the Cloudflare git repository, after every payload object is in place, so a reader never sees a manifest naming bytes that are not there yet.</p>
+<p class="fa-gloss-meta">BPMN activities of who-iris · source <a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-sign-publish.bpmn"><code>who-iris/processes/iris-cdn-sign-publish.bpmn#Task_PublishTags</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>fhir</code> · <code>skos</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>skos</code></p>
+</dd>
+<dt id="who-iris--kg-bpmn-activities--process_iriscdnnightly.task_advancecursor" data-fa-state="extracted" data-fa-gloss="">
+Commit the advanced cursor <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Only after the release verified. A failed night leaves the cursor where it was, so the next night re-reads the same window.</p>
+<p class="fa-gloss-meta">BPMN activities of who-iris · source <a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-nightly.bpmn"><code>who-iris/processes/iris-cdn-nightly.bpmn#Task_AdvanceCursor</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>fhir</code> · <code>skos</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>skos</code></p>
+</dd>
+<dt id="who-iris--kg-bpmn-activities--process_iriscdninitialload.task_checkpoint" data-fa-state="extracted" data-fa-gloss="">
+Commit the batch checkpoint <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>state/initial-load.json in the Cloudflare git repository. A restarted load reads it and skips finished batches.</p>
+<p class="fa-gloss-meta">BPMN activities of who-iris · source <a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-initial-load.bpmn"><code>who-iris/processes/iris-cdn-initial-load.bpmn#Task_Checkpoint</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>fhir</code> · <code>skos</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>skos</code></p>
+</dd>
 <dt id="cat-harness--kg-bpmn-activities--process_mergebase.task_commit" data-fa-state="extracted" data-fa-gloss="">
 Commit the merge <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
@@ -3059,6 +3139,14 @@ Compare what the processes need with what is granted <span class="fa-gloss-statu
 <p>The needed set is the agent-permissions skill's list (write generated projections: CI only, never the agent; edit hooks or settings; run the gates; push a feature branch; open a PR), scoped to what this instance's processes actually call. The granted set is the recorded grants plus the Tool's current config, read through its adapter. A config rule with no recorded grant is reported as unrecorded, not treated as granted.</p>
 <p class="fa-gloss-meta">BPMN activities of cat-harness · source <a href="https://github.com/litlfred/cat-harness/blob/main/processes/process/secure-agent-permissions.bpmn"><code>cat-harness/processes/process/secure-agent-permissions.bpmn#Task_ReadGrants</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="who-iris--kg-bpmn-activities--process_iriscdnreconcile.task_compare" data-fa-state="extracted" data-fa-gloss="">
+Compare with the ids the library holds <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p><em>The asset carries no description.</em></p>
+<p class="fa-gloss-meta">BPMN activities of who-iris · source <a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-reconcile.bpmn"><code>who-iris/processes/iris-cdn-reconcile.bpmn#Task_Compare</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>fhir</code> · <code>skos</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>skos</code></p>
 </dd>
 <dt id="cat-harness--kg-bpmn-activities--process_beanclose.close_complete" data-fa-state="extracted" data-fa-gloss="">
 Complete (no unchecked todos left) <span class="fa-gloss-status">candidate, extracted</span>
@@ -3258,7 +3346,7 @@ Cut the subgraph that leaves <span class="fa-gloss-status">candidate, extracted<
 Data dictionary and core data elements [l2-dak-authoring] <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
-<p>Author the data dictionary and core data elements for this component. Stay structured but not FHIR: a data element a clinician can review, from which L3 can later be derived rather than written twice. Calls Process_L2ComponentEditReview with the glossary inputs of the skill l2-component-edit-review (checker: check-dak-annexes.ts; renderer: the term diff from dak-data-dictionary-diff.ts and each form's chosen wireframe; reviewer: clinical SME, terminologist for codes).</p>
+<p>Author the data dictionary and core data elements for this component. Stay structured but not FHIR: a data element a clinician can review, from which L3 can later be derived rather than written twice. Calls Process_L2ComponentEditReview with the glossary inputs of the skill l2-component-edit-review (checker: check-web-annexes.ts, on the data dictionary web annex; renderer: the term diff from dak-data-dictionary-diff.ts and each form's chosen wireframe; reviewer: clinical SME, terminologist for codes).</p>
 <p class="fa-gloss-meta">BPMN activities of smart-base · source <a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/l2-dak-authoring.bpmn"><code>smart-base/processes/content/l2-dak-authoring.bpmn#Task_DataDict</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>smart-base</code> on <code>fhir</code> · <code>skos</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>smart-base</code> on <code>skos</code></p>
 </dd>
@@ -3292,6 +3380,14 @@ Decide, weighing the recommendations <span class="fa-gloss-status">candidate, ex
 <dd>
 <p>public-comment decide, or decide: code on GitHub from a login in config.json editors. accepted, accepted-modified, not-accepted, noted, deferred; a reason for all but accepted. Also reopens a decided comment.</p>
 <p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/public-comment.bpmn"><code>folio-assistant-core/processes/content/public-comment.bpmn#Task_EditorDecides</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="folio-assistant-core--kg-bpmn-activities--process_dsadocumentlifecycle.task_decidechange" data-fa-state="extracted" data-fa-gloss="">
+Decide: amend, renew or end <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>The parties decide what happens to the agreement. Deciding to amend or terminate is human; expiry of a computable agreement is already enforced by its ODRL dateTime constraint.</p>
+<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/dsa-document-lifecycle.bpmn"><code>folio-assistant-core/processes/content/dsa-document-lifecycle.bpmn#Task_DecideChange</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="smart-base--kg-bpmn-activities--process_l2dak.task_dmn" data-fa-state="extracted" data-fa-gloss="">
@@ -3574,6 +3670,14 @@ Develop scheduling logic (Component 7) <span class="fa-gloss-status">candidate, 
 <p class="fa-gloss-meta">BPMN activities of smart-base · source <a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/SGAuthoring.DAKLifecycle.bpmn"><code>smart-base/processes/content/SGAuthoring.DAKLifecycle.bpmn#Task_DevelopSchedulingLogic</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>smart-base</code> on <code>fhir</code> · <code>skos</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>smart-base</code> on <code>skos</code></p>
 </dd>
+<dt id="who-iris--kg-bpmn-activities--process_iriscdnsignpublish.task_diff" data-fa-state="extracted" data-fa-gloss="">
+Diff against the published manifest <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p><em>The asset carries no description.</em></p>
+<p class="fa-gloss-meta">BPMN activities of who-iris · source <a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-sign-publish.bpmn"><code>who-iris/processes/iris-cdn-sign-publish.bpmn#Task_Diff</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>fhir</code> · <code>skos</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>skos</code></p>
+</dd>
 <dt id="fhir-harness--kg-bpmn-activities--process_igastdeltareview.task_diff" data-fa-state="extracted" data-fa-gloss="">
 Diff base → head and render the delta pages [ig-ast-delta] <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
@@ -3852,7 +3956,7 @@ Ensure the tracking label exists <span class="fa-gloss-status">candidate, extrac
 ENUMERATE + SUBSET against the source descriptor <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
-<p>Resolve the request against the source's descriptor (one per corpus, in the declared sources/ of the instance that owns it, e.g. who-iris/sources/), read against cat-harness/schemas/source-descriptor.ts BEFORE any gate. Three things come from it and none may be guessed. (1) Which subset strategies the source supports — supportsSubset(). (2) Whether a subset stands on its own: when subsetIsSelfContained is false (mathlib), the request is closed over its dependencies here, and every gate after this one is asked about the CLOSURE, because a subset that omits what its members depend on is not a smaller corpus, it is one that does not build. (3) What enumerating the whole costs — enumerationCost(), which is undefined when the descriptor has no measured denominator; SIZE then refuses rather than estimates. A source with no descriptor is not an error here: it is an unknown, and SIZE refuses on it. Bean w5bn: the descriptor is CALLED here rather than restated.</p>
+<p>Resolve the request against the source's descriptor (one per corpus, in the declared sources/ of the instance that owns it, e.g. who-iris/sources/), read against cat-harness/schemas/library/source-descriptor.ts BEFORE any gate. Three things come from it and none may be guessed. (1) Which subset strategies the source supports — supportsSubset(). (2) Whether a subset stands on its own: when subsetIsSelfContained is false (mathlib), the request is closed over its dependencies here, and every gate after this one is asked about the CLOSURE, because a subset that omits what its members depend on is not a smaller corpus, it is one that does not build. (3) What enumerating the whole costs — enumerationCost(), which is undefined when the descriptor has no measured denominator; SIZE then refuses rather than estimates. A source with no descriptor is not an error here: it is an unknown, and SIZE refuses on it. Bean w5bn: the descriptor is CALLED here rather than restated.</p>
 <p class="fa-gloss-meta">BPMN activities of cat-harness · source <a href="https://github.com/litlfred/cat-harness/blob/main/processes/library/materialize-remote.bpmn"><code>cat-harness/processes/library/materialize-remote.bpmn#Task_Enumerate</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
@@ -3948,7 +4052,7 @@ Extract claim candidates <span class="fa-gloss-status">candidate, extracted</spa
 Extract its metadata into the KG [asset-extraction] <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
-<p>THE METADATA STEP. What enters the knowledge graph is the asset's INDEX — what it is, how big, what type, when it says it was written — and, for a container, what is in it; its contents do not go in unless somebody asks, with a reason. Owner, 2026-09-20: &quot;make sure you have zip ingestion skills to extract metadata of assets into KG. don't extract contents unless explict ask by user.&quot; The tool is <code>cat-harness-tools/scripts/extract-assets.ts</code>, writing a <code>folio-extraction/v1</code> record (<code>schemas/extraction.ts</code>, moved down to this layer in placement PR5). The media type is sniffed from the leading bytes, never taken from the extension.</p>
+<p>THE METADATA STEP. What enters the knowledge graph is the asset's INDEX — what it is, how big, what type, when it says it was written — and, for a container, what is in it; its contents do not go in unless somebody asks, with a reason. Owner, 2026-09-20: &quot;make sure you have zip ingestion skills to extract metadata of assets into KG. don't extract contents unless explict ask by user.&quot; The tool is <code>cat-harness-tools/scripts/extract-assets.ts</code>, writing a <code>folio-extraction/v1</code> record (<code>schemas/content/extraction.ts</code>, moved down to this layer in placement PR5). The media type is sniffed from the leading bytes, never taken from the extension.</p>
 <p class="fa-gloss-meta">BPMN activities of cat-harness · source <a href="https://github.com/litlfred/cat-harness/blob/main/processes/library/document-ingestion.bpmn"><code>cat-harness/processes/library/document-ingestion.bpmn#Task_ExtractMetadata</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
@@ -4009,6 +4113,30 @@ Fetch &amp; Ingest Missing Subgraphs (.nq.gz) <span class="fa-gloss-status">cand
 <p>Fetch missing partition payloads over HTTP (servedRoute) or local files, decompress gzip streams, and ingest quads directly into store.</p>
 <p class="fa-gloss-meta">BPMN activities of cat-harness · source <a href="https://github.com/litlfred/cat-harness/blob/main/processes/kg/named-query-execution.bpmn"><code>cat-harness/processes/kg/named-query-execution.bpmn#A_FetchPartitions</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="who-iris--kg-bpmn-activities--process_iriscdninitialload.task_fetchbitstreams" data-fa-state="extracted" data-fa-gloss="">
+Fetch bitstreams not already held <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>A bitstream is stored under its SHA-256. If that object already exists it is not downloaded again; a re-run of a batch therefore moves no bytes.</p>
+<p class="fa-gloss-meta">BPMN activities of who-iris · source <a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-initial-load.bpmn"><code>who-iris/processes/iris-cdn-initial-load.bpmn#Task_FetchBitstreams</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>fhir</code> · <code>skos</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>skos</code></p>
+</dd>
+<dt id="who-iris--kg-bpmn-activities--process_iriscdnnightly.task_fetchnewbytes" data-fa-state="extracted" data-fa-gloss="">
+Fetch only bitstreams whose checksum changed <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p><em>The asset carries no description.</em></p>
+<p class="fa-gloss-meta">BPMN activities of who-iris · source <a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-nightly.bpmn"><code>who-iris/processes/iris-cdn-nightly.bpmn#Task_FetchNewBytes</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>fhir</code> · <code>skos</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>skos</code></p>
+</dd>
+<dt id="who-iris--kg-bpmn-activities--process_iriscdnnightly.task_fetchchanged" data-fa-state="extracted" data-fa-gloss="">
+Fetch the changed records and bitstream lists <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p><em>The asset carries no description.</em></p>
+<p class="fa-gloss-meta">BPMN activities of who-iris · source <a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-nightly.bpmn"><code>who-iris/processes/iris-cdn-nightly.bpmn#Task_FetchChanged</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>fhir</code> · <code>skos</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>skos</code></p>
 </dd>
 <dt id="cat-harness--kg-bpmn-activities--process_subscribekg.task_validate" data-fa-state="extracted" data-fa-gloss="">
 Fetch the root declaration at the pin, and validate it <span class="fa-gloss-status">candidate, extracted</span>
@@ -4342,6 +4470,14 @@ Hand the culprit back [merge-refusal] <span class="fa-gloss-status">candidate, e
 <p class="fa-gloss-meta">BPMN activities of cat-harness · source <a href="https://github.com/litlfred/cat-harness/blob/main/processes/sdlc/merge-train.bpmn"><code>cat-harness/processes/sdlc/merge-train.bpmn#Call_EjectHandBack</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
+<dt id="who-iris--kg-bpmn-activities--process_iriscdninitialload.task_harvestbatch" data-fa-state="extracted" data-fa-gloss="">
+Harvest a batch of item records (REST) <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>DSpace REST: the item, its metadata, bundles and bitstream descriptors. Written as canonical JSON (sorted keys, LF, no fetch timestamp inside the record) so the same item always serialises to the same bytes.</p>
+<p class="fa-gloss-meta">BPMN activities of who-iris · source <a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-initial-load.bpmn"><code>who-iris/processes/iris-cdn-initial-load.bpmn#Task_HarvestBatch</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>fhir</code> · <code>skos</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>skos</code></p>
+</dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_editing.task_smereview" data-fa-state="extracted" data-fa-gloss="">
 Human / SME review [content-review] <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
@@ -4574,7 +4710,7 @@ Iterate on author feedback <span class="fa-gloss-status">candidate, extracted</s
 Judge domain correctness of worked case or indicator cohort <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
-<p>Performed by the human SME in <code>Lane_SME</code> (<code>clinical-sme</code>, <code>judgementOnly: true</code>). The SME inspects the worked case (for decision support) or the cohort and expected vs computed value (for an indicator definition) and renders a domain verdict (<code>pass</code>, <code>fail</code>, or <code>needs-revision</code>) with rationale. Deliberately carries no skill reference: no procedure yields the answer, which is the whole reason a person is in this lane (<code>bean vljz</code>).</p>
+<p>Performed by the human SME in <code>Lane_SME</code> (<code>clinical-sme</code>, <code>judgementOnly: true</code>). The SME inspects the worked case (for decision support) or the cohort and expected vs computed value (for an indicator definition) and renders a domain verdict (<code>pass</code>, <code>fail</code>, or <code>needs-revision</code>) with rationale. Deliberately carries no skill reference: no procedure yields the answer, which is the whole reason a person is in this lane.</p>
 <p class="fa-gloss-meta">BPMN activities of cat-harness · source <a href="https://github.com/litlfred/cat-harness/blob/main/processes/sdlc/sme-test-data-review.bpmn"><code>cat-harness/processes/sdlc/sme-test-data-review.bpmn#Task_SmeJudge</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
@@ -4758,6 +4894,14 @@ Link to the enterprise architecture <span class="fa-gloss-status">candidate, ext
 <p class="fa-gloss-meta">BPMN activities of smart-base · source <a href="https://github.com/litlfred/smart-base/blob/main/smart-base/methodologies/processes/diig-investment-path.bpmn"><code>smart-base/methodologies/processes/diig-investment-path.bpmn#A_LinkEnterpriseArchitecture</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>smart-base</code> on <code>fhir</code> · <code>skos</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>smart-base</code> on <code>skos</code></p>
 </dd>
+<dt id="who-iris--kg-bpmn-activities--process_iriscdnreconcile.task_listall" data-fa-state="extracted" data-fa-gloss="">
+List every item id IRIS reports <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p><em>The asset carries no description.</em></p>
+<p class="fa-gloss-meta">BPMN activities of who-iris · source <a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-reconcile.bpmn"><code>who-iris/processes/iris-cdn-reconcile.bpmn#Task_ListAll</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>fhir</code> · <code>skos</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>skos</code></p>
+</dd>
 <dt id="smart-base--kg-bpmn-activities--process_planning.task_listindicators" data-fa-state="extracted" data-fa-gloss="">
 List indicators and metrics (Component 8) <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
@@ -4765,6 +4909,14 @@ List indicators and metrics (Component 8) <span class="fa-gloss-status">candidat
 <p><em>The asset carries no description.</em></p>
 <p class="fa-gloss-meta">BPMN activities of smart-base · source <a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/SGAuthoring.DAKLifecycle.bpmn"><code>smart-base/processes/content/SGAuthoring.DAKLifecycle.bpmn#Task_ListIndicators</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>smart-base</code> on <code>fhir</code> · <code>skos</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>smart-base</code> on <code>skos</code></p>
+</dd>
+<dt id="who-iris--kg-bpmn-activities--process_iriscdnnightly.task_listchanged" data-fa-state="extracted" data-fa-gloss="">
+List items changed since the cursor <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Discovery search sorted by lastModified, newest first, paged until a page reaches the cursor (scripts/iris-cdn/rest-feed.ts changedSince). Inclusive of the cursor second, de-duplicated.</p>
+<p class="fa-gloss-meta">BPMN activities of who-iris · source <a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-nightly.bpmn"><code>who-iris/processes/iris-cdn-nightly.bpmn#Task_ListChanged</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>fhir</code> · <code>skos</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>skos</code></p>
 </dd>
 <dt id="bootstrap--kg-bpmn-activities--process_discussion.a_listharnesses" data-fa-state="extracted" data-fa-gloss="">
 List the harnesses this could be <span class="fa-gloss-status">candidate, extracted</span>
@@ -4960,12 +5112,28 @@ Map values onto the shared palette ROLES <span class="fa-gloss-status">candidate
 <p class="fa-gloss-meta">BPMN activities of cat-harness · source <a href="https://github.com/litlfred/cat-harness/blob/main/processes/ui/ingest-theme.bpmn"><code>cat-harness/processes/ui/ingest-theme.bpmn#Task_MapRoles</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
+<dt id="who-iris--kg-bpmn-activities--process_iriscdnreconcile.task_markwithdrawn" data-fa-state="extracted" data-fa-gloss="">
+Mark confirmed items withdrawn (keep bytes) <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>The record gets a withdrawn state; its bitstreams stay addressable, because a citation to them may exist.</p>
+<p class="fa-gloss-meta">BPMN activities of who-iris · source <a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-reconcile.bpmn"><code>who-iris/processes/iris-cdn-reconcile.bpmn#Task_MarkWithdrawn</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>fhir</code> · <code>skos</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>skos</code></p>
+</dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_publiccomment.task_incorporate" data-fa-state="extracted" data-fa-gloss="">
 Mark incorporated when the change set merges <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
 <p>public-comment incorporate, naming the branch, PR and staging URL; done by the folio's workflow when the PR that closes a change-set issue merges. A PR closed unmerged moves nothing.</p>
 <p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/public-comment.bpmn"><code>folio-assistant-core/processes/content/public-comment.bpmn#Task_Incorporate</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="cat-harness--kg-bpmn-activities--process_beandrain.drain_skip" data-fa-state="extracted" data-fa-gloss="">
+Mark it skip on the queue <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Record on the queue file that the bean is held elsewhere, and by whom, so no other drainer takes it next. The bean itself is not touched: closing or noting on someone else's bean is how a sibling loses work it had not finished reporting.</p>
+<p class="fa-gloss-meta">BPMN activities of cat-harness · source <a href="https://github.com/litlfred/cat-harness/blob/main/processes/sdlc/bean-drain.bpmn"><code>cat-harness/processes/sdlc/bean-drain.bpmn#Drain_Skip</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="cat-harness--kg-bpmn-activities--process_requirementsfiling.a_updatelifecycle" data-fa-state="extracted" data-fa-gloss="">
@@ -5324,6 +5492,14 @@ Open or EDIT the one tracking issue <span class="fa-gloss-status">candidate, ext
 <p class="fa-gloss-meta">BPMN activities of cat-harness · source <a href="https://github.com/litlfred/cat-harness/blob/main/processes/sdlc/upstream-pin-watch.bpmn"><code>cat-harness/processes/sdlc/upstream-pin-watch.bpmn#Task_TrackIssue</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
+<dt id="cat-harness--kg-bpmn-activities--process_beandrain.drain_open" data-fa-state="extracted" data-fa-gloss="">
+Open the bean [bean-open] <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Process_BeanOpen on the bean just taken: check it, find out whose it is, and claim it — or leave it alone when another agent holds it. OPEN's check is where the drain's claim check runs (the <code>bean-claim-check</code> Tool, bean n7x7): recent commits on every bean copy and any open PR naming the bean, before the claim. The gateway after this reads which end OPEN reached.</p>
+<p class="fa-gloss-meta">BPMN activities of cat-harness · source <a href="https://github.com/litlfred/cat-harness/blob/main/processes/sdlc/bean-drain.bpmn"><code>cat-harness/processes/sdlc/bean-drain.bpmn#Drain_Open</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
 <dt id="cat-harness--kg-bpmn-activities--process_beanlifecycle.call_beanopen" data-fa-state="extracted" data-fa-gloss="">
 Open the bean [bean-open] <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
@@ -5396,6 +5572,14 @@ Open the bean [bean-open] <span class="fa-gloss-status">candidate, extracted</sp
 <p class="fa-gloss-meta">BPMN activities of cat-harness · source <a href="https://github.com/litlfred/cat-harness/blob/main/processes/library/subscribe-kg.bpmn"><code>cat-harness/processes/library/subscribe-kg.bpmn#Call_BeanOpen</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
+<dt id="cat-harness--kg-bpmn-activities--process_testdatacuration.call_beanopen" data-fa-state="extracted" data-fa-gloss="">
+Open the bean [bean-open] <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Process_BeanOpen: check before you create, find out whose the bean is, and claim it — or leave it alone when it is someone else's. The one place a claim is drawn; the gateway after this reads which end it reached.</p>
+<p class="fa-gloss-meta">BPMN activities of cat-harness · source <a href="https://github.com/litlfred/cat-harness/blob/main/processes/sdlc/test-data-curation.bpmn"><code>cat-harness/processes/sdlc/test-data-curation.bpmn#Call_BeanOpen</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
 <dt id="cat-harness--kg-bpmn-activities--process_testplanexecution.call_beanopen" data-fa-state="extracted" data-fa-gloss="">
 Open the bean [bean-open] <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
@@ -5434,6 +5618,22 @@ Open the bean [bean-open] <span class="fa-gloss-status">candidate, extracted</sp
 <dd>
 <p>Process_BeanOpen: check before you create, find out whose the bean is, and claim it — or leave it alone when it is someone else's. The one place a claim is drawn (bean m8gz, owner 2026-10-24); the gateway after this reads which end it reached.</p>
 <p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/authoring-a-document.bpmn"><code>folio-assistant-core/processes/content/authoring-a-document.bpmn#Call_BeanOpen</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="folio-assistant-core--kg-bpmn-activities--process_dsadocumentlifecycle.call_beanopen" data-fa-state="extracted" data-fa-gloss="">
+Open the bean [bean-open] <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Process_BeanOpen: check before you create, find out whose the bean is, and claim it — or leave it alone when it is someone else's. The one place a claim is drawn (bean m8gz, owner 2026-10-24); the gateway after this reads which end it reached.</p>
+<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/dsa-document-lifecycle.bpmn"><code>folio-assistant-core/processes/content/dsa-document-lifecycle.bpmn#Call_BeanOpen</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="folio-assistant-core--kg-bpmn-activities--process_dsadocumentlifecycle.call_beanopenchange" data-fa-state="extracted" data-fa-gloss="">
+Open the bean [bean-open] <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Process_BeanOpen: check before you create, find out whose the bean is, and claim it — or leave it alone when it is someone else's. The one place a claim is drawn (bean m8gz, owner 2026-10-24); the gateway after this reads which end it reached.</p>
+<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/dsa-document-lifecycle.bpmn"><code>folio-assistant-core/processes/content/dsa-document-lifecycle.bpmn#Call_BeanOpenChange</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_editing.task_claimbean" data-fa-state="extracted" data-fa-gloss="">
@@ -5582,6 +5782,142 @@ Organise entry in docs/requirements/index.md by concern group &amp; status <span
 </h2>
     
 <dl class="fa-gloss">
+<dt id="folio-assistant-core--kg-bpmn-activities--process_dsadocumentlifecycle.task_agreeterms" data-fa-state="extracted" data-fa-gloss="">
+P1.1 · Agree purpose, datasets, period, duties and trust anchors <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>The parties agree the purpose, the datasets, the period, the conditions and duties, which trust anchors each side accepts, and the legal basis the sharing rests on (consent, treatment, public-health law or a research waiver). This sets what the text must say; it is a negotiation between people.</p>
+<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/dsa-document-lifecycle.bpmn"><code>folio-assistant-core/processes/content/dsa-document-lifecycle.bpmn#Task_AgreeTerms</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="folio-assistant-core--kg-bpmn-activities--process_dsadocumentlifecycle.task_writetext" data-fa-state="extracted" data-fa-gloss="">
+P1.2 · Write the legal text [document-authoring] <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Write the agreement as a document folio: one normative statement per clause the parties must keep, through normative-statements. The text says which governs if it and a machine-readable form disagree (suggested: the text).</p>
+<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/dsa-document-lifecycle.bpmn"><code>folio-assistant-core/processes/content/dsa-document-lifecycle.bpmn#Task_WriteText</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="folio-assistant-core--kg-bpmn-activities--process_dsadocumentlifecycle.task_recordlegalbasis" data-fa-state="extracted" data-fa-gloss="">
+P1.2a · Record the legal basis [normative-statements] <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>The text states the legal basis the parties agreed in P1.1 as a normative statement: consent, treatment, public-health law, or a research waiver. Consent rule 1: only an agreement whose legal basis is consent carries the odrl:obtainConsent duty; treatment, public-health law and research waivers do not rest on consent. The gateway that follows, the ODRL and the reviewers all read the basis from this statement.</p>
+<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/dsa-document-lifecycle.bpmn"><code>folio-assistant-core/processes/content/dsa-document-lifecycle.bpmn#Task_RecordLegalBasis</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="folio-assistant-core--kg-bpmn-activities--process_dsadocumentlifecycle.task_plainsummary" data-fa-state="extracted" data-fa-gloss="">
+P1.2b · Draft the plain-language summary [document-authoring] <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Consent-based only. Write a plain-language summary of the agreement in the same document folio: what it lets the recipient do with the person's data, in words the person can read. Consent rule 3: every agreement that needs consent publishes this summary, hashed with the agreement (P2.2a), and the summary is what the person consents to. It is reviewed, rendered and versioned with the text.</p>
+<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/dsa-document-lifecycle.bpmn"><code>folio-assistant-core/processes/content/dsa-document-lifecycle.bpmn#Task_PlainSummary</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="folio-assistant-core--kg-bpmn-activities--process_dsadocumentlifecycle.task_deriveodrl" data-fa-state="extracted" data-fa-gloss="">
+P1.3 · Derive the ODRL 2.2 Agreement <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Computable only. One assigner and one assignee (ODRL 2.2 §2.1.3), permissions and prohibitions with target assets (§2.2), constraints (§2.5.1) and duties (§2.6.3), written as JSON-LD. Purposes from HL7 PurposeOfUse. Consent rule 1: the Agreement carries the odrl:obtainConsent duty only when the legal basis recorded in P1.2a is consent.</p>
+<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/dsa-document-lifecycle.bpmn"><code>folio-assistant-core/processes/content/dsa-document-lifecycle.bpmn#Task_DeriveOdrl</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="folio-assistant-core--kg-bpmn-activities--process_dsadocumentlifecycle.task_checkodrl" data-fa-state="extracted" data-fa-gloss="">
+P1.4 · Check the ODRL against the text [content-review] <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Computable only. A person checks that the ODRL says what the text says, and signs it off. A program can check the ODRL is well formed; it cannot check that it matches the text. The check includes the consent duty: present when the legal basis is consent, absent otherwise (consent rule 1).</p>
+<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/dsa-document-lifecycle.bpmn"><code>folio-assistant-core/processes/content/dsa-document-lifecycle.bpmn#Task_CheckOdrl</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="folio-assistant-core--kg-bpmn-activities--process_dsadocumentlifecycle.task_splitannexes" data-fa-state="extracted" data-fa-gloss="">
+P1.5 · Split public terms from private annexes <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Split the agreement into a public template and private annexes (security controls, named staff). Only the hash of a private annex is ever published.</p>
+<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/dsa-document-lifecycle.bpmn"><code>folio-assistant-core/processes/content/dsa-document-lifecycle.bpmn#Task_SplitAnnexes</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="folio-assistant-core--kg-bpmn-activities--process_dsadocumentlifecycle.task_sign" data-fa-state="extracted" data-fa-gloss="">
+P1.6 · Sign <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>The signatories sign: wet ink, or an electronic signature under national law. Technically a detached JWS (RFC 7515) or CMS (RFC 5652); PAdES for a signed PDF needs the owner's approval.</p>
+<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/dsa-document-lifecycle.bpmn"><code>folio-assistant-core/processes/content/dsa-document-lifecycle.bpmn#Task_Sign</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="folio-assistant-core--kg-bpmn-activities--process_dsadocumentlifecycle.task_decidegrants" data-fa-state="extracted" data-fa-gloss="">
+P14.2 · Decide what happens to existing grants <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Existing grants keep citing the old hash. The parties decide, per agreement: they stay valid until expiry, or they are revoked and reissued against the new version (in smart-trust). The old version stays readable.</p>
+<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/dsa-document-lifecycle.bpmn"><code>folio-assistant-core/processes/content/dsa-document-lifecycle.bpmn#Task_DecideGrants</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="folio-assistant-core--kg-bpmn-activities--process_dsadocumentlifecycle.task_newconsentneeded" data-fa-state="extracted" data-fa-gloss="">
+P14.3 · Record that new consent is needed <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>The amendment widens use, so a Consent citing the old version's URL and hash does not cover the new version (consent rule 2). Record on the bean, and in the new version's text, that new consent is needed; the new version gets its own plain-language summary (P1.2b). Asking each person again is the trust layer's.</p>
+<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/dsa-document-lifecycle.bpmn"><code>folio-assistant-core/processes/content/dsa-document-lifecycle.bpmn#Task_NewConsentNeeded</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="folio-assistant-core--kg-bpmn-activities--process_dsadocumentlifecycle.task_setstatus" data-fa-state="extracted" data-fa-gloss="">
+P14.5 · Set the catalogue status to ended [dsa-catalogue-status] <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Set the life-cycle status of the agreement's DCAT 3 record (DCAT 3 §6.4.30). The published versions stay readable at their URLs.</p>
+<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/dsa-document-lifecycle.bpmn"><code>folio-assistant-core/processes/content/dsa-document-lifecycle.bpmn#Task_SetStatus</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="folio-assistant-core--kg-bpmn-activities--process_dsadocumentlifecycle.task_assignversion" data-fa-state="extracted" data-fa-gloss="">
+P2.1 · Assign the version and its immutable URL [content-publish] <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Each signed version gets its own immutable URL (for example /dsa/42/v3). A 'latest' URL may exist; nothing cites it. A new version never overwrites an old one. This fixed-version URL is the one a Consent cites (consent rule 2), and a computable agreement's ODRL policy uid is set to it (P2.3).</p>
+<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/dsa-document-lifecycle.bpmn"><code>folio-assistant-core/processes/content/dsa-document-lifecycle.bpmn#Task_AssignVersion</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="folio-assistant-core--kg-bpmn-activities--process_dsadocumentlifecycle.task_hash" data-fa-state="extracted" data-fa-gloss="">
+P2.2 · Record the SHA-256 of each file [dsa-checksum] <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Compute SHA-256 (FIPS 180-4) of the signed text, and of the ODRL file if there is one, recorded as DCAT 3 spdx:checksum and verified by check:dsa-hash.</p>
+<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/dsa-document-lifecycle.bpmn"><code>folio-assistant-core/processes/content/dsa-document-lifecycle.bpmn#Task_Hash</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="folio-assistant-core--kg-bpmn-activities--process_dsadocumentlifecycle.task_hashsummary" data-fa-state="extracted" data-fa-gloss="">
+P2.2a · Hash the plain-language summary with the agreement [dsa-checksum] <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Consent-based only. Record the SHA-256 of the plain-language summary beside the agreement's, in the same version (consent rule 3). The summary a person consented to can then be checked against the agreement it summarises; a changed summary is a new version.</p>
+<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/dsa-document-lifecycle.bpmn"><code>folio-assistant-core/processes/content/dsa-document-lifecycle.bpmn#Task_HashSummary</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="folio-assistant-core--kg-bpmn-activities--process_dsadocumentlifecycle.task_consentcitation" data-fa-state="extracted" data-fa-gloss="">
+P2.2b · State the fixed-version URL and hash a Consent cites [content-publish] <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Consent-based only. The version's publication metadata states the fixed-version URL (P2.1) and the hash (P2.2) that a Consent cites in FHIR R4 Consent.policy.uri (consent rule 2), never the 'latest' URL. For a computable agreement that URL is also the ODRL policy uid (P2.3): a Consent counts only when its Consent.policy.uri equals the agreement's ODRL policy uid, so the two are the same string.</p>
+<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/dsa-document-lifecycle.bpmn"><code>folio-assistant-core/processes/content/dsa-document-lifecycle.bpmn#Task_ConsentCitation</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="folio-assistant-core--kg-bpmn-activities--process_dsadocumentlifecycle.task_odrlcitestext" data-fa-state="extracted" data-fa-gloss="">
+P2.3 · Make the ODRL cite the text by URL and hash [dsa-odrl-source] <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>The ODRL policy names the signed text distribution with dcterms:source (DCMI Terms), pointing at the immutable URL whose spdx:checksum was just recorded. Its uid is that same fixed-version URL, the URL a Consent cites in Consent.policy.uri (consent rule 2).</p>
+<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/dsa-document-lifecycle.bpmn"><code>folio-assistant-core/processes/content/dsa-document-lifecycle.bpmn#Task_OdrlCitesText</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="folio-assistant-core--kg-bpmn-activities--process_dsadocumentlifecycle.task_catalogue" data-fa-state="extracted" data-fa-gloss="">
+P2.4–5 · Write the DCAT 3 record and link versions [dsa-dcat-record] <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>One DCAT 3 record: the agreement as a catalogued resource, each file a dcat:Distribution with dcat:downloadURL and spdx:checksum; datasets it covers carry odrl:hasPolicy. Versions are linked with DCAT 3 versioning (previous version, version, current version).</p>
+<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/dsa-document-lifecycle.bpmn"><code>folio-assistant-core/processes/content/dsa-document-lifecycle.bpmn#Task_Catalogue</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
 <dt id="cat-harness--kg-bpmn-activities--process_kgtoportal.a_package" data-fa-state="extracted" data-fa-gloss="">
 Package: files plus a manifest of digests <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
@@ -5733,6 +6069,14 @@ Place the asset in library/&lt;slug&gt;/ [library-ingestion] <span class="fa-glo
 <p>The materialized branch. The asset lands in library/&lt;slug&gt;/ with its metadata record, its provenance and its fixity. The folder name IS the citation key, so a citation and a directory are the same string. The upload is then RETIRED, not left and not deleted: it moves to fsh-guts/uploads/ beside a sidecar naming where it came from and when (owner, 2026-09-29), and <code>check:uploads-retired</code> finds one that was not. A refining process that derives content from the bytes does so before that retirement; <code>library-ingestion</code> carries the rule.</p>
 <p class="fa-gloss-meta">BPMN activities of cat-harness · source <a href="https://github.com/litlfred/cat-harness/blob/main/processes/library/document-ingestion.bpmn"><code>cat-harness/processes/library/document-ingestion.bpmn#Task_PlaceInLibrary</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="who-iris--kg-bpmn-activities--process_iriscdninitialload.task_planbatches" data-fa-state="extracted" data-fa-gloss="">
+Plan batches by community and collection <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>One batch per collection (large collections split by page). The plan and its progress are a checkpoint file in the Cloudflare git repository (state/initial-load.json); restarting reads it and skips finished batches.</p>
+<p class="fa-gloss-meta">BPMN activities of who-iris · source <a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-initial-load.bpmn"><code>who-iris/processes/iris-cdn-initial-load.bpmn#Task_PlanBatches</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>fhir</code> · <code>skos</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>skos</code></p>
 </dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_lifecycle.task_plan" data-fa-state="extracted" data-fa-gloss="">
 Plan scope, team, artifacts [content-plan] <span class="fa-gloss-status">candidate, extracted</span>
@@ -5950,6 +6294,14 @@ Public comment on the review version <span class="fa-gloss-status">candidate, ex
 <p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/draft-to-publication.bpmn"><code>folio-assistant-core/processes/content/draft-to-publication.bpmn#CallActivity_PublicComment</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
+<dt id="folio-assistant-core--kg-bpmn-activities--process_dsadocumentlifecycle.call_publiccomment" data-fa-state="extracted" data-fa-gloss="">
+Public comment on the template [public-comment] <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Comments on the frozen, line-numbered review version of the public template are placed, triaged, weighed and decided (public-comment.bpmn). Private annexes are never circulated.</p>
+<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/dsa-document-lifecycle.bpmn"><code>folio-assistant-core/processes/content/dsa-document-lifecycle.bpmn#Call_PublicComment</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
 <dt id="cat-harness--kg-bpmn-activities--process_nquadsdistribution.a_deploypages" data-fa-state="extracted" data-fa-gloss="">
 Publish Distribution via 'served: true' to Pages <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
@@ -5972,6 +6324,14 @@ Publish the IG site [content-publish] <span class="fa-gloss-status">candidate, e
 <dd>
 <p>Release authorisation and review follow draft-to-publication.bpmn.</p>
 <p class="fa-gloss-meta">BPMN activities of fhir-harness · source <a href="https://github.com/litlfred/fhir-harness/blob/main/processes/content/l3-fhir-pipeline.bpmn"><code>fhir-harness/processes/content/l3-fhir-pipeline.bpmn#Task_PublishIg</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="folio-assistant-core--kg-bpmn-activities--process_dsadocumentlifecycle.task_publish" data-fa-state="extracted" data-fa-gloss="">
+Publish the version at its URL [content-publish] <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Publish the files at the version's immutable URL. If the parties' names are sensitive, publish only the template and the hash of the signed instance. A consent-based agreement publishes its plain-language summary and its hash with the text (consent rule 3). Check before publishing (consent rule 2): a computable agreement's ODRL policy uid equals this version's fixed-version URL, the URL a Consent cites; if they differ, the version is not published.</p>
+<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/dsa-document-lifecycle.bpmn"><code>folio-assistant-core/processes/content/dsa-document-lifecycle.bpmn#Task_Publish</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="cat-harness--kg-bpmn-activities--process_kgtoportal.a_distribute" data-fa-state="extracted" data-fa-gloss="">
@@ -6040,6 +6400,14 @@ QC gates on the aggregate QA [quality-control] <span class="fa-gloss-status">can
 <p class="fa-gloss-meta">BPMN activities of fhir-harness · source <a href="https://github.com/litlfred/fhir-harness/blob/main/processes/content/ig-incremental-build.bpmn"><code>fhir-harness/processes/content/ig-incremental-build.bpmn#Task_Qa</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
+<dt id="who-iris--kg-bpmn-activities--process_iriscdninitialload.task_quarantine" data-fa-state="extracted" data-fa-gloss="">
+Quarantine and report the mismatch <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Not published, not retried silently. The record keeps its reference to IRIS and the bitstream is marked unknown.</p>
+<p class="fa-gloss-meta">BPMN activities of who-iris · source <a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-initial-load.bpmn"><code>who-iris/processes/iris-cdn-initial-load.bpmn#Task_Quarantine</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>fhir</code> · <code>skos</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>skos</code></p>
+</dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_evidenceretrieval.task_datarepos" data-fa-state="extracted" data-fa-gloss="">
 Query data repositories and statistical datasets <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
@@ -6090,6 +6458,14 @@ Raise the window the reader selected <span class="fa-gloss-status">candidate, ex
 <p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/ui/board-open-close.bpmn"><code>folio-assistant-core/processes/ui/board-open-close.bpmn#A_Raise</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
+<dt id="who-iris--kg-bpmn-activities--process_iriscdnreconcile.task_recheck" data-fa-state="extracted" data-fa-gloss="">
+Re-check each missing item by id <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p><em>The asset carries no description.</em></p>
+<p class="fa-gloss-meta">BPMN activities of who-iris · source <a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-reconcile.bpmn"><code>who-iris/processes/iris-cdn-reconcile.bpmn#Task_Recheck</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>fhir</code> · <code>skos</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>skos</code></p>
+</dd>
 <dt id="cat-harness--kg-bpmn-activities--process_mergerefusal.task_retrain" data-fa-state="extracted" data-fa-gloss="">
 Re-enter a train on the new head <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
@@ -6126,7 +6502,7 @@ Re-materialize, re-asking the five gates — and record the new fixity <span cla
 Re-pin downstream mounts, as PRs <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
-<p>For each instance whose index.config.json mounts this repository: a PR moving <code>ref</code> to the merge commit, with a trust.consent whose evidence quotes the owner's consent to that pin, and the lock regenerated by <code>mount:remote</code>. Each re-pin PR is itself a merge to main and runs this process again. None found is recorded with where it looked.</p>
+<p>For each instance whose index.config.json mounts this repository: a PR moving <code>ref</code> to the merge commit, with a trust.consent whose evidence quotes the owner's consent to that pin, and the lock regenerated by <code>mount:remote</code>. Each re-pin PR is itself a merge to main and runs this process again. When the re-pin moves a layer whose <code>software-library</code> nodes are derived at the pin (bootstrap-tools, whose nodes cat-harness-tools holds in <code>libraries/held/</code>), the same PR runs <code>bun run cat libraries:derive</code>, and <code>libraries:check</code> fails until it does (owner, 2026-10-30, bootstrap-tools#44). None found is recorded with where it looked.</p>
 <p class="fa-gloss-meta">BPMN activities of cat-harness · source <a href="https://github.com/litlfred/cat-harness/blob/main/processes/sdlc/merge-to-main.bpmn"><code>cat-harness/processes/sdlc/merge-to-main.bpmn#Task_Repin</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
@@ -6152,6 +6528,14 @@ Re-render the cone's records (fhir_narrative · skip lists) <span class="fa-glos
 <dd>
 <p>Narrative and fragments for the cone only: the publisher's -no-validate / -no-narrative complements today, Rapido's differential build once its tracker is persisted.</p>
 <p class="fa-gloss-meta">BPMN activities of fhir-harness · source <a href="https://github.com/litlfred/fhir-harness/blob/main/processes/content/ig-incremental-build.bpmn"><code>fhir-harness/processes/content/ig-incremental-build.bpmn#Task_Render</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="folio-assistant-core--kg-bpmn-activities--process_publiccomment.task_reroutechangeset" data-fa-state="extracted" data-fa-gloss="">
+Re-route a change-set to another committee, with a reason <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>public-comment-changesets reroute, or cs-committee: &lt;TWG&gt; — &lt;why&gt; on GitHub from a person in the committee or editor lane (bean se3i, issue #197). Moves the change-set to another TWG review committee and records who, when, from, to and why on the change-set record, so re-ingesting comments never resets it. Person-only (userTask): agents cannot re-route a change-set on their own.</p>
+<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/public-comment.bpmn"><code>folio-assistant-core/processes/content/public-comment.bpmn#Task_RerouteChangeSet</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="cat-harness--kg-bpmn-activities--process_stalledagenttriage.s_reroute" data-fa-state="extracted" data-fa-gloss="">
@@ -6193,6 +6577,14 @@ Read the built Questionnaire JSON <span class="fa-gloss-status">candidate, extra
 <p>fsh-generated/resources/Questionnaire-&lt;id&gt;.json, or the IG's published Questionnaire-&lt;id&gt;.json — never FSH. The JSON is what every renderer and reader receives, so it is what is judged.</p>
 <p class="fa-gloss-meta">BPMN activities of fhir-harness · source <a href="https://github.com/litlfred/fhir-harness/blob/main/processes/content/questionnaire-wireframe-review.bpmn"><code>fhir-harness/processes/content/questionnaire-wireframe-review.bpmn#Task_Read</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="who-iris--kg-bpmn-activities--process_iriscdnnightly.task_readcursor" data-fa-state="extracted" data-fa-gloss="">
+Read the cursor of the last published run <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>state/cursor.json in the Cloudflare git repository: the lastModified of the newest item in the last VERIFIED release. Advanced only after a publish verifies.</p>
+<p class="fa-gloss-meta">BPMN activities of who-iris · source <a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-nightly.bpmn"><code>who-iris/processes/iris-cdn-nightly.bpmn#Task_ReadCursor</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>fhir</code> · <code>skos</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>skos</code></p>
 </dd>
 <dt id="bootstrap--kg-bpmn-activities--process_completeinitialization.a_readdeclarations" data-fa-state="extracted" data-fa-gloss="">
 Read the declaration, and each one it needs <span class="fa-gloss-status">candidate, extracted</span>
@@ -6270,7 +6662,7 @@ Read the repository facts <span class="fa-gloss-status">candidate, extracted</sp
 Read the served stylesheet's declarations <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
-<p>Read the ROLE, never the prettiest value. Bootstrap's --blue is a scale entry and --primary is the role; DSpace sets them differently, and taking the brand-looking one is the hardcoding schemas/theme.ts exists to end. Column widths come from declared columns, never from breakpoints: a breakpoint is a viewport.</p>
+<p>Read the ROLE, never the prettiest value. Bootstrap's --blue is a scale entry and --primary is the role; DSpace sets them differently, and taking the brand-looking one is the hardcoding schemas/ui/theme.ts exists to end. Column widths come from declared columns, never from breakpoints: a breakpoint is a viewport.</p>
 <p class="fa-gloss-meta">BPMN activities of cat-harness · source <a href="https://github.com/litlfred/cat-harness/blob/main/processes/ui/ingest-theme.bpmn"><code>cat-harness/processes/ui/ingest-theme.bpmn#Task_ReadStylesheet</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
@@ -6298,6 +6690,14 @@ Read what each location already is <span class="fa-gloss-status">candidate, extr
 <p class="fa-gloss-meta">BPMN activities of bootstrap · source <a href="https://github.com/litlfred/bootstrap/blob/main/processes/initialize-harness.bpmn"><code>bootstrap/processes/initialize-harness.bpmn#A_ReadLocation</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
+<dt id="cat-harness--kg-bpmn-activities--process_mergetomain.task_republish" data-fa-state="extracted" data-fa-gloss="">
+Rebuild and republish the repository's site <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>A merge that changes what a published site shows is not done until the site shows it (owner, 2026-10-30: &quot;merged PRs by agent should trigger page rebuild in process&quot;). When the merged repository declares <code>site.build</code> in its <code>index.config.json</code>, the merging session rebuilds the site from the merge commit and publishes it: <code>bun run cat-harness-tools/scripts/build-instance-site.ts --root . --instance &lt;name&gt; --publish --remote &lt;repository&gt;</code>. It is agent-run, never a GitHub Actions workflow (owner). The build's own gates stay in force: an unresolved link refuses the publish, and the refusal is reported on the issue and fixed forward, never published over. A repository whose site is published by its own workflow (docs-site-publish) needs nothing here. A repository that declares no <code>site.build</code> records &quot;no site to republish&quot;.</p>
+<p class="fa-gloss-meta">BPMN activities of cat-harness · source <a href="https://github.com/litlfred/cat-harness/blob/main/processes/sdlc/merge-to-main.bpmn"><code>cat-harness/processes/sdlc/merge-to-main.bpmn#Task_Republish</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_contentchangereview.task_rebuildmain" data-fa-state="extracted" data-fa-gloss="">
 Rebuild main site <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
@@ -6313,6 +6713,22 @@ Rebuild the meta-index (ig_metaindex_rebuild) <span class="fa-gloss-status">cand
 <p>The whole-IG aggregates only — artifacts, TOC, canonicals, expansions, package, QA aggregate. Never re-derives an artefact: a missing record is a miss (exit 1), not a silent rebuild.</p>
 <p class="fa-gloss-meta">BPMN activities of fhir-harness · source <a href="https://github.com/litlfred/fhir-harness/blob/main/processes/content/ig-incremental-build.bpmn"><code>fhir-harness/processes/content/ig-incremental-build.bpmn#Task_Index</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="who-iris--kg-bpmn-activities--process_iriscdnnightly.call_rebuild" data-fa-state="extracted" data-fa-gloss="">
+Rebuild the whole graph (sorted output) <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p><em>The asset carries no description.</em></p>
+<p class="fa-gloss-meta">BPMN activities of who-iris · source <a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-nightly.bpmn"><code>who-iris/processes/iris-cdn-nightly.bpmn#Call_Rebuild</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>fhir</code> · <code>skos</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>skos</code></p>
+</dd>
+<dt id="who-iris--kg-bpmn-activities--process_iriscdnreconcile.call_rebuild" data-fa-state="extracted" data-fa-gloss="">
+Rebuild the whole graph (sorted output) <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p><em>The asset carries no description.</em></p>
+<p class="fa-gloss-meta">BPMN activities of who-iris · source <a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-reconcile.bpmn"><code>who-iris/processes/iris-cdn-reconcile.bpmn#Call_Rebuild</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>fhir</code> · <code>skos</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>skos</code></p>
 </dd>
 <dt id="cat-harness--kg-bpmn-activities--process_humantranslation.task_receiveassignment" data-fa-state="extracted" data-fa-gloss="">
 Receive assignment and materials <span class="fa-gloss-status">candidate, extracted</span>
@@ -6438,7 +6854,7 @@ Record requirement-signoff attestation and set stage <span class="fa-gloss-statu
 Record sme-case-verdict/1.0.0 with SME identity, date, verdict and rationale <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
-<p>Write the <code>sme-case-verdict/1.0.0</code> node (<code>SmeCaseVerdictKind</code> in <code>schemas/test-data.ts</code>) recording <code>dataSetRef</code>, <code>subjectKind</code>, the worked <code>case</code> or <code>cohort</code>, <code>verdict</code>, <code>rationale</code>, the SME's attributable human identity (<code>reviewer: &#123; kind: &quot;human&quot;, provider, handle, role }</code>), and <code>reviewedAt</code> (ISO-8601 date/timestamp).</p>
+<p>Write the <code>sme-case-verdict/1.0.0</code> node (<code>SmeCaseVerdictKind</code> in <code>schemas/sdlc/test-data.ts</code>) recording <code>dataSetRef</code>, <code>subjectKind</code>, the worked <code>case</code> or <code>cohort</code>, <code>verdict</code>, <code>rationale</code>, the SME's attributable human identity (<code>reviewer: &#123; kind: &quot;human&quot;, provider, handle, role }</code>), and <code>reviewedAt</code> (ISO-8601 date/timestamp).</p>
 <p class="fa-gloss-meta">BPMN activities of cat-harness · source <a href="https://github.com/litlfred/cat-harness/blob/main/processes/sdlc/sme-test-data-review.bpmn"><code>cat-harness/processes/sdlc/sme-test-data-review.bpmn#Task_RecordCaseVerdict</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
@@ -6678,7 +7094,7 @@ Record which route signed it <span class="fa-gloss-status">candidate, extracted<
 Record who authorised, when, and the quote <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
-<p>Before the merge, in the shape of <code>ReleaseSchema</code> (schemas/merge-queue.ts): verdict, decidedBy (the person), decidedAt, authority (explicit, standing ruling with its date, or waiver id), the quote verbatim with its source, releasedSha (the head approved; a later push voids it) and capturedBy (this session). Where the merge queue exists, <code>merge:queue:decide</code> writes and validates it; elsewhere it is a <code>merge-authorised:</code> comment on the PR and a note on the bean, with the CI state (green, or none with the local gate commands). A paraphrase is not evidence.</p>
+<p>Before the merge, in the shape of <code>ReleaseSchema</code> (schemas/sdlc/merge-queue.ts): verdict, decidedBy (the person), decidedAt, authority (explicit, standing ruling with its date, or waiver id), the quote verbatim with its source, releasedSha (the head approved; a later push voids it) and capturedBy (this session). Where the merge queue exists, <code>merge:queue:decide</code> writes and validates it; elsewhere it is a <code>merge-authorised:</code> comment on the PR and a note on the bean, with the CI state (green, or none with the local gate commands). A paraphrase is not evidence.</p>
 <p class="fa-gloss-meta">BPMN activities of cat-harness · source <a href="https://github.com/litlfred/cat-harness/blob/main/processes/sdlc/merge-to-main.bpmn"><code>cat-harness/processes/sdlc/merge-to-main.bpmn#Task_RecordAuthorisation</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
@@ -6704,6 +7120,14 @@ Record x,y for this note on THIS board <span class="fa-gloss-status">candidate, 
 <dd>
 <p>Record the note's x,y in the layout layer for THIS board, naming the note by id. An existing card dragged here only gets a new position — placing is not creating, so no content is duplicated.</p>
 <p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/ui/board-place-note.bpmn"><code>folio-assistant-core/processes/ui/board-place-note.bpmn#A_Place</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="cat-harness--kg-bpmn-activities--process_beandrain.drain_refill" data-fa-state="extracted" data-fa-gloss="">
+Refill from the deepest queue <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Refresh the queue file from every bean copy — beans closed, claimed or unblocked since it was built change it — and move beans from the deepest owner's list to the drainer that ran dry. The <code>drain-queue</code> Tool (bean n7x7) rebuilds the queue; until it is defined, the step is the skill's.</p>
+<p class="fa-gloss-meta">BPMN activities of cat-harness · source <a href="https://github.com/litlfred/cat-harness/blob/main/processes/sdlc/bean-drain.bpmn"><code>cat-harness/processes/sdlc/bean-drain.bpmn#Drain_Refill</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="cat-harness--kg-bpmn-activities--process_sessionstatemachine.a_touch" data-fa-state="extracted" data-fa-gloss="">
@@ -6872,6 +7296,14 @@ Render the method: adopted vs refused <span class="fa-gloss-status">candidate, e
 <dd>
 <p>What the source says, section by section, then a table of what this platform adopts and what it refuses, each with a reason. Extensions beyond the source (such as web plus mobile where the paper studied mobile) are stated as ours. Reported results are not imported as facts.</p>
 <p class="fa-gloss-meta">BPMN activities of cat-harness · source <a href="https://github.com/litlfred/cat-harness/blob/main/processes/library/methodology-from-source.bpmn"><code>cat-harness/processes/library/methodology-from-source.bpmn#A_Render</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="folio-assistant-core--kg-bpmn-activities--process_dsadocumentlifecycle.task_render" data-fa-state="extracted" data-fa-gloss="">
+Render the text to HTML / PDF [document-publishing] <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Render the agreed text to the form that will be signed (HTML and PDF), without a TeX installation. A consent-based agreement's plain-language summary is rendered with it.</p>
+<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/dsa-document-lifecycle.bpmn"><code>folio-assistant-core/processes/content/dsa-document-lifecycle.bpmn#Task_Render</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="fhir-harness--kg-bpmn-activities--process_questionnairewireframereview.task_render" data-fa-state="extracted" data-fa-gloss="">
@@ -7058,6 +7490,14 @@ Resolve by hand, then regenerate <span class="fa-gloss-status">candidate, extrac
 <p class="fa-gloss-meta">BPMN activities of cat-harness · source <a href="https://github.com/litlfred/cat-harness/blob/main/processes/sdlc/merge-base.bpmn"><code>cat-harness/processes/sdlc/merge-base.bpmn#Task_ByHand</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
+<dt id="who-iris--kg-bpmn-activities--process_iriscdnsignpublish.task_verify" data-fa-state="extracted" data-fa-gloss="">
+Resolve did:web; verify JWS and digests <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>scripts/iris-cdn/signing.ts verifyDetached against the DID document fetched from its did:web URL, then a sample of payload digests.</p>
+<p class="fa-gloss-meta">BPMN activities of who-iris · source <a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-sign-publish.bpmn"><code>who-iris/processes/iris-cdn-sign-publish.bpmn#Task_Verify</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>fhir</code> · <code>skos</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>skos</code></p>
+</dd>
 <dt id="cat-harness--kg-bpmn-activities--process_mergebase.task_resolve" data-fa-state="extracted" data-fa-gloss="">
 Resolve each by its declared strategy <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
@@ -7086,7 +7526,7 @@ Resolve the kind's zoom threshold <span class="fa-gloss-status">candidate, extra
 Resolve the performer's reach [effectiveReach + signing-api probe] <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
-<p>Compute the two facts the gateway reads: effectiveReach(deployment, actor) from schemas/actor-reach.ts, and whether the signing-api capability is configured. Undeclared reach resolves to &quot;unknown&quot; rather than to the deployment's value — an aggregate does not determine a member.</p>
+<p>Compute the two facts the gateway reads: effectiveReach(deployment, actor) from schemas/process/actor-reach.ts, and whether the signing-api capability is configured. Undeclared reach resolves to &quot;unknown&quot; rather than to the deployment's value — an aggregate does not determine a member.</p>
 <p class="fa-gloss-meta">BPMN activities of cat-harness · source <a href="https://github.com/litlfred/cat-harness/blob/main/processes/sdlc/qa-report-signing.bpmn"><code>cat-harness/processes/sdlc/qa-report-signing.bpmn#Task_ResolveReach</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
@@ -7150,7 +7590,7 @@ Restore the OPEN PRs' staging previews <span class="fa-gloss-status">candidate, 
 Restricted checkout of the backward cone <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
-<p>git sparse-checkout of the cone's files plus sushi-config.yaml, ig.ini and the alias files — a median of three files, p90 eleven, on smart-immunizations.</p>
+<p>git sparse-checkout of the cone's files plus sushi-config.yaml, ig.ini and the alias files — a median of three files, p90 eleven, measured on the SMART Immunizations IG.</p>
 <p class="fa-gloss-meta">BPMN activities of fhir-harness · source <a href="https://github.com/litlfred/fhir-harness/blob/main/processes/content/ig-incremental-build.bpmn"><code>fhir-harness/processes/content/ig-incremental-build.bpmn#Task_Checkout</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
@@ -7198,7 +7638,7 @@ Retrieve for each sub-question <span class="fa-gloss-status">candidate, extracte
 Retrieve the npm package or tarball <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
-<p>An <code>npm</code> source (<code>schemas/subgraph-source.ts</code>, <code>npm-kg-distribution</code>): an npm package specifier or tarball path (<code>.tgz</code>). <code>kg-retrieve-npm</code> or <code>npm</code> fetches and unpacks the package contents into the declared path.</p>
+<p>An <code>npm</code> source (<code>schemas/kg/subgraph-source.ts</code>, <code>npm-kg-distribution</code>): an npm package specifier or tarball path (<code>.tgz</code>). <code>kg-retrieve-npm</code> or <code>npm</code> fetches and unpacks the package contents into the declared path.</p>
 <p class="fa-gloss-meta">BPMN activities of cat-harness · source <a href="https://github.com/litlfred/cat-harness/blob/main/processes/kg/mount-subgraph.bpmn"><code>cat-harness/processes/kg/mount-subgraph.bpmn#Task_RetrieveNpmPackage</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
@@ -7217,6 +7657,14 @@ Return for correction with annotations <span class="fa-gloss-status">candidate, 
 <p>The reviewer annotates specific passages that need correction and returns to the translator with detailed feedback. Each annotation includes: - The passage in question - What is wrong (terminology, meaning, style) - The suggested correction or reference</p>
 <p class="fa-gloss-meta">BPMN activities of cat-harness · source <a href="https://github.com/litlfred/cat-harness/blob/main/processes/library/human-translation-workflow.bpmn"><code>cat-harness/processes/library/human-translation-workflow.bpmn#Task_ReturnForCorrection</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="who-iris--kg-bpmn-activities--process_iriscdnsignpublish.task_revert" data-fa-state="extracted" data-fa-gloss="">
+Revert to the previous release <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p><em>The asset carries no description.</em></p>
+<p class="fa-gloss-meta">BPMN activities of who-iris · source <a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-sign-publish.bpmn"><code>who-iris/processes/iris-cdn-sign-publish.bpmn#Task_Revert</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>fhir</code> · <code>skos</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>skos</code></p>
 </dd>
 <dt id="smart-base--kg-bpmn-activities--process_planning.task_preparerelease" data-fa-state="extracted" data-fa-gloss="">
 Review changes and determine version number <span class="fa-gloss-status">candidate, extracted</span>
@@ -7362,6 +7810,14 @@ Review the change set on its staging preview <span class="fa-gloss-status">candi
 <p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/public-comment.bpmn"><code>folio-assistant-core/processes/content/public-comment.bpmn#CallActivity_ChangeSet</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
+<dt id="folio-assistant-core--kg-bpmn-activities--process_dsadocumentlifecycle.task_review" data-fa-state="extracted" data-fa-gloss="">
+Review the draft agreement [content-review] <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Legal and policy review of the whole draft. Reviewers comment on blocks through review-comments; review says which review skill answers which question. For a consent-based agreement the reviewers also check that the plain-language summary says what the text says, since it is what the person consents to (consent rule 3).</p>
+<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/dsa-document-lifecycle.bpmn"><code>folio-assistant-core/processes/content/dsa-document-lifecycle.bpmn#Task_Review</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_publication.task_reviewdraft" data-fa-state="extracted" data-fa-gloss="">
 Review the draft publication [content-review] <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
@@ -7394,6 +7850,14 @@ Review the guidance already in this content [content-review] <span class="fa-glo
 <p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/evidence-retrieval.bpmn"><code>folio-assistant-core/processes/content/evidence-retrieval.bpmn#Task_ReviewExisting</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
+<dt id="who-iris--kg-bpmn-activities--process_iriscdninitialload.task_reviewload" data-fa-state="extracted" data-fa-gloss="">
+Review the load report; open beans for gaps <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p><em>The asset carries no description.</em></p>
+<p class="fa-gloss-meta">BPMN activities of who-iris · source <a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-initial-load.bpmn"><code>who-iris/processes/iris-cdn-initial-load.bpmn#Task_ReviewLoad</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>fhir</code> · <code>skos</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>skos</code></p>
+</dd>
 <dt id="cat-harness--kg-bpmn-activities--process_upstreamadoption.r_review" data-fa-state="extracted" data-fa-gloss="">
 Review the MVP against what we bind to <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
@@ -7401,6 +7865,14 @@ Review the MVP against what we bind to <span class="fa-gloss-status">candidate, 
 <p>A narrower question than &quot;is the new version good&quot;: does everything in <code>binds</code> still hold, checked against the deployed page. A <code>userTask</code>, and the lane admits <code>person</code> and <code>agent</code> — a review agent is a legitimate reviewer here, and the separation that matters is the next lane's: a reviewer cannot accept.</p>
 <p class="fa-gloss-meta">BPMN activities of cat-harness · source <a href="https://github.com/litlfred/cat-harness/blob/main/processes/sdlc/upstream-version-adoption.bpmn"><code>cat-harness/processes/sdlc/upstream-version-adoption.bpmn#R_Review</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="who-iris--kg-bpmn-activities--process_iriscdnnightly.task_review" data-fa-state="extracted" data-fa-gloss="">
+Review the run report; open beans for anomalies <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Anomalies: a change count far from the recent median, quarantined bitstreams, a verification that came back unknown, a partition over its size ceiling.</p>
+<p class="fa-gloss-meta">BPMN activities of who-iris · source <a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-nightly.bpmn"><code>who-iris/processes/iris-cdn-nightly.bpmn#Task_Review</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>fhir</code> · <code>skos</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>skos</code></p>
 </dd>
 <dt id="cat-harness--kg-bpmn-activities--process_codereview.task_reviewschema" data-fa-state="extracted" data-fa-gloss="">
 Review the schema definition node <span class="fa-gloss-status">candidate, extracted</span>
@@ -7472,6 +7944,14 @@ Revise the proposed change [content-author] <span class="fa-gloss-status">candid
 <dd>
 <p>The editor chose revise: rework the proposed change against the findings the editor reviewed, then send it back through validation as a new proposal. The before/after preview is refreshed with it (skill before-after-preview).</p>
 <p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/editing-hci-validation.bpmn"><code>folio-assistant-core/processes/content/editing-hci-validation.bpmn#Task_ReviseEdit</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="folio-assistant-core--kg-bpmn-activities--process_dsadocumentlifecycle.task_endduties" data-fa-state="extracted" data-fa-gloss="">
+Revoke grants and start end-of-agreement duties <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>All grants are revoked (P13) and the end-of-agreement duties start: return or delete the data, then check them (P12). Those are server processes in smart-trust; this step records that the parties started them.</p>
+<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/dsa-document-lifecycle.bpmn"><code>folio-assistant-core/processes/content/dsa-document-lifecycle.bpmn#Task_EndDuties</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="cat-harness--kg-bpmn-activities--process_codechangereview.task_diagnose" data-fa-state="extracted" data-fa-gloss="">
@@ -7582,7 +8062,7 @@ Run reuse-first lookup and record candidates [classify-and-code-content · recom
 Run the component's checker [content-validate · content-test] <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
-<p>The mechanical checks for this component, before anyone is asked (skill l2-component-edit-review, column &quot;checker&quot;): BPMN imports in bpmn-js with no warnings and its lanes map to personas (dak-swimlanes.ts); DMN loads, its decisions are reachable (artefact-reachability, audit:reachability) and its test cases run (content-test); the data dictionary's ids are unique and its references and terminology bindings resolve (check-dak-annexes.ts); personas, scenarios and requirements each trace to an L1 recommendation (recommendation-extraction's implementedBy edges). Findings travel with the review request; a failing check does not stop the hand-on, it is a finding the reviewer sees.</p>
+<p>The mechanical checks for this component, before anyone is asked (skill l2-component-edit-review, column &quot;checker&quot;): BPMN imports in bpmn-js with no warnings and its lanes map to personas (dak-swimlanes.ts); DMN loads, its decisions are reachable (artefact-reachability, audit:reachability) and its test cases run (content-test); the data dictionary web annex's ids are unique and its references and terminology bindings resolve (check-web-annexes.ts); personas, scenarios and requirements each trace to an L1 recommendation (recommendation-extraction's implementedBy edges). Findings travel with the review request; a failing check does not stop the hand-on, it is a finding the reviewer sees.</p>
 <p class="fa-gloss-meta">BPMN activities of smart-base · source <a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/l2-component-edit-review.bpmn"><code>smart-base/processes/content/l2-component-edit-review.bpmn#Task_Check</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>smart-base</code> on <code>fhir</code> · <code>skos</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>smart-base</code> on <code>skos</code></p>
 </dd>
@@ -7704,7 +8184,7 @@ Say where it will be <span class="fa-gloss-status">candidate, extracted</span>
 Scaffold the folio (folio_init) <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
-<p>content/, uploads/, library/, the first manifests, &lt;slug&gt;.json and index.config.json (the instance's config inline in its entry; no &lt;slug&gt;.config.json, bean ymvt), the builder shim, AGENTS.md with its stubs, .mcp.json, the session-start hook and the beans store. Refuses rather than overwrites when a folio is already present.</p>
+<p>content/, uploads/, library/, the first manifests, &lt;slug&gt;.json and index.config.json (the instance's config inline in its entry; no &lt;slug&gt;.config.json, bean ymvt), the builder shim, AGENTS.md with its stubs, .mcp.json, the session-start hook and the beans store. On the overlay path it declares in index.config.json exactly the markers picked at Task_ChooseHarnessed, and none it was not given. Refuses rather than overwrites when a folio is already present.</p>
 <p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/conduct/getting-started.bpmn"><code>folio-assistant-core/processes/conduct/getting-started.bpmn#Task_Scaffold</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
@@ -7728,7 +8208,7 @@ Scan the environment opportunities and threats <span class="fa-gloss-status">can
 Scan the repo for content worth importing <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
-<p>Read-only. Classifies candidates into library/ (external source) and content/ (authored here), and reports what it could not classify as its own bucket rather than forcing every file into one of the two.</p>
+<p>Read-only. Classifies candidates into library/ (external source) and content/ (authored here), and reports what it could not classify as its own bucket rather than forcing every file into one of the two. Its fourth section, <code>markers</code>, lists the content markers it found — sushi-config.yaml, a legacy dak.json, .bpmn processes, a beans store, library/, Lean, folio manifests — each with its paths, whether index.config.json already declares it (declared, not-declared, or unknown), and the snippet that would. <code>bun run cat-harness-tools/scripts/scan-repo-content.ts --json</code>, a plain command any agent host can run.</p>
 <p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/conduct/getting-started.bpmn"><code>folio-assistant-core/processes/conduct/getting-started.bpmn#Task_ScanRepo</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
@@ -7964,6 +8444,30 @@ Should it leave now? <span class="fa-gloss-status">candidate, extracted</span>
 <p class="fa-gloss-meta">BPMN activities of cat-harness · source <a href="https://github.com/litlfred/cat-harness/blob/main/processes/kg/sub-kg-lifecycle.bpmn"><code>cat-harness/processes/kg/sub-kg-lifecycle.bpmn#Task_DecideLeave</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
+<dt id="who-iris--kg-bpmn-activities--process_iriscdninitialload.call_signpublish" data-fa-state="extracted" data-fa-gloss="">
+Sign and publish the release <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p><em>The asset carries no description.</em></p>
+<p class="fa-gloss-meta">BPMN activities of who-iris · source <a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-initial-load.bpmn"><code>who-iris/processes/iris-cdn-initial-load.bpmn#Call_SignPublish</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>fhir</code> · <code>skos</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>skos</code></p>
+</dd>
+<dt id="who-iris--kg-bpmn-activities--process_iriscdnnightly.call_signpublish" data-fa-state="extracted" data-fa-gloss="">
+Sign and publish the release <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p><em>The asset carries no description.</em></p>
+<p class="fa-gloss-meta">BPMN activities of who-iris · source <a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-nightly.bpmn"><code>who-iris/processes/iris-cdn-nightly.bpmn#Call_SignPublish</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>fhir</code> · <code>skos</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>skos</code></p>
+</dd>
+<dt id="who-iris--kg-bpmn-activities--process_iriscdnreconcile.call_signpublish" data-fa-state="extracted" data-fa-gloss="">
+Sign and publish the release <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p><em>The asset carries no description.</em></p>
+<p class="fa-gloss-meta">BPMN activities of who-iris · source <a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-reconcile.bpmn"><code>who-iris/processes/iris-cdn-reconcile.bpmn#Call_SignPublish</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>fhir</code> · <code>skos</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>skos</code></p>
+</dd>
 <dt id="cat-harness--kg-bpmn-activities--process_qareportsigning.task_humansign" data-fa-state="extracted" data-fa-gloss="">
 Sign as release authority <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
@@ -7971,6 +8475,14 @@ Sign as release authority <span class="fa-gloss-status">candidate, extracted</sp
 <p>A person attests the run hashes out of band. This is a userTask, not a serviceTask, and the distinction is enforced: <code>fulfilmentKindsForBpmnType</code> will not let a system actor fill it, which is what stops the air-gapped route quietly becoming another machine route.</p>
 <p class="fa-gloss-meta">BPMN activities of cat-harness · source <a href="https://github.com/litlfred/cat-harness/blob/main/processes/sdlc/qa-report-signing.bpmn"><code>cat-harness/processes/sdlc/qa-report-signing.bpmn#Task_HumanSign</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="who-iris--kg-bpmn-activities--process_iriscdnsignpublish.task_signitems" data-fa-state="extracted" data-fa-gloss="">
+Sign each changed item manifest (ES256) <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Owner, Q4 A: a signature on each library item. items/&lt;handle&gt;/manifest-sha256.txt lists the item record and its files; its detached JWS sits beside it. Only items whose manifest bytes changed are signed: ES256 is randomised, so re-signing an unchanged item would be churn. The item manifests and their signatures join the payload, so the tag files are refreshed to cover them before the release is signed.</p>
+<p class="fa-gloss-meta">BPMN activities of who-iris · source <a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-sign-publish.bpmn"><code>who-iris/processes/iris-cdn-sign-publish.bpmn#Task_SignItems</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>fhir</code> · <code>skos</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>skos</code></p>
 </dd>
 <dt id="cat-harness--kg-bpmn-activities--process_crdm_signoff.ba_signoff" data-fa-state="extracted" data-fa-gloss="">
 Sign off on requirements <span class="fa-gloss-status">candidate, extracted</span>
@@ -8019,6 +8531,14 @@ Sign the package and/or each asset <span class="fa-gloss-status">candidate, extr
 <p>THE TRUST ANCHOR IS GDHCN, SPECIFIED BY THE WHO SMART TRUST IG (owner, 2026-09-20, paraphrased: proposal signing is GDHCN, as the WHO SMART Trust IG specifies). READ OFF THAT IG rather than from general knowledge: a GDHCN trustlist distributes KEY MATERIAL as W3C DID documents, and says nothing about what you wrap your bytes in — the health-certificate envelope is a separate specification in the same IG, and a document package is not a health certificate. So what is settled is where a verifier GETS THE KEY, not what it verifies. A portal that can fetch the bytes but not reach the trustlist cannot verify, which is <code>unknown</code> and not a failure — air-gapped is a declared deployment value, so that case is answered rather than assumed away. Still OPEN and unread: the rotation and revocation model, and whether a document-package signature can be expressed for a GDHCN-aware verifier at all. Two schemes with different properties remain to choose between, and the trustlist does not choose between them. A PACKAGE signature over the manifest verifies the SET — nothing added, removed or altered — and must be reissued whenever any file changes. A PER-ASSET signature verifies one file independently, which is what an edge cache serving one asset can actually check, and it cannot detect a removal because there is nothing left to verify. They compose; composing them is the safer and more expensive default, and it is the deployment's choice rather than the pipeline's.</p>
 <p class="fa-gloss-meta">BPMN activities of cat-harness · source <a href="https://github.com/litlfred/cat-harness/blob/main/processes/kg/kg-to-portal.bpmn"><code>cat-harness/processes/kg/kg-to-portal.bpmn#S_Sign</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="who-iris--kg-bpmn-activities--process_iriscdnsignpublish.task_sign" data-fa-state="extracted" data-fa-gloss="">
+Sign the release tag manifest (ES256) <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>scripts/iris-cdn/signing.ts signDetached. kid is a did:web DID URL listed under assertionMethod.</p>
+<p class="fa-gloss-meta">BPMN activities of who-iris · source <a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-sign-publish.bpmn"><code>who-iris/processes/iris-cdn-sign-publish.bpmn#Task_Sign</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>fhir</code> · <code>skos</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>skos</code></p>
 </dd>
 <dt id="cat-harness--kg-bpmn-activities--process_materializeremote.task_size" data-fa-state="extracted" data-fa-gloss="">
 SIZE what fraction, and what the whole would cost <span class="fa-gloss-status">candidate, extracted</span>
@@ -8104,7 +8624,7 @@ Stage the renderings [feature-staging] <span class="fa-gloss-status">candidate, 
 Stamp KgAsset.source &#123; instance, path, ref } <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
-<p>Populate <code>source: &#123; instance, path, ref }</code> (<code>AssetSourceSchema</code> in <code>schemas/kg-node.ts</code>) on the new <code>KgAsset</code> entry in the same change. Because <code>source</code> absent is a third state meaning &quot;authored locally in this instance&quot;, omitting <code>source</code> on a copied asset is forbidden.</p>
+<p>Populate <code>source: &#123; instance, path, ref }</code> (<code>AssetSourceSchema</code> in <code>schemas/kg/kg-node.ts</code>) on the new <code>KgAsset</code> entry in the same change. Because <code>source</code> absent is a third state meaning &quot;authored locally in this instance&quot;, omitting <code>source</code> on a copied asset is forbidden.</p>
 <p class="fa-gloss-meta">BPMN activities of cat-harness · source <a href="https://github.com/litlfred/cat-harness/blob/main/processes/kg/copy-into-folio.bpmn"><code>cat-harness/processes/kg/copy-into-folio.bpmn#Task_StampAssetSource</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
@@ -8115,6 +8635,14 @@ Start the Pages build and derive the URL <span class="fa-gloss-status">candidate
 <p>scripts/pages-bootstrap.ts: check the gh-pages branch first (absent is <code>unprovisioned</code>), derive the site URL from the git remote or the instance's config (its index.config.json entry), report whether a publish workflow exists and the Pages source it needs, and optionally probe until the site answers.</p>
 <p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/conduct/getting-started.bpmn"><code>folio-assistant-core/processes/conduct/getting-started.bpmn#Task_PagesBootstrap</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="who-iris--kg-bpmn-activities--process_iriscdninitialload.task_statebudget" data-fa-state="extracted" data-fa-gloss="">
+State scope and budget, with denominators <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Items, files and bytes upstream (273,559 items, 1,057,223 files, 361.55 GiB as last transcribed), the storage target for each kind of file, and a request rate IRIS will tolerate. A budget with no denominator is a preference, not a limit.</p>
+<p class="fa-gloss-meta">BPMN activities of who-iris · source <a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-initial-load.bpmn"><code>who-iris/processes/iris-cdn-initial-load.bpmn#Task_StateBudget</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>fhir</code> · <code>skos</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>skos</code></p>
 </dd>
 <dt id="cat-harness--kg-bpmn-activities--process_kgtoportal.d_constraints" data-fa-state="extracted" data-fa-gloss="">
 State the constraints, with denominators <span class="fa-gloss-status">candidate, extracted</span>
@@ -8131,6 +8659,22 @@ State the finding and what it read <span class="fa-gloss-status">candidate, extr
 <p>Each provider says what it found and on what evidence. A finding that does not show what it read is an opinion, and an adjudicator cannot tell it from a finding about some other version of the block.</p>
 <p class="fa-gloss-meta">BPMN activities of cat-harness · source <a href="https://github.com/litlfred/cat-harness/blob/main/processes/sdlc/adjudication.bpmn"><code>cat-harness/processes/sdlc/adjudication.bpmn#A_StateFinding</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="who-iris--kg-bpmn-activities--process_iriscdninitialload.task_storebytes" data-fa-state="extracted" data-fa-gloss="">
+Store bytes under SHA-256 (skip if held) <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p><em>The asset carries no description.</em></p>
+<p class="fa-gloss-meta">BPMN activities of who-iris · source <a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-initial-load.bpmn"><code>who-iris/processes/iris-cdn-initial-load.bpmn#Task_StoreBytes</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>fhir</code> · <code>skos</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>skos</code></p>
+</dd>
+<dt id="who-iris--kg-bpmn-activities--process_iriscdnsignpublish.task_upload" data-fa-state="extracted" data-fa-gloss="">
+Store new objects (never overwrite) <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Content-addressed: an object whose SHA-256 is already stored is skipped. Published objects are never deleted by a nightly run.</p>
+<p class="fa-gloss-meta">BPMN activities of who-iris · source <a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-sign-publish.bpmn"><code>who-iris/processes/iris-cdn-sign-publish.bpmn#Task_Upload</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>fhir</code> · <code>skos</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>skos</code></p>
 </dd>
 <dt id="cat-harness--kg-bpmn-activities--process_qareportsigning.task_storesigned" data-fa-state="extracted" data-fa-gloss="">
 Store the signed report on qa-reports <span class="fa-gloss-status">candidate, extracted</span>
@@ -8224,7 +8768,7 @@ Syntax, spelling and links [content-validate] <span class="fa-gloss-status">cand
 Synthesise recipe via content-type specialisation [its own subprocess] <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
-<p>BOUND BY THE CONTENT TYPE (<code>contentType</code> and <code>specialisation</code> in <code>schemas/test-data.ts</code>), so no single content-type <code>calledElement</code> is hardcoded here: the activity names <code>test-data-sets</code>, and each content-type adapter supplies its own specialisation subprocess. <code>fhir-templating</code> (<code>FHIR_TEMPLATING_SPECIALISATION</code>) is one named specialisation for FHIR IG / DAK content (MeasureReport cohorts, questionnaire responses, bundle templates) — named as such, not the platform design; document folios (<code>markdown-fixture</code>), proof folios (<code>lean-counterexample</code>), and tabular cohorts (<code>tabular-cohort</code>) supply their own.</p>
+<p>BOUND BY THE CONTENT TYPE (<code>contentType</code> and <code>specialisation</code> in <code>schemas/sdlc/test-data.ts</code>), so no single content-type <code>calledElement</code> is hardcoded here: the activity names <code>test-data-sets</code>, and each content-type adapter supplies its own specialisation subprocess. <code>fhir-templating</code> (<code>FHIR_TEMPLATING_SPECIALISATION</code>) is one named specialisation for FHIR IG / DAK content (MeasureReport cohorts, questionnaire responses, bundle templates) — named as such, not the platform design; document folios (<code>markdown-fixture</code>), proof folios (<code>lean-counterexample</code>), and tabular cohorts (<code>tabular-cohort</code>) supply their own.</p>
 <p class="fa-gloss-meta">BPMN activities of cat-harness · source <a href="https://github.com/litlfred/cat-harness/blob/main/processes/sdlc/test-data-curation.bpmn"><code>cat-harness/processes/sdlc/test-data-curation.bpmn#Call_ContentTypeSpecialisation</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
@@ -8252,6 +8796,14 @@ Take in the turn <span class="fa-gloss-status">candidate, extracted</span>
 <dd>
 <p>A turn is anything that arrives — a person's message, a tool result, a notification. The machine advances on turns rather than on a clock, because a session that has been told nothing has not changed.</p>
 <p class="fa-gloss-meta">BPMN activities of cat-harness · source <a href="https://github.com/litlfred/cat-harness/blob/main/processes/process/session-state-machine.bpmn"><code>cat-harness/processes/process/session-state-machine.bpmn#A_ReadTurn</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="cat-harness--kg-bpmn-activities--process_beandrain.drain_takenext" data-fa-state="extracted" data-fa-gloss="">
+Take the next bean <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>The highest-priority bean on this drainer's list that is not marked skip. Taking it is not claiming it: the queue is advisory, so the bean still goes through OPEN's check before any work, including reading code for it.</p>
+<p class="fa-gloss-meta">BPMN activities of cat-harness · source <a href="https://github.com/litlfred/cat-harness/blob/main/processes/sdlc/bean-drain.bpmn"><code>cat-harness/processes/sdlc/bean-drain.bpmn#Drain_TakeNext</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="cat-harness--kg-bpmn-activities--process_mergetrain.task_takenext" data-fa-state="extracted" data-fa-gloss="">
@@ -8333,6 +8885,14 @@ Translate strings in preferred tool <span class="fa-gloss-status">candidate, ext
 <p>The translator works through each msgid, producing msgstr translations. They: - Follow the domain glossary for technical terms - Preserve placeholder tokens (&#123;1}, &#123;2}) in position - Mark uncertain translations as #fuzzy - Note any source ambiguities for the coordinator</p>
 <p class="fa-gloss-meta">BPMN activities of cat-harness · source <a href="https://github.com/litlfred/cat-harness/blob/main/processes/library/human-translation-workflow.bpmn"><code>cat-harness/processes/library/human-translation-workflow.bpmn#Task_TranslateInTool</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="who-iris--kg-bpmn-activities--process_iriscdnreconcile.task_escalate" data-fa-state="extracted" data-fa-gloss="">
+Treat the listing as faulty; escalate <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p><em>The asset carries no description.</em></p>
+<p class="fa-gloss-meta">BPMN activities of who-iris · source <a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-reconcile.bpmn"><code>who-iris/processes/iris-cdn-reconcile.bpmn#Task_Escalate</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>fhir</code> · <code>skos</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>skos</code></p>
 </dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_lifecycle.task_feedback" data-fa-state="extracted" data-fa-gloss="">
 Triage published feedback [content-feedback] <span class="fa-gloss-status">candidate, extracted</span>
@@ -8486,7 +9046,7 @@ Verify automated publication workflow succeeded <span class="fa-gloss-status">ca
 Verify file self-identifies by $schema and kind and bind into test plan <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
-<p>Parse the file with <code>discriminateTestDataSet</code> (<code>schemas/test-data.ts</code>) to confirm a consumer can tell fixed from generated from the file content alone (never the path), verify <code>verifyGeneratedSetDigest</code> on generated sets, and bind the resulting <code>TestDataRef</code> (<code>toTestDataRef</code>) into the <code>test-plan/v1</code> case.</p>
+<p>Parse the file with <code>discriminateTestDataSet</code> (<code>schemas/sdlc/test-data.ts</code>) to confirm a consumer can tell fixed from generated from the file content alone (never the path), verify <code>verifyGeneratedSetDigest</code> on generated sets, and bind the resulting <code>TestDataRef</code> (<code>toTestDataRef</code>) into the <code>test-plan/v1</code> case.</p>
 <p class="fa-gloss-meta">BPMN activities of cat-harness · source <a href="https://github.com/litlfred/cat-harness/blob/main/processes/sdlc/test-data-curation.bpmn"><code>cat-harness/processes/sdlc/test-data-curation.bpmn#Task_VerifySelfIdentifying</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
@@ -8588,6 +9148,14 @@ Withdraw a review comment [folio-review-comment-move] <span class="fa-gloss-stat
 <p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/content-change-review.bpmn"><code>folio-assistant-core/processes/content/content-change-review.bpmn#Task_WithdrawComment</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
+<dt id="cat-harness--kg-bpmn-activities--process_beandrain.drain_work" data-fa-state="extracted" data-fa-gloss="">
+Work the bean (PR at the first commit) <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Work only the bean OPEN claimed. Open the PR at the first commit with <code>Closes-bean: &lt;id&gt;</code> in its body — the open PR is the claim every other agent can see without the bean branch — and add its link to the bean on every copy. A cause found inside the bean that is separate work becomes a new bean, checked and claimed in its own right. A bean that waits on the owner is asked through <code>ask-the-person</code>, keeps its claim while the question is open, and goes to CLOSE as blocked if it will wait long.</p>
+<p class="fa-gloss-meta">BPMN activities of cat-harness · source <a href="https://github.com/litlfred/cat-harness/blob/main/processes/sdlc/bean-drain.bpmn"><code>cat-harness/processes/sdlc/bean-drain.bpmn#Drain_Work</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
 <dt id="cat-harness--kg-bpmn-activities--process_beanlifecycle.task_work" data-fa-state="extracted" data-fa-gloss="">
 Work, keeping the body current (this is 'edit') <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
@@ -8603,6 +9171,14 @@ WORKING what changed upstream <span class="fa-gloss-status">candidate, extracted
 <p>Compare the recorded upstreamVersion against the source. <code>could not reach the source</code> is a THIRD answer and is never reported as <code>unchanged</code> — an unreachable source is the sourceLoss gate firing late. Reachability is asked by <code>bun run cat sources:liveness &lt;instance&gt;</code> against the node's resolvable IRI, its Handle first: live, gone, or could not determine, never live on an error (bean 08u4).</p>
 <p class="fa-gloss-meta">BPMN activities of cat-harness · source <a href="https://github.com/litlfred/cat-harness/blob/main/processes/library/refresh-materialized.bpmn"><code>cat-harness/processes/library/refresh-materialized.bpmn#Task_Upstream</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="who-iris--kg-bpmn-activities--process_iriscdnnightly.task_writerecords" data-fa-state="extracted" data-fa-gloss="">
+Write canonical records into the library <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>A record whose canonical bytes equal the held ones is not rewritten. A touched-but-unchanged item therefore produces no diff.</p>
+<p class="fa-gloss-meta">BPMN activities of who-iris · source <a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-nightly.bpmn"><code>who-iris/processes/iris-cdn-nightly.bpmn#Task_WriteRecords</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>fhir</code> · <code>skos</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>skos</code></p>
 </dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_buildl1kg.task_dublin" data-fa-state="extracted" data-fa-gloss="">
 Write dublin-core.jsonld (the record of truth) <span class="fa-gloss-status">candidate, extracted</span>
@@ -8675,6 +9251,14 @@ Write structure.json (TOC, page ranges, metadata) <span class="fa-gloss-status">
 <p>Write structure.json (pdf-structure/v1): doc id, TOC from the PDF outline or inferred from headings, page ranges, metadata, and source&#123;} with the sha256 and a mimetype sniffed from the bytes, never the extension. A structure that could not be determined says so in structure_note rather than being rendered as one. For OCR'd text, source.runContext cites the OCR step's run context by sha256. A title already known for the document (the catalogue's dc.title, or one given with --title) is passed through as the raw title, so the sections' doc_title does not carry a scan's misreading (bean turh).</p>
 <p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/library/ingest-extract-structure.bpmn"><code>folio-assistant-core/processes/library/ingest-extract-structure.bpmn#Task_Structure</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="who-iris--kg-bpmn-activities--process_iriscdnsignpublish.task_buildbag" data-fa-state="extracted" data-fa-gloss="">
+Write the BagIt tag files (sorted, no dates) <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>scripts/iris-cdn/bag.ts tagFiles: manifest-sha256.txt sorted by path, bag-info.txt with Payload-Oxum and no Bagging-Date.</p>
+<p class="fa-gloss-meta">BPMN activities of who-iris · source <a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-sign-publish.bpmn"><code>who-iris/processes/iris-cdn-sign-publish.bpmn#Task_BuildBag</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>fhir</code> · <code>skos</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>who-iris</code> on <code>skos</code></p>
 </dd>
 <dt id="cat-harness--kg-bpmn-activities--process_wireframedesignreview.d_intent" data-fa-state="extracted" data-fa-gloss="">
 Write the design intent <span class="fa-gloss-status">candidate, extracted</span>

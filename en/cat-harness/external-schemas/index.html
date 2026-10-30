@@ -13,7 +13,7 @@
   
 
     
-    .site-nav > ul.nav-list:first-child > li:not(:nth-child(3)) > a,
+    .site-nav > ul.nav-list:first-child > li:not(:nth-child(88)) > a,
     .site-nav > ul.nav-list:first-child > li > ul > li a {
       background-image: none;
     }
@@ -23,12 +23,12 @@
       background-image: none;
     }
 
-    .site-nav > ul.nav-list:first-child > li:nth-child(3) > a {
+    .site-nav > ul.nav-list:first-child > li:nth-child(88) > a {
       font-weight: 600;
       text-decoration: none;
-    }.site-nav > ul.nav-list:first-child > li:nth-child(3) > button svg {
+    }.site-nav > ul.nav-list:first-child > li:nth-child(88) > button svg {
       transform: rotate(-90deg);
-    }.site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(3) > ul.nav-list {
+    }.site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(88) > ul.nav-list {
       display: block;
     }
   </style>
@@ -153,7 +153,7 @@
   `mark-small` in `harness.json`, and it went unread: nothing in this
   repo ever emitted a favicon at all, `rel="icon"` included. It also could
   not have driven this lookup as declared — `imagesForRole()`
-  (`schemas/kg-node.ts`) requires an image's `layout` field, which neither
+  (`schemas/kg/kg-node.ts`) requires an image's `layout` field, which neither
   mark entry carries, so a `browser-icon`-role lookup returns nothing. Reusing
   the already-resolved `icon` (the same field `title.html` reads) sidesteps
   that and, more importantly, is what was asked for: the sidebar mark and the
@@ -604,7 +604,7 @@
 -->
 <!-- The harness icon row's own style, which railed pages load without docs-ui.css (beans `lhvt`, `9rq1`). -->
 <link rel="stylesheet" href="../../../assets/css/navbar-row.css?v=7d7d00921e0f">
-<link rel="stylesheet" href="../../../assets/css/docs-ui.css?v=c5f675d4c764">
+<link rel="stylesheet" href="../../../assets/css/docs-ui.css?v=6071ae228cf3">
 <!-- Narrow viewports: wide content scrolls in its own box, never the page
      (bean `2r2n`). The standalone viewers inline the same file through
      `withViewerNav`, so both kinds of page read one set of rules. -->
@@ -615,21 +615,21 @@
   `state-visualizer.ts` can inline exactly these bytes into the generated
   `<base>/<stub>/state-visualizer/` pages. One rule, two surfaces.
 -->
-<link rel="stylesheet" href="../../../assets/css/work-plan.css?v=30bf7780ce27">
-<!-- Sticky themes. GENERATED from the theme nodes in `schemas/themes.ts` by
+<link rel="stylesheet" href="../../../assets/css/work-plan.css?v=ed3e33f033fe">
+<!-- Sticky themes. GENERATED from the theme nodes in `schemas/ui/themes.ts` by
      `bun run cat themes:css`; `themes:css:check` fails the build when it is stale.
      Loaded AFTER docs-ui.css deliberately: it supplies the `--fa-sticky-*`
      roles that docs-ui.css consumes, and a custom property has to be set on a
      matching element before the rule reading it takes effect. -->
-<link rel="stylesheet" href="../../../assets/css/themes.css?v=a7f81b62eded">
+<link rel="stylesheet" href="../../../assets/css/themes.css?v=37c8ab192a5f">
 <!-- UML overview colours: one class per graph typology, set on the Mermaid nodes
      that `scripts/gen-uml-overview.ts` writes into docs/uml/overview/. -->
 <link rel="stylesheet" href="../../../assets/css/uml.css?v=e677f91cbf66">
-<!-- Kind avatars. GENERATED from `schemas/avatars.ts` by `bun run cat avatars:css`;
+<!-- Kind avatars. GENERATED from `schemas/content/avatars.ts` by `bun run cat avatars:css`;
      `avatars:css:check` fails the build when it is stale. One stylesheet
      rather than 68 assets: the glyph is a mask and the colour is a property,
      so a scheme swap is a custom property and the trash state is a selector. -->
-<link rel="stylesheet" href="../../../assets/css/avatars.css?v=699212580934">
+<link rel="stylesheet" href="../../../assets/css/avatars.css?v=780d571c53c1">
 
 <!--
   The kinds THIS INSTANCE DECLARES, for the avatar fan.
@@ -663,7 +663,7 @@
 <script src="../../../assets/js/kg-render.js" defer></script>
 <!-- BEFORE docs-ui.js, which calls it: the one drawing of the harness icon row (beans `lhvt`, `9rq1`). -->
 <script src="../../../assets/js/navbar-row.js?v=7dce6a7e2ab0" defer></script>
-<script src="../../../assets/js/docs-ui.js?v=9c88eef1c243" defer></script>
+<script src="../../../assets/js/docs-ui.js?v=8b5567635976" defer></script>
 <!-- The edit, source and feedback links of every page, from the platform's one
   recipe (cat-harness-tools/src/core/edit-links.ts, bean v433): links carry their
   facts and this builds the hrefs. -->
@@ -752,9 +752,9 @@
   is broken when it is doing exactly what it can.
 -->
 
-<link rel="stylesheet" href="../../../assets/css/navbar.css"><script src="../../../assets/navbar/rail-1uu2yi3osvq.js" defer></script><script src="../../../assets/js/navbar.js" defer></script><link rel="stylesheet" href="../../../assets/page-layout.css" data-fa-page-layout><script src="../../../assets/page-layout.js" defer data-fa-page-layout></script><meta name="fa-pinned-data" content="../../.."></head>
+<link rel="stylesheet" href="../../../assets/css/navbar.css"><script src="../../../assets/navbar/rail-1nr7jo2rxsc.js" defer></script><script src="../../../assets/js/navbar.js" defer></script><link rel="stylesheet" href="../../../assets/page-layout.css" data-fa-page-layout><script src="../../../assets/page-layout.js" defer data-fa-page-layout></script><meta name="fa-pinned-data" content="../../.."></head>
 
-<body><script type="application/json" id="fa-rail" data-fa-root="https://litlfred.github.io/folio-assistant" data-fa-to-root="../../..">{"data":"rail-1uu2yi3osvq","here":"/en/cat-harness/external-schemas/","documentIndex":{"label":"On this page","icon":"§","items":[{"href":"#the-specifications","label":"The specifications"},{"href":"#who-declares-each-specification","label":"Who declares each specification"},{"href":"#namespaces-the-corpus-uses-against-the-ones-it-declares","label":"Namespaces the corpus uses against the ones it declares"},{"href":"#each-specification","label":"Each specification","children":[{"href":"#dcmi-terms","label":"DCMI Metadata Terms","depth":1},{"href":"#hl7-fhir","label":"HL7 FHIR","depth":1},{"href":"#ietf-handle-system","label":"Handle System Overview (RFC 3650), with its namespace (RFC 3651) and protocol (RFC 3652)","depth":1},{"href":"#omg-bpmn-2.0","label":"Business Process Model and Notation (BPMN)","depth":1},{"href":"#omg-dd-1.0","label":"Diagram Definition (DD)","depth":1},{"href":"#omg-dmn-1.3","label":"Decision Model and Notation (DMN)","depth":1},{"href":"#opengroup-archimate-3.0","label":"ArchiMate® Model Exchange File Format","depth":1},{"href":"#purl-bibo","label":"The Bibliographic Ontology (BIBO)","depth":1},{"href":"#schema-org","label":"Schema.org","depth":1},{"href":"#spar-doco-deo-cito","label":"SPAR Ontologies: DoCO, DEO and CiTO","depth":1},{"href":"#spar-fabio","label":"SPAR Ontologies: FaBiO, the FRBR-aligned Bibliographic Ontology","depth":1},{"href":"#spdx-license-list","label":"SPDX License List","depth":1},{"href":"#w3c-csvw","label":"Metadata Vocabulary for Tabular Data","depth":1},{"href":"#w3c-hydra","label":"Hydra Core Vocabulary","depth":1},{"href":"#w3c-n-quads","label":"RDF 1.1 N-Quads: A line-based syntax for RDF datasets","depth":1},{"href":"#w3c-odrl","label":"ODRL Information Model 2.2","depth":1},{"href":"#w3c-owl2","label":"OWL 2 Web Ontology Language Document Overview (Second Edition)","depth":1},{"href":"#w3c-prov-jsonld","label":"The PROV-JSONLD Serialization: A JSON-LD Representation for the PROV Data Model","depth":1},{"href":"#w3c-prov-o","label":"PROV-O: The PROV Ontology","depth":1},{"href":"#w3c-rdf-calendar","label":"RDF Calendar — an application of the Resource Description Framework to iCalendar Data","depth":1},{"href":"#w3c-rdf","label":"RDF 1.1 Concepts and Abstract Syntax","depth":1},{"href":"#w3c-rdfs","label":"RDF Schema 1.1","depth":1},{"href":"#w3c-skos","label":"SKOS Simple Knowledge Organization System Reference","depth":1},{"href":"#w3c-sparql-1.1-query","label":"SPARQL 1.1 Query Language","depth":1},{"href":"#w3c-web-annotation","label":"Web Annotation Vocabulary","depth":1},{"href":"#w3c-xsd11-datatypes","label":"XML Schema Definition Language (XSD) 1.1 Part 2: Datatypes","depth":1},{"href":"#w3c-xsd11-structures","label":"W3C XML Schema Definition Language (XSD) 1.1 Part 1: Structures","depth":1},{"href":"#who-smart-base","label":"WHO SMART Guidelines base IG","depth":1}],"fold":"28 sub-sections"}],"collapsible":true}}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../">Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector</a></nav>
+<body><script type="application/json" id="fa-rail" data-fa-root="https://litlfred.github.io/folio-assistant" data-fa-to-root="../../..">{"data":"rail-1nr7jo2rxsc","here":"/en/cat-harness/external-schemas/","documentIndex":{"label":"On this page","icon":"§","items":[{"href":"#the-specifications","label":"The specifications"},{"href":"#who-declares-each-specification","label":"Who declares each specification"},{"href":"#namespaces-the-corpus-uses-against-the-ones-it-declares","label":"Namespaces the corpus uses against the ones it declares"},{"href":"#each-specification","label":"Each specification","children":[{"href":"#dcmi-terms","label":"DCMI Metadata Terms","depth":1},{"href":"#hl7-fhir","label":"HL7 FHIR","depth":1},{"href":"#ietf-handle-system","label":"Handle System Overview (RFC 3650), with its namespace (RFC 3651) and protocol (RFC 3652)","depth":1},{"href":"#omg-bpmn-2.0","label":"Business Process Model and Notation (BPMN)","depth":1},{"href":"#omg-dd-1.0","label":"Diagram Definition (DD)","depth":1},{"href":"#omg-dmn-1.3","label":"Decision Model and Notation (DMN)","depth":1},{"href":"#opengroup-archimate-3.0","label":"ArchiMate® Model Exchange File Format","depth":1},{"href":"#purl-bibo","label":"The Bibliographic Ontology (BIBO)","depth":1},{"href":"#schema-org","label":"Schema.org","depth":1},{"href":"#spar-doco-deo-cito","label":"SPAR Ontologies: DoCO, DEO and CiTO","depth":1},{"href":"#spar-fabio","label":"SPAR Ontologies: FaBiO, the FRBR-aligned Bibliographic Ontology","depth":1},{"href":"#spdx-license-list","label":"SPDX License List","depth":1},{"href":"#w3c-csvw","label":"Metadata Vocabulary for Tabular Data","depth":1},{"href":"#w3c-hydra","label":"Hydra Core Vocabulary","depth":1},{"href":"#w3c-n-quads","label":"RDF 1.1 N-Quads: A line-based syntax for RDF datasets","depth":1},{"href":"#w3c-odrl","label":"ODRL Information Model 2.2","depth":1},{"href":"#w3c-owl2","label":"OWL 2 Web Ontology Language Document Overview (Second Edition)","depth":1},{"href":"#w3c-prov-jsonld","label":"The PROV-JSONLD Serialization: A JSON-LD Representation for the PROV Data Model","depth":1},{"href":"#w3c-prov-o","label":"PROV-O: The PROV Ontology","depth":1},{"href":"#w3c-rdf-calendar","label":"RDF Calendar — an application of the Resource Description Framework to iCalendar Data","depth":1},{"href":"#w3c-rdf","label":"RDF 1.1 Concepts and Abstract Syntax","depth":1},{"href":"#w3c-rdfs","label":"RDF Schema 1.1","depth":1},{"href":"#w3c-skos","label":"SKOS Simple Knowledge Organization System Reference","depth":1},{"href":"#w3c-sparql-1.1-query","label":"SPARQL 1.1 Query Language","depth":1},{"href":"#w3c-web-annotation","label":"Web Annotation Vocabulary","depth":1},{"href":"#w3c-xsd11-datatypes","label":"XML Schema Definition Language (XSD) 1.1 Part 2: Datatypes","depth":1},{"href":"#w3c-xsd11-structures","label":"W3C XML Schema Definition Language (XSD) 1.1 Part 1: Structures","depth":1},{"href":"#who-smart-base","label":"WHO SMART Guidelines base IG","depth":1}],"fold":"28 sub-sections"}],"collapsible":true}}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../">Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector</a></nav>
   <a class="skip-to-main" href="#main-content">Skip to main content</a>
   <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
   <symbol id="svg-link" viewBox="0 0 24 24">
@@ -882,8 +882,8 @@ depends on it</strong>, and <strong>which of its terms this repository branches 
 
 <div class="xs-grid">
 <div class="xs-stat"><b>28</b><span>specifications</span></div>
-<div class="xs-stat"><b>109</b><span>operative terms in graph (65 described, 44 pending)</span></div>
-<div class="xs-stat"><b>295</b><span>declared uses</span></div>
+<div class="xs-stat"><b>121</b><span>operative terms in graph (65 described, 56 pending)</span></div>
+<div class="xs-stat"><b>310</b><span>declared uses</span></div>
 <div class="xs-stat"><b>0</b><span>declarations naming no record</span></div>
 </div>
 
@@ -1095,12 +1095,6 @@ front-matter list, an <code class="language-plaintext highlighter-rouge">xmlns</
 declares the spec (bean <code class="language-plaintext highlighter-rouge">u63y</code>).</p>
 
 <p>Every declaration names a record on this page.</p>
-
-<p><strong>1 record(s) nothing declares.</strong> A version bump would move nothing that says so:</p>
-
-<ul>
-  <li><a href="#w3c-sparql-1.1-query"><code class="language-plaintext highlighter-rouge">w3c-sparql-1.1-query</code></a></li>
-</ul>
 <h2 id="namespaces-the-corpus-uses-against-the-ones-it-declares">
   
   
@@ -1196,6 +1190,10 @@ a registry nobody prunes is one that stops describing the repository.</p>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">folio-dublin-core/v1 nodes</code></td>
       <td>through the module that types it (<code class="language-plaintext highlighter-rouge">folio-assistant-core/schemas/dublin-core.ts</code>)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">who-iris/skills/iris-dspace.md</code></td>
+      <td><code class="language-plaintext highlighter-rouge">conformsTo:</code> front matter</td>
     </tr>
   </tbody>
 </table></div>
@@ -1332,20 +1330,24 @@ a subset of the edition rather than a transcription of it.</p>
   </thead>
   <tbody>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">cat-harness/schemas/jsonld.ts</code></td>
+      <td><code class="language-plaintext highlighter-rouge">cat-harness-tools/schemas/content/vocab-mapping.ts</code></td>
       <td><code class="language-plaintext highlighter-rouge">@conformsTo</code> tag</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">cat-harness/schemas/vocab-mapping-fhir.ts</code></td>
+      <td><code class="language-plaintext highlighter-rouge">cat-harness-tools/schemas/kg/jsonld.ts</code></td>
       <td><code class="language-plaintext highlighter-rouge">@conformsTo</code> tag</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">cat-harness/schemas/vocab-mapping.ts</code></td>
+      <td><code class="language-plaintext highlighter-rouge">fhir-harness/schemas/iti-108-consent-client.ts</code></td>
       <td><code class="language-plaintext highlighter-rouge">@conformsTo</code> tag</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">vocab-mapping graph</code></td>
-      <td>through the module that types it (<code class="language-plaintext highlighter-rouge">cat-harness/schemas/vocab-mapping.ts</code>)</td>
+      <td><code class="language-plaintext highlighter-rouge">fhir-harness/schemas/pcf-consent.ts</code></td>
+      <td><code class="language-plaintext highlighter-rouge">@conformsTo</code> tag</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">fhir-harness/schemas/vocab-mapping-fhir.ts</code></td>
+      <td><code class="language-plaintext highlighter-rouge">@conformsTo</code> tag</td>
     </tr>
   </tbody>
 </table></div>
@@ -1387,7 +1389,7 @@ a subset of the edition rather than a transcription of it.</p>
   <li><code class="language-plaintext highlighter-rouge">https://hdl.handle.net/</code></li>
 </ul>
 
-<p><strong>Note.</strong> The persistent identifiers DSpace mints (<code class="language-plaintext highlighter-rouge">&lt;prefix&gt;/&lt;suffix&gt;</code>, e.g. WHO IRIS’s 10665/332098), written as IRIs through the global HTTP resolver https://hdl.handle.net/. Emitted by schemas/prov-jsonld.ts for PROV <code class="language-plaintext highlighter-rouge">prov:used</code>: owner decision 2026-10-01 (option A) links a catalogue item at its Handle, the identifier that outlives the publishing host, rather than at the host’s own item URL. folio-assistant-core’s catalogue schema (HandleSchema, handleIri) applies the same rule to catalogue records. The RFCs are Informational and define the identifier system; the hdl.handle.net proxy is the resolver its operators run, not a namespace in the vocabulary sense.</p>
+<p><strong>Note.</strong> The persistent identifiers DSpace mints (<code class="language-plaintext highlighter-rouge">&lt;prefix&gt;/&lt;suffix&gt;</code>, e.g. WHO IRIS’s 10665/332098), written as IRIs through the global HTTP resolver https://hdl.handle.net/. Emitted by schemas/kg/prov-jsonld.ts for PROV <code class="language-plaintext highlighter-rouge">prov:used</code>: owner decision 2026-10-01 (option A) links a catalogue item at its Handle, the identifier that outlives the publishing host, rather than at the host’s own item URL. folio-assistant-core’s catalogue schema (HandleSchema, handleIri) applies the same rule to catalogue records. The RFCs are Informational and define the identifier system; the hdl.handle.net proxy is the resolver its operators run, not a namespace in the vocabulary sense.</p>
 
 <p><strong>What depends on it.</strong></p>
 
@@ -1400,7 +1402,7 @@ a subset of the edition rather than a transcription of it.</p>
   </thead>
   <tbody>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">cat-harness/schemas/prov-jsonld.ts</code></td>
+      <td><code class="language-plaintext highlighter-rouge">cat-harness-tools/schemas/kg/prov-jsonld.ts</code></td>
       <td><code class="language-plaintext highlighter-rouge">@conformsTo</code> tag</td>
     </tr>
   </tbody>
@@ -1485,7 +1487,7 @@ graph. That is a determined zero, not an unfilled field.</p>
       <td><code class="language-plaintext highlighter-rouge">xmlns</code> binding</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">cat-harness/processes/sdlc/*.bpmn (32)</code></td>
+      <td><code class="language-plaintext highlighter-rouge">cat-harness/processes/sdlc/*.bpmn (33)</code></td>
       <td><code class="language-plaintext highlighter-rouge">xmlns</code> binding</td>
     </tr>
     <tr>
@@ -1505,7 +1507,7 @@ graph. That is a determined zero, not an unfilled field.</p>
       <td><code class="language-plaintext highlighter-rouge">xmlns</code> binding</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">folio-assistant-core/processes/content/*.bpmn (7)</code></td>
+      <td><code class="language-plaintext highlighter-rouge">folio-assistant-core/processes/content/*.bpmn (8)</code></td>
       <td><code class="language-plaintext highlighter-rouge">xmlns</code> binding</td>
     </tr>
     <tr>
@@ -1524,10 +1526,14 @@ graph. That is a determined zero, not an unfilled field.</p>
       <td><code class="language-plaintext highlighter-rouge">smart-base/processes/content/*.bpmn (6)</code></td>
       <td><code class="language-plaintext highlighter-rouge">xmlns</code> binding</td>
     </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">who-iris/processes/*.bpmn (4)</code></td>
+      <td><code class="language-plaintext highlighter-rouge">xmlns</code> binding</td>
+    </tr>
   </tbody>
 </table></div>
 
-<p><strong>Operative terms (23).</strong> The terms this repository acts on —
+<p><strong>Operative terms (35).</strong> The terms this repository acts on —
 derived by the tooling from the corpus, never hand-listed, and deliberately
 a subset of the edition rather than a transcription of it.</p>
 
@@ -1542,12 +1548,28 @@ a subset of the edition rather than a transcription of it.</p>
   </thead>
   <tbody>
     <tr>
+      <td><code class="language-plaintext highlighter-rouge">bpmn:assignment</code></td>
+      <td><em>(pending description)</em></td>
+    </tr>
+    <tr>
       <td><code class="language-plaintext highlighter-rouge">bpmn:callActivity</code></td>
       <td>Reusable sub-process invocation referencing another diagram by QName.</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">bpmn:collaboration</code></td>
       <td>Collaboration diagram container binding participants and message flows.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">bpmn:dataInput</code></td>
+      <td><em>(pending description)</em></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">bpmn:dataInputAssociation</code></td>
+      <td><em>(pending description)</em></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">bpmn:dataInputRefs</code></td>
+      <td><em>(pending description)</em></td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">bpmn:definitions</code></td>
@@ -1574,12 +1596,32 @@ a subset of the edition rather than a transcription of it.</p>
       <td>Reference connecting a process activity or gateway into a specific lane.</td>
     </tr>
     <tr>
+      <td><code class="language-plaintext highlighter-rouge">bpmn:from</code></td>
+      <td><em>(pending description)</em></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">bpmn:globalScriptTask</code></td>
+      <td><em>(pending description)</em></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">bpmn:globalTask</code></td>
+      <td><em>(pending description)</em></td>
+    </tr>
+    <tr>
       <td><code class="language-plaintext highlighter-rouge">bpmn:import</code></td>
       <td><em>(pending description)</em></td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">bpmn:incoming</code></td>
       <td>Incoming sequence flow connection entering an activity or gateway.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">bpmn:inputSet</code></td>
+      <td><em>(pending description)</em></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">bpmn:ioSpecification</code></td>
+      <td><em>(pending description)</em></td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">bpmn:lane</code></td>
@@ -1592,6 +1634,10 @@ a subset of the edition rather than a transcription of it.</p>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">bpmn:outgoing</code></td>
       <td>Outgoing sequence flow connection leaving an activity or gateway.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">bpmn:outputSet</code></td>
+      <td><em>(pending description)</em></td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">bpmn:parallelGateway</code></td>
@@ -1622,12 +1668,20 @@ a subset of the edition rather than a transcription of it.</p>
       <td>Entry node initiating execution of a workflow process.</td>
     </tr>
     <tr>
+      <td><code class="language-plaintext highlighter-rouge">bpmn:targetRef</code></td>
+      <td><em>(pending description)</em></td>
+    </tr>
+    <tr>
       <td><code class="language-plaintext highlighter-rouge">bpmn:task</code></td>
       <td>Base unit of atomic work within a business process flow.</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">bpmn:timerEventDefinition</code></td>
       <td>Timer schedule trigger defining timeouts or delayed transitions.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">bpmn:to</code></td>
+      <td><em>(pending description)</em></td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">bpmn:userTask</code></td>
@@ -1694,7 +1748,7 @@ a subset of the edition rather than a transcription of it.</p>
       <td><code class="language-plaintext highlighter-rouge">xmlns</code> binding</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">cat-harness/processes/sdlc/*.bpmn (32)</code></td>
+      <td><code class="language-plaintext highlighter-rouge">cat-harness/processes/sdlc/*.bpmn (33)</code></td>
       <td><code class="language-plaintext highlighter-rouge">xmlns</code> binding</td>
     </tr>
     <tr>
@@ -1710,7 +1764,7 @@ a subset of the edition rather than a transcription of it.</p>
       <td><code class="language-plaintext highlighter-rouge">xmlns</code> binding</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">folio-assistant-core/processes/content/*.bpmn (7)</code></td>
+      <td><code class="language-plaintext highlighter-rouge">folio-assistant-core/processes/content/*.bpmn (8)</code></td>
       <td><code class="language-plaintext highlighter-rouge">xmlns</code> binding</td>
     </tr>
     <tr>
@@ -1727,6 +1781,10 @@ a subset of the edition rather than a transcription of it.</p>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">smart-base/processes/content/*.bpmn (6)</code></td>
+      <td><code class="language-plaintext highlighter-rouge">xmlns</code> binding</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">who-iris/processes/*.bpmn (4)</code></td>
       <td><code class="language-plaintext highlighter-rouge">xmlns</code> binding</td>
     </tr>
   </tbody>
@@ -1821,11 +1879,11 @@ graph. That is a determined zero, not an unfilled field.</p>
   </thead>
   <tbody>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">cat-harness-tools/archimate/scripts/gen-archimate-pages.ts</code></td>
+      <td><code class="language-plaintext highlighter-rouge">cat-harness-tools/archimate/schemas/archimate.ts</code></td>
       <td><code class="language-plaintext highlighter-rouge">@conformsTo</code> tag</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">cat-harness/archimate/schemas/archimate.ts</code></td>
+      <td><code class="language-plaintext highlighter-rouge">cat-harness-tools/archimate/scripts/gen-archimate-pages.ts</code></td>
       <td><code class="language-plaintext highlighter-rouge">@conformsTo</code> tag</td>
     </tr>
   </tbody>
@@ -1975,7 +2033,7 @@ a subset of the edition rather than a transcription of it.</p>
   </thead>
   <tbody>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">cat-harness/schemas/jsonld.ts</code></td>
+      <td><code class="language-plaintext highlighter-rouge">cat-harness-tools/schemas/kg/jsonld.ts</code></td>
       <td><code class="language-plaintext highlighter-rouge">@conformsTo</code> tag</td>
     </tr>
   </tbody>
@@ -2092,7 +2150,7 @@ graph. That is a determined zero, not an unfilled field.</p>
   </thead>
   <tbody>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">cat-harness/schemas/spdx-license-expression.ts</code></td>
+      <td><code class="language-plaintext highlighter-rouge">cat-harness-tools/schemas/library/spdx-license-expression.ts</code></td>
       <td><code class="language-plaintext highlighter-rouge">@conformsTo</code> tag</td>
     </tr>
   </tbody>
@@ -2129,7 +2187,7 @@ graph. That is a determined zero, not an unfilled field.</p>
   </thead>
   <tbody>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">cat-harness/schemas/jsonld.ts</code></td>
+      <td><code class="language-plaintext highlighter-rouge">cat-harness-tools/schemas/kg/jsonld.ts</code></td>
       <td><code class="language-plaintext highlighter-rouge">@conformsTo</code> tag</td>
     </tr>
   </tbody>
@@ -2220,7 +2278,7 @@ graph. That is a determined zero, not an unfilled field.</p>
   </thead>
   <tbody>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">cat-harness/schemas/nquads-distribution.ts</code></td>
+      <td><code class="language-plaintext highlighter-rouge">cat-harness-tools/schemas/kg/nquads-distribution.ts</code></td>
       <td><code class="language-plaintext highlighter-rouge">@conformsTo</code> tag</td>
     </tr>
     <tr>
@@ -2229,6 +2287,10 @@ graph. That is a determined zero, not an unfilled field.</p>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">cat-harness/skills/kg/graph-management/nquads-distribution.md</code></td>
+      <td><code class="language-plaintext highlighter-rouge">conformsTo:</code> front matter</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">who-iris/skills/iris-oxigraph.md</code></td>
       <td><code class="language-plaintext highlighter-rouge">conformsTo:</code> front matter</td>
     </tr>
   </tbody>
@@ -2286,12 +2348,12 @@ a subset of the edition rather than a transcription of it.</p>
   </thead>
   <tbody>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">cat-harness/schemas/odrl.ts</code></td>
+      <td><code class="language-plaintext highlighter-rouge">cat-harness-tools/schemas/content/odrl.ts</code></td>
       <td><code class="language-plaintext highlighter-rouge">@conformsTo</code> tag</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">policies graph</code></td>
-      <td>through the module that types it (<code class="language-plaintext highlighter-rouge">cat-harness/schemas/odrl.ts</code>)</td>
+      <td><code class="language-plaintext highlighter-rouge">fhir-harness/schemas/pcf-consent.ts</code></td>
+      <td><code class="language-plaintext highlighter-rouge">@conformsTo</code> tag</td>
     </tr>
   </tbody>
 </table></div>
@@ -2455,7 +2517,7 @@ a subset of the edition rather than a transcription of it.</p>
   <li><code class="language-plaintext highlighter-rouge">https://openprovenance.org/ns/provext#</code></li>
 </ul>
 
-<p><strong>Note.</strong> A W3C Member Submission (King’s College London; editors Luc Moreau, Dong Huynh) — acknowledged by W3C, NOT endorsed. Adopted by owner decision 2026-10-01 (beans jcet, 9y9j) because W3C publishes no JSON-LD context for PROV-O; PROV itself stays pinned by w3c-prov-o. The text is held at library/w3c-2024-prov-jsonld and its context.jsonld beside it, pinned by sha256 in schemas/prov-jsonld.ts and served offline; provext# is the Submission’s own extension namespace, which that context binds.</p>
+<p><strong>Note.</strong> A W3C Member Submission (King’s College London; editors Luc Moreau, Dong Huynh) — acknowledged by W3C, NOT endorsed. Adopted by owner decision 2026-10-01 (beans jcet, 9y9j) because W3C publishes no JSON-LD context for PROV-O; PROV itself stays pinned by w3c-prov-o. The text is held at library/w3c-2024-prov-jsonld and its context.jsonld beside it, pinned by sha256 in schemas/kg/prov-jsonld.ts and served offline; provext# is the Submission’s own extension namespace, which that context binds.</p>
 
 <p><strong>What depends on it.</strong></p>
 
@@ -2468,7 +2530,7 @@ a subset of the edition rather than a transcription of it.</p>
   </thead>
   <tbody>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">cat-harness/schemas/prov-jsonld.ts</code></td>
+      <td><code class="language-plaintext highlighter-rouge">cat-harness-tools/schemas/kg/prov-jsonld.ts</code></td>
       <td><code class="language-plaintext highlighter-rouge">@conformsTo</code> tag</td>
     </tr>
   </tbody>
@@ -2509,11 +2571,11 @@ graph. That is a determined zero, not an unfilled field.</p>
       <td><code class="language-plaintext highlighter-rouge">@conformsTo</code> tag</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">cat-harness-tools/scripts/kg-export.ts</code></td>
+      <td><code class="language-plaintext highlighter-rouge">cat-harness-tools/schemas/kg/jsonld.ts</code></td>
       <td><code class="language-plaintext highlighter-rouge">@conformsTo</code> tag</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">cat-harness/schemas/jsonld.ts</code></td>
+      <td><code class="language-plaintext highlighter-rouge">cat-harness-tools/scripts/kg-export.ts</code></td>
       <td><code class="language-plaintext highlighter-rouge">@conformsTo</code> tag</td>
     </tr>
   </tbody>
@@ -2760,28 +2822,24 @@ a subset of the edition rather than a transcription of it.</p>
   </thead>
   <tbody>
     <tr>
+      <td><code class="language-plaintext highlighter-rouge">cat-harness-tools/schemas/content/vocab-mapping.ts</code></td>
+      <td><code class="language-plaintext highlighter-rouge">@conformsTo</code> tag</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">cat-harness-tools/schemas/content/vocabulary.ts</code></td>
+      <td><code class="language-plaintext highlighter-rouge">@conformsTo</code> tag</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">cat-harness-tools/schemas/kg/jsonld.ts</code></td>
+      <td><code class="language-plaintext highlighter-rouge">@conformsTo</code> tag</td>
+    </tr>
+    <tr>
       <td><code class="language-plaintext highlighter-rouge">cat-harness-tools/scripts/glossary-export.ts</code></td>
       <td><code class="language-plaintext highlighter-rouge">@conformsTo</code> tag</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">cat-harness-tools/scripts/ns-export.ts</code></td>
       <td><code class="language-plaintext highlighter-rouge">@conformsTo</code> tag</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">cat-harness/schemas/jsonld.ts</code></td>
-      <td><code class="language-plaintext highlighter-rouge">@conformsTo</code> tag</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">cat-harness/schemas/vocab-mapping.ts</code></td>
-      <td><code class="language-plaintext highlighter-rouge">@conformsTo</code> tag</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">cat-harness/schemas/vocabulary.ts</code></td>
-      <td><code class="language-plaintext highlighter-rouge">@conformsTo</code> tag</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">vocab-mapping graph</code></td>
-      <td>through the module that types it (<code class="language-plaintext highlighter-rouge">cat-harness/schemas/vocab-mapping.ts</code>)</td>
     </tr>
   </tbody>
 </table></div>
@@ -2862,7 +2920,7 @@ a subset of the edition rather than a transcription of it.</p>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">skos:narrowMatch</code></td>
-      <td>The SKOS rendering of FHIR R5’s <code class="language-plaintext highlighter-rouge">source-is-broader-than-target</code> in a vocabulary mapping table (<code class="language-plaintext highlighter-rouge">SKOS_MATCH_FOR</code>, schemas/vocab-mapping.ts, bean k74z): <code class="language-plaintext highlighter-rouge">A skos:narrowMatch B</code> says B is narrower.</td>
+      <td>The SKOS rendering of FHIR R5’s <code class="language-plaintext highlighter-rouge">source-is-broader-than-target</code> in a vocabulary mapping table (<code class="language-plaintext highlighter-rouge">SKOS_MATCH_FOR</code>, schemas/content/vocab-mapping.ts, bean k74z): <code class="language-plaintext highlighter-rouge">A skos:narrowMatch B</code> says B is narrower.</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">skos:notation</code></td>
@@ -2905,7 +2963,22 @@ a subset of the edition rather than a transcription of it.</p>
 
 <p><strong>Note.</strong> The query language the IRIS replica’s Oxigraph pipeline (skill iris-oxigraph) runs over the catalogue’s N-Quads: faceted rollups and combined queries, in the browser (WebAssembly) and on the CLI. A language, not an RDF vocabulary, so it claims no namespace; the IRIs its queries match are the vocabularies’ own (dcterms, skos, …), recorded under those.</p>
 
-<p><strong>What depends on it.</strong> Nothing here declares it.</p>
+<p><strong>What depends on it.</strong></p>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>user</th>
+      <th>declared by</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">who-iris/skills/iris-oxigraph.md</code></td>
+      <td><code class="language-plaintext highlighter-rouge">conformsTo:</code> front matter</td>
+    </tr>
+  </tbody>
+</table></div>
 
 <p><strong>No operative terms.</strong> This repository conforms to the specification
 without branching on any of its terms, so none is materialised into the
@@ -2938,7 +3011,7 @@ graph. That is a determined zero, not an unfilled field.</p>
   </thead>
   <tbody>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">cat-harness/schemas/jsonld.ts</code></td>
+      <td><code class="language-plaintext highlighter-rouge">cat-harness-tools/schemas/kg/jsonld.ts</code></td>
       <td><code class="language-plaintext highlighter-rouge">@conformsTo</code> tag</td>
     </tr>
   </tbody>
@@ -2975,11 +3048,11 @@ graph. That is a determined zero, not an unfilled field.</p>
   </thead>
   <tbody>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">cat-harness-tools/scripts/kg-export.ts</code></td>
+      <td><code class="language-plaintext highlighter-rouge">cat-harness-tools/schemas/kg/jsonld.ts</code></td>
       <td><code class="language-plaintext highlighter-rouge">@conformsTo</code> tag</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">cat-harness/schemas/jsonld.ts</code></td>
+      <td><code class="language-plaintext highlighter-rouge">cat-harness-tools/scripts/kg-export.ts</code></td>
       <td><code class="language-plaintext highlighter-rouge">@conformsTo</code> tag</td>
     </tr>
   </tbody>
@@ -3061,7 +3134,7 @@ graph. That is a determined zero, not an unfilled field.</p>
   </thead>
   <tbody>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">cat-harness/schemas/jsonld.ts</code></td>
+      <td><code class="language-plaintext highlighter-rouge">cat-harness-tools/schemas/kg/jsonld.ts</code></td>
       <td><code class="language-plaintext highlighter-rouge">@conformsTo</code> tag</td>
     </tr>
   </tbody>

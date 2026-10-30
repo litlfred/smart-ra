@@ -32,7 +32,7 @@
   label { margin-right:1rem; }
   @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
 </style>
-<link rel="stylesheet" href="../../../../../assets/css/navbar.css"><script src="../../../../../assets/navbar/rail-1asb2crpwol.js" defer></script><script src="../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+<link rel="stylesheet" href="../../../../../assets/css/navbar.css"><script src="../../../../../assets/navbar/rail-2fr3rz1c85y.js" defer></script><script src="../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
 /* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
  *
  * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
@@ -111,7 +111,7 @@
 
 </style>
 </head>
-<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../.." data-fa-to-root="../../../../..">{"data":"rail-1asb2crpwol","here":"/en/cat-harness/cat-harness-declaration/smart-base/smart-base/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../">folio-assistant</a></nav>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../.." data-fa-to-root="../../../../..">{"data":"rail-2fr3rz1c85y","here":"/en/cat-harness/cat-harness-declaration/smart-base/smart-base/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../">folio-assistant</a></nav>
 <main>
 <h1 id="nk-title">SMART Base</h1>
 <p class="m">A <a href="../../">cat-harness-declaration</a> node held by <a href="../">smart-base</a>, at <code>smart-base/smart-base.json</code>.</p>
@@ -182,15 +182,15 @@
   {
     &quot;id&quot;: &quot;library&quot;,
     &quot;path&quot;: &quot;library/&quot;,
-    &quot;description&quot;: &quot;L1 source content: one `&lt;bib-slug&gt;/` per ingested WHO publication, holding `sections/*.md` and `structure.json`. Every knowledge-graph reference to one of these sources resolves through here, never to a loose path or a bare URL — which is the whole reason the bytes could not stay in `uploads/`. The corpus-grep checklist searches `library/` ONLY, so a publication left in the incoming queue does not merely go unread: it makes a clean grep mean \&quot;nobody has done this\&quot; while the source sits right there. The id is `library`, the CONVENTIONAL one, so this entry OVERRIDES the default rather than joining it — overrides match on id and never on path, and a distinct id at the same path yields two entries for one directory that every fan-out consumer then scans twice.&quot;,
+    &quot;description&quot;: &quot;L1 source content: one `&lt;bib-slug&gt;/` per ingested WHO publication, holding `sections/*.md` and `structure.json`. Every knowledge-graph reference to one of these sources resolves through here, never to a loose path or a bare URL — which is the whole reason the bytes could not stay in `uploads/`. The corpus-grep checklist searches `library/` ONLY, so a publication left in the incoming queue does not merely go unread: it makes a clean grep mean \&quot;nobody has done this\&quot; while the source sits right there. The id is `library`, the CONVENTIONAL one, so this entry OVERRIDES the default rather than joining it — overrides match on id and never on path, and a distinct id at the same path yields two entries for one directory that every fan-out consumer then scans twice. IRIS PUBLICATIONS LIVE IN WHO-IRIS. On 2026-10-30 the twelve WHO IRIS publications ingested here moved to litlfred/who-iris (who-iris#107, the owner&#39;s \&quot;pre-CDN preview\&quot;): cite them as `{instance: \&quot;litlfred/who-iris\&quot;}`, and `library/&lt;slug&gt;` evidence resolves through the who-iris mount. This library keeps the sources that are not IRIS items. smart-base&#39;s own L1 extraction of an IRIS handbook is not a library entry and lives in `l1-extractions/`.&quot;,
     &quot;graphTypologies&quot;: [
       &quot;library&quot;
     ]
   },
   {
-    &quot;id&quot;: &quot;library-9789240116191-eng-l1-extraction&quot;,
-    &quot;path&quot;: &quot;library/9789240116191-eng/l1-extraction/&quot;,
-    &quot;description&quot;: &quot;What the recommendation-extraction skill read out of `9789240116191-eng` (Digital transformation handbook for health product catalogue): the L1 A-Box graph `l1.json`, the L2 scenario candidates `scenarios/scenario-candidates.l2.json`, and the curation, vocabulary and run context behind them. Declared so it is part of the knowledge graph rather than files beside it, and therefore PUBLISHED with its source (owner, 2026-10-12, bean 8pzh item 1: \&quot;a and b\&quot;). A SEPARATE declaration from `library/` though it nests inside it, as `methodologies/processes/` is beside `methodologies/`: a directory entry names one graph, and `l1-extraction` is a different typology. One entry per extracted library entry, never a wildcard: `scripts/l1-extraction-declared.test.ts` fails when an `l1-extraction/` directory on disk is undeclared, or a declaration names one that is not there.&quot;,
+    &quot;id&quot;: &quot;l1-extraction-9789240116191-eng&quot;,
+    &quot;path&quot;: &quot;l1-extractions/9789240116191-eng/&quot;,
+    &quot;description&quot;: &quot;What the recommendation-extraction skill read out of library entry `9789240116191-eng` (Digital transformation handbook for health product catalogue), which lives in who-iris since 2026-10-30 (who-iris#107): the L1 A-Box graph `l1.json`, the L2 scenario candidates `scenarios/scenario-candidates.l2.json`, and the curation, vocabulary and run context behind them. smart-base&#39;s own analysis (owner, 2026-10-16: \&quot;l1-extraction is part of smart-base\&quot;), so it stays here, at `l1-extractions/&lt;entry&gt;/`, and cites its source entry wherever that entry is held. Declared so it is part of the knowledge graph and published (owner, 2026-10-12, bean 8pzh item 1). It sat inside `library/&lt;entry&gt;/` until the entry moved; a library folder holding only the extraction then read as a second copy of the entry, and folio-assistant&#39;s library ingest refused the duplicate slug. One entry per extracted library entry, never a wildcard: `scripts/l1-extraction-declared.test.ts` fails when an `l1-extractions/&lt;entry&gt;/` on disk is undeclared, or a declaration names one that is not there.&quot;,
     &quot;graphTypologies&quot;: [
       &quot;l1-extraction&quot;
     ]
@@ -223,12 +223,12 @@
   {
     &quot;id&quot;: &quot;smart-base-artifact-index&quot;,
     &quot;path&quot;: &quot;fhir-artifact-index/&quot;,
-    &quot;description&quot;: &quot;The published IG&#39;s artefact index, reconstructed by `ingest:ig` from smart.who.int.base v0.3.0 (FHIR 4.0.1). 225 artefacts known, 47 materialized -- the DAK API surface, whose JSON Schemas and OpenAPI have no other home, against resource JSON that does. `dak/` sits INSIDE this directory rather than beside it, so one entry covers both the index and the bytes it points at; a sibling would be an undeclared directory holding the very bytes the index claims to have, which is the `dh4f` shape. NOTHING HERE IS AUTHORED: `ingest:ig:check` re-derives it and a hand-edit is a defect the next check either overwrites or reports. The four CDHI/CDSC ConceptMaps -- the v1-to-v2 crosswalks and the two hierarchy maps -- are indexed `referenced`: the index says where they are and holds none of their rows. Materializing one is `materialize-remote.bpmn`, not a flag. Issue #877, bean `cpmo`. UNTIL plan Q4 (bean `rbz3`, 2026-10-02) IT ALSO HELD `chrome.json`; the chrome is the TEMPLATE&#39;s styling, so it now lives in `themes/` beside the template&#39;s theme, and ships with the harness. When it was here, it was a THIRD provenance in one directory rather than a second copy of an existing one: `index.json` is harvested from an IG&#39;s published output, `menu.json` (smart-trust&#39;s) is read from its `sushi-config.yaml`, and `chrome.json` is resolved from the `fhir.template` packages its `ig.ini` names -- `fhir.base.template` and `who.template.root`, separate repositories the IG merely depends on. An IG declares its appearance in NO file it owns, which is why the chrome could not be folded into either of the other two. It lives at smart-base so every WHO SMART IG (through `smart-ig`) inherits one answer instead of each re-copying it; `schemas/ig-chrome.ts` carries why the consumer NAMES this instance rather than walking `needs` to it, and the layering gap that forces it, which is `nsbb`&#39;s.&quot;,
+    &quot;description&quot;: &quot;The IG&#39;s artefact index. `index.json`, `menu.json`, `releases.json`, `package.tgz` and `sidecars/` are NOT COMMITTED: fhir-harness&#39;s `ig-index:build` writes them at publish from the IG&#39;s AST (`builtAtPublish`, fhir-harness#124; `sidecars/` via this layer&#39;s `ig-site:sidecars` step, bean `4u5d`), as smart-immunizations&#39; are. Until then they were reconstructed by the retired `ingest:ig` from smart.who.int.base v0.3.0 (FHIR 4.0.1), with the DAK API surface committed under `dak/` (retired in bean `4u5d`). What stays committed here is `upstream-report-CDHIv1toCDHIv2.md` and `README.md`. The four CDHI/CDSC ConceptMaps -- the v1-to-v2 crosswalks and the two hierarchy maps -- are indexed `referenced`: the index says where they are and holds none of their rows. Materializing one is `materialize-remote.bpmn`, not a flag. Issue #877, bean `cpmo`. UNTIL plan Q4 (bean `rbz3`, 2026-10-02) IT ALSO HELD `chrome.json`; the chrome is the TEMPLATE&#39;s styling, so it now lives in `themes/` beside the template&#39;s theme, and ships with the harness. When it was here, it was a THIRD provenance in one directory rather than a second copy of an existing one: `index.json` is harvested from an IG&#39;s published output, `menu.json` (smart-trust&#39;s) is read from its `sushi-config.yaml`, and `chrome.json` is resolved from the `fhir.template` packages its `ig.ini` names -- `fhir.base.template` and `who.template.root`, separate repositories the IG merely depends on. An IG declares its appearance in NO file it owns, which is why the chrome could not be folded into either of the other two. It lives at smart-base so every WHO SMART IG (through `smart-ig`) inherits one answer instead of each re-copying it; `schemas/ig-chrome.ts` carries why the consumer NAMES this instance rather than walking `needs` to it, and the layering gap that forces it, which is `nsbb`&#39;s.&quot;,
     &quot;graphTypologies&quot;: [
       &quot;fhir-artifact-index&quot;
     ],
     &quot;readOnly&quot;: true,
-    &quot;readOnlyBasis&quot;: &quot;Copies of upstream IG artefacts, and GENERATED -- `ingest-ig-artifacts.ts` rewrites this index, a person does not edit it. Read-only is about the second: a hand edit here silently changes what this repository claims upstream published, and `check:materialized-fixity` is what catches one that happened. Answered rather than left silent, because absent is NOT a declaration of writability -- a directory that has not answered has asserted nothing, which is why the verdict for silence is `undeclared` and never `false`.&quot;,
+    &quot;readOnlyBasis&quot;: &quot;Built from the IG&#39;s own AST, and GENERATED -- fhir-harness&#39;s `ig-index:build` writes this index at publish, a person does not edit or commit it (fhir-harness#124). Read-only is about the second: a hand edit here silently changes what this repository claims upstream published, and `check:materialized-fixity` is what catches one that happened. Answered rather than left silent, because absent is NOT a declaration of writability -- a directory that has not answered has asserted nothing, which is why the verdict for silence is `undeclared` and never `false`.&quot;,
     &quot;served&quot;: true
   },
   {
@@ -330,9 +330,10 @@
     &quot;id&quot;: &quot;smart-base-schemas&quot;,
     &quot;path&quot;: &quot;schemas/&quot;,
     &quot;graphTypologies&quot;: [
-      &quot;code&quot;
+      &quot;code&quot;,
+      &quot;schemas&quot;
     ],
-    &quot;description&quot;: &quot;The dak vocabulary in code: `dak-blocks.ts` (the block builders `content-adapters/dak.json` names), `dak-kinds.ts` and `dak-jsonld.ts` (read off `block-kinds/`), `dak-content-type.ts`, `dak.ts`, and the l2-dak-authoring skill&#39;s input/output JSON Schemas. Declared at the cutover (bean hupw) so a remote mount brings it: the mounted adapter and QA checkers name these modules.&quot;
+    &quot;description&quot;: &quot;The dak vocabulary in code: `dak-blocks.ts` (the block builders `content-adapters/dak.json` names), `dak-kinds.ts` and `dak-jsonld.ts` (read off `block-kinds/`), `dak-content-type.ts`, `dak.ts`, and the l2-dak-authoring skill&#39;s input/output JSON Schemas. Declared at the cutover (bean hupw) so a remote mount brings it: the mounted adapter and QA checkers name these modules. It also holds the `schemas` graph, declared on 2026-10-26: until then it was found only by the schema reader&#39;s conventional fallback to `&lt;instance&gt;/schemas/`, which applies only while NO directory of the `schemas` kind exists among the instances stacked on smart-base. cat-harness&#39;s `ns/` (`cat-harness-ns`, kind `schemas`) is reproduced into every dependent, so the moment `jsonld:contexts` writes `ns/context/v1.jsonld` into an instance stacked on this one the fallback stopped and smart-base&#39;s schema fields left the extracted glossary, making `check:glossary` pass or fail on the order earlier writers ran in.&quot;
   },
   {
     &quot;id&quot;: &quot;smart-base-pipeline&quot;,
@@ -437,11 +438,12 @@
   }
 ]</pre></dd>
 <dt>needs</dt><dd><pre>[
-  &quot;fhir-harness&quot;
+  &quot;fhir-harness&quot;,
+  &quot;who-iris&quot;
 ]</pre></dd>
 <dt>_canonicalUrl_comment</dt><dd>smart-base&#39;s published base, as `sushi-config.yaml` declares it (`canonical: http://smart.who.int/base`). Added 2026-09-22 with `tools/`, because a Tool node&#39;s I/O type IRIs are minted against this at load and Zod refuses a relative one. It is READ from upstream rather than chosen here, so it is a fact about smart-base and not a decision about where this staging directory publishes.</dd>
 <dt>canonicalUrl</dt><dd>http://smart.who.int/base</dd>
-<dt>_needs_comment</dt><dd>REPOINTED 2026-09-22 (issue #975) from `folio-assistant-core` to `fhir-harness`, per the owner&#39;s stack ruling. It read `folio-assistant-core` because it was staged (PR #881) BEFORE `fhir-harness` existed, and taking no position on the pipeline layering was that PR&#39;s explicit scope. `needs` governs the LAYER ORDER: `dependency-order.ts` topologically sorts on it and `harness-tiles.ts` builds the LHS navbar spine from it. It does NOT compose the skill or content overlay -- that is `dependencies.folioAssistant` in `&lt;name&gt;.config.json`, walked recursively by `resolveSkillDirs`, and the two are different mechanisms with different files. MEASURED 2026-09-22 rather than assumed, after this comment first claimed otherwise: with `needs` set correctly, `resolveSkillDirs` still returns each instance&#39;s OWN skills and nothing from the layer below. No `smart-*` instance declares config dependencies at all, so no overlay composes anywhere in this stack -- bean recorded, not fixed here.</dd>
+<dt>_needs_comment</dt><dd>ADDED who-iris 2026-10-30 (who-iris#107): the WHO IRIS publications smart-base cites (DIIG, the classifications, the digital transformation handbooks) moved there, so smart-base&#39;s voices, methodologies and l1-extraction read that corpus. REPOINTED 2026-09-22 (issue #975) from `folio-assistant-core` to `fhir-harness`, per the owner&#39;s stack ruling. It read `folio-assistant-core` because it was staged (PR #881) BEFORE `fhir-harness` existed, and taking no position on the pipeline layering was that PR&#39;s explicit scope. `needs` governs the LAYER ORDER: `dependency-order.ts` topologically sorts on it and `harness-tiles.ts` builds the LHS navbar spine from it. It does NOT compose the skill or content overlay -- that is `dependencies.folioAssistant` in `&lt;name&gt;.config.json`, walked recursively by `resolveSkillDirs`, and the two are different mechanisms with different files. MEASURED 2026-09-22 rather than assumed, after this comment first claimed otherwise: with `needs` set correctly, `resolveSkillDirs` still returns each instance&#39;s OWN skills and nothing from the layer below. No `smart-*` instance declares config dependencies at all, so no overlay composes anywhere in this stack -- bean recorded, not fixed here.</dd>
 <dt>taskIo</dt><dd><pre>{
   &quot;smart-base:diig-figure:check&quot;: {
     &quot;outputs&quot;: [],
@@ -562,11 +564,57 @@
       &quot;script&quot;: &quot;smart-base:pages:check&quot;,
       &quot;kind&quot;: &quot;covered-by&quot;,
       &quot;reason&quot;: &quot;covered-by `smart:pages`, which every reader job in the index checkout runs straight after the mount (cutover 1ad43df727, bean hupw). This `:check` compared a committed copy of the generated pages; since the cutover the pages are built from the mount and never committed, so there is no copy to compare and the build itself is the gate. folio-assistant#2518.&quot;
+    },
+    {
+      &quot;script&quot;: &quot;check:dak-annexes&quot;,
+      &quot;kind&quot;: &quot;covered-by&quot;,
+      &quot;reason&quot;: &quot;covered-by `check:web-annexes`, which `code-quality-gates.yml` runs: this is the same script under its name before the `web-annex` widening (2026-10-24), kept as an alias for callers that still use it. Running both would judge the same annexes twice. folio-assistant#2681.&quot;
     }
   ]
 }</pre></dd>
 <dt>_builtAtPublish_comment</dt><dd>Owner, 2026-10-14 (B1; schemas/built-at-publish.ts in cat-harness). This instance&#39;s JSON-LD @context is generated by `jsonld:contexts` (cat-harness-tools scripts/gen-instance-contexts.ts) from the prefixes and content-context terms its documents use, flattened with the prefix tables of every instance it needs. Those tables are read at the CHECKOUT&#39;s pins, not at pins this instance&#39;s commit names, so no commit of it can hold the file current: it is built at publish and never committed (bean folio-assistant-63q4).</dd>
 <dt>builtAtPublish</dt><dd><pre>[
+  {
+    &quot;path&quot;: &quot;fhir-artifact-index/index.json&quot;,
+    &quot;writer&quot;: [
+      &quot;ig-index:build&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;the IG&#39;s artefact index: built by fhir-harness&#39;s ig-index:build from the IG&#39;s AST (restored from the IG repository&#39;s AST cache) and its own sushi-config.yaml, so it moves when the IG&#39;s default branch or its AST cache moves, not with a commit of this instance (fhir-harness#124)&quot;
+  },
+  {
+    &quot;path&quot;: &quot;fhir-artifact-index/menu.json&quot;,
+    &quot;writer&quot;: [
+      &quot;ig-index:build&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;the IG&#39;s menu: built by fhir-harness&#39;s ig-index:build from the IG&#39;s AST (restored from the IG repository&#39;s AST cache) and its own sushi-config.yaml, so it moves when the IG&#39;s default branch or its AST cache moves, not with a commit of this instance (fhir-harness#124)&quot;
+  },
+  {
+    &quot;path&quot;: &quot;fhir-artifact-index/releases.json&quot;,
+    &quot;writer&quot;: [
+      &quot;ig-index:build&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;the IG&#39;s release list: built by fhir-harness&#39;s ig-index:build from the IG&#39;s AST (restored from the IG repository&#39;s AST cache) and its own sushi-config.yaml, so it moves when the IG&#39;s default branch or its AST cache moves, not with a commit of this instance (fhir-harness#124)&quot;
+  },
+  {
+    &quot;path&quot;: &quot;fhir-artifact-index/package.tgz&quot;,
+    &quot;writer&quot;: [
+      &quot;ig-index:build&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;reason&quot;: &quot;the Publisher-shaped package the JSON view pages read each resource from: built by fhir-harness&#39;s ig-index:build from the IG&#39;s AST (restored from the IG repository&#39;s AST cache) and its own sushi-config.yaml, so it moves when the IG&#39;s default branch or its AST cache moves, not with a commit of this instance (fhir-harness#124)&quot;
+  },
+  {
+    &quot;path&quot;: &quot;document-kinds/dak.coverage.smart-base.json&quot;,
+    &quot;writer&quot;: [
+      &quot;smart-base:document-kinds&quot;
+    ],
+    &quot;because&quot;: &quot;checkout&quot;,
+    &quot;directory&quot;: &quot;smart-base-document-kinds&quot;,
+    &quot;reason&quot;: &quot;the DAK view of this IG&#39;s artefact index, which is itself built at publish (fhir-artifact-index/index.json above), so the report moves with the index and is built after it (fhir-harness#124)&quot;
+  },
   {
     &quot;path&quot;: &quot;ns/context/v1.jsonld&quot;,
     &quot;writer&quot;: [

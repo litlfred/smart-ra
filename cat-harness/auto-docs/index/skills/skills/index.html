@@ -137,7 +137,7 @@
   `mark-small` in `harness.json`, and it went unread: nothing in this
   repo ever emitted a favicon at all, `rel="icon"` included. It also could
   not have driven this lookup as declared — `imagesForRole()`
-  (`schemas/kg-node.ts`) requires an image's `layout` field, which neither
+  (`schemas/kg/kg-node.ts`) requires an image's `layout` field, which neither
   mark entry carries, so a `browser-icon`-role lookup returns nothing. Reusing
   the already-resolved `icon` (the same field `title.html` reads) sidesteps
   that and, more importantly, is what was asked for: the sidebar mark and the
@@ -588,7 +588,7 @@
 -->
 <!-- The harness icon row's own style, which railed pages load without docs-ui.css (beans `lhvt`, `9rq1`). -->
 <link rel="stylesheet" href="../../../../../assets/css/navbar-row.css?v=7d7d00921e0f">
-<link rel="stylesheet" href="../../../../../assets/css/docs-ui.css?v=c5f675d4c764">
+<link rel="stylesheet" href="../../../../../assets/css/docs-ui.css?v=6071ae228cf3">
 <!-- Narrow viewports: wide content scrolls in its own box, never the page
      (bean `2r2n`). The standalone viewers inline the same file through
      `withViewerNav`, so both kinds of page read one set of rules. -->
@@ -599,21 +599,21 @@
   `state-visualizer.ts` can inline exactly these bytes into the generated
   `<base>/<stub>/state-visualizer/` pages. One rule, two surfaces.
 -->
-<link rel="stylesheet" href="../../../../../assets/css/work-plan.css?v=30bf7780ce27">
-<!-- Sticky themes. GENERATED from the theme nodes in `schemas/themes.ts` by
+<link rel="stylesheet" href="../../../../../assets/css/work-plan.css?v=ed3e33f033fe">
+<!-- Sticky themes. GENERATED from the theme nodes in `schemas/ui/themes.ts` by
      `bun run cat themes:css`; `themes:css:check` fails the build when it is stale.
      Loaded AFTER docs-ui.css deliberately: it supplies the `--fa-sticky-*`
      roles that docs-ui.css consumes, and a custom property has to be set on a
      matching element before the rule reading it takes effect. -->
-<link rel="stylesheet" href="../../../../../assets/css/themes.css?v=a7f81b62eded">
+<link rel="stylesheet" href="../../../../../assets/css/themes.css?v=37c8ab192a5f">
 <!-- UML overview colours: one class per graph typology, set on the Mermaid nodes
      that `scripts/gen-uml-overview.ts` writes into docs/uml/overview/. -->
 <link rel="stylesheet" href="../../../../../assets/css/uml.css?v=e677f91cbf66">
-<!-- Kind avatars. GENERATED from `schemas/avatars.ts` by `bun run cat avatars:css`;
+<!-- Kind avatars. GENERATED from `schemas/content/avatars.ts` by `bun run cat avatars:css`;
      `avatars:css:check` fails the build when it is stale. One stylesheet
      rather than 68 assets: the glyph is a mask and the colour is a property,
      so a scheme swap is a custom property and the trash state is a selector. -->
-<link rel="stylesheet" href="../../../../../assets/css/avatars.css?v=699212580934">
+<link rel="stylesheet" href="../../../../../assets/css/avatars.css?v=780d571c53c1">
 
 <!--
   The kinds THIS INSTANCE DECLARES, for the avatar fan.
@@ -647,7 +647,7 @@
 <script src="../../../../../assets/js/kg-render.js" defer></script>
 <!-- BEFORE docs-ui.js, which calls it: the one drawing of the harness icon row (beans `lhvt`, `9rq1`). -->
 <script src="../../../../../assets/js/navbar-row.js?v=7dce6a7e2ab0" defer></script>
-<script src="../../../../../assets/js/docs-ui.js?v=9c88eef1c243" defer></script>
+<script src="../../../../../assets/js/docs-ui.js?v=8b5567635976" defer></script>
 <!-- The edit, source and feedback links of every page, from the platform's one
   recipe (cat-harness-tools/src/core/edit-links.ts, bean v433): links carry their
   facts and this builds the hrefs. -->
@@ -736,9 +736,9 @@
   is broken when it is doing exactly what it can.
 -->
 
-<link rel="stylesheet" href="../../../../../assets/css/navbar.css"><script src="../../../../../assets/navbar/rail-1uu2yi3osvq.js" defer></script><script src="../../../../../assets/js/navbar.js" defer></script><link rel="stylesheet" href="../../../../../assets/page-layout.css" data-fa-page-layout><script src="../../../../../assets/page-layout.js" defer data-fa-page-layout></script><meta name="fa-pinned-data" content="../../../../.."></head>
+<link rel="stylesheet" href="../../../../../assets/css/navbar.css"><script src="../../../../../assets/navbar/rail-1nr7jo2rxsc.js" defer></script><script src="../../../../../assets/js/navbar.js" defer></script><link rel="stylesheet" href="../../../../../assets/page-layout.css" data-fa-page-layout><script src="../../../../../assets/page-layout.js" defer data-fa-page-layout></script><meta name="fa-pinned-data" content="../../../../.."></head>
 
-<body><script type="application/json" id="fa-rail" data-fa-root="https://litlfred.github.io/folio-assistant" data-fa-to-root="../../../../..">{"data":"rail-1uu2yi3osvq","here":"/cat-harness/auto-docs/index/skills/skills/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../">Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector</a></nav>
+<body><script type="application/json" id="fa-rail" data-fa-root="https://litlfred.github.io/folio-assistant" data-fa-to-root="../../../../..">{"data":"rail-1nr7jo2rxsc","here":"/cat-harness/auto-docs/index/skills/skills/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../">Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector</a></nav>
   <a class="skip-to-main" href="#main-content">Skip to main content</a>
   <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
   <symbol id="svg-link" viewBox="0 0 24 24">
@@ -917,10 +917,12 @@
 </div>
 
 <ul class="subs">
-<li><a href="../core-skills/">core-skills</a> <span class="p">folio-assistant-core/skills</span> <span class="n">30</span></li>
-<li><a href="../fhir-ig-skills/">fhir-ig-skills</a> <span class="p">fhir-harness/skills</span> <span class="n">16</span></li>
+<li><a href="../bootstrap-tools-skills/">bootstrap-tools-skills</a> <span class="p">bootstrap-tools/skills</span> <span class="n">3</span></li>
+<li><a href="../core-skills/">core-skills</a> <span class="p">folio-assistant-core/skills</span> <span class="n">42</span></li>
+<li><a href="../fhir-ig-skills/">fhir-ig-skills</a> <span class="p">fhir-harness/skills</span> <span class="n">18</span></li>
 <li><strong>skills</strong> <span class="p">cat-harness/skills</span> <span class="n">249</span></li>
-<li><a href="../smart-base-skills/">smart-base-skills</a> <span class="p">smart-base/skills</span> <span class="n">23</span></li>
+<li><a href="../smart-base-skills/">smart-base-skills</a> <span class="p">smart-base/skills</span> <span class="n">24</span></li>
+<li><a href="../who-iris-skills/">who-iris-skills</a> <span class="p">who-iris/skills</span> <span class="n">5</span></li>
 </ul>
 
 <div class="fa-table-filter">
@@ -1062,10 +1064,6 @@
 <tr>
   <td><a href="https://github.com/litlfred/cat-harness/blob/main/skills/authoring/content-lifecycle/evidence-appraisal.md"><code>evidence-appraisal</code></a><br><span class="p">cat-harness/skills/authoring/content-lifecycle/evidence-appraisal.md</span></td>
   <td><span class="none">no description in the artefact</span></td>
-</tr>
-<tr>
-  <td><a href="https://github.com/litlfred/cat-harness/blob/main/skills/authoring/content-lifecycle/ig-publisher-service-contract.md"><code>ig-publisher-service-contract</code></a><br><span class="p">cat-harness/skills/authoring/content-lifecycle/ig-publisher-service-contract.md</span></td>
-  <td>The contract the <code>ig-publisher-service</code> role is held to: what the JVM services an IG build shells out to must produce, and how a caller tells a pass from a run that never happened.</td>
 </tr>
 <tr>
   <td><a href="https://github.com/litlfred/cat-harness/blob/main/skills/conduct/conduct-core/agent-memory.md"><code>agent-memory</code></a><br><span class="p">cat-harness/skills/conduct/conduct-core/agent-memory.md</span></td>
@@ -1412,14 +1410,6 @@
   <td>Every process here is BPMN, the diagrams are executable, and the base processes are strict.</td>
 </tr>
 <tr>
-  <td><a href="https://github.com/litlfred/cat-harness/blob/main/skills/process/workflow/branch-freshness.md"><code>branch-freshness</code></a><br><span class="p">cat-harness/skills/process/workflow/branch-freshness.md</span></td>
-  <td>Periodically rebase or merge main into the feature branch, detect what changed upstream, and re-analyse the session workplan.</td>
-</tr>
-<tr>
-  <td><a href="https://github.com/litlfred/cat-harness/blob/main/skills/process/workflow/code-review-process.md"><code>code-review-process</code></a><br><span class="p">cat-harness/skills/process/workflow/code-review-process.md</span></td>
-  <td>Where code review sits in the release lifecycle.</td>
-</tr>
-<tr>
   <td><a href="https://github.com/litlfred/cat-harness/blob/main/skills/process/workflow/deterministic-and-agentic.md"><code>deterministic-and-agentic</code></a><br><span class="p">cat-harness/skills/process/workflow/deterministic-and-agentic.md</span></td>
   <td>Workflow processing is a SPECTRUM, not a switch.</td>
 </tr>
@@ -1430,14 +1420,6 @@
 <tr>
   <td><a href="https://github.com/litlfred/cat-harness/blob/main/skills/process/workflow/process-state.md"><code>process-state</code></a><br><span class="p">cat-harness/skills/process/workflow/process-state.md</span></td>
   <td>Track where you are inside a running process — which task, in which swimlane, under which role — and recover deliberately when you find yourself outside it.</td>
-</tr>
-<tr>
-  <td><a href="https://github.com/litlfred/cat-harness/blob/main/skills/process/workflow/release-epic-planning.md"><code>release-epic-planning</code></a><br><span class="p">cat-harness/skills/process/workflow/release-epic-planning.md</span></td>
-  <td>Plan and track releases using bean epics.</td>
-</tr>
-<tr>
-  <td><a href="https://github.com/litlfred/cat-harness/blob/main/skills/process/workflow/release-lifecycle.md"><code>release-lifecycle</code></a><br><span class="p">cat-harness/skills/process/workflow/release-lifecycle.md</span></td>
-  <td>Governs the release lifecycle: semver policy, draft/named releases, changelogs, release gating, and the relationship between feature branches, PRs, beans, and releases.</td>
 </tr>
 <tr>
   <td><a href="https://github.com/litlfred/cat-harness/blob/main/skills/process/workflow/render-kg-to-cdn.md"><code>render-kg-to-cdn</code></a><br><span class="p">cat-harness/skills/process/workflow/render-kg-to-cdn.md</span></td>
@@ -1532,12 +1514,20 @@
   <td>Classify every remote branch against the default branch (merged, landed by squash or cherry-pick, partially landed, unlanded, undetermined) by commit ancestry, patch-id and merge-tree, not by subject line.</td>
 </tr>
 <tr>
+  <td><a href="https://github.com/litlfred/cat-harness/blob/main/skills/sdlc/sdlc-core/branch-freshness.md"><code>branch-freshness</code></a><br><span class="p">cat-harness/skills/sdlc/sdlc-core/branch-freshness.md</span></td>
+  <td>Periodically rebase or merge main into the feature branch, detect what changed upstream, and re-analyse the session workplan.</td>
+</tr>
+<tr>
   <td><a href="https://github.com/litlfred/cat-harness/blob/main/skills/sdlc/sdlc-core/bun-use.md"><code>bun-use</code></a><br><span class="p">cat-harness/skills/sdlc/sdlc-core/bun-use.md</span></td>
   <td>How Bun is used as the JavaScript/TypeScript execution runtime, test runner, package manager, and tarball packager across separated repositories: standalone subgraph configuration (bunfig.toml, package.json, tsconfig.js…</td>
 </tr>
 <tr>
   <td><a href="https://github.com/litlfred/cat-harness/blob/main/skills/sdlc/sdlc-core/ci-health.md"><code>ci-health</code></a><br><span class="p">cat-harness/skills/sdlc/sdlc-core/ci-health.md</span></td>
   <td>A red workflow looks exactly like a green one from inside a checkout.</td>
+</tr>
+<tr>
+  <td><a href="https://github.com/litlfred/cat-harness/blob/main/skills/sdlc/sdlc-core/code-review-process.md"><code>code-review-process</code></a><br><span class="p">cat-harness/skills/sdlc/sdlc-core/code-review-process.md</span></td>
+  <td>Where code review sits in the release lifecycle.</td>
 </tr>
 <tr>
   <td><a href="https://github.com/litlfred/cat-harness/blob/main/skills/sdlc/sdlc-core/continual-progress.md"><code>continual-progress</code></a><br><span class="p">cat-harness/skills/sdlc/sdlc-core/continual-progress.md</span></td>
@@ -1554,10 +1544,6 @@
 <tr>
   <td><a href="https://github.com/litlfred/cat-harness/blob/main/skills/sdlc/sdlc-core/delivery-summary.md"><code>delivery-summary</code></a><br><span class="p">cat-harness/skills/sdlc/sdlc-core/delivery-summary.md</span></td>
   <td>Post-delivery summary with server restart command and viewer links</td>
-</tr>
-<tr>
-  <td><a href="https://github.com/litlfred/cat-harness/blob/main/skills/sdlc/sdlc-core/deployment-auth.md"><code>deployment-auth</code></a><br><span class="p">cat-harness/skills/sdlc/sdlc-core/deployment-auth.md</span></td>
-  <td><span class="none">no description in the artefact</span></td>
 </tr>
 <tr>
   <td><a href="https://github.com/litlfred/cat-harness/blob/main/skills/sdlc/sdlc-core/diff.md"><code>diff</code></a><br><span class="p">cat-harness/skills/sdlc/sdlc-core/diff.md</span></td>
@@ -1696,6 +1682,14 @@
   <td>Before new work takes shape, find the work it touches.</td>
 </tr>
 <tr>
+  <td><a href="https://github.com/litlfred/cat-harness/blob/main/skills/sdlc/sdlc-core/release-epic-planning.md"><code>release-epic-planning</code></a><br><span class="p">cat-harness/skills/sdlc/sdlc-core/release-epic-planning.md</span></td>
+  <td>Plan and track releases using bean epics.</td>
+</tr>
+<tr>
+  <td><a href="https://github.com/litlfred/cat-harness/blob/main/skills/sdlc/sdlc-core/release-lifecycle.md"><code>release-lifecycle</code></a><br><span class="p">cat-harness/skills/sdlc/sdlc-core/release-lifecycle.md</span></td>
+  <td>Governs the release lifecycle: semver policy, draft/named releases, changelogs, release gating, and the relationship between feature branches, PRs, beans, and releases.</td>
+</tr>
+<tr>
   <td><a href="https://github.com/litlfred/cat-harness/blob/main/skills/sdlc/sdlc-core/rendered-impact.md"><code>rendered-impact</code></a><br><span class="p">cat-harness/skills/sdlc/sdlc-core/rendered-impact.md</span></td>
   <td>The list of rendered files a Change Set alters, and how a reviewer approves against it.</td>
 </tr>
@@ -1710,6 +1704,10 @@
 <tr>
   <td><a href="https://github.com/litlfred/cat-harness/blob/main/skills/sdlc/sdlc-core/session-intent.md"><code>session-intent</code></a><br><span class="p">cat-harness/skills/sdlc/sdlc-core/session-intent.md</span></td>
   <td>Session-start intent declaration + session-end results recording, against the goal-scoped master ledger and queue file.</td>
+</tr>
+<tr>
+  <td><a href="https://github.com/litlfred/cat-harness/blob/main/skills/sdlc/sdlc-core/signing.md"><code>signing</code></a><br><span class="p">cat-harness/skills/sdlc/sdlc-core/signing.md</span></td>
+  <td>What any signature in the harness must answer, whatever it covers: who signs, what bytes are signed, which signature suites are accepted and who decides that, where the key is kept, which route signs (API or person, by…</td>
 </tr>
 <tr>
   <td><a href="https://github.com/litlfred/cat-harness/blob/main/skills/sdlc/sdlc-core/specification-management.md"><code>specification-management</code></a><br><span class="p">cat-harness/skills/sdlc/sdlc-core/specification-management.md</span></td>
@@ -1786,6 +1784,10 @@
 <tr>
   <td><a href="https://github.com/litlfred/cat-harness/blob/main/skills/tools/folio-core/covered-is-not-reachable.md"><code>covered-is-not-reachable</code></a><br><span class="p">cat-harness/skills/tools/folio-core/covered-is-not-reachable.md</span></td>
   <td>A skill can be satisfied by the neighbours of its mechanism while the mechanism is reachable from no Tool node.</td>
+</tr>
+<tr>
+  <td><a href="https://github.com/litlfred/cat-harness/blob/main/skills/tools/folio-core/deployment-auth.md"><code>deployment-auth</code></a><br><span class="p">cat-harness/skills/tools/folio-core/deployment-auth.md</span></td>
+  <td><span class="none">no description in the artefact</span></td>
 </tr>
 <tr>
   <td><a href="https://github.com/litlfred/cat-harness/blob/main/skills/tools/folio-core/mcp-assembly.md"><code>mcp-assembly</code></a><br><span class="p">cat-harness/skills/tools/folio-core/mcp-assembly.md</span></td>

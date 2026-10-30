@@ -32,7 +32,7 @@
   label { margin-right:1rem; }
   @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
 </style>
-<link rel="stylesheet" href="../../../../../assets/css/navbar.css"><script src="../../../../../assets/navbar/rail-21ss9p106ha.js" defer></script><script src="../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+<link rel="stylesheet" href="../../../../../assets/css/navbar.css"><script src="../../../../../assets/navbar/rail-11ibw9vd0vy.js" defer></script><script src="../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
 /* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
  *
  * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
@@ -111,7 +111,7 @@
 
 </style>
 </head>
-<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../.." data-fa-to-root="../../../../..">{"data":"rail-21ss9p106ha","here":"/en/cat-harness/cat-harness-declaration/fhir-harness/fhir-harness/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../">folio-assistant</a></nav>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../.." data-fa-to-root="../../../../..">{"data":"rail-11ibw9vd0vy","here":"/en/cat-harness/cat-harness-declaration/fhir-harness/fhir-harness/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../">folio-assistant</a></nav>
 <main>
 <h1 id="nk-title">FHIR IG Harness</h1>
 <p class="m">A <a href="../../">cat-harness-declaration</a> node held by <a href="../">fhir-harness</a>, at <code>fhir-harness/fhir-harness.json</code>.</p>
@@ -216,6 +216,14 @@
     ]
   },
   {
+    &quot;id&quot;: &quot;scenarios&quot;,
+    &quot;path&quot;: &quot;scenarios/&quot;,
+    &quot;graphTypologies&quot;: [
+      &quot;scenarios&quot;
+    ],
+    &quot;description&quot;: &quot;Scenarios: the roles an actor takes on, in `roles.json`, the user stories told as them, in `stories.json`, the actors in `actors/`, and the capabilities in `capabilities/`. The `fhir-modeller` and `ig-publisher-service` roles, actors, stories and FHIR IG capability probes moved here from cat-harness in placement PR4 (bean `4fv8`), beside the FHIR IG processes and skills they bind.&quot;
+  },
+  {
     &quot;id&quot;: &quot;fhir-harness-docs&quot;,
     &quot;path&quot;: &quot;docs/&quot;,
     &quot;dependents&quot;: &quot;skip&quot;,
@@ -239,6 +247,28 @@
     &quot;description&quot;: &quot;What auditing THIS instance produced, committed so a consumer can tell \&quot;never audited\&quot; from \&quot;audited clean\&quot; — a printed verdict cannot, which is why every QA verdict here is a sidecar. TWO kinds live here and the files declare which they are via $schema: kg-qa/v1, one per audited subject, in a tree mirroring the subject’s own path, and ONE kg-qa-manifest/v1 recording the auditor’s identity for all of them. The manifest moved here from skills/ on 2026-09-27: kg-audit.ts writes it unconditionally, so its old home created a skills/ directory holding no skills in every instance that has none. At declaration time that is 9 files across scenarios (1), skills (6), tools (2). No qa-results/v1 and no witnesses: this instance runs no document build and no witness-producing computation, and declaring kinds it does not hold would be an over-claim. dependents: reproduce, because a dependent audits its OWN graph — these verdicts are about this instance’s nodes, and inheriting them would attribute one instance’s findings to another. Declared WITH its files in one commit, per bean dh4f: a declared-but-absent directory makes a consumer scan nothing and report a clean run over it.&quot;,
     &quot;graphTypologies&quot;: [
       &quot;qa&quot;
+    ]
+  },
+  {
+    &quot;id&quot;: &quot;fhir-harness-libraries&quot;,
+    &quot;coverage&quot;: {
+      &quot;exempt&quot;: {
+        &quot;visualiser&quot;: &quot;Owner, 2026-10-29 (cat-harness#691): no viewer by design. Each node is an outside package whose registry tarball and SPDX licence the node already links, so a viewer would only repeat the registry.&quot;
+      }
+    },
+    &quot;path&quot;: &quot;libraries/&quot;,
+    &quot;title&quot;: &quot;Software libraries&quot;,
+    &quot;description&quot;: &quot;The outside libraries this layer&#39;s code imports or keeps vendored, one `software-library` node each. A dependency in `package.json` is a `software-library/1.0.0` node: the version and sha512 `bun.lock` pins, the registry tarball, the SPDX licence read from the installed package, the range, whether it is a dev dependency, and the files that import it (`usedBy`). A bundle kept under `scripts/assets/vendor/&lt;name&gt;/&lt;version&gt;/` (LHC-Forms, the NLM Form Builder, jQuery, ucum-lhc) is a `software-library/1.1.0` node marked `vendored`: name, version, tarball and sha512 from its `vendored.json`, and its licence from its own licence file (an NLM notice the SPDX list does not carry is a `LicenseRef-`). The imports inside a bundle are not this layer&#39;s, so they name no node (owner, 2026-10-26: \&quot;A. Record as vendored\&quot;). GENERATED, never hand-edited: `bun run cat libraries:derive` writes it and `libraries:check` fails on a stale node, an import no node names, a shim no node names, and a vendored file whose bytes are not the ones its `vendored.json` records. The kind is cat-harness&#39;s (bean `jbvi`); this layer keeps its own nodes because it pins its own versions.&quot;,
+    &quot;graphTypologies&quot;: [
+      &quot;software-library&quot;
+    ]
+  },
+  {
+    &quot;id&quot;: &quot;glossary&quot;,
+    &quot;path&quot;: &quot;glossary/&quot;,
+    &quot;description&quot;: &quot;FHIR Harness&#39;s generated glossary (`glossary/generated/fhir-harness/`): candidate `folio-glossary/v1` schemes extracted from this layer&#39;s tools, skills, BPMN activities and schema fields by core&#39;s `glossary:page`. Moved here from `folio-assistant-core/glossary/generated/fhir-harness/` (bean q3n9, owner ruling 2026-10-24: a scheme is keyed by (instance, scheme), and each layer holds its own glossary, following rfev).&quot;,
+    &quot;graphTypologies&quot;: [
+      &quot;glossary&quot;
     ]
   }
 ]</pre></dd>
@@ -284,6 +314,13 @@
     &quot;outputs&quot;: [],
     &quot;because&quot;: &quot;measured 2026-10-01 (bean xpcu); moved from cat-harness/scripts/task-io.ts to its owning instance 2026-10-06 (bean 0r7u)&quot;
   },
+  &quot;check:ig-annex-links&quot;: {
+    &quot;inputs&quot;: [
+      &quot;{tracked}&quot;
+    ],
+    &quot;outputs&quot;: [],
+    &quot;because&quot;: &quot;reads each declared ig-annex directory&#39;s markdown annexes and the IG&#39;s input/pagecontent pages they are appended to; writes nothing (https://github.com/litlfred/smart-immunizations/issues/81)&quot;
+  },
   &quot;ig-ast:schema:check&quot;: {
     &quot;outputs&quot;: [],
     &quot;because&quot;: &quot;measured 2026-10-01 (bean xpcu); moved from cat-harness/scripts/task-io.ts to its owning instance 2026-10-06 (bean 0r7u)&quot;
@@ -316,19 +353,9 @@
   ],
   &quot;scripts&quot;: [
     {
-      &quot;script&quot;: &quot;ingest:ig-menu:check&quot;,
-      &quot;kind&quot;: &quot;report&quot;,
-      &quot;reason&quot;: &quot;CI CANNOT OBTAIN ITS INPUT. It compares the committed `menu.json` against the IG&#39;s OWN `sushi-config.yaml`, which lives in the upstream source repository — not in this checkout, and not reachable from a runner: `worldhealthorganization.github.io:443` and `litlfred.github.io:443` both answer 403 CONNECT from this environment (measured 2026-09-23, and `wjfu` recorded the same denial on the 21st). Wired as a gate it would exercise nothing on every run. It is built so that CANNOT be mistaken for a pass: with no `--source` it exits **2**, printing `could not determine`, rather than the 0 a silent skip would give. What IS gated, on every run and without the network, is the committed menu&#39;s effect: `smart-trust:pages:check` regenerates the 5 left-hand-nav sections FROM `menu.json` and compares them byte for byte, and `check:kind-validators` parses the file against `folio-ig-menu/v1`. Run this one by hand after cloning the IG, or from `/prepare-merge`. Bean `0818`&quot;
-    },
-    {
       &quot;script&quot;: &quot;ingest:ig-chrome:check&quot;,
       &quot;kind&quot;: &quot;report&quot;,
-      &quot;reason&quot;: &quot;CI CANNOT OBTAIN ITS INPUT, and here it needs THREE checkouts rather than one. It compares the committed `chrome.json` against the `fhir.template` chain the IG&#39;s `ig.ini` names — `fhir.base.template` and `who.template.root`, which are separate repositories (`HL7/ig-template-base`, `WorldHealthOrganization/smart-ig-template`) that this checkout does not contain and a runner cannot fetch. Same wall as `ingest:ig-menu:check`, one layer worse: an IG&#39;s appearance is declared in no file the IG owns. Built so a skip CANNOT be mistaken for a pass — with no `--ig`/`--layer` it exits **2**, printing `could not determine`, rather than the 0 a silent skip would give. What IS gated, on every run and without the network, is the committed chrome&#39;s EFFECT: `smart-trust:pages:check` regenerates all 681 pages from it and compares them byte for byte, and `check:kind-validators` parses the file against `folio-ig-chrome/v1`. Run this one by hand after cloning the IG and its templates, or from `/prepare-merge`. Bean `ajx9`&quot;
-    },
-    {
-      &quot;script&quot;: &quot;ingest:ig:check&quot;,
-      &quot;kind&quot;: &quot;covered-by&quot;,
-      &quot;reason&quot;: &quot;re-derives an IG&#39;s artefact index from its PUBLISHED OUTPUT, which this repository does not carry — smart-trust&#39;s `gh-pages` is 342,656 files, so no runner here can supply the subject. `check:artifact-index` is wired and covers the half that needs only the repository: that every committed index is a valid `folio-fhir-artifact-index/v1` document, with `count` agreeing with its array and no DAK overlay on an index declaring `dakApi: \&quot;absent\&quot;`. That is DELIBERATELY less than this check would catch — an index that validates can still be stale against an IG that has moved on — and the difference is stated rather than papered over. The script itself exits 2 (\&quot;could not determine\&quot;) when the source is absent, never 0, so wiring it would redden CI over a missing clone rather than over a regression. Run it by hand, or from `/prepare-merge`, with the IG checkout as its argument&quot;
+      &quot;reason&quot;: &quot;CI CANNOT OBTAIN ITS INPUT, and here it needs THREE checkouts rather than one. It compares the committed `chrome.json` against the `fhir.template` chain the IG&#39;s `ig.ini` names — `fhir.base.template` and `who.template.root`, which are separate repositories (`HL7/ig-template-base`, `WorldHealthOrganization/smart-ig-template`) that this checkout does not contain and a runner cannot fetch. The wall the retired `ingest:ig-menu:check` met, one layer worse: an IG&#39;s appearance is declared in no file the IG owns. Built so a skip CANNOT be mistaken for a pass — with no `--ig`/`--layer` it exits **2**, printing `could not determine`, rather than the 0 a silent skip would give. What IS gated, on every run and without the network, is the committed chrome&#39;s EFFECT: `smart-trust:pages:check` regenerates all 681 pages from it and compares them byte for byte, and `check:kind-validators` parses the file against `folio-ig-chrome/v1`. Run this one by hand after cloning the IG and its templates, or from `/prepare-merge`. Bean `ajx9`&quot;
     }
   ]
 }</pre></dd>
@@ -376,7 +403,10 @@
       &quot;ig-ast&quot;
     ],
     &quot;subgraphs&quot;: &quot;instance&quot;,
-    &quot;title&quot;: &quot;IG ASTs&quot;
+    &quot;title&quot;: &quot;IG ASTs&quot;,
+    &quot;writer&quot;: [
+      &quot;scripts/gen-ig-ast-pages.ts&quot;
+    ]
   }
 ]</pre></dd>
 <dt>_builtAtPublish_comment</dt><dd>Owner, 2026-10-14 (B1; schemas/built-at-publish.ts in cat-harness). This instance&#39;s JSON-LD @context is generated by `jsonld:contexts` (cat-harness-tools scripts/gen-instance-contexts.ts) from the prefixes and content-context terms its documents use, flattened with the prefix tables of every instance it needs. Those tables are read at the CHECKOUT&#39;s pins, not at pins this instance&#39;s commit names, so no commit of it can hold the file current: it is built at publish and never committed (bean folio-assistant-63q4).</dd>

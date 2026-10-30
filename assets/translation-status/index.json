@@ -1,13 +1,8 @@
 {
   "$schema": "folio-translation-status/v1",
-  "changedAt": "2026-10-26",
+  "changedAt": "2026-10-30",
   "scope": "cat-harness/translations",
-  "tile": {
-    "translation-sources": {
-      "count": 5,
-      "unit": "locales"
-    }
-  },
+  "tile": {},
   "page": "en/cat-harness/translation-status/index.md",
   "locales": [
     {
@@ -127,7 +122,7 @@
           "untranslated": 0
         }
       ],
-      "templates": 92,
+      "templates": 93,
       "catalogues": 15,
       "entries": 1051,
       "translated": 1000,
@@ -251,7 +246,7 @@
           "untranslated": 0
         }
       ],
-      "templates": 93,
+      "templates": 94,
       "catalogues": 15,
       "entries": 1060,
       "translated": 1009,
@@ -381,7 +376,7 @@
           "untranslated": 0
         }
       ],
-      "templates": 95,
+      "templates": 96,
       "catalogues": 16,
       "entries": 1055,
       "translated": 948,
@@ -504,7 +499,7 @@
           "untranslated": 0
         }
       ],
-      "templates": 92,
+      "templates": 93,
       "catalogues": 15,
       "entries": 1048,
       "translated": 997,
@@ -629,7 +624,7 @@
           "untranslated": 0
         }
       ],
-      "templates": 93,
+      "templates": 94,
       "catalogues": 15,
       "entries": 1063,
       "translated": 1012,
@@ -781,7 +776,7 @@
               "official": "no"
             }
           ],
-          "templates": 25,
+          "templates": 26,
           "catalogues": 6,
           "entries": 361,
           "translated": 361,
@@ -840,7 +835,7 @@
               "untranslated": 0
             }
           ],
-          "templates": 25,
+          "templates": 26,
           "catalogues": 6,
           "entries": 346,
           "translated": 346,
@@ -899,7 +894,7 @@
               "untranslated": 0
             }
           ],
-          "templates": 25,
+          "templates": 26,
           "catalogues": 6,
           "entries": 346,
           "translated": 346,
@@ -958,7 +953,7 @@
               "untranslated": 0
             }
           ],
-          "templates": 25,
+          "templates": 26,
           "catalogues": 6,
           "entries": 346,
           "translated": 346,
@@ -1018,7 +1013,7 @@
               "official": "no"
             }
           ],
-          "templates": 25,
+          "templates": 26,
           "catalogues": 6,
           "entries": 361,
           "translated": 359,
@@ -1108,6 +1103,167 @@
           "catalogues": 0,
           "entries": 0,
           "translated": 0,
+          "fuzzy": 0,
+          "untranslated": 0,
+          "unreadable": []
+        }
+      ]
+    },
+    {
+      "instance": "who-iris",
+      "scope": "who-iris/translations",
+      "locales": [
+        {
+          "locale": "ar",
+          "officiality": {
+            "state": "unofficial",
+            "officialCatalogues": 0,
+            "findings": 0
+          },
+          "files": [
+            {
+              "path": "glossary/who-iris--who-terms.po",
+              "entries": 4,
+              "translated": 4,
+              "fuzzy": 0,
+              "untranslated": 0
+            },
+            {
+              "path": "site/iris-site.po",
+              "entries": 116,
+              "translated": 116,
+              "fuzzy": 0,
+              "untranslated": 0
+            }
+          ],
+          "templates": 2,
+          "catalogues": 2,
+          "entries": 120,
+          "translated": 120,
+          "fuzzy": 0,
+          "untranslated": 0,
+          "unreadable": []
+        },
+        {
+          "locale": "es",
+          "officiality": {
+            "state": "unofficial",
+            "officialCatalogues": 0,
+            "findings": 0
+          },
+          "files": [
+            {
+              "path": "glossary/who-iris--who-terms.po",
+              "entries": 4,
+              "translated": 4,
+              "fuzzy": 0,
+              "untranslated": 0
+            },
+            {
+              "path": "site/iris-site.po",
+              "entries": 116,
+              "translated": 116,
+              "fuzzy": 0,
+              "untranslated": 0
+            }
+          ],
+          "templates": 2,
+          "catalogues": 2,
+          "entries": 120,
+          "translated": 120,
+          "fuzzy": 0,
+          "untranslated": 0,
+          "unreadable": []
+        },
+        {
+          "locale": "fr",
+          "officiality": {
+            "state": "unofficial",
+            "officialCatalogues": 0,
+            "findings": 0
+          },
+          "files": [
+            {
+              "path": "glossary/who-iris--who-terms.po",
+              "entries": 4,
+              "translated": 4,
+              "fuzzy": 0,
+              "untranslated": 0
+            },
+            {
+              "path": "site/iris-site.po",
+              "entries": 116,
+              "translated": 116,
+              "fuzzy": 0,
+              "untranslated": 0
+            }
+          ],
+          "templates": 2,
+          "catalogues": 2,
+          "entries": 120,
+          "translated": 120,
+          "fuzzy": 0,
+          "untranslated": 0,
+          "unreadable": []
+        },
+        {
+          "locale": "ru",
+          "officiality": {
+            "state": "unofficial",
+            "officialCatalogues": 0,
+            "findings": 0
+          },
+          "files": [
+            {
+              "path": "glossary/who-iris--who-terms.po",
+              "entries": 4,
+              "translated": 4,
+              "fuzzy": 0,
+              "untranslated": 0
+            },
+            {
+              "path": "site/iris-site.po",
+              "entries": 116,
+              "translated": 116,
+              "fuzzy": 0,
+              "untranslated": 0
+            }
+          ],
+          "templates": 2,
+          "catalogues": 2,
+          "entries": 120,
+          "translated": 120,
+          "fuzzy": 0,
+          "untranslated": 0,
+          "unreadable": []
+        },
+        {
+          "locale": "zh",
+          "officiality": {
+            "state": "unofficial",
+            "officialCatalogues": 0,
+            "findings": 0
+          },
+          "files": [
+            {
+              "path": "glossary/who-iris--who-terms.po",
+              "entries": 4,
+              "translated": 4,
+              "fuzzy": 0,
+              "untranslated": 0
+            },
+            {
+              "path": "site/iris-site.po",
+              "entries": 116,
+              "translated": 116,
+              "fuzzy": 0,
+              "untranslated": 0
+            }
+          ],
+          "templates": 2,
+          "catalogues": 2,
+          "entries": 120,
+          "translated": 120,
           "fuzzy": 0,
           "untranslated": 0,
           "unreadable": []

@@ -137,7 +137,7 @@
   `mark-small` in `harness.json`, and it went unread: nothing in this
   repo ever emitted a favicon at all, `rel="icon"` included. It also could
   not have driven this lookup as declared — `imagesForRole()`
-  (`schemas/kg-node.ts`) requires an image's `layout` field, which neither
+  (`schemas/kg/kg-node.ts`) requires an image's `layout` field, which neither
   mark entry carries, so a `browser-icon`-role lookup returns nothing. Reusing
   the already-resolved `icon` (the same field `title.html` reads) sidesteps
   that and, more importantly, is what was asked for: the sidebar mark and the
@@ -588,7 +588,7 @@
 -->
 <!-- The harness icon row's own style, which railed pages load without docs-ui.css (beans `lhvt`, `9rq1`). -->
 <link rel="stylesheet" href="../../../../assets/css/navbar-row.css?v=7d7d00921e0f">
-<link rel="stylesheet" href="../../../../assets/css/docs-ui.css?v=c5f675d4c764">
+<link rel="stylesheet" href="../../../../assets/css/docs-ui.css?v=6071ae228cf3">
 <!-- Narrow viewports: wide content scrolls in its own box, never the page
      (bean `2r2n`). The standalone viewers inline the same file through
      `withViewerNav`, so both kinds of page read one set of rules. -->
@@ -599,21 +599,21 @@
   `state-visualizer.ts` can inline exactly these bytes into the generated
   `<base>/<stub>/state-visualizer/` pages. One rule, two surfaces.
 -->
-<link rel="stylesheet" href="../../../../assets/css/work-plan.css?v=30bf7780ce27">
-<!-- Sticky themes. GENERATED from the theme nodes in `schemas/themes.ts` by
+<link rel="stylesheet" href="../../../../assets/css/work-plan.css?v=ed3e33f033fe">
+<!-- Sticky themes. GENERATED from the theme nodes in `schemas/ui/themes.ts` by
      `bun run cat themes:css`; `themes:css:check` fails the build when it is stale.
      Loaded AFTER docs-ui.css deliberately: it supplies the `--fa-sticky-*`
      roles that docs-ui.css consumes, and a custom property has to be set on a
      matching element before the rule reading it takes effect. -->
-<link rel="stylesheet" href="../../../../assets/css/themes.css?v=a7f81b62eded">
+<link rel="stylesheet" href="../../../../assets/css/themes.css?v=37c8ab192a5f">
 <!-- UML overview colours: one class per graph typology, set on the Mermaid nodes
      that `scripts/gen-uml-overview.ts` writes into docs/uml/overview/. -->
 <link rel="stylesheet" href="../../../../assets/css/uml.css?v=e677f91cbf66">
-<!-- Kind avatars. GENERATED from `schemas/avatars.ts` by `bun run cat avatars:css`;
+<!-- Kind avatars. GENERATED from `schemas/content/avatars.ts` by `bun run cat avatars:css`;
      `avatars:css:check` fails the build when it is stale. One stylesheet
      rather than 68 assets: the glyph is a mask and the colour is a property,
      so a scheme swap is a custom property and the trash state is a selector. -->
-<link rel="stylesheet" href="../../../../assets/css/avatars.css?v=699212580934">
+<link rel="stylesheet" href="../../../../assets/css/avatars.css?v=780d571c53c1">
 
 <!--
   The kinds THIS INSTANCE DECLARES, for the avatar fan.
@@ -647,7 +647,7 @@
 <script src="../../../../assets/js/kg-render.js" defer></script>
 <!-- BEFORE docs-ui.js, which calls it: the one drawing of the harness icon row (beans `lhvt`, `9rq1`). -->
 <script src="../../../../assets/js/navbar-row.js?v=7dce6a7e2ab0" defer></script>
-<script src="../../../../assets/js/docs-ui.js?v=9c88eef1c243" defer></script>
+<script src="../../../../assets/js/docs-ui.js?v=8b5567635976" defer></script>
 <!-- The edit, source and feedback links of every page, from the platform's one
   recipe (cat-harness-tools/src/core/edit-links.ts, bean v433): links carry their
   facts and this builds the hrefs. -->
@@ -736,9 +736,9 @@
   is broken when it is doing exactly what it can.
 -->
 
-<link rel="stylesheet" href="../../../../assets/css/navbar.css"><script src="../../../../assets/navbar/rail-1uu2yi3osvq.js" defer></script><script src="../../../../assets/js/navbar.js" defer></script><link rel="stylesheet" href="../../../../assets/page-layout.css" data-fa-page-layout><script src="../../../../assets/page-layout.js" defer data-fa-page-layout></script><meta name="fa-pinned-data" content="../../../.."></head>
+<link rel="stylesheet" href="../../../../assets/css/navbar.css"><script src="../../../../assets/navbar/rail-1nr7jo2rxsc.js" defer></script><script src="../../../../assets/js/navbar.js" defer></script><link rel="stylesheet" href="../../../../assets/page-layout.css" data-fa-page-layout><script src="../../../../assets/page-layout.js" defer data-fa-page-layout></script><meta name="fa-pinned-data" content="../../../.."></head>
 
-<body><script type="application/json" id="fa-rail" data-fa-root="https://litlfred.github.io/folio-assistant" data-fa-to-root="../../../..">{"data":"rail-1uu2yi3osvq","here":"/cat-harness/auto-docs/index/processes/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../">Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector</a></nav>
+<body><script type="application/json" id="fa-rail" data-fa-root="https://litlfred.github.io/folio-assistant" data-fa-to-root="../../../..">{"data":"rail-1nr7jo2rxsc","here":"/cat-harness/auto-docs/index/processes/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../">Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector</a></nav>
   <a class="skip-to-main" href="#main-content">Skip to main content</a>
   <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
   <symbol id="svg-link" viewBox="0 0 24 24">
@@ -917,11 +917,12 @@
 </div>
 
 <ul class="subs">
-<li><a href="core-processes/">core-processes</a> <span class="p">folio-assistant-core/processes</span> <span class="n">18</span></li>
+<li><a href="core-processes/">core-processes</a> <span class="p">folio-assistant-core/processes</span> <span class="n">19</span></li>
 <li><a href="fhir-harness-processes/">fhir-harness-processes</a> <span class="p">fhir-harness/processes</span> <span class="n">5</span></li>
-<li><a href="processes/">processes</a> <span class="p">cat-harness/processes</span> <span class="n">75</span></li>
+<li><a href="processes/">processes</a> <span class="p">cat-harness/processes</span> <span class="n">76</span></li>
 <li><a href="smart-base-house-processes/">smart-base-house-processes</a> <span class="p">smart-base/processes</span> <span class="n">6</span></li>
 <li><a href="smart-base-processes/">smart-base-processes</a> <span class="p">smart-base/methodologies/processes</span> <span class="n">1</span></li>
+<li><a href="who-iris-processes/">who-iris-processes</a> <span class="p">who-iris/processes</span> <span class="n">4</span></li>
 </ul>
 
 <div class="fa-table-filter">
@@ -1101,6 +1102,10 @@
   <td>The closing half of every bean's life: end it in a state that says why.<div class="f"><span class="k">activities</span> 4</div><div class="f"><span class="k">lanes</span> Agent (this session)</div><div class="f"><span class="k">skills</span> bean-coordination, todo-manager</div></td>
 </tr>
 <tr>
+  <td><a href="https://github.com/litlfred/cat-harness/blob/main/processes/sdlc/bean-drain.bpmn"><code>Drain the beans</code></a><br><span class="p">cat-harness/processes/sdlc/bean-drain.bpmn</span></td>
+  <td>Draining open beans with several agents at once, as part of the SDLC: build one queue grouped by owner, then take a bean, open it, work it, close it, and take the next — refilling from the deepest queue when a drainer's…<div class="f"><span class="k">activities</span> 7</div><div class="f"><span class="k">lanes</span> Queue keeper · Drainer</div><div class="f"><span class="k">skills</span> bean-coordination, continual-progress, idle-backlog, todo-manager</div></td>
+</tr>
+<tr>
   <td><a href="https://github.com/litlfred/cat-harness/blob/main/processes/sdlc/bean-lifecycle.bpmn"><code>Agent bean lifecycle</code></a><br><span class="p">cat-harness/processes/sdlc/bean-lifecycle.bpmn</span></td>
   <td>The whole life of a work-plan item, drawn the way every bean-touching process now runs it: OPEN the bean (check before you create, find out whose it is, claim it or leave it alone), do the work keeping the body current,…<div class="f"><span class="k">activities</span> 3</div><div class="f"><span class="k">lanes</span> Agent (this session)</div><div class="f"><span class="k">skills</span> bean-coordination, todo-manager</div></td>
 </tr>
@@ -1146,7 +1151,7 @@
 </tr>
 <tr>
   <td><a href="https://github.com/litlfred/cat-harness/blob/main/processes/sdlc/merge-to-main.bpmn"><code>Merge to main</code></a><br><span class="p">cat-harness/processes/sdlc/merge-to-main.bpmn</span></td>
-  <td>Land ONE pull request on <code>main</code>, in any repository, as its own step with its own gate: read the head's evidence live, establish that the owner authorised THIS merge, record the authorisation, merge pinned to the evaluat…<div class="f"><span class="k">activities</span> 12</div><div class="f"><span class="k">lanes</span> Build pipeline · Merging session · Owner</div><div class="f"><span class="k">skills</span> harness-projections, merge-to-main</div></td>
+  <td>Land ONE pull request on <code>main</code>, in any repository, as its own step with its own gate: read the head's evidence live, establish that the owner authorised THIS merge, record the authorisation, merge pinned to the evaluat…<div class="f"><span class="k">activities</span> 13</div><div class="f"><span class="k">lanes</span> Build pipeline · Merging session · Owner</div><div class="f"><span class="k">skills</span> harness-projections, merge-to-main</div></td>
 </tr>
 <tr>
   <td><a href="https://github.com/litlfred/cat-harness/blob/main/processes/sdlc/merge-train.bpmn"><code>A merge train</code></a><br><span class="p">cat-harness/processes/sdlc/merge-train.bpmn</span></td>
@@ -1194,7 +1199,7 @@
 </tr>
 <tr>
   <td><a href="https://github.com/litlfred/cat-harness/blob/main/processes/sdlc/sme-test-data-review.bpmn"><code>SME Review of Decision Support and Indicator Test Data</code></a><br><span class="p">cat-harness/processes/sdlc/sme-test-data-review.bpmn</span></td>
-  <td>SME review of fixed test data for clinical or scientific decision support and indicator definitions — bean <code>folio-assistant-vljz</code>, companion <code>folio-assistant-vm6m</code>, proposal `docs/proposals/qa-reports-branch-and-test-pr…<div class="f"><span class="k">activities</span> 4</div><div class="f"><span class="k">lanes</span> Authoring agent · Clinical / scientific SME · Tester</div><div class="f"><span class="k">skills</span> test-data-sets</div></td>
+  <td>SME review of fixed test data for clinical or scientific decision support and indicator definitions.<div class="f"><span class="k">activities</span> 4</div><div class="f"><span class="k">lanes</span> Authoring agent · Clinical / scientific SME · Tester</div><div class="f"><span class="k">skills</span> test-data-sets</div></td>
 </tr>
 <tr>
   <td><a href="https://github.com/litlfred/cat-harness/blob/main/processes/sdlc/stalled-agent-triage.bpmn"><code>Stalled-agent triage: collect handovers, consolidate themes, recommend, re-route</code></a><br><span class="p">cat-harness/processes/sdlc/stalled-agent-triage.bpmn</span></td>
@@ -1202,7 +1207,7 @@
 </tr>
 <tr>
   <td><a href="https://github.com/litlfred/cat-harness/blob/main/processes/sdlc/test-data-curation.bpmn"><code>Test Data Curation — Fixed Sets and Generated Recipes</code></a><br><span class="p">cat-harness/processes/sdlc/test-data-curation.bpmn</span></td>
-  <td>General curation process for fixed (<code>test-data-fixed/1.0.0</code>) and generated (<code>test-data-generated/1.0.0</code>) test data sets — bean <code>folio-assistant-vm6m</code>, companion <code>folio-assistant-vljz</code>, proposal `docs/proposals/qa-report…<div class="f"><span class="k">activities</span> 6</div><div class="f"><span class="k">lanes</span> Authoring agent · Tester</div><div class="f"><span class="k">skills</span> test-data-sets</div></td>
+  <td>General curation process for fixed (<code>test-data-fixed/1.0.0</code>) and generated (<code>test-data-generated/1.0.0</code>) test data sets.<div class="f"><span class="k">activities</span> 8</div><div class="f"><span class="k">lanes</span> Authoring agent · Tester</div><div class="f"><span class="k">skills</span> bean-coordination, test-data-sets, todo-manager</div></td>
 </tr>
 <tr>
   <td><a href="https://github.com/litlfred/cat-harness/blob/main/processes/sdlc/test-plan-execution.bpmn"><code>Test-plan execution</code></a><br><span class="p">cat-harness/processes/sdlc/test-plan-execution.bpmn</span></td>
@@ -1254,7 +1259,7 @@
 </tr>
 <tr>
   <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/conduct/getting-started.bpmn"><code>Getting started</code></a><br><span class="p">folio-assistant-core/processes/conduct/getting-started.bpmn</span></td>
-  <td>Somebody said &quot;create a folio&quot;: work out which request they meant, with the branch computed by a decision table that may answer &quot;ask&quot;, and what has to be true before anything is written.<div class="f"><span class="k">activities</span> 15</div><div class="f"><span class="k">lanes</span> User (person) · Onboarding agent (system) · Work plan (beans) · Publish — GitHub Pages</div><div class="f"><span class="k">skills</span> bean-coordination, dispatch-agent, document-intake, getting-started, interaction-modality, repo-conversion, todo-manager</div></td>
+  <td>Somebody said &quot;create a folio&quot;: work out which request they meant, with the branch computed by a decision table that may answer &quot;ask&quot;, and what has to be true before anything is written.<div class="f"><span class="k">activities</span> 16</div><div class="f"><span class="k">lanes</span> User (person) · Onboarding agent (system) · Work plan (beans) · Publish — GitHub Pages</div><div class="f"><span class="k">skills</span> bean-coordination, dispatch-agent, document-intake, getting-started, interaction-modality, repo-conversion, todo-manager</div></td>
 </tr>
 <tr>
   <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/authoring-a-document.bpmn"><code>Authoring a document</code></a><br><span class="p">folio-assistant-core/processes/content/authoring-a-document.bpmn</span></td>
@@ -1273,6 +1278,10 @@
   <td>How the corpus becomes an officially published folio: a draft publication, its review, and the release authority's decision.<div class="f"><span class="k">activities</span> 13</div><div class="f"><span class="k">lanes</span> Editors + authoring agents · Work plan — beans (shared by humans and agents) · Corpus + build pipeline (system) · Publication manager · Review team (content · QC · technical officer) · Public review (commenters, review committee, editor) · Clinical / scientific SMEs · Programme manager (release authority)</div><div class="f"><span class="k">skills</span> bean-coordination, content-author, content-feedback, content-publish, content-review, content-test, content-validate, public-comment, quality-control, render-kg-to-cdn, staging-review, todo-manager</div></td>
 </tr>
 <tr>
+  <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/dsa-document-lifecycle.bpmn"><code>Data sharing agreement document life cycle</code></a><br><span class="p">folio-assistant-core/processes/content/dsa-document-lifecycle.bpmn</span></td>
+  <td>How a data sharing agreement is drafted, negotiated, signed, published with a version, a hash and a catalogue record, and later amended, renewed or ended.<div class="f"><span class="k">activities</span> 27</div><div class="f"><span class="k">lanes</span> Parties and signatories (provider, recipient) · Work plan — beans (shared by humans and agents) · Author and policy author · Reviewer (legal, policy) · Public review (commenters, review committee, editor) · Publisher (data provider's publication manager) · Build pipeline (system)</div><div class="f"><span class="k">skills</span> bean-coordination, content-publish, content-review, document-authoring, document-publishing, document-structure, dsa-catalogue-status, dsa-checksum, dsa-dcat-record, dsa-odrl-source, normative-statements, package-release, public-comment, review-comments, todo-manager</div></td>
+</tr>
+<tr>
   <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/editing-hci-validation.bpmn"><code>Editing and HCI validation</code></a><br><span class="p">folio-assistant-core/processes/content/editing-hci-validation.bpmn</span></td>
   <td>What happens to one proposed change to one content block: drafted, validated mechanically and by review, shown to the editor, and committed to the corpus only if accepted.<div class="f"><span class="k">activities</span> 18</div><div class="f"><span class="k">lanes</span> Editor / author (person) · Work plan — beans (shared by humans and agents) · Authoring agent (system) · HCI validation pipeline (system) · Mechanical validation (system) · Non-mechanical validation (review agent or SME) · Corpus (versioned store)</div><div class="f"><span class="k">skills</span> bean-coordination, before-after-preview, content-author, content-review, content-test, content-validate, corpus-commit-contract, decision-audit, todo-manager</div></td>
 </tr>
@@ -1282,7 +1291,7 @@
 </tr>
 <tr>
   <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/public-comment.bpmn"><code>Public comment on a review draft</code></a><br><span class="p">folio-assistant-core/processes/content/public-comment.bpmn</span></td>
-  <td>A frozen, line-numbered draft went out for public review.<div class="f"><span class="k">activities</span> 11</div><div class="f"><span class="k">lanes</span> Public commenter · Intake agent · Review coordinator · Review committee · Editor · Author (human or agentic) · Change set — feature branch and staging</div><div class="f"><span class="k">skills</span> block-actions, public-comment, staging-review</div></td>
+  <td>A frozen, line-numbered draft went out for public review.<div class="f"><span class="k">activities</span> 12</div><div class="f"><span class="k">lanes</span> Public commenter · Intake agent · Review coordinator · Review committee · Editor · Author (human or agentic) · Change set — feature branch and staging</div><div class="f"><span class="k">skills</span> block-actions, public-comment, staging-review</div></td>
 </tr>
 <tr>
   <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/global-tasks.bpmn"><code>Shared steps (folio-assistant-core)</code></a><br><span class="p">folio-assistant-core/processes/global-tasks.bpmn</span></td>
@@ -1351,6 +1360,22 @@
 <tr>
   <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/smart-guideline-end-to-end.bpmn"><code>SMART Guideline end to end</code></a><br><span class="p">smart-base/processes/content/smart-guideline-end-to-end.bpmn</span></td>
   <td>From a use case to a consuming application: identify the L1 guidelines, ingest them into an L1 knowledge graph, choose the L2 DAKs to build on, create or adapt the L2 assets, choose the L3 IGs to build on, produce the L…<div class="f"><span class="k">activities</span> 18</div><div class="f"><span class="k">lanes</span> Requester (country team / implementer) · Authoring agent · Human adjudicators</div><div class="f"><span class="k">skills</span> content-review, dak-l1-library, dak-postprocessing, dak-preprocessing, decision-audit, decision-comparison, feature-staging, fhir-questionnaire-wireframe, guideline-use-case, ig-artifact-ingestion, ig-ast-delta, l2-dak-authoring, l2-dependency-choice, l3-dependency-choice, l3-fhir-authoring, l3-readiness, l4-application-brief, l4-application-build, recommendation-extraction, smart-base-tools, staging-review, visual-diff, wireframe-design-review</div></td>
+</tr>
+<tr>
+  <td><a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-initial-load.bpmn"><code>IRIS CDN initial load</code></a><br><span class="p">who-iris/processes/iris-cdn-initial-load.bpmn</span></td>
+  <td>The first full export of WHO IRIS onto Cloudflare (git on Artifacts, bytes in R2): every item record, and every bitstream (owner, 2026-10-30: metadata plus PDFs).<div class="f"><span class="k">activities</span> 10</div><div class="f"><span class="k">lanes</span> Owner · IRIS CDN Exporter (agent) · Build pipeline · Cloudflare R2 + CDN · Cloudflare git (Artifacts)</div><div class="f"><span class="k">skills</span> iris-cdn-exporter, iris-cdn-signing, iris-dspace, iris-oxigraph, iris-rest-feed, nquads-distribution</div></td>
+</tr>
+<tr>
+  <td><a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-nightly.bpmn"><code>IRIS CDN nightly change ingest</code></a><br><span class="p">who-iris/processes/iris-cdn-nightly.bpmn</span></td>
+  <td>Every night: ask the IRIS DSpace REST API which items changed since the last published run, ingest only those, rebuild the whole graph (owner, 2026-10-30: full rebuild nightly; sorted output keeps unchanged partitions b…<div class="f"><span class="k">activities</span> 9</div><div class="f"><span class="k">lanes</span> Build pipeline · Cloudflare git (Artifacts) · IRIS CDN Exporter (agent)</div><div class="f"><span class="k">skills</span> iris-cdn-exporter, iris-cdn-signing, iris-dspace, iris-oxigraph, iris-rest-feed, nquads-distribution</div></td>
+</tr>
+<tr>
+  <td><a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-reconcile.bpmn"><code>IRIS CDN weekly reconciliation</code></a><br><span class="p">who-iris/processes/iris-cdn-reconcile.bpmn</span></td>
+  <td>The DSpace REST API reports no deletions, so once a week every item id IRIS lists is compared with what the library holds.<div class="f"><span class="k">activities</span> 7</div><div class="f"><span class="k">lanes</span> Build pipeline · IRIS CDN Exporter (agent)</div><div class="f"><span class="k">skills</span> iris-cdn-exporter, iris-cdn-signing, iris-oxigraph, iris-rest-feed, nquads-distribution</div></td>
+</tr>
+<tr>
+  <td><a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-sign-publish.bpmn"><code>Sign and publish an IRIS CDN release</code></a><br><span class="p">who-iris/processes/iris-cdn-sign-publish.bpmn</span></td>
+  <td>Turn a candidate payload into a signed release on Cloudflare: each changed library item gets a detached JWS over its own manifest, and the BagIt bag (RFC 8493) whose tagmanifest pins every item manifest and signature is…<div class="f"><span class="k">activities</span> 8</div><div class="f"><span class="k">lanes</span> Build pipeline · Release signer · Cloudflare R2 + CDN · Cloudflare git (Artifacts) · Verifier</div><div class="f"><span class="k">skills</span> iris-cdn-exporter, iris-cdn-signing</div></td>
 </tr>
 </tbody>
 </table></div>

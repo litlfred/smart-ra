@@ -137,7 +137,7 @@
   `mark-small` in `harness.json`, and it went unread: nothing in this
   repo ever emitted a favicon at all, `rel="icon"` included. It also could
   not have driven this lookup as declared — `imagesForRole()`
-  (`schemas/kg-node.ts`) requires an image's `layout` field, which neither
+  (`schemas/kg/kg-node.ts`) requires an image's `layout` field, which neither
   mark entry carries, so a `browser-icon`-role lookup returns nothing. Reusing
   the already-resolved `icon` (the same field `title.html` reads) sidesteps
   that and, more importantly, is what was asked for: the sidebar mark and the
@@ -588,7 +588,7 @@
 -->
 <!-- The harness icon row's own style, which railed pages load without docs-ui.css (beans `lhvt`, `9rq1`). -->
 <link rel="stylesheet" href="../../../assets/css/navbar-row.css?v=7d7d00921e0f">
-<link rel="stylesheet" href="../../../assets/css/docs-ui.css?v=c5f675d4c764">
+<link rel="stylesheet" href="../../../assets/css/docs-ui.css?v=6071ae228cf3">
 <!-- Narrow viewports: wide content scrolls in its own box, never the page
      (bean `2r2n`). The standalone viewers inline the same file through
      `withViewerNav`, so both kinds of page read one set of rules. -->
@@ -599,21 +599,21 @@
   `state-visualizer.ts` can inline exactly these bytes into the generated
   `<base>/<stub>/state-visualizer/` pages. One rule, two surfaces.
 -->
-<link rel="stylesheet" href="../../../assets/css/work-plan.css?v=30bf7780ce27">
-<!-- Sticky themes. GENERATED from the theme nodes in `schemas/themes.ts` by
+<link rel="stylesheet" href="../../../assets/css/work-plan.css?v=ed3e33f033fe">
+<!-- Sticky themes. GENERATED from the theme nodes in `schemas/ui/themes.ts` by
      `bun run cat themes:css`; `themes:css:check` fails the build when it is stale.
      Loaded AFTER docs-ui.css deliberately: it supplies the `--fa-sticky-*`
      roles that docs-ui.css consumes, and a custom property has to be set on a
      matching element before the rule reading it takes effect. -->
-<link rel="stylesheet" href="../../../assets/css/themes.css?v=a7f81b62eded">
+<link rel="stylesheet" href="../../../assets/css/themes.css?v=37c8ab192a5f">
 <!-- UML overview colours: one class per graph typology, set on the Mermaid nodes
      that `scripts/gen-uml-overview.ts` writes into docs/uml/overview/. -->
 <link rel="stylesheet" href="../../../assets/css/uml.css?v=e677f91cbf66">
-<!-- Kind avatars. GENERATED from `schemas/avatars.ts` by `bun run cat avatars:css`;
+<!-- Kind avatars. GENERATED from `schemas/content/avatars.ts` by `bun run cat avatars:css`;
      `avatars:css:check` fails the build when it is stale. One stylesheet
      rather than 68 assets: the glyph is a mask and the colour is a property,
      so a scheme swap is a custom property and the trash state is a selector. -->
-<link rel="stylesheet" href="../../../assets/css/avatars.css?v=699212580934">
+<link rel="stylesheet" href="../../../assets/css/avatars.css?v=780d571c53c1">
 
 <!--
   The kinds THIS INSTANCE DECLARES, for the avatar fan.
@@ -647,7 +647,7 @@
 <script src="../../../assets/js/kg-render.js" defer></script>
 <!-- BEFORE docs-ui.js, which calls it: the one drawing of the harness icon row (beans `lhvt`, `9rq1`). -->
 <script src="../../../assets/js/navbar-row.js?v=7dce6a7e2ab0" defer></script>
-<script src="../../../assets/js/docs-ui.js?v=9c88eef1c243" defer></script>
+<script src="../../../assets/js/docs-ui.js?v=8b5567635976" defer></script>
 <!-- The edit, source and feedback links of every page, from the platform's one
   recipe (cat-harness-tools/src/core/edit-links.ts, bean v433): links carry their
   facts and this builds the hrefs. -->
@@ -736,9 +736,9 @@
   is broken when it is doing exactly what it can.
 -->
 
-<link rel="stylesheet" href="../../../assets/css/navbar.css"><script src="../../../assets/navbar/rail-1uu2yi3osvq.js" defer></script><script src="../../../assets/js/navbar.js" defer></script><link rel="stylesheet" href="../../../assets/page-layout.css" data-fa-page-layout><script src="../../../assets/page-layout.js" defer data-fa-page-layout></script><meta name="fa-pinned-data" content="../../.."></head>
+<link rel="stylesheet" href="../../../assets/css/navbar.css"><script src="../../../assets/navbar/rail-1nr7jo2rxsc.js" defer></script><script src="../../../assets/js/navbar.js" defer></script><link rel="stylesheet" href="../../../assets/page-layout.css" data-fa-page-layout><script src="../../../assets/page-layout.js" defer data-fa-page-layout></script><meta name="fa-pinned-data" content="../../.."></head>
 
-<body><script type="application/json" id="fa-rail" data-fa-root="https://litlfred.github.io/folio-assistant" data-fa-to-root="../../..">{"data":"rail-1uu2yi3osvq","here":"/en/cat-harness/processes/getting-started.html","documentIndex":{"label":"On this page","icon":"§","items":[{"href":"#how-it-connects","label":"How it connects"},{"href":"#lanes--who-acts","label":"Lanes — who acts"},{"href":"#steps","label":"Steps"},{"href":"#decisions","label":"Decisions"}],"collapsible":true}}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../">Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector</a></nav>
+<body><script type="application/json" id="fa-rail" data-fa-root="https://litlfred.github.io/folio-assistant" data-fa-to-root="../../..">{"data":"rail-1nr7jo2rxsc","here":"/en/cat-harness/processes/getting-started.html","documentIndex":{"label":"On this page","icon":"§","items":[{"href":"#how-it-connects","label":"How it connects"},{"href":"#lanes--who-acts","label":"Lanes — who acts"},{"href":"#steps","label":"Steps"},{"href":"#decisions","label":"Decisions"}],"collapsible":true}}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../">Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector</a></nav>
   <a class="skip-to-main" href="#main-content">Skip to main content</a>
   <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
   <symbol id="svg-link" viewBox="0 0 24 24">
@@ -846,7 +846,7 @@
 </h1>
     
 
-<p><code class="language-plaintext highlighter-rouge">Process_GettingStarted</code> · strict · 15 step(s)</p>
+<p><code class="language-plaintext highlighter-rouge">Process_GettingStarted</code> · strict · 16 step(s)</p>
 
 <p>Somebody said “create a folio”: work out which request they meant, with the branch computed by a decision table that may answer “ask”, and what has to be true before anything is written. folio-assistant — getting started: from “create a folio” to a live site.</p>
 
@@ -870,7 +870,7 @@ generated from it by <code class="language-plaintext highlighter-rouge">bun run 
 
 <ul>
   <li><strong>Called by:</strong> no call activity names this process</li>
-  <li><strong>Calls:</strong> <a href="bean-close.html">Close the bean</a>, <a href="bean-open.html">Open the bean</a></li>
+  <li><strong>Calls:</strong> <a href="ask-the-person.html">Ask the person</a>, <a href="bean-close.html">Close the bean</a>, <a href="bean-open.html">Open the bean</a></li>
   <li><strong>Presented on:</strong> no docs page section shows this diagram</li>
   <li><strong>Running instances:</strong> none recorded</li>
 </ul>
@@ -895,7 +895,7 @@ generated from it by <code class="language-plaintext highlighter-rouge">bun run 
     <tr>
       <td>User (person)</td>
       <td><code class="language-plaintext highlighter-rouge">user</code></td>
-      <td>Answers the one question Gateway_Intent cannot compute for itself — “ask” is one of five outcomes decisions/folio-intent.dmn can return — and, only on the overlay path, three further questions a repo scan cannot answer on its own: what to import, where it goes, and who does the importing.</td>
+      <td>Answers the one question Gateway_Intent cannot compute for itself — “ask” is one of five outcomes decisions/folio-intent.dmn can return — and, only on the overlay path, the questions a repo scan cannot answer on its own: which of the content markers it found the harness should declare (Task_ChooseHarnessed), then what to import, where it goes, and who does the importing.</td>
     </tr>
     <tr>
       <td>Onboarding agent (system)</td>
@@ -923,7 +923,7 @@ generated from it by <code class="language-plaintext highlighter-rouge">bun run 
 </h2>
     
 
-<p>Every one of the 15 step(s) is documented.</p>
+<p>Every one of the 16 step(s) is documented.</p>
 
 <div class="table-wrapper"><table>
   <thead>
@@ -957,7 +957,13 @@ generated from it by <code class="language-plaintext highlighter-rouge">bun run 
       <td><strong>Scan the repo for content worth importing</strong><br /><code class="language-plaintext highlighter-rouge">Task_ScanRepo</code></td>
       <td>Onboarding agent (system)</td>
       <td><code class="language-plaintext highlighter-rouge">repo-conversion</code><br /><code class="language-plaintext highlighter-rouge">document-intake</code></td>
-      <td>Read-only. Classifies candidates into library/ (external source) and content/ (authored here), and reports what it could not classify as its own bucket rather than forcing every file into one of the two.</td>
+      <td>Read-only. Classifies candidates into library/ (external source) and content/ (authored here), and reports what it could not classify as its own bucket rather than forcing every file into one of the two. Its fourth section, <code class="language-plaintext highlighter-rouge">markers</code>, lists the content markers it found — sushi-config.yaml, a legacy dak.json, .bpmn processes, a beans store, library/, Lean, folio manifests — each with its paths, whether index.config.json already declares it (declared, not-declared, or unknown), and the snippet that would. <code class="language-plaintext highlighter-rouge">bun run cat-harness-tools/scripts/scan-repo-content.ts --json</code>, a plain command any agent host can run.</td>
+    </tr>
+    <tr>
+      <td><strong>Choose what the harness reads</strong><br /><code class="language-plaintext highlighter-rouge">Task_ChooseHarnessed</code></td>
+      <td>User (person)</td>
+      <td>calls <a href="ask-the-person.html">Ask the person</a><br /><code class="language-plaintext highlighter-rouge">repo-conversion</code><br /><code class="language-plaintext highlighter-rouge">interaction-modality</code></td>
+      <td>The person picks which of the content markers the scan found the harness declares in index.config.json, and nothing is declared unpicked. A PERSON’S STEP: the scan’s <code class="language-plaintext highlighter-rouge">markers</code> that are not yet declared are offered as selectable options — one per marker, each with its paths and what declaring it means, plus “none of these” — and the person picks which parts of the repository to load into the KG. A tap card where the host has one; otherwise a numbered pick-list with a stated default. Never a typed reply. The default declares NOTHING: a harness that declared every marker it found would be slurping the repository, which is what this step exists to prevent. Only the picks reach Task_Scaffold, which declares exactly those in index.config.json. With no undeclared marker found, nothing is asked. The same question is put after setup by running the scan with <code class="language-plaintext highlighter-rouge">--markers</code> (repo-conversion §2a).</td>
     </tr>
     <tr>
       <td><strong>Import what, where, and who does it</strong><br /><code class="language-plaintext highlighter-rouge">Task_ConfirmImport</code></td>
@@ -975,7 +981,7 @@ generated from it by <code class="language-plaintext highlighter-rouge">bun run 
       <td><strong>Scaffold the folio (folio_init)</strong><br /><code class="language-plaintext highlighter-rouge">Task_Scaffold</code></td>
       <td>Onboarding agent (system)</td>
       <td><code class="language-plaintext highlighter-rouge">getting-started</code></td>
-      <td>content/, uploads/, library/, the first manifests, <slug>.json and index.config.json (the instance's config inline in its entry; no <slug>.config.json, bean ymvt), the builder shim, AGENTS.md with its stubs, .mcp.json, the session-start hook and the beans store. Refuses rather than overwrites when a folio is already present.</slug></slug></td>
+      <td>content/, uploads/, library/, the first manifests, <slug>.json and index.config.json (the instance's config inline in its entry; no <slug>.config.json, bean ymvt), the builder shim, AGENTS.md with its stubs, .mcp.json, the session-start hook and the beans store. On the overlay path it declares in index.config.json exactly the markers picked at Task_ChooseHarnessed, and none it was not given. Refuses rather than overwrites when a folio is already present.</slug></slug></td>
     </tr>
     <tr>
       <td><strong>Seed the work plan</strong><br /><code class="language-plaintext highlighter-rouge">Task_SeedPlan</code></td>

@@ -54,6 +54,26 @@
       "skos:note": "candidate"
     },
     {
+      "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-tools/catalogue-from-references",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-tools"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "Catalogue a library from its bibliography"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "Write one `folio-dublin-core/v1` record and one `folio-catalogue-node/v1` item per library entry that the source ledger joins to a CSL-JSON reference, into the folio's declared `catalogue` directory, so `gen-library-jsonld` reads the title from the catalogue's `dc.title` instead of falling to the PDF or the slug. The join is exact: a ledger row naming the entry's `structure.json` source file, one reference id, and the same sha256 where both record one. Unjoined entries are reported and left alone. Never touches a node it did not write (folio-assistant-core#72)."
+        }
+      ],
+      "skos:notation": "catalogue-from-references",
+      "dcterms:source": "folio-assistant-core/tools/catalogue-from-references/catalogue-from-references.ts#catalogue-from-references",
+      "skos:note": "candidate"
+    },
+    {
       "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-tools/dublin-core-render",
       "@type": "skos:Concept",
       "skos:inScheme": {

@@ -32,7 +32,7 @@
   label { margin-right:1rem; }
   @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
 </style>
-<link rel="stylesheet" href="../../../../../assets/css/navbar.css"><script src="../../../../../assets/navbar/rail-ij3aj5p7e3.js" defer></script><script src="../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+<link rel="stylesheet" href="../../../../../assets/css/navbar.css"><script src="../../../../../assets/navbar/rail-25nwt1w7sok.js" defer></script><script src="../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
 /* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
  *
  * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
@@ -111,7 +111,7 @@
 
 </style>
 </head>
-<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../.." data-fa-to-root="../../../../..">{"data":"rail-ij3aj5p7e3","here":"/en/cat-harness/cat-harness-declaration/folio-assistant-core/folio-assistant-core/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../">folio-assistant</a></nav>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../.." data-fa-to-root="../../../../..">{"data":"rail-25nwt1w7sok","here":"/en/cat-harness/cat-harness-declaration/folio-assistant-core/folio-assistant-core/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../">folio-assistant</a></nav>
 <main>
 <h1 id="nk-title">Folio Assistant Core</h1>
 <p class="m">A <a href="../../">cat-harness-declaration</a> node held by <a href="../">folio-assistant-core</a>, at <code>folio-assistant-core/folio-assistant-core.json</code>.</p>
@@ -374,7 +374,7 @@
   {
     &quot;id&quot;: &quot;core-library&quot;,
     &quot;path&quot;: &quot;library/&quot;,
-    &quot;description&quot;: &quot;L1 source content this LAYER owns — the publications core&#39;s own vocabulary is derived FROM, one `&lt;bib-slug&gt;/` per ingested document. Declared 2026-09-23 on the owner&#39;s ruling that Doc-Researcher (arXiv:2510.21603v1) is part of the f-a-c subgraph, and declared rather than borrowed for the reason `methodology-adoption` §4 gives: a method is placed by OWNERSHIP so that extraction is literal, and a paper core&#39;s methodology cites from another instance&#39;s library would not lift out with it. `ingest-document.ts` refuses to guess a destination when several are declared, which is what surfaced the absence. `dependents: skip` because these are THIS layer&#39;s sources; a downstream folio&#39;s library is its own and reproducing these would hand it somebody else&#39;s corpus.&quot;,
+    &quot;description&quot;: &quot;L1 source content this LAYER owns — the publications core&#39;s own vocabulary is derived FROM, one `&lt;bib-slug&gt;/` per ingested document. Declared 2026-09-23 on the owner&#39;s ruling that Doc-Researcher (`arxiv-2510.21603v1`) is part of the f-a-c subgraph, and declared rather than borrowed for the reason `methodology-adoption` §4 gives: a method is placed by OWNERSHIP so that extraction is literal, and a paper core&#39;s methodology cites from another instance&#39;s library would not lift out with it. Holds `arxiv-2510.21603v1`, the C2PA Technical Specification 2.5 (`c2pa-2026-specification-2-5`, CC-BY-4.0) and the DSpace 7 REST Contract (`dspace-7-rest-contract`, BSD-3-Clause, bean `mwzd`, issue #1614 item 4). `ingest-document.ts` refuses to guess a destination when several are declared, which is what surfaced the absence. `dependents: skip` because these are THIS layer&#39;s sources; a downstream folio&#39;s library is its own and reproducing these would hand it somebody else&#39;s corpus.&quot;,
     &quot;graphTypologies&quot;: [
       &quot;library&quot;
     ]
@@ -440,6 +440,20 @@
     &quot;description&quot;: &quot;The work plan for folio-assistant-core.&quot;,
     &quot;graphTypologies&quot;: [
       &quot;beans&quot;
+    ]
+  },
+  {
+    &quot;id&quot;: &quot;folio-assistant-core-libraries&quot;,
+    &quot;coverage&quot;: {
+      &quot;exempt&quot;: {
+        &quot;visualiser&quot;: &quot;Owner, 2026-10-29 (cat-harness#691): no viewer by design. Each node is an outside package whose registry tarball and SPDX licence the node already links, so a viewer would only repeat the registry.&quot;
+      }
+    },
+    &quot;path&quot;: &quot;libraries/&quot;,
+    &quot;title&quot;: &quot;Software libraries&quot;,
+    &quot;description&quot;: &quot;The outside libraries this layer&#39;s code imports: one `software-library/1.0.0` node per dependency in `package.json`, with the version and sha512 that `bun.lock` pins, the registry tarball, the SPDX licence read from the installed package, the range, whether it is a dev dependency, the files that import it (`usedBy`) and the `types/*.d.ts` shim that types it. GENERATED, never hand-edited: `bun run cat libraries:derive` writes it and `libraries:check` fails on a stale node, an import no node names, and a shim no node names. The kind is cat-harness&#39;s (bean `jbvi`, option D: one outside-software core shared with `tool-release`); this layer keeps its own nodes because it pins its own versions.&quot;,
+    &quot;graphTypologies&quot;: [
+      &quot;software-library&quot;
     ]
   },
   {
@@ -563,6 +577,13 @@
   &quot;kg:materialize:check&quot;: {
     &quot;outputs&quot;: [],
     &quot;because&quot;: &quot;`checkMaterializations` is offline and reads — measured 2026-10-01 (bean xpcu); moved from cat-harness-tools/scripts/task-io.ts to its owning instance 2026-10-06 (bean 0r7u)&quot;
+  },
+  &quot;check:dsa-hash&quot;: {
+    &quot;inputs&quot;: [
+      &quot;{tracked}&quot;
+    ],
+    &quot;outputs&quot;: [],
+    &quot;because&quot;: &quot;verifies DSA legal text SHA-256 against DCAT 3 spdx:checksum and ODRL 2.2 dcterms:source (bean folio-assistant-2z1t)&quot;
   }
 }</pre></dd>
 <dt>contentTranslations</dt><dd><pre>[

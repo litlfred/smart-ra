@@ -137,7 +137,7 @@
   `mark-small` in `harness.json`, and it went unread: nothing in this
   repo ever emitted a favicon at all, `rel="icon"` included. It also could
   not have driven this lookup as declared — `imagesForRole()`
-  (`schemas/kg-node.ts`) requires an image's `layout` field, which neither
+  (`schemas/kg/kg-node.ts`) requires an image's `layout` field, which neither
   mark entry carries, so a `browser-icon`-role lookup returns nothing. Reusing
   the already-resolved `icon` (the same field `title.html` reads) sidesteps
   that and, more importantly, is what was asked for: the sidebar mark and the
@@ -588,7 +588,7 @@
 -->
 <!-- The harness icon row's own style, which railed pages load without docs-ui.css (beans `lhvt`, `9rq1`). -->
 <link rel="stylesheet" href="../../../../../../assets/css/navbar-row.css?v=7d7d00921e0f">
-<link rel="stylesheet" href="../../../../../../assets/css/docs-ui.css?v=c5f675d4c764">
+<link rel="stylesheet" href="../../../../../../assets/css/docs-ui.css?v=6071ae228cf3">
 <!-- Narrow viewports: wide content scrolls in its own box, never the page
      (bean `2r2n`). The standalone viewers inline the same file through
      `withViewerNav`, so both kinds of page read one set of rules. -->
@@ -599,21 +599,21 @@
   `state-visualizer.ts` can inline exactly these bytes into the generated
   `<base>/<stub>/state-visualizer/` pages. One rule, two surfaces.
 -->
-<link rel="stylesheet" href="../../../../../../assets/css/work-plan.css?v=30bf7780ce27">
-<!-- Sticky themes. GENERATED from the theme nodes in `schemas/themes.ts` by
+<link rel="stylesheet" href="../../../../../../assets/css/work-plan.css?v=ed3e33f033fe">
+<!-- Sticky themes. GENERATED from the theme nodes in `schemas/ui/themes.ts` by
      `bun run cat themes:css`; `themes:css:check` fails the build when it is stale.
      Loaded AFTER docs-ui.css deliberately: it supplies the `--fa-sticky-*`
      roles that docs-ui.css consumes, and a custom property has to be set on a
      matching element before the rule reading it takes effect. -->
-<link rel="stylesheet" href="../../../../../../assets/css/themes.css?v=a7f81b62eded">
+<link rel="stylesheet" href="../../../../../../assets/css/themes.css?v=37c8ab192a5f">
 <!-- UML overview colours: one class per graph typology, set on the Mermaid nodes
      that `scripts/gen-uml-overview.ts` writes into docs/uml/overview/. -->
 <link rel="stylesheet" href="../../../../../../assets/css/uml.css?v=e677f91cbf66">
-<!-- Kind avatars. GENERATED from `schemas/avatars.ts` by `bun run cat avatars:css`;
+<!-- Kind avatars. GENERATED from `schemas/content/avatars.ts` by `bun run cat avatars:css`;
      `avatars:css:check` fails the build when it is stale. One stylesheet
      rather than 68 assets: the glyph is a mask and the colour is a property,
      so a scheme swap is a custom property and the trash state is a selector. -->
-<link rel="stylesheet" href="../../../../../../assets/css/avatars.css?v=699212580934">
+<link rel="stylesheet" href="../../../../../../assets/css/avatars.css?v=780d571c53c1">
 
 <!--
   The kinds THIS INSTANCE DECLARES, for the avatar fan.
@@ -647,7 +647,7 @@
 <script src="../../../../../../assets/js/kg-render.js" defer></script>
 <!-- BEFORE docs-ui.js, which calls it: the one drawing of the harness icon row (beans `lhvt`, `9rq1`). -->
 <script src="../../../../../../assets/js/navbar-row.js?v=7dce6a7e2ab0" defer></script>
-<script src="../../../../../../assets/js/docs-ui.js?v=9c88eef1c243" defer></script>
+<script src="../../../../../../assets/js/docs-ui.js?v=8b5567635976" defer></script>
 <!-- The edit, source and feedback links of every page, from the platform's one
   recipe (cat-harness-tools/src/core/edit-links.ts, bean v433): links carry their
   facts and this builds the hrefs. -->
@@ -736,9 +736,9 @@
   is broken when it is doing exactly what it can.
 -->
 
-<link rel="stylesheet" href="../../../../../../assets/css/navbar.css"><script src="../../../../../../assets/navbar/rail-1uu2yi3osvq.js" defer></script><script src="../../../../../../assets/js/navbar.js" defer></script><link rel="stylesheet" href="../../../../../../assets/page-layout.css" data-fa-page-layout><script src="../../../../../../assets/page-layout.js" defer data-fa-page-layout></script><meta name="fa-pinned-data" content="../../../../../.."></head>
+<link rel="stylesheet" href="../../../../../../assets/css/navbar.css"><script src="../../../../../../assets/navbar/rail-1nr7jo2rxsc.js" defer></script><script src="../../../../../../assets/js/navbar.js" defer></script><link rel="stylesheet" href="../../../../../../assets/page-layout.css" data-fa-page-layout><script src="../../../../../../assets/page-layout.js" defer data-fa-page-layout></script><meta name="fa-pinned-data" content="../../../../../.."></head>
 
-<body><script type="application/json" id="fa-rail" data-fa-root="https://litlfred.github.io/folio-assistant" data-fa-to-root="../../../../../..">{"data":"rail-1uu2yi3osvq","here":"/en/cat-harness/beans/cat-harness-tools/workflows/crdm-detect-evaluation-r-3554a15543fc-54762ece6646/","documentIndex":{"label":"On this page","icon":"§","items":[{"href":"#stuck","label":"Stuck states — 2"},{"href":"#diagram","label":"Diagram"},{"href":"#beans","label":"Beans it names"},{"href":"#todos","label":"Todos it names — 0"},{"href":"#history","label":"History — 9 step(s)"}],"collapsible":true}}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../">Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector</a></nav>
+<body><script type="application/json" id="fa-rail" data-fa-root="https://litlfred.github.io/folio-assistant" data-fa-to-root="../../../../../..">{"data":"rail-1nr7jo2rxsc","here":"/en/cat-harness/beans/cat-harness-tools/workflows/crdm-detect-evaluation-r-3554a15543fc-54762ece6646/","documentIndex":{"label":"On this page","icon":"§","items":[{"href":"#stuck","label":"Stuck states — 3"},{"href":"#refusals","label":"Refused steps — not recorded"},{"href":"#diagram","label":"Diagram"},{"href":"#context","label":"Working context at the token"},{"href":"#beans","label":"Beans it names"},{"href":"#todos","label":"Todos it names — 0"},{"href":"#history","label":"History — 9 step(s)"}],"collapsible":true}}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../">Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector</a></nav>
   <a class="skip-to-main" href="#main-content">Skip to main content</a>
   <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
   <symbol id="svg-link" viewBox="0 0 24 24">
@@ -877,11 +877,27 @@
 <h2 class="sv-h2" id="stuck">
   
   
-    <a href="#stuck" class="anchor-heading" aria-labelledby="stuck"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Stuck states — 2
+    <a href="#stuck" class="anchor-heading" aria-labelledby="stuck"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Stuck states — 3
   
   
 </h2>
-    <ul><li><span class="sv-tag is-stuck">enabled-not-taken</span> the token has not moved since 2026-10-11T07:02:09.501Z — 15 day(s), past the 7-day threshold</li><li><span class="sv-tag is-stuck">bean-closed</span> <code>folio-assistant-ff09</code> is completed while this instance still runs</li></ul><p class="sv-sub">Measured at 2026-10-26T14:29:23.411Z, when this page was built; a token unmoved for more than 7 days is <code>enabled-not-taken</code>. Refused gates: <strong>not-recorded</strong> — workflow_complete refuses a step by throwing an error, and nothing records the refusal: the instance file is written only when a step is accepted, and the activity log gets an entry only then. So whether a gate keeps refusing cannot be read from committed state.</p>
+    <ul><li><span class="sv-tag is-stuck">enabled-not-taken</span> the token has not moved since 2026-10-11T07:02:09.501Z — 19 day(s), past the 7-day threshold</li><li><span class="sv-tag is-stuck">bean-closed</span> <code>folio-assistant-ff09</code> is completed while this instance still runs</li><li><span class="sv-tag is-stuck">bean-moved-on</span> <code>folio-assistant-ff09</code> was updated 2026-10-22T16:45:00Z, 11 day(s) after the instance last moved — the work went on and the position did not</li></ul><p class="sv-sub">Measured at 2026-10-30T20:44:29.854Z, when this page was built; a token unmoved for more than 7 days is <code>enabled-not-taken</code>, and a step the engine refused since the instance last moved is <code>refused-gate</code>.</p><section id="live" data-wv-state="../../../../../../cat-harness/state.jsonld" data-wv-instance="#workflow/cat-harness-tools/crdm-detect-evaluation-r-3554a15543fc-54762ece6646" data-wv-built="{&quot;at&quot;:&quot;2026-10-30T20:44:29.854Z&quot;,&quot;status&quot;:&quot;running&quot;,&quot;tokens&quot;:[&quot;Call_Sign&quot;],&quot;stuck&quot;:[&quot;enabled-not-taken&quot;,&quot;bean-closed&quot;,&quot;bean-moved-on&quot;]}">
+<h2 class="sv-h2">
+  
+  
+    <a href="#stuck" class="anchor-heading" aria-labelledby="stuck"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Latest exported state
+  
+  
+</h2>
+    <div class="wv-live"><p class="sv-sub">Read from <a href="../../../../../../cat-harness/state.jsonld"><code>state.jsonld</code></a> when the page loads; it needs JavaScript. The stuck states above are the ones measured when this page was built.</p></div></section>
+<h2 class="sv-h2" id="refusals">
+  
+  
+    <a href="#refusals" class="anchor-heading" aria-labelledby="refusals"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Refused steps — not recorded
+  
+  
+</h2>
+    <p class="sv-sub">workflow_complete records each step the engine refuses in the instance's `refusals` since 2026-10-29. An instance last saved before then carries none, which means &quot;not recorded&quot;, not &quot;never refused&quot;.</p>
 <h2 class="sv-h2" id="diagram">
   
   
@@ -890,6 +906,22 @@
   
 </h2>
     <p class="sv-sub">Process <a href="../../../../processes/test-plan-execution.html"><code>Process_TestPlanExecution</code></a> — token at <code>Call_Sign</code>; 9 other step(s) in its history (drawn with a solid red outline and dashed, respectively).</p><figure class="wv-diagram" data-wv-svg="../../../../../../assets/img/workflows/test-plan-execution.svg" data-wv-tokens="[&quot;Call_Sign&quot;]" data-wv-done="[&quot;Start_Request&quot;,&quot;A_Request&quot;,&quot;A_ResolvePlan&quot;,&quot;A_BindData&quot;,&quot;A_Execute&quot;,&quot;A_WriteRun&quot;,&quot;A_ReExecuteSample&quot;,&quot;GW_ExitCriteria&quot;,&quot;A_RecordCertification&quot;]"><p><a href="../../../../../../assets/img/workflows/test-plan-execution.svg">The drawing</a> — the highlighted step needs JavaScript; the position above does not.</p></figure><p class="sv-sub">Subprocess <a href="../../../../processes/qa-report-signing.html"><code>Process_QaReportSigning</code></a> inside <code>Call_Sign</code> — token at <code>Task_StoreSigned</code>; 6 other step(s) in its history (drawn with a solid red outline and dashed, respectively).</p><figure class="wv-diagram" data-wv-svg="../../../../../../assets/img/workflows/qa-report-signing.svg" data-wv-tokens="[&quot;Task_StoreSigned&quot;]" data-wv-done="[&quot;Start_ReportReady&quot;,&quot;Task_BuildRun&quot;,&quot;Task_ResolveReach&quot;,&quot;Gateway_SigningRoute&quot;,&quot;Task_HumanSign&quot;,&quot;Task_RecordAttestation&quot;]"><p><a href="../../../../../../assets/img/workflows/qa-report-signing.svg">The drawing</a> — the highlighted step needs JavaScript; the position above does not.</p></figure>
+<h2 class="sv-h2" id="context">
+  
+  
+    <a href="#context" class="anchor-heading" aria-labelledby="context"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Working context at the token
+  
+  
+</h2>
+    
+<h3>
+  
+  
+    <a href="#context" class="anchor-heading" aria-labelledby="context"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <code>Sign the certification ▸ Task_StoreSigned</code> Store the signed report on qa-reports
+  
+  
+</h3>
+    <ul><li><strong>Role:</strong> <code>validation-pipeline</code>; call path <code>attestation-service</code>, <code>validation-pipeline</code></li><li><strong>Skills</strong> (the role's, closed over <code>inherits</code>, and the step's own): <code>content-test</code>, <code>content-validate</code>, <code>kg-affordances</code>, <code>qa-report-signing</code>, <code>qa-reports</code>, <code>test-plan-execution</code></li><li><strong>Conventions in force:</strong> none</li><li><strong>Beans the token carries:</strong> <code>folio-assistant-ff09</code></li><li><strong>Memory for <code>validation-pipeline</code>:</strong> no entry is tagged with these roles. Plus 0 untagged entries that reach every step.</li></ul><p class="sv-sub">Read from the engine's own task context. Memory is joined on the step's role and the roles it inherits; the call path's outer roles are not overlaid, which the memory schema leaves open on purpose. Archived entries reach nobody.</p>
 <h2 class="sv-h2" id="beans">
   
   
@@ -905,7 +937,7 @@
   
   
 </h2>
-    <p class="sv-sub">No todo is tagged with this instance's processes or steps, or references a bean it names.</p>
+    <p class="sv-sub">No todo is tagged with this instance's processes or steps, or references a bean it names.</p><p class="sv-sub">The history below is this instance's committed log. The activity log (<code>fsh-guts/logs/</code>) is git-ignored on the machine that ran each step, so it is not committed state and is not read here.</p>
 <h2 class="sv-h2" id="history">
   
   
@@ -937,6 +969,38 @@
       mark("data-wv-tokens", "wv-token");
       f.replaceChildren(document.importNode(svg, true));
     }).catch(function () {});
+  });
+  // The dynamic-state document (bean 6h47): the instance as the latest render
+  // exported it. Shown beside what this page was built with, and any
+  // difference is named, so a page older than the export says so.
+  document.querySelectorAll("[data-wv-state]").forEach(function (sec) {
+    var out = sec.querySelector(".wv-live");
+    var url = new URL(sec.getAttribute("data-wv-state"), document.baseURI);
+    var want = sec.getAttribute("data-wv-instance");
+    var built = JSON.parse(sec.getAttribute("data-wv-built") || "{}");
+    var text = function (t) { var p = document.createElement("p"); p.className = "sv-sub"; p.textContent = t; return p; };
+    fetch(url).then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); }).then(function (doc) {
+      var node = (doc.graph || []).filter(function (n) { return n.id === want; })[0];
+      if (!node) {
+        var store = want.split("/")[1];
+        out.replaceChildren(text((doc.unreadStores || []).indexOf(store) >= 0
+          ? "The state document (generated " + doc.generatedAt + ") could not read this instance's store, so its exported state is unknown."
+          : "The state document (generated " + doc.generatedAt + ") does not list this instance."));
+        return;
+      }
+      var kinds = (node.stuck || []).map(function (x) { return x.kind; }).sort();
+      var parts = [
+        text("From state.jsonld, generated " + doc.generatedAt + ": status " + node.status + ", token at " +
+          ((node.tokens || []).join(", ") || "no step") + ", stuck states: " + (kinds.join(", ") || "none") + "."),
+      ];
+      var same = JSON.stringify(kinds) === JSON.stringify((built.stuck || []).slice().sort()) &&
+        JSON.stringify(node.tokens || []) === JSON.stringify(built.tokens || []) && node.status === built.status;
+      parts.push(text(same ? "This matches what the page was built with." :
+        "This differs from what the page was built with (" + (built.at || "unknown") + "): the page is older than the state export."));
+      out.replaceChildren.apply(out, parts);
+    }).catch(function (e) {
+      out.replaceChildren(text("The state document could not be read (" + e + "), so only the build-time state above is known."));
+    });
   });
 })();
 </script>

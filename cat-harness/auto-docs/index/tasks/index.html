@@ -137,7 +137,7 @@
   `mark-small` in `harness.json`, and it went unread: nothing in this
   repo ever emitted a favicon at all, `rel="icon"` included. It also could
   not have driven this lookup as declared — `imagesForRole()`
-  (`schemas/kg-node.ts`) requires an image's `layout` field, which neither
+  (`schemas/kg/kg-node.ts`) requires an image's `layout` field, which neither
   mark entry carries, so a `browser-icon`-role lookup returns nothing. Reusing
   the already-resolved `icon` (the same field `title.html` reads) sidesteps
   that and, more importantly, is what was asked for: the sidebar mark and the
@@ -588,7 +588,7 @@
 -->
 <!-- The harness icon row's own style, which railed pages load without docs-ui.css (beans `lhvt`, `9rq1`). -->
 <link rel="stylesheet" href="../../../../assets/css/navbar-row.css?v=7d7d00921e0f">
-<link rel="stylesheet" href="../../../../assets/css/docs-ui.css?v=c5f675d4c764">
+<link rel="stylesheet" href="../../../../assets/css/docs-ui.css?v=6071ae228cf3">
 <!-- Narrow viewports: wide content scrolls in its own box, never the page
      (bean `2r2n`). The standalone viewers inline the same file through
      `withViewerNav`, so both kinds of page read one set of rules. -->
@@ -599,21 +599,21 @@
   `state-visualizer.ts` can inline exactly these bytes into the generated
   `<base>/<stub>/state-visualizer/` pages. One rule, two surfaces.
 -->
-<link rel="stylesheet" href="../../../../assets/css/work-plan.css?v=30bf7780ce27">
-<!-- Sticky themes. GENERATED from the theme nodes in `schemas/themes.ts` by
+<link rel="stylesheet" href="../../../../assets/css/work-plan.css?v=ed3e33f033fe">
+<!-- Sticky themes. GENERATED from the theme nodes in `schemas/ui/themes.ts` by
      `bun run cat themes:css`; `themes:css:check` fails the build when it is stale.
      Loaded AFTER docs-ui.css deliberately: it supplies the `--fa-sticky-*`
      roles that docs-ui.css consumes, and a custom property has to be set on a
      matching element before the rule reading it takes effect. -->
-<link rel="stylesheet" href="../../../../assets/css/themes.css?v=a7f81b62eded">
+<link rel="stylesheet" href="../../../../assets/css/themes.css?v=37c8ab192a5f">
 <!-- UML overview colours: one class per graph typology, set on the Mermaid nodes
      that `scripts/gen-uml-overview.ts` writes into docs/uml/overview/. -->
 <link rel="stylesheet" href="../../../../assets/css/uml.css?v=e677f91cbf66">
-<!-- Kind avatars. GENERATED from `schemas/avatars.ts` by `bun run cat avatars:css`;
+<!-- Kind avatars. GENERATED from `schemas/content/avatars.ts` by `bun run cat avatars:css`;
      `avatars:css:check` fails the build when it is stale. One stylesheet
      rather than 68 assets: the glyph is a mask and the colour is a property,
      so a scheme swap is a custom property and the trash state is a selector. -->
-<link rel="stylesheet" href="../../../../assets/css/avatars.css?v=699212580934">
+<link rel="stylesheet" href="../../../../assets/css/avatars.css?v=780d571c53c1">
 
 <!--
   The kinds THIS INSTANCE DECLARES, for the avatar fan.
@@ -647,7 +647,7 @@
 <script src="../../../../assets/js/kg-render.js" defer></script>
 <!-- BEFORE docs-ui.js, which calls it: the one drawing of the harness icon row (beans `lhvt`, `9rq1`). -->
 <script src="../../../../assets/js/navbar-row.js?v=7dce6a7e2ab0" defer></script>
-<script src="../../../../assets/js/docs-ui.js?v=9c88eef1c243" defer></script>
+<script src="../../../../assets/js/docs-ui.js?v=8b5567635976" defer></script>
 <!-- The edit, source and feedback links of every page, from the platform's one
   recipe (cat-harness-tools/src/core/edit-links.ts, bean v433): links carry their
   facts and this builds the hrefs. -->
@@ -736,9 +736,9 @@
   is broken when it is doing exactly what it can.
 -->
 
-<link rel="stylesheet" href="../../../../assets/css/navbar.css"><script src="../../../../assets/navbar/rail-1uu2yi3osvq.js" defer></script><script src="../../../../assets/js/navbar.js" defer></script><link rel="stylesheet" href="../../../../assets/page-layout.css" data-fa-page-layout><script src="../../../../assets/page-layout.js" defer data-fa-page-layout></script><meta name="fa-pinned-data" content="../../../.."></head>
+<link rel="stylesheet" href="../../../../assets/css/navbar.css"><script src="../../../../assets/navbar/rail-1nr7jo2rxsc.js" defer></script><script src="../../../../assets/js/navbar.js" defer></script><link rel="stylesheet" href="../../../../assets/page-layout.css" data-fa-page-layout><script src="../../../../assets/page-layout.js" defer data-fa-page-layout></script><meta name="fa-pinned-data" content="../../../.."></head>
 
-<body><script type="application/json" id="fa-rail" data-fa-root="https://litlfred.github.io/folio-assistant" data-fa-to-root="../../../..">{"data":"rail-1uu2yi3osvq","here":"/cat-harness/auto-docs/index/tasks/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../">Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector</a></nav>
+<body><script type="application/json" id="fa-rail" data-fa-root="https://litlfred.github.io/folio-assistant" data-fa-to-root="../../../..">{"data":"rail-1nr7jo2rxsc","here":"/cat-harness/auto-docs/index/tasks/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../">Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector</a></nav>
   <a class="skip-to-main" href="#main-content">Skip to main content</a>
   <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
   <symbol id="svg-link" viewBox="0 0 24 24">
@@ -917,11 +917,12 @@
 </div>
 
 <ul class="subs">
-<li><a href="core-processes/">core-processes</a> <span class="p">folio-assistant-core/processes</span> <span class="n">172</span></li>
+<li><a href="core-processes/">core-processes</a> <span class="p">folio-assistant-core/processes</span> <span class="n">199</span></li>
 <li><a href="fhir-harness-processes/">fhir-harness-processes</a> <span class="p">fhir-harness/processes</span> <span class="n">45</span></li>
-<li><a href="processes/">processes</a> <span class="p">cat-harness/processes</span> <span class="n">539</span></li>
+<li><a href="processes/">processes</a> <span class="p">cat-harness/processes</span> <span class="n">549</span></li>
 <li><a href="smart-base-house-processes/">smart-base-house-processes</a> <span class="p">smart-base/processes</span> <span class="n">105</span></li>
 <li><a href="smart-base-processes/">smart-base-processes</a> <span class="p">smart-base/methodologies/processes</span> <span class="n">11</span></li>
+<li><a href="who-iris-processes/">who-iris-processes</a> <span class="p">who-iris/processes</span> <span class="n">34</span></li>
 </ul>
 
 <div class="fa-table-filter">
@@ -2180,6 +2181,34 @@
   <td><a href="https://github.com/litlfred/cat-harness/blob/main/processes/sdlc/bean-close.bpmn#Scrap with reasons&amp;#10;NEVER delete"><code>Scrap with reasons&amp;#10;NEVER delete</code></a><br><span class="p">cat-harness/processes/sdlc/bean-close.bpmn#Scrap with reasons&amp;#10;NEVER delete</span></td>
   <td>task in bean-close</td>
 </tr>
+<tr id="a-cat-harness-processes-sdlc-bean-drain-bpmn-Build-the-queue-10-grouped-by-owner">
+  <td><a href="https://github.com/litlfred/cat-harness/blob/main/processes/sdlc/bean-drain.bpmn#Build the queue,&amp;#10;grouped by owner"><code>Build the queue,&amp;#10;grouped by owner</code></a><br><span class="p">cat-harness/processes/sdlc/bean-drain.bpmn#Build the queue,&amp;#10;grouped by owner</span></td>
+  <td>task in bean-drain</td>
+</tr>
+<tr id="a-cat-harness-processes-sdlc-bean-drain-bpmn-Close-the-bean-10-bean-close-">
+  <td><a href="https://github.com/litlfred/cat-harness/blob/main/processes/sdlc/bean-drain.bpmn#Close the bean&amp;#10;[bean-close]"><code>Close the bean&amp;#10;[bean-close]</code></a><br><span class="p">cat-harness/processes/sdlc/bean-drain.bpmn#Close the bean&amp;#10;[bean-close]</span></td>
+  <td>callActivity in bean-drain</td>
+</tr>
+<tr id="a-cat-harness-processes-sdlc-bean-drain-bpmn-Mark-it-skip-10-on-the-queue">
+  <td><a href="https://github.com/litlfred/cat-harness/blob/main/processes/sdlc/bean-drain.bpmn#Mark it skip&amp;#10;on the queue"><code>Mark it skip&amp;#10;on the queue</code></a><br><span class="p">cat-harness/processes/sdlc/bean-drain.bpmn#Mark it skip&amp;#10;on the queue</span></td>
+  <td>task in bean-drain</td>
+</tr>
+<tr id="a-cat-harness-processes-sdlc-bean-drain-bpmn-Open-the-bean-10-bean-open-">
+  <td><a href="https://github.com/litlfred/cat-harness/blob/main/processes/sdlc/bean-drain.bpmn#Open the bean&amp;#10;[bean-open]"><code>Open the bean&amp;#10;[bean-open]</code></a><br><span class="p">cat-harness/processes/sdlc/bean-drain.bpmn#Open the bean&amp;#10;[bean-open]</span></td>
+  <td>callActivity in bean-drain</td>
+</tr>
+<tr id="a-cat-harness-processes-sdlc-bean-drain-bpmn-Refill-from-the-10-deepest-queue">
+  <td><a href="https://github.com/litlfred/cat-harness/blob/main/processes/sdlc/bean-drain.bpmn#Refill from the&amp;#10;deepest queue"><code>Refill from the&amp;#10;deepest queue</code></a><br><span class="p">cat-harness/processes/sdlc/bean-drain.bpmn#Refill from the&amp;#10;deepest queue</span></td>
+  <td>task in bean-drain</td>
+</tr>
+<tr id="a-cat-harness-processes-sdlc-bean-drain-bpmn-Take-the-next-bean">
+  <td><a href="https://github.com/litlfred/cat-harness/blob/main/processes/sdlc/bean-drain.bpmn#Take the next bean"><code>Take the next bean</code></a><br><span class="p">cat-harness/processes/sdlc/bean-drain.bpmn#Take the next bean</span></td>
+  <td>task in bean-drain</td>
+</tr>
+<tr id="a-cat-harness-processes-sdlc-bean-drain-bpmn-Work-the-bean-10-PR-at-the-first-commit-">
+  <td><a href="https://github.com/litlfred/cat-harness/blob/main/processes/sdlc/bean-drain.bpmn#Work the bean&amp;#10;(PR at the first commit)"><code>Work the bean&amp;#10;(PR at the first commit)</code></a><br><span class="p">cat-harness/processes/sdlc/bean-drain.bpmn#Work the bean&amp;#10;(PR at the first commit)</span></td>
+  <td>task in bean-drain</td>
+</tr>
 <tr id="a-cat-harness-processes-sdlc-bean-lifecycle-bpmn-Close-the-bean-10-bean-close-">
   <td><a href="https://github.com/litlfred/cat-harness/blob/main/processes/sdlc/bean-lifecycle.bpmn#Close the bean&amp;#10;[bean-close]"><code>Close the bean&amp;#10;[bean-close]</code></a><br><span class="p">cat-harness/processes/sdlc/bean-lifecycle.bpmn#Close the bean&amp;#10;[bean-close]</span></td>
   <td>callActivity in bean-lifecycle</td>
@@ -2532,6 +2561,10 @@
   <td><a href="https://github.com/litlfred/cat-harness/blob/main/processes/sdlc/merge-to-main.bpmn#Read the head's&amp;#10;evidence, live"><code>Read the head's&amp;#10;evidence, live</code></a><br><span class="p">cat-harness/processes/sdlc/merge-to-main.bpmn#Read the head's&amp;#10;evidence, live</span></td>
   <td>task in merge-to-main</td>
 </tr>
+<tr id="a-cat-harness-processes-sdlc-merge-to-main-bpmn-Rebuild-and-republish-10-the-repository-s-site">
+  <td><a href="https://github.com/litlfred/cat-harness/blob/main/processes/sdlc/merge-to-main.bpmn#Rebuild and republish&amp;#10;the repository's site"><code>Rebuild and republish&amp;#10;the repository's site</code></a><br><span class="p">cat-harness/processes/sdlc/merge-to-main.bpmn#Rebuild and republish&amp;#10;the repository's site</span></td>
+  <td>task in merge-to-main</td>
+</tr>
 <tr id="a-cat-harness-processes-sdlc-merge-to-main-bpmn-Record-who-authorised-10-when-and-the-quote">
   <td><a href="https://github.com/litlfred/cat-harness/blob/main/processes/sdlc/merge-to-main.bpmn#Record who authorised,&amp;#10;when, and the quote"><code>Record who authorised,&amp;#10;when, and the quote</code></a><br><span class="p">cat-harness/processes/sdlc/merge-to-main.bpmn#Record who authorised,&amp;#10;when, and the quote</span></td>
   <td>task in merge-to-main</td>
@@ -2847,6 +2880,14 @@
 <tr id="a-cat-harness-processes-sdlc-test-data-curation-bpmn-Classify-data-set-10-fixed-curated-or-10-generated-recipe-">
   <td><a href="https://github.com/litlfred/cat-harness/blob/main/processes/sdlc/test-data-curation.bpmn#Classify data set:&amp;#10;fixed (curated) or&amp;#10;generated (recipe)"><code>Classify data set:&amp;#10;fixed (curated) or&amp;#10;generated (recipe)</code></a><br><span class="p">cat-harness/processes/sdlc/test-data-curation.bpmn#Classify data set:&amp;#10;fixed (curated) or&amp;#10;generated (recipe)</span></td>
   <td>task in test-data-curation</td>
+</tr>
+<tr id="a-cat-harness-processes-sdlc-test-data-curation-bpmn-Close-the-bean-10-bean-close-">
+  <td><a href="https://github.com/litlfred/cat-harness/blob/main/processes/sdlc/test-data-curation.bpmn#Close the bean&amp;#10;[bean-close]"><code>Close the bean&amp;#10;[bean-close]</code></a><br><span class="p">cat-harness/processes/sdlc/test-data-curation.bpmn#Close the bean&amp;#10;[bean-close]</span></td>
+  <td>callActivity in test-data-curation</td>
+</tr>
+<tr id="a-cat-harness-processes-sdlc-test-data-curation-bpmn-Open-the-bean-10-bean-open-">
+  <td><a href="https://github.com/litlfred/cat-harness/blob/main/processes/sdlc/test-data-curation.bpmn#Open the bean&amp;#10;[bean-open]"><code>Open the bean&amp;#10;[bean-open]</code></a><br><span class="p">cat-harness/processes/sdlc/test-data-curation.bpmn#Open the bean&amp;#10;[bean-open]</span></td>
+  <td>callActivity in test-data-curation</td>
 </tr>
 <tr id="a-cat-harness-processes-sdlc-test-data-curation-bpmn-SME-review-of-10-cases-or-cohorts-10-sme-test-data-review-">
   <td><a href="https://github.com/litlfred/cat-harness/blob/main/processes/sdlc/test-data-curation.bpmn#SME review of&amp;#10;cases or cohorts&amp;#10;[sme-test-data-review]"><code>SME review of&amp;#10;cases or cohorts&amp;#10;[sme-test-data-review]</code></a><br><span class="p">cat-harness/processes/sdlc/test-data-curation.bpmn#SME review of&amp;#10;cases or cohorts&amp;#10;[sme-test-data-review]</span></td>
@@ -3272,6 +3313,10 @@
   <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/conduct/getting-started.bpmn#Choose from the offered options"><code>Choose from the offered options</code></a><br><span class="p">folio-assistant-core/processes/conduct/getting-started.bpmn#Choose from the offered options</span></td>
   <td>userTask in getting-started</td>
 </tr>
+<tr id="a-folio-assistant-core-processes-conduct-getting-started-bpmn-Choose-what-the-harness-reads">
+  <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/conduct/getting-started.bpmn#Choose what the harness reads"><code>Choose what the harness reads</code></a><br><span class="p">folio-assistant-core/processes/conduct/getting-started.bpmn#Choose what the harness reads</span></td>
+  <td>callActivity in getting-started</td>
+</tr>
 <tr id="a-folio-assistant-core-processes-conduct-getting-started-bpmn-Close-the-bean-10-bean-close-">
   <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/conduct/getting-started.bpmn#Close the bean&amp;#10;[bean-close]"><code>Close the bean&amp;#10;[bean-close]</code></a><br><span class="p">folio-assistant-core/processes/conduct/getting-started.bpmn#Close the bean&amp;#10;[bean-close]</span></td>
   <td>callActivity in getting-started</td>
@@ -3592,6 +3637,106 @@
   <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/draft-to-publication.bpmn#Version, tag and publish&amp;#10;[content-publish]"><code>Version, tag and publish&amp;#10;[content-publish]</code></a><br><span class="p">folio-assistant-core/processes/content/draft-to-publication.bpmn#Version, tag and publish&amp;#10;[content-publish]</span></td>
   <td>serviceTask in draft-to-publication</td>
 </tr>
+<tr id="a-folio-assistant-core-processes-content-dsa-document-lifecycle-bpmn-Close-the-bean-10-bean-close-">
+  <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/dsa-document-lifecycle.bpmn#Close the bean&amp;#10;[bean-close]"><code>Close the bean&amp;#10;[bean-close]</code></a><br><span class="p">folio-assistant-core/processes/content/dsa-document-lifecycle.bpmn#Close the bean&amp;#10;[bean-close]</span></td>
+  <td>callActivity in dsa-document-lifecycle</td>
+</tr>
+<tr id="a-folio-assistant-core-processes-content-dsa-document-lifecycle-bpmn-Decide-amend-renew-or-end">
+  <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/dsa-document-lifecycle.bpmn#Decide: amend, renew or end"><code>Decide: amend, renew or end</code></a><br><span class="p">folio-assistant-core/processes/content/dsa-document-lifecycle.bpmn#Decide: amend, renew or end</span></td>
+  <td>userTask in dsa-document-lifecycle</td>
+</tr>
+<tr id="a-folio-assistant-core-processes-content-dsa-document-lifecycle-bpmn-Open-the-bean-10-bean-open-">
+  <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/dsa-document-lifecycle.bpmn#Open the bean&amp;#10;[bean-open]"><code>Open the bean&amp;#10;[bean-open]</code></a><br><span class="p">folio-assistant-core/processes/content/dsa-document-lifecycle.bpmn#Open the bean&amp;#10;[bean-open]</span></td>
+  <td>callActivity in dsa-document-lifecycle</td>
+</tr>
+<tr id="a-folio-assistant-core-processes-content-dsa-document-lifecycle-bpmn-P1-1-Agree-purpose-datasets-period-duties-and-trust-anchors">
+  <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/dsa-document-lifecycle.bpmn#P1.1 · Agree purpose, datasets, period, duties and trust anchors"><code>P1.1 · Agree purpose, datasets, period, duties and trust anchors</code></a><br><span class="p">folio-assistant-core/processes/content/dsa-document-lifecycle.bpmn#P1.1 · Agree purpose, datasets, period, duties and trust anchors</span></td>
+  <td>userTask in dsa-document-lifecycle</td>
+</tr>
+<tr id="a-folio-assistant-core-processes-content-dsa-document-lifecycle-bpmn-P1-2-Write-the-legal-text-10-document-authoring-">
+  <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/dsa-document-lifecycle.bpmn#P1.2 · Write the legal text&amp;#10;[document-authoring]"><code>P1.2 · Write the legal text&amp;#10;[document-authoring]</code></a><br><span class="p">folio-assistant-core/processes/content/dsa-document-lifecycle.bpmn#P1.2 · Write the legal text&amp;#10;[document-authoring]</span></td>
+  <td>userTask in dsa-document-lifecycle</td>
+</tr>
+<tr id="a-folio-assistant-core-processes-content-dsa-document-lifecycle-bpmn-P1-2a-Record-the-legal-basis-10-normative-statements-">
+  <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/dsa-document-lifecycle.bpmn#P1.2a · Record the legal basis&amp;#10;[normative-statements]"><code>P1.2a · Record the legal basis&amp;#10;[normative-statements]</code></a><br><span class="p">folio-assistant-core/processes/content/dsa-document-lifecycle.bpmn#P1.2a · Record the legal basis&amp;#10;[normative-statements]</span></td>
+  <td>userTask in dsa-document-lifecycle</td>
+</tr>
+<tr id="a-folio-assistant-core-processes-content-dsa-document-lifecycle-bpmn-P1-2b-Draft-the-plain-language-summary-10-document-authoring-">
+  <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/dsa-document-lifecycle.bpmn#P1.2b · Draft the plain-language summary&amp;#10;[document-authoring]"><code>P1.2b · Draft the plain-language summary&amp;#10;[document-authoring]</code></a><br><span class="p">folio-assistant-core/processes/content/dsa-document-lifecycle.bpmn#P1.2b · Draft the plain-language summary&amp;#10;[document-authoring]</span></td>
+  <td>userTask in dsa-document-lifecycle</td>
+</tr>
+<tr id="a-folio-assistant-core-processes-content-dsa-document-lifecycle-bpmn-P1-3-Derive-the-ODRL-2-2-Agreement">
+  <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/dsa-document-lifecycle.bpmn#P1.3 · Derive the ODRL 2.2 Agreement"><code>P1.3 · Derive the ODRL 2.2 Agreement</code></a><br><span class="p">folio-assistant-core/processes/content/dsa-document-lifecycle.bpmn#P1.3 · Derive the ODRL 2.2 Agreement</span></td>
+  <td>userTask in dsa-document-lifecycle</td>
+</tr>
+<tr id="a-folio-assistant-core-processes-content-dsa-document-lifecycle-bpmn-P1-4-Check-the-ODRL-against-the-text-10-content-review-">
+  <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/dsa-document-lifecycle.bpmn#P1.4 · Check the ODRL against the text&amp;#10;[content-review]"><code>P1.4 · Check the ODRL against the text&amp;#10;[content-review]</code></a><br><span class="p">folio-assistant-core/processes/content/dsa-document-lifecycle.bpmn#P1.4 · Check the ODRL against the text&amp;#10;[content-review]</span></td>
+  <td>userTask in dsa-document-lifecycle</td>
+</tr>
+<tr id="a-folio-assistant-core-processes-content-dsa-document-lifecycle-bpmn-P1-5-Split-public-terms-from-private-annexes">
+  <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/dsa-document-lifecycle.bpmn#P1.5 · Split public terms from private annexes"><code>P1.5 · Split public terms from private annexes</code></a><br><span class="p">folio-assistant-core/processes/content/dsa-document-lifecycle.bpmn#P1.5 · Split public terms from private annexes</span></td>
+  <td>userTask in dsa-document-lifecycle</td>
+</tr>
+<tr id="a-folio-assistant-core-processes-content-dsa-document-lifecycle-bpmn-P1-6-Sign">
+  <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/dsa-document-lifecycle.bpmn#P1.6 · Sign"><code>P1.6 · Sign</code></a><br><span class="p">folio-assistant-core/processes/content/dsa-document-lifecycle.bpmn#P1.6 · Sign</span></td>
+  <td>userTask in dsa-document-lifecycle</td>
+</tr>
+<tr id="a-folio-assistant-core-processes-content-dsa-document-lifecycle-bpmn-P14-2-Decide-what-happens-to-existing-grants">
+  <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/dsa-document-lifecycle.bpmn#P14.2 · Decide what happens to existing grants"><code>P14.2 · Decide what happens to existing grants</code></a><br><span class="p">folio-assistant-core/processes/content/dsa-document-lifecycle.bpmn#P14.2 · Decide what happens to existing grants</span></td>
+  <td>userTask in dsa-document-lifecycle</td>
+</tr>
+<tr id="a-folio-assistant-core-processes-content-dsa-document-lifecycle-bpmn-P14-3-Record-that-new-consent-is-needed">
+  <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/dsa-document-lifecycle.bpmn#P14.3 · Record that new consent is needed"><code>P14.3 · Record that new consent is needed</code></a><br><span class="p">folio-assistant-core/processes/content/dsa-document-lifecycle.bpmn#P14.3 · Record that new consent is needed</span></td>
+  <td>userTask in dsa-document-lifecycle</td>
+</tr>
+<tr id="a-folio-assistant-core-processes-content-dsa-document-lifecycle-bpmn-P14-5-Set-the-catalogue-status-to-ended-10-dsa-catalogue-status-">
+  <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/dsa-document-lifecycle.bpmn#P14.5 · Set the catalogue status to ended&amp;#10;[dsa-catalogue-status]"><code>P14.5 · Set the catalogue status to ended&amp;#10;[dsa-catalogue-status]</code></a><br><span class="p">folio-assistant-core/processes/content/dsa-document-lifecycle.bpmn#P14.5 · Set the catalogue status to ended&amp;#10;[dsa-catalogue-status]</span></td>
+  <td>userTask in dsa-document-lifecycle</td>
+</tr>
+<tr id="a-folio-assistant-core-processes-content-dsa-document-lifecycle-bpmn-P2-1-Assign-the-version-and-its-immutable-URL-10-content-publish-">
+  <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/dsa-document-lifecycle.bpmn#P2.1 · Assign the version and its immutable URL&amp;#10;[content-publish]"><code>P2.1 · Assign the version and its immutable URL&amp;#10;[content-publish]</code></a><br><span class="p">folio-assistant-core/processes/content/dsa-document-lifecycle.bpmn#P2.1 · Assign the version and its immutable URL&amp;#10;[content-publish]</span></td>
+  <td>userTask in dsa-document-lifecycle</td>
+</tr>
+<tr id="a-folio-assistant-core-processes-content-dsa-document-lifecycle-bpmn-P2-2-Record-the-SHA-256-of-each-file-10-dsa-checksum-">
+  <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/dsa-document-lifecycle.bpmn#P2.2 · Record the SHA-256 of each file&amp;#10;[dsa-checksum]"><code>P2.2 · Record the SHA-256 of each file&amp;#10;[dsa-checksum]</code></a><br><span class="p">folio-assistant-core/processes/content/dsa-document-lifecycle.bpmn#P2.2 · Record the SHA-256 of each file&amp;#10;[dsa-checksum]</span></td>
+  <td>userTask in dsa-document-lifecycle</td>
+</tr>
+<tr id="a-folio-assistant-core-processes-content-dsa-document-lifecycle-bpmn-P2-2a-Hash-the-plain-language-summary-with-the-agreement-10-dsa-checksum-">
+  <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/dsa-document-lifecycle.bpmn#P2.2a · Hash the plain-language summary with the agreement&amp;#10;[dsa-checksum]"><code>P2.2a · Hash the plain-language summary with the agreement&amp;#10;[dsa-checksum]</code></a><br><span class="p">folio-assistant-core/processes/content/dsa-document-lifecycle.bpmn#P2.2a · Hash the plain-language summary with the agreement&amp;#10;[dsa-checksum]</span></td>
+  <td>userTask in dsa-document-lifecycle</td>
+</tr>
+<tr id="a-folio-assistant-core-processes-content-dsa-document-lifecycle-bpmn-P2-2b-State-the-fixed-version-URL-and-hash-a-Consent-cites-10-content-publish-">
+  <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/dsa-document-lifecycle.bpmn#P2.2b · State the fixed-version URL and hash a Consent cites&amp;#10;[content-publish]"><code>P2.2b · State the fixed-version URL and hash a Consent cites&amp;#10;[content-publish]</code></a><br><span class="p">folio-assistant-core/processes/content/dsa-document-lifecycle.bpmn#P2.2b · State the fixed-version URL and hash a Consent cites&amp;#10;[content-publish]</span></td>
+  <td>userTask in dsa-document-lifecycle</td>
+</tr>
+<tr id="a-folio-assistant-core-processes-content-dsa-document-lifecycle-bpmn-P2-3-Make-the-ODRL-cite-the-text-by-URL-and-hash-10-dsa-odrl-source-">
+  <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/dsa-document-lifecycle.bpmn#P2.3 · Make the ODRL cite the text by URL and hash&amp;#10;[dsa-odrl-source]"><code>P2.3 · Make the ODRL cite the text by URL and hash&amp;#10;[dsa-odrl-source]</code></a><br><span class="p">folio-assistant-core/processes/content/dsa-document-lifecycle.bpmn#P2.3 · Make the ODRL cite the text by URL and hash&amp;#10;[dsa-odrl-source]</span></td>
+  <td>userTask in dsa-document-lifecycle</td>
+</tr>
+<tr id="a-folio-assistant-core-processes-content-dsa-document-lifecycle-bpmn-P2-4-5-Write-the-DCAT-3-record-and-link-versions-10-dsa-dcat-record-">
+  <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/dsa-document-lifecycle.bpmn#P2.4–5 · Write the DCAT 3 record and link versions&amp;#10;[dsa-dcat-record]"><code>P2.4–5 · Write the DCAT 3 record and link versions&amp;#10;[dsa-dcat-record]</code></a><br><span class="p">folio-assistant-core/processes/content/dsa-document-lifecycle.bpmn#P2.4–5 · Write the DCAT 3 record and link versions&amp;#10;[dsa-dcat-record]</span></td>
+  <td>userTask in dsa-document-lifecycle</td>
+</tr>
+<tr id="a-folio-assistant-core-processes-content-dsa-document-lifecycle-bpmn-Public-comment-on-the-template-10-public-comment-">
+  <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/dsa-document-lifecycle.bpmn#Public comment on the template&amp;#10;[public-comment]"><code>Public comment on the template&amp;#10;[public-comment]</code></a><br><span class="p">folio-assistant-core/processes/content/dsa-document-lifecycle.bpmn#Public comment on the template&amp;#10;[public-comment]</span></td>
+  <td>callActivity in dsa-document-lifecycle</td>
+</tr>
+<tr id="a-folio-assistant-core-processes-content-dsa-document-lifecycle-bpmn-Publish-the-version-at-its-URL-10-content-publish-">
+  <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/dsa-document-lifecycle.bpmn#Publish the version at its URL&amp;#10;[content-publish]"><code>Publish the version at its URL&amp;#10;[content-publish]</code></a><br><span class="p">folio-assistant-core/processes/content/dsa-document-lifecycle.bpmn#Publish the version at its URL&amp;#10;[content-publish]</span></td>
+  <td>serviceTask in dsa-document-lifecycle</td>
+</tr>
+<tr id="a-folio-assistant-core-processes-content-dsa-document-lifecycle-bpmn-Render-the-text-to-HTML-PDF-10-document-publishing-">
+  <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/dsa-document-lifecycle.bpmn#Render the text to HTML / PDF&amp;#10;[document-publishing]"><code>Render the text to HTML / PDF&amp;#10;[document-publishing]</code></a><br><span class="p">folio-assistant-core/processes/content/dsa-document-lifecycle.bpmn#Render the text to HTML / PDF&amp;#10;[document-publishing]</span></td>
+  <td>serviceTask in dsa-document-lifecycle</td>
+</tr>
+<tr id="a-folio-assistant-core-processes-content-dsa-document-lifecycle-bpmn-Review-the-draft-agreement-10-content-review-">
+  <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/dsa-document-lifecycle.bpmn#Review the draft agreement&amp;#10;[content-review]"><code>Review the draft agreement&amp;#10;[content-review]</code></a><br><span class="p">folio-assistant-core/processes/content/dsa-document-lifecycle.bpmn#Review the draft agreement&amp;#10;[content-review]</span></td>
+  <td>userTask in dsa-document-lifecycle</td>
+</tr>
+<tr id="a-folio-assistant-core-processes-content-dsa-document-lifecycle-bpmn-Revoke-grants-and-start-end-of-agreement-duties">
+  <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/dsa-document-lifecycle.bpmn#Revoke grants and start end-of-agreement duties"><code>Revoke grants and start end-of-agreement duties</code></a><br><span class="p">folio-assistant-core/processes/content/dsa-document-lifecycle.bpmn#Revoke grants and start end-of-agreement duties</span></td>
+  <td>userTask in dsa-document-lifecycle</td>
+</tr>
 <tr id="a-folio-assistant-core-processes-content-editing-hci-validation-bpmn-Agent-review-of-the-change-10-content-review-">
   <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/editing-hci-validation.bpmn#Agent review of the change&amp;#10;[content-review]"><code>Agent review of the change&amp;#10;[content-review]</code></a><br><span class="p">folio-assistant-core/processes/content/editing-hci-validation.bpmn#Agent review of the change&amp;#10;[content-review]</span></td>
   <td>serviceTask in editing-hci-validation</td>
@@ -3727,6 +3872,10 @@
 <tr id="a-folio-assistant-core-processes-content-public-comment-bpmn-Propose-change-sets-as-records-with-no-issue-yet">
   <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/public-comment.bpmn#Propose change-sets, as records with no issue yet"><code>Propose change-sets, as records with no issue yet</code></a><br><span class="p">folio-assistant-core/processes/content/public-comment.bpmn#Propose change-sets, as records with no issue yet</span></td>
   <td>task in public-comment</td>
+</tr>
+<tr id="a-folio-assistant-core-processes-content-public-comment-bpmn-Re-route-a-change-set-to-another-committee-with-a-reason">
+  <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/public-comment.bpmn#Re-route a change-set to another committee, with a reason"><code>Re-route a change-set to another committee, with a reason</code></a><br><span class="p">folio-assistant-core/processes/content/public-comment.bpmn#Re-route a change-set to another committee, with a reason</span></td>
+  <td>userTask in public-comment</td>
 </tr>
 <tr id="a-folio-assistant-core-processes-content-public-comment-bpmn-Recommend-a-decision-with-a-rationale">
   <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/public-comment.bpmn#Recommend a decision, with a rationale"><code>Recommend a decision, with a rationale</code></a><br><span class="p">folio-assistant-core/processes/content/public-comment.bpmn#Recommend a decision, with a rationale</span></td>
@@ -4419,6 +4568,142 @@
 <tr id="a-smart-base-processes-content-smart-guideline-end-to-end-bpmn-Review-each-L3-asset-10-before-after-if-adapted-">
   <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/smart-guideline-end-to-end.bpmn#Review each L3 asset&amp;#10;(before / after if adapted)"><code>Review each L3 asset&amp;#10;(before / after if adapted)</code></a><br><span class="p">smart-base/processes/content/smart-guideline-end-to-end.bpmn#Review each L3 asset&amp;#10;(before / after if adapted)</span></td>
   <td>callActivity in smart-guideline-end-to-end</td>
+</tr>
+<tr id="a-who-iris-processes-iris-cdn-initial-load-bpmn-Build-the-graph-10-partitions">
+  <td><a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-initial-load.bpmn#Build the graph&amp;#10;partitions"><code>Build the graph&amp;#10;partitions</code></a><br><span class="p">who-iris/processes/iris-cdn-initial-load.bpmn#Build the graph&amp;#10;partitions</span></td>
+  <td>callActivity in iris-cdn-initial-load</td>
+</tr>
+<tr id="a-who-iris-processes-iris-cdn-initial-load-bpmn-Commit-the-batch-10-checkpoint">
+  <td><a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-initial-load.bpmn#Commit the batch&amp;#10;checkpoint"><code>Commit the batch&amp;#10;checkpoint</code></a><br><span class="p">who-iris/processes/iris-cdn-initial-load.bpmn#Commit the batch&amp;#10;checkpoint</span></td>
+  <td>task in iris-cdn-initial-load</td>
+</tr>
+<tr id="a-who-iris-processes-iris-cdn-initial-load-bpmn-Fetch-bitstreams-10-not-already-held">
+  <td><a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-initial-load.bpmn#Fetch bitstreams&amp;#10;not already held"><code>Fetch bitstreams&amp;#10;not already held</code></a><br><span class="p">who-iris/processes/iris-cdn-initial-load.bpmn#Fetch bitstreams&amp;#10;not already held</span></td>
+  <td>task in iris-cdn-initial-load</td>
+</tr>
+<tr id="a-who-iris-processes-iris-cdn-initial-load-bpmn-Harvest-a-batch-of-10-item-records-REST-">
+  <td><a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-initial-load.bpmn#Harvest a batch of&amp;#10;item records (REST)"><code>Harvest a batch of&amp;#10;item records (REST)</code></a><br><span class="p">who-iris/processes/iris-cdn-initial-load.bpmn#Harvest a batch of&amp;#10;item records (REST)</span></td>
+  <td>task in iris-cdn-initial-load</td>
+</tr>
+<tr id="a-who-iris-processes-iris-cdn-initial-load-bpmn-Plan-batches-by-10-community-and-collection">
+  <td><a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-initial-load.bpmn#Plan batches by&amp;#10;community and collection"><code>Plan batches by&amp;#10;community and collection</code></a><br><span class="p">who-iris/processes/iris-cdn-initial-load.bpmn#Plan batches by&amp;#10;community and collection</span></td>
+  <td>task in iris-cdn-initial-load</td>
+</tr>
+<tr id="a-who-iris-processes-iris-cdn-initial-load-bpmn-Quarantine-and-report-10-the-mismatch">
+  <td><a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-initial-load.bpmn#Quarantine and report&amp;#10;the mismatch"><code>Quarantine and report&amp;#10;the mismatch</code></a><br><span class="p">who-iris/processes/iris-cdn-initial-load.bpmn#Quarantine and report&amp;#10;the mismatch</span></td>
+  <td>task in iris-cdn-initial-load</td>
+</tr>
+<tr id="a-who-iris-processes-iris-cdn-initial-load-bpmn-Review-the-load-report-10-open-beans-for-gaps">
+  <td><a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-initial-load.bpmn#Review the load report;&amp;#10;open beans for gaps"><code>Review the load report;&amp;#10;open beans for gaps</code></a><br><span class="p">who-iris/processes/iris-cdn-initial-load.bpmn#Review the load report;&amp;#10;open beans for gaps</span></td>
+  <td>task in iris-cdn-initial-load</td>
+</tr>
+<tr id="a-who-iris-processes-iris-cdn-initial-load-bpmn-Sign-and-publish-10-the-release">
+  <td><a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-initial-load.bpmn#Sign and publish&amp;#10;the release"><code>Sign and publish&amp;#10;the release</code></a><br><span class="p">who-iris/processes/iris-cdn-initial-load.bpmn#Sign and publish&amp;#10;the release</span></td>
+  <td>callActivity in iris-cdn-initial-load</td>
+</tr>
+<tr id="a-who-iris-processes-iris-cdn-initial-load-bpmn-State-scope-and-budget-10-with-denominators">
+  <td><a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-initial-load.bpmn#State scope and budget,&amp;#10;with denominators"><code>State scope and budget,&amp;#10;with denominators</code></a><br><span class="p">who-iris/processes/iris-cdn-initial-load.bpmn#State scope and budget,&amp;#10;with denominators</span></td>
+  <td>task in iris-cdn-initial-load</td>
+</tr>
+<tr id="a-who-iris-processes-iris-cdn-initial-load-bpmn-Store-bytes-under-10-SHA-256-skip-if-held-">
+  <td><a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-initial-load.bpmn#Store bytes under&amp;#10;SHA-256 (skip if held)"><code>Store bytes under&amp;#10;SHA-256 (skip if held)</code></a><br><span class="p">who-iris/processes/iris-cdn-initial-load.bpmn#Store bytes under&amp;#10;SHA-256 (skip if held)</span></td>
+  <td>task in iris-cdn-initial-load</td>
+</tr>
+<tr id="a-who-iris-processes-iris-cdn-nightly-bpmn-Commit-the-10-advanced-cursor">
+  <td><a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-nightly.bpmn#Commit the&amp;#10;advanced cursor"><code>Commit the&amp;#10;advanced cursor</code></a><br><span class="p">who-iris/processes/iris-cdn-nightly.bpmn#Commit the&amp;#10;advanced cursor</span></td>
+  <td>task in iris-cdn-nightly</td>
+</tr>
+<tr id="a-who-iris-processes-iris-cdn-nightly-bpmn-Fetch-only-bitstreams-10-whose-checksum-changed">
+  <td><a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-nightly.bpmn#Fetch only bitstreams&amp;#10;whose checksum changed"><code>Fetch only bitstreams&amp;#10;whose checksum changed</code></a><br><span class="p">who-iris/processes/iris-cdn-nightly.bpmn#Fetch only bitstreams&amp;#10;whose checksum changed</span></td>
+  <td>task in iris-cdn-nightly</td>
+</tr>
+<tr id="a-who-iris-processes-iris-cdn-nightly-bpmn-Fetch-the-changed-records-10-and-bitstream-lists">
+  <td><a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-nightly.bpmn#Fetch the changed records&amp;#10;and bitstream lists"><code>Fetch the changed records&amp;#10;and bitstream lists</code></a><br><span class="p">who-iris/processes/iris-cdn-nightly.bpmn#Fetch the changed records&amp;#10;and bitstream lists</span></td>
+  <td>task in iris-cdn-nightly</td>
+</tr>
+<tr id="a-who-iris-processes-iris-cdn-nightly-bpmn-List-items-changed-10-since-the-cursor">
+  <td><a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-nightly.bpmn#List items changed&amp;#10;since the cursor"><code>List items changed&amp;#10;since the cursor</code></a><br><span class="p">who-iris/processes/iris-cdn-nightly.bpmn#List items changed&amp;#10;since the cursor</span></td>
+  <td>task in iris-cdn-nightly</td>
+</tr>
+<tr id="a-who-iris-processes-iris-cdn-nightly-bpmn-Read-the-cursor-of-the-10-last-published-run">
+  <td><a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-nightly.bpmn#Read the cursor of the&amp;#10;last published run"><code>Read the cursor of the&amp;#10;last published run</code></a><br><span class="p">who-iris/processes/iris-cdn-nightly.bpmn#Read the cursor of the&amp;#10;last published run</span></td>
+  <td>task in iris-cdn-nightly</td>
+</tr>
+<tr id="a-who-iris-processes-iris-cdn-nightly-bpmn-Rebuild-the-whole-10-graph-sorted-output-">
+  <td><a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-nightly.bpmn#Rebuild the whole&amp;#10;graph (sorted output)"><code>Rebuild the whole&amp;#10;graph (sorted output)</code></a><br><span class="p">who-iris/processes/iris-cdn-nightly.bpmn#Rebuild the whole&amp;#10;graph (sorted output)</span></td>
+  <td>callActivity in iris-cdn-nightly</td>
+</tr>
+<tr id="a-who-iris-processes-iris-cdn-nightly-bpmn-Review-the-run-report-10-open-beans-for-anomalies">
+  <td><a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-nightly.bpmn#Review the run report;&amp;#10;open beans for anomalies"><code>Review the run report;&amp;#10;open beans for anomalies</code></a><br><span class="p">who-iris/processes/iris-cdn-nightly.bpmn#Review the run report;&amp;#10;open beans for anomalies</span></td>
+  <td>task in iris-cdn-nightly</td>
+</tr>
+<tr id="a-who-iris-processes-iris-cdn-nightly-bpmn-Sign-and-publish-10-the-release">
+  <td><a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-nightly.bpmn#Sign and publish&amp;#10;the release"><code>Sign and publish&amp;#10;the release</code></a><br><span class="p">who-iris/processes/iris-cdn-nightly.bpmn#Sign and publish&amp;#10;the release</span></td>
+  <td>callActivity in iris-cdn-nightly</td>
+</tr>
+<tr id="a-who-iris-processes-iris-cdn-nightly-bpmn-Write-canonical-records-10-into-the-library">
+  <td><a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-nightly.bpmn#Write canonical records&amp;#10;into the library"><code>Write canonical records&amp;#10;into the library</code></a><br><span class="p">who-iris/processes/iris-cdn-nightly.bpmn#Write canonical records&amp;#10;into the library</span></td>
+  <td>task in iris-cdn-nightly</td>
+</tr>
+<tr id="a-who-iris-processes-iris-cdn-reconcile-bpmn-Compare-with-the-10-ids-the-library-holds">
+  <td><a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-reconcile.bpmn#Compare with the&amp;#10;ids the library holds"><code>Compare with the&amp;#10;ids the library holds</code></a><br><span class="p">who-iris/processes/iris-cdn-reconcile.bpmn#Compare with the&amp;#10;ids the library holds</span></td>
+  <td>task in iris-cdn-reconcile</td>
+</tr>
+<tr id="a-who-iris-processes-iris-cdn-reconcile-bpmn-List-every-item-id-10-IRIS-reports">
+  <td><a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-reconcile.bpmn#List every item id&amp;#10;IRIS reports"><code>List every item id&amp;#10;IRIS reports</code></a><br><span class="p">who-iris/processes/iris-cdn-reconcile.bpmn#List every item id&amp;#10;IRIS reports</span></td>
+  <td>task in iris-cdn-reconcile</td>
+</tr>
+<tr id="a-who-iris-processes-iris-cdn-reconcile-bpmn-Mark-confirmed-items-10-withdrawn-keep-bytes-">
+  <td><a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-reconcile.bpmn#Mark confirmed items&amp;#10;withdrawn (keep bytes)"><code>Mark confirmed items&amp;#10;withdrawn (keep bytes)</code></a><br><span class="p">who-iris/processes/iris-cdn-reconcile.bpmn#Mark confirmed items&amp;#10;withdrawn (keep bytes)</span></td>
+  <td>task in iris-cdn-reconcile</td>
+</tr>
+<tr id="a-who-iris-processes-iris-cdn-reconcile-bpmn-Re-check-each-10-missing-item-by-id">
+  <td><a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-reconcile.bpmn#Re-check each&amp;#10;missing item by id"><code>Re-check each&amp;#10;missing item by id</code></a><br><span class="p">who-iris/processes/iris-cdn-reconcile.bpmn#Re-check each&amp;#10;missing item by id</span></td>
+  <td>task in iris-cdn-reconcile</td>
+</tr>
+<tr id="a-who-iris-processes-iris-cdn-reconcile-bpmn-Rebuild-the-whole-10-graph-sorted-output-">
+  <td><a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-reconcile.bpmn#Rebuild the whole&amp;#10;graph (sorted output)"><code>Rebuild the whole&amp;#10;graph (sorted output)</code></a><br><span class="p">who-iris/processes/iris-cdn-reconcile.bpmn#Rebuild the whole&amp;#10;graph (sorted output)</span></td>
+  <td>callActivity in iris-cdn-reconcile</td>
+</tr>
+<tr id="a-who-iris-processes-iris-cdn-reconcile-bpmn-Sign-and-publish-10-the-release">
+  <td><a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-reconcile.bpmn#Sign and publish&amp;#10;the release"><code>Sign and publish&amp;#10;the release</code></a><br><span class="p">who-iris/processes/iris-cdn-reconcile.bpmn#Sign and publish&amp;#10;the release</span></td>
+  <td>callActivity in iris-cdn-reconcile</td>
+</tr>
+<tr id="a-who-iris-processes-iris-cdn-reconcile-bpmn-Treat-the-listing-as-10-faulty-escalate">
+  <td><a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-reconcile.bpmn#Treat the listing as&amp;#10;faulty; escalate"><code>Treat the listing as&amp;#10;faulty; escalate</code></a><br><span class="p">who-iris/processes/iris-cdn-reconcile.bpmn#Treat the listing as&amp;#10;faulty; escalate</span></td>
+  <td>task in iris-cdn-reconcile</td>
+</tr>
+<tr id="a-who-iris-processes-iris-cdn-sign-publish-bpmn-Commit-tag-files-and-10-signature-last">
+  <td><a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-sign-publish.bpmn#Commit tag files and&amp;#10;signature, last"><code>Commit tag files and&amp;#10;signature, last</code></a><br><span class="p">who-iris/processes/iris-cdn-sign-publish.bpmn#Commit tag files and&amp;#10;signature, last</span></td>
+  <td>task in iris-cdn-sign-publish</td>
+</tr>
+<tr id="a-who-iris-processes-iris-cdn-sign-publish-bpmn-Diff-against-the-10-published-manifest">
+  <td><a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-sign-publish.bpmn#Diff against the&amp;#10;published manifest"><code>Diff against the&amp;#10;published manifest</code></a><br><span class="p">who-iris/processes/iris-cdn-sign-publish.bpmn#Diff against the&amp;#10;published manifest</span></td>
+  <td>task in iris-cdn-sign-publish</td>
+</tr>
+<tr id="a-who-iris-processes-iris-cdn-sign-publish-bpmn-Resolve-did-web-verify-10-JWS-and-digests">
+  <td><a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-sign-publish.bpmn#Resolve did:web; verify&amp;#10;JWS and digests"><code>Resolve did:web; verify&amp;#10;JWS and digests</code></a><br><span class="p">who-iris/processes/iris-cdn-sign-publish.bpmn#Resolve did:web; verify&amp;#10;JWS and digests</span></td>
+  <td>task in iris-cdn-sign-publish</td>
+</tr>
+<tr id="a-who-iris-processes-iris-cdn-sign-publish-bpmn-Revert-to-the-10-previous-release">
+  <td><a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-sign-publish.bpmn#Revert to the&amp;#10;previous release"><code>Revert to the&amp;#10;previous release</code></a><br><span class="p">who-iris/processes/iris-cdn-sign-publish.bpmn#Revert to the&amp;#10;previous release</span></td>
+  <td>task in iris-cdn-sign-publish</td>
+</tr>
+<tr id="a-who-iris-processes-iris-cdn-sign-publish-bpmn-Sign-each-changed-10-item-manifest-ES256-">
+  <td><a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-sign-publish.bpmn#Sign each changed&amp;#10;item manifest (ES256)"><code>Sign each changed&amp;#10;item manifest (ES256)</code></a><br><span class="p">who-iris/processes/iris-cdn-sign-publish.bpmn#Sign each changed&amp;#10;item manifest (ES256)</span></td>
+  <td>task in iris-cdn-sign-publish</td>
+</tr>
+<tr id="a-who-iris-processes-iris-cdn-sign-publish-bpmn-Sign-the-release-10-tag-manifest-ES256-">
+  <td><a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-sign-publish.bpmn#Sign the release&amp;#10;tag manifest (ES256)"><code>Sign the release&amp;#10;tag manifest (ES256)</code></a><br><span class="p">who-iris/processes/iris-cdn-sign-publish.bpmn#Sign the release&amp;#10;tag manifest (ES256)</span></td>
+  <td>task in iris-cdn-sign-publish</td>
+</tr>
+<tr id="a-who-iris-processes-iris-cdn-sign-publish-bpmn-Store-new-objects-10-never-overwrite-">
+  <td><a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-sign-publish.bpmn#Store new objects&amp;#10;(never overwrite)"><code>Store new objects&amp;#10;(never overwrite)</code></a><br><span class="p">who-iris/processes/iris-cdn-sign-publish.bpmn#Store new objects&amp;#10;(never overwrite)</span></td>
+  <td>task in iris-cdn-sign-publish</td>
+</tr>
+<tr id="a-who-iris-processes-iris-cdn-sign-publish-bpmn-Write-the-BagIt-tag-files-10-sorted-no-dates-">
+  <td><a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-sign-publish.bpmn#Write the BagIt tag files&amp;#10;(sorted, no dates)"><code>Write the BagIt tag files&amp;#10;(sorted, no dates)</code></a><br><span class="p">who-iris/processes/iris-cdn-sign-publish.bpmn#Write the BagIt tag files&amp;#10;(sorted, no dates)</span></td>
+  <td>task in iris-cdn-sign-publish</td>
 </tr>
 </tbody>
 </table></div>

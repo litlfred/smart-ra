@@ -137,7 +137,7 @@
   `mark-small` in `harness.json`, and it went unread: nothing in this
   repo ever emitted a favicon at all, `rel="icon"` included. It also could
   not have driven this lookup as declared — `imagesForRole()`
-  (`schemas/kg-node.ts`) requires an image's `layout` field, which neither
+  (`schemas/kg/kg-node.ts`) requires an image's `layout` field, which neither
   mark entry carries, so a `browser-icon`-role lookup returns nothing. Reusing
   the already-resolved `icon` (the same field `title.html` reads) sidesteps
   that and, more importantly, is what was asked for: the sidebar mark and the
@@ -588,7 +588,7 @@
 -->
 <!-- The harness icon row's own style, which railed pages load without docs-ui.css (beans `lhvt`, `9rq1`). -->
 <link rel="stylesheet" href="../../../assets/css/navbar-row.css?v=7d7d00921e0f">
-<link rel="stylesheet" href="../../../assets/css/docs-ui.css?v=c5f675d4c764">
+<link rel="stylesheet" href="../../../assets/css/docs-ui.css?v=6071ae228cf3">
 <!-- Narrow viewports: wide content scrolls in its own box, never the page
      (bean `2r2n`). The standalone viewers inline the same file through
      `withViewerNav`, so both kinds of page read one set of rules. -->
@@ -599,21 +599,21 @@
   `state-visualizer.ts` can inline exactly these bytes into the generated
   `<base>/<stub>/state-visualizer/` pages. One rule, two surfaces.
 -->
-<link rel="stylesheet" href="../../../assets/css/work-plan.css?v=30bf7780ce27">
-<!-- Sticky themes. GENERATED from the theme nodes in `schemas/themes.ts` by
+<link rel="stylesheet" href="../../../assets/css/work-plan.css?v=ed3e33f033fe">
+<!-- Sticky themes. GENERATED from the theme nodes in `schemas/ui/themes.ts` by
      `bun run cat themes:css`; `themes:css:check` fails the build when it is stale.
      Loaded AFTER docs-ui.css deliberately: it supplies the `--fa-sticky-*`
      roles that docs-ui.css consumes, and a custom property has to be set on a
      matching element before the rule reading it takes effect. -->
-<link rel="stylesheet" href="../../../assets/css/themes.css?v=a7f81b62eded">
+<link rel="stylesheet" href="../../../assets/css/themes.css?v=37c8ab192a5f">
 <!-- UML overview colours: one class per graph typology, set on the Mermaid nodes
      that `scripts/gen-uml-overview.ts` writes into docs/uml/overview/. -->
 <link rel="stylesheet" href="../../../assets/css/uml.css?v=e677f91cbf66">
-<!-- Kind avatars. GENERATED from `schemas/avatars.ts` by `bun run cat avatars:css`;
+<!-- Kind avatars. GENERATED from `schemas/content/avatars.ts` by `bun run cat avatars:css`;
      `avatars:css:check` fails the build when it is stale. One stylesheet
      rather than 68 assets: the glyph is a mask and the colour is a property,
      so a scheme swap is a custom property and the trash state is a selector. -->
-<link rel="stylesheet" href="../../../assets/css/avatars.css?v=699212580934">
+<link rel="stylesheet" href="../../../assets/css/avatars.css?v=780d571c53c1">
 
 <!--
   The kinds THIS INSTANCE DECLARES, for the avatar fan.
@@ -647,7 +647,7 @@
 <script src="../../../assets/js/kg-render.js" defer></script>
 <!-- BEFORE docs-ui.js, which calls it: the one drawing of the harness icon row (beans `lhvt`, `9rq1`). -->
 <script src="../../../assets/js/navbar-row.js?v=7dce6a7e2ab0" defer></script>
-<script src="../../../assets/js/docs-ui.js?v=9c88eef1c243" defer></script>
+<script src="../../../assets/js/docs-ui.js?v=8b5567635976" defer></script>
 <!-- The edit, source and feedback links of every page, from the platform's one
   recipe (cat-harness-tools/src/core/edit-links.ts, bean v433): links carry their
   facts and this builds the hrefs. -->
@@ -736,9 +736,9 @@
   is broken when it is doing exactly what it can.
 -->
 
-<link rel="stylesheet" href="../../../assets/css/navbar.css"><script src="../../../assets/navbar/rail-1uu2yi3osvq.js" defer></script><script src="../../../assets/js/navbar.js" defer></script><link rel="stylesheet" href="../../../assets/page-layout.css" data-fa-page-layout><script src="../../../assets/page-layout.js" defer data-fa-page-layout></script><meta name="fa-pinned-data" content="../../.."></head>
+<link rel="stylesheet" href="../../../assets/css/navbar.css"><script src="../../../assets/navbar/rail-1nr7jo2rxsc.js" defer></script><script src="../../../assets/js/navbar.js" defer></script><link rel="stylesheet" href="../../../assets/page-layout.css" data-fa-page-layout><script src="../../../assets/page-layout.js" defer data-fa-page-layout></script><meta name="fa-pinned-data" content="../../.."></head>
 
-<body><script type="application/json" id="fa-rail" data-fa-root="https://litlfred.github.io/folio-assistant" data-fa-to-root="../../..">{"data":"rail-1uu2yi3osvq","here":"/en/cat-harness/processes/test-data-curation.html","documentIndex":{"label":"On this page","icon":"§","items":[{"href":"#how-it-connects","label":"How it connects"},{"href":"#lanes--who-acts","label":"Lanes — who acts"},{"href":"#steps","label":"Steps"},{"href":"#decisions","label":"Decisions"}],"collapsible":true}}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../">Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector</a></nav>
+<body><script type="application/json" id="fa-rail" data-fa-root="https://litlfred.github.io/folio-assistant" data-fa-to-root="../../..">{"data":"rail-1nr7jo2rxsc","here":"/en/cat-harness/processes/test-data-curation.html","documentIndex":{"label":"On this page","icon":"§","items":[{"href":"#how-it-connects","label":"How it connects"},{"href":"#lanes--who-acts","label":"Lanes — who acts"},{"href":"#steps","label":"Steps"},{"href":"#decisions","label":"Decisions"}],"collapsible":true}}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../">Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector</a></nav>
   <a class="skip-to-main" href="#main-content">Skip to main content</a>
   <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
   <symbol id="svg-link" viewBox="0 0 24 24">
@@ -847,23 +847,25 @@
 </h1>
     
 
-<p><code class="language-plaintext highlighter-rouge">Process_TestDataCuration</code> · strict · 6 step(s)</p>
+<p><code class="language-plaintext highlighter-rouge">Process_TestDataCuration</code> · strict · 8 step(s)</p>
 
-<p>General curation process for fixed (<code class="language-plaintext highlighter-rouge">test-data-fixed/1.0.0</code>) and generated (<code class="language-plaintext highlighter-rouge">test-data-generated/1.0.0</code>) test data sets — bean <code class="language-plaintext highlighter-rouge">folio-assistant-vm6m</code>, companion <code class="language-plaintext highlighter-rouge">folio-assistant-vljz</code>, proposal <code class="language-plaintext highlighter-rouge">docs/proposals/qa-reports-branch-and-test-process-2026-10-01.md</code> §3.2.</p>
+<p>General curation process for fixed (<code class="language-plaintext highlighter-rouge">test-data-fixed/1.0.0</code>) and generated (<code class="language-plaintext highlighter-rouge">test-data-generated/1.0.0</code>) test data sets. It opens its bean with Process_BeanOpen before any work and closes it with Process_BeanClose before it ends; the steps between note on it.</p>
 
-<p>SEPARATE GRAPH DIRECTORIES, SELF-IDENTIFYING FILES. Fixed sets live in a declared <code class="language-plaintext highlighter-rouge">test-data-fixed</code> directory and generated recipes live in a declared <code class="language-plaintext highlighter-rouge">test-data-generated</code> directory (<code class="language-plaintext highlighter-rouge">schemas/graph-typology-registry.ts</code>). Every file carries both its <code class="language-plaintext highlighter-rouge">$schema</code> tag (<code class="language-plaintext highlighter-rouge">test-data-fixed/1.0.0</code> vs <code class="language-plaintext highlighter-rouge">test-data-generated/1.0.0</code>) and <code class="language-plaintext highlighter-rouge">kind: "fixed" | "generated"</code> (<code class="language-plaintext highlighter-rouge">schemas/test-data.ts</code>), so a consumer (<code class="language-plaintext highlighter-rouge">discriminateTestDataSet</code>) tells which it is reading from the file content, never from the directory path.</p>
+<p>SEPARATE GRAPH DIRECTORIES, SELF-IDENTIFYING FILES. Fixed sets live in a declared <code class="language-plaintext highlighter-rouge">test-data-fixed</code> directory and generated recipes live in a declared <code class="language-plaintext highlighter-rouge">test-data-generated</code> directory (<code class="language-plaintext highlighter-rouge">schemas/kg/graph-typology-registry.ts</code>). Every file carries both its <code class="language-plaintext highlighter-rouge">$schema</code> tag (<code class="language-plaintext highlighter-rouge">test-data-fixed/1.0.0</code> vs <code class="language-plaintext highlighter-rouge">test-data-generated/1.0.0</code>) and <code class="language-plaintext highlighter-rouge">kind: "fixed" | "generated"</code> (<code class="language-plaintext highlighter-rouge">schemas/sdlc/test-data.ts</code>), so a consumer (<code class="language-plaintext highlighter-rouge">discriminateTestDataSet</code>) tells which it is reading from the file content, never from the directory path.</p>
 
-<p>CONTENT-TYPE SPECIALISATION AS A CALLED SUBPROCESS. How a recipe synthesises test inputs or how a fixed payload is structured depends on the folio’s <code class="language-plaintext highlighter-rouge">contentType</code>. <code class="language-plaintext highlighter-rouge">Call_ContentTypeSpecialisation</code> delegates that step to the content type’s own subprocess (<code class="language-plaintext highlighter-rouge">specialisation</code> in <code class="language-plaintext highlighter-rouge">schemas/test-data.ts</code>). FHIR templating (<code class="language-plaintext highlighter-rouge">specialisation: "fhir-templating"</code>) is one named specialisation for FHIR IG / DAK content, not the platform design.</p>
+<p>CONTENT-TYPE SPECIALISATION AS A CALLED SUBPROCESS. How a recipe synthesises test inputs or how a fixed payload is structured depends on the folio’s <code class="language-plaintext highlighter-rouge">contentType</code>. <code class="language-plaintext highlighter-rouge">Call_ContentTypeSpecialisation</code> delegates that step to the content type’s own subprocess (<code class="language-plaintext highlighter-rouge">specialisation</code> in <code class="language-plaintext highlighter-rouge">schemas/sdlc/test-data.ts</code>). FHIR templating (<code class="language-plaintext highlighter-rouge">specialisation: "fhir-templating"</code>) is one named specialisation for FHIR IG / DAK content, not the platform design.</p>
 <style>.pt-diagram{position:relative;width:100%}.pt-diagram>img{display:block;width:100%;height:auto}.pt-mark{position:absolute;transform:translate(-50%,-50%);width:1.35em;height:1.35em;padding:0;border-radius:50%;border:1px solid #1f6feb;background:#fff;color:#1f6feb;font:bold 0.8em/1 sans-serif;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 2px rgba(0,0,0,.25)}.pt-mark:hover,.pt-mark[aria-expanded=true]{background:#1f6feb;color:#fff}.pt-mark:focus-visible{outline:2px solid #1f6feb;outline-offset:2px}.pt-panel{position:absolute;z-index:5;margin:0.9em 0 0 -0.6em;max-width:min(26em,90vw);min-width:14em;padding:0.6em 0.7em;background:#fff;color:#1b1f24;border:1px solid #8c959f;border-radius:6px;box-shadow:0 4px 14px rgba(0,0,0,.18);font-size:0.85em;line-height:1.35}.pt-close{position:absolute;top:0.2em;right:0.35em;border:0;background:none;font-size:1.2em;cursor:pointer;color:inherit}.pt-obj{border:1px solid #57606a;border-radius:3px;margin:0.15em 0}.pt-head{border-bottom:1px solid #57606a;padding:0.15em 0.45em;background:#f6f8fa;text-decoration:underline}.pt-head .pt-st{text-decoration:none;display:inline-block;margin-right:0.35em}.pt-attr{padding:0.1em 0.45em}.pt-st,.pt-via{color:#57606a;font-size:0.9em}.pt-edge{color:#57606a;font-size:0.85em;padding-left:1em}.pt-role .pt-head{background:#fff8c5}.pt-skill .pt-head{background:#ddf4ff}.pt-task .pt-head{background:#f6f8fa}.pt-none{color:#57606a;font-style:italic;margin-top:0.3em}</style>
 
 <div class="pt-diagram" data-panel="test-data-curation.tasks.json">
 <img src="../../../assets/img/workflows/test-data-curation.svg" alt="BPMN diagram: Test Data Curation — Fixed Sets and Generated Recipes" />
-<button type="button" class="pt-mark" data-task="Task_ClassifySet" style="left:22.03%;top:24.47%" aria-expanded="false" aria-label="About step: Classify data set: fixed (curated) or generated (recipe)" title="About: Classify data set: fixed (curated) or generated (recipe)">i</button>
-<button type="button" class="pt-mark" data-task="Task_CurateFixed" style="left:43.71%;top:8.51%" aria-expanded="false" aria-label="About step: Author fixed set in test-data-fixed/ with $schema test-data-fixed/1.0.0" title="About: Author fixed set in test-data-fixed/ with $schema test-data-fixed/1.0.0">i</button>
-<button type="button" class="pt-mark" data-task="Call_SmeReview" style="left:65.38%;top:8.51%" aria-expanded="false" aria-label="About step: SME review of cases or cohorts" title="About: SME review of cases or cohorts">i</button>
-<button type="button" class="pt-mark" data-task="Call_ContentTypeSpecialisation" style="left:44.41%;top:40.43%" aria-expanded="false" aria-label="About step: Synthesise recipe via content-type specialisation [its own subprocess]" title="About: Synthesise recipe via content-type specialisation [its own subprocess]">i</button>
-<button type="button" class="pt-mark" data-task="Task_WriteRecipe" style="left:60.49%;top:40.43%" aria-expanded="false" aria-label="About step: Write recipe in test-data-generated/ with $schema test-data-generated/1.0.0" title="About: Write recipe in test-data-generated/ with $schema test-data-generated/1.0.0">i</button>
-<button type="button" class="pt-mark" data-task="Task_VerifySelfIdentifying" style="left:88.81%;top:73.4%" aria-expanded="false" aria-label="About step: Verify file self-identifies by $schema and kind and bind into test plan" title="About: Verify file self-identifies by $schema and kind and bind into test plan">i</button>
+<button type="button" class="pt-mark" data-task="Task_ClassifySet" style="left:29.56%;top:24.47%" aria-expanded="false" aria-label="About step: Classify data set: fixed (curated) or generated (recipe)" title="About: Classify data set: fixed (curated) or generated (recipe)">i</button>
+<button type="button" class="pt-mark" data-task="Task_CurateFixed" style="left:46.69%;top:8.51%" aria-expanded="false" aria-label="About step: Author fixed set in test-data-fixed/ with $schema test-data-fixed/1.0.0" title="About: Author fixed set in test-data-fixed/ with $schema test-data-fixed/1.0.0">i</button>
+<button type="button" class="pt-mark" data-task="Call_SmeReview" style="left:63.81%;top:8.51%" aria-expanded="false" aria-label="About step: SME review of cases or cohorts" title="About: SME review of cases or cohorts">i</button>
+<button type="button" class="pt-mark" data-task="Call_ContentTypeSpecialisation" style="left:47.24%;top:40.43%" aria-expanded="false" aria-label="About step: Synthesise recipe via content-type specialisation [its own subprocess]" title="About: Synthesise recipe via content-type specialisation [its own subprocess]">i</button>
+<button type="button" class="pt-mark" data-task="Task_WriteRecipe" style="left:59.94%;top:40.43%" aria-expanded="false" aria-label="About step: Write recipe in test-data-generated/ with $schema test-data-generated/1.0.0" title="About: Write recipe in test-data-generated/ with $schema test-data-generated/1.0.0">i</button>
+<button type="button" class="pt-mark" data-task="Task_VerifySelfIdentifying" style="left:82.32%;top:73.4%" aria-expanded="false" aria-label="About step: Verify file self-identifies by $schema and kind and bind into test plan" title="About: Verify file self-identifies by $schema and kind and bind into test plan">i</button>
+<button type="button" class="pt-mark" data-task="Call_BeanOpen" style="left:15.19%;top:24.47%" aria-expanded="false" aria-label="About step: Open the bean" title="About: Open the bean">i</button>
+<button type="button" class="pt-mark" data-task="Call_BeanClose" style="left:91.44%;top:73.4%" aria-expanded="false" aria-label="About step: Close the bean" title="About: Close the bean">i</button>
 <div class="pt-panel" role="dialog" aria-label="Task details" hidden=""></div>
 </div>
 <script>(function () {
@@ -969,7 +971,7 @@
 
 <ul>
   <li><strong>Called by:</strong> no call activity names this process</li>
-  <li><strong>Calls:</strong> <a href="sme-test-data-review.html">SME Review of Decision Support and Indicator Test Data</a></li>
+  <li><strong>Calls:</strong> <a href="bean-close.html">Close the bean</a>, <a href="bean-open.html">Open the bean</a>, <a href="sme-test-data-review.html">SME Review of Decision Support and Indicator Test Data</a></li>
   <li><strong>Presented on:</strong> no docs page section shows this diagram</li>
   <li><strong>Running instances:</strong> none recorded</li>
 </ul>
@@ -1012,7 +1014,7 @@
 </h2>
     
 
-<p>Every one of the 6 step(s) is documented.</p>
+<p>Every one of the 8 step(s) is documented.</p>
 
 <div class="table-wrapper"><table>
   <thead>
@@ -1034,7 +1036,7 @@
       <td><strong>Author fixed set in test-data-fixed/ with $schema test-data-fixed/1.0.0</strong><br /><code class="language-plaintext highlighter-rouge">Task_CurateFixed</code></td>
       <td>Authoring agent</td>
       <td><code class="language-plaintext highlighter-rouge">test-data-sets</code></td>
-      <td>Write the curated <code class="language-plaintext highlighter-rouge">records</code> and optional <code class="language-plaintext highlighter-rouge">citations</code> with <code class="language-plaintext highlighter-rouge">$schema: "test-data-fixed/1.0.0"</code> and <code class="language-plaintext highlighter-rouge">kind: "fixed"</code> into the instance’s declared <code class="language-plaintext highlighter-rouge">test-data-fixed</code> directory (<code class="language-plaintext highlighter-rouge">schemas/test-data.ts</code>). Recipe fields (<code class="language-plaintext highlighter-rouge">template</code>, <code class="language-plaintext highlighter-rouge">params</code>, <code class="language-plaintext highlighter-rouge">seed</code>) are refused by the strict schema.</td>
+      <td>Write the curated <code class="language-plaintext highlighter-rouge">records</code> and optional <code class="language-plaintext highlighter-rouge">citations</code> with <code class="language-plaintext highlighter-rouge">$schema: "test-data-fixed/1.0.0"</code> and <code class="language-plaintext highlighter-rouge">kind: "fixed"</code> into the instance’s declared <code class="language-plaintext highlighter-rouge">test-data-fixed</code> directory (<code class="language-plaintext highlighter-rouge">schemas/sdlc/test-data.ts</code>). Recipe fields (<code class="language-plaintext highlighter-rouge">template</code>, <code class="language-plaintext highlighter-rouge">params</code>, <code class="language-plaintext highlighter-rouge">seed</code>) are refused by the strict schema.</td>
     </tr>
     <tr>
       <td><strong>SME review of cases or cohorts</strong><br /><code class="language-plaintext highlighter-rouge">Call_SmeReview</code></td>
@@ -1046,7 +1048,7 @@
       <td><strong>Synthesise recipe via content-type specialisation [its own subprocess]</strong><br /><code class="language-plaintext highlighter-rouge">Call_ContentTypeSpecialisation</code></td>
       <td>Authoring agent</td>
       <td><code class="language-plaintext highlighter-rouge">test-data-sets</code></td>
-      <td>BOUND BY THE CONTENT TYPE (<code class="language-plaintext highlighter-rouge">contentType</code> and <code class="language-plaintext highlighter-rouge">specialisation</code> in <code class="language-plaintext highlighter-rouge">schemas/test-data.ts</code>), so no single content-type <code class="language-plaintext highlighter-rouge">calledElement</code> is hardcoded here: the activity names <code class="language-plaintext highlighter-rouge">test-data-sets</code>, and each content-type adapter supplies its own specialisation subprocess. <code class="language-plaintext highlighter-rouge">fhir-templating</code> (<code class="language-plaintext highlighter-rouge">FHIR_TEMPLATING_SPECIALISATION</code>) is one named specialisation for FHIR IG / DAK content (MeasureReport cohorts, questionnaire responses, bundle templates) — named as such, not the platform design; document folios (<code class="language-plaintext highlighter-rouge">markdown-fixture</code>), proof folios (<code class="language-plaintext highlighter-rouge">lean-counterexample</code>), and tabular cohorts (<code class="language-plaintext highlighter-rouge">tabular-cohort</code>) supply their own.</td>
+      <td>BOUND BY THE CONTENT TYPE (<code class="language-plaintext highlighter-rouge">contentType</code> and <code class="language-plaintext highlighter-rouge">specialisation</code> in <code class="language-plaintext highlighter-rouge">schemas/sdlc/test-data.ts</code>), so no single content-type <code class="language-plaintext highlighter-rouge">calledElement</code> is hardcoded here: the activity names <code class="language-plaintext highlighter-rouge">test-data-sets</code>, and each content-type adapter supplies its own specialisation subprocess. <code class="language-plaintext highlighter-rouge">fhir-templating</code> (<code class="language-plaintext highlighter-rouge">FHIR_TEMPLATING_SPECIALISATION</code>) is one named specialisation for FHIR IG / DAK content (MeasureReport cohorts, questionnaire responses, bundle templates) — named as such, not the platform design; document folios (<code class="language-plaintext highlighter-rouge">markdown-fixture</code>), proof folios (<code class="language-plaintext highlighter-rouge">lean-counterexample</code>), and tabular cohorts (<code class="language-plaintext highlighter-rouge">tabular-cohort</code>) supply their own.</td>
     </tr>
     <tr>
       <td><strong>Write recipe in test-data-generated/ with $schema test-data-generated/1.0.0</strong><br /><code class="language-plaintext highlighter-rouge">Task_WriteRecipe</code></td>
@@ -1058,7 +1060,19 @@
       <td><strong>Verify file self-identifies by $schema and kind and bind into test plan</strong><br /><code class="language-plaintext highlighter-rouge">Task_VerifySelfIdentifying</code></td>
       <td>Tester</td>
       <td><code class="language-plaintext highlighter-rouge">test-data-sets</code></td>
-      <td>Parse the file with <code class="language-plaintext highlighter-rouge">discriminateTestDataSet</code> (<code class="language-plaintext highlighter-rouge">schemas/test-data.ts</code>) to confirm a consumer can tell fixed from generated from the file content alone (never the path), verify <code class="language-plaintext highlighter-rouge">verifyGeneratedSetDigest</code> on generated sets, and bind the resulting <code class="language-plaintext highlighter-rouge">TestDataRef</code> (<code class="language-plaintext highlighter-rouge">toTestDataRef</code>) into the <code class="language-plaintext highlighter-rouge">test-plan/v1</code> case.</td>
+      <td>Parse the file with <code class="language-plaintext highlighter-rouge">discriminateTestDataSet</code> (<code class="language-plaintext highlighter-rouge">schemas/sdlc/test-data.ts</code>) to confirm a consumer can tell fixed from generated from the file content alone (never the path), verify <code class="language-plaintext highlighter-rouge">verifyGeneratedSetDigest</code> on generated sets, and bind the resulting <code class="language-plaintext highlighter-rouge">TestDataRef</code> (<code class="language-plaintext highlighter-rouge">toTestDataRef</code>) into the <code class="language-plaintext highlighter-rouge">test-plan/v1</code> case.</td>
+    </tr>
+    <tr>
+      <td><strong>Open the bean</strong><br /><code class="language-plaintext highlighter-rouge">Call_BeanOpen</code></td>
+      <td>Authoring agent</td>
+      <td>calls <a href="bean-open.html">Open the bean</a><br /><code class="language-plaintext highlighter-rouge">bean-coordination</code></td>
+      <td>Process_BeanOpen: check before you create, find out whose the bean is, and claim it — or leave it alone when it is someone else’s. The one place a claim is drawn; the gateway after this reads which end it reached.</td>
+    </tr>
+    <tr>
+      <td><strong>Close the bean</strong><br /><code class="language-plaintext highlighter-rouge">Call_BeanClose</code></td>
+      <td>Tester</td>
+      <td>calls <a href="bean-close.html">Close the bean</a><br /><code class="language-plaintext highlighter-rouge">todo-manager</code></td>
+      <td>Process_BeanClose: end the bean in a state that says why — complete and archive it, scrap it with its reasons and archive it, or record the blocker and hand it back. The one place resolve and archive are drawn; placed straight before the end so the engine’s resolve sees nothing left but the archive step.</td>
     </tr>
   </tbody>
 </table></div>
@@ -1071,7 +1085,7 @@
 </h2>
     
 
-<p>Every one of the 2 decision(s) is documented.</p>
+<p>Every one of the 3 decision(s) is documented.</p>
 
 <div class="table-wrapper"><table>
   <thead>
@@ -1089,8 +1103,13 @@
     </tr>
     <tr>
       <td><strong>Exercises decision support or indicator definition?</strong><br /><code class="language-plaintext highlighter-rouge">GW_NeedsSmeReview</code></td>
-      <td>When the fixed data set exercises clinical/scientific decision support or an indicator definition (<code class="language-plaintext highlighter-rouge">bean vljz</code>), it must pass SME review (<code class="language-plaintext highlighter-rouge">Process_SmeTestDataReview</code>) before <code class="language-plaintext highlighter-rouge">review</code> is recorded and the set can stand as certification evidence.</td>
+      <td>When the fixed data set exercises clinical/scientific decision support or an indicator definition, it must pass SME review (<code class="language-plaintext highlighter-rouge">Process_SmeTestDataReview</code>) before <code class="language-plaintext highlighter-rouge">review</code> is recorded and the set can stand as certification evidence.</td>
       <td><strong>yes</strong> → SME review of cases or cohorts<br /><strong>no</strong> → Fixed set ready</td>
+    </tr>
+    <tr>
+      <td><strong>Bean claimed?</strong><br /><code class="language-plaintext highlighter-rouge">GW_BeanYours</code></td>
+      <td>Reads which end Process_BeanOpen reached. <code class="language-plaintext highlighter-rouge">claimed</code>: the bean is in progress and this process works it. <code class="language-plaintext highlighter-rouge">not yours</code>: a sibling session or a human holds it, nothing was written to it, and this process stops here rather than work a bean it does not own (bean-coordination).</td>
+      <td><strong>claimed</strong> → Classify data set: fixed (curated) or generated (recipe)<br /><strong>not yours</strong> → Not yours — left alone</td>
     </tr>
   </tbody>
 </table></div>

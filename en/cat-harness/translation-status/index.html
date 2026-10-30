@@ -137,7 +137,7 @@
   `mark-small` in `harness.json`, and it went unread: nothing in this
   repo ever emitted a favicon at all, `rel="icon"` included. It also could
   not have driven this lookup as declared — `imagesForRole()`
-  (`schemas/kg-node.ts`) requires an image's `layout` field, which neither
+  (`schemas/kg/kg-node.ts`) requires an image's `layout` field, which neither
   mark entry carries, so a `browser-icon`-role lookup returns nothing. Reusing
   the already-resolved `icon` (the same field `title.html` reads) sidesteps
   that and, more importantly, is what was asked for: the sidebar mark and the
@@ -588,7 +588,7 @@
 -->
 <!-- The harness icon row's own style, which railed pages load without docs-ui.css (beans `lhvt`, `9rq1`). -->
 <link rel="stylesheet" href="../../../assets/css/navbar-row.css?v=7d7d00921e0f">
-<link rel="stylesheet" href="../../../assets/css/docs-ui.css?v=c5f675d4c764">
+<link rel="stylesheet" href="../../../assets/css/docs-ui.css?v=6071ae228cf3">
 <!-- Narrow viewports: wide content scrolls in its own box, never the page
      (bean `2r2n`). The standalone viewers inline the same file through
      `withViewerNav`, so both kinds of page read one set of rules. -->
@@ -599,21 +599,21 @@
   `state-visualizer.ts` can inline exactly these bytes into the generated
   `<base>/<stub>/state-visualizer/` pages. One rule, two surfaces.
 -->
-<link rel="stylesheet" href="../../../assets/css/work-plan.css?v=30bf7780ce27">
-<!-- Sticky themes. GENERATED from the theme nodes in `schemas/themes.ts` by
+<link rel="stylesheet" href="../../../assets/css/work-plan.css?v=ed3e33f033fe">
+<!-- Sticky themes. GENERATED from the theme nodes in `schemas/ui/themes.ts` by
      `bun run cat themes:css`; `themes:css:check` fails the build when it is stale.
      Loaded AFTER docs-ui.css deliberately: it supplies the `--fa-sticky-*`
      roles that docs-ui.css consumes, and a custom property has to be set on a
      matching element before the rule reading it takes effect. -->
-<link rel="stylesheet" href="../../../assets/css/themes.css?v=a7f81b62eded">
+<link rel="stylesheet" href="../../../assets/css/themes.css?v=37c8ab192a5f">
 <!-- UML overview colours: one class per graph typology, set on the Mermaid nodes
      that `scripts/gen-uml-overview.ts` writes into docs/uml/overview/. -->
 <link rel="stylesheet" href="../../../assets/css/uml.css?v=e677f91cbf66">
-<!-- Kind avatars. GENERATED from `schemas/avatars.ts` by `bun run cat avatars:css`;
+<!-- Kind avatars. GENERATED from `schemas/content/avatars.ts` by `bun run cat avatars:css`;
      `avatars:css:check` fails the build when it is stale. One stylesheet
      rather than 68 assets: the glyph is a mask and the colour is a property,
      so a scheme swap is a custom property and the trash state is a selector. -->
-<link rel="stylesheet" href="../../../assets/css/avatars.css?v=699212580934">
+<link rel="stylesheet" href="../../../assets/css/avatars.css?v=780d571c53c1">
 
 <!--
   The kinds THIS INSTANCE DECLARES, for the avatar fan.
@@ -647,7 +647,7 @@
 <script src="../../../assets/js/kg-render.js" defer></script>
 <!-- BEFORE docs-ui.js, which calls it: the one drawing of the harness icon row (beans `lhvt`, `9rq1`). -->
 <script src="../../../assets/js/navbar-row.js?v=7dce6a7e2ab0" defer></script>
-<script src="../../../assets/js/docs-ui.js?v=9c88eef1c243" defer></script>
+<script src="../../../assets/js/docs-ui.js?v=8b5567635976" defer></script>
 <!-- The edit, source and feedback links of every page, from the platform's one
   recipe (cat-harness-tools/src/core/edit-links.ts, bean v433): links carry their
   facts and this builds the hrefs. -->
@@ -736,9 +736,9 @@
   is broken when it is doing exactly what it can.
 -->
 
-<link rel="stylesheet" href="../../../assets/css/navbar.css"><script src="../../../assets/navbar/rail-1uu2yi3osvq.js" defer></script><script src="../../../assets/js/navbar.js" defer></script><link rel="stylesheet" href="../../../assets/page-layout.css" data-fa-page-layout><script src="../../../assets/page-layout.js" defer data-fa-page-layout></script><meta name="fa-pinned-data" content="../../.."></head>
+<link rel="stylesheet" href="../../../assets/css/navbar.css"><script src="../../../assets/navbar/rail-1nr7jo2rxsc.js" defer></script><script src="../../../assets/js/navbar.js" defer></script><link rel="stylesheet" href="../../../assets/page-layout.css" data-fa-page-layout><script src="../../../assets/page-layout.js" defer data-fa-page-layout></script><meta name="fa-pinned-data" content="../../.."></head>
 
-<body><script type="application/json" id="fa-rail" data-fa-root="https://litlfred.github.io/folio-assistant" data-fa-to-root="../../..">{"data":"rail-1uu2yi3osvq","here":"/en/cat-harness/translation-status/","documentIndex":{"label":"On this page","icon":"§","items":[{"href":"#instance-fhir-harness","label":"fhir-harness"},{"href":"#instance-folio-assistant-core","label":"folio-assistant-core"},{"href":"#instance-smart-base","label":"smart-base"},{"href":"#onward-links","label":"Onward links"}],"collapsible":true}}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../">Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector</a></nav>
+<body><script type="application/json" id="fa-rail" data-fa-root="https://litlfred.github.io/folio-assistant" data-fa-to-root="../../..">{"data":"rail-1nr7jo2rxsc","here":"/en/cat-harness/translation-status/","documentIndex":{"label":"On this page","icon":"§","items":[{"href":"#instance-fhir-harness","label":"fhir-harness"},{"href":"#instance-folio-assistant-core","label":"folio-assistant-core"},{"href":"#instance-smart-base","label":"smart-base"},{"href":"#instance-who-iris","label":"who-iris"},{"href":"#onward-links","label":"Onward links"}],"collapsible":true}}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../">Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector</a></nav>
   <a class="skip-to-main" href="#main-content">Skip to main content</a>
   <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
   <symbol id="svg-link" viewBox="0 0 24 24">
@@ -931,7 +931,7 @@
 <p class="ts-sub">The gettext side of the <code>translation-sources</code> graph, measured from the files in
 <code>cat-harness/translations</code>. Every number here is derived on each run; none is written down. Governed by the
 <code>translation-manager</code> skill. These
-numbers last <strong>changed</strong> on 2026-10-26.</p>
+numbers last <strong>changed</strong> on 2026-10-30.</p>
 
 <div class="ts-questions-legend">
   <div><strong>Question 1 (Availability):</strong> Are there <code>.po</code> catalogues for extractable <code>.pot</code> templates?</div>
@@ -956,7 +956,7 @@ numbers last <strong>changed</strong> on 2026-10-26.</p>
 <tbody>
 <tr id="locale-ar" data-fa-tr-locale="ar">
   <th scope="row" class="ts-col-locale"><code>ar</code> <span class="ts-lang-name">Arabic</span></th>
-  <td class="ts-col-catalogues">15 / 92<br><span class="ts-dim">16.3%</span> · <a href="https://github.com/litlfred/folio-assistant/tree/main/cat-harness/translations/ar" class="ts-files-link">view files &rarr;</a></td>
+  <td class="ts-col-catalogues">15 / 93<br><span class="ts-dim">16.1%</span> · <a href="https://github.com/litlfred/folio-assistant/tree/main/cat-harness/translations/ar" class="ts-files-link">view files &rarr;</a></td>
   <td class="ts-col-strings">1051</td>
   <td class="ts-col-strings">1000<br><span class="ts-dim">95.1%</span></td>
   <td class="ts-col-strings">2</td>
@@ -965,7 +965,7 @@ numbers last <strong>changed</strong> on 2026-10-26.</p>
 </tr>
 <tr id="locale-es" data-fa-tr-locale="es">
   <th scope="row" class="ts-col-locale"><code>es</code> <span class="ts-lang-name">Spanish</span></th>
-  <td class="ts-col-catalogues">15 / 93<br><span class="ts-dim">16.1%</span> · <a href="https://github.com/litlfred/folio-assistant/tree/main/cat-harness/translations/es" class="ts-files-link">view files &rarr;</a></td>
+  <td class="ts-col-catalogues">15 / 94<br><span class="ts-dim">16%</span> · <a href="https://github.com/litlfred/folio-assistant/tree/main/cat-harness/translations/es" class="ts-files-link">view files &rarr;</a></td>
   <td class="ts-col-strings">1060</td>
   <td class="ts-col-strings">1009<br><span class="ts-dim">95.2%</span></td>
   <td class="ts-col-strings">2</td>
@@ -974,7 +974,7 @@ numbers last <strong>changed</strong> on 2026-10-26.</p>
 </tr>
 <tr id="locale-fr" data-fa-tr-locale="fr">
   <th scope="row" class="ts-col-locale"><code>fr</code> <span class="ts-lang-name">French</span></th>
-  <td class="ts-col-catalogues">16 / 95<br><span class="ts-dim">16.8%</span> · <a href="https://github.com/litlfred/folio-assistant/tree/main/cat-harness/translations/fr" class="ts-files-link">view files &rarr;</a></td>
+  <td class="ts-col-catalogues">16 / 96<br><span class="ts-dim">16.7%</span> · <a href="https://github.com/litlfred/folio-assistant/tree/main/cat-harness/translations/fr" class="ts-files-link">view files &rarr;</a></td>
   <td class="ts-col-strings">1055</td>
   <td class="ts-col-strings">948<br><span class="ts-dim">89.9%</span></td>
   <td class="ts-col-strings">2</td>
@@ -983,7 +983,7 @@ numbers last <strong>changed</strong> on 2026-10-26.</p>
 </tr>
 <tr id="locale-ru" data-fa-tr-locale="ru">
   <th scope="row" class="ts-col-locale"><code>ru</code> <span class="ts-lang-name">Russian</span></th>
-  <td class="ts-col-catalogues">15 / 92<br><span class="ts-dim">16.3%</span> · <a href="https://github.com/litlfred/folio-assistant/tree/main/cat-harness/translations/ru" class="ts-files-link">view files &rarr;</a></td>
+  <td class="ts-col-catalogues">15 / 93<br><span class="ts-dim">16.1%</span> · <a href="https://github.com/litlfred/folio-assistant/tree/main/cat-harness/translations/ru" class="ts-files-link">view files &rarr;</a></td>
   <td class="ts-col-strings">1048</td>
   <td class="ts-col-strings">997<br><span class="ts-dim">95.1%</span></td>
   <td class="ts-col-strings">2</td>
@@ -992,7 +992,7 @@ numbers last <strong>changed</strong> on 2026-10-26.</p>
 </tr>
 <tr id="locale-zh" data-fa-tr-locale="zh">
   <th scope="row" class="ts-col-locale"><code>zh</code> <span class="ts-lang-name">Chinese</span></th>
-  <td class="ts-col-catalogues">15 / 93<br><span class="ts-dim">16.1%</span> · <a href="https://github.com/litlfred/folio-assistant/tree/main/cat-harness/translations/zh" class="ts-files-link">view files &rarr;</a></td>
+  <td class="ts-col-catalogues">15 / 94<br><span class="ts-dim">16%</span> · <a href="https://github.com/litlfred/folio-assistant/tree/main/cat-harness/translations/zh" class="ts-files-link">view files &rarr;</a></td>
   <td class="ts-col-strings">1063</td>
   <td class="ts-col-strings">1012<br><span class="ts-dim">95.2%</span></td>
   <td class="ts-col-strings">2</td>
@@ -1100,7 +1100,7 @@ numbers last <strong>changed</strong> on 2026-10-26.</p>
 <tbody>
 <tr id="folio-assistant-core-locale-ar" data-fa-tr-locale="ar">
   <th scope="row" class="ts-col-locale"><code>ar</code> <span class="ts-lang-name">Arabic</span></th>
-  <td class="ts-col-catalogues">6 / 25<br><span class="ts-dim">24%</span> · <a href="https://github.com/litlfred/folio-assistant/tree/main/folio-assistant-core/translations/ar" class="ts-files-link">view files &rarr;</a></td>
+  <td class="ts-col-catalogues">6 / 26<br><span class="ts-dim">23.1%</span> · <a href="https://github.com/litlfred/folio-assistant/tree/main/folio-assistant-core/translations/ar" class="ts-files-link">view files &rarr;</a></td>
   <td class="ts-col-strings">361</td>
   <td class="ts-col-strings">361<br><span class="ts-dim">100%</span></td>
   <td class="ts-col-strings">0</td>
@@ -1109,7 +1109,7 @@ numbers last <strong>changed</strong> on 2026-10-26.</p>
 </tr>
 <tr id="folio-assistant-core-locale-es" data-fa-tr-locale="es">
   <th scope="row" class="ts-col-locale"><code>es</code> <span class="ts-lang-name">Spanish</span></th>
-  <td class="ts-col-catalogues">6 / 25<br><span class="ts-dim">24%</span> · <a href="https://github.com/litlfred/folio-assistant/tree/main/folio-assistant-core/translations/es" class="ts-files-link">view files &rarr;</a></td>
+  <td class="ts-col-catalogues">6 / 26<br><span class="ts-dim">23.1%</span> · <a href="https://github.com/litlfred/folio-assistant/tree/main/folio-assistant-core/translations/es" class="ts-files-link">view files &rarr;</a></td>
   <td class="ts-col-strings">346</td>
   <td class="ts-col-strings">346<br><span class="ts-dim">100%</span></td>
   <td class="ts-col-strings">0</td>
@@ -1118,7 +1118,7 @@ numbers last <strong>changed</strong> on 2026-10-26.</p>
 </tr>
 <tr id="folio-assistant-core-locale-fr" data-fa-tr-locale="fr">
   <th scope="row" class="ts-col-locale"><code>fr</code> <span class="ts-lang-name">French</span></th>
-  <td class="ts-col-catalogues">6 / 25<br><span class="ts-dim">24%</span> · <a href="https://github.com/litlfred/folio-assistant/tree/main/folio-assistant-core/translations/fr" class="ts-files-link">view files &rarr;</a></td>
+  <td class="ts-col-catalogues">6 / 26<br><span class="ts-dim">23.1%</span> · <a href="https://github.com/litlfred/folio-assistant/tree/main/folio-assistant-core/translations/fr" class="ts-files-link">view files &rarr;</a></td>
   <td class="ts-col-strings">346</td>
   <td class="ts-col-strings">346<br><span class="ts-dim">100%</span></td>
   <td class="ts-col-strings">0</td>
@@ -1127,7 +1127,7 @@ numbers last <strong>changed</strong> on 2026-10-26.</p>
 </tr>
 <tr id="folio-assistant-core-locale-ru" data-fa-tr-locale="ru">
   <th scope="row" class="ts-col-locale"><code>ru</code> <span class="ts-lang-name">Russian</span></th>
-  <td class="ts-col-catalogues">6 / 25<br><span class="ts-dim">24%</span> · <a href="https://github.com/litlfred/folio-assistant/tree/main/folio-assistant-core/translations/ru" class="ts-files-link">view files &rarr;</a></td>
+  <td class="ts-col-catalogues">6 / 26<br><span class="ts-dim">23.1%</span> · <a href="https://github.com/litlfred/folio-assistant/tree/main/folio-assistant-core/translations/ru" class="ts-files-link">view files &rarr;</a></td>
   <td class="ts-col-strings">346</td>
   <td class="ts-col-strings">346<br><span class="ts-dim">100%</span></td>
   <td class="ts-col-strings">0</td>
@@ -1136,7 +1136,7 @@ numbers last <strong>changed</strong> on 2026-10-26.</p>
 </tr>
 <tr id="folio-assistant-core-locale-zh" data-fa-tr-locale="zh">
   <th scope="row" class="ts-col-locale"><code>zh</code> <span class="ts-lang-name">Chinese</span></th>
-  <td class="ts-col-catalogues">6 / 25<br><span class="ts-dim">24%</span> · <a href="https://github.com/litlfred/folio-assistant/tree/main/folio-assistant-core/translations/zh" class="ts-files-link">view files &rarr;</a></td>
+  <td class="ts-col-catalogues">6 / 26<br><span class="ts-dim">23.1%</span> · <a href="https://github.com/litlfred/folio-assistant/tree/main/folio-assistant-core/translations/zh" class="ts-files-link">view files &rarr;</a></td>
   <td class="ts-col-strings">361</td>
   <td class="ts-col-strings">359<br><span class="ts-dim">99.4%</span></td>
   <td class="ts-col-strings">2</td>
@@ -1211,6 +1211,78 @@ numbers last <strong>changed</strong> on 2026-10-26.</p>
   <td class="ts-col-catalogues">0 / 7<br><span class="ts-dim">0%</span> · <a href="https://github.com/litlfred/folio-assistant/tree/main/smart-base/translations/zh" class="ts-files-link">view files &rarr;</a></td>
   <td class="ts-col-strings">0</td>
   <td class="ts-col-strings">0<br><span class="ts-dim"><span class="ts-none">no basis</span></span></td>
+  <td class="ts-col-strings">0</td>
+  <td class="ts-col-strings">0</td>
+  <td class="ts-col-official" data-fa-tr-officiality="unofficial">not signed off (machine or agent translation)</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<h2 id="instance-who-iris">
+  
+  
+    <a href="#instance-who-iris" class="anchor-heading" aria-labelledby="instance-who-iris"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> who-iris
+  
+  
+</h2>
+    
+<p class="ts-sub">Measured from <code>who-iris/translations</code>, that instance's own <code>translation-sources</code> directory.</p>
+<p class="ts-scroll-hint">Scroll horizontally to see all columns &rarr;</p>
+<div class="ts-table-wrapper">
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+  <th scope="col" class="ts-col-locale">locale</th>
+  <th scope="col" class="ts-col-catalogues">catalogues / templates<br><span class="ts-col-badge">Q1: availability</span></th>
+  <th scope="col" class="ts-col-strings">entries<br><span class="ts-col-badge">Q2: strings</span></th>
+  <th scope="col" class="ts-col-strings">translated</th>
+  <th scope="col" class="ts-col-strings">fuzzy</th>
+  <th scope="col" class="ts-col-strings">untranslated</th>
+  <th scope="col" class="ts-col-official">official<br><span class="ts-col-badge">Q3: signed off</span></th>
+</tr>
+</thead>
+<tbody>
+<tr id="who-iris-locale-ar" data-fa-tr-locale="ar">
+  <th scope="row" class="ts-col-locale"><code>ar</code> <span class="ts-lang-name">Arabic</span></th>
+  <td class="ts-col-catalogues">2 / 2<br><span class="ts-dim">100%</span> · <a href="https://github.com/litlfred/folio-assistant/tree/main/who-iris/translations/ar" class="ts-files-link">view files &rarr;</a></td>
+  <td class="ts-col-strings">120</td>
+  <td class="ts-col-strings">120<br><span class="ts-dim">100%</span></td>
+  <td class="ts-col-strings">0</td>
+  <td class="ts-col-strings">0</td>
+  <td class="ts-col-official" data-fa-tr-officiality="unofficial">not signed off (machine or agent translation)</td>
+</tr>
+<tr id="who-iris-locale-es" data-fa-tr-locale="es">
+  <th scope="row" class="ts-col-locale"><code>es</code> <span class="ts-lang-name">Spanish</span></th>
+  <td class="ts-col-catalogues">2 / 2<br><span class="ts-dim">100%</span> · <a href="https://github.com/litlfred/folio-assistant/tree/main/who-iris/translations/es" class="ts-files-link">view files &rarr;</a></td>
+  <td class="ts-col-strings">120</td>
+  <td class="ts-col-strings">120<br><span class="ts-dim">100%</span></td>
+  <td class="ts-col-strings">0</td>
+  <td class="ts-col-strings">0</td>
+  <td class="ts-col-official" data-fa-tr-officiality="unofficial">not signed off (machine or agent translation)</td>
+</tr>
+<tr id="who-iris-locale-fr" data-fa-tr-locale="fr">
+  <th scope="row" class="ts-col-locale"><code>fr</code> <span class="ts-lang-name">French</span></th>
+  <td class="ts-col-catalogues">2 / 2<br><span class="ts-dim">100%</span> · <a href="https://github.com/litlfred/folio-assistant/tree/main/who-iris/translations/fr" class="ts-files-link">view files &rarr;</a></td>
+  <td class="ts-col-strings">120</td>
+  <td class="ts-col-strings">120<br><span class="ts-dim">100%</span></td>
+  <td class="ts-col-strings">0</td>
+  <td class="ts-col-strings">0</td>
+  <td class="ts-col-official" data-fa-tr-officiality="unofficial">not signed off (machine or agent translation)</td>
+</tr>
+<tr id="who-iris-locale-ru" data-fa-tr-locale="ru">
+  <th scope="row" class="ts-col-locale"><code>ru</code> <span class="ts-lang-name">Russian</span></th>
+  <td class="ts-col-catalogues">2 / 2<br><span class="ts-dim">100%</span> · <a href="https://github.com/litlfred/folio-assistant/tree/main/who-iris/translations/ru" class="ts-files-link">view files &rarr;</a></td>
+  <td class="ts-col-strings">120</td>
+  <td class="ts-col-strings">120<br><span class="ts-dim">100%</span></td>
+  <td class="ts-col-strings">0</td>
+  <td class="ts-col-strings">0</td>
+  <td class="ts-col-official" data-fa-tr-officiality="unofficial">not signed off (machine or agent translation)</td>
+</tr>
+<tr id="who-iris-locale-zh" data-fa-tr-locale="zh">
+  <th scope="row" class="ts-col-locale"><code>zh</code> <span class="ts-lang-name">Chinese</span></th>
+  <td class="ts-col-catalogues">2 / 2<br><span class="ts-dim">100%</span> · <a href="https://github.com/litlfred/folio-assistant/tree/main/who-iris/translations/zh" class="ts-files-link">view files &rarr;</a></td>
+  <td class="ts-col-strings">120</td>
+  <td class="ts-col-strings">120<br><span class="ts-dim">100%</span></td>
   <td class="ts-col-strings">0</td>
   <td class="ts-col-strings">0</td>
   <td class="ts-col-official" data-fa-tr-officiality="unofficial">not signed off (machine or agent translation)</td>
