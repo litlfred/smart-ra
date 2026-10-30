@@ -21,7 +21,7 @@
     "references": [],
     "artefacts": []
   },
-  "status": "received",
+  "status": "duplicate",
   "priority": "medium",
   "origin": "human",
   "$schema": "public-comment/1.0.0",
@@ -53,6 +53,7 @@
     "text": "Section D.2: Added a short description of the Austrian ELGA alongside the other countries.\nInserted in the .docx, as a new country example after the existing ones:\nAustria\nComponents illustrated: LHR, Terminology Service\nAustria operates a national eHealth interoperability infrastructure (elga.gv.at), with ELGA serving as the electronic health record system for its citizens. It enables authorized healthcare professionals to securely access relevant health information across healthcare providers and institutions, while the ELGA Portal provides patients with access to their own health data. ELGA is deployed nationwide, connecting virtually all healthcare providers and pharmacies across Austria. ELGA supports the exchange of information such as discharge letters, laboratory and radiology reports, e-Medication, and e-prescriptions, improving continuity of care and patient safety. The ELGA Terminology Service provides centrally managed medical terminologies, code systems, value sets, and mappings, ensuring semantic interoperability and consistent interpretation of health information across different IT systems.",
     "assignees": [],
     "recommendations": [],
+    "duplicateOf": "PC-2662",
     "history": [
       {
         "at": "2026-10-15T11:14:36.382Z",
@@ -60,6 +61,13 @@
         "by": "intake",
         "task": "Process_PublicComment#Task_Ingest",
         "note": "aut-docx-tracked-changes"
+      },
+      {
+        "at": "2026-10-30T11:34:08.972Z",
+        "transition": "duplicate",
+        "by": "litlfred",
+        "task": "Process_PublicComment#Task_Triage",
+        "note": "Chine-E's rule on folio-assistant#197 (2026-10-15): verbatim repeats are duplicates. AUT's inserted text is word-for-word GDHP's suggested revision; GDHP's copy also carries the footnote."
       }
     ]
   }
