@@ -32,7 +32,7 @@
   label { margin-right:1rem; }
   @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
 </style>
-<link rel="stylesheet" href="../../../../../assets/css/navbar.css"><script src="../../../../../assets/navbar/rail-15maa9s5ggh.js" defer></script><script src="../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+<link rel="stylesheet" href="../../../../../assets/css/navbar.css"><script src="../../../../../assets/navbar/rail-17yaw21oyat.js" defer></script><script src="../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
 /* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
  *
  * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
@@ -162,7 +162,7 @@ function go(){
 measure();
 if(document.readyState!=='loading')go();else document.addEventListener('DOMContentLoaded',go);
 window.addEventListener('resize',measure);window.addEventListener('load',measure);
-})();</script><script type="application/json" id="fa-rail" data-fa-root="../../../../.." data-fa-to-root="../../../../..">{"data":"rail-15maa9s5ggh","here":"/en/cat-harness/cat-harness-declaration/cat-harness-tools/cat-harness-tools/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../">folio-assistant</a></nav>
+})();</script><script type="application/json" id="fa-rail" data-fa-root="../../../../.." data-fa-to-root="../../../../..">{"data":"rail-17yaw21oyat","here":"/en/cat-harness/cat-harness-declaration/cat-harness-tools/cat-harness-tools/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../">folio-assistant</a></nav>
 <main>
 <h1 id="nk-title">C@T Harness Tools</h1>
 <p class="m">A <a href="../../">cat-harness-declaration</a> node held by <a href="../">cat-harness-tools</a>, at <code>cat-harness-tools/cat-harness-tools.json</code>.</p>
@@ -211,8 +211,9 @@ window.addEventListener('resize',measure);window.addEventListener('load',measure
   {
     &quot;id&quot;: &quot;cat-harness-tools-schemas&quot;,
     &quot;path&quot;: &quot;schemas/&quot;,
-    &quot;description&quot;: &quot;Tests of cat-harness&#39;s schemas that exercise tools code: the sixteen `cat-harness/schemas/*.test.ts` files that imported `scripts/`, `src/`, `pipeline/` or `test/support/`, moved first (bean `70lx`, batch B0) so that no later batch of the code move leaves a harness file importing into this layer. The Zod sources they test stay in cat-harness and follow in stage 1b (bean `8lcl`). `code`, not `schemas`: nothing here is a schema definition but one, `verdict-record.schema.json`, the record the `judge-tree` Tool writes (cat-harness-tools#399), kept beside the dependency-free validator in `scripts/lib/judge-tree.ts` that implements it until its Zod source joins the others in cat-harness.&quot;,
+    &quot;description&quot;: &quot;Tests of cat-harness&#39;s schemas that exercise tools code: the sixteen `cat-harness/schemas/*.test.ts` files that imported `scripts/`, `src/`, `pipeline/` or `test/support/`, moved first (bean `70lx`, batch B0) so that no later batch of the code move leaves a harness file importing into this layer. Since bean `8lcl` (owner, 2026-10-30, card \&quot;A. One coordinated move\&quot;) the Zod sources live here too: every `cat-harness/schemas/**/*.ts`, so this directory is the schema corpus and is typed `schemas` as well as `code`. cat-harness keeps the schemas that are data: the per-skill JSON Schemas in `schemas/skills/`, `staging-comparison.schema.json` and the PlantUML model.&quot;,
     &quot;graphTypologies&quot;: [
+      &quot;schemas&quot;,
       &quot;code&quot;
     ]
   },
@@ -345,10 +346,28 @@ window.addEventListener('resize',measure);window.addEventListener('load',measure
     ]
   },
   {
+    &quot;id&quot;: &quot;cat-harness-tools-archimate-schemas&quot;,
+    &quot;path&quot;: &quot;archimate/schemas/&quot;,
+    &quot;description&quot;: &quot;The ArchiMate subgraph&#39;s Zod schema, moved from `cat-harness/archimate/schemas/` in bean `8lcl` (owner card \&quot;A. One coordinated move\&quot;, 2026-10-30). Module paths are unchanged, so the Schema node keeps its IRI; the subgraph&#39;s content stays in `cat-harness/archimate/`.&quot;,
+    &quot;graphTypologies&quot;: [
+      &quot;schemas&quot;,
+      &quot;code&quot;
+    ]
+  },
+  {
     &quot;id&quot;: &quot;cat-harness-tools-openapi&quot;,
     &quot;path&quot;: &quot;openapi/scripts/&quot;,
     &quot;description&quot;: &quot;The OpenAPI subgraph&#39;s ingester, page generator and tests; the subgraph&#39;s content and schema stay in `cat-harness/openapi/`. Moved by bean `70lx`.&quot;,
     &quot;graphTypologies&quot;: [
+      &quot;code&quot;
+    ]
+  },
+  {
+    &quot;id&quot;: &quot;cat-harness-tools-openapi-schemas&quot;,
+    &quot;path&quot;: &quot;openapi/schemas/&quot;,
+    &quot;description&quot;: &quot;The OpenAPI subgraph&#39;s Zod schema, moved from `cat-harness/openapi/schemas/` in bean `8lcl` (owner card \&quot;A. One coordinated move\&quot;, 2026-10-30). Module paths are unchanged, so the Schema node keeps its IRI; the subgraph&#39;s content stays in `cat-harness/openapi/`.&quot;,
+    &quot;graphTypologies&quot;: [
+      &quot;schemas&quot;,
       &quot;code&quot;
     ]
   },

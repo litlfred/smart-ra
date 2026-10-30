@@ -613,7 +613,7 @@
      `avatars:css:check` fails the build when it is stale. One stylesheet
      rather than 68 assets: the glyph is a mask and the colour is a property,
      so a scheme swap is a custom property and the trash state is a selector. -->
-<link rel="stylesheet" href="../../../../../assets/css/avatars.css?v=50927e324c20">
+<link rel="stylesheet" href="../../../../../assets/css/avatars.css?v=87dff9007b06">
 
 <!--
   The kinds THIS INSTANCE DECLARES, for the avatar fan.
@@ -736,7 +736,7 @@
   is broken when it is doing exactly what it can.
 -->
 
-<link rel="stylesheet" href="../../../../../assets/css/navbar.css"><script src="../../../../../assets/navbar/rail-28nvmwnje5j.js" defer></script><script src="../../../../../assets/js/navbar.js" defer></script><link rel="stylesheet" href="../../../../../assets/page-layout.css" data-fa-page-layout><script src="../../../../../assets/page-layout.js" defer data-fa-page-layout></script><meta name="fa-pinned-data" content="../../../../.."></head>
+<link rel="stylesheet" href="../../../../../assets/css/navbar.css"><script src="../../../../../assets/navbar/rail-1nr7jo2rxsc.js" defer></script><script src="../../../../../assets/js/navbar.js" defer></script><link rel="stylesheet" href="../../../../../assets/page-layout.css" data-fa-page-layout><script src="../../../../../assets/page-layout.js" defer data-fa-page-layout></script><meta name="fa-pinned-data" content="../../../../.."></head>
 
 <body><div data-fa-staging-banner lang="en" dir="ltr" style="background:#4F6F52;color:#fff;padding:8px 16px;font-size:14px;text-align:center;position:fixed;top:0;left:0;right:0;box-sizing:border-box;z-index:2147483001;font-family:system-ui">🔀 <b>FEATURE BRANCH</b> <span data-fa-staging-detail>— loading build details…</span></div><style>:root{--fa-staging-offset:0px}body{margin:0}.side-bar,.fa-nav{top:var(--fa-staging-offset,0px)!important}html{padding-top:var(--fa-staging-offset,0px)}</style><script>(function(){
 function el(t,a,x){var e=document.createElement(t);if(a)for(var k in a)e.setAttribute(k,a[k]);if(x!=null)e.textContent=x;return e;}
@@ -789,7 +789,7 @@ function go(){
 measure();
 if(document.readyState!=='loading')go();else document.addEventListener('DOMContentLoaded',go);
 window.addEventListener('resize',measure);window.addEventListener('load',measure);
-})();</script><script type="application/json" id="fa-rail" data-fa-root="https://litlfred.github.io/folio-assistant" data-fa-to-root="../../../../..">{"data":"rail-28nvmwnje5j","here":"/cat-harness/auto-docs/index/skills/core-skills/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../">Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector</a></nav>
+})();</script><script type="application/json" id="fa-rail" data-fa-root="https://litlfred.github.io/folio-assistant" data-fa-to-root="../../../../..">{"data":"rail-1nr7jo2rxsc","here":"/cat-harness/auto-docs/index/skills/core-skills/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../">Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector</a></nav>
   <a class="skip-to-main" href="#main-content">Skip to main content</a>
   <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
   <symbol id="svg-link" viewBox="0 0 24 24">
@@ -969,7 +969,7 @@ window.addEventListener('resize',measure);window.addEventListener('load',measure
 
 <ul class="subs">
 <li><a href="../bootstrap-tools-skills/">bootstrap-tools-skills</a> <span class="p">bootstrap-tools/skills</span> <span class="n">3</span></li>
-<li><strong>core-skills</strong> <span class="p">folio-assistant-core/skills</span> <span class="n">31</span></li>
+<li><strong>core-skills</strong> <span class="p">folio-assistant-core/skills</span> <span class="n">42</span></li>
 <li><a href="../fhir-ig-skills/">fhir-ig-skills</a> <span class="p">fhir-harness/skills</span> <span class="n">17</span></li>
 <li><a href="../skills/">skills</a> <span class="p">cat-harness/skills</span> <span class="n">248</span></li>
 <li><a href="../smart-base-skills/">smart-base-skills</a> <span class="p">smart-base/skills</span> <span class="n">24</span></li>
@@ -1018,6 +1018,50 @@ window.addEventListener('resize',measure);window.addEventListener('load',measure
 <tr>
   <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/skills/content/folio-document-adapter/document-structure.md"><code>document-structure</code></a><br><span class="p">folio-assistant-core/skills/content/folio-document-adapter/document-structure.md</span></td>
   <td><span class="none">no description in the artefact</span></td>
+</tr>
+<tr>
+  <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/skills/content/folio-document-adapter/dsa-catalogue-status.md"><code>dsa-catalogue-status</code></a><br><span class="p">folio-assistant-core/skills/content/folio-document-adapter/dsa-catalogue-status.md</span></td>
+  <td>Set the life-cycle status (<code>adms:status</code>, W3C DCAT 3 §6.4.30) on a Data Sharing Agreement's DCAT 3 catalogue record when the agreement is amended, renewed, terminated, or expires, while keeping all published versions re…</td>
+</tr>
+<tr>
+  <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/skills/content/folio-document-adapter/dsa-checksum.md"><code>dsa-checksum</code></a><br><span class="p">folio-assistant-core/skills/content/folio-document-adapter/dsa-checksum.md</span></td>
+  <td>Compute and record the SHA-256 cryptographic digest of a signed Data Sharing Agreement's legal text as a W3C DCAT 3 <code>spdx:checksum</code> (<code>spdx:Checksum</code> with <code>spdx:checksumAlgorithm_sha256</code> and 64-character lowercase hex `s…</td>
+</tr>
+<tr>
+  <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/skills/content/folio-document-adapter/dsa-dcat-record.md"><code>dsa-dcat-record</code></a><br><span class="p">folio-assistant-core/skills/content/folio-document-adapter/dsa-dcat-record.md</span></td>
+  <td>Write the W3C DCAT 3 <code>dcat:Resource</code> and <code>dcat:Distribution</code> catalogue record for a Data Sharing Agreement (<code>dcat:downloadURL</code>, <code>spdx:checksum</code>, <code>odrl:hasPolicy</code>) and link versions with <code>dcat:version</code> and `dcat:previous…</td>
+</tr>
+<tr>
+  <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/skills/content/folio-document-adapter/dsa-odrl-source.md"><code>dsa-odrl-source</code></a><br><span class="p">folio-assistant-core/skills/content/folio-document-adapter/dsa-odrl-source.md</span></td>
+  <td>Bind a computable Data Sharing Agreement's W3C ODRL 2.2 <code>Agreement</code> to its signed legal text distribution using DCMI Metadata Terms <code>dcterms:source</code>, naming the exact <code>dcat:Distribution</code> whose <code>spdx:checksum</code> is checked…</td>
+</tr>
+<tr>
+  <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/skills/content/folio-document-adapter/folio-board-diagram-interchange.md"><code>folio-board-diagram-interchange</code></a><br><span class="p">folio-assistant-core/skills/content/folio-document-adapter/folio-board-diagram-interchange.md</span></td>
+  <td>The content-folio half of the harness's board-diagram-interchange skill: binds processes/ui/board-place-note.bpmn and board-relocate.bpmn, folio board filters over pages and block kinds, and note-to-board arrow directio…</td>
+</tr>
+<tr>
+  <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/skills/content/folio-document-adapter/folio-board-windows.md"><code>folio-board-windows</code></a><br><span class="p">folio-assistant-core/skills/content/folio-document-adapter/folio-board-windows.md</span></td>
+  <td>The content-folio half of the harness's board-windows skill: binds processes/ui/board-open-close.bpmn, folio-glass pinning (todo/&lt;id&gt; and landing/&lt;slot&gt;), and content-type card chrome ([x], [linksrc], [edit]).</td>
+</tr>
+<tr>
+  <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/skills/content/folio-document-adapter/folio-content-lifecycle.md"><code>folio-content-lifecycle</code></a><br><span class="p">folio-assistant-core/skills/content/folio-document-adapter/folio-content-lifecycle.md</span></td>
+  <td>The content-folio half of the harness's content-lifecycle skills (content-author, content-feedback, content-plan, content-publish, content-review, content-test, content-validate, evidence-appraisal): binds core lifecycl…</td>
+</tr>
+<tr>
+  <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/skills/content/folio-document-adapter/folio-content-profiles.md"><code>folio-content-profiles</code></a><br><span class="p">folio-assistant-core/skills/content/folio-document-adapter/folio-content-profiles.md</span></td>
+  <td>The content-folio half of the harness's content-profiles skill: how a document folio is structured prose and how a paper folio extends it, block-kind discovery across block-kinds/ graphs, profile-check enforcement, and…</td>
+</tr>
+<tr>
+  <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/skills/content/folio-document-adapter/folio-editorial-workflow.md"><code>folio-editorial-workflow</code></a><br><span class="p">folio-assistant-core/skills/content/folio-document-adapter/folio-editorial-workflow.md</span></td>
+  <td>The content-folio half of the harness's editor, content-graph, md-authoring, canonical-watcher, and uses-editorial-review skills: routes glossary and notation work to ontologist and glossary-build, bibliography audits t…</td>
+</tr>
+<tr>
+  <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/skills/content/folio-document-adapter/folio-getting-started.md"><code>folio-getting-started</code></a><br><span class="p">folio-assistant-core/skills/content/folio-document-adapter/folio-getting-started.md</span></td>
+  <td>The content-folio half of the harness's getting-started skill: binds processes/conduct/getting-started.bpmn and decisions/folio-intent.dmn, interprets describeRepository() content-type markers (folio, harness, dak, sush…</td>
+</tr>
+<tr>
+  <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/skills/content/folio-document-adapter/folio-repo-conversion.md"><code>folio-repo-conversion</code></a><br><span class="p">folio-assistant-core/skills/content/folio-document-adapter/folio-repo-conversion.md</span></td>
+  <td>The content-folio half of the harness's repo-conversion skill: outside-content evidence and refutation candidate scanning, content-type marker declarations, and dispatching library and content buckets to document-intake…</td>
 </tr>
 <tr>
   <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/skills/content/folio-document-adapter/normative-statements.md"><code>normative-statements</code></a><br><span class="p">folio-assistant-core/skills/content/folio-document-adapter/normative-statements.md</span></td>
