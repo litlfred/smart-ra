@@ -185,7 +185,7 @@
               "by": "litlfred",
               "on": "2026-10-30",
               "ref": "21be86077d9242b92f747f4f455e5cbabfdab5de",
-              "evidence": "litlfred, 2026-10-30 16:15:26Z in the 'Drain smart-ra issues and beans' thread: 'fix all issues.' Re-pin every layer to main after fhir-harness#210, smart-base#223, cat-harness-tools#925 merged; merge window extended to ~19:38Z; main tip 21be860 (BCP 47 #257, CI #267 #270, schemas move #265). Window: litlfred 2026-10-30 11:13Z 'merge and repin window open for 4 horus', extended 16:37Z 'merge window +3 hrs' (to ~19:38Z)."
+              "evidence": "litlfred 2026-10-30T18:56:17Z decision card: 'Merge both' — merge core #262 and #264, then re-pin smart-ra's core and republish"
             }
           }
         }
