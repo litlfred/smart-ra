@@ -78,6 +78,12 @@ It is the same command for every agent-run repository, folio or IG (owner,
 `build-instance-site.ts --instance dpi-h-ra`, which can also be run directly;
 any step flag given there replaces the declared recipe.
 
+This folio is not an IG, so its site builds no FHIR artefact index and owes
+no artefact pages for smart-base, the IG layer it mounts. smart-base's
+`fhir-artifact-index/index.json` is built at publish by IG sites only
+(fhir-harness#124), and the publish check owes an `artifact-index` page only
+where that index is built (owner, 2026-10-30, #103).
+
 ## QA — every block is checked from the first commit
 
 `qa-sweep` runs every criterion a script can check against each block, and
