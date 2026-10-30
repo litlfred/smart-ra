@@ -67,7 +67,7 @@ bun run cat-harness-tools/scripts/stage-local.ts --repo . [--plan | --dry-run]
 ```
 
 The steps are declared once, in `index.config.json` (the `dpi-h-ra` entry) under `site.build`:
-`pre` (the gate, `check:archimate`), `sourceSteps` (run before Jekyll, into
+`pre` (`ig-index:build`, which writes each mounted IG's artefact index from its AST cache, then the gate, `check:archimate`), `sourceSteps` (run before Jekyll, into
 the site source) and `siteSteps` (run after Jekyll, on the built site). The
 command reads them from there. On `main` it publishes the root, keeping
 `STAGING/` and `_render-log/`; on any other branch it publishes the preview at
