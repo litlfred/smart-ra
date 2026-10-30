@@ -187,7 +187,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness-tools",
-          "ref": "f5349b5c9bc689824b6f9031278eb89a71698dd1",
+          "ref": "05149fe154f5595dc24aff180a3c223e01c837e3",
           "overrides": {
             "cat-harness-tools": {
               "whole": true
@@ -200,8 +200,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-10-30",
-              "ref": "f5349b5c9bc689824b6f9031278eb89a71698dd1",
-              "evidence": "litlfred, 2026-10-30 16:15:26Z in the 'Drain smart-ra issues and beans' thread: 'fix all issues.' Re-pin every layer to main after fhir-harness#210, smart-base#223, cat-harness-tools#925 merged; merge window extended to ~19:38Z"
+              "ref": "05149fe154f5595dc24aff180a3c223e01c837e3",
+              "evidence": "litlfred, 2026-10-30 16:15:26Z in the 'Drain smart-ra issues and beans' thread: 'fix all issues.' Re-pin cat-harness-tools to main after #933 and #937 (qa-sweep mount writes, state.jsonld for workflow pages); merge window to ~19:38Z"
             }
           }
         }
@@ -258,5 +258,38 @@
   "site": {
     "landing": "dpi-h-ra",
     "agentRun": true
+  },
+  "contentTypes": {
+    "ig": {
+      "_comment": "What this repository's FHIR IG side is, per the content types its layers register (bean folio-assistant-cz17, follow-up b; owner card 2026-10-30T12:40Z, \"A. ig section in index.config\"). `ig`: fhir-harness's `ig` content type (fhir-harness#198); `include` is everything fhir-harness's IG readers read in this repository, and nothing else is read (owner, 2026-10-30: \"harness desclares what it it pays attention to in the repo\"). It lists every `input/` entry the build used before the section existed, so nothing is dropped. The folio (`folio/`, `review/`, `library/`, `archimate/`, `documents/`, `uploads/`) is the `dpi-h-ra` document instance's, read by its own adapter and site steps, not by this list. sushi-config.yaml stays SUSHI's file. smart-immunizations#89 is the model.",
+      "include": [
+        "sushi-config.yaml",
+        "ig.ini",
+        "input/business-processes/",
+        "input/cql/",
+        "input/data/",
+        "input/decision-logic/",
+        "input/dictionary/",
+        "input/examples/",
+        "input/extensions/",
+        "input/fsh/",
+        "input/history/",
+        "input/ignoreWarnings.txt",
+        "input/images/",
+        "input/images-source/",
+        "input/indicators/",
+        "input/maps/",
+        "input/models/",
+        "input/pagecontent/",
+        "input/profiles/",
+        "input/resources/",
+        "input/scenarios/",
+        "input/scheduling-logic/",
+        "input/system-requirements/",
+        "input/testing/",
+        "input/vocabulary/",
+        "fsh-generated/"
+      ]
+    }
   }
 }
