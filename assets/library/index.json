@@ -3129,7 +3129,7 @@
       "pageEnd": null,
       "words": 0,
       "chars": 0,
-      "bytes": 175120,
+      "bytes": 175362,
       "upload": "match",
       "uploadInstance": "dpi-h-ra",
       "referencedBy": [],
@@ -3329,8 +3329,8 @@
       "words": 69252,
       "chars": 473627,
       "bytes": 13316408,
-      "upload": "absent",
-      "uploadInstance": "",
+      "upload": "match",
+      "uploadInstance": "who-iris",
       "readme": "https://github.com/litlfred/who-iris/blob/main/library/9789240010567-eng/README.md",
       "referencedBy": [
         {
@@ -3443,8 +3443,8 @@
       "words": 22088,
       "chars": 166943,
       "bytes": 718973,
-      "upload": "absent",
-      "uploadInstance": "",
+      "upload": "match",
+      "uploadInstance": "who-iris",
       "readme": "https://github.com/litlfred/who-iris/blob/main/library/9789240081949-eng/README.md",
       "referencedBy": [
         {
@@ -3479,6 +3479,7 @@
       "instance": "who-iris",
       "dir": "who-iris/library/9789240093362-eng",
       "title": "Digital transformation handbook for primary health care",
+      "extractedTitle": "Digital transformation handbook for primary health care: optimizing person-centred point of service systems",
       "provenance": "ingested",
       "rung": "paged",
       "docId": "9789240093362-eng",
@@ -3499,7 +3500,7 @@
       "pageEnd": 98,
       "words": 46772,
       "chars": 315129,
-      "bytes": 4609804,
+      "bytes": 4609900,
       "upload": "match",
       "uploadInstance": "who-iris",
       "readme": "https://github.com/litlfred/who-iris/blob/main/library/9789240093362-eng/README.md",
@@ -3568,7 +3569,7 @@
       "pageEnd": 100,
       "words": 36176,
       "chars": 249593,
-      "bytes": 4048245,
+      "bytes": 4048327,
       "upload": "match",
       "uploadInstance": "who-iris",
       "readme": "https://github.com/litlfred/who-iris/blob/main/library/9789240099456-eng/README.md",
@@ -3604,7 +3605,6 @@
       "instance": "who-iris",
       "dir": "who-iris/library/9789240101197-eng",
       "title": "Digital transformation handbook for health supply chain architecture",
-      "extractedTitle": "9789240101197-eng",
       "provenance": "ingested",
       "rung": "paged",
       "docId": "9789240101197-eng",
@@ -3625,7 +3625,7 @@
       "pageEnd": 78,
       "words": 23549,
       "chars": 176393,
-      "bytes": 5085300,
+      "bytes": 5085481,
       "upload": "match",
       "uploadInstance": "who-iris",
       "readme": "https://github.com/litlfred/who-iris/blob/main/library/9789240101197-eng/README.md",
@@ -3674,7 +3674,6 @@
       "instance": "who-iris",
       "dir": "who-iris/library/9789240116191-eng",
       "title": "Digital transformation handbook for health product catalogue",
-      "extractedTitle": "9789240116191-eng",
       "provenance": "ingested",
       "rung": "paged",
       "docId": "9789240116191-eng",
@@ -3695,7 +3694,7 @@
       "pageEnd": 62,
       "words": 15526,
       "chars": 115271,
-      "bytes": 2471985,
+      "bytes": 2472150,
       "upload": "match",
       "uploadInstance": "who-iris",
       "readme": "https://github.com/litlfred/who-iris/blob/main/library/9789240116191-eng/README.md",
@@ -3765,8 +3764,8 @@
       "words": 21679,
       "chars": 161635,
       "bytes": 1613249,
-      "upload": "absent",
-      "uploadInstance": "",
+      "upload": "match",
+      "uploadInstance": "who-iris",
       "readme": "https://github.com/litlfred/who-iris/blob/main/library/9789240120747-eng/README.md",
       "referencedBy": [
         {
@@ -3816,8 +3815,8 @@
       "words": 38273,
       "chars": 265464,
       "bytes": 14716840,
-      "upload": "absent",
-      "uploadInstance": "",
+      "upload": "match",
+      "uploadInstance": "who-iris",
       "readme": "https://github.com/litlfred/who-iris/blob/main/library/9789241509510-eng/README.md",
       "referencedBy": [
         {
@@ -3867,8 +3866,8 @@
       "words": 69899,
       "chars": 444739,
       "bytes": 14893979,
-      "upload": "absent",
-      "uploadInstance": "",
+      "upload": "match",
+      "uploadInstance": "who-iris",
       "readme": "https://github.com/litlfred/who-iris/blob/main/library/9789241511766-eng/README.md",
       "referencedBy": [
         {
@@ -3980,7 +3979,7 @@
       "pageEnd": 172,
       "words": 81822,
       "chars": 572052,
-      "bytes": 686504,
+      "bytes": 686560,
       "upload": "match",
       "uploadInstance": "who-iris",
       "readme": "https://github.com/litlfred/who-iris/blob/main/library/9789241549912-eng/README.md",
@@ -4010,8 +4009,7 @@
       "id": "9789241549912-webannexes-eng",
       "instance": "who-iris",
       "dir": "who-iris/library/9789241549912-webannexes-eng",
-      "title": "WHO recommendations on antenatal care for a positive pregnancy experience: web annexes",
-      "extractedTitle": "WHO recommendations on antenatal care for a positive pregnancy experience: web annexes *",
+      "title": "WHO recommendations on antenatal care for a positive pregnancy experience: web annexes *",
       "provenance": "ingested",
       "rung": "paged",
       "docId": "9789241549912-webannexes-eng",
@@ -4036,14 +4034,7 @@
       "upload": "absent",
       "uploadInstance": "",
       "readme": "https://github.com/litlfred/who-iris/blob/main/library/9789241549912-webannexes-eng/README.md",
-      "referencedBy": [
-        {
-          "kind": "catalogue",
-          "instance": "who-iris",
-          "from": "who-iris/catalogue/nodes/item-9789241549912-webannexes-eng.json",
-          "count": 1
-        }
-      ],
+      "referencedBy": [],
       "summaries": {
         "prose": 24,
         "summarised": 24,
@@ -4062,8 +4053,7 @@
       "id": "9789241549912-websupplement-eng",
       "instance": "who-iris",
       "dir": "who-iris/library/9789241549912-websupplement-eng",
-      "title": "Web supplement WHO recommendations on antenatal care for a positive pregnancy experience: evidence base",
-      "extractedTitle": "Web supplement WHO recommendations on antenatal care for a positive pregnancy experience: evidence base*",
+      "title": "Web supplement WHO recommendations on antenatal care for a positive pregnancy experience: evidence base*",
       "provenance": "ingested",
       "rung": "paged",
       "docId": "9789241549912-websupplement-eng",
@@ -4088,14 +4078,7 @@
       "upload": "absent",
       "uploadInstance": "",
       "readme": "https://github.com/litlfred/who-iris/blob/main/library/9789241549912-websupplement-eng/README.md",
-      "referencedBy": [
-        {
-          "kind": "catalogue",
-          "instance": "who-iris",
-          "from": "who-iris/catalogue/nodes/item-9789241549912-websupplement-eng.json",
-          "count": 1
-        }
-      ],
+      "referencedBy": [],
       "summaries": {
         "prose": 123,
         "summarised": 123,
@@ -4135,7 +4118,7 @@
       "pageEnd": 99,
       "words": 33990,
       "chars": 232458,
-      "bytes": 5314362,
+      "bytes": 5314442,
       "upload": "absent",
       "uploadInstance": "",
       "readme": "https://github.com/litlfred/who-iris/blob/main/library/who-2019-ncov-digital-certificates-vaccination-20211-eng/README.md",
@@ -4250,8 +4233,8 @@
       "words": 11744,
       "chars": 87671,
       "bytes": 165467,
-      "upload": "absent",
-      "uploadInstance": "",
+      "upload": "match",
+      "uploadInstance": "who-iris",
       "readme": "https://github.com/litlfred/who-iris/blob/main/library/who-rhr-1806-eng/README.md",
       "referencedBy": [
         {
@@ -4443,6 +4426,18 @@
       "declaredFiles": 0
     },
     {
+      "file": "9789240010567-eng",
+      "kind": "intake",
+      "instance": "who-iris",
+      "path": "who-iris/uploads/9789240010567-eng",
+      "bytes": 1037,
+      "ext": "",
+      "ingestedBy": "9789240010567-eng",
+      "docId": "9789240010567-eng",
+      "title": "Digital implementation investment guide (DIIG): integrating digital interventions into health programmes",
+      "declaredFiles": 1
+    },
+    {
       "file": "9789240016514-eng",
       "kind": "intake",
       "instance": "who-iris",
@@ -4467,6 +4462,18 @@
       "declaredFiles": 1
     },
     {
+      "file": "9789240081949-eng",
+      "kind": "intake",
+      "instance": "who-iris",
+      "path": "who-iris/uploads/9789240081949-eng",
+      "bytes": 1037,
+      "ext": "",
+      "ingestedBy": "9789240081949-eng",
+      "docId": "9789240081949-eng",
+      "title": "Classification of digital interventions, services and applications in health: a shared language to describe the uses of digital technology for health",
+      "declaredFiles": 1
+    },
+    {
       "file": "9789240085138-eng",
       "kind": "intake",
       "instance": "who-iris",
@@ -4483,7 +4490,7 @@
       "kind": "intake",
       "instance": "who-iris",
       "path": "who-iris/uploads/9789240093362-eng",
-      "bytes": 2787753,
+      "bytes": 2788197,
       "ext": "",
       "ingestedBy": "9789240093362-eng",
       "docId": "9789240093362-eng",
@@ -4507,7 +4514,7 @@
       "kind": "intake",
       "instance": "who-iris",
       "path": "who-iris/uploads/9789240101197-eng",
-      "bytes": 2113121,
+      "bytes": 2113287,
       "ext": "",
       "ingestedBy": "9789240101197-eng",
       "docId": "9789240101197-eng",
@@ -4519,11 +4526,23 @@
       "kind": "intake",
       "instance": "who-iris",
       "path": "who-iris/uploads/9789240116191-eng",
-      "bytes": 1366617,
+      "bytes": 1366783,
       "ext": "",
       "ingestedBy": "9789240116191-eng",
       "docId": "9789240116191-eng",
       "title": "Digital transformation handbook for health product catalogue",
+      "declaredFiles": 1
+    },
+    {
+      "file": "9789240120747-eng",
+      "kind": "intake",
+      "instance": "who-iris",
+      "path": "who-iris/uploads/9789240120747-eng",
+      "bytes": 1037,
+      "ext": "",
+      "ingestedBy": "9789240120747-eng",
+      "docId": "9789240120747-eng",
+      "title": "Digital transformation handbook for reporting substandard and falsified medical products",
       "declaredFiles": 1
     },
     {
@@ -4536,6 +4555,30 @@
       "ingestedBy": "",
       "docId": "9789240124233-eng",
       "title": "Consolidated HIV guidelines: service delivery",
+      "declaredFiles": 1
+    },
+    {
+      "file": "9789241509510-eng",
+      "kind": "intake",
+      "instance": "who-iris",
+      "path": "who-iris/uploads/9789241509510-eng",
+      "bytes": 1010,
+      "ext": "",
+      "ingestedBy": "9789241509510-eng",
+      "docId": "9789241509510-eng",
+      "title": "The MAPS Toolkit: mHealth Assessment and Planning for Scale",
+      "declaredFiles": 1
+    },
+    {
+      "file": "9789241511766-eng",
+      "kind": "intake",
+      "instance": "who-iris",
+      "path": "who-iris/uploads/9789241511766-eng",
+      "bytes": 1037,
+      "ext": "",
+      "ingestedBy": "9789241511766-eng",
+      "docId": "9789241511766-eng",
+      "title": "Monitoring and Evaluating Digital Health Interventions: A practical guide to conducting research and assessment",
       "declaredFiles": 1
     },
     {
@@ -4579,12 +4622,12 @@
       "kind": "intake",
       "instance": "who-iris",
       "path": "who-iris/uploads/9789241549912-eng",
-      "bytes": 1167,
+      "bytes": 1639,
       "ext": "",
       "ingestedBy": "9789241549912-eng",
       "docId": "9789241549912-eng",
       "title": "WHO recommendations on antenatal care for a positive pregnancy experience",
-      "declaredFiles": 1
+      "declaredFiles": 3
     },
     {
       "file": "9789241550581-eng",
@@ -4615,7 +4658,7 @@
       "kind": "file",
       "instance": "who-iris",
       "path": "who-iris/uploads/README.md",
-      "bytes": 5206,
+      "bytes": 5720,
       "ext": "md",
       "ingestedBy": "isaitb-2026-interoperability-test-bed-readme",
       "docId": "",
@@ -4959,6 +5002,18 @@
       "declaredFiles": 2
     },
     {
+      "file": "who-rhr-1806-eng",
+      "kind": "intake",
+      "instance": "who-iris",
+      "path": "who-iris/uploads/who-rhr-1806-eng",
+      "bytes": 1034,
+      "ext": "",
+      "ingestedBy": "who-rhr-1806-eng",
+      "docId": "who-rhr-1806-eng",
+      "title": "Classification of Digital Health Interventions v1.0",
+      "declaredFiles": 1
+    },
+    {
       "file": "wpr-rdo-2020-003-eng",
       "kind": "intake",
       "instance": "who-iris",
@@ -4989,8 +5044,8 @@
     {
       "instance": "who-iris",
       "dir": "who-iris/uploads",
-      "total": 44,
-      "ingested": 10,
+      "total": 50,
+      "ingested": 16,
       "uningested": 34
     }
   ],

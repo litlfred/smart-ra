@@ -31,16 +31,6 @@
     }
   },
   {
-    "id": "9789240101197-eng",
-    "type": "document",
-    "title": "9789240101197-eng"
-  },
-  {
-    "id": "9789240116191-eng",
-    "type": "document",
-    "title": "9789240116191-eng"
-  },
-  {
     "id": "agent-skill-best-practices---gemini-cli",
     "type": "document",
     "title": "Agent Skill best practices",
@@ -238,22 +228,6 @@
     "note": "arXiv:2605.03537"
   },
   {
-    "id": "who-rhr-1806-eng",
-    "type": "document",
-    "title": "Classification of Digital Health Interventions v1.0",
-    "issued": {
-      "raw": "D:20180427"
-    }
-  },
-  {
-    "id": "9789240081949-eng",
-    "type": "document",
-    "title": "Classification of digital interventions, services and applications in health: a shared language to describe the uses of digital technology for health",
-    "issued": {
-      "raw": "D:20231023"
-    }
-  },
-  {
     "id": "arxiv-2503.18813v2",
     "type": "article-journal",
     "title": "Defeating Prompt Injections by Design",
@@ -310,30 +284,6 @@
     "URL": "https://arxiv.org/abs/2607.25032",
     "abstract": "Agent Skills are an emerging way to extend large language model agents with reusable procedural knowledge that the agent loads on demand. Anthropic introduced Agent Skills and published the format as an open specification supported across several agent tools. This note argues that a skill is a software artefact and that its construction should follow software-engineering principles, with qualifications: single responsibility, separation of interface from implementation, low coupling, and economy in a shared token budget, together with behavioural evaluation in place of deterministic testing. Using Claude Code as the reference implementation, it describes how a skill is structured, how its contents are loaded in stages, and how to write the description on which selection depends. It places skills against the other mechanisms a developer can use to shape agent behaviour, like project memory files, slash commands, subagents, external tool connections, and hooks, and gives a rule for choosing between them based on who decides that a mechanism runs and what guarantee it provides. It then sets out an evaluation-driven authoring process, a set of patterns and faults commonly encountered in authoring, and the trust question raised by using skills from third parties. We illustrate the comparison drawn in UML class style, the loading model, the anatomy of a skill, the relative position of each mechanism, and the points at which skills and hooks act during a session. Note on sources This note draws on Anthropic’s official documentation1 for Agent Skills, Claude Code skills, hooks, and skill authoring best practices, together with the open Agent Skills specification.",
     "note": "arXiv:2607.25032"
-  },
-  {
-    "id": "9789240010567-eng",
-    "type": "document",
-    "title": "Digital implementation investment guide (DIIG): integrating digital interventions into health programmes",
-    "issued": {
-      "raw": "D:20201007"
-    }
-  },
-  {
-    "id": "9789240093362-eng",
-    "type": "document",
-    "title": "Digital transformation handbook for primary health care",
-    "issued": {
-      "raw": "D:20241014"
-    }
-  },
-  {
-    "id": "9789240120747-eng",
-    "type": "document",
-    "title": "Digital transformation handbook for reporting substandard and falsified medical products",
-    "issued": {
-      "raw": "D:20260514"
-    }
   },
   {
     "id": "arxiv-2608.18294v2",
@@ -784,14 +734,6 @@
     "note": "arXiv:2312.07755"
   },
   {
-    "id": "9789241511766-eng",
-    "type": "document",
-    "title": "Monitoring and Evaluating Digital Health Interventions: A practical guide to conducting research and assessment",
-    "issued": {
-      "raw": "D:20170212"
-    }
-  },
-  {
     "id": "arxiv-2601.04544v1",
     "type": "article-journal",
     "title": "TCAndon-Router: Adaptive Reasoning Router for Multi-Agent Collaboration",
@@ -1060,14 +1002,6 @@
     "URL": "https://arxiv.org/abs/2504.21474",
     "abstract": "This paper presents our system, Homa, for SemEval-2025 Task 5: Subject Tagging, which focuses on automatically assigning subject la- bels to technical records from TIBKAT us- ing the Gemeinsame Normdatei (GND) tax- onomy. We leverage OntoAligner, a modu- lar ontology alignment toolkit, to address this task by integrating retrieval-augmented genera- tion (RAG) techniques. Our approach formu- lates the subject tagging problem as an align- ment task, where records are matched to GND categories based on semantic similarity. We evaluate OntoAligner’s adaptability for sub- ject indexing and analyze its effectiveness in handling multilingual records. Experimental results demonstrate the strengths and limita- tions of this method, highlighting the potential of alignment techniques for improving subject tagging in digital libraries.",
     "note": "arXiv:2504.21474"
-  },
-  {
-    "id": "9789241509510-eng",
-    "type": "document",
-    "title": "The MAPS Toolkit: mHealth Assessment and Planning for Scale",
-    "issued": {
-      "raw": "D:20150922"
-    }
   },
   {
     "id": "w3c-2024-prov-jsonld",
