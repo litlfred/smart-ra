@@ -110,7 +110,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/fhir-harness",
-          "ref": "9f54fffa96bedb7ea2c32a0d6183da541326f862",
+          "ref": "d45d99170823f2bbf6cd310ab062935403175e7b",
           "overrides": {
             "fhir-harness": {
               "whole": true
@@ -120,8 +120,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-10-30",
-              "ref": "9f54fffa96bedb7ea2c32a0d6183da541326f862",
-              "evidence": "litlfred, 2026-10-30 16:15:26Z in the 'Drain smart-ra issues and beans' thread: 'fix all issues.' (re-pin fhir-harness past #190 so check:fhir-harness-exclusions passes); merge window to ~18:13Z"
+              "ref": "d45d99170823f2bbf6cd310ab062935403175e7b",
+              "evidence": "litlfred, 2026-10-30 16:15:26Z in the 'Drain smart-ra issues and beans' thread: 'fix all issues.' Re-pin fhir-harness past #190 (WHO-free glossary) but before the f8wp import repoint, which needs a newer cat-harness; merge window to ~18:13Z"
             }
           }
         }
