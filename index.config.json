@@ -61,7 +61,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/who-iris",
-          "ref": "5fd44da1725e4123da4bea4bc94b52f0d7b69ef4",
+          "ref": "f524a7e98bde3b8f390f0163a81829b158ad11b2",
           "overrides": {
             "who-iris": {
               "whole": true
@@ -86,8 +86,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-10-30",
-              "ref": "5fd44da1725e4123da4bea4bc94b52f0d7b69ef4",
-              "evidence": "smart-base main (smart-base#224, owner's option B on who-iris#107) needs who-iris, so re-pinning smart-base for the 8lcl schemas move brings who-iris into this closure; mounted as smart-base mounts it. main tip 5fd44da (IRIS assets #108, dark replica #110, navbar #112, direction #114 #118, CI #116, repin #122). Window: litlfred 2026-10-30 11:13Z 'merge and repin window open for 4 horus', extended 16:37Z 'merge window +3 hrs' (to ~19:38Z)."
+              "ref": "f524a7e98bde3b8f390f0163a81829b158ad11b2",
+              "evidence": "who-iris#124 fixed the unpublished core dependency that blocked the smart-ra publish; owner card 2026-10-30T19:33Z 'Republish now'; merge window +3 hrs at 19:21Z (to ~22:38Z)"
             }
           }
         }
