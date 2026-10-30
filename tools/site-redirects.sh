@@ -16,6 +16,10 @@
 #   /en/folio-assistant-core/public-comments/folio/dpi-h-ra/.
 # - /mapper/ and /mapper/SMART-RA-Mapper.html: the RA mapper, now under
 #   /en/mapper/ (tools/ra-mapper/build-site.sh).
+# - /draft/: a short address for the review version's line-numbered PDF in the
+#   site's PDF viewer. /draft/#page=80 opens PDF page 80. The public-comment
+#   sheet links every section, page and line mention to it, and a short link
+#   keeps those rich-text cells small.
 set -euo pipefail
 OUT=$(cd "${1:?usage: site-redirects.sh <site dir>}" && pwd)
 
@@ -42,3 +46,4 @@ redirect dpi-h-ra ../en/dpi-h-ra/
 redirect public-comments ../en/folio-assistant-core/public-comments/folio/dpi-h-ra/
 redirect mapper ../en/mapper/
 redirect mapper ../en/mapper/SMART-RA-Mapper.html SMART-RA-Mapper.html
+redirect draft '../assets/vendor/pdfjs/web/viewer.html?src=https%3A%2F%2Fraw.githubusercontent.com%2Flitlfred%2Fsmart-ra%2Fmain%2Flibrary%2Fwho-dpi-h-reference-architecture-draft-v1%2Fwho-dpi-h-reference-architecture-draft-v1.pdf'
