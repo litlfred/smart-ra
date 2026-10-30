@@ -187,7 +187,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness-tools",
-          "ref": "f5349b5c9bc689824b6f9031278eb89a71698dd1",
+          "ref": "05149fe154f5595dc24aff180a3c223e01c837e3",
           "overrides": {
             "cat-harness-tools": {
               "whole": true
@@ -200,8 +200,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-10-30",
-              "ref": "f5349b5c9bc689824b6f9031278eb89a71698dd1",
-              "evidence": "litlfred, 2026-10-30 16:15:26Z in the 'Drain smart-ra issues and beans' thread: 'fix all issues.' Re-pin every layer to main after fhir-harness#210, smart-base#223, cat-harness-tools#925 merged; merge window extended to ~19:38Z"
+              "ref": "05149fe154f5595dc24aff180a3c223e01c837e3",
+              "evidence": "litlfred, 2026-10-30 16:15:26Z in the 'Drain smart-ra issues and beans' thread: 'fix all issues.' Re-pin cat-harness-tools to main after #933 and #937 (qa-sweep mount writes, state.jsonld for workflow pages); merge window to ~19:38Z"
             }
           }
         }
