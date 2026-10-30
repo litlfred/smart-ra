@@ -1,0 +1,14 @@
+{
+  "@context": {
+    "archimate": "http://www.opengroup.org/xsd/archimate/3.0/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/"
+  },
+  "@id": "https://litlfred.github.io/smart-ra/archimate/0.2.0/elements/id-145e885489634e469e8a6734f56b7df5.jsonld",
+  "@type": "archimate:DataObject",
+  "schema:identifier": "id-145e885489634e469e8a6734f56b7df5",
+  "schema:name": "NHWA Dataset (linking and indexing, built on CDE-HWR)",
+  "schema:description": "National Health Workforce Accounts (NHWA) dataset. Not a second registry: an analytical linking and indexing dataset that builds on CDE-HWR. The HWR identifier is the key that links records about the same worker held in other data systems (education and accreditation, HR and payroll, regulatory councils, labour force surveys and census), so that NHWA indicators on stock, flows (entry, exit, migration), education, distribution and spending can be computed and reported to the national and WHO NHWA platforms. Per the NHWA handbook (2nd ed., WHO 2023): progressive implementation, multi-sectoral governance and diversified data sources.",
+  "schema:category": "Application",
+  "dcterms:isPartOf": "https://litlfred.github.io/smart-ra/archimate/0.2.0.jsonld"
+}
