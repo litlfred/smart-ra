@@ -36,7 +36,6 @@
       "site": {
         "build": {
           "pre": [
-            "ig-index:build",
             "check:archimate"
           ],
           "sourceSteps": [
