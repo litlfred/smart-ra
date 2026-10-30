@@ -1,0 +1,43 @@
+{
+  "$schema": "folio-changeset/v1",
+  "folio": "folio/dpi-h-ra",
+  "base": {
+    "ref": "origin/main",
+    "commit": "95229fa78c2b50599367a6061626a70be910035b"
+  },
+  "head": {
+    "ref": "worktree",
+    "commit": null
+  },
+  "summary": {
+    "added": 0,
+    "removed": 0,
+    "changed": 1,
+    "unchanged": 932,
+    "renamed": 0,
+    "prose": 1,
+    "manifest": 0,
+    "moved": 0
+  },
+  "changes": [
+    {
+      "change": "changed",
+      "label": "prose:executive-summary-lead-636f70",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "executive-summary/p-executive-summary-lead-636f70.ts",
+        "kind": "prose",
+        "section": "executive-summary::sec:executive-summary-lead",
+        "index": 0
+      },
+      "head": {
+        "file": "executive-summary/p-executive-summary-lead-636f70.ts",
+        "kind": "prose",
+        "section": "executive-summary::sec:executive-summary-lead",
+        "index": 0
+      }
+    }
+  ]
+}
