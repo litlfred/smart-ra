@@ -61,7 +61,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/smart-base",
-          "ref": "415d637fecb3ad52ee5095087224994009ca780e",
+          "ref": "742a6d9d6fd27d14c6a9ef716e6f17d18a736a59",
           "overrides": {
             "smart-base": {
               "path": "smart-base",
@@ -96,9 +96,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-29",
-              "ref": "415d637fecb3ad52ee5095087224994009ca780e",
-              "evidence": "owner litlfred, 2026-10-26 10:00Z card \"A. Merge and re-publish smart-ra\" (re-pin onto the faster suggest editor, cat-harness-tools#775 / cat-harness#612); 10:37Z \"merge/repin window open 6 hours\" (to 16:37Z); main tip 415d637 (re-pin to main tip, Lane F bean 1r0p: at/past cat-harness-tools 826f9d4 tools#834, cat-harness f4fddbd, folio-assistant-core 581bad4). Window: litlfred 2026-10-29 07:20Z 'Merge all ready and then deal with aftermath.' + 07:21Z 'merge and repin permission for next 4 hrs'"
+              "on": "2026-10-30",
+              "ref": "742a6d9d6fd27d14c6a9ef716e6f17d18a736a59",
+              "evidence": "litlfred, 2026-10-30 16:15:26Z in the 'Drain smart-ra issues and beans' thread: 'fix all issues.' Re-pin every layer to main after fhir-harness#210, smart-base#223, cat-harness-tools#925 merged; merge window extended to ~19:38Z"
             }
           }
         }
@@ -109,7 +109,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/fhir-harness",
-          "ref": "d45d99170823f2bbf6cd310ab062935403175e7b",
+          "ref": "c11cc79182480ad0d4bcafb433955531892049e3",
           "overrides": {
             "fhir-harness": {
               "whole": true
@@ -119,8 +119,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-10-30",
-              "ref": "d45d99170823f2bbf6cd310ab062935403175e7b",
-              "evidence": "litlfred, 2026-10-30 16:15:26Z in the 'Drain smart-ra issues and beans' thread: 'fix all issues.' Re-pin fhir-harness past #190 (WHO-free glossary) but before the f8wp import repoint, which needs a newer cat-harness; merge window to ~18:13Z"
+              "ref": "c11cc79182480ad0d4bcafb433955531892049e3",
+              "evidence": "litlfred, 2026-10-30 16:15:26Z in the 'Drain smart-ra issues and beans' thread: 'fix all issues.' Re-pin every layer to main after fhir-harness#210, smart-base#223, cat-harness-tools#925 merged; merge window extended to ~19:38Z"
             }
           }
         }
@@ -131,7 +131,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/folio-assistant-core",
-          "ref": "581bad49e58d6ec4e2a75242d12fc8115ff6d4c3",
+          "ref": "6369b1d512c0285a2dee1348871e9578ca056c7c",
           "overrides": {
             "folio-assistant-core": {
               "whole": true
@@ -146,9 +146,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-29",
-              "ref": "581bad49e58d6ec4e2a75242d12fc8115ff6d4c3",
-              "evidence": "owner litlfred, 2026-10-26 10:00Z card \"A. Merge and re-publish smart-ra\" (re-pin onto the faster suggest editor, cat-harness-tools#775 / cat-harness#612); 10:37Z \"merge/repin window open 6 hours\" (to 16:37Z); main tip 581bad4 (re-pin to main tip, Lane F bean 1r0p: at/past cat-harness-tools 826f9d4 tools#834, cat-harness f4fddbd, folio-assistant-core 581bad4). Window: litlfred 2026-10-29 07:20Z 'Merge all ready and then deal with aftermath.' + 07:21Z 'merge and repin permission for next 4 hrs'"
+              "on": "2026-10-30",
+              "ref": "6369b1d512c0285a2dee1348871e9578ca056c7c",
+              "evidence": "litlfred, 2026-10-30 16:15:26Z in the 'Drain smart-ra issues and beans' thread: 'fix all issues.' Re-pin every layer to main after fhir-harness#210, smart-base#223, cat-harness-tools#925 merged; merge window extended to ~19:38Z"
             }
           }
         }
@@ -159,7 +159,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness",
-          "ref": "f4fddbd79d3716a57865c33fefaec7808e7fd4b9",
+          "ref": "9c3b2ae60eb5e1d41dd1ef20298c6017af767918",
           "overrides": {
             "cat-harness": {
               "whole": true
@@ -174,9 +174,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-29",
-              "ref": "f4fddbd79d3716a57865c33fefaec7808e7fd4b9",
-              "evidence": "owner litlfred, 2026-10-26 10:00Z card \"A. Merge and re-publish smart-ra\" (re-pin onto the faster suggest editor, cat-harness-tools#775 / cat-harness#612); 10:37Z \"merge/repin window open 6 hours\" (to 16:37Z); main tip f4fddbd (re-pin to main tip, Lane F bean 1r0p: at/past cat-harness-tools 826f9d4 tools#834, cat-harness f4fddbd, folio-assistant-core 581bad4). Window: litlfred 2026-10-29 07:20Z 'Merge all ready and then deal with aftermath.' + 07:21Z 'merge and repin permission for next 4 hrs'"
+              "on": "2026-10-30",
+              "ref": "9c3b2ae60eb5e1d41dd1ef20298c6017af767918",
+              "evidence": "litlfred, 2026-10-30 16:15:26Z in the 'Drain smart-ra issues and beans' thread: 'fix all issues.' Re-pin every layer to main after fhir-harness#210, smart-base#223, cat-harness-tools#925 merged; merge window extended to ~19:38Z"
             }
           }
         }
@@ -187,7 +187,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness-tools",
-          "ref": "826f9d4b49d5ea5f9c3f728e8d6fde097abb1319",
+          "ref": "f5349b5c9bc689824b6f9031278eb89a71698dd1",
           "overrides": {
             "cat-harness-tools": {
               "whole": true
@@ -199,9 +199,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-29",
-              "ref": "826f9d4b49d5ea5f9c3f728e8d6fde097abb1319",
-              "evidence": "owner litlfred, 2026-10-26 10:00Z card \"A. Merge and re-publish smart-ra\" (re-pin onto the faster suggest editor, cat-harness-tools#775 / cat-harness#612); 10:37Z \"merge/repin window open 6 hours\" (to 16:37Z); main tip 826f9d4 (re-pin to main tip, Lane F bean 1r0p: at/past cat-harness-tools 826f9d4 tools#834, cat-harness f4fddbd, folio-assistant-core 581bad4). Window: litlfred 2026-10-29 07:20Z 'Merge all ready and then deal with aftermath.' + 07:21Z 'merge and repin permission for next 4 hrs'"
+              "on": "2026-10-30",
+              "ref": "f5349b5c9bc689824b6f9031278eb89a71698dd1",
+              "evidence": "litlfred, 2026-10-30 16:15:26Z in the 'Drain smart-ra issues and beans' thread: 'fix all issues.' Re-pin every layer to main after fhir-harness#210, smart-base#223, cat-harness-tools#925 merged; merge window extended to ~19:38Z"
             }
           }
         }
@@ -212,7 +212,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/bootstrap",
-          "ref": "3b6112915e988b5a821a4d2049d513d7e91f81af",
+          "ref": "3ce2b5d641779ca78432971abb919e6e3afdc60a",
           "overrides": {
             "bootstrap": {
               "whole": true
@@ -221,9 +221,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-29",
-              "ref": "3b6112915e988b5a821a4d2049d513d7e91f81af",
-              "evidence": "owner litlfred, 2026-10-26 10:00Z card \"A. Merge and re-publish smart-ra\" (re-pin onto the faster suggest editor, cat-harness-tools#775 / cat-harness#612); 10:37Z \"merge/repin window open 6 hours\" (to 16:37Z); main tip 3b61129 (re-pin to main tip, Lane F bean 1r0p: at/past cat-harness-tools 826f9d4 tools#834, cat-harness f4fddbd, folio-assistant-core 581bad4). Window: litlfred 2026-10-29 07:20Z 'Merge all ready and then deal with aftermath.' + 07:21Z 'merge and repin permission for next 4 hrs'"
+              "on": "2026-10-30",
+              "ref": "3ce2b5d641779ca78432971abb919e6e3afdc60a",
+              "evidence": "litlfred, 2026-10-30 16:15:26Z in the 'Drain smart-ra issues and beans' thread: 'fix all issues.' Re-pin every layer to main after fhir-harness#210, smart-base#223, cat-harness-tools#925 merged; merge window extended to ~19:38Z"
             }
           }
         }
@@ -234,7 +234,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/bootstrap-tools",
-          "ref": "988a9aa5ef63bb8a4289d577a2c6cee36b570a50",
+          "ref": "b7fb762ba968a6868bbe5004144ddf78023eb9c7",
           "overrides": {
             "bootstrap-tools": {
               "whole": true
@@ -246,9 +246,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-29",
-              "ref": "988a9aa5ef63bb8a4289d577a2c6cee36b570a50",
-              "evidence": "owner litlfred, 2026-10-26 10:00Z card \"A. Merge and re-publish smart-ra\" (re-pin onto the faster suggest editor, cat-harness-tools#775 / cat-harness#612); 10:37Z \"merge/repin window open 6 hours\" (to 16:37Z); main tip 988a9aa (re-pin to main tip, Lane F bean 1r0p: at/past cat-harness-tools 826f9d4 tools#834, cat-harness f4fddbd, folio-assistant-core 581bad4). Window: litlfred 2026-10-29 07:20Z 'Merge all ready and then deal with aftermath.' + 07:21Z 'merge and repin permission for next 4 hrs'"
+              "on": "2026-10-30",
+              "ref": "b7fb762ba968a6868bbe5004144ddf78023eb9c7",
+              "evidence": "litlfred, 2026-10-30 16:15:26Z in the 'Drain smart-ra issues and beans' thread: 'fix all issues.' Re-pin every layer to main after fhir-harness#210, smart-base#223, cat-harness-tools#925 merged; merge window extended to ~19:38Z"
             }
           }
         }
