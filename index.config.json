@@ -168,7 +168,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/folio-assistant-core",
-          "ref": "94450fb7c7f6c2c02cac88c260c28b74b27536ab",
+          "ref": "c6f332ad57452606843602230098dc31b2e54136",
           "overrides": {
             "folio-assistant-core": {
               "whole": true
@@ -184,8 +184,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-10-30",
-              "ref": "94450fb7c7f6c2c02cac88c260c28b74b27536ab",
-              "evidence": "owner card 2026-10-30T19:44Z 'Merge and re-pin' (core #273 merged a549b37); main tip 94450fb (BCP 47 #257, CI #267 #270, schemas move #265). Window: litlfred 2026-10-30 11:13Z 'merge and repin window open for 4 horus', extended 16:37Z 'merge window +3 hrs' (to ~19:38Z), extended 19:21Z 'merge window + 3hrs' (to ~22:38Z)."
+              "ref": "c6f332ad57452606843602230098dc31b2e54136",
+              "evidence": "owner card 'Merge and re-pin' 2026-10-30 20:32Z (core #282); merge window to ~22:38Z; tools main carries d7f3daa (who-iris README links)"
             }
           }
         }
@@ -224,7 +224,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness-tools",
-          "ref": "a698c306ce65946dd3ab354695c7254f54713f1e",
+          "ref": "f66e998de83e2a19de94ce72aff32ac142917025",
           "overrides": {
             "cat-harness-tools": {
               "whole": true
@@ -237,8 +237,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-10-30",
-              "ref": "a698c306ce65946dd3ab354695c7254f54713f1e",
-              "evidence": "litlfred, 2026-10-30 17:45:53Z in the 'Drain smart-ra issues and beans' thread: preview links 404 ('fix all issues.'). Re-pin cat-harness-tools to main after #955 (preview ChangeSet from the folio root); merge window to ~19:38Z; main tip a698c30 (schemas move #952, uml/readme gates #897, direction #968, CI #951 #957 #964). Window: litlfred 2026-10-30 11:13Z 'merge and repin window open for 4 horus', extended 16:37Z 'merge window +3 hrs' (to ~19:38Z), extended 19:21Z 'merge window + 3hrs' (to ~22:38Z)."
+              "ref": "f66e998de83e2a19de94ce72aff32ac142917025",
+              "evidence": "owner card 'Merge and re-pin' 2026-10-30 20:32Z (core #282); merge window to ~22:38Z; tools main carries d7f3daa (who-iris README links)"
             }
           }
         }
