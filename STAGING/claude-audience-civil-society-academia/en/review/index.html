@@ -45,7 +45,9 @@
   /* A cell with something to look at is filled (.h1-.h3 below). */
   .minimap .cell:not(.h0) { border-color: transparent; }
   .minimap .cell:focus-visible { outline: 3px solid var(--link); outline-offset: 1px; }
-  @media (max-width: 62rem) { .minimap ol { max-height: 40vh; overflow: auto; } }
+  .minimap .mm-ch { margin: .6rem 0 .15rem; font-size: .8rem; line-height: 1.3; font-weight: 600; }
+  .minimap .mm-count { font-weight: 400; color: var(--muted); }
+  @media (max-width: 62rem) { .minimap { max-height: 50vh; overflow: auto; } }
   a { color: var(--link); }
   a:focus-visible, button:focus-visible, li:focus-visible { outline: 3px solid var(--link); outline-offset: 2px; }
   .nav { display: flex; gap: .5rem; margin: 1rem 0; flex-wrap: wrap; align-items: center; }
@@ -774,16 +776,25 @@ var renderMinimap = function renderMinimap(doc, outline, mark, jumpBlock) {
   box.appendChild(h);
   const help = doc.createElement("p");
   help.className = "muted";
-  help.textContent = "One square per block, in reading order. Arrow keys move, Enter jumps. Filled squares need a look: \u0394 changed, + added, \u25CF open comments, ! QA failing.";
+  help.textContent = "One square per block, one row of squares per chapter, in reading order. Arrow keys move, Enter jumps. Filled squares need a look: \u0394 changed, + added, \u25CF open comments, ! QA failing.";
   box.appendChild(help);
-  const ol = doc.createElement("ol");
-  ol.setAttribute("aria-labelledby", "minimap-h");
-  const cells = [];
+  const cells = [], many = outline.documents.length > 1;
+  let n = 0;
   for (const d of outline.documents)
-    for (const ch of d.chapters)
+    for (const ch of d.chapters) {
+      const id = "minimap-ch-" + n++, cap = doc.createElement("p");
+      cap.className = "mm-ch";
+      cap.id = id;
+      cap.textContent = many ? d.title + " \u203A " + ch.title : ch.title;
+      const ol = doc.createElement("ol");
+      ol.setAttribute("aria-labelledby", id);
+      let flagged = 0;
       for (const s of ch.sections)
         for (const label of s.blocks) {
-          const m = mark(label), reasons = (m.change ? 1 : 0) + (m.open ? 1 : 0) + (m.qaFailing ? 1 : 0), li = doc.createElement("li"), b = doc.createElement("button");
+          const m = mark(label), reasons = (m.change ? 1 : 0) + (m.open ? 1 : 0) + (m.qaFailing ? 1 : 0);
+          if (reasons)
+            flagged++;
+          const li = doc.createElement("li"), b = doc.createElement("button");
           b.type = "button";
           b.className = "cell h" + reasons;
           b.tabIndex = -1;
@@ -801,10 +812,21 @@ var renderMinimap = function renderMinimap(doc, outline, mark, jumpBlock) {
           ol.appendChild(li);
           cells.push(b);
         }
+      if (!ol.childNodes.length)
+        continue;
+      if (flagged) {
+        const q = doc.createElement("span");
+        q.className = "mm-count";
+        q.textContent = " \xB7 " + flagged + " to look at";
+        cap.appendChild(q);
+      }
+      box.appendChild(cap);
+      box.appendChild(ol);
+    }
   const first = cells.find((c) => !/\bh0\b/.test(c.className)) || cells[0];
   if (first)
     first.tabIndex = 0;
-  ol.addEventListener("keydown", (e) => {
+  box.addEventListener("keydown", (e) => {
     const i = cells.indexOf(e.target);
     if (i < 0)
       return;
@@ -825,7 +847,6 @@ var renderMinimap = function renderMinimap(doc, outline, mark, jumpBlock) {
     cells[j].tabIndex = 0;
     cells[j].focus();
   });
-  box.appendChild(ol);
   return box;
 };
 var renderedModel = function renderedModel(impacts, mainSite, root = "../") {
