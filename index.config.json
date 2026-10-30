@@ -187,21 +187,13 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness-tools",
-          "ref": "cbcc5b0e43751cab7c2535fbdcdc967407b8f2cf",
+          "ref": "4dd6840483fce5fcc58ef6e3087d74b0fe1d705a",
           "overrides": {
             "cat-harness-tools": {
               "whole": true
             },
             "cat-harness": {
               "skip": true
-            }
-          },
-          "trust": {
-            "consent": {
-              "by": "litlfred",
-              "on": "2026-10-30",
-              "ref": "cbcc5b0e43751cab7c2535fbdcdc967407b8f2cf",
-              "evidence": "litlfred chose 'A: Repin PR #97 branch now' on the decision card in the Folio Assistant project thread, 2026-10-30T22:29:32Z"
             }
           }
         }
