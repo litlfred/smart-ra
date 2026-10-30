@@ -61,7 +61,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/who-iris",
-          "ref": "f524a7e98bde3b8f390f0163a81829b158ad11b2",
+          "ref": "e1da89f7522e0b298d4efbdb8e2e1c4d7437fe0c",
           "overrides": {
             "who-iris": {
               "whole": true
@@ -86,8 +86,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-10-30",
-              "ref": "f524a7e98bde3b8f390f0163a81829b158ad11b2",
-              "evidence": "who-iris#124 fixed the unpublished core dependency that blocked the smart-ra publish; owner card 2026-10-30T19:33Z 'Republish now'; merge window +3 hrs at 19:21Z (to ~22:38Z)"
+              "ref": "e1da89f7522e0b298d4efbdb8e2e1c4d7437fe0c",
+              "evidence": "who-iris#124 fixed the unpublished core dependency that blocked the smart-ra publish; owner card 2026-10-30T19:33Z 'Republish now'; merge window +3 hrs at 19:21Z (to ~22:38Z); main tip e1da89f (IRIS assets #108, dark replica #110, navbar #112, direction #114 #118, CI #116). Window: litlfred 2026-10-30 11:13Z 'merge and repin window open for 4 horus', extended 16:37Z 'merge window +3 hrs' (to ~19:38Z), extended 19:21Z 'merge window + 3hrs' (to ~22:38Z)."
             }
           }
         }
@@ -98,7 +98,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/smart-base",
-          "ref": "fafbe9bf5a0d720067922851c4504ee5d2ff4cb5",
+          "ref": "a3e89d4fdf7419391d20d4ef6acdf22bb7a27872",
           "overrides": {
             "smart-base": {
               "path": "smart-base",
@@ -134,8 +134,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-10-30",
-              "ref": "fafbe9bf5a0d720067922851c4504ee5d2ff4cb5",
-              "evidence": "litlfred, 2026-10-30 16:15:26Z in the 'Drain smart-ra issues and beans' thread: 'fix all issues.' Re-pin every layer to main after fhir-harness#210, smart-base#223, cat-harness-tools#925 merged; merge window extended to ~19:38Z; main tip fafbe9b (who-iris mount #224, CI #227 #229, schemas move #225, sidecars #198). Window: litlfred 2026-10-30 11:13Z 'merge and repin window open for 4 horus', extended 16:37Z 'merge window +3 hrs' (to ~19:38Z), extended 19:21Z 'merge window + 3hrs' (to ~22:38Z)."
+              "ref": "a3e89d4fdf7419391d20d4ef6acdf22bb7a27872",
+              "evidence": "owner card 2026-10-30T20:17Z 'Merge, re-pin, publish' (smart-base#237 one copy of the DPI-H draft in smart-ra; cat-harness#796 example-is-a-mention rule)"
             }
           }
         }
@@ -168,7 +168,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/folio-assistant-core",
-          "ref": "ee94d480ec7f45278911e4c6b7247c34f9ce032c",
+          "ref": "94450fb7c7f6c2c02cac88c260c28b74b27536ab",
           "overrides": {
             "folio-assistant-core": {
               "whole": true
@@ -184,8 +184,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-10-30",
-              "ref": "ee94d480ec7f45278911e4c6b7247c34f9ce032c",
-              "evidence": "owner card 2026-10-30T19:44Z 'Merge and re-pin' (core #273 merged a549b37); main tip ee94d48 (BCP 47 #257, CI #267 #270, schemas move #265). Window: litlfred 2026-10-30 11:13Z 'merge and repin window open for 4 horus', extended 16:37Z 'merge window +3 hrs' (to ~19:38Z), extended 19:21Z 'merge window + 3hrs' (to ~22:38Z)."
+              "ref": "94450fb7c7f6c2c02cac88c260c28b74b27536ab",
+              "evidence": "owner card 2026-10-30T19:44Z 'Merge and re-pin' (core #273 merged a549b37); main tip 94450fb (BCP 47 #257, CI #267 #270, schemas move #265). Window: litlfred 2026-10-30 11:13Z 'merge and repin window open for 4 horus', extended 16:37Z 'merge window +3 hrs' (to ~19:38Z), extended 19:21Z 'merge window + 3hrs' (to ~22:38Z)."
             }
           }
         }
@@ -196,7 +196,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness",
-          "ref": "e537cf372f9c8cf671a45989389b18b7f14f3d7f",
+          "ref": "d8c067c5082f76ba7ba92cf290de4823d151a4e1",
           "overrides": {
             "cat-harness": {
               "whole": true
@@ -212,8 +212,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-10-30",
-              "ref": "e537cf372f9c8cf671a45989389b18b7f14f3d7f",
-              "evidence": "litlfred, 2026-10-30 16:15:26Z in the 'Drain smart-ra issues and beans' thread: 'fix all issues.' Re-pin every layer to main after fhir-harness#210, smart-base#223, cat-harness-tools#925 merged; merge window extended to ~19:38Z; main tip e537cf3 (schemas move #773, direction #784, attestations #786, CI #775 #778 #780, attestation migrate #791). Window: litlfred 2026-10-30 11:13Z 'merge and repin window open for 4 horus', extended 16:37Z 'merge window +3 hrs' (to ~19:38Z), extended 19:21Z 'merge window + 3hrs' (to ~22:38Z)."
+              "ref": "d8c067c5082f76ba7ba92cf290de4823d151a4e1",
+              "evidence": "owner card 2026-10-30T20:17Z 'Merge, re-pin, publish' (smart-base#237 one copy of the DPI-H draft in smart-ra; cat-harness#796 example-is-a-mention rule); main tip d8c067c (schemas move #773, direction #784, attestations #786, CI #775 #778 #780, attestation migrate #791). Window: litlfred 2026-10-30 11:13Z 'merge and repin window open for 4 horus', extended 16:37Z 'merge window +3 hrs' (to ~19:38Z), extended 19:21Z 'merge window + 3hrs' (to ~22:38Z)."
             }
           }
         }
@@ -224,7 +224,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness-tools",
-          "ref": "35d9d8c2698032dabdd085961a7cbc61ed6e8649",
+          "ref": "a698c306ce65946dd3ab354695c7254f54713f1e",
           "overrides": {
             "cat-harness-tools": {
               "whole": true
@@ -237,8 +237,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-10-30",
-              "ref": "35d9d8c2698032dabdd085961a7cbc61ed6e8649",
-              "evidence": "litlfred, 2026-10-30 17:45:53Z in the 'Drain smart-ra issues and beans' thread: preview links 404 ('fix all issues.'). Re-pin cat-harness-tools to main after #955 (preview ChangeSet from the folio root); merge window to ~19:38Z; main tip 35d9d8c (schemas move #952, uml/readme gates #897, direction #968, CI #951 #957 #964). Window: litlfred 2026-10-30 11:13Z 'merge and repin window open for 4 horus', extended 16:37Z 'merge window +3 hrs' (to ~19:38Z), extended 19:21Z 'merge window + 3hrs' (to ~22:38Z)."
+              "ref": "a698c306ce65946dd3ab354695c7254f54713f1e",
+              "evidence": "litlfred, 2026-10-30 17:45:53Z in the 'Drain smart-ra issues and beans' thread: preview links 404 ('fix all issues.'). Re-pin cat-harness-tools to main after #955 (preview ChangeSet from the folio root); merge window to ~19:38Z; main tip a698c30 (schemas move #952, uml/readme gates #897, direction #968, CI #951 #957 #964). Window: litlfred 2026-10-30 11:13Z 'merge and repin window open for 4 horus', extended 16:37Z 'merge window +3 hrs' (to ~19:38Z), extended 19:21Z 'merge window + 3hrs' (to ~22:38Z)."
             }
           }
         }
