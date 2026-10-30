@@ -1,0 +1,62 @@
+{
+  "$schema": "folio-changeset/v1",
+  "folio": "folio/dpi-h-ra",
+  "base": {
+    "ref": "origin/main",
+    "commit": "282fca2f88ddd959d31b034367a75e2eb33b35fe"
+  },
+  "head": {
+    "ref": "worktree",
+    "commit": null
+  },
+  "summary": {
+    "added": 0,
+    "removed": 0,
+    "changed": 2,
+    "unchanged": 931,
+    "renamed": 0,
+    "prose": 2,
+    "manifest": 0,
+    "moved": 0
+  },
+  "changes": [
+    {
+      "change": "changed",
+      "label": "prose:1-1-4-a8e0b3",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "ch1-introduction/p-1-1-4-a8e0b3.ts",
+        "kind": "prose",
+        "section": "ch1-introduction::sec:1-1-4",
+        "index": 1
+      },
+      "head": {
+        "file": "ch1-introduction/p-1-1-4-a8e0b3.ts",
+        "kind": "prose",
+        "section": "ch1-introduction::sec:1-1-4",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:1-3-3-ada3f2",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "ch1-introduction/p-1-3-3-ada3f2.ts",
+        "kind": "prose",
+        "section": "ch1-introduction::sec:1-3-3",
+        "index": 1
+      },
+      "head": {
+        "file": "ch1-introduction/p-1-3-3-ada3f2.ts",
+        "kind": "prose",
+        "section": "ch1-introduction::sec:1-3-3",
+        "index": 1
+      }
+    }
+  ]
+}
