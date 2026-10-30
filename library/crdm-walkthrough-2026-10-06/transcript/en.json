@@ -9,18 +9,23 @@
     "model_sha256": "60ed5bc3dd14eea856493d334349b405782ddcaf0028d4b5df4088345fba2efe",
     "invocation": "ffmpeg -i uploads/output.mp4 -vn -ac 1 -ar 16000 -c:a pcm_s16le output.wav && ./build/bin/whisper-cli -m models/ggml-base.bin -f output.wav -oj -of output.whisper-base"
   },
-  "state": "draft",
+  "state": "confirmed",
   "drafted_by": {
     "kind": "script",
     "id": "transcribe-whisper-cpp",
     "version": "231638a0717b7822784297e5980965ffcec05810"
   },
   "drafted_at": "2026-10-24",
+  "confirmed_by": {
+    "kind": "human",
+    "id": "litlfred"
+  },
+  "confirmed_at": "2026-10-30T19:39:44Z",
   "segments": [
     {
       "start_ms": 0,
       "end_ms": 9880,
-      "text": "Hi, this is Carl Lightner. I'm acting as a business analyst going through a collaborative"
+      "text": "Hi, this is Carl Leitner. I'm acting as a business analyst going through a collaborative"
     },
     {
       "start_ms": 9880,
@@ -55,7 +60,7 @@
     {
       "start_ms": 53920,
       "end_ms": 61100,
-      "text": "I'm Ginny Aie turn. I'm serving as a chief editor for the reference architecture document."
+      "text": "I'm [the chief editor]. I'm serving as a chief editor for the reference architecture document."
     },
     {
       "start_ms": 61100,
@@ -120,7 +125,7 @@
     {
       "start_ms": 162620,
       "end_ms": 171160,
-      "text": "DPI F at first use, simplify the flag wording. You can also go to the specific comments for that"
+      "text": "DPI-F at first use, simplify the flag wording. You can also go to the specific comments for that"
     },
     {
       "start_ms": 171160,
@@ -615,7 +620,7 @@
     {
       "start_ms": 876440,
       "end_ms": 887080,
-      "text": "Ginny? In terms of the agents, I think I think that's it for now. We'll have to see in terms of"
+      "text": "[Chief editor]? In terms of the agents, I think I think that's it for now. We'll have to see in terms of"
     },
     {
       "start_ms": 887080,
