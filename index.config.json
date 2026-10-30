@@ -131,7 +131,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/folio-assistant-core",
-          "ref": "6369b1d512c0285a2dee1348871e9578ca056c7c",
+          "ref": "522e6748b406b80717ec8b3603b37fccc35cec84",
           "overrides": {
             "folio-assistant-core": {
               "whole": true
@@ -147,8 +147,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-10-30",
-              "ref": "6369b1d512c0285a2dee1348871e9578ca056c7c",
-              "evidence": "litlfred, 2026-10-30 16:15:26Z in the 'Drain smart-ra issues and beans' thread: 'fix all issues.' Re-pin every layer to main after fhir-harness#210, smart-base#223, cat-harness-tools#925 merged; merge window extended to ~19:38Z"
+              "ref": "522e6748b406b80717ec8b3603b37fccc35cec84",
+              "evidence": "litlfred wrote 'merge' in the 'Fix wonky minimap on review page' thread, 2026-10-30T22:51:32Z, answering the card 'Merge folio-assistant-core#295, repin, rebuild'"
             }
           }
         }
