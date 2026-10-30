@@ -20,7 +20,8 @@
 #   site's PDF viewer. /draft/#page=80 opens PDF page 80. The public-comment
 #   sheet links every section, page and line mention to it, and a short link
 #   keeps those rich-text cells small. It opens the display copy,
-#   *.page-labels.pdf: the frozen PDF's exact bytes plus an appended update
+#   review/public-comment/draft/*.page-labels.pdf (kept out of the library
+#   entry, whose contents check:l1-complete fixes): the frozen PDF's exact bytes plus an appended update
 #   that labels the pages as printed (Cover, i-x, then 1-243), so the
 #   viewer's page box reads "108 (119 of 254)". #page= still counts PDF pages.
 #   The frozen PDF itself is never edited.
@@ -50,4 +51,4 @@ redirect dpi-h-ra ../en/dpi-h-ra/
 redirect public-comments ../en/folio-assistant-core/public-comments/folio/dpi-h-ra/
 redirect mapper ../en/mapper/
 redirect mapper ../en/mapper/SMART-RA-Mapper.html SMART-RA-Mapper.html
-redirect draft '../assets/vendor/pdfjs/web/viewer.html?src=https%3A%2F%2Fraw.githubusercontent.com%2Flitlfred%2Fsmart-ra%2Fmain%2Flibrary%2Fwho-dpi-h-reference-architecture-draft-v1%2Fwho-dpi-h-reference-architecture-draft-v1.page-labels.pdf'
+redirect draft '../assets/vendor/pdfjs/web/viewer.html?src=https%3A%2F%2Fraw.githubusercontent.com%2Flitlfred%2Fsmart-ra%2Fmain%2Freview%2Fpublic-comment%2Fdraft%2Fwho-dpi-h-reference-architecture-draft-v1.page-labels.pdf'
