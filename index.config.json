@@ -258,5 +258,38 @@
   "site": {
     "landing": "dpi-h-ra",
     "agentRun": true
+  },
+  "contentTypes": {
+    "ig": {
+      "_comment": "What this repository's FHIR IG side is, per the content types its layers register (bean folio-assistant-cz17, follow-up b; owner card 2026-10-30T12:40Z, \"A. ig section in index.config\"). `ig`: fhir-harness's `ig` content type (fhir-harness#198); `include` is everything fhir-harness's IG readers read in this repository, and nothing else is read (owner, 2026-10-30: \"harness desclares what it it pays attention to in the repo\"). It lists every `input/` entry the build used before the section existed, so nothing is dropped. The folio (`folio/`, `review/`, `library/`, `archimate/`, `documents/`, `uploads/`) is the `dpi-h-ra` document instance's, read by its own adapter and site steps, not by this list. sushi-config.yaml stays SUSHI's file. smart-immunizations#89 is the model.",
+      "include": [
+        "sushi-config.yaml",
+        "ig.ini",
+        "input/business-processes/",
+        "input/cql/",
+        "input/data/",
+        "input/decision-logic/",
+        "input/dictionary/",
+        "input/examples/",
+        "input/extensions/",
+        "input/fsh/",
+        "input/history/",
+        "input/ignoreWarnings.txt",
+        "input/images/",
+        "input/images-source/",
+        "input/indicators/",
+        "input/maps/",
+        "input/models/",
+        "input/pagecontent/",
+        "input/profiles/",
+        "input/resources/",
+        "input/scenarios/",
+        "input/scheduling-logic/",
+        "input/system-requirements/",
+        "input/testing/",
+        "input/vocabulary/",
+        "fsh-generated/"
+      ]
+    }
   }
 }
