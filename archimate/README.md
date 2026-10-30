@@ -40,7 +40,7 @@ they draw from stays at `/archimate/`:
   per version, and under `/archimate/<version>/` the model plus a `.json` and
   `.jsonld` per view, element and relationship (one JSON-LD IRI each), and an
   `.svg` per view;
-- `/mapper/` — the RA mapper (`tools/ra-mapper/build-site.sh`, the site
+- `/en/mapper/` — the RA mapper (`tools/ra-mapper/build-site.sh`, the site
   build's `site:mapper` step), current version first.
 
 **No Java.** The Archi command-line report that `archimate.yml` used to run

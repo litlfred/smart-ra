@@ -58,7 +58,7 @@ bun run cat-harness-tools/pipeline/qa-sweep.ts folio      # QA every block
 ```
 
 **The site** — the document, the public-comment dashboard, the library, the
-node-kind pages, the ArchiMate models and the RA mapper (`mapper/`) — is built and published by an agent,
+node-kind pages, the ArchiMate models and the RA mapper (`en/mapper/`) — is built and published by an agent,
 never by a workflow (owner, 2026-10-10; bean n3h9). The scripts it runs are
 this repository's `package.json`:
 
