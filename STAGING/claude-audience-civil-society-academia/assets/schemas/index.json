@@ -61372,6 +61372,24 @@
       "exported": true
     },
     {
+      "id": "cat-harness-tools/schemas/tools/tool-types.ts#ProvActivitySchema",
+      "name": "ProvActivitySchema",
+      "module": "cat-harness-tools/schemas/tools/tool-types.ts",
+      "kind": "zod-object",
+      "doc": "One PROV-O activity, as a Tool returns it and `workflow_complete` keeps it.",
+      "fields": [],
+      "extendsNames": [
+        "ProvActivityRecordSchema"
+      ],
+      "values": [],
+      "refs": [],
+      "unresolved": [
+        "ProvActivityRecordSchema"
+      ],
+      "external": [],
+      "exported": true
+    },
+    {
       "id": "cat-harness-tools/schemas/tools/tool-types.ts#ReadmeSectionSchema",
       "name": "ReadmeSectionSchema",
       "module": "cat-harness-tools/schemas/tools/tool-types.ts",
