@@ -127,6 +127,14 @@
         "keyedBy": "tip"
       },
       "description": "The trashcan that is kept: deprecated and removed content, each node declaring itself folio-fsh-guts/v1 with where it came from. Kept on the tip-keyed state branch cat/dpi-h-ra/fsh-guts, mounted here, never rendered. Holds the snapshots of beans/ and todos/ as main last tracked them before their 2026-10-06 cutover (owner: \"cutover dirs should go to fsh-guts\")."
+    },
+    {
+      "id": "glossary",
+      "path": "glossary/",
+      "description": "This instance's glossary: folio-glossary/v1 SKOS schemes. full-stac.glossary.json holds the terms of Mehl et al. 2023 (the full-STAC paper, library/mehl-2023-full-stac-oqad018/), which the RA cites and its own scheme links to.",
+      "graphTypologies": [
+        "glossary"
+      ]
     }
   ],
   "visualisers": [
