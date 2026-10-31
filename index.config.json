@@ -227,7 +227,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness-tools",
-          "ref": "45b0894620099663f17abb584f376502d702422a",
+          "ref": "734369985f501ac89a6d341d75ba88fc219d571f",
           "overrides": {
             "cat-harness-tools": {
               "whole": true
@@ -240,8 +240,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-10-31",
-              "ref": "45b0894620099663f17abb584f376502d702422a",
-              "evidence": "litlfred, 2026-10-31 01:59:58Z (via coordinator): 'merge repin winfow + 3hts' (window to ~05:00Z); main tip 45b0894 (re-pin cat-harness and tools past the archimate fix (cat-harness#831, tools#1070))."
+              "ref": "734369985f501ac89a6d341d75ba88fc219d571f",
+              "evidence": "litlfred, 2026-10-31 17:06Z (cmsg_017WNUkNK8kdDziPK58Pv6G99wvsvjF1CR5XXjRc89Vvoc): '+3hrs' merge and repin window to 20:06Z; main tip 7343699, past tools#1154 (review page \"What to expect\" pane); user asked 17:45Z where the CS summary is on the CS-001 review page."
             }
           }
         }
