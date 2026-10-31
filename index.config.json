@@ -171,7 +171,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/folio-assistant-core",
-          "ref": "c6f332ad57452606843602230098dc31b2e54136",
+          "ref": "4ee6f5c0832b8c7d60166e004ebc8c3135b149d2",
           "overrides": {
             "folio-assistant-core": {
               "whole": true
@@ -187,8 +187,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-10-30",
-              "ref": "c6f332ad57452606843602230098dc31b2e54136",
-              "evidence": "owner card 'Merge and re-pin' 2026-10-30 20:32Z (core #282); merge window to ~22:38Z; tools main carries d7f3daa (who-iris README links)"
+              "ref": "4ee6f5c0832b8c7d60166e004ebc8c3135b149d2",
+              "evidence": "litlfred, 2026-10-31 ~02:47Z, card 'A. Merge and re-pin both' (thread Review sheet Apps Script): re-pin folio-assistant-core to core#323 (4ee6f5c) to publish the review-sheet script page"
             }
           }
         }
