@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Build the RA mapper into <site dir>/mapper/ — a build-instance-site source
+# Build the RA mapper into <site dir>/en/mapper/ — a build-instance-site source
 # step (`bun run site:mapper <site dir>`), which replaced ra-mapper.yml's
 # Actions deploy when the site became agent-run (bean n3h9).
 #
@@ -31,7 +31,9 @@ done
 echo "Building mapper with: ${LABELS[*]}"
 T=$(mktemp -d)
 python3 build_ra_mapper.py "${MODELS[@]}" -l "${LABELS[@]}" -o "$T/SMART-RA-Mapper.html"
-mkdir -p "$OUT/mapper"
-cp "$T/SMART-RA-Mapper.html" "$OUT/mapper/index.html"
-cp "$T/SMART-RA-Mapper.html" "$OUT/mapper/SMART-RA-Mapper.html"
+# Rendered pages live under /<locale>/ (folio-assistant#2527); /mapper/ forwards
+# here (tools/site-redirects.sh).
+mkdir -p "$OUT/en/mapper"
+cp "$T/SMART-RA-Mapper.html" "$OUT/en/mapper/index.html"
+cp "$T/SMART-RA-Mapper.html" "$OUT/en/mapper/SMART-RA-Mapper.html"
 rm -rf "$T"

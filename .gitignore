@@ -62,6 +62,7 @@ review/public-comment/raw/
 /fsh-guts/**
 
 # BEGIN index mounts (generated from index.config.json — do not edit)
+/who-iris/
 /smart-base/
 /fhir-harness/
 /folio-assistant-core/
@@ -72,3 +73,5 @@ review/public-comment/raw/
 # END index mounts
 
 node_modules/
+__pycache__/
+*.pyc

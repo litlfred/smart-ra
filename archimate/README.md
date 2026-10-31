@@ -7,6 +7,7 @@ the folder whose name equals that `version:` is.
 
 | folder | model | where it came from |
 |---|---|---|
+| `0.3.0-draft.1/` | `WHO_RA` plus the supply chain views (DTH SC Figs. 1-3, 14, 24) | made from `0.2.0/` by `tools/archimate-dth/add_views.py tools/archimate-dth/dth_sc.py`; draft |
 | `0.2.0/` | `WHO_RA` — 20 views, incl. Testing and Conformance | `v3/` (and its byte-identical copy `v2/`), 2026-07-09 |
 | `0.2.0-draft.3/` | `WHO Models` | `v1/` |
 | `0.2.0-draft.2/` | `WHO Reference Architecture` | `prev1/` |
@@ -40,7 +41,7 @@ they draw from stays at `/archimate/`:
   per version, and under `/archimate/<version>/` the model plus a `.json` and
   `.jsonld` per view, element and relationship (one JSON-LD IRI each), and an
   `.svg` per view;
-- `/mapper/` — the RA mapper (`tools/ra-mapper/build-site.sh`, the site
+- `/en/mapper/` — the RA mapper (`tools/ra-mapper/build-site.sh`, the site
   build's `site:mapper` step), current version first.
 
 **No Java.** The Archi command-line report that `archimate.yml` used to run

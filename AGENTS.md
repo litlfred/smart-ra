@@ -40,7 +40,8 @@ folio/dpi-h-ra/          the document
   <chapter>/<root>.ts      a block manifest
   <chapter>/<root>.md      that block's prose
 folio/schema/            re-export shim for the platform's builders
-test/results/block-qa/     QA verdicts, one per block, mirroring folio/ (machine-written — never hand-edit)
+test/results/block-qa/     QA verdicts, one per block, mirroring folio/ (machine-written working copy — published to qa-reports)
+test/attestations/         reviewer judgements and baseline attestations (committed on main)
 library/                   ingested source documents (read-only reference)
 uploads/                   source PDFs, for offline citation verification
 smart-base/ … bootstrap-tools/   the platform's layers, remote-mounted (gitignored)
@@ -58,7 +59,7 @@ bun run cat-harness-tools/pipeline/qa-sweep.ts folio      # QA every block
 ```
 
 **The site** — the document, the public-comment dashboard, the library, the
-node-kind pages, the ArchiMate models and the RA mapper (`mapper/`) — is built and published by an agent,
+node-kind pages, the ArchiMate models and the RA mapper (`en/mapper/`) — is built and published by an agent,
 never by a workflow (owner, 2026-10-10; bean n3h9). The scripts it runs are
 this repository's `package.json`:
 
@@ -67,7 +68,7 @@ bun run cat-harness-tools/scripts/stage-local.ts --repo . [--plan | --dry-run]
 ```
 
 The steps are declared once, in `index.config.json` (the `dpi-h-ra` entry) under `site.build`:
-`pre` (the gate, `check:archimate`), `sourceSteps` (run before Jekyll, into
+`pre` (the gates: `check:archimate`, `check:kg-blocks`, `check:library-kg`), `sourceSteps` (run before Jekyll, into
 the site source) and `siteSteps` (run after Jekyll, on the built site). The
 command reads them from there. On `main` it publishes the root, keeping
 `STAGING/` and `_render-log/`; on any other branch it publishes the preview at
@@ -87,15 +88,21 @@ where that index is built (owner, 2026-10-30, #103).
 ## QA — every block is checked from the first commit
 
 `qa-sweep` runs every criterion a script can check against each block, and
-writes one verdict file per block under `test/results/block-qa/`. **Commit
-those files with the edit they are about**: a verdict is keyed on the block's
-content hash, so one that is older than its block reads as stale, never as
-passing.
+writes one verdict file per block under `test/results/block-qa/`. That is a
+machine-written working copy: derived verdicts are published to the orphan
+`qa-reports` branch (`qa-store.ts publish`, by the shared
+`folio-qa-sweep` workflows), never committed to `main` (owner, 2026-10-30:
+"qa-reports branch", the platform's model, as in dth-hrh). Judgements an agent
+or reviewer records stay on `main` in `test/attestations/`. A verdict is keyed
+on the block's content hash, so one older than its block reads as stale, never
+as passing.
 
 The staging preview is built and published by an agent (see **The site**
 above); the review page's QA column reports that build. `.github/workflows/qa-sweep.yml`
-runs the full sweep on every pull request (warn-only), and
-`qa-sweep-nightly.yml` refreshes stale verdicts by dispatch only. Criteria that need an
+runs the full sweep on every pull request (warn-only) and publishes it to
+`qa-reports` under `pr/<n>/<sha>`, and `qa-sweep-nightly.yml` refreshes stale
+verdicts under `main/<sha>`, by dispatch only. Both call cat-harness-tools'
+reusable `folio-qa-sweep*` workflows. Criteria that need an
 agent's judgement (voice, exposition, adversarial review) are not run by the
 sweep; they stay unaudited until an agent records them.
 

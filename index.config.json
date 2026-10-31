@@ -36,12 +36,15 @@
       "site": {
         "build": {
           "pre": [
-            "check:archimate"
+            "check:archimate",
+            "check:kg-blocks",
+            "check:library-kg"
           ],
           "sourceSteps": [
             "site:document",
             "site:public-comment",
             "site:library",
+            "site:review-sheet",
             "site:archimate",
             "site:mapper",
             "site:redirects"
@@ -57,11 +60,48 @@
       "_site_comment": "`site.build.keep`: `ns`, the JSON-LD context at ns/context/v1.jsonld that publish-instance-context writes onto gh-pages; the root publish keeps it."
     },
     {
+      "name": "who-iris",
+      "source": {
+        "remote": {
+          "repository": "litlfred/who-iris",
+          "ref": "bdadee3d159a27d58834133872e20ec631665f6c",
+          "overrides": {
+            "who-iris": {
+              "whole": true
+            },
+            "folio-assistant-core": {
+              "skip": true
+            },
+            "cat-harness": {
+              "skip": true
+            },
+            "cat-harness-tools": {
+              "skip": true
+            },
+            "bootstrap": {
+              "skip": true
+            },
+            "bootstrap-tools": {
+              "skip": true
+            }
+          },
+          "trust": {
+            "consent": {
+              "by": "litlfred",
+              "on": "2026-10-30",
+              "ref": "bdadee3d159a27d58834133872e20ec631665f6c",
+              "evidence": "who-iris#133 gave the catalogue forwarding stub a <body>, which unblocked every smart-ra staging build (staging-banner refuses a page with none); merge window reopened by litlfred 2026-10-30 22:51Z 'emrge winfow + 3 hts' (to ~01:51Z); main tip bdadee3."
+            }
+          }
+        }
+      }
+    },
+    {
       "name": "smart-base",
       "source": {
         "remote": {
           "repository": "litlfred/smart-base",
-          "ref": "742a6d9d6fd27d14c6a9ef716e6f17d18a736a59",
+          "ref": "a3e89d4fdf7419391d20d4ef6acdf22bb7a27872",
           "overrides": {
             "smart-base": {
               "path": "smart-base",
@@ -97,8 +137,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-10-30",
-              "ref": "742a6d9d6fd27d14c6a9ef716e6f17d18a736a59",
-              "evidence": "litlfred, 2026-10-30 16:15:26Z in the 'Drain smart-ra issues and beans' thread: 'fix all issues.' Re-pin every layer to main after fhir-harness#210, smart-base#223, cat-harness-tools#925 merged; merge window extended to ~19:38Z"
+              "ref": "a3e89d4fdf7419391d20d4ef6acdf22bb7a27872",
+              "evidence": "owner card 2026-10-30T20:17Z 'Merge, re-pin, publish' (smart-base#237 one copy of the DPI-H draft in smart-ra; cat-harness#796 example-is-a-mention rule)"
             }
           }
         }
@@ -109,7 +149,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/fhir-harness",
-          "ref": "c11cc79182480ad0d4bcafb433955531892049e3",
+          "ref": "3772521c4f6e0a1a88c2a01bfbe361f4ccab3b83",
           "overrides": {
             "fhir-harness": {
               "whole": true
@@ -119,8 +159,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-10-30",
-              "ref": "c11cc79182480ad0d4bcafb433955531892049e3",
-              "evidence": "litlfred, 2026-10-30 16:15:26Z in the 'Drain smart-ra issues and beans' thread: 'fix all issues.' Re-pin every layer to main after fhir-harness#210, smart-base#223, cat-harness-tools#925 merged; merge window extended to ~19:38Z"
+              "ref": "3772521c4f6e0a1a88c2a01bfbe361f4ccab3b83",
+              "evidence": "litlfred, 2026-10-30 16:15:26Z in the 'Drain smart-ra issues and beans' thread: 'fix all issues.' Re-pin every layer to main after fhir-harness#210, smart-base#223, cat-harness-tools#925 merged; merge window extended to ~19:38Z; main tip 3772521 (IG pages #214, CI #217 #221, direction #224, schemas move #215, claim 5 schema link #226). Window: litlfred 2026-10-30 11:13Z 'merge and repin window open for 4 horus', extended 16:37Z 'merge window +3 hrs' (to ~19:38Z), extended 19:21Z 'merge window + 3hrs' (to ~22:38Z)."
             }
           }
         }
@@ -131,7 +171,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/folio-assistant-core",
-          "ref": "522e6748b406b80717ec8b3603b37fccc35cec84",
+          "ref": "1602a1be5ac16b95fa70b487f142d47d210e652b",
           "overrides": {
             "folio-assistant-core": {
               "whole": true
@@ -146,9 +186,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-30",
-              "ref": "522e6748b406b80717ec8b3603b37fccc35cec84",
-              "evidence": "litlfred wrote 'merge' in the 'Fix wonky minimap on review page' thread, 2026-10-30T22:51:32Z, answering the card 'Merge folio-assistant-core#295, repin, rebuild'"
+              "on": "2026-10-31",
+              "ref": "1602a1be5ac16b95fa70b487f142d47d210e652b",
+              "evidence": "litlfred, 2026-10-31: card 'A. Merge when green' for core#328 (thread Review sheet Apps Script), merge and repin window to ~09:00Z; re-pin folio-assistant-core to core#328 (1602a1b): review-sheet Code.gs, readable Config, relative sheet-sync URLs"
             }
           }
         }
@@ -159,7 +199,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness",
-          "ref": "9c3b2ae60eb5e1d41dd1ef20298c6017af767918",
+          "ref": "b5ffdff01932907c9ae55bb51cf430965add62a4",
           "overrides": {
             "cat-harness": {
               "whole": true
@@ -174,9 +214,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-30",
-              "ref": "9c3b2ae60eb5e1d41dd1ef20298c6017af767918",
-              "evidence": "litlfred, 2026-10-30 16:15:26Z in the 'Drain smart-ra issues and beans' thread: 'fix all issues.' Re-pin every layer to main after fhir-harness#210, smart-base#223, cat-harness-tools#925 merged; merge window extended to ~19:38Z"
+              "on": "2026-10-31",
+              "ref": "b5ffdff01932907c9ae55bb51cf430965add62a4",
+              "evidence": "litlfred, 2026-10-31 01:59:58Z (via coordinator): 'merge repin winfow + 3hts' (window to ~05:00Z); main tip b5ffdff (re-pin cat-harness and tools past the archimate fix (cat-harness#831, tools#1070))."
             }
           }
         }
@@ -187,7 +227,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness-tools",
-          "ref": "c64772e9ecad00ee8f436d50d5d24cfc260548f6",
+          "ref": "45b0894620099663f17abb584f376502d702422a",
           "overrides": {
             "cat-harness-tools": {
               "whole": true
@@ -199,9 +239,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-30",
-              "ref": "c64772e9ecad00ee8f436d50d5d24cfc260548f6",
-              "evidence": "litlfred, 2026-10-30T23:46:24Z: 'compare with main should show same page as on main'; merge window to ~01:51Z"
+              "on": "2026-10-31",
+              "ref": "45b0894620099663f17abb584f376502d702422a",
+              "evidence": "litlfred, 2026-10-31 01:59:58Z (via coordinator): 'merge repin winfow + 3hts' (window to ~05:00Z); main tip 45b0894 (re-pin cat-harness and tools past the archimate fix (cat-harness#831, tools#1070))."
             }
           }
         }
