@@ -28,7 +28,7 @@
  * so a pasted copy can be checked (skill review-sheet-script, "Trusting the
  * script").
  */
-// folio-assistant-core tools/review-sheet-sync at c23776a0e9c4077dfb2f0893a3e9ba486eafae47.
+// folio-assistant-core tools/review-sheet-sync at f0a36f362bde899c7a2dd93d91e6868306b23339.
 
 /**
  * Run this one, once, from the editor (or Review links, then Install automatic
@@ -74,7 +74,7 @@ const CONFIG_TAB = 'Config';
 // Which build this is, and where the latest is published (owner, 2026-10-31:
 // "sheets likely to drift anyways ... they need to know where to see latest
 // published"). The build stamps SCRIPT_VERSION; the script never fetches.
-const SCRIPT_VERSION = 'c23776a0e9c4077dfb2f0893a3e9ba486eafae47';
+const SCRIPT_VERSION = 'f0a36f362bde899c7a2dd93d91e6868306b23339';
 const LIBRARY_URL = 'https://script.google.com/home/projects/1us7_ApIq_XvDG-V1XtqdcyHucF0hSlST0qracv1Tw9KTb4-lAFvK1bMQ/edit';
 const LATEST_URL = 'https://github.com/litlfred/folio-assistant-core/blob/main/tools/review-sheet-sync/dist/Code.gs';
 const RUN_THIS = 'This function is not meant to be run by hand. In the toolbar, pick installTriggers ' +

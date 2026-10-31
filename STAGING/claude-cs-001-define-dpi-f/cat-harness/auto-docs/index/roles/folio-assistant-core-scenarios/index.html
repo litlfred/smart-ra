@@ -9,13 +9,7 @@
 
   <link rel="stylesheet" href="../../../../../assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
 
-  <style id="jtd-nav-activation">
   
-    .site-nav ul li a {
-      background-image: none;
-    }
-
-  </style>
 
   
 
@@ -1005,10 +999,10 @@ window.addEventListener('resize',measure);window.addEventListener('load',measure
 </div>
 
 <ul class="subs">
-<li><a href="../fhir-harness-scenarios/">fhir-harness-scenarios</a> <span class="p">fhir-harness/scenarios</span> <span class="n">2</span></li>
-<li><strong>folio-assistant-core-scenarios</strong> <span class="p">folio-assistant-core/scenarios</span> <span class="n">4</span></li>
-<li><a href="../scenarios/">scenarios</a> <span class="p">cat-harness/scenarios</span> <span class="n">44</span></li>
-<li><a href="../smart-base-scenarios/">smart-base-scenarios</a> <span class="p">smart-base/scenarios</span> <span class="n">1</span></li>
+<li><a href="../fhir-harness-scenarios/">fhir-harness-scenarios</a> <span class="p">fhir-harness/scenarios</span> <span class="n" data-da-count="index/roles/fhir-harness-scenarios" data-da-count-state="pending">…</span></li>
+<li><strong>folio-assistant-core-scenarios</strong> <span class="p">folio-assistant-core/scenarios</span> <span class="n" data-da-count="index/roles/folio-assistant-core-scenarios" data-da-count-state="pending">…</span></li>
+<li><a href="../scenarios/">scenarios</a> <span class="p">cat-harness/scenarios</span> <span class="n" data-da-count="index/roles/scenarios" data-da-count-state="pending">…</span></li>
+<li><a href="../smart-base-scenarios/">smart-base-scenarios</a> <span class="p">smart-base/scenarios</span> <span class="n" data-da-count="index/roles/smart-base-scenarios" data-da-count-state="pending">…</span></li>
 </ul>
 
 
@@ -1038,6 +1032,25 @@ window.addEventListener('resize',measure);window.addEventListener('load',measure
 /* The sub-graph this page indexes. Read by orphanSubjectPages() to establish
    ownership before pruning — the same line the viewer generators emit. */
 var SCOPE = "folio-assistant-core-scenarios";
+</script>
+
+<script>
+(function () {
+  var badges = document.querySelectorAll(".da-page [data-da-count]");
+  if (!badges.length) return;
+  function set(counts) {
+    Array.prototype.forEach.call(badges, function (b) {
+      var n = counts ? counts[b.getAttribute("data-da-count")] : undefined;
+      var ok = typeof n === "number" && isFinite(n);
+      b.textContent = ok ? String(n) : "";
+      b.setAttribute("data-da-count-state", ok ? "some" : counts ? "absent" : "error");
+    });
+  }
+  fetch("../../../../../assets/auto-docs/index.json", { cache: "no-cache" })
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (j) { set(j && j.counts && typeof j.counts === "object" ? j.counts : null); })
+    .catch(function () { set(null); });
+})();
 </script>
 
 
