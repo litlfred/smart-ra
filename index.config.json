@@ -199,7 +199,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness",
-          "ref": "7005066dd41145f5afb29070d97b5c2cb65a5698",
+          "ref": "b5ffdff01932907c9ae55bb51cf430965add62a4",
           "overrides": {
             "cat-harness": {
               "whole": true
@@ -215,8 +215,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-10-31",
-              "ref": "7005066dd41145f5afb29070d97b5c2cb65a5698",
-              "evidence": "litlfred 2026-10-31 03:31Z: 'go' and card 'A. Merge both now' (thread Derive smart-ra UML from ArchiMate model); merge window to ~05:00Z; cat-harness#829 merged as 7005066, cat-harness-tools#1065 as 4a0d179 (derived metamodel, figures map)"
+              "ref": "b5ffdff01932907c9ae55bb51cf430965add62a4",
+              "evidence": "litlfred, 2026-10-31 01:59:58Z (via coordinator): 'merge repin winfow + 3hts' (window to ~05:00Z); main tip b5ffdff (re-pin cat-harness and tools past the archimate fix (cat-harness#831, tools#1070))."
             }
           }
         }
@@ -227,7 +227,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness-tools",
-          "ref": "4a0d179839fe951872e95559189b974fc0efadc8",
+          "ref": "45b0894620099663f17abb584f376502d702422a",
           "overrides": {
             "cat-harness-tools": {
               "whole": true
@@ -240,8 +240,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-10-31",
-              "ref": "4a0d179839fe951872e95559189b974fc0efadc8",
-              "evidence": "litlfred 2026-10-31 03:31Z: 'go' and card 'A. Merge both now' (thread Derive smart-ra UML from ArchiMate model); merge window to ~05:00Z; cat-harness#829 merged as 7005066, cat-harness-tools#1065 as 4a0d179 (derived metamodel, figures map)"
+              "ref": "45b0894620099663f17abb584f376502d702422a",
+              "evidence": "litlfred, 2026-10-31 01:59:58Z (via coordinator): 'merge repin winfow + 3hts' (window to ~05:00Z); main tip 45b0894 (re-pin cat-harness and tools past the archimate fix (cat-harness#831, tools#1070))."
             }
           }
         }
