@@ -198,7 +198,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness",
-          "ref": "6aa373c3c932379ff22bb2cbb3d27a8953056ea4",
+          "ref": "31ac0a785418a6cf97828c90f39b6e34bcac105e",
           "overrides": {
             "cat-harness": {
               "whole": true
@@ -214,8 +214,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-10-31",
-              "ref": "6aa373c3c932379ff22bb2cbb3d27a8953056ea4",
-              "evidence": "litlfred, decision card in thread 'Align smart-ra and DTH handbook pipelines', 2026-10-31 00:10:38Z: 'A. Merge, re-pin, republish' (merge cat-harness#821 and cat-harness-tools#1044, then re-pin smart-ra and dth-hrh and republish both). cat-harness main 6aa373c carries the theme-switch fix for the unstyled flash on fresh loads (#820); tools main f2e2a2a its test."
+              "ref": "31ac0a785418a6cf97828c90f39b6e34bcac105e",
+              "evidence": "litlfred 2026-10-31 01:59Z: 'merge repin winfow + 3hts' (window to ~05:00Z); picked design B for ArchiMate slugs at 02:15Z ('B. clean break ok'); cat-harness-tools#1055 merged as 51af87c, cat-harness#824 as 31ac0a7"
             }
           }
         }
@@ -226,7 +226,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness-tools",
-          "ref": "c2ef11bc2ec16f922da97689722b9120af4e3dac",
+          "ref": "51af87c0b7eec9c8bd83837d2e5ed5b7492dc5e6",
           "overrides": {
             "cat-harness-tools": {
               "whole": true
@@ -239,8 +239,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-10-31",
-              "ref": "c2ef11bc2ec16f922da97689722b9120af4e3dac",
-              "evidence": "litlfred, 2026-10-31 01:59:58Z (via coordinator): 'merge repin winfow + 3hts' (window to ~05:00Z); main tip c2ef11b (On this page rail #1043, publish-check #1047 #1048, direction #1050, state @base #1051)."
+              "ref": "51af87c0b7eec9c8bd83837d2e5ed5b7492dc5e6",
+              "evidence": "litlfred 2026-10-31 01:59Z: 'merge repin winfow + 3hts' (window to ~05:00Z); picked design B for ArchiMate slugs at 02:15Z ('B. clean break ok'); cat-harness-tools#1055 merged as 51af87c, cat-harness#824 as 31ac0a7"
             }
           }
         }
