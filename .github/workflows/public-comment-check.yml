@@ -15,7 +15,7 @@ permissions:
 
 jobs:
   check:
-    uses: litlfred/cat-harness-tools/.github/workflows/folio-comment-check.yml@main
+    uses: litlfred/folio-assistant-core/.github/workflows/public-comment-check.yml@main
     with:
       store: review/public-comment
       label: public comment
