@@ -1,0 +1,4717 @@
+{
+  "$schema": "folio-changeset/v1",
+  "folio": "folio",
+  "base": {
+    "ref": "origin/main",
+    "commit": "728c329a0d018d1672ce024417f7b10121211e30"
+  },
+  "head": {
+    "ref": "worktree",
+    "commit": null
+  },
+  "summary": {
+    "added": 0,
+    "removed": 0,
+    "changed": 247,
+    "unchanged": 686,
+    "renamed": 0,
+    "prose": 247,
+    "manifest": 0,
+    "moved": 0
+  },
+  "changes": [
+    {
+      "change": "changed",
+      "label": "tbl:b-f241d4",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/t-b-f241d4.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:b",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/t-b-f241d4.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:b",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-business-services-components-benefits-package-registry-c7a798",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-benefits-package-registry-c7a798.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-benefits-package-registry",
+        "index": 5
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-benefits-package-registry-c7a798.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-benefits-package-registry",
+        "index": 5
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-business-services-components-benefits-package-registry-2f494f",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-benefits-package-registry-2f494f.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-benefits-package-registry",
+        "index": 11
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-benefits-package-registry-2f494f.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-benefits-package-registry",
+        "index": 11
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-business-services-components-benefits-package-registry-e359e0",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-benefits-package-registry-e359e0.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-benefits-package-registry",
+        "index": 15
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-benefits-package-registry-e359e0.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-benefits-package-registry",
+        "index": 15
+      }
+    },
+    {
+      "change": "changed",
+      "label": "tbl:c-business-services-components-benefits-package-registry-d6c531",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/t-c-business-services-components-benefits-package-registry-d6c531.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-benefits-package-registry",
+        "index": 20
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/t-c-business-services-components-benefits-package-registry-d6c531.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-benefits-package-registry",
+        "index": 20
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-business-services-components-benefits-package-registry-ec98cb",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-benefits-package-registry-ec98cb.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-benefits-package-registry",
+        "index": 21
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-benefits-package-registry-ec98cb.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-benefits-package-registry",
+        "index": 21
+      }
+    },
+    {
+      "change": "changed",
+      "label": "tbl:c-business-services-components-benefits-package-registry-ad83df",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/t-c-business-services-components-benefits-package-registry-ad83df.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-benefits-package-registry",
+        "index": 24
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/t-c-business-services-components-benefits-package-registry-ad83df.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-benefits-package-registry",
+        "index": 24
+      }
+    },
+    {
+      "change": "changed",
+      "label": "tbl:c-business-services-components-benefits-package-registry-distinguishing-the-benefits-pack-c66f4f",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/t-c-business-services-components-benefits-package-registry-distinguishing-the-benefits-pack-c66f4f.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-benefits-package-registry-distinguishing-the-benefits-pack",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/t-c-business-services-components-benefits-package-registry-distinguishing-the-benefits-pack-c66f4f.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-benefits-package-registry-distinguishing-the-benefits-pack",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-business-services-components-computable-decision-support-engi-c75f33",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-computable-decision-support-engi-c75f33.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-computable-decision-support-engi",
+        "index": 4
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-computable-decision-support-engi-c75f33.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-computable-decision-support-engi",
+        "index": 4
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-business-services-components-computable-decision-support-engi-2a67bd",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-computable-decision-support-engi-2a67bd.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-computable-decision-support-engi",
+        "index": 12
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-computable-decision-support-engi-2a67bd.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-computable-decision-support-engi",
+        "index": 12
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-business-services-components-computable-decision-support-engi-9b2c20",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-computable-decision-support-engi-9b2c20.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-computable-decision-support-engi",
+        "index": 13
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-computable-decision-support-engi-9b2c20.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-computable-decision-support-engi",
+        "index": 13
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-business-services-components-computable-decision-support-engi-97cc2b",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-computable-decision-support-engi-97cc2b.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-computable-decision-support-engi",
+        "index": 15
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-computable-decision-support-engi-97cc2b.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-computable-decision-support-engi",
+        "index": 15
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-business-services-components-computable-decision-support-engi-9866f4",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-computable-decision-support-engi-9866f4.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-computable-decision-support-engi",
+        "index": 23
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-computable-decision-support-engi-9866f4.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-computable-decision-support-engi",
+        "index": 23
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-business-services-components-computable-decision-support-engi-893b04",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-computable-decision-support-engi-893b04.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-computable-decision-support-engi",
+        "index": 26
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-computable-decision-support-engi-893b04.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-computable-decision-support-engi",
+        "index": 26
+      }
+    },
+    {
+      "change": "changed",
+      "label": "tbl:c-business-services-components-computable-decision-support-engi-4b7f45",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/t-c-business-services-components-computable-decision-support-engi-4b7f45.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-computable-decision-support-engi",
+        "index": 29
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/t-c-business-services-components-computable-decision-support-engi-4b7f45.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-computable-decision-support-engi",
+        "index": 29
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-business-services-components-health-management-information-sy-c9b02d",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-health-management-information-sy-c9b02d.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-health-management-information-sy",
+        "index": 5
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-health-management-information-sy-c9b02d.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-health-management-information-sy",
+        "index": 5
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-business-services-components-health-management-information-sy-228202",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-health-management-information-sy-228202.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-health-management-information-sy",
+        "index": 7
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-health-management-information-sy-228202.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-health-management-information-sy",
+        "index": 7
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-business-services-components-health-management-information-sy-ce546c",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-health-management-information-sy-ce546c.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-health-management-information-sy",
+        "index": 12
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-health-management-information-sy-ce546c.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-health-management-information-sy",
+        "index": 12
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-business-services-components-health-management-information-sy-3ae516",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-health-management-information-sy-3ae516.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-health-management-information-sy",
+        "index": 21
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-health-management-information-sy-3ae516.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-health-management-information-sy",
+        "index": 21
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-business-services-components-health-management-information-sy-af7590",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-health-management-information-sy-af7590.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-health-management-information-sy",
+        "index": 22
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-health-management-information-sy-af7590.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-health-management-information-sy",
+        "index": 22
+      }
+    },
+    {
+      "change": "changed",
+      "label": "tbl:c-business-services-components-health-management-information-sy-0a3f5b",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/t-c-business-services-components-health-management-information-sy-0a3f5b.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-health-management-information-sy",
+        "index": 25
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/t-c-business-services-components-health-management-information-sy-0a3f5b.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-health-management-information-sy",
+        "index": 25
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-business-services-components-public-health-surveillance-platf-fe9ea4",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-public-health-surveillance-platf-fe9ea4.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-public-health-surveillance-platf",
+        "index": 12
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-public-health-surveillance-platf-fe9ea4.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-public-health-surveillance-platf",
+        "index": 12
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-business-services-components-public-health-surveillance-platf-377702",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-public-health-surveillance-platf-377702.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-public-health-surveillance-platf",
+        "index": 15
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-public-health-surveillance-platf-377702.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-public-health-surveillance-platf",
+        "index": 15
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-business-services-components-public-health-surveillance-platf-3feb48",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-public-health-surveillance-platf-3feb48.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-public-health-surveillance-platf",
+        "index": 18
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-public-health-surveillance-platf-3feb48.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-public-health-surveillance-platf",
+        "index": 18
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-business-services-components-public-health-surveillance-platf-b1e9d9",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-public-health-surveillance-platf-b1e9d9.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-public-health-surveillance-platf",
+        "index": 22
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-public-health-surveillance-platf-b1e9d9.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-public-health-surveillance-platf",
+        "index": 22
+      }
+    },
+    {
+      "change": "changed",
+      "label": "tbl:c-business-services-components-public-health-surveillance-platf-181696",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/t-c-business-services-components-public-health-surveillance-platf-181696.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-public-health-surveillance-platf",
+        "index": 30
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/t-c-business-services-components-public-health-surveillance-platf-181696.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-public-health-surveillance-platf",
+        "index": 30
+      }
+    },
+    {
+      "change": "changed",
+      "label": "tbl:c-business-services-components-public-health-surveillance-platf-a9be29",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/t-c-business-services-components-public-health-surveillance-platf-a9be29.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-public-health-surveillance-platf",
+        "index": 32
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/t-c-business-services-components-public-health-surveillance-platf-a9be29.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-public-health-surveillance-platf",
+        "index": 32
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-business-services-components-supplier-registry-c1132a",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-supplier-registry-c1132a.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-supplier-registry",
+        "index": 3
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-supplier-registry-c1132a.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-supplier-registry",
+        "index": 3
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-business-services-components-supplier-registry-581917",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-supplier-registry-581917.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-supplier-registry",
+        "index": 4
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-supplier-registry-581917.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-supplier-registry",
+        "index": 4
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-business-services-components-supplier-registry-c073e8",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-supplier-registry-c073e8.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-supplier-registry",
+        "index": 7
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-supplier-registry-c073e8.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-supplier-registry",
+        "index": 7
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-business-services-components-supplier-registry-49a032",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-supplier-registry-49a032.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-supplier-registry",
+        "index": 13
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-supplier-registry-49a032.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-supplier-registry",
+        "index": 13
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-business-services-components-supplier-registry-d82f54",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-supplier-registry-d82f54.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-supplier-registry",
+        "index": 20
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-supplier-registry-d82f54.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-supplier-registry",
+        "index": 20
+      }
+    },
+    {
+      "change": "changed",
+      "label": "tbl:c-business-services-components-supplier-registry-b00675",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/t-c-business-services-components-supplier-registry-b00675.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-supplier-registry",
+        "index": 23
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/t-c-business-services-components-supplier-registry-b00675.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-supplier-registry",
+        "index": 23
+      }
+    },
+    {
+      "change": "changed",
+      "label": "tbl:c-business-services-components-supplier-registry-bc46ff",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/t-c-business-services-components-supplier-registry-bc46ff.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-supplier-registry",
+        "index": 28
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/t-c-business-services-components-supplier-registry-bc46ff.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-supplier-registry",
+        "index": 28
+      }
+    },
+    {
+      "change": "changed",
+      "label": "tbl:c-business-services-components-supplier-registry-c168c8",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/t-c-business-services-components-supplier-registry-c168c8.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-supplier-registry",
+        "index": 29
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/t-c-business-services-components-supplier-registry-c168c8.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-supplier-registry",
+        "index": 29
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-metadata-registries-and-foundati-client-registry-96338d",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-client-registry-96338d.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-client-registry",
+        "index": 5
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-client-registry-96338d.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-client-registry",
+        "index": 5
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-metadata-registries-and-foundati-client-registry-1a1e5e",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-client-registry-1a1e5e.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-client-registry",
+        "index": 11
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-client-registry-1a1e5e.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-client-registry",
+        "index": 11
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-metadata-registries-and-foundati-client-registry-241731",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-client-registry-241731.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-client-registry",
+        "index": 19
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-client-registry-241731.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-client-registry",
+        "index": 19
+      }
+    },
+    {
+      "change": "changed",
+      "label": "tbl:c-metadata-registries-and-foundati-client-registry-a1d132",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/t-c-metadata-registries-and-foundati-client-registry-a1d132.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-client-registry",
+        "index": 27
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/t-c-metadata-registries-and-foundati-client-registry-a1d132.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-client-registry",
+        "index": 27
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-metadata-registries-and-foundati-client-registry-38dfdd",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-client-registry-38dfdd.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-client-registry",
+        "index": 28
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-client-registry-38dfdd.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-client-registry",
+        "index": 28
+      }
+    },
+    {
+      "change": "changed",
+      "label": "tbl:c-metadata-registries-and-foundati-client-registry-04caee",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/t-c-metadata-registries-and-foundati-client-registry-04caee.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-client-registry",
+        "index": 32
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/t-c-metadata-registries-and-foundati-client-registry-04caee.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-client-registry",
+        "index": 32
+      }
+    },
+    {
+      "change": "changed",
+      "label": "tbl:c-metadata-registries-and-foundati-health-facility-registry-da7bea",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/t-c-metadata-registries-and-foundati-health-facility-registry-da7bea.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-health-facility-registry",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/t-c-metadata-registries-and-foundati-health-facility-registry-da7bea.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-health-facility-registry",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-metadata-registries-and-foundati-health-facility-registry-069302",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-health-facility-registry-069302.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-health-facility-registry",
+        "index": 3
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-health-facility-registry-069302.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-health-facility-registry",
+        "index": 3
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-metadata-registries-and-foundati-health-facility-registry-5bada5",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-health-facility-registry-5bada5.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-health-facility-registry",
+        "index": 4
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-health-facility-registry-5bada5.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-health-facility-registry",
+        "index": 4
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-metadata-registries-and-foundati-health-facility-registry-9017c9",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-health-facility-registry-9017c9.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-health-facility-registry",
+        "index": 5
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-health-facility-registry-9017c9.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-health-facility-registry",
+        "index": 5
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-metadata-registries-and-foundati-health-facility-registry-c3f1f4",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-health-facility-registry-c3f1f4.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-health-facility-registry",
+        "index": 13
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-health-facility-registry-c3f1f4.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-health-facility-registry",
+        "index": 13
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-metadata-registries-and-foundati-health-facility-registry-be234e",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-health-facility-registry-be234e.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-health-facility-registry",
+        "index": 14
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-health-facility-registry-be234e.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-health-facility-registry",
+        "index": 14
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-metadata-registries-and-foundati-health-facility-registry-cb7690",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-health-facility-registry-cb7690.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-health-facility-registry",
+        "index": 23
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-health-facility-registry-cb7690.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-health-facility-registry",
+        "index": 23
+      }
+    },
+    {
+      "change": "changed",
+      "label": "tbl:c-metadata-registries-and-foundati-health-facility-registry-ecfb41",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/t-c-metadata-registries-and-foundati-health-facility-registry-ecfb41.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-health-facility-registry",
+        "index": 26
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/t-c-metadata-registries-and-foundati-health-facility-registry-ecfb41.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-health-facility-registry",
+        "index": 26
+      }
+    },
+    {
+      "change": "changed",
+      "label": "tbl:c-metadata-registries-and-foundati-health-facility-registry-ef6169",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/t-c-metadata-registries-and-foundati-health-facility-registry-ef6169.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-health-facility-registry",
+        "index": 31
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/t-c-metadata-registries-and-foundati-health-facility-registry-ef6169.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-health-facility-registry",
+        "index": 31
+      }
+    },
+    {
+      "change": "changed",
+      "label": "tbl:c-metadata-registries-and-foundati-health-facility-registry-c6789d",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/t-c-metadata-registries-and-foundati-health-facility-registry-c6789d.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-health-facility-registry",
+        "index": 33
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/t-c-metadata-registries-and-foundati-health-facility-registry-c6789d.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-health-facility-registry",
+        "index": 33
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-metadata-registries-and-foundati-health-workforce-registry-d1c167",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-health-workforce-registry-d1c167.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-health-workforce-registry",
+        "index": 3
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-health-workforce-registry-d1c167.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-health-workforce-registry",
+        "index": 3
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-metadata-registries-and-foundati-health-workforce-registry-509e4e",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-health-workforce-registry-509e4e.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-health-workforce-registry",
+        "index": 5
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-health-workforce-registry-509e4e.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-health-workforce-registry",
+        "index": 5
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-metadata-registries-and-foundati-health-workforce-registry-832af9",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-health-workforce-registry-832af9.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-health-workforce-registry",
+        "index": 18
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-health-workforce-registry-832af9.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-health-workforce-registry",
+        "index": 18
+      }
+    },
+    {
+      "change": "changed",
+      "label": "tbl:c-metadata-registries-and-foundati-health-workforce-registry-5da961",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/t-c-metadata-registries-and-foundati-health-workforce-registry-5da961.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-health-workforce-registry",
+        "index": 26
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/t-c-metadata-registries-and-foundati-health-workforce-registry-5da961.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-health-workforce-registry",
+        "index": 26
+      }
+    },
+    {
+      "change": "changed",
+      "label": "tbl:c-metadata-registries-and-foundati-health-workforce-registry-f926bd",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/t-c-metadata-registries-and-foundati-health-workforce-registry-f926bd.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-health-workforce-registry",
+        "index": 31
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/t-c-metadata-registries-and-foundati-health-workforce-registry-f926bd.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-health-workforce-registry",
+        "index": 31
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-metadata-registries-and-foundati-lifelong-health-record-7c8cd5",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-lifelong-health-record-7c8cd5.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-lifelong-health-record",
+        "index": 3
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-lifelong-health-record-7c8cd5.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-lifelong-health-record",
+        "index": 3
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-metadata-registries-and-foundati-lifelong-health-record-dd59dc",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-lifelong-health-record-dd59dc.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-lifelong-health-record",
+        "index": 4
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-lifelong-health-record-dd59dc.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-lifelong-health-record",
+        "index": 4
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-metadata-registries-and-foundati-lifelong-health-record-e73013",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-lifelong-health-record-e73013.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-lifelong-health-record",
+        "index": 7
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-lifelong-health-record-e73013.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-lifelong-health-record",
+        "index": 7
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-metadata-registries-and-foundati-lifelong-health-record-5d5f9a",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-lifelong-health-record-5d5f9a.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-lifelong-health-record",
+        "index": 8
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-lifelong-health-record-5d5f9a.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-lifelong-health-record",
+        "index": 8
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-metadata-registries-and-foundati-lifelong-health-record-cb62ba",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-lifelong-health-record-cb62ba.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-lifelong-health-record",
+        "index": 15
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-lifelong-health-record-cb62ba.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-lifelong-health-record",
+        "index": 15
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-metadata-registries-and-foundati-lifelong-health-record-131537",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-lifelong-health-record-131537.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-lifelong-health-record",
+        "index": 18
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-lifelong-health-record-131537.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-lifelong-health-record",
+        "index": 18
+      }
+    },
+    {
+      "change": "changed",
+      "label": "tbl:c-metadata-registries-and-foundati-lifelong-health-record-ed5e15",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/t-c-metadata-registries-and-foundati-lifelong-health-record-ed5e15.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-lifelong-health-record",
+        "index": 29
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/t-c-metadata-registries-and-foundati-lifelong-health-record-ed5e15.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-lifelong-health-record",
+        "index": 29
+      }
+    },
+    {
+      "change": "changed",
+      "label": "tbl:c-metadata-registries-and-foundati-lifelong-health-record-0ef8cf",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/t-c-metadata-registries-and-foundati-lifelong-health-record-0ef8cf.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-lifelong-health-record",
+        "index": 31
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/t-c-metadata-registries-and-foundati-lifelong-health-record-0ef8cf.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-lifelong-health-record",
+        "index": 31
+      }
+    },
+    {
+      "change": "changed",
+      "label": "tbl:c-metadata-registries-and-foundati-logical-information-model-reposi-198a00",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/t-c-metadata-registries-and-foundati-logical-information-model-reposi-198a00.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-logical-information-model-reposi",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/t-c-metadata-registries-and-foundati-logical-information-model-reposi-198a00.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-logical-information-model-reposi",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-metadata-registries-and-foundati-logical-information-model-reposi-73f642",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-logical-information-model-reposi-73f642.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-logical-information-model-reposi",
+        "index": 3
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-logical-information-model-reposi-73f642.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-logical-information-model-reposi",
+        "index": 3
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-metadata-registries-and-foundati-logical-information-model-reposi-085ded",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-logical-information-model-reposi-085ded.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-logical-information-model-reposi",
+        "index": 14
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-logical-information-model-reposi-085ded.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-logical-information-model-reposi",
+        "index": 14
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-metadata-registries-and-foundati-logical-information-model-reposi-561393",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-logical-information-model-reposi-561393.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-logical-information-model-reposi",
+        "index": 18
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-logical-information-model-reposi-561393.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-logical-information-model-reposi",
+        "index": 18
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-metadata-registries-and-foundati-logical-information-model-reposi-709d2c",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-logical-information-model-reposi-709d2c.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-logical-information-model-reposi",
+        "index": 22
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-logical-information-model-reposi-709d2c.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-logical-information-model-reposi",
+        "index": 22
+      }
+    },
+    {
+      "change": "changed",
+      "label": "tbl:c-metadata-registries-and-foundati-logical-information-model-reposi-257cac",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/t-c-metadata-registries-and-foundati-logical-information-model-reposi-257cac.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-logical-information-model-reposi",
+        "index": 23
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/t-c-metadata-registries-and-foundati-logical-information-model-reposi-257cac.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-logical-information-model-reposi",
+        "index": 23
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-metadata-registries-and-foundati-logical-information-model-reposi-4b6d9b",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-logical-information-model-reposi-4b6d9b.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-logical-information-model-reposi",
+        "index": 24
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-logical-information-model-reposi-4b6d9b.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-logical-information-model-reposi",
+        "index": 24
+      }
+    },
+    {
+      "change": "changed",
+      "label": "tbl:c-metadata-registries-and-foundati-logical-information-model-reposi-642a39",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/t-c-metadata-registries-and-foundati-logical-information-model-reposi-642a39.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-logical-information-model-reposi",
+        "index": 25
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/t-c-metadata-registries-and-foundati-logical-information-model-reposi-642a39.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-logical-information-model-reposi",
+        "index": 25
+      }
+    },
+    {
+      "change": "changed",
+      "label": "tbl:c-metadata-registries-and-foundati-product-registry-adbc24",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/t-c-metadata-registries-and-foundati-product-registry-adbc24.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-product-registry",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/t-c-metadata-registries-and-foundati-product-registry-adbc24.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-product-registry",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-metadata-registries-and-foundati-product-registry-a3e4b4",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-product-registry-a3e4b4.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-product-registry",
+        "index": 3
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-product-registry-a3e4b4.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-product-registry",
+        "index": 3
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-metadata-registries-and-foundati-product-registry-f78df9",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-product-registry-f78df9.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-product-registry",
+        "index": 5
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-product-registry-f78df9.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-product-registry",
+        "index": 5
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-metadata-registries-and-foundati-product-registry-9abc28",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-product-registry-9abc28.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-product-registry",
+        "index": 10
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-product-registry-9abc28.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-product-registry",
+        "index": 10
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-metadata-registries-and-foundati-product-registry-8a64c2",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-product-registry-8a64c2.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-product-registry",
+        "index": 14
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-product-registry-8a64c2.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-product-registry",
+        "index": 14
+      }
+    },
+    {
+      "change": "changed",
+      "label": "tbl:c-metadata-registries-and-foundati-product-registry-7b92fe",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/t-c-metadata-registries-and-foundati-product-registry-7b92fe.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-product-registry",
+        "index": 17
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/t-c-metadata-registries-and-foundati-product-registry-7b92fe.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-product-registry",
+        "index": 17
+      }
+    },
+    {
+      "change": "changed",
+      "label": "tbl:c-metadata-registries-and-foundati-product-registry-900dbb",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/t-c-metadata-registries-and-foundati-product-registry-900dbb.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-product-registry",
+        "index": 22
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/t-c-metadata-registries-and-foundati-product-registry-900dbb.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-product-registry",
+        "index": 22
+      }
+    },
+    {
+      "change": "changed",
+      "label": "tbl:c-metadata-registries-and-foundati-product-registry-d19b1a",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/t-c-metadata-registries-and-foundati-product-registry-d19b1a.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-product-registry",
+        "index": 23
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/t-c-metadata-registries-and-foundati-product-registry-d19b1a.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-product-registry",
+        "index": 23
+      }
+    },
+    {
+      "change": "changed",
+      "label": "tbl:c-metadata-registries-and-foundati-product-registry-2e4f9b",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/t-c-metadata-registries-and-foundati-product-registry-2e4f9b.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-product-registry",
+        "index": 26
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/t-c-metadata-registries-and-foundati-product-registry-2e4f9b.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-product-registry",
+        "index": 26
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-metadata-registries-and-foundati-terminology-service-6c5267",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-terminology-service-6c5267.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-terminology-service",
+        "index": 3
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-terminology-service-6c5267.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-terminology-service",
+        "index": 3
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-metadata-registries-and-foundati-terminology-service-3a8e2d",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-terminology-service-3a8e2d.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-terminology-service",
+        "index": 13
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-terminology-service-3a8e2d.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-terminology-service",
+        "index": 13
+      }
+    },
+    {
+      "change": "changed",
+      "label": "tbl:c-metadata-registries-and-foundati-terminology-service-817b54",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/t-c-metadata-registries-and-foundati-terminology-service-817b54.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-terminology-service",
+        "index": 23
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/t-c-metadata-registries-and-foundati-terminology-service-817b54.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-terminology-service",
+        "index": 23
+      }
+    },
+    {
+      "change": "changed",
+      "label": "tbl:c-metadata-registries-and-foundati-terminology-service-eb8233",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/t-c-metadata-registries-and-foundati-terminology-service-eb8233.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-terminology-service",
+        "index": 25
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/t-c-metadata-registries-and-foundati-terminology-service-eb8233.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-terminology-service",
+        "index": 25
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:d-312647",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-d-312647.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:d",
+        "index": 0
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-d-312647.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:d",
+        "index": 0
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:d-1-2c4742",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-d-1-2c4742.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:d-1",
+        "index": 0
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-d-1-2c4742.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:d-1",
+        "index": 0
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:d-1-computable-decision-support-engi-39fe47",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-d-1-computable-decision-support-engi-39fe47.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:d-1-computable-decision-support-engi",
+        "index": 0
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-d-1-computable-decision-support-engi-39fe47.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:d-1-computable-decision-support-engi",
+        "index": 0
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:d-1-lifelong-health-record-3ef48b",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-d-1-lifelong-health-record-3ef48b.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:d-1-lifelong-health-record",
+        "index": 0
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-d-1-lifelong-health-record-3ef48b.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:d-1-lifelong-health-record",
+        "index": 0
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:d-2-australia-49379a",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-d-2-australia-49379a.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:d-2-australia",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-d-2-australia-49379a.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:d-2-australia",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:d-2-denmark-1d815c",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-d-2-denmark-1d815c.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:d-2-denmark",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-d-2-denmark-1d815c.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:d-2-denmark",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:d-2-estonia-c65ab2",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-d-2-estonia-c65ab2.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:d-2-estonia",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-d-2-estonia-c65ab2.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:d-2-estonia",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:d-2-india-c4b3eb",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-d-2-india-c4b3eb.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:d-2-india",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-d-2-india-c4b3eb.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:d-2-india",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:d-2-spain-1f3e8b",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-d-2-spain-1f3e8b.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:d-2-spain",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-d-2-spain-1f3e8b.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:d-2-spain",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:d-2-tanzania-93bef4",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-d-2-tanzania-93bef4.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:d-2-tanzania",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-d-2-tanzania-93bef4.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:d-2-tanzania",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:d-2-uganda-d83254",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-d-2-uganda-d83254.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:d-2-uganda",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-d-2-uganda-d83254.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:d-2-uganda",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:d-2-united-kingdom-england-a7ab86",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-d-2-united-kingdom-england-a7ab86.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:d-2-united-kingdom-england",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-d-2-united-kingdom-england-a7ab86.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:d-2-united-kingdom-england",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:d-2-united-states-f02f9f",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-d-2-united-states-f02f9f.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:d-2-united-states",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-d-2-united-states-f02f9f.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:d-2-united-states",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:d-3-european-union-and-european-econ-351139",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-d-3-european-union-and-european-econ-351139.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:d-3-european-union-and-european-econ",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-d-3-european-union-and-european-econ-351139.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:d-3-european-union-and-european-econ",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:d-3-who-smart-guidelines-pilot-imple-e64fad",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-d-3-who-smart-guidelines-pilot-imple-e64fad.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:d-3-who-smart-guidelines-pilot-imple",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-d-3-who-smart-guidelines-pilot-imple-e64fad.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:d-3-who-smart-guidelines-pilot-imple",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:e-f3eb0f",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-e-f3eb0f.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:e",
+        "index": 6
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-e-f3eb0f.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:e",
+        "index": 6
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:e-405b00",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-e-405b00.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:e",
+        "index": 15
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-e-405b00.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:e",
+        "index": 15
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:e-9cdd54",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-e-9cdd54.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:e",
+        "index": 17
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-e-9cdd54.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:e",
+        "index": 17
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:e-73950f",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-e-73950f.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:e",
+        "index": 22
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-e-73950f.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:e",
+        "index": 22
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:e-a2a9c4",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-e-a2a9c4.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:e",
+        "index": 30
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-e-a2a9c4.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:e",
+        "index": 30
+      }
+    },
+    {
+      "change": "changed",
+      "label": "tbl:f-79f600",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/t-f-79f600.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:f",
+        "index": 2
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/t-f-79f600.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:f",
+        "index": 2
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:1-1-1-dcc314",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch1-introduction/p-1-1-1-dcc314.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch1-introduction::sec:1-1-1",
+        "index": 0
+      },
+      "head": {
+        "file": "dpi-h-ra/ch1-introduction/p-1-1-1-dcc314.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch1-introduction::sec:1-1-1",
+        "index": 0
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:1-1-2-87ef33",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch1-introduction/p-1-1-2-87ef33.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch1-introduction::sec:1-1-2",
+        "index": 2
+      },
+      "head": {
+        "file": "dpi-h-ra/ch1-introduction/p-1-1-2-87ef33.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch1-introduction::sec:1-1-2",
+        "index": 2
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:1-1-2-443e63",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch1-introduction/p-1-1-2-443e63.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch1-introduction::sec:1-1-2",
+        "index": 6
+      },
+      "head": {
+        "file": "dpi-h-ra/ch1-introduction/p-1-1-2-443e63.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch1-introduction::sec:1-1-2",
+        "index": 6
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:1-1-3-a447f2",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch1-introduction/p-1-1-3-a447f2.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch1-introduction::sec:1-1-3",
+        "index": 3
+      },
+      "head": {
+        "file": "dpi-h-ra/ch1-introduction/p-1-1-3-a447f2.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch1-introduction::sec:1-1-3",
+        "index": 3
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:1-2-1-99bfd1",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch1-introduction/p-1-2-1-99bfd1.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch1-introduction::sec:1-2-1",
+        "index": 0
+      },
+      "head": {
+        "file": "dpi-h-ra/ch1-introduction/p-1-2-1-99bfd1.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch1-introduction::sec:1-2-1",
+        "index": 0
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:1-2-1-2a7257",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch1-introduction/p-1-2-1-2a7257.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch1-introduction::sec:1-2-1",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/ch1-introduction/p-1-2-1-2a7257.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch1-introduction::sec:1-2-1",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:1-2-2-04fc31",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch1-introduction/p-1-2-2-04fc31.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch1-introduction::sec:1-2-2",
+        "index": 2
+      },
+      "head": {
+        "file": "dpi-h-ra/ch1-introduction/p-1-2-2-04fc31.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch1-introduction::sec:1-2-2",
+        "index": 2
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:1-2-3-99d1f0",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch1-introduction/p-1-2-3-99d1f0.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch1-introduction::sec:1-2-3",
+        "index": 2
+      },
+      "head": {
+        "file": "dpi-h-ra/ch1-introduction/p-1-2-3-99d1f0.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch1-introduction::sec:1-2-3",
+        "index": 2
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:1-3-1-410bc4",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch1-introduction/p-1-3-1-410bc4.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch1-introduction::sec:1-3-1",
+        "index": 0
+      },
+      "head": {
+        "file": "dpi-h-ra/ch1-introduction/p-1-3-1-410bc4.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch1-introduction::sec:1-3-1",
+        "index": 0
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:1-3-1-88dda8",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch1-introduction/p-1-3-1-88dda8.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch1-introduction::sec:1-3-1",
+        "index": 2
+      },
+      "head": {
+        "file": "dpi-h-ra/ch1-introduction/p-1-3-1-88dda8.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch1-introduction::sec:1-3-1",
+        "index": 2
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:1-3-1-aa6126",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch1-introduction/p-1-3-1-aa6126.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch1-introduction::sec:1-3-1",
+        "index": 3
+      },
+      "head": {
+        "file": "dpi-h-ra/ch1-introduction/p-1-3-1-aa6126.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch1-introduction::sec:1-3-1",
+        "index": 3
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:1-4-53b877",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch1-introduction/p-1-4-53b877.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch1-introduction::sec:1-4",
+        "index": 3
+      },
+      "head": {
+        "file": "dpi-h-ra/ch1-introduction/p-1-4-53b877.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch1-introduction::sec:1-4",
+        "index": 3
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:1-4-c75a90",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch1-introduction/p-1-4-c75a90.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch1-introduction::sec:1-4",
+        "index": 5
+      },
+      "head": {
+        "file": "dpi-h-ra/ch1-introduction/p-1-4-c75a90.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch1-introduction::sec:1-4",
+        "index": 5
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:1-5-567e0d",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch1-introduction/p-1-5-567e0d.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch1-introduction::sec:1-5",
+        "index": 0
+      },
+      "head": {
+        "file": "dpi-h-ra/ch1-introduction/p-1-5-567e0d.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch1-introduction::sec:1-5",
+        "index": 0
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:1-5-c9e50d",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch1-introduction/p-1-5-c9e50d.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch1-introduction::sec:1-5",
+        "index": 2
+      },
+      "head": {
+        "file": "dpi-h-ra/ch1-introduction/p-1-5-c9e50d.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch1-introduction::sec:1-5",
+        "index": 2
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:1-5-1-266f4d",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch1-introduction/p-1-5-1-266f4d.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch1-introduction::sec:1-5-1",
+        "index": 4
+      },
+      "head": {
+        "file": "dpi-h-ra/ch1-introduction/p-1-5-1-266f4d.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch1-introduction::sec:1-5-1",
+        "index": 4
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:1-5-1-2be87f",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch1-introduction/p-1-5-1-2be87f.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch1-introduction::sec:1-5-1",
+        "index": 6
+      },
+      "head": {
+        "file": "dpi-h-ra/ch1-introduction/p-1-5-1-2be87f.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch1-introduction::sec:1-5-1",
+        "index": 6
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:1-5-1-d599fb",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch1-introduction/p-1-5-1-d599fb.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch1-introduction::sec:1-5-1",
+        "index": 7
+      },
+      "head": {
+        "file": "dpi-h-ra/ch1-introduction/p-1-5-1-d599fb.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch1-introduction::sec:1-5-1",
+        "index": 7
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:2-1-423db3",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra/p-2-1-423db3.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra::sec:2-1",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra/p-2-1-423db3.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra::sec:2-1",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:2-1-2-a219ab",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra/p-2-1-2-a219ab.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra::sec:2-1-2",
+        "index": 0
+      },
+      "head": {
+        "file": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra/p-2-1-2-a219ab.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra::sec:2-1-2",
+        "index": 0
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:2-1-3-4874b3",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra/p-2-1-3-4874b3.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra::sec:2-1-3",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra/p-2-1-3-4874b3.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra::sec:2-1-3",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:2-2-1-88dd2d",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra/p-2-2-1-88dd2d.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra::sec:2-2-1",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra/p-2-2-1-88dd2d.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra::sec:2-2-1",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:2-2-1-b7d6bd",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra/p-2-2-1-b7d6bd.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra::sec:2-2-1",
+        "index": 3
+      },
+      "head": {
+        "file": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra/p-2-2-1-b7d6bd.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra::sec:2-2-1",
+        "index": 3
+      }
+    },
+    {
+      "change": "changed",
+      "label": "tbl:2-2",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra/t-2-2.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra::sec:2-2-1",
+        "index": 4
+      },
+      "head": {
+        "file": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra/t-2-2.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra::sec:2-2-1",
+        "index": 4
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:2-2-2-9a9e8f",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra/p-2-2-2-9a9e8f.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra::sec:2-2-2",
+        "index": 3
+      },
+      "head": {
+        "file": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra/p-2-2-2-9a9e8f.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra::sec:2-2-2",
+        "index": 3
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:2-3-8d53f1",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra/p-2-3-8d53f1.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra::sec:2-3",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra/p-2-3-8d53f1.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra::sec:2-3",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:2-3-c05b8c",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra/p-2-3-c05b8c.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra::sec:2-3",
+        "index": 8
+      },
+      "head": {
+        "file": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra/p-2-3-c05b8c.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra::sec:2-3",
+        "index": 8
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:2-3-86952f",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra/p-2-3-86952f.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra::sec:2-3",
+        "index": 10
+      },
+      "head": {
+        "file": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra/p-2-3-86952f.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra::sec:2-3",
+        "index": 10
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:2-3-7313eb",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra/p-2-3-7313eb.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra::sec:2-3",
+        "index": 11
+      },
+      "head": {
+        "file": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra/p-2-3-7313eb.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra::sec:2-3",
+        "index": 11
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:2-3-cb8583",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra/p-2-3-cb8583.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra::sec:2-3",
+        "index": 19
+      },
+      "head": {
+        "file": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra/p-2-3-cb8583.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra::sec:2-3",
+        "index": 19
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:2-3-5d50f2",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra/p-2-3-5d50f2.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra::sec:2-3",
+        "index": 22
+      },
+      "head": {
+        "file": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra/p-2-3-5d50f2.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra::sec:2-3",
+        "index": 22
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:2-3-7d4652",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra/p-2-3-7d4652.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra::sec:2-3",
+        "index": 27
+      },
+      "head": {
+        "file": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra/p-2-3-7d4652.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra::sec:2-3",
+        "index": 27
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:2-3-673e06",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra/p-2-3-673e06.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra::sec:2-3",
+        "index": 28
+      },
+      "head": {
+        "file": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra/p-2-3-673e06.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra::sec:2-3",
+        "index": 28
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:2-3-cf07c5",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra/p-2-3-cf07c5.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra::sec:2-3",
+        "index": 33
+      },
+      "head": {
+        "file": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra/p-2-3-cf07c5.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra::sec:2-3",
+        "index": 33
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:2-3-8579a0",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra/p-2-3-8579a0.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra::sec:2-3",
+        "index": 35
+      },
+      "head": {
+        "file": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra/p-2-3-8579a0.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra::sec:2-3",
+        "index": 35
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:ch2-dpi-h-reference-architecture-fra-lead-ef17bd",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra/p-ch2-dpi-h-reference-architecture-fra-lead-ef17bd.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra::sec:ch2-dpi-h-reference-architecture-fra-lead",
+        "index": 0
+      },
+      "head": {
+        "file": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra/p-ch2-dpi-h-reference-architecture-fra-lead-ef17bd.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra::sec:ch2-dpi-h-reference-architecture-fra-lead",
+        "index": 0
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:ch2-dpi-h-reference-architecture-fra-lead-f4869e",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra/p-ch2-dpi-h-reference-architecture-fra-lead-f4869e.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra::sec:ch2-dpi-h-reference-architecture-fra-lead",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra/p-ch2-dpi-h-reference-architecture-fra-lead-f4869e.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra::sec:ch2-dpi-h-reference-architecture-fra-lead",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-1-785029",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-1-785029.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-1",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-1-785029.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-1",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-1-a16aa9",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-1-a16aa9.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-1",
+        "index": 4
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-1-a16aa9.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-1",
+        "index": 4
+      }
+    },
+    {
+      "change": "changed",
+      "label": "tbl:3-1",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/t-3-1.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-1",
+        "index": 5
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/t-3-1.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-1",
+        "index": 5
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-1-26b106",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-1-26b106.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-1",
+        "index": 7
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-1-26b106.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-1",
+        "index": 7
+      }
+    },
+    {
+      "change": "changed",
+      "label": "tbl:3-2",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/t-3-2.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-1",
+        "index": 8
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/t-3-2.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-1",
+        "index": 8
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-1-a6a9c4",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-1-a6a9c4.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-1",
+        "index": 11
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-1-a6a9c4.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-1",
+        "index": 11
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-1-380550",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-1-380550.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-1",
+        "index": 12
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-1-380550.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-1",
+        "index": 12
+      }
+    },
+    {
+      "change": "changed",
+      "label": "tbl:3-3",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/t-3-3.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-1",
+        "index": 14
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/t-3-3.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-1",
+        "index": 14
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-2-b8d99b",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-2-b8d99b.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-2",
+        "index": 0
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-2-b8d99b.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-2",
+        "index": 0
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-2-00e672",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-2-00e672.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-2",
+        "index": 2
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-2-00e672.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-2",
+        "index": 2
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-2-36e9a8",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-2-36e9a8.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-2",
+        "index": 6
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-2-36e9a8.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-2",
+        "index": 6
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-3-338534",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-3-338534.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-3",
+        "index": 4
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-3-338534.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-3",
+        "index": 4
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-3-1cd9b7",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-3-1cd9b7.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-3",
+        "index": 5
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-3-1cd9b7.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-3",
+        "index": 5
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-3-188f29",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-3-188f29.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-3",
+        "index": 9
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-3-188f29.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-3",
+        "index": 9
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-3-ff0e0e",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-3-ff0e0e.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-3",
+        "index": 12
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-3-ff0e0e.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-3",
+        "index": 12
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-4-1-18e851",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-4-1-18e851.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-4-1",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-4-1-18e851.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-4-1",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-4-1-c7af19",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-4-1-c7af19.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-4-1",
+        "index": 2
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-4-1-c7af19.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-4-1",
+        "index": 2
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-4-2-96e3ef",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-4-2-96e3ef.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-4-2",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-4-2-96e3ef.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-4-2",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-4-3-be6870",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-4-3-be6870.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-4-3",
+        "index": 4
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-4-3-be6870.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-4-3",
+        "index": 4
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-4-3-f00e46",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-4-3-f00e46.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-4-3",
+        "index": 5
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-4-3-f00e46.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-4-3",
+        "index": 5
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-4-3-1ac99e",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-4-3-1ac99e.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-4-3",
+        "index": 6
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-4-3-1ac99e.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-4-3",
+        "index": 6
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-4-4-528c0f",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-4-4-528c0f.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-4-4",
+        "index": 3
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-4-4-528c0f.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-4-4",
+        "index": 3
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-4-5-aef916",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-4-5-aef916.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-4-5",
+        "index": 2
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-4-5-aef916.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-4-5",
+        "index": 2
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-4-5-f11aa7",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-4-5-f11aa7.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-4-5",
+        "index": 4
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-4-5-f11aa7.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-4-5",
+        "index": 4
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-4-5-a69d55",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-4-5-a69d55.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-4-5",
+        "index": 21
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-4-5-a69d55.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-4-5",
+        "index": 21
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-4-5-7a4a7f",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-4-5-7a4a7f.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-4-5",
+        "index": 23
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-4-5-7a4a7f.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-4-5",
+        "index": 23
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-4-7-101ba8",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-4-7-101ba8.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-4-7",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-4-7-101ba8.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-4-7",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-4-7-811c75",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-4-7-811c75.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-4-7",
+        "index": 2
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-4-7-811c75.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-4-7",
+        "index": 2
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-5-ea5cb0",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-5-ea5cb0.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-5",
+        "index": 0
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-5-ea5cb0.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-5",
+        "index": 0
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-5-1-022c9f",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-5-1-022c9f.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-5-1",
+        "index": 6
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-5-1-022c9f.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-5-1",
+        "index": 6
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-5-3-f22754",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-5-3-f22754.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-5-3",
+        "index": 0
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-5-3-f22754.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-5-3",
+        "index": 0
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-5-3-1-5065c7",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-5-3-1-5065c7.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-5-3-1",
+        "index": 0
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-5-3-1-5065c7.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-5-3-1",
+        "index": 0
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-5-3-1-1f0816",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-5-3-1-1f0816.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-5-3-1",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-5-3-1-1f0816.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-5-3-1",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-5-3-1-f35f6f",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-5-3-1-f35f6f.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-5-3-1",
+        "index": 4
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-5-3-1-f35f6f.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-5-3-1",
+        "index": 4
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-6-416040",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-6-416040.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-6",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-6-416040.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-6",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-6-1-e1ef9e",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-6-1-e1ef9e.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-6-1",
+        "index": 0
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-6-1-e1ef9e.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-6-1",
+        "index": 0
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-6-1-551cd7",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-6-1-551cd7.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-6-1",
+        "index": 3
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-6-1-551cd7.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-6-1",
+        "index": 3
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-6-2-a1249f",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-6-2-a1249f.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-6-2",
+        "index": 0
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-6-2-a1249f.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-6-2",
+        "index": 0
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-6-2-358434",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-6-2-358434.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-6-2",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-6-2-358434.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-6-2",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-6-2-5eddcf",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-6-2-5eddcf.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-6-2",
+        "index": 3
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-6-2-5eddcf.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-6-2",
+        "index": 3
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-6-3-890226",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-6-3-890226.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-6-3",
+        "index": 3
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-6-3-890226.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-6-3",
+        "index": 3
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-6-3-61768e",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-6-3-61768e.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-6-3",
+        "index": 4
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-6-3-61768e.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-6-3",
+        "index": 4
+      }
+    },
+    {
+      "change": "changed",
+      "label": "tbl:3-6",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/t-3-6.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-6-3",
+        "index": 6
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/t-3-6.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-6-3",
+        "index": 6
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-6-4-4150dd",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-6-4-4150dd.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-6-4",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-6-4-4150dd.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-6-4",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-6-4-c0012b",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-6-4-c0012b.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-6-4",
+        "index": 3
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-6-4-c0012b.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-6-4",
+        "index": 3
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-6-5-ead6d9",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-6-5-ead6d9.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-6-5",
+        "index": 0
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-6-5-ead6d9.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-6-5",
+        "index": 0
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-7-1-aef1b3",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-7-1-aef1b3.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-7-1",
+        "index": 0
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-7-1-aef1b3.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-7-1",
+        "index": 0
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-7-1-c26122",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-7-1-c26122.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-7-1",
+        "index": 2
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-7-1-c26122.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-7-1",
+        "index": 2
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-7-2-481761",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-7-2-481761.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-7-2",
+        "index": 0
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-7-2-481761.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-7-2",
+        "index": 0
+      }
+    },
+    {
+      "change": "changed",
+      "label": "tbl:3-7-1",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/t-3-7-1.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-7-2",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/t-3-7-1.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-7-2",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-7-2-b147d8",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-7-2-b147d8.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-7-2",
+        "index": 3
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-7-2-b147d8.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-7-2",
+        "index": 3
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-7-2-406f8d",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-7-2-406f8d.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-7-2",
+        "index": 6
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-7-2-406f8d.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-7-2",
+        "index": 6
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-7-2-25f659",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-7-2-25f659.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-7-2",
+        "index": 9
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-7-2-25f659.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-7-2",
+        "index": 9
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-7-2-7e6c21",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-7-2-7e6c21.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-7-2",
+        "index": 10
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-7-2-7e6c21.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-7-2",
+        "index": 10
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-7-2-5ccc2c",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-7-2-5ccc2c.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-7-2",
+        "index": 16
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-7-2-5ccc2c.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-7-2",
+        "index": 16
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-7-2-9a193e",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-7-2-9a193e.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-7-2",
+        "index": 21
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-7-2-9a193e.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-7-2",
+        "index": 21
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-7-2-9385ce",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-7-2-9385ce.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-7-2",
+        "index": 22
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-7-2-9385ce.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-7-2",
+        "index": 22
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-7-2-55188b",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-7-2-55188b.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-7-2",
+        "index": 24
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-7-2-55188b.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-7-2",
+        "index": 24
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-7-2-35d3f1",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-7-2-35d3f1.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-7-2",
+        "index": 26
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-7-2-35d3f1.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-7-2",
+        "index": 26
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-7-4-7a4f40",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-7-4-7a4f40.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-7-4",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-7-4-7a4f40.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-7-4",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-7-4-ad907b",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-7-4-ad907b.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-7-4",
+        "index": 3
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-7-4-ad907b.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-7-4",
+        "index": 3
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-7-4-c51a99",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-7-4-c51a99.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-7-4",
+        "index": 4
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-7-4-c51a99.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-7-4",
+        "index": 4
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-7-5-bd3574",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-7-5-bd3574.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-7-5",
+        "index": 2
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-7-5-bd3574.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-7-5",
+        "index": 2
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-7-5-d14cff",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-7-5-d14cff.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-7-5",
+        "index": 5
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-7-5-d14cff.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-7-5",
+        "index": 5
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-7-5-9cd719",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-7-5-9cd719.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-7-5",
+        "index": 6
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-7-5-9cd719.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-7-5",
+        "index": 6
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-7-5-341a32",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-7-5-341a32.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-7-5",
+        "index": 8
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-7-5-341a32.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-7-5",
+        "index": 8
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-7-5-1fb2df",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-7-5-1fb2df.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-7-5",
+        "index": 9
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-7-5-1fb2df.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-7-5",
+        "index": 9
+      }
+    },
+    {
+      "change": "changed",
+      "label": "tbl:3-7-2",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/t-3-7-2.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-7-6",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/t-3-7-2.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-7-6",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:ch3-the-reference-architecture-for-d-lead-9b716c",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-ch3-the-reference-architecture-for-d-lead-9b716c.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:ch3-the-reference-architecture-for-d-lead",
+        "index": 0
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-ch3-the-reference-architecture-for-d-lead-9b716c.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:ch3-the-reference-architecture-for-d-lead",
+        "index": 0
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:ch3-the-reference-architecture-for-d-lead-2ec420",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-ch3-the-reference-architecture-for-d-lead-2ec420.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:ch3-the-reference-architecture-for-d-lead",
+        "index": 2
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-ch3-the-reference-architecture-for-d-lead-2ec420.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:ch3-the-reference-architecture-for-d-lead",
+        "index": 2
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:4-1-1-971416",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-1-1-971416.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch4-implementing-a-national-digital::sec:4-1-1",
+        "index": 0
+      },
+      "head": {
+        "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-1-1-971416.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch4-implementing-a-national-digital::sec:4-1-1",
+        "index": 0
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:4-1-2-0bf73d",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-1-2-0bf73d.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch4-implementing-a-national-digital::sec:4-1-2",
+        "index": 6
+      },
+      "head": {
+        "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-1-2-0bf73d.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch4-implementing-a-national-digital::sec:4-1-2",
+        "index": 6
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:4-2-1-4b4358",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-2-1-4b4358.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch4-implementing-a-national-digital::sec:4-2-1",
+        "index": 4
+      },
+      "head": {
+        "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-2-1-4b4358.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch4-implementing-a-national-digital::sec:4-2-1",
+        "index": 4
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:4-2-2-186744",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-2-2-186744.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch4-implementing-a-national-digital::sec:4-2-2",
+        "index": 3
+      },
+      "head": {
+        "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-2-2-186744.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch4-implementing-a-national-digital::sec:4-2-2",
+        "index": 3
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:4-2-2-f08184",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-2-2-f08184.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch4-implementing-a-national-digital::sec:4-2-2",
+        "index": 6
+      },
+      "head": {
+        "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-2-2-f08184.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch4-implementing-a-national-digital::sec:4-2-2",
+        "index": 6
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:4-2-2-17fbba",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-2-2-17fbba.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch4-implementing-a-national-digital::sec:4-2-2",
+        "index": 7
+      },
+      "head": {
+        "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-2-2-17fbba.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch4-implementing-a-national-digital::sec:4-2-2",
+        "index": 7
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:4-3-1-d68317",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-3-1-d68317.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch4-implementing-a-national-digital::sec:4-3-1",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-3-1-d68317.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch4-implementing-a-national-digital::sec:4-3-1",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:4-3-1-fc548c",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-3-1-fc548c.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch4-implementing-a-national-digital::sec:4-3-1",
+        "index": 2
+      },
+      "head": {
+        "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-3-1-fc548c.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch4-implementing-a-national-digital::sec:4-3-1",
+        "index": 2
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:4-3-2-513f61",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-3-2-513f61.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch4-implementing-a-national-digital::sec:4-3-2",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-3-2-513f61.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch4-implementing-a-national-digital::sec:4-3-2",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:4-3-4-83c937",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-3-4-83c937.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch4-implementing-a-national-digital::sec:4-3-4",
+        "index": 0
+      },
+      "head": {
+        "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-3-4-83c937.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch4-implementing-a-national-digital::sec:4-3-4",
+        "index": 0
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:4-3-4-fb4f87",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-3-4-fb4f87.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch4-implementing-a-national-digital::sec:4-3-4",
+        "index": 2
+      },
+      "head": {
+        "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-3-4-fb4f87.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch4-implementing-a-national-digital::sec:4-3-4",
+        "index": 2
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:4-3-4-2-f99f89",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-3-4-2-f99f89.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch4-implementing-a-national-digital::sec:4-3-4-2",
+        "index": 0
+      },
+      "head": {
+        "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-3-4-2-f99f89.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch4-implementing-a-national-digital::sec:4-3-4-2",
+        "index": 0
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:4-3-4-2-3ae952",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-3-4-2-3ae952.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch4-implementing-a-national-digital::sec:4-3-4-2",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-3-4-2-3ae952.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch4-implementing-a-national-digital::sec:4-3-4-2",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:4-3-4-2-18dac0",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-3-4-2-18dac0.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch4-implementing-a-national-digital::sec:4-3-4-2",
+        "index": 2
+      },
+      "head": {
+        "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-3-4-2-18dac0.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch4-implementing-a-national-digital::sec:4-3-4-2",
+        "index": 2
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:4-3-4-2-7e2279",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-3-4-2-7e2279.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch4-implementing-a-national-digital::sec:4-3-4-2",
+        "index": 3
+      },
+      "head": {
+        "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-3-4-2-7e2279.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch4-implementing-a-national-digital::sec:4-3-4-2",
+        "index": 3
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:4-4-cb5c9f",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-4-cb5c9f.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch4-implementing-a-national-digital::sec:4-4",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-4-cb5c9f.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch4-implementing-a-national-digital::sec:4-4",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:4-4-1-6e4c80",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-4-1-6e4c80.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch4-implementing-a-national-digital::sec:4-4-1",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-4-1-6e4c80.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch4-implementing-a-national-digital::sec:4-4-1",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:4-4-2-51501c",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-4-2-51501c.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch4-implementing-a-national-digital::sec:4-4-2",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-4-2-51501c.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch4-implementing-a-national-digital::sec:4-4-2",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:4-5-1-d0bafb",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-5-1-d0bafb.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch4-implementing-a-national-digital::sec:4-5-1",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-5-1-d0bafb.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch4-implementing-a-national-digital::sec:4-5-1",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:4-6-1-31b1da",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-6-1-31b1da.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch4-implementing-a-national-digital::sec:4-6-1",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-6-1-31b1da.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch4-implementing-a-national-digital::sec:4-6-1",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:4-6-4-f3d49f",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-6-4-f3d49f.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch4-implementing-a-national-digital::sec:4-6-4",
+        "index": 0
+      },
+      "head": {
+        "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-6-4-f3d49f.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch4-implementing-a-national-digital::sec:4-6-4",
+        "index": 0
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:5-2-b8b815",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch5-future-proofing-the-architecture/p-5-2-b8b815.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch5-future-proofing-the-architecture::sec:5-2",
+        "index": 2
+      },
+      "head": {
+        "file": "dpi-h-ra/ch5-future-proofing-the-architecture/p-5-2-b8b815.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch5-future-proofing-the-architecture::sec:5-2",
+        "index": 2
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:5-4-2-11d943",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch5-future-proofing-the-architecture/p-5-4-2-11d943.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch5-future-proofing-the-architecture::sec:5-4-2",
+        "index": 0
+      },
+      "head": {
+        "file": "dpi-h-ra/ch5-future-proofing-the-architecture/p-5-4-2-11d943.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch5-future-proofing-the-architecture::sec:5-4-2",
+        "index": 0
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:5-4-4-a1fd66",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch5-future-proofing-the-architecture/p-5-4-4-a1fd66.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch5-future-proofing-the-architecture::sec:5-4-4",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/ch5-future-proofing-the-architecture/p-5-4-4-a1fd66.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch5-future-proofing-the-architecture::sec:5-4-4",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:5-5-c413ea",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch5-future-proofing-the-architecture/p-5-5-c413ea.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch5-future-proofing-the-architecture::sec:5-5",
+        "index": 0
+      },
+      "head": {
+        "file": "dpi-h-ra/ch5-future-proofing-the-architecture/p-5-5-c413ea.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch5-future-proofing-the-architecture::sec:5-5",
+        "index": 0
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:5-5-cdc2eb",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch5-future-proofing-the-architecture/p-5-5-cdc2eb.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch5-future-proofing-the-architecture::sec:5-5",
+        "index": 2
+      },
+      "head": {
+        "file": "dpi-h-ra/ch5-future-proofing-the-architecture/p-5-5-cdc2eb.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch5-future-proofing-the-architecture::sec:5-5",
+        "index": 2
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:ch5-future-proofing-the-architecture-lead-d1cfa2",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch5-future-proofing-the-architecture/p-ch5-future-proofing-the-architecture-lead-d1cfa2.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch5-future-proofing-the-architecture::sec:ch5-future-proofing-the-architecture-lead",
+        "index": 0
+      },
+      "head": {
+        "file": "dpi-h-ra/ch5-future-proofing-the-architecture/p-ch5-future-proofing-the-architecture-lead-d1cfa2.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch5-future-proofing-the-architecture::sec:ch5-future-proofing-the-architecture-lead",
+        "index": 0
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:ch5-future-proofing-the-architecture-lead-9dcc4c",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch5-future-proofing-the-architecture/p-ch5-future-proofing-the-architecture-lead-9dcc4c.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch5-future-proofing-the-architecture::sec:ch5-future-proofing-the-architecture-lead",
+        "index": 2
+      },
+      "head": {
+        "file": "dpi-h-ra/ch5-future-proofing-the-architecture/p-ch5-future-proofing-the-architecture-lead-9dcc4c.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch5-future-proofing-the-architecture::sec:ch5-future-proofing-the-architecture-lead",
+        "index": 2
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:executive-summary-lead-53b9aa",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/executive-summary/p-executive-summary-lead-53b9aa.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/executive-summary::sec:executive-summary-lead",
+        "index": 5
+      },
+      "head": {
+        "file": "dpi-h-ra/executive-summary/p-executive-summary-lead-53b9aa.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/executive-summary::sec:executive-summary-lead",
+        "index": 5
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:executive-summary-lead-e900bf",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/executive-summary/p-executive-summary-lead-e900bf.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/executive-summary::sec:executive-summary-lead",
+        "index": 7
+      },
+      "head": {
+        "file": "dpi-h-ra/executive-summary/p-executive-summary-lead-e900bf.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/executive-summary::sec:executive-summary-lead",
+        "index": 7
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:executive-summary-lead-01831f",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/executive-summary/p-executive-summary-lead-01831f.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/executive-summary::sec:executive-summary-lead",
+        "index": 8
+      },
+      "head": {
+        "file": "dpi-h-ra/executive-summary/p-executive-summary-lead-01831f.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/executive-summary::sec:executive-summary-lead",
+        "index": 8
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:executive-summary-lead-fc5e59",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/executive-summary/p-executive-summary-lead-fc5e59.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/executive-summary::sec:executive-summary-lead",
+        "index": 11
+      },
+      "head": {
+        "file": "dpi-h-ra/executive-summary/p-executive-summary-lead-fc5e59.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/executive-summary::sec:executive-summary-lead",
+        "index": 11
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:executive-summary-lead-c447a8",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/executive-summary/p-executive-summary-lead-c447a8.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/executive-summary::sec:executive-summary-lead",
+        "index": 14
+      },
+      "head": {
+        "file": "dpi-h-ra/executive-summary/p-executive-summary-lead-c447a8.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/executive-summary::sec:executive-summary-lead",
+        "index": 14
+      }
+    },
+    {
+      "change": "changed",
+      "label": "tbl:glossary-lead-a31853",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/glossary/t-glossary-lead-a31853.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/glossary::sec:glossary-lead",
+        "index": 0
+      },
+      "head": {
+        "file": "dpi-h-ra/glossary/t-glossary-lead-a31853.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/glossary::sec:glossary-lead",
+        "index": 0
+      }
+    }
+  ]
+}
