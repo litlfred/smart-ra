@@ -39,7 +39,7 @@ ELEMENTS = {
         "Person-centred point of service system (PCPOSS) are digital systems that facilitate the provision and delivery of health services to individuals (i.e. persons, clients, patients, health service users) at the point of service or point of care. This includes software capabilities and embedded health interoperability standards that enable health workers to access, record and update individuals' health information, and to screen, manage, treat, and/or communicate with individuals. PCPOSS encompass community-based information systems, decision support systems, electronic health record systems and personal health records. (PDF 9, 18)",
         p(18, "person-centred-point-of-service-system",
           altLabel="PCPOSS",
-          skosBroader=RA_SKOS + "point-of-service-applications"),
+          skosBroader=RA_SKOS + "point-of-service-applications", **{"fhir-actor": "PointOfServiceSystem"}),
     ),
     "ehr-system": (
         "ApplicationComponent",
@@ -47,7 +47,7 @@ ELEMENTS = {
         "A secure, online system that holds health service user health records, which include information about people's health and clinical care. This system is managed by health workers. Also referred to as an 'electronic medical record system'. (PDF 8, 18)",
         p(18, "electronic-health-record-system",
           altLabel="EHR system",
-          skosConceptRa=RA_SKOS + "point-of-service-applications"),
+          skosConceptRa=RA_SKOS + "point-of-service-applications", **{"fhir-actor": "ElectronicHealthRecordSystem"}),
     ),
     "dss": (
         "ApplicationComponent",
@@ -55,21 +55,29 @@ ELEMENTS = {
         "A digital job aid that combines an individual's health information with the health worker's knowledge and clinical protocols, to assist health workers in making diagnosis and treatment decisions. (PDF 8, 18)",
         p(18, "decision-support-system",
           altLabel="DSS",
-          candidateMatch="Decision Support Engine (id-539b04ae45f147258d8253ae5cb87402)"),
+          candidateMatch="Decision Support Engine (id-539b04ae45f147258d8253ae5cb87402)", **{"fhir-actor": "DecisionSupportSystem"}),
     ),
     "chis": (
         "ApplicationComponent",
         "Community-based information system",
         "Applications that facilitate data collection and use at the community level. These applications are utilized by community-based workers who provide health promotion and disease prevention activities. (PDF 8, 18)",
         p(18, "community-based-information-system",
-          altLabel="CHIS"),
+          altLabel="CHIS", **{"fhir-actor": "CommunityBasedInformationSystem"}),
     ),
     "phr": (
         "ApplicationComponent",
         "Personal health record",
         "A record of an individual's health information in a structured digital format for a set of defined use cases over which the person has agency. (PDF 18)",
         p(18, "personal-health-record",
-          altLabel="PHR"),
+          altLabel="PHR", **{"fhir-actor": "PersonalHealthRecord"}),
+    ),
+    "client-registry": (
+        "ApplicationComponent",
+        "Client registry",
+        "Central registry of clients (health service users) from which returning clients' demographic details and unique identifiers are retrieved and validated at the point of service. (Section 3.3, Step 4, PDF 43)",
+        p(43, altLabel="Central client registry",
+          candidateMatch="Client Registry (0.2.0-draft.3, id-3fc94408cc4c4f599efaaf8065811fb5)",
+          **{"fhir-actor": "ClientRegistry"}),
     ),
     # Business roles at the point of service, Section 1.1 (PDF 18-19) & Glossary (PDF 9)
     "health-worker": (
@@ -77,7 +85,7 @@ ELEMENTS = {
         "Health worker",
         "End-users of a PCPOSS at the point of care (point of service), including all health worker occupational groups operating at all care levels and outside of formal health-care facilities (e.g. community health workers and health volunteers). (PDF 19)",
         p(19, "health-worker",
-          candidateMatch="Health Workers (Stakeholder, id-8d3dd8b68d504c2a9fe8cf414b16c127)"),
+          candidateMatch="Health Workers (Stakeholder, id-8d3dd8b68d504c2a9fe8cf414b16c127)", **{"fhir-actor": "HealthWorker"}),
     ),
     "health-service-user": (
         "BusinessRole",
@@ -85,7 +93,7 @@ ELEMENTS = {
         "Also known as patients, clients or beneficiaries, these are individuals who receive formal and/or informal health services. (PDF 9, 18)",
         p(9, "health-service-users",
           altLabel="Health service users; Patient; Client; Beneficiary",
-          candidateMatch="Patients (Stakeholder, id-a2320dbc07e6450b94f3f0f3e03bb877); Individual (BusinessRole, id-03e28af10b8f5b099e271461c8a99f21)"),
+          candidateMatch="Patients (Stakeholder, id-a2320dbc07e6450b94f3f0f3e03bb877); Individual (BusinessRole, id-03e28af10b8f5b099e271461c8a99f21)", **{"fhir-actor": "HealthServiceUser"}),
     ),
     # Application services for the PCPOSS DHIs not yet in 0.2.0, Section 1.1 (PDF 18)
     "alerts-and-reminders": (
@@ -132,6 +140,58 @@ EXISTING = {
     "analytics-platform": "id-3fd92d497ca040c8a436f355c0b68770",   # Analytics & Reporting Platform (ApplicationComponent)
     "client-identity": "id-788f660553e14f0283b93c2dda3ae441",      # Client Identity Management (Capability)
     "interop-component": "id-80856538cbd44167a37b276e38c994c3",    # Interoperability Component (ApplicationComponent)
+    "cde-hwr": "id-e162b2223da4440983514be5854b654d",              # CDE-HWR: Core Data Elements for the Health Workforce Registry (DataObject)
+    "nhwa-dataset": "id-145e885489634e469e8a6734f56b7df5",         # NHWA Dataset (linking and indexing, built on CDE-HWR) (DataObject)
+    "do-health-worker": "id-702c24bbd73341be9afc11c7e11e9810",     # Health Worker (DataObject)
+    "do-facility": "id-ad969289cb774307aa678037c56fdd3f",          # Facility (DataObject)
+    "patient-level-data": "id-71b2e11df2e348a2b9f8eee36c8e5292",   # Patient-level Data (DataObject)
+}
+
+EXISTING_PROPS = {
+    "shr": {
+        "logical-model": "SharedHealthRecord",
+        "attribute:patient": "Reference(Patient) 1..1",
+        "attribute:encounters": "Reference(Encounter) 0..*",
+        "attribute:clinicalSummary": "Composition 0..*",
+    },
+    "shr-repo": {"fhir-actor": "SharedHealthRecord"},
+    "dse": {"fhir-actor": "DecisionSupportEngine"},
+    "terminology-service": {"fhir-actor": "TerminologyService"},
+    "limr": {"fhir-actor": "LogicalInformationModelRegistry"},
+    "hwr": {"fhir-actor": "HealthWorkerRegistry"},
+    "facility-registry": {"fhir-actor": "FacilityRegistry"},
+    "analytics-platform": {"fhir-actor": "AnalyticsAndReportingPlatform"},
+    "interop-component": {"fhir-actor": "InteroperabilityLayer"},
+    "cde-hwr": {"logical-model": "CDE-HWR"},
+    "nhwa-dataset": {
+        "logical-model": "NHWADataset",
+        "attribute:hwrIdentifier": "Identifier (national unique health worker ID linking key)",
+        "attribute:module1StockAndFlow": "Indicator 1-01..1-12 (stock and flow)",
+        "attribute:module2Education": "Indicator 2-01..2-07 (education)",
+        "attribute:module3Finance": "Indicator 3-01..3-05 (finance and expenditures)",
+        "attribute:module4WorkingConditions": "Indicator 4-01..4-05 (working conditions, governance and leadership)",
+    },
+    "do-health-worker": {
+        "logical-model": "HealthWorker",
+        "attribute:identifier": "Identifier 1..* (national unique health worker ID)",
+        "attribute:demographics": "HumanName, administrativeGender, birthDate",
+        "attribute:qualification": "Qualification 0..* (licensure, registration, credential)",
+        "attribute:affiliation": "OrganizationAffiliation 0..* (employer, facility)",
+    },
+    "do-facility": {
+        "logical-model": "Facility",
+        "attribute:identifier": "Identifier 1..1 (Facility Registry ID)",
+        "attribute:name": "string 1..1 (facility name)",
+        "attribute:location": "Location 1..1 (geographic location)",
+        "attribute:serviceCapabilities": "CodeableConcept 0..* (healthcare services)",
+        "attribute:operationalStatus": "code 1..1 (operational status)",
+    },
+    "patient-level-data": {
+        "logical-model": "PatientLevelData",
+        "attribute:patientIdentifier": "Identifier 1..*",
+        "attribute:demographics": "Patient (name, birthDate, gender, address)",
+        "attribute:clinicalEvents": "Resource 0..* (Encounter, Observation, Condition, MedicationRequest, Immunization)",
+    },
 }
 
 DHI_SERVICES = [
@@ -188,6 +248,8 @@ MODEL_ONLY = [
     ("Serving", "chis", "health-worker"),
     ("Realization", "ehr-system", "longitudinal-tracking"),
     ("Realization", "pos-app", "client-identity"),
+    ("Realization", "client-registry", "client-identity"),
+    ("Serving", "client-registry", "pos-app"),
     ("Access", "pos-app", "shr", {"accessType": 3}),
     ("Flow", "interop-component", "analytics-platform"),
 ]

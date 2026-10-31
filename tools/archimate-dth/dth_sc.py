@@ -50,10 +50,10 @@ ELEMENTS = {
     "if-transformation": ("ApplicationFunction", "Transformation", FIG14, p(34)),
     "if-translation": ("ApplicationFunction", "Translation", FIG14, p(34)),
     # HSCIS not in 0.2.0
-    "cold-chain-system": ("ApplicationComponent", "Cold Chain Management System", FIG14, p(34)),
+    "cold-chain-system": ("ApplicationComponent", "Cold Chain Management System", FIG14, p(34, **{"fhir-actor": "ColdChainManagementSystem"})),
     # data services
     "data-warehouse": ("ApplicationComponent", "Data Warehouse", FIG14,
-                       p(34, candidateMatch="Analytics & Reporting Platform (id-3fd92d497ca040c8a436f355c0b68770)")),
+                       p(34, candidateMatch="Analytics & Reporting Platform (id-3fd92d497ca040c8a436f355c0b68770)", **{"fhir-actor": "DataWarehouse"})),
     "supply-chain-reports": ("ApplicationService", "Supply Chain Reports", FIG14, p(34)),
     "product-verification": ("ApplicationService", "Product Verification", FIG14,
                              p(34, candidateMatch="Verification (id-32999d2977774d8e96b486173dbfd01d)")),
@@ -68,22 +68,22 @@ ELEMENTS = {
     # digital ecosystems
     "regulatory-systems": ("ApplicationComponent", "Regulatory Systems",
                            "Regulatory systems that combine supply chain data from the dispensing system with health information and individuals' data to conduct post-market surveillance and pharmacovigilance, or use supply chain data to perform product recalls. (PDF 35)",
-                           p(35, sharedWith="dth-sfp defines the regulatory and pharmacovigilance elements")),
+                           p(35, sharedWith="dth-sfp defines the regulatory and pharmacovigilance elements", **{"fhir-actor": "RegulatorySystems"})),
     "finance-insurance-systems": ("ApplicationComponent", "Finance and Insurance Systems",
                                   "Finance and insurance systems that combine data from the dispensing system with individuals' information to verify and process insurance claims. (PDF 35)", p(35)),
-    "hmis": ("ApplicationComponent", "Health Management Information System", FIG14, p(34)),
+    "hmis": ("ApplicationComponent", "Health Management Information System", FIG14, p(34, **{"fhir-actor": "HealthManagementInformationSystem"})),
     "quality-systems": ("ApplicationComponent", "Quality Systems",
-                        "Laboratory or quality monitoring systems that integrate with HSCISs to trigger alerts on quality issues or trigger product quarantines or recalls. (PDF 35)", p(35)),
+                        "Laboratory or quality monitoring systems that integrate with HSCISs to trigger alerts on quality issues or trigger product quarantines or recalls. (PDF 35)", p(35, **{"fhir-actor": "QualitySystems"})),
     # Fig. 24 traceability data
     "traceability-event": ("DataObject", "Traceability Event",
-                           "Traceability data. What: product identifier, batch no., serial no. When: date and time of the event. Where: location of the event. Why: details of the transaction (e.g., receiving, shipping, dispensing, discarding). (Fig. 24, PDF 55)", p(55)),
+                           "Traceability data. What: product identifier, batch no., serial no. When: date and time of the event. Where: location of the event. Why: details of the transaction (e.g., receiving, shipping, dispensing, discarding). (Fig. 24, PDF 55)", p(55, **{"logical-model": "TraceabilityEvent", "attribute:what": "Identifier (GTIN, batch/lot no., serial no.)", "attribute:when": "dateTime (event timestamp)", "attribute:where": "Location (facility / warehouse GLN)", "attribute:why": "code (receiving, shipping, dispensing, discarding)"})),
     # supply chain partners, Figs. 1 and 3
     "g-partners": ("Grouping", "Public Health Supply Chain Partners", "Fig. 1 (PDF 11) and Fig. 3 (PDF 13)", p(11)),
     "g-processes": ("Grouping", "Health Supply Chain Processes", "Fig. 1 (PDF 11) and Fig. 2 (PDF 12)", p(11)),
     "procurer": ("BusinessRole", "Procurer", "Fig. 1 (PDF 11)", p(11)),
     "manufacturer": ("BusinessRole", "Manufacturer / Distributor", "Fig. 1 (PDF 11)", p(11)),
     "nra": ("BusinessRole", "National Regulatory Authority", "Regulators, Fig. 1 (PDF 11); regulatory authority, Annex 5 (PDF 70).",
-            p(11, altLabel="Regulator; NMRA", sharedWith="dth-pc and dth-sfp reuse this element")),
+            p(11, altLabel="Regulator; NMRA", sharedWith="dth-pc and dth-sfp reuse this element", **{"fhir-actor": "NationalRegulatoryAuthority"})),
     "central-warehouse": ("BusinessRole", "Central Warehouse", "Fig. 1 (PDF 11)", p(11)),
     "regional-warehouse": ("BusinessRole", "Regional Warehouse", "Fig. 1 (PDF 11)", p(11)),
     "district-warehouse": ("BusinessRole", "District Warehouse", "Fig. 24 (PDF 55)", p(55)),
@@ -118,6 +118,22 @@ EXISTING = {
     "cap-transportation": "id-b37bf4947ec9430197f9056d283eb5b0",
     "cap-dispensing": "id-f9f30d3e83e24a8daa3393eebb0838eb",
     "cap-traceability": "id-e88f6d077d31407bb1af5f2ecfd3b48a",
+}
+
+
+EXISTING_PROPS = {
+    "fsp": {"fhir-actor": "ForecastingAndSupplyPlanningSystem"},
+    "pms": {"fhir-actor": "ProcurementManagementSystem"},
+    "oms": {"fhir-actor": "OrderManagementSystem"},
+    "scms": {"fhir-actor": "SupplierAndContractManagementSystem"},
+    "wms": {"fhir-actor": "WarehouseManagementSystem"},
+    "tms": {"fhir-actor": "TransportationManagementSystem"},
+    "dispensing-system": {"fhir-actor": "DispensingSystem"},
+    "hf-lmis": {"fhir-actor": "LogisticsManagementInformationSystem"},
+    "product-registry": {"fhir-actor": "ProductRegistry"},
+    "supplier-registry": {"fhir-actor": "SupplierRegistry"},
+    "facility-registry": {"fhir-actor": "FacilityRegistry"},
+    "interop-component": {"fhir-actor": "InteroperabilityLayer"},
 }
 
 MEMBERS = {

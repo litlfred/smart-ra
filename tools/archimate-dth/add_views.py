@@ -95,6 +95,31 @@ FOLDER_OF = {
 }
 
 
+
+
+def ensure_element_props(xml, eid, props):
+    """Ensure every (key, value) in props is written as <property/> on element eid."""
+    if not props:
+        return xml, 0
+    m = re.search(rf'\n( +)<element [^>]*id="{re.escape(eid)}"(?:/>|>.*?</element>)', xml, re.S)
+    if not m:
+        raise SystemExit(f"element {eid} not found in model.xml")
+    ind = m.group(1)
+    block = m.group(0)
+    missing = [(k, v) for k, v in props.items() if f'key="{esc(k)}"' not in block]
+    if not missing:
+        return xml, 0
+    prop_xml = "".join(f'\n{ind}  <property key="{esc(k)}" value="{esc(v)}"/>' for k, v in missing)
+    if block.endswith("/>"):
+        new_block = f"{block[:-2]}>{prop_xml}\n{ind}</element>"
+    else:
+        close_m = re.search(rf"(\r?\n{ind}</element>)$", block)
+        if not close_m:
+            raise SystemExit(f"malformed closing tag on {eid}")
+        new_block = block[:close_m.start()] + prop_xml + block[close_m.start():]
+    return xml[:m.start()] + new_block + xml[m.end():], len(missing)
+
+
 def folder_for(t):
     for f, types in FOLDER_OF.items():
         if t in types.split():
@@ -171,15 +196,21 @@ def main(argv):
     for key, (etype, name, doc, props) in s.ELEMENTS.items():
         eid = ids("element", key)
         idx[key] = eid
-        if f'id="{eid}"' in xml:
-            continue
         props = dict(props)
         props.setdefault("source", s.SOURCE)
+        if f'id="{eid}"' in xml:
+            xml, n = ensure_element_props(xml, eid, props)
+            added += n
+            continue
         body = f"\n      <documentation>{esc(doc)}</documentation>" if doc else ""
         body += "".join(f'\n      <property key="{esc(k)}" value="{esc(v)}"/>' for k, v in props.items())
         xml = insert_in_top_folder(xml, folder_for(etype),
                                    f'\n    <element xsi:type="archimate:{etype}" name="{esc(name)}" id="{eid}">{body}\n    </element>')
         added += 1
+
+    for key, eprops in getattr(s, "EXISTING_PROPS", {}).items():
+        xml, n = ensure_element_props(xml, idx[key], eprops)
+        added += n
 
     rel_ids = dict(getattr(s, "EXISTING_RELATIONS", {}))
     for k, rid in rel_ids.items():
