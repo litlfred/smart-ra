@@ -225,7 +225,7 @@
       "source": "folio/dpi-h-ra/glossary/t-glossary-lead-a31853.md",
       "definition": "Point-of-service applications are end-user application components (IT systems or software tools) used by individuals directly engaged in healthcare—such as clinicians, community health workers, and patients—that enable interaction with the broader healthcare ecosystem.",
       "status": "candidate",
-      "scopeNote": "The RA draft's own wording, verbatim. A candidate until the RA editors adopt it through the public review. The draft marks this entry [Under review].",
+      "scopeNote": "The RA draft's own wording, verbatim. A candidate until the RA editors adopt it through the public review. The draft marks this entry [Under review]. Also categorized in SFP handbook §3.2 Fig. 3 (who-iris/library/9789240120747-eng/sections/sec-020-32-link-to-the-enterprise-architecture.md, page-034.md, p. 22, citing DIIG) into reused POS applications and unique POS applications.",
       "altLabel": [
         "POS",
         "Point-of-service applications",
@@ -287,7 +287,12 @@
       "source": "folio/dpi-h-ra/glossary/t-glossary-lead-a31853.md",
       "definition": "Systematized Nomenclature of Medicine – Global Patient Set is a list of basic clinical terms. It is an open and freely accessible subset of SNOMED CT terms that represents the breadth of concepts included in the SNOMED CT International Edition.",
       "status": "candidate",
-      "scopeNote": "The RA draft's own wording, verbatim. A candidate until the RA editors adopt it through the public review."
+      "scopeNote": "The RA draft's own wording, verbatim. A candidate until the RA editors adopt it through the public review. Expanded in PHC handbook Abbreviations (who-iris/library/9789240093362-eng/sections/sec-001-abbreviations.md, p. 7) as \"SNOMED-GPS: Systematized Nomenclature of Medicine-Global Patient Set\" and cited in SFP handbook §4.4 (who-iris/library/9789240120747-eng/sections/sec-025-44-outline-data-requirements.md, page-042.md, p. 30).",
+      "altLabel": [
+        "SNOMED-GPS",
+        "Systematized Nomenclature of Medicine – Global Patient Set",
+        "Systematized Nomenclature of Medicine-Global Patient Set"
+      ]
     },
     {
       "id": "solution-architecture",
@@ -303,7 +308,7 @@
       "source": "folio/dpi-h-ra/glossary/t-glossary-lead-a31853.md",
       "definition": "An individual, role, or organisation with an interest in the outcomes of the architecture.",
       "status": "candidate",
-      "scopeNote": "The RA draft's own glossary wording, verbatim (folio/dpi-h-ra/glossary/t-glossary-lead-a31853.md). Substantive and wording alternatives across the corpus (smart-ra#133 S1, smart-ra#140): (1) RA Table 3.1 (library/who-dpi-h-reference-architecture-draft-v1/sections/sec-026-31-the-architecture-description-approach.md): \"An individual, team, or organisation with interests in, or concerns relative to, the architecture.\" (2) SC handbook glossary (who-iris/library/9789240101197-eng/sections/page-009.md, p. 9): \"In the context of digital health transformation, anyone who is affected by or interested in the consequences of the efforts, including the planning team, end users, beneficiaries and funders.\" All three are recorded as candidates; none is chosen.",
+      "scopeNote": "The RA draft's own glossary wording, verbatim (folio/dpi-h-ra/glossary/t-glossary-lead-a31853.md). Substantive and wording alternatives across the corpus (smart-ra#133 S1, smart-ra#140): (1) RA Table 3.1 (library/who-dpi-h-reference-architecture-draft-v1/sections/sec-026-31-the-architecture-description-approach.md): \"An individual, team, or organisation with interests in, or concerns relative to, the architecture.\" (2) SC handbook glossary (who-iris/library/9789240101197-eng/sections/page-009.md, p. 9): \"In the context of digital health transformation, anyone who is affected by or interested in the consequences of the efforts, including the planning team, end users, beneficiaries and funders.\" (4) DIIG Annex 1.1 Glossary (who-iris/library/9789240010567-eng/sections/page-141.md, p. 129): \"Any person who is affected by or interested in the consequences of the digital health implementation; stakeholders include the planning team, end-users, beneficiaries and funders.\" (Also enumerated in SFP handbook §1.1, who-iris/library/9789240120747-eng/sections/sec-009-11-analyse-key-stakeholders.md, page-020.md, p. 8.) All are recorded as candidates; none is chosen.",
       "altLabel": [
         "stakeholder"
       ]
@@ -360,7 +365,7 @@
       ],
       "definition": "A singular storage location for information about the data elements, detailing their type and definition, relationships, origin and use.",
       "source": "who-iris/library/9789240093362-eng/sections/sec-002-glossary.md",
-      "scopeNote": "PHC handbook glossary wording, verbatim (who-iris/library/9789240093362-eng/sections/sec-002-glossary.md, p. 8). Shared concept across DTHs; recorded as a candidate.",
+      "scopeNote": "PHC handbook glossary wording, verbatim (who-iris/library/9789240093362-eng/sections/sec-002-glossary.md, p. 8). Wording alternative in SFP handbook §4.4 body (who-iris/library/9789240120747-eng/sections/sec-025-44-outline-data-requirements.md, page-042.md, p. 30): \"A data dictionary is a repository of information about the data elements such as description, data type and other characteristics.\" Both are recorded as candidates; neither is chosen (smart-ra#133 S1, dth-sfp#1 P2).",
       "related": [
         "data-element"
       ],
@@ -525,7 +530,7 @@
       ],
       "definition": "In this handbook, the terms ‘generic product,’ ‘product,’ or ‘product information’ pertain to the general identifying details of a health product, excluding any manufacturer-specific information.",
       "source": "who-iris/library/9789240116191-eng/sections/page-008.md",
-      "scopeNote": "PC handbook glossary wording, verbatim (who-iris/library/9789240116191-eng/sections/page-008.md, p. 8), identical in SFP handbook glossary (who-iris/library/9789240120747-eng/sections/page-010.md, p. 10). Internal wording alternative in PC handbook Ch. 2 body (who-iris/library/9789240116191-eng/sections/page-028.md, p. 28): \"Generic products can be described as generic items that conceal the brand or manufacturer information.\" Distinct from the RA's architectural `product` concept; both wordings are recorded as candidates and neither is chosen (smart-ra#133 S1, smart-ra#139, smart-ra#142).",
+      "scopeNote": "PC handbook glossary wording, verbatim (who-iris/library/9789240116191-eng/sections/page-008.md, p. 8), identical in SFP handbook glossary (who-iris/library/9789240120747-eng/sections/sec-002-glossary.md, page-010.md, p. 10). Internal wording alternative in PC handbook Ch. 2 body (who-iris/library/9789240116191-eng/sections/page-028.md, p. 28): \"Generic products can be described as generic items that conceal the brand or manufacturer information.\" Distinct from the RA's architectural `product` concept; both wordings are recorded as candidates and neither is chosen (smart-ra#133 S1, smart-ra#139, smart-ra#142).",
       "related": [
         "trade-item",
         "product-master-data"
@@ -545,7 +550,7 @@
         "https://litlfred.github.io/smart-ra/v0/ns#glossary/full-stac/digital-health-governance",
         "data-governance"
       ],
-      "scopeNote": "RA §3.4.1 body wording, verbatim (library/who-dpi-h-reference-architecture-draft-v1/sections/sec-029-341-purpose-and-framing.md, p. 64–65). Substantive alternative in SC handbook Ch. 3 boxed definition (who-iris/library/9789240101197-eng/sections/page-045.md, p. 45): \"In the context of the health supply chain, governance is the process of establishing and implementing policies, procedures and mechanisms to ensure that the supply chain processes and the systems to manage those processes are managed effectively, ethically and in alignment with established objectives and stakeholders’ interests.\" (RA defines governance as the distribution, exercise, and accountability of decision authority across shared infrastructure; SC defines it as the process of establishing and implementing policies, procedures, and mechanisms for supply chain processes and systems.) Also related to `digital-health-governance` in Mehl et al. 2023 (glossary/full-stac.glossary.json, smart-ra#143 P8). Both definitions are recorded as candidates; neither is chosen (smart-ra#133 S1, smart-ra#140).",
+      "scopeNote": "RA §3.4.1 body wording, verbatim (library/who-dpi-h-reference-architecture-draft-v1/sections/sec-029-341-purpose-and-framing.md, p. 64–65). Substantive alternative in SC handbook Ch. 3 boxed definition (who-iris/library/9789240101197-eng/sections/page-045.md, p. 45): \"In the context of the health supply chain, governance is the process of establishing and implementing policies, procedures and mechanisms to ensure that the supply chain processes and the systems to manage those processes are managed effectively, ethically and in alignment with established objectives and stakeholders’ interests.\" (RA defines governance as the distribution, exercise, and accountability of decision authority across shared infrastructure; SC defines it as the process of establishing and implementing policies, procedures, and mechanisms for supply chain processes and systems.) Also related to `digital-health-governance` in Mehl et al. 2023 (glossary/full-stac.glossary.json, smart-ra#143 P8). Also framed in SFP handbook §2.3 (who-iris/library/9789240120747-eng/sections/sec-015-23-establish-governance-and-leadership.md, page-028.md, p. 16) as a structure for coordinating multiple stakeholders, defining clear roles and responsibilities, enhancing transparency, and creating a stable platform for decision-making. Both definitions are recorded as candidates; neither is chosen (smart-ra#133 S1, smart-ra#140, dth-sfp#1 P2).",
       "status": "candidate"
     },
     {
@@ -682,7 +687,7 @@
       ],
       "definition": "A visual representation of an organization’s structure that shows the hierarchy of various roles and reporting relationships.",
       "source": "who-iris/library/9789240101197-eng/sections/page-009.md",
-      "scopeNote": "SC handbook glossary wording, verbatim (who-iris/library/9789240101197-eng/sections/page-009.md, p. 9). Wording alternative in PC handbook glossary (who-iris/library/9789240116191-eng/sections/page-008.md, p. 8) and SFP handbook glossary (who-iris/library/9789240120747-eng/sections/page-010.md, p. 10): \"A visual representation of the organization structure showing the hierarchy of various roles and their reporting relationships.\" Both are recorded as candidates; neither is chosen (smart-ra#133 S1).",
+      "scopeNote": "SC handbook glossary wording, verbatim (who-iris/library/9789240101197-eng/sections/page-009.md, p. 9). Wording alternative in PC handbook glossary (who-iris/library/9789240116191-eng/sections/page-008.md, p. 8) and SFP handbook glossary (who-iris/library/9789240120747-eng/sections/sec-002-glossary.md, page-010.md, p. 10): \"A visual representation of the organization structure showing the hierarchy of various roles and their reporting relationships.\" Both are recorded as candidates; neither is chosen (smart-ra#133 S1).",
       "status": "candidate"
     },
     {
@@ -798,7 +803,7 @@
         "generic-product",
         "product-master-data"
       ],
-      "scopeNote": "Owner decision 2026-10-31 (smart-ra#142 item 1, smart-ra#139): Trade Item is the shared WHO concept with this narrow definition from the Product Catalogue handbook Ch. 2 body (who-iris/library/9789240116191-eng/sections/page-028.md, p. 28). The GS1 trade item is a separate external concept and the WHO term's broadMatch (every WHO Trade Item is a GS1 trade item, not the reverse: GS1's also covers services). The PC handbook glossary (who-iris/library/9789240116191-eng/sections/page-009.md, p. 9) and SFP handbook glossary (who-iris/library/9789240120747-eng/sections/page-011.md, p. 11) print the GS1 wording — \"Products or services that are priced, ordered or invoiced at any point in the supply chain\" — citing GS1 (PC ref. 13, SFP ref. 19); that sentence is recorded here as a note citing GS1, not as the WHO concept's definition.",
+      "scopeNote": "Owner decision 2026-10-31 (smart-ra#142 item 1, smart-ra#139): Trade Item is the shared WHO concept with this narrow definition from the Product Catalogue handbook Ch. 2 body (who-iris/library/9789240116191-eng/sections/page-028.md, p. 28). The GS1 trade item is a separate external concept and the WHO term's broadMatch (every WHO Trade Item is a GS1 trade item, not the reverse: GS1's also covers services). The PC handbook glossary (who-iris/library/9789240116191-eng/sections/page-009.md, p. 9) and SFP handbook glossary (who-iris/library/9789240120747-eng/sections/sec-002-glossary.md, page-011.md, p. 11) print the GS1 wording — \"Products or services that are priced, ordered or invoiced at any point in the supply chain\" — citing GS1 (PC ref. 13, SFP ref. 19); that sentence is recorded here as a note citing GS1, not as the WHO concept's definition.",
       "status": "candidate"
     },
     {
@@ -848,7 +853,7 @@
       ],
       "definition": "Captures a long list of features from an end-user’s perspective. It describes who the end-user is, with their feature wants or needs, and the reason for that want or need (see section 3.2.3).",
       "source": "who-iris/library/9789240093362-eng/sections/sec-002-glossary.md",
-      "scopeNote": "PHC handbook glossary wording, verbatim (who-iris/library/9789240093362-eng/sections/sec-002-glossary.md, p. 11). Internal and platform alternatives (smart-ra#133 S1): (1) PHC handbook §3.2.3 body (who-iris/library/9789240093362-eng/sections/sec-012-32-conduct-end-user-research-to-understand-context.md, p. 27): \"A user story follows a standard format to write down what your end-users want from the PCPOSS: As a... [user persona], I want... [need/want], So that... [reason for need/want].\" (2) Platform glossary `user-story` (folio-assistant-core/glossary/cat-harness.glossary.json), which binds the story to a Role rather than a user persona: \"What a reader acting in a Role is trying to do, told as that role: as a <role>, I want <want>, so that <so that>.\"",
+      "scopeNote": "PHC handbook glossary wording, verbatim (who-iris/library/9789240093362-eng/sections/sec-002-glossary.md, p. 11). Internal and platform alternatives (smart-ra#133 S1): (1) PHC handbook §3.2.3 body (who-iris/library/9789240093362-eng/sections/sec-012-32-conduct-end-user-research-to-understand-context.md, p. 27): \"A user story follows a standard format to write down what your end-users want from the PCPOSS: As a... [user persona], I want... [need/want], So that... [reason for need/want].\" (2) Platform glossary `user-story` (folio-assistant-core/glossary/cat-harness.glossary.json), which binds the story to a Role rather than a user persona: \"What a reader acting in a Role is trying to do, told as that role: as a <role>, I want <want>, so that <so that>.\" Also used as the functional requirements template (\"As a … / I want … / So that ...\") in SFP handbook §4.5 Table 12 (who-iris/library/9789240120747-eng/sections/sec-026-45-gather-requirements.md, page-043.md, p. 31).",
       "status": "candidate"
     },
     {
@@ -860,6 +865,64 @@
       "definition": "The sequence of activities from one task to another (see section 3.3).",
       "source": "who-iris/library/9789240093362-eng/sections/sec-002-glossary.md",
       "scopeNote": "PHC handbook glossary wording, verbatim (who-iris/library/9789240093362-eng/sections/sec-002-glossary.md, p. 11). Internal and cross-DTH alternatives (smart-ra#133 S1): (1) PHC handbook §3.3 body (who-iris/library/9789240093362-eng/sections/sec-013-33-understand-the-care-pathways-and-workflows-that.md, p. 29): \"Workflows are a visual representation of the progression of activities (tasks, events, decision points) in a logical flow, illustrating the interactions within the business process (8).\" (2) SFP handbook glossary (who-iris/library/9789240120747-eng/sections/page-011.md, p. 11, citing DIIG/DAK): \"A visual representation of the progression of activities (tasks, events, decision points) in a logical flow illustrating the interactions within the business process (21).\" (PHC glossary defines a workflow as the sequence of activities itself; PHC §3.3 and SFP glossary define it as the visual representation of that progression.) All are recorded as candidates; none is chosen.",
+      "status": "candidate"
+    },
+    {
+      "id": "enabling-environment",
+      "prefLabel": "Enabling Environment",
+      "altLabel": [
+        "enabling environment"
+      ],
+      "definition": "Attitudes, actions, policies and practices that stimulate and support effective and efficient functioning of organizations, individuals and programmes. The enabling environment includes legal, regulatory and policy frameworks and political, sociocultural, institutional and economic factors (3).",
+      "source": "who-iris/library/9789240120747-eng/sections/sec-002-glossary.md",
+      "scopeNote": "SFP handbook glossary wording, verbatim (who-iris/library/9789240120747-eng/sections/sec-002-glossary.md, page-009.md, p. 9, citing DIIG), matching DIIG Annex 1.1 Glossary (who-iris/library/9789240010567-eng/sections/page-139.md, p. 127). Shared DIIG Phase 1 concept across DTHs (smart-ra#133 S1, dth-sfp#1 §2.1 Cluster B1); recorded as a candidate.",
+      "status": "candidate"
+    },
+    {
+      "id": "evaluation",
+      "prefLabel": "Evaluation",
+      "altLabel": [
+        "evaluation"
+      ],
+      "definition": "The systematic and objective assessment of an ongoing or completed intervention with the aim of determining the fulfilment of objectives, efficiency, effectiveness, impact and sustainability (8).",
+      "source": "who-iris/library/9789240120747-eng/sections/sec-002-glossary.md",
+      "related": [
+        "monitoring"
+      ],
+      "scopeNote": "SFP handbook glossary wording, verbatim (who-iris/library/9789240120747-eng/sections/sec-002-glossary.md, page-009.md, p. 9, citing Monitoring and evaluating digital health interventions, WHO 2016). Wording alternative in DIIG Annex 1.1 Glossary (who-iris/library/9789240010567-eng/sections/page-140.md, p. 128, citing WHO evaluation practice handbook, 2013): \"The systematic assessment of an ongoing or completed intervention to determine whether the intervention is fulfilling its objectives and to demonstrate an effect on health outcomes.\" Also contrasted with monitoring in SFP §6.1 (who-iris/library/9789240120747-eng/sections/sec-029-61-develop-a-monitoring-and-evaluation-plan.md, page-051.md, p. 39, quoting Pritchett et al. 2013): \"Evaluation asks whether the project is doing the right things, while monitoring asks whether the project is doing things right.\" Both definitions are recorded as candidates; neither is chosen (smart-ra#133 S1, dth-sfp#1 §2.1 Cluster B1).",
+      "status": "candidate"
+    },
+    {
+      "id": "health-information-system",
+      "prefLabel": "Health Information System",
+      "notation": "HIS",
+      "altLabel": [
+        "HIS",
+        "health information system",
+        "Health Information System (HIS)",
+        "Health Information Systems"
+      ],
+      "definition": "A system that integrates data collection, processing, reporting, and use of the information necessary for improving health service effectiveness and efficiency through better management at all levels of health services.",
+      "source": "who-iris/library/9789240010567-eng/sections/page-140.md",
+      "related": [
+        "health-digital-public-infrastructure",
+        "health-information-exchange"
+      ],
+      "scopeNote": "DIIG Annex 1.1 Glossary wording, verbatim (who-iris/library/9789240010567-eng/sections/page-140.md, p. 128, citing WHO 2004 Developing health management information systems; also abbreviated in DIIG page-011.md and HRH handbook who-iris/library/9789240062627-eng/sections/page-006.md). Wording alternative in PHC handbook (`dth-phc`, citing who-iris/library/9789240093362-eng/sections/sec-001-abbreviations.md and sec-003-introduction.md): \"Health information system (HIS): socio-technical system that integrates data collection, processing, reporting, and use of health information to improve health service delivery and management across levels of the health system.\" Referenced in SFP handbook glossary under SMART Guidelines (who-iris/library/9789240120747-eng/sections/sec-002-glossary.md, page-011.md, p. 11) and Ch. 4 (who-iris/library/9789240120747-eng/sections/sec-021-4-determine-the-requirements.md, page-035.md, p. 23). Both definitions are recorded as candidates; neither is chosen (smart-ra#133 S1, dth-sfp#1 P2).",
+      "status": "candidate"
+    },
+    {
+      "id": "monitoring",
+      "prefLabel": "Monitoring",
+      "altLabel": [
+        "monitoring"
+      ],
+      "definition": "The continuous process of collecting and analysing data to compare how well an intervention is being implemented against expected results (8).",
+      "source": "who-iris/library/9789240120747-eng/sections/sec-002-glossary.md",
+      "related": [
+        "evaluation"
+      ],
+      "scopeNote": "SFP handbook glossary wording, verbatim (who-iris/library/9789240120747-eng/sections/sec-002-glossary.md, page-010.md, p. 10, citing Monitoring and evaluating digital health interventions, WHO 2016). Wording alternative in DIIG Annex 1.1 Glossary (who-iris/library/9789240010567-eng/sections/page-141.md, p. 129, citing WHO evaluation practice handbook, 2013): \"The process of collecting and analysing routinely collected data to compare how well an intervention is being implemented against expected results and measure changes in performance over time.\" Both definitions are recorded as candidates; neither is chosen (smart-ra#133 S1, dth-sfp#1 §2.1 Cluster B1).",
       "status": "candidate"
     }
   ]
