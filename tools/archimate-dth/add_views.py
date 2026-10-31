@@ -67,10 +67,15 @@ def insert_in_top_folder(xml, ftype, text):
     return xml[:close] + text + xml[close:]
 
 
-def insert_in_named_subfolder(xml, parent_type, name, text):
+def insert_in_named_subfolder(xml, parent_type, name, text, ids=None):
     """Insert text at the end of the folder called name, at any depth under the top folder."""
     top = re.search(r'\n  <folder [^>]*type="%s"[^>]*>' % parent_type, xml)
     m = re.search(r'\n( +)<folder name="%s" id="[^"]+">' % re.escape(name), xml[top.end():])
+    if not m and ids is not None and parent_type == "diagrams":
+        fid = ids("folder", name)
+        sub = f'\n      <folder name="{esc(name)}" id="{fid}">\n      </folder>'
+        xml = insert_in_named_subfolder(xml, parent_type, "1. Reference Architecture", sub)
+        m = re.search(r'\n( +)<folder name="%s" id="[^"]+">' % re.escape(name), xml[top.end():])
     if not m:
         raise SystemExit(f"no folder {name!r} under {parent_type}")
     start = top.end() + m.end()
@@ -88,6 +93,31 @@ FOLDER_OF = {
     "strategy": "Resource Capability ValueStream CourseOfAction",
     "other": "Location Grouping Junction",
 }
+
+
+
+
+def ensure_element_props(xml, eid, props):
+    """Ensure every (key, value) in props is written as <property/> on element eid."""
+    if not props:
+        return xml, 0
+    m = re.search(rf'\n( +)<element [^>]*id="{re.escape(eid)}"(?:/>|>.*?</element>)', xml, re.S)
+    if not m:
+        raise SystemExit(f"element {eid} not found in model.xml")
+    ind = m.group(1)
+    block = m.group(0)
+    missing = [(k, v) for k, v in props.items() if f'key="{esc(k)}"' not in block]
+    if not missing:
+        return xml, 0
+    prop_xml = "".join(f'\n{ind}  <property key="{esc(k)}" value="{esc(v)}"/>' for k, v in missing)
+    if block.endswith("/>"):
+        new_block = f"{block[:-2]}>{prop_xml}\n{ind}</element>"
+    else:
+        close_m = re.search(rf"(\r?\n{ind}</element>)$", block)
+        if not close_m:
+            raise SystemExit(f"malformed closing tag on {eid}")
+        new_block = block[:close_m.start()] + prop_xml + block[close_m.start():]
+    return xml[:m.start()] + new_block + xml[m.end():], len(missing)
 
 
 def folder_for(t):
@@ -166,17 +196,26 @@ def main(argv):
     for key, (etype, name, doc, props) in s.ELEMENTS.items():
         eid = ids("element", key)
         idx[key] = eid
-        if f'id="{eid}"' in xml:
-            continue
         props = dict(props)
         props.setdefault("source", s.SOURCE)
+        if f'id="{eid}"' in xml:
+            xml, n = ensure_element_props(xml, eid, props)
+            added += n
+            continue
         body = f"\n      <documentation>{esc(doc)}</documentation>" if doc else ""
         body += "".join(f'\n      <property key="{esc(k)}" value="{esc(v)}"/>' for k, v in props.items())
         xml = insert_in_top_folder(xml, folder_for(etype),
                                    f'\n    <element xsi:type="archimate:{etype}" name="{esc(name)}" id="{eid}">{body}\n    </element>')
         added += 1
 
-    rel_ids = {}
+    for key, eprops in getattr(s, "EXISTING_PROPS", {}).items():
+        xml, n = ensure_element_props(xml, idx[key], eprops)
+        added += n
+
+    rel_ids = dict(getattr(s, "EXISTING_RELATIONS", {}))
+    for k, rid in rel_ids.items():
+        if f'id="{rid}"' not in xml:
+            raise SystemExit(f"EXISTING_RELATIONS {k} = {rid} is not in the base model")
     for rtype, a, b, *rest in s.RELATIONS:
         rid = ids("rel", rtype, a, b)
         rel_ids[(rtype, a, b)] = rid
@@ -205,7 +244,7 @@ def main(argv):
         docx = f"\n        <documentation>{esc(doc)}</documentation>" if doc else ""
         view = (f'\n      <element xsi:type="archimate:ArchimateDiagramModel" name="{esc(name)}" id="{vid}">{docx}'
                 f'\n        <property key="source" value="{esc(s.SOURCE)}"/>{body}\n      </element>')
-        xml = insert_in_named_subfolder(xml, "diagrams", s.VIEW_FOLDER, view)
+        xml = insert_in_named_subfolder(xml, "diagrams", s.VIEW_FOLDER, view, ids)
         added += 1
 
     with zipfile.ZipFile(dst, "w", zipfile.ZIP_DEFLATED) as z:
