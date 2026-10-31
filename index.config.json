@@ -36,7 +36,9 @@
       "site": {
         "build": {
           "pre": [
-            "check:archimate"
+            "check:archimate",
+            "check:kg-blocks",
+            "check:library-kg"
           ],
           "sourceSteps": [
             "site:document",
