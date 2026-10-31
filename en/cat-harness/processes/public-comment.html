@@ -953,7 +953,7 @@ public-comment.</p>
       <td><strong>Ingest and place each comment</strong><br /><code class="language-plaintext highlighter-rouge">Task_Ingest</code></td>
       <td>Intake agent</td>
       <td><code class="language-plaintext highlighter-rouge">public-comment</code></td>
-      <td>public-comment import / import-narrative: one record per row or cited passage, anchored through review-anchors.json. Status: received.</td>
+      <td>public-comment import / import-narrative: one record per row or cited passage, anchored through review-anchors.json. Status: received. When the review is also kept in a shared Google Sheet, build its Apps Script with Tool review-sheet-sync (from review/public-comment/sheet-sync.json) and have the sheet’s owner install it once (Extensions, Apps Script, run installTriggers): the sheet then keeps its page, section, line and comment links and its change-set joins current by itself.</td>
     </tr>
     <tr>
       <td><strong>Triage: confirm the anchor, type and priority</strong><br /><code class="language-plaintext highlighter-rouge">Task_Triage</code></td>

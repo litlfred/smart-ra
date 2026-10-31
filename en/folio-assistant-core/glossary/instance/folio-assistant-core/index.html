@@ -14,7 +14,7 @@
 
     .site-nav > ul.nav-list:first-child > li > a,
     
-    .site-nav > ul.nav-list:first-child > li > ul > li:not(:nth-child(4)) > a,
+    .site-nav > ul.nav-list:first-child > li > ul > li:not(:nth-child(2)) > a,
     .site-nav > ul.nav-list:first-child > li > ul > li > ul > li a {
       background-image: none;
     }
@@ -24,14 +24,14 @@
       background-image: none;
     }
 
-    .site-nav > ul.nav-list:first-child > li:nth-child(2) > ul > li:nth-child(4) > a {
+    .site-nav > ul.nav-list:first-child > li:nth-child(2) > ul > li:nth-child(2) > a {
       font-weight: 600;
       text-decoration: none;
     }.site-nav > ul.nav-list:first-child > li:nth-child(2) > button svg,
-    .site-nav > ul.nav-list:first-child > li:nth-child(2) > ul > li:nth-child(4) > button svg {
+    .site-nav > ul.nav-list:first-child > li:nth-child(2) > ul > li:nth-child(2) > button svg {
       transform: rotate(-90deg);
     }.site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(2) > ul.nav-list,
-    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(2) > ul.nav-list > li.nav-list-item:nth-child(4) > ul.nav-list {
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(2) > ul.nav-list > li.nav-list-item:nth-child(2) > ul.nav-list {
       display: block;
     }
   </style>
@@ -871,9 +871,9 @@
 </h1>
     
 
-<p>The glossaries <strong>folio-assistant-core</strong> owns: Folio Assistant platform terms (1 term, <a href="../../../../../assets/glossary/folio-assistant-core--platform.skos.jsonld">SKOS</a>) · Guideline domain (3 terms, <a href="../../../../../assets/glossary/folio-assistant-core--guideline-domain.skos.jsonld">SKOS</a>). Terms extracted from its assets: <a href="../../../../../en/folio-assistant-core/glossary/skills/">Skills</a> (42) · <a href="../../../../../en/folio-assistant-core/glossary/tools/">Tools</a> (15) · <a href="../../../../../en/folio-assistant-core/glossary/bpmn-activities/">BPMN activities</a> (207) · <a href="../../../../../en/folio-assistant-core/glossary/dmn-decisions/">DMN decisions</a> (4) · <a href="../../../../../en/folio-assistant-core/glossary/schema-fields/">Schema fields</a> (181). Every other instance’s terms, the counts and the sources are on the <a href="../../../../../en/folio-assistant-core/glossary/">glossary index</a>.</p>
+<p>The glossaries <strong>folio-assistant-core</strong> owns: Folio Assistant platform terms (1 term, <a href="../../../../../assets/glossary/folio-assistant-core--platform.skos.jsonld">SKOS</a>) · Guideline domain (3 terms, <a href="../../../../../assets/glossary/folio-assistant-core--guideline-domain.skos.jsonld">SKOS</a>). Terms extracted from its assets: <a href="../../../../../en/folio-assistant-core/glossary/skills/">Skills</a> (43) · <a href="../../../../../en/folio-assistant-core/glossary/tools/">Tools</a> (16) · <a href="../../../../../en/folio-assistant-core/glossary/bpmn-activities/">BPMN activities</a> (207) · <a href="../../../../../en/folio-assistant-core/glossary/dmn-decisions/">DMN decisions</a> (4) · <a href="../../../../../en/folio-assistant-core/glossary/schema-fields/">Schema fields</a> (181). Every other instance’s terms, the counts and the sources are on the <a href="../../../../../en/folio-assistant-core/glossary/">glossary index</a>.</p>
 
-<p><strong>Size:</strong> this page holds 4 terms and is 8 KB before compression, within its budget of 1.0 MB. There is no search index: the filter below runs over this page, and the A–Z bar jumps within it.</p>
+<p><strong>Size:</strong> this page holds 4 terms and is 10 KB before compression, within its budget of 1.0 MB. There is no search index: the filter below runs over this page, and the A–Z bar jumps within it.</p>
 
 <p><label for="fa-gloss-q">Filter terms</label>
 <input id="fa-gloss-q" type="search" autocomplete="off" style="min-height:44px;width:100%;max-width:32rem" /></p>
@@ -894,7 +894,8 @@ clinical
 </dt>
 <dd>
 <p>A guideline whose recommendations address the care of individual patients by health workers: assessment, diagnosis, treatment and management of a condition in a person.</p>
-<p class="fa-gloss-meta">Guideline domain · <code>https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/guideline-domain/clinical</code> · source <a href="https://github.com/litlfred/folio-assistant/blob/main/beans/defs/folio-assistant-398x (owner, 2026-10-10)"><code>beans/defs/folio-assistant-398x (owner, 2026-10-10)</code></a></p>
+<p class="fa-gloss-note">Looked up against the MeSH RDF API (<a href="https://id.nlm.nih.gov/mesh/">id.nlm.nih.gov/mesh/</a>, 2026-10-23): closeMatch to MeSH D017065 ('Practice Guideline', Publication Type; entry terms 'Clinical Guideline', 'Clinical Practice Guideline') and D015510 ('Clinical Medicine', Topical Descriptor). Neither is an exactMatch because this concept classifies a guideline's domain within a three-way partition (clinical, public health, health system strengthening) rather than publication form or the medical discipline as a whole.</p>
+<p class="fa-gloss-meta">Guideline domain · <code>https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/guideline-domain/clinical</code> · source <a href="https://github.com/litlfred/smart-ra/blob/main/beans/defs/folio-assistant-398x (owner, 2026-10-10)"><code>beans/defs/folio-assistant-398x (owner, 2026-10-10)</code></a></p>
 <ul class="fa-gloss-matches"><li>closeMatch: <a href="http://id.nlm.nih.gov/mesh/D017065">id.nlm.nih.gov/mesh/D017065</a></li><li>closeMatch: <a href="http://id.nlm.nih.gov/mesh/D015510">id.nlm.nih.gov/mesh/D015510</a></li></ul>
 </dd>
 </dl>
@@ -930,7 +931,8 @@ health system strengthening
 </dt>
 <dd>
 <p>A guideline whose recommendations address how the health system itself is organised and resourced — service delivery, health workforce, health information systems, access to medical products, financing, and leadership and governance — rather than a particular condition or population intervention.</p>
-<p class="fa-gloss-meta">Guideline domain · <code>https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/guideline-domain/health-system-strengthening</code> · source <a href="https://github.com/litlfred/folio-assistant/blob/main/beans/defs/folio-assistant-398x (owner, 2026-10-10)"><code>beans/defs/folio-assistant-398x (owner, 2026-10-10)</code></a></p>
+<p class="fa-gloss-note">The six areas follow WHO's health-system building blocks (Everybody's business, 2007). Looked up against the MeSH RDF API (<a href="https://id.nlm.nih.gov/mesh/">id.nlm.nih.gov/mesh/</a>, 2026-10-23): MeSH holds no single descriptor for 'health system strengthening' (none found for the compound term); recorded as closeMatch to MeSH D003695 ('Delivery of Health Care', entry terms 'Health Care Systems', 'Healthcare Systems') and D057191 ('Capacity Building').</p>
+<p class="fa-gloss-meta">Guideline domain · <code>https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/guideline-domain/health-system-strengthening</code> · source <a href="https://github.com/litlfred/smart-ra/blob/main/beans/defs/folio-assistant-398x (owner, 2026-10-10)"><code>beans/defs/folio-assistant-398x (owner, 2026-10-10)</code></a></p>
 <ul class="fa-gloss-matches"><li>closeMatch: <a href="http://id.nlm.nih.gov/mesh/D003695">id.nlm.nih.gov/mesh/D003695</a></li><li>closeMatch: <a href="http://id.nlm.nih.gov/mesh/D057191">id.nlm.nih.gov/mesh/D057191</a></li></ul>
 </dd>
 </dl>
@@ -948,7 +950,8 @@ public health
 </dt>
 <dd>
 <p>A guideline whose recommendations address the health of populations rather than of an individual patient: prevention, health promotion, immunization and screening programmes, surveillance, and policy or environmental measures.</p>
-<p class="fa-gloss-meta">Guideline domain · <code>https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/guideline-domain/public-health</code> · source <a href="https://github.com/litlfred/folio-assistant/blob/main/beans/defs/folio-assistant-398x (owner, 2026-10-10)"><code>beans/defs/folio-assistant-398x (owner, 2026-10-10)</code></a></p>
+<p class="fa-gloss-note">Looked up against the MeSH RDF API (<a href="https://id.nlm.nih.gov/mesh/">id.nlm.nih.gov/mesh/</a>, 2026-10-23): closeMatch to MeSH D011634 ('Public Health', Topical Descriptor) and D015980 ('Public Health Practice', Topical Descriptor). Recorded as closeMatch rather than exactMatch because this concept classifies a guideline's domain rather than the field of public health itself.</p>
+<p class="fa-gloss-meta">Guideline domain · <code>https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/guideline-domain/public-health</code> · source <a href="https://github.com/litlfred/smart-ra/blob/main/beans/defs/folio-assistant-398x (owner, 2026-10-10)"><code>beans/defs/folio-assistant-398x (owner, 2026-10-10)</code></a></p>
 <ul class="fa-gloss-matches"><li>closeMatch: <a href="http://id.nlm.nih.gov/mesh/D011634">id.nlm.nih.gov/mesh/D011634</a></li><li>closeMatch: <a href="http://id.nlm.nih.gov/mesh/D015980">id.nlm.nih.gov/mesh/D015980</a></li></ul>
 </dd>
 </dl>

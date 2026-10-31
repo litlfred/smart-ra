@@ -875,12 +875,12 @@
 
 <p>From: bootstrap 38 (<a href="../../../../assets/glossary/bootstrap--kg-bpmn-activities.skos.jsonld">SKOS</a>) · bootstrap-tools 7 (<a href="../../../../assets/glossary/bootstrap-tools--kg-bpmn-activities.skos.jsonld">SKOS</a>) · cat-harness 577 (<a href="../../../../assets/glossary/cat-harness--kg-bpmn-activities.skos.jsonld">SKOS</a>) · fhir-harness 45 (<a href="../../../../assets/glossary/fhir-harness--kg-bpmn-activities.skos.jsonld">SKOS</a>) · folio-assistant-core 207 (<a href="../../../../assets/glossary/folio-assistant-core--kg-bpmn-activities.skos.jsonld">SKOS</a>) · smart-base 117 (<a href="../../../../assets/glossary/smart-base--kg-bpmn-activities.skos.jsonld">SKOS</a>) · who-iris 34 (<a href="../../../../assets/glossary/who-iris--kg-bpmn-activities.skos.jsonld">SKOS</a>).</p>
 
-<p><strong>Size:</strong> this page holds 1025 terms and is 949 KB before compression, fetched in one request, within its budget of 1.0 MB. There is no search index: the filter below runs over this page, and the A–Z bar jumps within it.</p>
+<p><strong>Size:</strong> this page holds 1025 terms and is 950 KB before compression, fetched in one request, within its budget of 1.0 MB. There is no search index: the filter below runs over this page, and the A–Z bar jumps within it.</p>
 
 <div class="table-wrapper"><table class="fa-gloss-mapping">
 <caption>Already somebody else's concept? — <code>check:term-mapping</code>, bean <code>7wou</code></caption>
 <thead><tr><th>target</th><th>mapped</th><th>unmapped</th><th>undetermined</th><th>why undetermined</th></tr></thead>
-<tbody><tr><td><code>fhir</code></td><td>0</td><td>885</td><td>0</td><td>—</td></tr><tr><td><code>skos</code></td><td>0</td><td>885</td><td>0</td><td>—</td></tr></tbody>
+<tbody><tr><td><code>fhir</code></td><td>0</td><td>893</td><td>0</td><td>—</td></tr><tr><td><code>skos</code></td><td>0</td><td>893</td><td>0</td><td>—</td></tr></tbody>
 </table></div>
 <p class="fa-gloss-mapping-note"><strong>Undetermined is never “no match”.</strong> 
 A vocabulary that could not be reached has said nothing, and the column above keeps that 
@@ -4604,7 +4604,7 @@ Indicators and requirements [l2-dak-authoring] <span class="fa-gloss-status">can
 Ingest and place each comment <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
-<p>public-comment import / import-narrative: one record per row or cited passage, anchored through review-anchors.json. Status: received.</p>
+<p>public-comment import / import-narrative: one record per row or cited passage, anchored through review-anchors.json. Status: received. When the review is also kept in a shared Google Sheet, build its Apps Script with Tool review-sheet-sync (from review/public-comment/sheet-sync.json) and have the sheet's owner install it once (Extensions, Apps Script, run installTriggers): the sheet then keeps its page, section, line and comment links and its change-set joins current by itself.</p>
 <p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/public-comment.bpmn"><code>folio-assistant-core/processes/content/public-comment.bpmn#Task_Ingest</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>

@@ -14,7 +14,7 @@
 
     .site-nav > ul.nav-list:first-child > li > a,
     
-    .site-nav > ul.nav-list:first-child > li > ul > li:not(:nth-child(1)) > a,
+    .site-nav > ul.nav-list:first-child > li > ul > li:not(:nth-child(3)) > a,
     .site-nav > ul.nav-list:first-child > li > ul > li > ul > li a {
       background-image: none;
     }
@@ -24,14 +24,14 @@
       background-image: none;
     }
 
-    .site-nav > ul.nav-list:first-child > li:nth-child(2) > ul > li:nth-child(1) > a {
+    .site-nav > ul.nav-list:first-child > li:nth-child(2) > ul > li:nth-child(3) > a {
       font-weight: 600;
       text-decoration: none;
     }.site-nav > ul.nav-list:first-child > li:nth-child(2) > button svg,
-    .site-nav > ul.nav-list:first-child > li:nth-child(2) > ul > li:nth-child(1) > button svg {
+    .site-nav > ul.nav-list:first-child > li:nth-child(2) > ul > li:nth-child(3) > button svg {
       transform: rotate(-90deg);
     }.site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(2) > ul.nav-list,
-    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(2) > ul.nav-list > li.nav-list-item:nth-child(1) > ul.nav-list {
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(2) > ul.nav-list > li.nav-list-item:nth-child(3) > ul.nav-list {
       display: block;
     }
   </style>
@@ -880,7 +880,7 @@
 
 <p>The glossaries <strong>who-iris</strong> owns: WHO house terms (1 term, <a href="../../../../../assets/glossary/who-iris--who-terms.skos.jsonld">SKOS</a>). Terms extracted from its assets: <a href="../../../../../en/folio-assistant-core/glossary/skills/">Skills</a> (5) · <a href="../../../../../en/folio-assistant-core/glossary/tools/">Tools</a> (1) · <a href="../../../../../en/folio-assistant-core/glossary/bpmn-activities/">BPMN activities</a> (34). Every other instance’s terms, the counts and the sources are on the <a href="../../../../../en/folio-assistant-core/glossary/">glossary index</a>.</p>
 
-<p><strong>Size:</strong> this page holds 1 terms and is 3 KB before compression, within its budget of 1.0 MB. There is no search index: the filter below runs over this page, and the A–Z bar jumps within it.</p>
+<p><strong>Size:</strong> this page holds 1 terms and is 4 KB before compression, within its budget of 1.0 MB. There is no search index: the filter below runs over this page, and the A–Z bar jumps within it.</p>
 
 <p><label for="fa-gloss-q">Filter terms</label>
 <input id="fa-gloss-q" type="search" autocomplete="off" style="min-height:44px;width:100%;max-width:32rem" /></p>
@@ -901,6 +901,7 @@ quality of the evidence
 </dt>
 <dd>
 <p>In the context of guideline development, the confidence that the estimates of an effect are adequate to support a particular decision or recommendation. Rated high, moderate, low or very low.</p>
+<p class="fa-gloss-note">The WHO handbook for guideline development (2nd edition, §9.1, p. 122) names both alternatives: &quot;Alternative terms to describe the quality of the evidence are 'certainty of the evidence' or 'confidence in the estimates of effect'.&quot; The handbook uses 'quality of the evidence' 77 times and 'certainty of the evidence' once; the who-guideline-development voice and the platform's `grade-certainty` code list use 'certainty', GRADE's later name. Rated for a body of evidence per outcome, never for a single study. Not the strength of a recommendation, which the handbook keeps apart throughout.</p>
 <p class="fa-gloss-meta">WHO house terms · <code>https://litlfred.github.io/who-iris/v0/ns#glossary/who-terms/quality-of-the-evidence</code> · source <a href="https://github.com/litlfred/who-iris/blob/main/library/9789241548960-eng/sections/sec-153-91-what-is-the-quality-of-the-evidence.md"><code>who-iris/library/9789241548960-eng/sections/sec-153-91-what-is-the-quality-of-the-evidence.md</code></a></p>
 </dd>
 </dl>

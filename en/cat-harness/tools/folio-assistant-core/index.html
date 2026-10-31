@@ -910,9 +910,9 @@ is <code class="language-plaintext highlighter-rouge">satisfies</code>, and it r
 to do that</em>, never <em>this skill is a tool</em>.</p>
 
 <div class="tg-grid">
-<a class="tg-stat" href="#every-tool"><b>15</b><span>Tool nodes</span></a>
-<a class="tg-stat" href="#does-every-satisfies-name-a-skill-that-exists"><b>12</b><span>skills satisfied</span></a>
-<a class="tg-stat" href="#how-they-are-invoked-and-installed"><b>15</b><span>invoked as a shell command</span></a>
+<a class="tg-stat" href="#every-tool"><b>16</b><span>Tool nodes</span></a>
+<a class="tg-stat" href="#does-every-satisfies-name-a-skill-that-exists"><b>13</b><span>skills satisfied</span></a>
+<a class="tg-stat" href="#how-they-are-invoked-and-installed"><b>16</b><span>invoked as a shell command</span></a>
 <a class="tg-stat" href="#how-they-are-invoked-and-installed"><b>0</b><span>reachable over MCP</span></a>
 </div>
 
@@ -937,7 +937,7 @@ to do that</em>, never <em>this skill is a tool</em>.</p>
   <tbody>
     <tr>
       <td><span class="tg-tag tg-shell">shell</span></td>
-      <td>15</td>
+      <td>16</td>
     </tr>
   </tbody>
 </table></div>
@@ -954,6 +954,10 @@ to do that</em>, never <em>this skill is a tool</em>.</p>
       <td><code class="language-plaintext highlighter-rouge">none</code></td>
       <td>15</td>
     </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">service</code></td>
+      <td>1</td>
+    </tr>
   </tbody>
 </table></div>
 <h2 id="does-every-satisfies-name-a-skill-that-exists">
@@ -965,7 +969,7 @@ to do that</em>, never <em>this skill is a tool</em>.</p>
 </h2>
     
 
-<p>Yes — all <strong>12</strong> skills named across <strong>15</strong> tools resolve to a
+<p>Yes — all <strong>13</strong> skills named across <strong>16</strong> tools resolve to a
 skill document in this checkout. A <code class="language-plaintext highlighter-rouge">satisfies</code> pointing at nothing would be a
 tool advertising a capability the graph cannot locate.</p>
 <h2 id="every-tool">
@@ -1092,6 +1096,14 @@ tool advertising a capability the graph cannot locate.</p>
       <td><code class="language-plaintext highlighter-rouge">l1-coverage</code></td>
       <td>4 in / 1 out</td>
       <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+    </tr>
+    <tr>
+      <td><a id="review-sheet-sync"></a><a href="#review-sheet-sync"><code class="language-plaintext highlighter-rouge">review-sheet-sync</code></a><br />Build the review sheet’s Apps Script and a document’s Config tab</td>
+      <td>Builds <code class="language-plaintext highlighter-rouge">Code.gs</code> (one generic script for every document, <code class="language-plaintext highlighter-rouge">--script</code>) and one document’s Config tab rows (<code class="language-plaintext highlighter-rouge">--config</code>): the Google Apps Script that keeps a public-comment review sheet’s links and joins current: each comment No. links to its comment page, Sections, Page and Line no(s) link to the page of the frozen review draft, Review Change Sets joins its comments, suggested revisions, feedback and dispositions with each <code class="language-plaintext highlighter-rouge">No. n</code> linking to its row, and on both tabs Agentic status lists each pull request of the change-set, linked, with its status and what it changed, from the Agent tab. The script is the same for every review (<code class="language-plaintext highlighter-rouge">review-sheet.gs</code>); this Tool fills in one folio’s data from its <code class="language-plaintext highlighter-rouge">review/public-comment/sheet-sync.json</code>, its review anchors and the draft’s <code class="language-plaintext highlighter-rouge">pdf-line-map.json</code>. The script reads the document’s URLs, tab and column names and data from the sheet’s Config tab (visible, locked to the owner), which the agent writes from these rows. A person pastes the script (one file) into the sheet once (Extensions &gt; Apps Script) and runs <code class="language-plaintext highlighter-rouge">installTriggers</code>; from then on the sheet rebuilds itself within five minutes of an edit, with no agent. With <code class="language-plaintext highlighter-rouge">"mode": "drafting"</code> in the config it builds the simpler drafting sheet instead: one Contributor Feedback tab where each row is a change set (ids assigned by the script), Sections picked from the document’s table of contents and linked to it, and Issue and Agentic status from the Agent tab.</td>
+      <td><span class="tg-tag tg-shell">shell</span></td>
+      <td><code class="language-plaintext highlighter-rouge">review-sheet-script</code></td>
+      <td>4 in / 2 out</td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="tabular-csv"></a><a href="#tabular-csv"><code class="language-plaintext highlighter-rouge">tabular-csv</code></a><br />CSV tabular metadata</td>

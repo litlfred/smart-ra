@@ -3,6 +3,9 @@
 .av-type{font:italic 8px system-ui,sans-serif;fill:#555}
 .av-group{font:600 11px system-ui,sans-serif;fill:#333}
 .av-note{font:10px system-ui,sans-serif;fill:#222}
+.av-key{font:11px system-ui,sans-serif;fill:#222}
+.av-keyh{font:600 11px system-ui,sans-serif;fill:#333}
+.av-keyt{font:700 13px system-ui,sans-serif;fill:#111}
 .av-rel{font:9px system-ui,sans-serif;fill:#333;paint-order:stroke;stroke:#fff;stroke-width:3px}
 a:hover rect,a:hover polygon,a:focus rect,a:focus polygon{stroke:#06c;stroke-width:2.5}
 </style><defs>
