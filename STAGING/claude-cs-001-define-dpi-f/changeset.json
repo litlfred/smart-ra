@@ -1,0 +1,62 @@
+{
+  "$schema": "folio-changeset/v1",
+  "folio": "folio",
+  "base": {
+    "ref": "origin/main",
+    "commit": "5f9fa72ab25de00f9c047b8a05eaa72c0a810643"
+  },
+  "head": {
+    "ref": "worktree",
+    "commit": null
+  },
+  "summary": {
+    "added": 0,
+    "removed": 0,
+    "changed": 2,
+    "unchanged": 931,
+    "renamed": 0,
+    "prose": 2,
+    "manifest": 0,
+    "moved": 0
+  },
+  "changes": [
+    {
+      "change": "changed",
+      "label": "prose:executive-summary-lead-f759cc",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/executive-summary/p-executive-summary-lead-f759cc.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/executive-summary::sec:executive-summary-lead",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/executive-summary/p-executive-summary-lead-f759cc.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/executive-summary::sec:executive-summary-lead",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "tbl:glossary-lead-a31853",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/glossary/t-glossary-lead-a31853.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/glossary::sec:glossary-lead",
+        "index": 0
+      },
+      "head": {
+        "file": "dpi-h-ra/glossary/t-glossary-lead-a31853.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/glossary::sec:glossary-lead",
+        "index": 0
+      }
+    }
+  ]
+}
