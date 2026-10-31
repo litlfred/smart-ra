@@ -7,6 +7,7 @@
     "site:document": "bun run folio-assistant-core/scripts/build-document-site.ts --landing-layout default --document-layout default --out",
     "site:public-comment": "bun run folio-assistant-core/scripts/public-comment-site.ts --out",
     "site:library": "bun run folio-assistant-core/scripts/build-library-site.ts --out",
+    "site:review-sheet": "bun run folio-assistant-core/scripts/review-sheet-site.ts --out",
     "kg:blocks": "bun run cat-harness-tools/pipeline/gen-block-jsonld.ts --paper dpi-h-ra",
     "kg:library": "bun run cat-harness-tools/pipeline/gen-library-jsonld.ts",
     "check:kg-blocks": "bun run cat-harness-tools/pipeline/gen-block-jsonld.ts --paper dpi-h-ra --check",
