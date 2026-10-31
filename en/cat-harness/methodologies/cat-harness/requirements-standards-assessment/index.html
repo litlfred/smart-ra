@@ -84,9 +84,9 @@
      `<html data-fa-scheme>` before the body is parsed, so no rule keyed on
      it ever paints the wrong way first;
   2. if that is not the configured scheme, switch the theme's sheet NOW,
-     while the parser is still in the head. The link is parser-created, so
-     the browser holds first paint for its new file: a light reader is light
-     from the first frame, with no dark flash either;
+     while the parser is still in the head. `jtd.setTheme` loads the new
+     file beside the old, render-blocking, and drops the old one once it
+     has loaded (cat-harness#820): never a frame with no theme sheet;
   3. paint `html` itself, dark unless the scheme is light, so a sheet in
      flight shows the page's ground rather than white.
 
@@ -647,7 +647,7 @@
 <script src="../../../../../assets/js/kg-render.js" defer></script>
 <!-- BEFORE docs-ui.js, which calls it: the one drawing of the harness icon row (beans `lhvt`, `9rq1`). -->
 <script src="../../../../../assets/js/navbar-row.js?v=7dce6a7e2ab0" defer></script>
-<script src="../../../../../assets/js/docs-ui.js?v=8b5567635976" defer></script>
+<script src="../../../../../assets/js/docs-ui.js?v=59c1d8d3ff0a" defer></script>
 <!-- The edit, source and feedback links of every page, from the platform's one
   recipe (cat-harness-tools/src/core/edit-links.ts, bean v433): links carry their
   facts and this builds the hrefs. -->
@@ -738,7 +738,7 @@
 
 <link rel="stylesheet" href="../../../../../assets/css/navbar.css"><script src="../../../../../assets/navbar/rail-1nr7jo2rxsc.js" defer></script><script src="../../../../../assets/js/navbar.js" defer></script><link rel="stylesheet" href="../../../../../assets/page-layout.css" data-fa-page-layout><script src="../../../../../assets/page-layout.js" defer data-fa-page-layout></script><meta name="fa-pinned-data" content="../../../../.."></head>
 
-<body><script type="application/json" id="fa-rail" data-fa-root="https://litlfred.github.io/folio-assistant" data-fa-to-root="../../../../..">{"data":"rail-1nr7jo2rxsc","here":"/en/cat-harness/methodologies/cat-harness/requirements-standards-assessment/","documentIndex":{"label":"On this page","icon":"§","items":[{"href":"#1-the-bootstrap-baseline-the-six-parts-of-a-requirement","label":"1. The bootstrap baseline: the six parts of a requirement"},{"href":"#2-survey-of-open-standards","label":"2. Survey of open standards","children":[{"href":"#category-a-interchange-formats","label":"Category A: Interchange formats","depth":1},{"href":"#category-b-statement-templates-and-grammars","label":"Category B: Statement templates and grammars","depth":1},{"href":"#category-c-quality-models","label":"Category C: Quality models","depth":1}],"fold":"3 sub-sections"},{"href":"#3-field-by-field-fit-analysis","label":"3. Field-by-field fit analysis"},{"href":"#4-architectural-assessment-complexity-cost-and-layer-placement","label":"4. Architectural assessment: complexity, cost, and layer placement","children":[{"href":"#why-nothing-is-adopted-into-bootstrap-the-no-outside-concept-rule","label":"Why nothing is adopted into bootstrap (the no-outside-concept rule)","depth":1},{"href":"#architectural-layer-placement","label":"Architectural layer placement","depth":1}],"fold":"2 sub-sections"},{"href":"#5-concrete-recommendations","label":"5. Concrete recommendations"},{"href":"#6-what-this-methodology-refuses","label":"6. What this methodology refuses"}],"collapsible":true}}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../">Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector</a></nav>
+<body><script type="application/json" id="fa-rail" data-fa-root="https://litlfred.github.io/folio-assistant" data-fa-to-root="../../../../..">{"data":"rail-1nr7jo2rxsc","here":"/en/cat-harness/methodologies/cat-harness/requirements-standards-assessment/","documentIndex":{"label":"On this page","icon":"§","items":[{"href":"#1-the-bootstrap-baseline-the-six-parts-of-a-requirement","label":"The bootstrap baseline: the six parts of a requirement","icon":"1"},{"href":"#2-survey-of-open-standards","label":"Survey of open standards","icon":"2","children":[{"href":"#category-a-interchange-formats","label":"Category A: Interchange formats","depth":1},{"href":"#category-b-statement-templates-and-grammars","label":"Category B: Statement templates and grammars","depth":1},{"href":"#category-c-quality-models","label":"Category C: Quality models","depth":1}],"fold":"3 sub-sections"},{"href":"#3-field-by-field-fit-analysis","label":"Field-by-field fit analysis","icon":"3"},{"href":"#4-architectural-assessment-complexity-cost-and-layer-placement","label":"Architectural assessment: complexity, cost, and layer placement","icon":"4","children":[{"href":"#why-nothing-is-adopted-into-bootstrap-the-no-outside-concept-rule","label":"Why nothing is adopted into bootstrap (the no-outside-concept rule)","depth":1},{"href":"#architectural-layer-placement","label":"Architectural layer placement","depth":1}],"fold":"2 sub-sections"},{"href":"#5-concrete-recommendations","label":"Concrete recommendations","icon":"5"},{"href":"#6-what-this-methodology-refuses","label":"What this methodology refuses","icon":"6"}],"collapsible":true}}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../">Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector</a></nav>
   <a class="skip-to-main" href="#main-content">Skip to main content</a>
   <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
   <symbol id="svg-link" viewBox="0 0 24 24">

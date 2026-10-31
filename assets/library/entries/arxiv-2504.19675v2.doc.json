@@ -394,15 +394,15 @@
           "heading": true
         },
         {
-          "term": "ranked",
-          "heading": false
-        },
-        {
-          "term": "llms",
-          "heading": false
-        },
-        {
           "term": "gory",
+          "heading": false
+        },
+        {
+          "term": "heav",
+          "heading": false
+        },
+        {
+          "term": "ier",
           "heading": false
         }
       ],
@@ -429,11 +429,11 @@
           "heading": false
         },
         {
-          "term": "subsets",
+          "term": "subject vocabulary",
           "heading": false
         },
         {
-          "term": "subject vocabulary",
+          "term": "subsets",
           "heading": false
         },
         {
@@ -547,12 +547,12 @@
           "heading": false
         },
         {
-          "term": "translation",
-          "heading": true
-        },
-        {
           "term": "training data",
           "heading": false
+        },
+        {
+          "term": "translation",
+          "heading": true
         }
       ],
       "extract": "We used the Llama-3.1-8B-Instruct LLM (Grattafiori et al., 2024) for translating the titles and abstracts of all records. Each record was translated separately into a German-only and English-only record (step 1 in Figure 1). More details on LLM processing are given in Appendix D. original records German only English only German synthetic part 1 German synthetic part 2 German synthetic part 3 English synthetic part 1",
@@ -713,11 +713,11 @@
           "heading": true
         },
         {
-          "term": "base projects",
+          "term": "simple ensemble",
           "heading": false
         },
         {
-          "term": "simple ensemble",
+          "term": "base projects",
           "heading": false
         },
         {
@@ -733,7 +733,7 @@
           "heading": false
         },
         {
-          "term": "minor role",
+          "term": "xtransformer",
           "heading": false
         }
       ],
@@ -805,11 +805,11 @@
       },
       "keywords": [
         {
-          "term": "qualitative evaluation",
+          "term": "recall scores",
           "heading": false
         },
         {
-          "term": "recall scores",
+          "term": "qualitative evaluation",
           "heading": false
         },
         {
@@ -817,11 +817,11 @@
           "heading": false
         },
         {
-          "term": "considered correct",
+          "term": "ruc team",
           "heading": false
         },
         {
-          "term": "ruc team",
+          "term": "considered correct",
           "heading": false
         },
         {
@@ -876,15 +876,15 @@
           "heading": false
         },
         {
-          "term": "quantitative evaluations",
-          "heading": false
-        },
-        {
           "term": "systems achieved",
           "heading": false
         },
         {
-          "term": "evaluation scores",
+          "term": "quantitative evaluations",
+          "heading": false
+        },
+        {
+          "term": "higher scores",
           "heading": false
         }
       ],
@@ -953,7 +953,7 @@
           "heading": false
         },
         {
-          "term": "classification",
+          "term": "annif",
           "heading": false
         }
       ],
@@ -1056,15 +1056,15 @@
       },
       "keywords": [
         {
+          "term": "vllm",
+          "heading": false
+        },
+        {
           "term": "llm",
           "heading": true
         },
         {
           "term": "records",
-          "heading": false
-        },
-        {
-          "term": "hpc",
           "heading": false
         }
       ],
@@ -1131,7 +1131,7 @@
           "heading": false
         },
         {
-          "term": "text",
+          "term": "title",
           "heading": false
         }
       ],
@@ -1197,6 +1197,10 @@
           "heading": false
         },
         {
+          "term": "gnd",
+          "heading": true
+        },
+        {
           "term": "climate change",
           "heading": false
         },
@@ -1209,11 +1213,7 @@
           "heading": false
         },
         {
-          "term": "gnd",
-          "heading": true
-        },
-        {
-          "term": "synthetic records",
+          "term": "translated",
           "heading": false
         }
       ],
@@ -1225,11 +1225,11 @@
   "withheld": false,
   "keywords": [
     {
-      "term": "synthetic records",
+      "term": "gnd subject",
       "heading": false
     },
     {
-      "term": "gnd subject",
+      "term": "synthetic records",
       "heading": false
     },
     {
@@ -1237,7 +1237,15 @@
       "heading": false
     },
     {
+      "term": "training records",
+      "heading": false
+    },
+    {
       "term": "bonsai projects",
+      "heading": false
+    },
+    {
+      "term": "subject predictions",
       "heading": false
     },
     {
@@ -1245,15 +1253,15 @@
       "heading": false
     },
     {
-      "term": "training records",
+      "term": "subject indexing",
+      "heading": false
+    },
+    {
+      "term": "tibkat subject",
       "heading": false
     },
     {
       "term": "english synthetic",
-      "heading": false
-    },
-    {
-      "term": "subject predictions",
       "heading": false
     },
     {
@@ -1263,14 +1271,6 @@
     {
       "term": "bibliographic records",
       "heading": false
-    },
-    {
-      "term": "evaluation scores",
-      "heading": false
-    },
-    {
-      "term": "ensemble projects",
-      "heading": true
     }
   ],
   "links": {

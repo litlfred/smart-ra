@@ -1623,11 +1623,7 @@
           "heading": false
         },
         {
-          "term": "starting point",
-          "heading": true
-        },
-        {
-          "term": "entity prov",
+          "term": "wasattributedto prov",
           "heading": false
         },
         {
@@ -1635,8 +1631,12 @@
           "heading": false
         },
         {
-          "term": "wasattributedto prov",
+          "term": "entity prov",
           "heading": false
+        },
+        {
+          "term": "starting point",
+          "heading": true
         },
         {
           "term": "wasinformedby prov",
@@ -1745,11 +1745,11 @@
           "heading": false
         },
         {
-          "term": "association prov",
+          "term": "usage prov",
           "heading": false
         },
         {
-          "term": "usage prov",
+          "term": "association prov",
           "heading": false
         }
       ],
@@ -1835,15 +1835,15 @@
           "heading": false
         },
         {
-          "term": "london forecast",
-          "heading": false
-        },
-        {
           "term": "wasattributedto prov",
           "heading": false
         },
         {
           "term": "super-properties prov",
+          "heading": false
+        },
+        {
+          "term": "london forecast",
           "heading": false
         },
         {
@@ -1878,11 +1878,11 @@
           "heading": false
         },
         {
-          "term": "activity prov",
+          "term": "chart prov",
           "heading": false
         },
         {
-          "term": "chart prov",
+          "term": "activity prov",
           "heading": false
         },
         {
@@ -1945,11 +1945,11 @@
           "heading": false
         },
         {
-          "term": "domain prov",
+          "term": "draft prov",
           "heading": false
         },
         {
-          "term": "draft prov",
+          "term": "domain prov",
           "heading": false
         }
       ],
@@ -1988,11 +1988,11 @@
           "heading": false
         },
         {
-          "term": "checking prov",
+          "term": "super-properties prov",
           "heading": false
         },
         {
-          "term": "super-properties prov",
+          "term": "checking prov",
           "heading": false
         },
         {
@@ -2149,11 +2149,11 @@
           "heading": false
         },
         {
-          "term": "agent prov",
+          "term": "atlocation rdfs",
           "heading": false
         },
         {
-          "term": "atlocation rdfs",
+          "term": "agent prov",
           "heading": false
         }
       ],
@@ -2188,12 +2188,12 @@
           "heading": false
         },
         {
-          "term": "inverse",
-          "heading": true
-        },
-        {
           "term": "invalidated prov",
           "heading": false
+        },
+        {
+          "term": "inverse",
+          "heading": true
         },
         {
           "term": "derivation prov",
@@ -2371,7 +2371,7 @@
           "heading": false
         },
         {
-          "term": "page cross",
+          "term": "working group",
           "heading": false
         }
       ],
@@ -2524,11 +2524,11 @@
       "heading": true
     },
     {
-      "term": "agent prov",
+      "term": "wasderivedfrom prov",
       "heading": true
     },
     {
-      "term": "wasderivedfrom prov",
+      "term": "agent prov",
       "heading": true
     },
     {

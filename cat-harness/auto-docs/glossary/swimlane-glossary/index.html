@@ -84,9 +84,9 @@
      `<html data-fa-scheme>` before the body is parsed, so no rule keyed on
      it ever paints the wrong way first;
   2. if that is not the configured scheme, switch the theme's sheet NOW,
-     while the parser is still in the head. The link is parser-created, so
-     the browser holds first paint for its new file: a light reader is light
-     from the first frame, with no dark flash either;
+     while the parser is still in the head. `jtd.setTheme` loads the new
+     file beside the old, render-blocking, and drops the old one once it
+     has loaded (cat-harness#820): never a frame with no theme sheet;
   3. paint `html` itself, dark unless the scheme is light, so a sheet in
      flight shows the page's ground rather than white.
 
@@ -647,7 +647,7 @@
 <script src="../../../../assets/js/kg-render.js" defer></script>
 <!-- BEFORE docs-ui.js, which calls it: the one drawing of the harness icon row (beans `lhvt`, `9rq1`). -->
 <script src="../../../../assets/js/navbar-row.js?v=7dce6a7e2ab0" defer></script>
-<script src="../../../../assets/js/docs-ui.js?v=8b5567635976" defer></script>
+<script src="../../../../assets/js/docs-ui.js?v=59c1d8d3ff0a" defer></script>
 <!-- The edit, source and feedback links of every page, from the platform's one
   recipe (cat-harness-tools/src/core/edit-links.ts, bean v433): links carry their
   facts and this builds the hrefs. -->
@@ -987,7 +987,7 @@
 </tr>
 <tr id="a-cat-harness-glossary-glossary-ledger-json-role-compute-authoring-agent">
   <td><a href="https://github.com/litlfred/cat-harness/blob/main/glossary/glossary-ledger.json#role/compute-authoring-agent"><code>Compute authoring agent</code></a><br><span class="p">glossary-ledger.json</span></td>
-  <td><span class="none">no description in the artefact</span><div class="f"><span class="k">notation</span> role/compute-authoring-agent</div><div class="f"><span class="k">first seen</span> 2026-09-21</div><div class="f"><span class="k">status</span> current</div></td>
+  <td>Retired 2026-10-30 — kept, never deleted, so retirement and accident do not look alike.<div class="f"><span class="k">notation</span> role/compute-authoring-agent</div><div class="f"><span class="k">first seen</span> 2026-09-21</div><div class="f"><span class="k">status</span> retired</div></td>
 </tr>
 <tr id="a-cat-harness-glossary-glossary-ledger-json-role-corpus">
   <td><a href="https://github.com/litlfred/cat-harness/blob/main/glossary/glossary-ledger.json#role/corpus"><code>Corpus</code></a><br><span class="p">glossary-ledger.json</span></td>
@@ -995,7 +995,7 @@
 </tr>
 <tr id="a-cat-harness-glossary-glossary-ledger-json-role-deep-researcher">
   <td><a href="https://github.com/litlfred/cat-harness/blob/main/glossary/glossary-ledger.json#role/deep-researcher"><code>Deep researcher</code></a><br><span class="p">glossary-ledger.json</span></td>
-  <td>Answers a question FROM a corpus already held, and is answerable for the answer. Distinct from <a href="#a-cat-harness-glossary-glossary-ledger-json-role-librarian"><code>librarian</code></a>, which decides what to capture, and from <a href="#a-cat-harness-glossary-glossary-ledger-json-role-ingestion-agent"><code>ingestion-agent</code></a>, which derives structure from what was captured: both produce the corpus, and this role consumes it. Added 2026-09-23 with the <code>doc-researcher</code> methodology, because the accountability it names — somebody who must stand behind a synthesis and its citations — belonged to no declared role. THE LANE IT BINDS IS DRAWN IN ANOTHER INSTANCE — the <code>Deep researcher</code> lane of <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/library/deep-document-research.bpmn"><code>folio-assistant-core/processes/library/deep-document-research.bpmn</code></a>, which names this role with <code>&lt;folio:role ref&gt;</code>. It carried a <code>lanes[]</code> here for about an hour on 2026-09-23 before #1168 landed and inverted the relation: a lane names its role, and a role does not list its lanes, because a general node never names its users. The binding is therefore stated once, on the lane, and this role says nothing about where it is drawn.<div class="f"><span class="k">notation</span> role/deep-researcher</div><div class="f"><span class="k">first seen</span> 2026-09-23</div><div class="f"><span class="k">status</span> current</div></td>
+  <td>Retired 2026-10-30 — kept, never deleted, so retirement and accident do not look alike.<div class="f"><span class="k">notation</span> role/deep-researcher</div><div class="f"><span class="k">first seen</span> 2026-09-23</div><div class="f"><span class="k">status</span> retired</div></td>
 </tr>
 <tr id="a-cat-harness-glossary-glossary-ledger-json-role-docs-authoring-agent">
   <td><a href="https://github.com/litlfred/cat-harness/blob/main/glossary/glossary-ledger.json#role/docs-authoring-agent"><code>Docs authoring agent</code></a><br><span class="p">glossary-ledger.json</span></td>
@@ -1011,7 +1011,7 @@
 </tr>
 <tr id="a-cat-harness-glossary-glossary-ledger-json-role-evidence-agent">
   <td><a href="https://github.com/litlfred/cat-harness/blob/main/glossary/glossary-ledger.json#role/evidence-agent"><code>Evidence agent</code></a><br><span class="p">glossary-ledger.json</span></td>
-  <td>Retrieves and appraises external evidence for a guideline claim.<div class="f"><span class="k">notation</span> role/evidence-agent</div><div class="f"><span class="k">first seen</span> 2026-09-21</div><div class="f"><span class="k">status</span> current</div></td>
+  <td>Retired 2026-10-30 — kept, never deleted, so retirement and accident do not look alike.<div class="f"><span class="k">notation</span> role/evidence-agent</div><div class="f"><span class="k">first seen</span> 2026-09-21</div><div class="f"><span class="k">status</span> retired</div></td>
 </tr>
 <tr id="a-cat-harness-glossary-glossary-ledger-json-role-external-registry">
   <td><a href="https://github.com/litlfred/cat-harness/blob/main/glossary/glossary-ledger.json#role/external-registry"><code>External registry</code></a><br><span class="p">glossary-ledger.json</span></td>
@@ -1023,7 +1023,7 @@
 </tr>
 <tr id="a-cat-harness-glossary-glossary-ledger-json-role-fhir-modeller">
   <td><a href="https://github.com/litlfred/cat-harness/blob/main/glossary/glossary-ledger.json#role/fhir-modeller"><code>FHIR modeller</code></a><br><span class="p">glossary-ledger.json</span></td>
-  <td>Authors the L3 profiles, extensions and examples an IG is built from.<div class="f"><span class="k">notation</span> role/fhir-modeller</div><div class="f"><span class="k">first seen</span> 2026-09-21</div><div class="f"><span class="k">status</span> current</div></td>
+  <td>Retired 2026-10-30 — kept, never deleted, so retirement and accident do not look alike.<div class="f"><span class="k">notation</span> role/fhir-modeller</div><div class="f"><span class="k">first seen</span> 2026-09-21</div><div class="f"><span class="k">status</span> retired</div></td>
 </tr>
 <tr id="a-cat-harness-glossary-glossary-ledger-json-role-translator">
   <td><a href="https://github.com/litlfred/cat-harness/blob/main/glossary/glossary-ledger.json#role/translator"><code>Human translator</code></a><br><span class="p">glossary-ledger.json</span></td>
@@ -1031,7 +1031,7 @@
 </tr>
 <tr id="a-cat-harness-glossary-glossary-ledger-json-role-ig-publisher-service">
   <td><a href="https://github.com/litlfred/cat-harness/blob/main/glossary/glossary-ledger.json#role/ig-publisher-service"><code>IG publisher + validator</code></a><br><span class="p">glossary-ledger.json</span></td>
-  <td>The JVM services an IG build shells out to. External in behaviour, internal in configuration.<div class="f"><span class="k">notation</span> role/ig-publisher-service</div><div class="f"><span class="k">first seen</span> 2026-09-21</div><div class="f"><span class="k">status</span> current</div></td>
+  <td>Retired 2026-10-30 — kept, never deleted, so retirement and accident do not look alike.<div class="f"><span class="k">notation</span> role/ig-publisher-service</div><div class="f"><span class="k">first seen</span> 2026-09-21</div><div class="f"><span class="k">status</span> retired</div></td>
 </tr>
 <tr id="a-cat-harness-glossary-glossary-ledger-json-role-ingestion-agent">
   <td><a href="https://github.com/litlfred/cat-harness/blob/main/glossary/glossary-ledger.json#role/ingestion-agent"><code>Ingestion engine</code></a><br><span class="p">glossary-ledger.json</span></td>
@@ -1051,15 +1051,15 @@
 </tr>
 <tr id="a-cat-harness-glossary-glossary-ledger-json-role-l1-extraction-reviewer">
   <td><a href="https://github.com/litlfred/cat-harness/blob/main/glossary/glossary-ledger.json#role/l1-extraction-reviewer"><code>L1 extraction reviewer</code></a><br><span class="p">glossary-ledger.json</span></td>
-  <td>Signs, or rejects, the exclusions an L1 extraction proposes: each normative-looking sentence of a WHO publication that the curation says is not a recommendation, an implementation practice or a remark. Until a person acting in this role signs an exclusion, its sentence stays unaccounted and coverage stays below 100 %. Owner ruling 3b, 2026-10-12: exclusions are signed by this named role, never by the agent that proposed them. Inherits the harness's generic reviewer and performs exclusion sign-off in <code>classify-and-code-content.bpmn</code> (bean 4nfs).<div class="f"><span class="k">notation</span> role/l1-extraction-reviewer</div><div class="f"><span class="k">first seen</span> 2026-10-15</div><div class="f"><span class="k">status</span> current</div></td>
+  <td>Retired 2026-10-30 — kept, never deleted, so retirement and accident do not look alike.<div class="f"><span class="k">notation</span> role/l1-extraction-reviewer</div><div class="f"><span class="k">first seen</span> 2026-10-15</div><div class="f"><span class="k">status</span> retired</div></td>
 </tr>
 <tr id="a-cat-harness-glossary-glossary-ledger-json-role-lean-authoring-agent">
   <td><a href="https://github.com/litlfred/cat-harness/blob/main/glossary/glossary-ledger.json#role/lean-authoring-agent"><code>Lean authoring agent</code></a><br><span class="p">glossary-ledger.json</span></td>
-  <td><span class="none">no description in the artefact</span><div class="f"><span class="k">notation</span> role/lean-authoring-agent</div><div class="f"><span class="k">first seen</span> 2026-09-21</div><div class="f"><span class="k">status</span> current</div></td>
+  <td>Retired 2026-10-30 — kept, never deleted, so retirement and accident do not look alike.<div class="f"><span class="k">notation</span> role/lean-authoring-agent</div><div class="f"><span class="k">first seen</span> 2026-09-21</div><div class="f"><span class="k">status</span> retired</div></td>
 </tr>
 <tr id="a-cat-harness-glossary-glossary-ledger-json-role-lean-toolchain">
   <td><a href="https://github.com/litlfred/cat-harness/blob/main/glossary/glossary-ledger.json#role/lean-toolchain"><code>Lean toolchain</code></a><br><span class="p">glossary-ledger.json</span></td>
-  <td><span class="none">no description in the artefact</span><div class="f"><span class="k">notation</span> role/lean-toolchain</div><div class="f"><span class="k">first seen</span> 2026-09-21</div><div class="f"><span class="k">status</span> current</div></td>
+  <td>Retired 2026-10-30 — kept, never deleted, so retirement and accident do not look alike.<div class="f"><span class="k">notation</span> role/lean-toolchain</div><div class="f"><span class="k">first seen</span> 2026-09-21</div><div class="f"><span class="k">status</span> retired</div></td>
 </tr>
 <tr id="a-cat-harness-glossary-glossary-ledger-json-role-librarian">
   <td><a href="https://github.com/litlfred/cat-harness/blob/main/glossary/glossary-ledger.json#role/librarian"><code>Librarian</code></a><br><span class="p">glossary-ledger.json</span></td>
@@ -1079,7 +1079,7 @@
 </tr>
 <tr id="a-cat-harness-glossary-glossary-ledger-json-role-onboarding-agent">
   <td><a href="https://github.com/litlfred/cat-harness/blob/main/glossary/glossary-ledger.json#role/onboarding-agent"><code>Onboarding agent</code></a><br><span class="p">glossary-ledger.json</span></td>
-  <td>The authoring agent acting before there is a folio: clarifying what the user means by &quot;create a folio&quot;, scanning an existing repo, and scaffolding.<div class="f"><span class="k">notation</span> role/onboarding-agent</div><div class="f"><span class="k">first seen</span> 2026-09-21</div><div class="f"><span class="k">status</span> current</div></td>
+  <td>Retired 2026-10-30 — kept, never deleted, so retirement and accident do not look alike.<div class="f"><span class="k">notation</span> role/onboarding-agent</div><div class="f"><span class="k">first seen</span> 2026-09-21</div><div class="f"><span class="k">status</span> retired</div></td>
 </tr>
 <tr id="a-cat-harness-glossary-glossary-ledger-json-role-platform-authoring-agent">
   <td><a href="https://github.com/litlfred/cat-harness/blob/main/glossary/glossary-ledger.json#role/platform-authoring-agent"><code>Platform authoring agent</code></a><br><span class="p">glossary-ledger.json</span></td>
@@ -1091,7 +1091,7 @@
 </tr>
 <tr id="a-cat-harness-glossary-glossary-ledger-json-role-proof-review-agent">
   <td><a href="https://github.com/litlfred/cat-harness/blob/main/glossary/glossary-ledger.json#role/proof-review-agent"><code>Proof review agent</code></a><br><span class="p">glossary-ledger.json</span></td>
-  <td><span class="none">no description in the artefact</span><div class="f"><span class="k">notation</span> role/proof-review-agent</div><div class="f"><span class="k">first seen</span> 2026-09-21</div><div class="f"><span class="k">status</span> current</div></td>
+  <td>Retired 2026-10-30 — kept, never deleted, so retirement and accident do not look alike.<div class="f"><span class="k">notation</span> role/proof-review-agent</div><div class="f"><span class="k">first seen</span> 2026-09-21</div><div class="f"><span class="k">status</span> retired</div></td>
 </tr>
 <tr id="a-cat-harness-glossary-glossary-ledger-json-role-publication-manager">
   <td><a href="https://github.com/litlfred/cat-harness/blob/main/glossary/glossary-ledger.json#role/publication-manager"><code>Publication manager</code></a><br><span class="p">glossary-ledger.json</span></td>

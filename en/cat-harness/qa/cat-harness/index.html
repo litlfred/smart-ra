@@ -84,9 +84,9 @@
      `<html data-fa-scheme>` before the body is parsed, so no rule keyed on
      it ever paints the wrong way first;
   2. if that is not the configured scheme, switch the theme's sheet NOW,
-     while the parser is still in the head. The link is parser-created, so
-     the browser holds first paint for its new file: a light reader is light
-     from the first frame, with no dark flash either;
+     while the parser is still in the head. `jtd.setTheme` loads the new
+     file beside the old, render-blocking, and drops the old one once it
+     has loaded (cat-harness#820): never a frame with no theme sheet;
   3. paint `html` itself, dark unless the scheme is light, so a sheet in
      flight shows the page's ground rather than white.
 
@@ -647,7 +647,7 @@
 <script src="../../../../assets/js/kg-render.js" defer></script>
 <!-- BEFORE docs-ui.js, which calls it: the one drawing of the harness icon row (beans `lhvt`, `9rq1`). -->
 <script src="../../../../assets/js/navbar-row.js?v=7dce6a7e2ab0" defer></script>
-<script src="../../../../assets/js/docs-ui.js?v=8b5567635976" defer></script>
+<script src="../../../../assets/js/docs-ui.js?v=59c1d8d3ff0a" defer></script>
 <!-- The edit, source and feedback links of every page, from the platform's one
   recipe (cat-harness-tools/src/core/edit-links.ts, bean v433): links carry their
   facts and this builds the hrefs. -->
@@ -871,7 +871,7 @@
 <h2 class="sv-h2">
   
   
-    <a href="#qa-cat-harness" class="anchor-heading" aria-labelledby="qa-cat-harness"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Families — 14, over 1227 document(s)
+    <a href="#qa-cat-harness" class="anchor-heading" aria-labelledby="qa-cat-harness"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Families — 14, over 1226 document(s)
   
   
 </h2>
@@ -879,12 +879,12 @@
 <h3>
   
   
-    <a href="#qa-cat-harness" class="anchor-heading" aria-labelledby="qa-cat-harness"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <code>kg-qa/v1</code> <span class="sv-tag">565 files</span>
+    <a href="#qa-cat-harness" class="anchor-heading" aria-labelledby="qa-cat-harness"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <code>kg-qa/v1</code> <span class="sv-tag">564 files</span>
   
   
 </h3>
     
-    <p>Rolled up from <code>totals</code>.</p><ul class="sv-counts"><li class="sv-count"><span class="sv-count-v">318</span><span class="sv-count-k">fail</span></li><li class="sv-count"><span class="sv-count-v">1795</span><span class="sv-count-k">n/a</span></li><li class="sv-count"><span class="sv-count-v">3296</span><span class="sv-count-k">pass</span></li><li class="sv-count"><span class="sv-count-v">270</span><span class="sv-count-k">unknown</span></li></ul>
+    <p>Rolled up from <code>totals</code>.</p><ul class="sv-counts"><li class="sv-count"><span class="sv-count-v">317</span><span class="sv-count-k">fail</span></li><li class="sv-count"><span class="sv-count-v">1795</span><span class="sv-count-k">n/a</span></li><li class="sv-count"><span class="sv-count-v">3293</span><span class="sv-count-k">pass</span></li><li class="sv-count"><span class="sv-count-v">270</span><span class="sv-count-k">unknown</span></li></ul>
   </section>
 <section class="sv-item">
 <h3>

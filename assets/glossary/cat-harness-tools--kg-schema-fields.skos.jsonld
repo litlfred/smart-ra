@@ -10502,44 +10502,6 @@
       "skos:note": "candidate"
     },
     {
-      "@id": "https://litlfred.github.io/folio-assistant/cat-harness-tools/ns#glossary/kg-schema-fields/constraints.constraintcontext.laketreecontainsbasename",
-      "@type": "skos:Concept",
-      "skos:inScheme": {
-        "@id": "https://litlfred.github.io/folio-assistant/cat-harness-tools/ns#glossary/kg-schema-fields"
-      },
-      "skos:prefLabel": [
-        {
-          "@value": "ConstraintContext.lakeTreeContainsBasename"
-        }
-      ],
-      "skos:definition": [
-        {
-          "@value": "Basename lookup under a Lake package root (for lean.ref fallback)."
-        }
-      ],
-      "dcterms:source": "cat-harness-tools/schemas/constraints.ts#ConstraintContext.lakeTreeContainsBasename",
-      "skos:note": "candidate"
-    },
-    {
-      "@id": "https://litlfred.github.io/folio-assistant/cat-harness-tools/ns#glossary/kg-schema-fields/constraints.constraintcontext.leancontent",
-      "@type": "skos:Concept",
-      "skos:inScheme": {
-        "@id": "https://litlfred.github.io/folio-assistant/cat-harness-tools/ns#glossary/kg-schema-fields"
-      },
-      "skos:prefLabel": [
-        {
-          "@value": "ConstraintContext.leanContent"
-        }
-      ],
-      "skos:definition": [
-        {
-          "@value": "Lean sibling stub content (for §3b-cond kind-check), if the file exists."
-        }
-      ],
-      "dcterms:source": "cat-harness-tools/schemas/constraints.ts#ConstraintContext.leanContent",
-      "skos:note": "candidate"
-    },
-    {
       "@id": "https://litlfred.github.io/folio-assistant/cat-harness-tools/ns#glossary/kg-schema-fields/constraints.constraintcontext.mdcontent",
       "@type": "skos:Concept",
       "skos:inScheme": {
@@ -25338,6 +25300,25 @@
         }
       ],
       "dcterms:source": "cat-harness-tools/schemas/content/pinned-terminology.ts#PinnedTerminologySchema.version",
+      "skos:note": "candidate"
+    },
+    {
+      "@id": "https://litlfred.github.io/folio-assistant/cat-harness-tools/ns#glossary/kg-schema-fields/prov-jsonld.owned.file",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/folio-assistant/cat-harness-tools/ns#glossary/kg-schema-fields"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "Owned.file"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "The file itself, absolute (plans only)."
+        }
+      ],
+      "dcterms:source": "cat-harness-tools/schemas/kg/prov-jsonld.ts#Owned.file",
       "skos:note": "candidate"
     },
     {

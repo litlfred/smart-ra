@@ -1681,11 +1681,11 @@
           "heading": false
         },
         {
-          "term": "mean lcdb",
+          "term": "lcdb instances",
           "heading": false
         },
         {
-          "term": "lcdb instances",
+          "term": "mean lcdb",
           "heading": false
         },
         {
@@ -1817,11 +1817,11 @@
           "heading": false
         },
         {
-          "term": "decision-making",
+          "term": "influences",
           "heading": false
         },
         {
-          "term": "influences",
+          "term": "decision-making",
           "heading": false
         }
       ],
@@ -1917,7 +1917,7 @@
           "heading": false
         },
         {
-          "term": "communities",
+          "term": "phenomena",
           "heading": false
         }
       ],
@@ -1949,7 +1949,7 @@
           "heading": false
         },
         {
-          "term": "collaboration",
+          "term": "chapter",
           "heading": false
         }
       ],
@@ -1993,11 +1993,11 @@
           "heading": false
         },
         {
-          "term": "problem",
+          "term": "theoretical",
           "heading": false
         },
         {
-          "term": "theoretical",
+          "term": "problem",
           "heading": false
         }
       ],
@@ -2036,11 +2036,11 @@
           "heading": true
         },
         {
-          "term": "setting",
+          "term": "bandit",
           "heading": true
         },
         {
-          "term": "bandit",
+          "term": "setting",
           "heading": true
         },
         {
@@ -2056,11 +2056,11 @@
           "heading": false
         },
         {
-          "term": "lower bound",
+          "term": "reward",
           "heading": false
         },
         {
-          "term": "reward",
+          "term": "pulled",
           "heading": false
         }
       ],
@@ -2136,11 +2136,11 @@
           "heading": false
         },
         {
-          "term": "returns reward",
+          "term": "pulls arm",
           "heading": false
         },
         {
-          "term": "pulls arm",
+          "term": "returns reward",
           "heading": false
         }
       ],
@@ -2188,7 +2188,7 @@
           "heading": false
         },
         {
-          "term": "impossible",
+          "term": "opt",
           "heading": false
         }
       ],
@@ -2256,15 +2256,15 @@
           "heading": false
         },
         {
-          "term": "competitive ratio",
-          "heading": false
-        },
-        {
           "term": "rising bandits",
           "heading": false
         },
         {
           "term": "rested rising",
+          "heading": false
+        },
+        {
+          "term": "competitive ratio",
           "heading": false
         },
         {
@@ -2276,12 +2276,12 @@
           "heading": false
         },
         {
-          "term": "work",
-          "heading": true
-        },
-        {
           "term": "lower bound",
           "heading": false
+        },
+        {
+          "term": "work",
+          "heading": true
         }
       ],
       "extract": "Our work directly follows up on [HKR16, PNGK23]. [HKR16] define the setting and problem and shows how to achieve asymptotically sublinear regret4. [PNGK23] extends the model in [HKR16] to the notion of approximation we consider in our paper. They show that deterministic algorithms must incur an approximation factor of k , where k is the number of arms; they also match this with an algorithm that can achieve an O(k)",
@@ -2396,11 +2396,11 @@
           "heading": false
         },
         {
-          "term": "maximum reward",
+          "term": "approximation factor",
           "heading": false
         },
         {
-          "term": "approximation factor",
+          "term": "maximum reward",
           "heading": false
         },
         {
@@ -2440,11 +2440,11 @@
           "heading": false
         },
         {
-          "term": "half",
+          "term": "arm",
           "heading": false
         },
         {
-          "term": "arm",
+          "term": "half",
           "heading": false
         },
         {
@@ -2584,16 +2584,16 @@
           "heading": false
         },
         {
-          "term": "dependence",
-          "heading": true
-        },
-        {
           "term": "tpred",
           "heading": false
         },
         {
           "term": "algorithm",
           "heading": false
+        },
+        {
+          "term": "dependence",
+          "heading": true
         },
         {
           "term": "guess",
@@ -2644,7 +2644,7 @@
           "heading": false
         },
         {
-          "term": "algorithmic",
+          "term": "arm",
           "heading": false
         }
       ],
@@ -2672,11 +2672,11 @@
           "heading": false
         },
         {
-          "term": "reward functions",
+          "term": "approximation guarantees",
           "heading": false
         },
         {
-          "term": "approximation guarantees",
+          "term": "reward functions",
           "heading": false
         },
         {
@@ -2692,7 +2692,7 @@
           "heading": false
         },
         {
-          "term": "optimization problem",
+          "term": "optimal approximation",
           "heading": false
         }
       ],
@@ -2776,11 +2776,11 @@
           "heading": false
         },
         {
-          "term": "hyperparameter selection",
+          "term": "hyperparameter transfer",
           "heading": false
         },
         {
-          "term": "hyperparameter transfer",
+          "term": "hyperparameter selection",
           "heading": false
         },
         {
@@ -2820,11 +2820,11 @@
           "heading": false
         },
         {
-          "term": "distribution",
+          "term": "worst-case",
           "heading": false
         },
         {
-          "term": "worst-case",
+          "term": "distribution",
           "heading": false
         },
         {
@@ -2888,7 +2888,7 @@
           "heading": false
         },
         {
-          "term": "envelope exponent",
+          "term": "arm now",
           "heading": false
         },
         {
@@ -2896,7 +2896,7 @@
           "heading": false
         },
         {
-          "term": "arm now",
+          "term": "envelope exponent",
           "heading": false
         },
         {
@@ -2936,11 +2936,11 @@
           "heading": false
         },
         {
-          "term": "dual complexity",
+          "term": "multi-armed bandits",
           "heading": false
         },
         {
-          "term": "multi-armed bandits",
+          "term": "dual complexity",
           "heading": false
         },
         {
@@ -2976,11 +2976,11 @@
       "summary": null,
       "keywords": [
         {
-          "term": "reward curves",
+          "term": "cumulative reward",
           "heading": false
         },
         {
-          "term": "cumulative reward",
+          "term": "reward curves",
           "heading": false
         },
         {
@@ -2996,15 +2996,15 @@
           "heading": false
         },
         {
-          "term": "confidence intervals",
-          "heading": false
-        },
-        {
           "term": "ptrrα",
           "heading": false
         },
         {
-          "term": "datasets",
+          "term": "confidence intervals",
+          "heading": false
+        },
+        {
+          "term": "erri",
           "heading": false
         }
       ],
@@ -3044,11 +3044,11 @@
           "heading": false
         },
         {
-          "term": "nice instances",
+          "term": "arm gets",
           "heading": false
         },
         {
-          "term": "arm gets",
+          "term": "nice instances",
           "heading": false
         },
         {
@@ -3084,11 +3084,11 @@
           "heading": false
         },
         {
-          "term": "hybrid",
+          "term": "algorithm",
           "heading": true
         },
         {
-          "term": "algorithm",
+          "term": "hybrid",
           "heading": true
         }
       ],
@@ -3124,12 +3124,12 @@
           "heading": false
         },
         {
-          "term": "bai",
-          "heading": true
-        },
-        {
           "term": "gcc",
           "heading": false
+        },
+        {
+          "term": "bai",
+          "heading": true
         },
         {
           "term": "benign instances",
@@ -3160,15 +3160,15 @@
           "heading": true
         },
         {
-          "term": "exact bai",
-          "heading": false
-        },
-        {
           "term": "h-bounded loss",
           "heading": false
         },
         {
           "term": "bai goal",
+          "heading": false
+        },
+        {
+          "term": "exact bai",
           "heading": false
         },
         {
@@ -3228,11 +3228,11 @@
           "heading": false
         },
         {
-          "term": "strength",
+          "term": "worst-case",
           "heading": false
         },
         {
-          "term": "worst-case",
+          "term": "strength",
           "heading": false
         }
       ],
@@ -3260,7 +3260,7 @@
           "heading": false
         },
         {
-          "term": "epistemological",
+          "term": "laying",
           "heading": false
         }
       ],
@@ -3299,11 +3299,11 @@
           "heading": false
         },
         {
-          "term": "computer science",
+          "term": "theoretical computer",
           "heading": false
         },
         {
-          "term": "theoretical computer",
+          "term": "computer science",
           "heading": false
         },
         {
@@ -3323,7 +3323,7 @@
           "heading": false
         },
         {
-          "term": "perspective",
+          "term": "essay",
           "heading": false
         }
       ],
@@ -3359,19 +3359,19 @@
           "heading": false
         },
         {
-          "term": "fidelity criteria",
-          "heading": false
-        },
-        {
-          "term": "theoretical model",
-          "heading": false
-        },
-        {
           "term": "representational target",
           "heading": false
         },
         {
+          "term": "fidelity criteria",
+          "heading": false
+        },
+        {
           "term": "real world",
+          "heading": false
+        },
+        {
+          "term": "theoretical model",
           "heading": false
         }
       ],
@@ -3415,11 +3415,11 @@
           "heading": false
         },
         {
-          "term": "observations",
+          "term": "elgin",
           "heading": false
         },
         {
-          "term": "elgin",
+          "term": "pretty",
           "heading": false
         }
       ],
@@ -3443,12 +3443,12 @@
           "heading": false
         },
         {
-          "term": "explain",
-          "heading": true
-        },
-        {
           "term": "posited mechanism",
           "heading": false
+        },
+        {
+          "term": "explain",
+          "heading": true
         },
         {
           "term": "real world",
@@ -3463,11 +3463,11 @@
           "heading": false
         },
         {
-          "term": "modules",
+          "term": "egw",
           "heading": false
         },
         {
-          "term": "explanations",
+          "term": "weisberg",
           "heading": false
         }
       ],
@@ -3491,10 +3491,6 @@
           "heading": true
         },
         {
-          "term": "causal structure",
-          "heading": false
-        },
-        {
           "term": "change outcomes",
           "heading": false
         },
@@ -3504,6 +3500,10 @@
         },
         {
           "term": "schelling model",
+          "heading": false
+        },
+        {
+          "term": "causal structure",
           "heading": false
         },
         {
@@ -3539,19 +3539,11 @@
           "heading": false
         },
         {
-          "term": "models",
-          "heading": true
-        },
-        {
-          "term": "theoretical models",
-          "heading": false
-        },
-        {
           "term": "grey hair",
           "heading": false
         },
         {
-          "term": "unified theory",
+          "term": "theoretical models",
           "heading": false
         },
         {
@@ -3559,7 +3551,15 @@
           "heading": false
         },
         {
+          "term": "unified theory",
+          "heading": false
+        },
+        {
           "term": "learning theory",
+          "heading": false
+        },
+        {
+          "term": "theoretical computer",
           "heading": false
         },
         {
@@ -3599,19 +3599,19 @@
           "heading": false
         },
         {
-          "term": "modules",
-          "heading": false
-        },
-        {
           "term": "transparency",
           "heading": false
         },
         {
-          "term": "articulating",
+          "term": "oracles",
           "heading": false
         },
         {
-          "term": "oracles",
+          "term": "modules",
+          "heading": false
+        },
+        {
+          "term": "articulating",
           "heading": false
         }
       ],
@@ -3703,11 +3703,11 @@
           "heading": false
         },
         {
-          "term": "discrimination",
+          "term": "formalism",
           "heading": false
         },
         {
-          "term": "formalism",
+          "term": "discrimination",
           "heading": false
         }
       ],
@@ -3743,11 +3743,11 @@
           "heading": false
         },
         {
-          "term": "single community",
+          "term": "ambitious action",
           "heading": false
         },
         {
-          "term": "ambitious action",
+          "term": "single community",
           "heading": false
         },
         {
@@ -3755,7 +3755,7 @@
           "heading": false
         },
         {
-          "term": "major contribution",
+          "term": "subsidy",
           "heading": false
         }
       ],
@@ -3803,8 +3803,8 @@
           "heading": false
         },
         {
-          "term": "work",
-          "heading": true
+          "term": "nudges",
+          "heading": false
         }
       ],
       "extract": "Here, we provide a brief survey of related works that contextualize our approach to study- ing pessimism traps and interventions aimed at promoting optimism. As quoted above, [Mor22] formalizes the notion of pessimism traps, building upon several empirical characterizations from scholars studying the phenomenon in the field of education [CGAM06]. Morton highlights the importance of belief, which is why we focus our",
@@ -3831,7 +3831,7 @@
           "heading": false
         },
         {
-          "term": "infinite",
+          "term": "flesh",
           "heading": false
         }
       ],
@@ -3855,11 +3855,11 @@
           "heading": false
         },
         {
-          "term": "correct action",
+          "term": "random walk",
           "heading": false
         },
         {
-          "term": "random walk",
+          "term": "correct action",
           "heading": false
         },
         {
@@ -3907,11 +3907,11 @@
           "heading": false
         },
         {
-          "term": "cascade model",
+          "term": "ambitious end",
           "heading": false
         },
         {
-          "term": "ambitious end",
+          "term": "cascade model",
           "heading": false
         },
         {
@@ -3963,11 +3963,11 @@
           "heading": false
         },
         {
-          "term": "correct action",
+          "term": "subsidy value",
           "heading": false
         },
         {
-          "term": "subsidy value",
+          "term": "correct action",
           "heading": false
         },
         {
@@ -4051,11 +4051,11 @@
           "heading": false
         },
         {
-          "term": "correct action",
+          "term": "subsidy",
           "heading": false
         },
         {
-          "term": "subsidy",
+          "term": "correct action",
           "heading": false
         },
         {
@@ -4067,7 +4067,7 @@
           "heading": false
         },
         {
-          "term": "distribution",
+          "term": "draws",
           "heading": false
         }
       ],
@@ -4103,19 +4103,19 @@
           "heading": false
         },
         {
-          "term": "correct action",
-          "heading": false
-        },
-        {
           "term": "union bound",
           "heading": false
         },
         {
-          "term": "correct direction",
+          "term": "correct action",
           "heading": false
         },
         {
           "term": "steps scales",
+          "heading": false
+        },
+        {
+          "term": "correct direction",
           "heading": false
         }
       ],
@@ -4163,15 +4163,15 @@
       "summary": null,
       "keywords": [
         {
-          "term": "population",
-          "heading": false
-        },
-        {
           "term": "agents",
           "heading": false
         },
         {
           "term": "sequen",
+          "heading": false
+        },
+        {
+          "term": "population",
           "heading": false
         }
       ],
@@ -4287,15 +4287,15 @@
           "heading": false
         },
         {
-          "term": "shift",
-          "heading": false
-        },
-        {
           "term": "intervention",
           "heading": false
         },
         {
           "term": "intervene",
+          "heading": false
+        },
+        {
+          "term": "shift",
           "heading": false
         },
         {
@@ -4350,15 +4350,15 @@
           "heading": false
         },
         {
-          "term": "external support",
-          "heading": false
-        },
-        {
           "term": "disadvantaged",
           "heading": false
         },
         {
           "term": "tolerate",
+          "heading": false
+        },
+        {
+          "term": "external support",
           "heading": false
         },
         {
@@ -4454,7 +4454,7 @@
           "heading": false
         },
         {
-          "term": "counterparts",
+          "term": "gritty",
           "heading": false
         }
       ],
@@ -4486,10 +4486,6 @@
           "heading": false
         },
         {
-          "term": "work",
-          "heading": true
-        },
-        {
           "term": "grit",
           "heading": false
         },
@@ -4498,11 +4494,15 @@
           "heading": false
         },
         {
-          "term": "paul",
-          "heading": false
+          "term": "work",
+          "heading": true
         },
         {
           "term": "morton",
+          "heading": false
+        },
+        {
+          "term": "paul",
           "heading": false
         }
       ],
@@ -4546,11 +4546,11 @@
           "heading": false
         },
         {
-          "term": "option",
+          "term": "reward",
           "heading": false
         },
         {
-          "term": "reward",
+          "term": "options",
           "heading": false
         }
       ],
@@ -4661,7 +4661,7 @@
           "heading": false
         },
         {
-          "term": "increasing portion",
+          "term": "gritty",
           "heading": false
         }
       ],
@@ -4709,7 +4709,7 @@
           "heading": false
         },
         {
-          "term": "until reaching",
+          "term": "time followed",
           "heading": false
         }
       ],
@@ -4741,7 +4741,7 @@
           "heading": false
         },
         {
-          "term": "agent",
+          "term": "buy",
           "heading": false
         }
       ],
@@ -4857,11 +4857,11 @@
           "heading": false
         },
         {
-          "term": "exploration time",
+          "term": "net allows",
           "heading": false
         },
         {
-          "term": "net allows",
+          "term": "exploration time",
           "heading": false
         }
       ],
@@ -5120,11 +5120,11 @@
           "heading": true
         },
         {
-          "term": "rational",
+          "term": "investment",
           "heading": false
         },
         {
-          "term": "investment",
+          "term": "rational",
           "heading": false
         },
         {
@@ -5160,7 +5160,7 @@
           "heading": false
         },
         {
-          "term": "presented",
+          "term": "synthesize",
           "heading": false
         }
       ],
@@ -5208,7 +5208,7 @@
           "heading": true
         },
         {
-          "term": "perspectives",
+          "term": "chapter",
           "heading": false
         }
       ],
@@ -5248,11 +5248,11 @@
           "heading": false
         },
         {
-          "term": "options",
+          "term": "imab",
           "heading": false
         },
         {
-          "term": "imab",
+          "term": "options",
           "heading": false
         },
         {
@@ -5280,11 +5280,11 @@
           "heading": true
         },
         {
-          "term": "problems",
-          "heading": true
+          "term": "plenty",
+          "heading": false
         },
         {
-          "term": "agenda",
+          "term": "prospects",
           "heading": false
         }
       ],
@@ -5392,15 +5392,7 @@
           "heading": false
         },
         {
-          "term": "university press",
-          "heading": false
-        },
-        {
           "term": "dravyansh sharma",
-          "heading": false
-        },
-        {
-          "term": "international conference",
           "heading": false
         },
         {
@@ -5408,15 +5400,23 @@
           "heading": false
         },
         {
+          "term": "university press",
+          "heading": false
+        },
+        {
+          "term": "international conference",
+          "heading": false
+        },
+        {
           "term": "artificial intelligence",
           "heading": false
         },
         {
-          "term": "annual conference",
+          "term": "kavya ravichandran",
           "heading": false
         },
         {
-          "term": "mit press",
+          "term": "annual conference",
           "heading": false
         }
       ],
@@ -5476,11 +5476,11 @@
           "heading": false
         },
         {
-          "term": "maximum",
+          "term": "reward",
           "heading": true
         },
         {
-          "term": "reward",
+          "term": "maximum",
           "heading": true
         }
       ],
@@ -5590,11 +5590,11 @@
           "heading": false
         },
         {
-          "term": "lower bound",
+          "term": "arm",
           "heading": false
         },
         {
-          "term": "arm",
+          "term": "lower bound",
           "heading": false
         },
         {
@@ -5742,11 +5742,11 @@
           "heading": false
         },
         {
-          "term": "balancing inequality",
+          "term": "concavity envelope",
           "heading": false
         },
         {
-          "term": "concavity envelope",
+          "term": "balancing inequality",
           "heading": false
         },
         {
@@ -5758,7 +5758,7 @@
           "heading": false
         },
         {
-          "term": "lemma",
+          "term": "optt",
           "heading": false
         }
       ],
@@ -5798,11 +5798,11 @@
           "heading": false
         },
         {
-          "term": "yao principle",
+          "term": "optt",
           "heading": false
         },
         {
-          "term": "optt",
+          "term": "yao principle",
           "heading": false
         },
         {
@@ -5838,11 +5838,11 @@
           "heading": true
         },
         {
-          "term": "spending",
+          "term": "exploit",
           "heading": false
         },
         {
-          "term": "exploit",
+          "term": "spending",
           "heading": false
         },
         {
@@ -5905,7 +5905,7 @@
           "heading": false
         },
         {
-          "term": "arxiv",
+          "term": "hyperparameter",
           "heading": false
         }
       ],
@@ -6001,10 +6001,6 @@
           "heading": false
         },
         {
-          "term": "open interval",
-          "heading": false
-        },
-        {
           "term": "dual loss",
           "heading": false
         },
@@ -6014,6 +6010,10 @@
         },
         {
           "term": "reward curves",
+          "heading": false
+        },
+        {
+          "term": "open interval",
           "heading": false
         }
       ],
@@ -6041,11 +6041,11 @@
           "heading": false
         },
         {
-          "term": "failure probability",
+          "term": "reward ratio",
           "heading": false
         },
         {
-          "term": "reward ratio",
+          "term": "failure probability",
           "heading": false
         },
         {
@@ -6085,11 +6085,11 @@
           "heading": false
         },
         {
-          "term": "reward curves",
+          "term": "lcdb stores",
           "heading": false
         },
         {
-          "term": "lcdb stores",
+          "term": "reward curves",
           "heading": false
         },
         {
@@ -6105,11 +6105,11 @@
           "heading": false
         },
         {
-          "term": "mean learning",
+          "term": "nested cross-validation",
           "heading": false
         },
         {
-          "term": "nested cross-validation",
+          "term": "mean learning",
           "heading": false
         }
       ],
@@ -6225,11 +6225,11 @@
           "heading": false
         },
         {
-          "term": "competitive ratio",
+          "term": "defn",
           "heading": false
         },
         {
-          "term": "defn",
+          "term": "competitive ratio",
           "heading": false
         },
         {
@@ -6325,15 +6325,15 @@
           "heading": false
         },
         {
-          "term": "identical rewards",
-          "heading": false
-        },
-        {
           "term": "arm yield",
           "heading": false
         },
         {
           "term": "arm selected",
+          "heading": false
+        },
+        {
+          "term": "cumulative reward",
           "heading": false
         }
       ],
@@ -6401,16 +6401,16 @@
       "summary": null,
       "keywords": [
         {
-          "term": "fixed value",
-          "heading": false
-        },
-        {
           "term": "lemma",
           "heading": true
         },
         {
-          "term": "behaviors",
+          "term": "fixed value",
           "heading": false
+        },
+        {
+          "term": "proof",
+          "heading": true
         }
       ],
       "extract": "Proof. We argue this by applying the proof of Lemma 4.3.3. For a fixed (augmented) in- stance (i.e., fixed instance and fixed random permutation), we are interested in computing the number of different behaviors as we vary B, α . To understand this, let us start by fixing B. Then, by Lemma 4.3.3, we know that there are at most kT possible behaviors as we vary α . Now, for a fixed value of B, for either algorithm,",
@@ -6433,12 +6433,12 @@
           "heading": true
         },
         {
-          "term": "terminal upper",
-          "heading": false
-        },
-        {
           "term": "reward",
           "heading": true
+        },
+        {
+          "term": "terminal upper",
+          "heading": false
         },
         {
           "term": "upper bound",
@@ -6568,19 +6568,19 @@
       "summary": null,
       "keywords": [
         {
-          "term": "information cascades",
-          "heading": false
-        },
-        {
           "term": "pessimism traps",
           "heading": false
         },
         {
-          "term": "societal biases",
+          "term": "information cascades",
           "heading": false
         },
         {
           "term": "philosophical perspective",
+          "heading": false
+        },
+        {
+          "term": "societal biases",
           "heading": false
         },
         {
@@ -6596,7 +6596,7 @@
           "heading": false
         },
         {
-          "term": "foundational work",
+          "term": "nudges",
           "heading": false
         }
       ],
@@ -6624,7 +6624,7 @@
           "heading": false
         },
         {
-          "term": "independence",
+          "term": "conditioned",
           "heading": false
         }
       ],
@@ -6719,11 +6719,11 @@
           "heading": false
         },
         {
-          "term": "region",
+          "term": "preferable",
           "heading": false
         },
         {
-          "term": "preferable",
+          "term": "region",
           "heading": false
         }
       ],
@@ -6900,7 +6900,7 @@
           "heading": false
         },
         {
-          "term": "proportion correct",
+          "term": "average subsidy",
           "heading": false
         }
       ],
@@ -7054,8 +7054,8 @@
           "heading": false
         },
         {
-          "term": "proof",
-          "heading": true
+          "term": "boil",
+          "heading": false
         }
       ],
       "extract": "Proof. Recall our previous argument that all deterministic strategies boil down to playing f2 for s steps and then switching to f1. With that in mind, there are two extremes of what could happen to the competitive ratio, one of which decreases with the longer spent on f2, and the other of which increases with time spent on f2 . Thus, we compute them and equalize: competitive ratio if never increase = T −s T (D.1)",
@@ -7094,11 +7094,11 @@
           "heading": false
         },
         {
-          "term": "strategy",
+          "term": "comfort",
           "heading": false
         },
         {
-          "term": "comfort",
+          "term": "strategy",
           "heading": false
         }
       ],
@@ -7154,19 +7154,19 @@
           "heading": false
         },
         {
-          "term": "competitive ratio",
-          "heading": false
-        },
-        {
           "term": "time",
           "heading": true
+        },
+        {
+          "term": "competitive ratio",
+          "heading": false
         },
         {
           "term": "little",
           "heading": false
         },
         {
-          "term": "explore",
+          "term": "striving",
           "heading": false
         },
         {
@@ -7218,10 +7218,6 @@
       "heading": false
     },
     {
-      "term": "reward ratio",
-      "heading": false
-    },
-    {
       "term": "optimal arm",
       "heading": false
     },
@@ -7230,7 +7226,19 @@
       "heading": false
     },
     {
+      "term": "reward ratio",
+      "heading": false
+    },
+    {
       "term": "arm pulls",
+      "heading": false
+    },
+    {
+      "term": "get reward",
+      "heading": false
+    },
+    {
+      "term": "striving arm",
       "heading": false
     },
     {
@@ -7238,15 +7246,11 @@
       "heading": true
     },
     {
-      "term": "striving arm",
-      "heading": false
-    },
-    {
       "term": "reward function",
       "heading": false
     },
     {
-      "term": "get reward",
+      "term": "some arm",
       "heading": false
     },
     {
@@ -7256,10 +7260,6 @@
     {
       "term": "cumulative reward",
       "heading": true
-    },
-    {
-      "term": "some arm",
-      "heading": false
     }
   ],
   "links": {

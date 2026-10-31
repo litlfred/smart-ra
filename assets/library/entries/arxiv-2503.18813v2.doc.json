@@ -654,16 +654,16 @@
           "heading": false
         },
         {
-          "term": "llm",
-          "heading": false
-        },
-        {
           "term": "google",
           "heading": false
         },
         {
           "term": "attacks",
           "heading": false
+        },
+        {
+          "term": "prompt",
+          "heading": true
         }
       ],
       "extract": "Edoardo Debenedetti1,3*, Ilia Shumailov2, Tianqi Fan1, Jamie Hayes2, Nicholas Carlini2, Daniel Fabian1, Christoph Kern1, Chongyang Shi2, Andreas Terzis2 and Florian Tramèr3 1Google, 2Google DeepMind, 3ETH Zurich Large Language Models (LLMs) are increasingly deployed in agentic systems that interact with an untrusted environment. However, LLM agents are vulnerable to prompt injection attacks when handling untrusted",
@@ -686,11 +686,11 @@
           "heading": false
         },
         {
-          "term": "quarantined llm",
+          "term": "bob email",
           "heading": false
         },
         {
-          "term": "bob email",
+          "term": "quarantined llm",
           "heading": false
         },
         {
@@ -698,7 +698,7 @@
           "heading": false
         },
         {
-          "term": "email address",
+          "term": "confidential document",
           "heading": false
         },
         {
@@ -706,11 +706,11 @@
           "heading": false
         },
         {
-          "term": "recent meeting",
+          "term": "email address",
           "heading": false
         },
         {
-          "term": "confidential document",
+          "term": "recent meeting",
           "heading": false
         }
       ],
@@ -734,11 +734,11 @@
           "heading": false
         },
         {
-          "term": "trace",
+          "term": "ωprompt",
           "heading": false
         },
         {
-          "term": "ωprompt",
+          "term": "trace",
           "heading": false
         },
         {
@@ -746,11 +746,11 @@
           "heading": false
         },
         {
-          "term": "args",
+          "term": "memstep",
           "heading": false
         },
         {
-          "term": "memstep",
+          "term": "args",
           "heading": false
         },
         {
@@ -810,11 +810,11 @@
           "heading": true
         },
         {
-          "term": "return trace",
+          "term": "camel agent",
           "heading": false
         },
         {
-          "term": "camel agent",
+          "term": "return trace",
           "heading": false
         },
         {
@@ -858,7 +858,7 @@
           "heading": false
         },
         {
-          "term": "quarantined llm",
+          "term": "bob email",
           "heading": false
         },
         {
@@ -866,15 +866,15 @@
           "heading": false
         },
         {
-          "term": "bob email",
-          "heading": false
-        },
-        {
-          "term": "privileged llm",
+          "term": "quarantined llm",
           "heading": false
         },
         {
           "term": "actions ωprompt",
+          "heading": false
+        },
+        {
+          "term": "privileged llm",
           "heading": false
         },
         {
@@ -942,15 +942,19 @@
           "heading": false
         },
         {
-          "term": "quarantined llm",
-          "heading": false
-        },
-        {
           "term": "p-llm",
           "heading": false
         },
         {
+          "term": "quarantined llm",
+          "heading": false
+        },
+        {
           "term": "python code",
+          "heading": false
+        },
+        {
+          "term": "security policies",
           "heading": false
         },
         {
@@ -959,10 +963,6 @@
         },
         {
           "term": "participants",
-          "heading": false
-        },
-        {
-          "term": "security policies",
           "heading": false
         }
       ],
@@ -990,11 +990,11 @@
           "heading": false
         },
         {
-          "term": "pii",
+          "term": "data provenance",
           "heading": false
         },
         {
-          "term": "data provenance",
+          "term": "pii",
           "heading": false
         },
         {
@@ -1034,15 +1034,11 @@
           "heading": true
         },
         {
-          "term": "dependency graph",
-          "heading": false
-        },
-        {
           "term": "python interpreter",
           "heading": false
         },
         {
-          "term": "send email",
+          "term": "dependency graph",
           "heading": false
         },
         {
@@ -1050,15 +1046,19 @@
           "heading": false
         },
         {
+          "term": "send email",
+          "heading": false
+        },
+        {
           "term": "flow graph",
           "heading": false
         },
         {
-          "term": "graph generated",
+          "term": "strict mode",
           "heading": false
         },
         {
-          "term": "strict mode",
+          "term": "graph generated",
           "heading": false
         }
       ],
@@ -1082,11 +1082,11 @@
           "heading": false
         },
         {
-          "term": "agentic",
+          "term": "utility",
           "heading": false
         },
         {
-          "term": "utility",
+          "term": "agentic",
           "heading": false
         }
       ],
@@ -1182,11 +1182,11 @@
           "heading": true
         },
         {
-          "term": "failure modes",
+          "term": "p-llm",
           "heading": false
         },
         {
-          "term": "p-llm",
+          "term": "failure modes",
           "heading": false
         },
         {
@@ -1222,11 +1222,11 @@
           "heading": true
         },
         {
-          "term": "query misunderstanding",
+          "term": "underdocumented api",
           "heading": false
         },
         {
-          "term": "underdocumented api",
+          "term": "query misunderstanding",
           "heading": false
         },
         {
@@ -1234,12 +1234,12 @@
           "heading": false
         },
         {
-          "term": "utility",
-          "heading": true
-        },
-        {
           "term": "p-llm",
           "heading": false
+        },
+        {
+          "term": "utility",
+          "heading": true
         },
         {
           "term": "enough context",
@@ -1318,11 +1318,11 @@
           "heading": false
         },
         {
-          "term": "suite task",
+          "term": "calling api",
           "heading": false
         },
         {
-          "term": "calling api",
+          "term": "suite task",
           "heading": false
         }
       ],
@@ -1358,19 +1358,19 @@
           "heading": false
         },
         {
-          "term": "rate workspace",
-          "heading": false
-        },
-        {
           "term": "banking slack",
           "heading": false
         },
         {
-          "term": "triggering rate",
+          "term": "rate workspace",
           "heading": false
         },
         {
-          "term": "policy triggering",
+          "term": "get triggered",
+          "heading": false
+        },
+        {
+          "term": "deny tool",
           "heading": false
         }
       ],
@@ -1402,15 +1402,7 @@
           "heading": false
         },
         {
-          "term": "instruction hierarchy",
-          "heading": false
-        },
-        {
           "term": "security guarantees",
-          "heading": false
-        },
-        {
-          "term": "tool filter",
           "heading": false
         },
         {
@@ -1418,7 +1410,15 @@
           "heading": false
         },
         {
-          "term": "gpt-4o mini",
+          "term": "tool filter",
+          "heading": false
+        },
+        {
+          "term": "instruction hierarchy",
+          "heading": false
+        },
+        {
+          "term": "formal security",
           "heading": false
         }
       ],
@@ -1458,11 +1458,11 @@
           "heading": false
         },
         {
-          "term": "malicious instructions",
+          "term": "email now",
           "heading": false
         },
         {
-          "term": "email now",
+          "term": "malicious instructions",
           "heading": false
         },
         {
@@ -1510,11 +1510,11 @@
           "heading": false
         },
         {
-          "term": "python",
+          "term": "count",
           "heading": false
         },
         {
-          "term": "count",
+          "term": "defenses",
           "heading": false
         }
       ],
@@ -1550,7 +1550,7 @@
           "heading": false
         },
         {
-          "term": "constraints private",
+          "term": "camel strict",
           "heading": false
         },
         {
@@ -1558,7 +1558,7 @@
           "heading": false
         },
         {
-          "term": "camel strict",
+          "term": "constraints private",
           "heading": false
         },
         {
@@ -1721,11 +1721,11 @@
       "summary": null,
       "keywords": [
         {
-          "term": "control flow",
+          "term": "injection attacks",
           "heading": false
         },
         {
-          "term": "injection attacks",
+          "term": "control flow",
           "heading": false
         },
         {
@@ -1737,11 +1737,11 @@
           "heading": false
         },
         {
-          "term": "prompt injection",
+          "term": "camel",
           "heading": false
         },
         {
-          "term": "camel",
+          "term": "prompt injection",
           "heading": false
         },
         {
@@ -1769,11 +1769,11 @@
       "summary": null,
       "keywords": [
         {
-          "term": "formal verification",
+          "term": "security policies",
           "heading": false
         },
         {
-          "term": "security policies",
+          "term": "formal verification",
           "heading": false
         },
         {
@@ -1825,6 +1825,10 @@
           "heading": false
         },
         {
+          "term": "ben laurie",
+          "heading": false
+        },
+        {
           "term": "usenix security",
           "heading": false
         },
@@ -1833,19 +1837,15 @@
           "heading": false
         },
         {
-          "term": "security symposium",
-          "heading": false
-        },
-        {
           "term": "peter neumann",
           "heading": false
         },
         {
-          "term": "thirty-eighth conference",
+          "term": "security symposium",
           "heading": false
         },
         {
-          "term": "thirty-seventh conference",
+          "term": "prompt injection",
           "heading": false
         }
       ],
@@ -1895,11 +1895,11 @@
       "summary": null,
       "keywords": [
         {
-          "term": "flow refers",
+          "term": "control flow",
           "heading": false
         },
         {
-          "term": "control flow",
+          "term": "flow refers",
           "heading": false
         },
         {
@@ -1915,16 +1915,16 @@
           "heading": false
         },
         {
+          "term": "possess",
+          "heading": false
+        },
+        {
           "term": "machine learning",
           "heading": false
         },
         {
           "term": "security",
           "heading": true
-        },
-        {
-          "term": "email",
-          "heading": false
         }
       ],
       "extract": "In this work we extensively use terminology from the computer security literature. Security Policy is defined by Anderson, Stajano, and Lee (2002) as “a high-level specification of the security properties that a given system should possess”. Such policies describe the overall goals of the system, define the subjects and the objects in the system, and finally restrict the operations that they can perform. An example",
@@ -1955,11 +1955,11 @@
           "heading": false
         },
         {
-          "term": "program",
+          "term": "integrity",
           "heading": false
         },
         {
-          "term": "integrity",
+          "term": "program",
           "heading": false
         },
         {
@@ -1987,12 +1987,12 @@
       "summary": null,
       "keywords": [
         {
-          "term": "llm",
-          "heading": true
-        },
-        {
           "term": "tool call",
           "heading": false
+        },
+        {
+          "term": "llm",
+          "heading": true
         },
         {
           "term": "both data",
@@ -2047,15 +2047,15 @@
           "heading": true
         },
         {
-          "term": "defend against",
-          "heading": false
-        },
-        {
           "term": "tool access",
           "heading": false
         },
         {
           "term": "keep track",
+          "heading": false
+        },
+        {
+          "term": "defend against",
           "heading": false
         }
       ],
@@ -2158,15 +2158,15 @@
           "heading": false
         },
         {
+          "term": "undefended model",
+          "heading": false
+        },
+        {
           "term": "triggering rates",
           "heading": false
         },
         {
           "term": "dependency graph",
-          "heading": false
-        },
-        {
-          "term": "undefended model",
           "heading": false
         }
       ],
@@ -2214,7 +2214,7 @@
           "heading": false
         },
         {
-          "term": "webpage policy",
+          "term": "message policy",
           "heading": false
         }
       ],
@@ -2254,11 +2254,11 @@
           "heading": false
         },
         {
-          "term": "table token",
+          "term": "multiple defenses",
           "heading": false
         },
         {
-          "term": "multiple defenses",
+          "term": "table token",
           "heading": false
         },
         {
@@ -2340,7 +2340,7 @@
           "heading": false
         },
         {
-          "term": "param content",
+          "term": "str none",
           "heading": false
         }
       ],
@@ -2400,11 +2400,11 @@
           "heading": false
         },
         {
-          "term": "str parameters",
+          "term": "parsed todos",
           "heading": false
         },
         {
-          "term": "parsed todos",
+          "term": "str parameters",
           "heading": false
         },
         {
@@ -2487,8 +2487,8 @@
           "heading": false
         },
         {
-          "term": "query",
-          "heading": true
+          "term": "raynolds gmail",
+          "heading": false
         }
       ],
       "extract": "Query is “How long do I have to go to my lunch with Sarah?” The model assumes that it’s from now, and not from the previous calendar event. User How much time do I have to go to my lunch with Sarah on 2024-05-15. Give me the result in the format 'HH:MM'. Tool get_day_calendar_events(day=\"2024-05-15\") - all_day: false description: Weekly team sync to discuss project updates and roadblocks. end_time: 2024-05-15",
@@ -2531,11 +2531,11 @@
           "heading": false
         },
         {
-          "term": "info query",
+          "term": "alice inbox",
           "heading": false
         },
         {
-          "term": "alice inbox",
+          "term": "info query",
           "heading": false
         }
       ],
@@ -2651,7 +2651,15 @@
       "summary": null,
       "keywords": [
         {
-          "term": "june activities",
+          "term": "beach june",
+          "heading": false
+        },
+        {
+          "term": "beach activities",
+          "heading": false
+        },
+        {
+          "term": "beach day",
           "heading": false
         },
         {
@@ -2663,7 +2671,7 @@
           "heading": false
         },
         {
-          "term": "head june",
+          "term": "beach days",
           "heading": false
         },
         {
@@ -2671,15 +2679,7 @@
           "heading": false
         },
         {
-          "term": "gear casual",
-          "heading": false
-        },
-        {
-          "term": "johnson bluesparrowtech",
-          "heading": false
-        },
-        {
-          "term": "docx team",
+          "term": "head june",
           "heading": false
         }
       ],
@@ -2703,11 +2703,11 @@
           "heading": false
         },
         {
-          "term": "suspicious transactions",
+          "term": "suspicious activity",
           "heading": false
         },
         {
-          "term": "suspicious activity",
+          "term": "suspicious transactions",
           "heading": false
         },
         {
@@ -2763,10 +2763,6 @@
           "heading": false
         },
         {
-          "term": "rating reviews",
-          "heading": false
-        },
-        {
           "term": "hotel names",
           "heading": false
         },
@@ -2776,6 +2772,10 @@
         },
         {
           "term": "hotel list",
+          "heading": false
+        },
+        {
+          "term": "hotel detail",
           "heading": false
         }
       ],
@@ -2843,6 +2843,10 @@
       "summary": null,
       "keywords": [
         {
+          "term": "upcoming meetings",
+          "heading": false
+        },
+        {
           "term": "meeting info",
           "heading": false
         },
@@ -2863,15 +2867,11 @@
           "heading": false
         },
         {
-          "term": "docx",
-          "heading": false
-        },
-        {
           "term": "yyyy-mm-dd format",
           "heading": false
         },
         {
-          "term": "prompt injection",
+          "term": "docx",
           "heading": false
         }
       ],
@@ -2893,20 +2893,20 @@
       "heading": true
     },
     {
-      "term": "defeating prompt",
-      "heading": true
-    },
-    {
       "term": "camel security",
       "heading": true
     },
     {
-      "term": "prompt injections",
+      "term": "defeating prompt",
       "heading": true
     },
     {
       "term": "tool query",
       "heading": false
+    },
+    {
+      "term": "prompt injections",
+      "heading": true
     },
     {
       "term": "send email",
@@ -2917,7 +2917,7 @@
       "heading": true
     },
     {
-      "term": "find email",
+      "term": "email get",
       "heading": false
     },
     {
@@ -2925,16 +2925,16 @@
       "heading": true
     },
     {
-      "term": "figure camel",
-      "heading": true
+      "term": "find email",
+      "heading": false
     },
     {
       "term": "camel interpreter",
       "heading": true
     },
     {
-      "term": "email get",
-      "heading": false
+      "term": "figure camel",
+      "heading": true
     }
   ],
   "pageLabels": [

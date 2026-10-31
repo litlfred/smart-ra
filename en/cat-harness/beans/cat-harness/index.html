@@ -84,9 +84,9 @@
      `<html data-fa-scheme>` before the body is parsed, so no rule keyed on
      it ever paints the wrong way first;
   2. if that is not the configured scheme, switch the theme's sheet NOW,
-     while the parser is still in the head. The link is parser-created, so
-     the browser holds first paint for its new file: a light reader is light
-     from the first frame, with no dark flash either;
+     while the parser is still in the head. `jtd.setTheme` loads the new
+     file beside the old, render-blocking, and drops the old one once it
+     has loaded (cat-harness#820): never a frame with no theme sheet;
   3. paint `html` itself, dark unless the scheme is light, so a sheet in
      flight shows the page's ground rather than white.
 
@@ -647,7 +647,7 @@
 <script src="../../../../assets/js/kg-render.js" defer></script>
 <!-- BEFORE docs-ui.js, which calls it: the one drawing of the harness icon row (beans `lhvt`, `9rq1`). -->
 <script src="../../../../assets/js/navbar-row.js?v=7dce6a7e2ab0" defer></script>
-<script src="../../../../assets/js/docs-ui.js?v=8b5567635976" defer></script>
+<script src="../../../../assets/js/docs-ui.js?v=59c1d8d3ff0a" defer></script>
 <!-- The edit, source and feedback links of every page, from the platform's one
   recipe (cat-harness-tools/src/core/edit-links.ts, bean v433): links carry their
   facts and this builds the hrefs. -->
@@ -875,7 +875,7 @@
   
   
 </h2>
-    <p class="sv-sub">cannot resolve the bean store: &quot;beans&quot; is on cat/dpi-h-ra/beans and is not mounted in /home/claude/smart-ra, so there is no directory to read. Mount it (`bun run cat state:mount`). Reading beans instead would report an EMPTY graph, and &quot;nothing here&quot; is not &quot;could not reach it&quot; — is cut over to `cat/dpi-h-ra/beans` and nothing is mounted here, so every reader of this path sees an EMPTY graph rather than an unreachable one. Mount it (`bun run cat state:mount`); &quot;no content&quot; and &quot;could not reach the content&quot; are different answers.. This is <strong>unknown</strong>, not zero.</p>
+    <p class="sv-sub">cannot resolve the bean store: &quot;beans&quot; is on cat/dpi-h-ra/beans and is not mounted in /home/runner/work/smart-ra/smart-ra, so there is no directory to read. Mount it (`bun run cat state:mount`). Reading beans instead would report an EMPTY graph, and &quot;nothing here&quot; is not &quot;could not reach it&quot; — is cut over to `cat/dpi-h-ra/beans` and nothing is mounted here, so every reader of this path sees an EMPTY graph rather than an unreachable one. Mount it (`bun run cat state:mount`); &quot;no content&quot; and &quot;could not reach the content&quot; are different answers.. This is <strong>unknown</strong>, not zero.</p>
 <h2 class="sv-h2">
   
   

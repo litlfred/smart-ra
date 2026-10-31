@@ -84,9 +84,9 @@
      `<html data-fa-scheme>` before the body is parsed, so no rule keyed on
      it ever paints the wrong way first;
   2. if that is not the configured scheme, switch the theme's sheet NOW,
-     while the parser is still in the head. The link is parser-created, so
-     the browser holds first paint for its new file: a light reader is light
-     from the first frame, with no dark flash either;
+     while the parser is still in the head. `jtd.setTheme` loads the new
+     file beside the old, render-blocking, and drops the old one once it
+     has loaded (cat-harness#820): never a frame with no theme sheet;
   3. paint `html` itself, dark unless the scheme is light, so a sheet in
      flight shows the page's ground rather than white.
 
@@ -647,7 +647,7 @@
 <script src="../../../../../assets/js/kg-render.js" defer></script>
 <!-- BEFORE docs-ui.js, which calls it: the one drawing of the harness icon row (beans `lhvt`, `9rq1`). -->
 <script src="../../../../../assets/js/navbar-row.js?v=7dce6a7e2ab0" defer></script>
-<script src="../../../../../assets/js/docs-ui.js?v=8b5567635976" defer></script>
+<script src="../../../../../assets/js/docs-ui.js?v=59c1d8d3ff0a" defer></script>
 <!-- The edit, source and feedback links of every page, from the platform's one
   recipe (cat-harness-tools/src/core/edit-links.ts, bean v433): links carry their
   facts and this builds the hrefs. -->
@@ -738,7 +738,7 @@
 
 <link rel="stylesheet" href="../../../../../assets/css/navbar.css"><script src="../../../../../assets/navbar/rail-1nr7jo2rxsc.js" defer></script><script src="../../../../../assets/js/navbar.js" defer></script><link rel="stylesheet" href="../../../../../assets/page-layout.css" data-fa-page-layout><script src="../../../../../assets/page-layout.js" defer data-fa-page-layout></script><meta name="fa-pinned-data" content="../../../../.."></head>
 
-<body><script type="application/json" id="fa-rail" data-fa-root="https://litlfred.github.io/folio-assistant" data-fa-to-root="../../../../..">{"data":"rail-1nr7jo2rxsc","here":"/en/cat-harness/methodologies/cat-harness/sdlc-agentic-landscape/","documentIndex":{"label":"On this page","icon":"§","items":[{"href":"#1-the-surveys-sdlc-phase-taxonomy","label":"1. The Survey’s SDLC Phase Taxonomy"},{"href":"#2-cross-check-against-folio-assistant-processes-69-diagrams","label":"2. Cross-Check Against Folio-Assistant Processes (69 Diagrams)","children":[{"href":"#a-requirements-engineering-full-coverage","label":"A. Requirements Engineering: Full Coverage","depth":1},{"href":"#b-software-design-full-coverage","label":"B. Software Design: Full Coverage","depth":1},{"href":"#c-code-generation--implementation-strong-controlled-coverage","label":"C. Code Generation & Implementation: Strong Controlled Coverage","depth":1},{"href":"#d-software-quality-assurance--testing-rigorous-evidence-based-coverage","label":"D. Software Quality Assurance & Testing: Rigorous Evidence-Based Coverage","depth":1},{"href":"#e-software-maintenance--review-high-coverage","label":"E. Software Maintenance & Review: High Coverage","depth":1},{"href":"#f-software-management--collaboration-industrial-grade-governance","label":"F. Software Management & Collaboration: Industrial-Grade Governance","depth":1}],"fold":"6 sub-sections"},{"href":"#3-gap-analysis-where-folio-assistant-gaps-exist","label":"3. Gap Analysis: Where Folio-Assistant Gaps Exist"},{"href":"#4-key-takeaways-for-agentic-platform-design","label":"4. Key Takeaways for Agentic Platform Design"}],"collapsible":true}}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../">Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector</a></nav>
+<body><script type="application/json" id="fa-rail" data-fa-root="https://litlfred.github.io/folio-assistant" data-fa-to-root="../../../../..">{"data":"rail-1nr7jo2rxsc","here":"/en/cat-harness/methodologies/cat-harness/sdlc-agentic-landscape/","documentIndex":{"label":"On this page","icon":"§","items":[{"href":"#1-the-surveys-sdlc-phase-taxonomy","label":"The Survey’s SDLC Phase Taxonomy","icon":"1"},{"href":"#2-cross-check-against-folio-assistant-processes-69-diagrams","label":"Cross-Check Against Folio-Assistant Processes (69 Diagrams)","icon":"2","children":[{"href":"#a-requirements-engineering-full-coverage","label":"A. Requirements Engineering: Full Coverage","depth":1},{"href":"#b-software-design-full-coverage","label":"B. Software Design: Full Coverage","depth":1},{"href":"#c-code-generation--implementation-strong-controlled-coverage","label":"C. Code Generation & Implementation: Strong Controlled Coverage","depth":1},{"href":"#d-software-quality-assurance--testing-rigorous-evidence-based-coverage","label":"D. Software Quality Assurance & Testing: Rigorous Evidence-Based Coverage","depth":1},{"href":"#e-software-maintenance--review-high-coverage","label":"E. Software Maintenance & Review: High Coverage","depth":1},{"href":"#f-software-management--collaboration-industrial-grade-governance","label":"F. Software Management & Collaboration: Industrial-Grade Governance","depth":1}],"fold":"6 sub-sections"},{"href":"#3-gap-analysis-where-folio-assistant-gaps-exist","label":"Gap Analysis: Where Folio-Assistant Gaps Exist","icon":"3"},{"href":"#4-key-takeaways-for-agentic-platform-design","label":"Key Takeaways for Agentic Platform Design","icon":"4"}],"collapsible":true}}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../">Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector</a></nav>
   <a class="skip-to-main" href="#main-content">Skip to main content</a>
   <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
   <symbol id="svg-link" viewBox="0 0 24 24">
