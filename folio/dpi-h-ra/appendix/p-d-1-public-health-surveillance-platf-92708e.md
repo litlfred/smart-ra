@@ -4,7 +4,7 @@
 - **SORMAS —** a mobile-capable surveillance and outbreak-response tool supporting case registration, contact tracing and laboratory integration, deployed across several African countries.[^82]
 - **OpenELIS** **—** an open-source public-health laboratory information system feeding confirmed diagnostic data into surveillance.[^83]
 - **Epi Info —** a public-domain epidemiological analysis suite used in field epidemiology and ad hoc outbreak investigation.[^84]
-- **WHO Integrated Data Platform —** international data-exchange infrastructure through which national surveillance data flows to WHO for global health intelligence and International Health Regulations reporting.[^85]
+- **WHO Integrated Data Platform —** international data-exchange infrastructure through which national surveillance data flows to WHO for global health intelligence and International Health Regulations reporting (complemented for ICD-11-coded clinical and statistical terminology services by the WHO ICD API and local deployments and the WHO ICD-11 Coding Tool and Embedded Coding Tool listed under Terminology Service and Logical Information Model Repository below).[^85]
 
 [^79]: https://dhis2.org/
 [^80]: https://www.who.int/tools/godata
