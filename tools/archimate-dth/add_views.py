@@ -67,10 +67,15 @@ def insert_in_top_folder(xml, ftype, text):
     return xml[:close] + text + xml[close:]
 
 
-def insert_in_named_subfolder(xml, parent_type, name, text):
+def insert_in_named_subfolder(xml, parent_type, name, text, ids=None):
     """Insert text at the end of the folder called name, at any depth under the top folder."""
     top = re.search(r'\n  <folder [^>]*type="%s"[^>]*>' % parent_type, xml)
     m = re.search(r'\n( +)<folder name="%s" id="[^"]+">' % re.escape(name), xml[top.end():])
+    if not m and ids is not None and parent_type == "diagrams":
+        fid = ids("folder", name)
+        sub = f'\n      <folder name="{esc(name)}" id="{fid}">\n      </folder>'
+        xml = insert_in_named_subfolder(xml, parent_type, "1. Reference Architecture", sub)
+        m = re.search(r'\n( +)<folder name="%s" id="[^"]+">' % re.escape(name), xml[top.end():])
     if not m:
         raise SystemExit(f"no folder {name!r} under {parent_type}")
     start = top.end() + m.end()
@@ -205,7 +210,7 @@ def main(argv):
         docx = f"\n        <documentation>{esc(doc)}</documentation>" if doc else ""
         view = (f'\n      <element xsi:type="archimate:ArchimateDiagramModel" name="{esc(name)}" id="{vid}">{docx}'
                 f'\n        <property key="source" value="{esc(s.SOURCE)}"/>{body}\n      </element>')
-        xml = insert_in_named_subfolder(xml, "diagrams", s.VIEW_FOLDER, view)
+        xml = insert_in_named_subfolder(xml, "diagrams", s.VIEW_FOLDER, view, ids)
         added += 1
 
     with zipfile.ZipFile(dst, "w", zipfile.ZIP_DEFLATED) as z:

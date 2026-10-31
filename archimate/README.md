@@ -7,7 +7,7 @@ the folder whose name equals that `version:` is.
 
 | folder | model | where it came from |
 |---|---|---|
-| `0.3.0-draft.1/` | `WHO_RA` plus the supply chain views (DTH SC Figs. 1-3, 14, 24) | made from `0.2.0/` by `tools/archimate-dth/add_views.py tools/archimate-dth/dth_sc.py`; draft |
+| `0.3.0-draft.1/` | `WHO_RA` plus the supply chain (DTH SC Figs. 1-3, 14, 24), product catalogue (DTH PC Fig. 2, Figs. 8-9) and primary health care PCPOSS (DTH PHC) views | made from `0.2.0/` by `tools/archimate-dth/add_views.py` with `dth_sc.py`, `dth_pc.py` and `dth_phc.py`; draft |
 | `0.2.0/` | `WHO_RA` — 20 views, incl. Testing and Conformance | `v3/` (and its byte-identical copy `v2/`), 2026-07-09 |
 | `0.2.0-draft.3/` | `WHO Models` | `v1/` |
 | `0.2.0-draft.2/` | `WHO Reference Architecture` | `prev1/` |
