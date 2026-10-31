@@ -224,7 +224,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness-tools",
-          "ref": "f66e998de83e2a19de94ce72aff32ac142917025",
+          "ref": "4ad6f41877349d0478864d45a5c8b9f58114ffed",
           "overrides": {
             "cat-harness-tools": {
               "whole": true
@@ -236,9 +236,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-30",
-              "ref": "f66e998de83e2a19de94ce72aff32ac142917025",
-              "evidence": "owner card 'Merge and re-pin' 2026-10-30 20:32Z (core #282); merge window to ~22:38Z; tools main carries d7f3daa (who-iris README links)"
+              "on": "2026-10-31",
+              "ref": "4ad6f41877349d0478864d45a5c8b9f58114ffed",
+              "evidence": "litlfred, decision card in thread 'Align smart-ra and DTH handbook pipelines', 2026-10-30 23:59:52Z: 'A. Merge both, then re-pin' (merge cat-harness-tools#1039 and #1043, then re-pin smart-ra and dth-hrh in #132 and #46). cat-harness-tools main 4ad6f41877349d0478864d45a5c8b9f58114ffed carries the shared folio workflows and the mount-layers action the callers use."
             }
           }
         }
