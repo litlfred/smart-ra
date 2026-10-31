@@ -1,10 +1,7 @@
 name: Release build
 
 permissions:
-  contents: write
-  pages: write
-  id-token: write
-  pull-requests: write
+  contents: read
   
 # Manual trigger only (owner decision, 2026-10-06): GitHub workflows here are
 # defined, not run automatically. Start it from the Actions tab.
