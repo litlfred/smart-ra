@@ -181,7 +181,10 @@ def main(argv):
                                    f'\n    <element xsi:type="archimate:{etype}" name="{esc(name)}" id="{eid}">{body}\n    </element>')
         added += 1
 
-    rel_ids = {}
+    rel_ids = dict(getattr(s, "EXISTING_RELATIONS", {}))
+    for k, rid in rel_ids.items():
+        if f'id="{rid}"' not in xml:
+            raise SystemExit(f"EXISTING_RELATIONS {k} = {rid} is not in the base model")
     for rtype, a, b, *rest in s.RELATIONS:
         rid = ids("rel", rtype, a, b)
         rel_ids[(rtype, a, b)] = rid
