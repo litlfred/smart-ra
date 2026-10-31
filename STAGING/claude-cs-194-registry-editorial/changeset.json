@@ -1,0 +1,212 @@
+{
+  "$schema": "folio-changeset/v1",
+  "folio": "folio",
+  "base": {
+    "ref": "origin/main",
+    "commit": "1fefca7f3704669c87e3ab09472b83c6d4df0ba7"
+  },
+  "head": {
+    "ref": "worktree",
+    "commit": null
+  },
+  "summary": {
+    "added": 0,
+    "removed": 0,
+    "changed": 10,
+    "unchanged": 923,
+    "renamed": 0,
+    "prose": 9,
+    "manifest": 0,
+    "moved": 1
+  },
+  "changes": [
+    {
+      "change": "changed",
+      "label": "prose:c-business-services-components-supplier-registry-844669",
+      "aspects": [
+        "moved"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-supplier-registry-844669.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-supplier-registry",
+        "index": 8
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-supplier-registry-844669.ts",
+        "kind": "prose"
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-metadata-registries-and-foundati-health-facility-registry-7b0aec",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-health-facility-registry-7b0aec.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-health-facility-registry",
+        "index": 8
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-health-facility-registry-7b0aec.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-health-facility-registry",
+        "index": 8
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-metadata-registries-and-foundati-health-facility-registry-c3f1f4",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-health-facility-registry-c3f1f4.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-health-facility-registry",
+        "index": 13
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-health-facility-registry-c3f1f4.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-health-facility-registry",
+        "index": 13
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-metadata-registries-and-foundati-health-workforce-registry-e93814",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-health-workforce-registry-e93814.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-health-workforce-registry",
+        "index": 25
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-health-workforce-registry-e93814.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-health-workforce-registry",
+        "index": 25
+      }
+    },
+    {
+      "change": "changed",
+      "label": "tbl:c-metadata-registries-and-foundati-product-registry-adbc24",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/t-c-metadata-registries-and-foundati-product-registry-adbc24.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-product-registry",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/t-c-metadata-registries-and-foundati-product-registry-adbc24.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-product-registry",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-metadata-registries-and-foundati-product-registry-0298f8",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-product-registry-0298f8.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-product-registry",
+        "index": 4
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-product-registry-0298f8.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-product-registry",
+        "index": 4
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-metadata-registries-and-foundati-product-registry-d6c737",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-product-registry-d6c737.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-product-registry",
+        "index": 12
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-product-registry-d6c737.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-product-registry",
+        "index": 12
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-metadata-registries-and-foundati-product-registry-ca593e",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-product-registry-ca593e.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-product-registry",
+        "index": 25
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-product-registry-ca593e.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-product-registry",
+        "index": 25
+      }
+    },
+    {
+      "change": "changed",
+      "label": "tbl:c-metadata-registries-and-foundati-product-registry-2e4f9b",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/t-c-metadata-registries-and-foundati-product-registry-2e4f9b.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-product-registry",
+        "index": 26
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/t-c-metadata-registries-and-foundati-product-registry-2e4f9b.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-product-registry",
+        "index": 26
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-metadata-registries-and-foundati-product-registry-f167ee",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-product-registry-f167ee.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-product-registry",
+        "index": 27
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-product-registry-f167ee.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-product-registry",
+        "index": 27
+      }
+    }
+  ]
+}
