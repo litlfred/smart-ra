@@ -934,7 +934,7 @@ window.addEventListener('resize',measure);window.addEventListener('load',measure
 </h1>
     
 
-<p><code class="language-plaintext highlighter-rouge">Process_DocumentAuthoring</code> · advisory · 11 step(s)</p>
+<p><code class="language-plaintext highlighter-rouge">Process_DocumentAuthoring</code> · advisory · 12 step(s)</p>
 
 <p>How a document folio — structured prose and policy guidance, with no Lean and no required TeX — is authored, built and reviewed end to end. folio-assistant — authoring a document end to end (no Lean, no required TeX).
 Source of truth: this file. The SVG under docs/assets/img/workflows/ is generated
@@ -954,7 +954,7 @@ check, which is what keeps a document folio publishable without either toolchain
 
 <ul>
   <li><strong>Called by:</strong> no call activity names this process</li>
-  <li><strong>Calls:</strong> <a href="bean-close.html">Close the bean</a>, <a href="bean-open.html">Open the bean</a></li>
+  <li><strong>Calls:</strong> <a href="bean-close.html">Close the bean</a>, <a href="bean-open.html">Open the bean</a>, <a href="contributor-feedback.html">Contributor feedback on a working draft</a></li>
   <li><strong>Presented on:</strong> no docs page section shows this diagram</li>
   <li><strong>Running instances:</strong> none recorded</li>
 </ul>
@@ -1001,6 +1001,11 @@ check, which is what keeps a document folio publishable without either toolchain
       <td><code class="language-plaintext highlighter-rouge">reviewer</code></td>
       <td>Owns the one gate that decides publish or iterate, and is deliberately unspecialised: this process relaxes the paper process’s clinical-SME lane into whichever reviewer a given document actually binds, because no single expertise fits every document the way it does a guideline.</td>
     </tr>
+    <tr>
+      <td>Authoring Committee</td>
+      <td><code class="language-plaintext highlighter-rouge">authoring-committee</code></td>
+      <td>The people writing the document with the editor. While it is a working draft they give feedback through the Contributor Feedback sheet, one change set per row, and each row runs <a href="contributor-feedback.html">Process_ContributorFeedback</a>.</td>
+    </tr>
   </tbody>
 </table></div>
 <h2 id="steps">
@@ -1012,7 +1017,7 @@ check, which is what keeps a document folio publishable without either toolchain
 </h2>
     
 
-<p>Every one of the 11 step(s) is documented.</p>
+<p>Every one of the 12 step(s) is documented.</p>
 
 <div class="table-wrapper"><table>
   <thead>
@@ -1090,6 +1095,12 @@ check, which is what keeps a document folio publishable without either toolchain
       <td>calls <a href="bean-close.html">Close the bean</a><br /><code class="language-plaintext highlighter-rouge">todo-manager</code></td>
       <td><a href="bean-close.html">Process_BeanClose</a>: end the bean in a state that says why — complete and archive it, scrap it with its reasons and archive it, or record the blocker and hand it back. The one place resolve and archive are drawn (bean m8gz, owner 2026-10-24); placed straight before the end so the engine’s resolve sees nothing left but the archive step.</td>
     </tr>
+    <tr>
+      <td><strong>Contributor feedback</strong><br /><code class="language-plaintext highlighter-rouge">Call_ContributorFeedback</code></td>
+      <td>Authoring Committee</td>
+      <td>calls <a href="contributor-feedback.html">Contributor feedback on a working draft</a><br /><code class="language-plaintext highlighter-rouge">review-sheet-script</code></td>
+      <td><a href="contributor-feedback.html">Process_ContributorFeedback</a>: while the document is a working draft, the Authoring Committee gives feedback through the Contributor Feedback sheet, and each change set is edited and merged in its own pull request. When its changes are merged, the document is validated and rendered again (owner, 2026-10-31).</td>
+    </tr>
   </tbody>
 </table></div>
 <h2 id="decisions">
@@ -1119,8 +1130,8 @@ check, which is what keeps a document folio publishable without either toolchain
     </tr>
     <tr>
       <td><strong>Ready to publish?</strong><br /><code class="language-plaintext highlighter-rouge">Gateway_ReviewOutcome</code></td>
-      <td>The reviewer’s call after step 8. <code class="language-plaintext highlighter-rouge">iterate</code> returns to authoring with the feedback; <code class="language-plaintext highlighter-rouge">approved</code> goes to publish.</td>
-      <td><strong>iterate</strong> → 4 · Author blocks<br /><strong>approved</strong> → 9 · Publish</td>
+      <td>The reviewer’s call after step 8. <code class="language-plaintext highlighter-rouge">iterate</code> returns to authoring with the feedback; <code class="language-plaintext highlighter-rouge">Authoring Committee feedback</code> sends a working draft to the committee through the Contributor Feedback sheet (<a href="contributor-feedback.html">Process_ContributorFeedback</a>), and comes back to validation once its changes are merged; <code class="language-plaintext highlighter-rouge">approved</code> goes to publish.</td>
+      <td><strong>iterate</strong> → 4 · Author blocks<br /><strong>approved</strong> → 9 · Publish<br /><strong>Authoring Committee feedback</strong> → Contributor feedback</td>
     </tr>
     <tr>
       <td><strong>Bean claimed?</strong><br /><code class="language-plaintext highlighter-rouge">GW_BeanYours</code></td>

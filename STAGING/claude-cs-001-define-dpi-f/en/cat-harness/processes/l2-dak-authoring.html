@@ -940,13 +940,13 @@ window.addEventListener('resize',measure);window.addEventListener('load',measure
 Source of truth: this file. Open it in bpmn.io, Camunda Modeler, or any other
 BPMN 2.0 tool. The SVG under docs/assets/img/workflows/ is generated from it
 by <code class="language-plaintext highlighter-rouge">bun run cat render:bpmn</code> — never hand-edit the SVG.
-The <bootstrap.processes:skill> extension on an activity names the folio-assistant skill
-that implements it; <cat-harness.processes:bean> marks a step that reads or writes the shared
+The &lt;bootstrap.processes:skill&gt; extension on an activity names the folio-assistant skill
+that implements it; &lt;cat-harness.processes:bean&gt; marks a step that reads or writes the shared
 work plan in beans/.
 Each of the six authoring tracks is a call into l2-component-edit-review.bpmn
-([Process_L2ComponentEditReview](l2-component-edit-review.html)): the agent edits the component, checks, renders and stages it, and hands it on, while a
-person in the component's reviewing role reviews it alongside, never as a gate. The track's renderer, checker and reviewer
-are tabled in the skill l2-component-edit-review.</cat-harness.processes:bean></bootstrap.processes:skill></p>
+(<a href="l2-component-edit-review.html">Process_L2ComponentEditReview</a>): the agent edits the component, checks, renders and stages it, and hands it on, while a
+person in the component’s reviewing role reviews it alongside, never as a gate. The track’s renderer, checker and reviewer
+are tabled in the skill l2-component-edit-review.</p>
 
 <p><em>No rendered diagram — run <code class="language-plaintext highlighter-rouge">bun run cat render:bpmn</code>.</em></p>
 <h2 id="how-it-connects">

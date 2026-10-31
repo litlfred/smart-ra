@@ -956,8 +956,9 @@ public-comment.</p>
     
 
 <ul>
-  <li><strong>Called by:</strong> <a href="draft-to-publication.html">Draft, review and publish</a>, <a href="dsa-document-lifecycle.html">Data sharing agreement document life cycle</a></li>
+  <li><strong>Called by:</strong> <a href="dsa-document-lifecycle.html">Data sharing agreement document life cycle</a>, <a href="public-comment-release.html">Release a draft for public comment</a></li>
   <li><strong>Calls:</strong> <a href="content-change-review.html">Content Change and Review</a></li>
+  <li><strong>Names the <code class="language-plaintext highlighter-rouge">public-comment</code> skill without calling this process:</strong> <a href="public-comment-release.html">Release a draft for public comment</a> — <code class="language-plaintext highlighter-rouge">activity-calls-skill-process</code> asks whether each should be a call activity.</li>
   <li><strong>Presented on:</strong> no docs page section shows this diagram</li>
   <li><strong>Running instances:</strong> none recorded</li>
 </ul>
@@ -1065,7 +1066,7 @@ public-comment.</p>
       <td><strong>Re-route a change-set to another committee, with a reason</strong><br /><code class="language-plaintext highlighter-rouge">Task_RerouteChangeSet</code></td>
       <td>Review committee</td>
       <td><code class="language-plaintext highlighter-rouge">public-comment</code></td>
-      <td>public-comment-changesets reroute, or cs-committee: <TWG> — <why> on GitHub from a person in the committee or editor lane (bean se3i, issue #197). Moves the change-set to another TWG review committee and records who, when, from, to and why on the change-set record, so re-ingesting comments never resets it. Person-only (userTask): agents cannot re-route a change-set on their own.</why></TWG></td>
+      <td>public-comment-changesets reroute, or cs-committee: &lt;TWG&gt; — &lt;why&gt; on GitHub from a person in the committee or editor lane (bean se3i, issue #197). Moves the change-set to another TWG review committee and records who, when, from, to and why on the change-set record, so re-ingesting comments never resets it. Person-only (userTask): agents cannot re-route a change-set on their own.</td>
     </tr>
     <tr>
       <td><strong>Assign to committee members</strong><br /><code class="language-plaintext highlighter-rouge">Task_Assign</code></td>

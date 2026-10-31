@@ -1195,13 +1195,13 @@ window.addEventListener('resize',measure);window.addEventListener('load',measure
       <td><strong>Produce translation (PO file)</strong><br /><code class="language-plaintext highlighter-rouge">Task_Translate</code></td>
       <td>Agent / platform (automated)</td>
       <td><code class="language-plaintext highlighter-rouge">translation-manager</code></td>
-      <td>Translation of .pot → .po by one of:<br />1. Existing PO from the WHO SMART Base IG (Weblate/Crowdin/Launchpad)<br />2. FHIR/translation-utils po-translate CLI (DeepL/Google, tagged #fuzzy)<br />3. Agent (LLM) translation<br />4. Human translator<br />Result: <locale>/block.po with msgid/msgstr pairs.</locale></td>
+      <td>Translation of .pot → .po by one of:<br />1. Existing PO from the WHO SMART Base IG (Weblate/Crowdin/Launchpad)<br />2. FHIR/translation-utils po-translate CLI (DeepL/Google, tagged #fuzzy)<br />3. Agent (LLM) translation<br />4. Human translator<br />Result: &lt;locale&gt;/block.po with msgid/msgstr pairs.</td>
     </tr>
     <tr>
       <td><strong>Inject translations (PO → Markdown)</strong><br /><code class="language-plaintext highlighter-rouge">Task_PoInject</code></td>
       <td>Agent / platform (automated)</td>
       <td><code class="language-plaintext highlighter-rouge">translation-manager</code></td>
-      <td>Reads .po file and source .md, substitutes msgstr for<br />msgid, preserves non-translatable elements, writes translated .md to<br />translations/<locale>/block.md.<br />Tool: translation_inject MCP tool or bun run content/pipeline/po-inject.ts</locale></td>
+      <td>Reads .po file and source .md, substitutes msgstr for<br />msgid, preserves non-translatable elements, writes translated .md to<br />translations/&lt;locale&gt;/block.md.<br />Tool: translation_inject MCP tool or bun run content/pipeline/po-inject.ts</td>
     </tr>
     <tr>
       <td><strong>Round-trip translation QA (back-translate)</strong><br /><code class="language-plaintext highlighter-rouge">Task_RoundTripQA</code></td>
@@ -1225,7 +1225,7 @@ window.addEventListener('resize',measure);window.addEventListener('load',measure
       <td><strong>Write status.json (unofficial)</strong><br /><code class="language-plaintext highlighter-rouge">Task_WriteUnofficial</code></td>
       <td>Agent / platform (automated)</td>
       <td><code class="language-plaintext highlighter-rouge">translation-manager</code></td>
-      <td>Records the translation as unofficial in<br />translations/<locale>/status.json:<br />{ official: false, generatedBy: "...", generatedAt: "..." }<br />The translation is usable but carries a visible warning badge.</locale></td>
+      <td>Records the translation as unofficial in<br />translations/&lt;locale&gt;/status.json:<br />{ official: false, generatedBy: “…”, generatedAt: “…” }<br />The translation is usable but carries a visible warning badge.</td>
     </tr>
     <tr>
       <td><strong>Sign off translation (human adjudicator)</strong><br /><code class="language-plaintext highlighter-rouge">Task_Signoff</code></td>

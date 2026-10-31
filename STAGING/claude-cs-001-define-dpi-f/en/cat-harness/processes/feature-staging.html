@@ -1132,7 +1132,7 @@ window.addEventListener('resize',measure);window.addEventListener('load',measure
 <ul>
   <li><strong>Called by:</strong> no call activity names this process</li>
   <li><strong>Calls:</strong> <a href="render-kg-to-cdn.html">Render a Knowledge Graph to a CDN</a></li>
-  <li><strong>Names the <code class="language-plaintext highlighter-rouge">feature-staging</code> skill without calling this process:</strong> <a href="crdm-deliver.html">CRDM Phase 6 — implement, MVP, acceptance</a>, <a href="docs-site-publish.html">Publishing the docs site, and keeping the previews alive</a>, <a href="upstream-version-adoption.html">Adopting an upstream version bump</a>, <a href="questionnaire-wireframe-review.html">Questionnaire wireframe review</a>, <a href="content-change-review.html">Content Change and Review</a>, <a href="l2-component-edit-review.html">L2 component edit and review</a>, <a href="smart-guideline-end-to-end.html">SMART Guideline end to end</a> — <code class="language-plaintext highlighter-rouge">activity-calls-skill-process</code> asks whether each should be a call activity.</li>
+  <li><strong>Names the <code class="language-plaintext highlighter-rouge">feature-staging</code> skill without calling this process:</strong> <a href="crdm-deliver.html">CRDM Phase 6 — implement, MVP, acceptance</a>, <a href="docs-site-publish.html">Publishing the docs site, and keeping the previews alive</a>, <a href="upstream-version-adoption.html">Adopting an upstream version bump</a>, <a href="questionnaire-wireframe-review.html">Questionnaire wireframe review</a>, <a href="content-change-review-make.html">Make the content change</a>, <a href="content-change-review-publish.html">Merge and publish a content change</a>, <a href="content-change-review-stage.html">Stage the content change</a>, <a href="l2-component-edit-review.html">L2 component edit and review</a>, <a href="smart-guideline-end-to-end.html">SMART Guideline end to end</a> — <code class="language-plaintext highlighter-rouge">activity-calls-skill-process</code> asks whether each should be a call activity.</li>
   <li><strong>Presented on:</strong> no docs page section shows this diagram</li>
   <li><strong>Running instances:</strong> none recorded</li>
 </ul>
@@ -1209,7 +1209,7 @@ window.addEventListener('resize',measure);window.addEventListener('load',measure
       <td><strong>Comment the preview URL on the PR</strong><br /><code class="language-plaintext highlighter-rouge">Task_Comment</code></td>
       <td>CI/CD Pipeline</td>
       <td><code class="language-plaintext highlighter-rouge">staging-review</code></td>
-      <td>Post, or update in place, one comment on the PR giving the preview URL (STAGING/<slug>/) and the commit it was built from. Pull-request events only.</slug></td>
+      <td>Post, or update in place, one comment on the PR giving the preview URL (STAGING/&lt;slug&gt;/) and the commit it was built from. Pull-request events only.</td>
     </tr>
     <tr>
       <td><strong>Derive the slug from the head ref</strong><br /><code class="language-plaintext highlighter-rouge">Task_Slug</code></td>
@@ -1251,7 +1251,7 @@ window.addEventListener('resize',measure);window.addEventListener('load',measure
       <td><strong>Remove it AND append <code class="language-plaintext highlighter-rouge">removed</code> — one commit</strong><br /><code class="language-plaintext highlighter-rouge">Task_RemoveDisp</code></td>
       <td>CI/CD Pipeline</td>
       <td><code class="language-plaintext highlighter-rouge">deletion-requires-confirmation</code></td>
-      <td>Say what is going — size and file count — then remove STAGING/<slug>/ and append `removed` to the render log in the SAME commit, so a preview cannot vanish without a record of who dispatched it and why. The slug is a dispatch input, so the tool re-checks it by value rather than trusting the guard.</slug></td>
+      <td>Say what is going — size and file count — then remove STAGING/&lt;slug&gt;/ and append <code class="language-plaintext highlighter-rouge">removed</code> to the render log in the SAME commit, so a preview cannot vanish without a record of who dispatched it and why. The slug is a dispatch input, so the tool re-checks it by value rather than trusting the guard.</td>
     </tr>
     <tr>
       <td><strong>Repeat the slug, exactly, to confirm</strong><br /><code class="language-plaintext highlighter-rouge">H_Confirm</code></td>

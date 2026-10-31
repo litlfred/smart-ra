@@ -940,9 +940,9 @@ window.addEventListener('resize',measure);window.addEventListener('load',measure
 Source of truth: this file. Open it in bpmn.io, Camunda Modeler, or any other
 BPMN 2.0 tool. The SVG under docs/assets/img/workflows/ is generated from it
 by <code class="language-plaintext highlighter-rouge">bun run cat render:bpmn</code> — never hand-edit the SVG.
-The <bootstrap.processes:skill> extension on an activity names the folio-assistant skill
-that implements it; <cat-harness.processes:bean> marks a step that reads or writes the shared
-work plan in beans/.</cat-harness.processes:bean></bootstrap.processes:skill></p>
+The &lt;bootstrap.processes:skill&gt; extension on an activity names the folio-assistant skill
+that implements it; &lt;cat-harness.processes:bean&gt; marks a step that reads or writes the shared
+work plan in beans/.</p>
 
 <p><em>No rendered diagram — run <code class="language-plaintext highlighter-rouge">bun run cat render:bpmn</code>.</em></p>
 <h2 id="how-it-connects">
@@ -956,7 +956,7 @@ work plan in beans/.</cat-harness.processes:bean></bootstrap.processes:skill></p
 
 <ul>
   <li><strong>Called by:</strong> <a href="content-lifecycle.html">Content lifecycle</a></li>
-  <li><strong>Calls:</strong> <a href="bean-close.html">Close the bean</a>, <a href="bean-open.html">Open the bean</a>, <a href="editing-hci-validation.html">Editing and HCI validation</a>, <a href="public-comment.html">Public comment on a review draft</a></li>
+  <li><strong>Calls:</strong> <a href="bean-close.html">Close the bean</a>, <a href="bean-open.html">Open the bean</a>, <a href="editing-hci-validation.html">Editing and HCI validation</a>, <a href="public-comment-release.html">Release a draft for public comment</a></li>
   <li><strong>Presented on:</strong> no docs page section shows this diagram</li>
   <li><strong>Running instances:</strong> none recorded</li>
 </ul>
@@ -1072,10 +1072,10 @@ work plan in beans/.</cat-harness.processes:bean></bootstrap.processes:skill></p
       <td>The draft publication is circulated to the review team for formal review.</td>
     </tr>
     <tr>
-      <td><strong>Public comment on the review version</strong><br /><code class="language-plaintext highlighter-rouge">CallActivity_PublicComment</code></td>
+      <td><strong>Release for public comment</strong><br /><code class="language-plaintext highlighter-rouge">CallActivity_PublicComment</code></td>
       <td>Public review (commenters, review committee, editor)</td>
-      <td>calls <a href="public-comment.html">Public comment on a review draft</a><br /><code class="language-plaintext highlighter-rouge">public-comment</code></td>
-      <td>When the draft is released for public comment: comments returned on the frozen, line-numbered review version are placed, triaged, recommended on by the review committee and decided by the editor (public-comment.bpmn). Bean v26p, issue #197.</td>
+      <td>calls <a href="public-comment-release.html">Release a draft for public comment</a><br /><code class="language-plaintext highlighter-rouge">public-comment</code></td>
+      <td>When the draft goes out for public comment: the release date is agreed, the draft is frozen as a line-numbered public comment release, every channel is set up against it and announced, and the comments that come back are placed, triaged, recommended on by the review committee and decided by the editor (<a href="public-comment-release.html">Process_PublicCommentRelease</a>, which calls <a href="public-comment.html">Process_PublicComment</a>). Bean v26p, issue #197.</td>
     </tr>
     <tr>
       <td><strong>Review the draft publication</strong><br /><code class="language-plaintext highlighter-rouge">Task_ReviewDraft</code></td>

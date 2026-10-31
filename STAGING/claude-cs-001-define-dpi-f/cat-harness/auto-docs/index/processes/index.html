@@ -1005,7 +1005,7 @@ window.addEventListener('resize',measure);window.addEventListener('load',measure
 </div>
 
 <ul class="subs">
-<li><a href="core-processes/">core-processes</a> <span class="p">folio-assistant-core/processes</span> <span class="n">19</span></li>
+<li><a href="core-processes/">core-processes</a> <span class="p">folio-assistant-core/processes</span> <span class="n">25</span></li>
 <li><a href="fhir-harness-processes/">fhir-harness-processes</a> <span class="p">fhir-harness/processes</span> <span class="n">5</span></li>
 <li><a href="processes/">processes</a> <span class="p">cat-harness/processes</span> <span class="n">77</span></li>
 <li><a href="smart-base-house-processes/">smart-base-house-processes</a> <span class="p">smart-base/processes</span> <span class="n">6</span></li>
@@ -1355,15 +1355,35 @@ window.addEventListener('resize',measure);window.addEventListener('load',measure
 </tr>
 <tr>
   <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/authoring-a-document.bpmn"><code>Authoring a document</code></a><br><span class="p">folio-assistant-core/processes/content/authoring-a-document.bpmn</span></td>
-  <td>How a document folio — structured prose and policy guidance, with no Lean and no required TeX — is authored, built and reviewed end to end.<div class="f"><span class="k">activities</span> 11</div><div class="f"><span class="k">lanes</span> Author (person) · Work plan — beans (shared by humans and agents) · Authoring agent (system) · Build pipeline — validate · render · publish · Reviewer / subject-matter expert</div><div class="f"><span class="k">skills</span> bean-coordination, content-plan, content-publish, content-review, content-validate, document-authoring, document-publishing, document-structure, normative-statements, staging-review, todo-manager</div></td>
+  <td>How a document folio — structured prose and policy guidance, with no Lean and no required TeX — is authored, built and reviewed end to end.<div class="f"><span class="k">activities</span> 12</div><div class="f"><span class="k">lanes</span> Author (person) · Work plan — beans (shared by humans and agents) · Authoring agent (system) · Build pipeline — validate · render · publish · Reviewer / subject-matter expert · Authoring Committee</div><div class="f"><span class="k">skills</span> bean-coordination, content-plan, content-publish, content-review, content-validate, document-authoring, document-publishing, document-structure, normative-statements, review-sheet-script, staging-review, todo-manager</div></td>
+</tr>
+<tr>
+  <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/content-change-review-committee.bpmn"><code>Committee review of a content change</code></a><br><span class="p">folio-assistant-core/processes/content/content-change-review-committee.bpmn</span></td>
+  <td>The review committee's review of one staged content change, ending in an approval or a request for changes: compare staged against main, slice the change and review each slice, settle withdrawn comments and disputed fin…<div class="f"><span class="k">activities</span> 10</div><div class="f"><span class="k">lanes</span> Review Committee · Review Coordinator</div><div class="f"><span class="k">skills</span> adjudication, content-review, decision-audit, rendered-impact, review-comments, review-heatmap, staging-review, uses-editorial-review, visual-diff</div></td>
+</tr>
+<tr>
+  <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/content-change-review-make.bpmn"><code>Make the content change</code></a><br><span class="p">folio-assistant-core/processes/content/content-change-review-make.bpmn</span></td>
+  <td>Making one requested change to a folio's content on a feature branch: work out its scope, branch, edit the narrative and any deterministic logic, assess what else it touches and how to absorb that, and push.<div class="f"><span class="k">activities</span> 7</div><div class="f"><span class="k">lanes</span> Folio-Assistant Agent</div><div class="f"><span class="k">skills</span> before-after-preview, content-author, content-graph, feature-staging, prepare-merge-auto</div></td>
+</tr>
+<tr>
+  <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/content-change-review-publish.bpmn"><code>Merge and publish a content change</code></a><br><span class="p">folio-assistant-core/processes/content/content-change-review-publish.bpmn</span></td>
+  <td>Merging an approved content change on the owner's explicit confirmation and publishing it: remove the staging preview, rebuild the main site and watch it.<div class="f"><span class="k">activities</span> 4</div><div class="f"><span class="k">lanes</span> Review Committee · CI/CD Pipeline</div><div class="f"><span class="k">skills</span> content-publish, feature-staging, prepare-merge, todo-manager, watch</div></td>
+</tr>
+<tr>
+  <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/content-change-review-stage.bpmn"><code>Stage the content change</code></a><br><span class="p">folio-assistant-core/processes/content/content-change-review-stage.bpmn</span></td>
+  <td>Putting one push of a content change where a person can look at it: build the staging site, deploy it under the branch's slug, link it on the pull request, and watch the branch's CI.<div class="f"><span class="k">activities</span> 4</div><div class="f"><span class="k">lanes</span> CI/CD Pipeline</div><div class="f"><span class="k">skills</span> feature-staging, rendered-impact, todo-manager, watch</div></td>
 </tr>
 <tr>
   <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/content-change-review.bpmn"><code>Content Change and Review</code></a><br><span class="p">folio-assistant-core/processes/content/content-change-review.bpmn</span></td>
-  <td>Getting a change to a folio's CONTENT from a request into a published rendering: the author says what they want, an agent works out its scope and makes it, a review committee accepts or refuses it, and the pipeline depl…<div class="f"><span class="k">activities</span> 36</div><div class="f"><span class="k">lanes</span> Content Author · Folio-Assistant Agent · Review Committee · CI/CD Pipeline · Review Coordinator</div><div class="f"><span class="k">skills</span> adjudication, bean-coordination, before-after-preview, content-author, content-graph, content-publish, content-review, decision-audit, feature-staging, prepare-merge, prepare-merge-auto, rendered-impact, review-comments, review-heatmap, staging-review, todo-manager, uses-editorial-review, visual-diff, watch</div></td>
+  <td>Getting a change to a folio's CONTENT from a request into a published rendering: the author says what they want, an agent works out its scope and makes it, a review committee accepts or refuses it, and the pipeline depl…<div class="f"><span class="k">activities</span> 11</div><div class="f"><span class="k">lanes</span> Content Author · Folio-Assistant Agent · CI/CD Pipeline · Review Committee</div><div class="f"><span class="k">skills</span> bean-coordination, before-after-preview, content-author, content-review, feature-staging, prepare-merge, staging-review, todo-manager</div></td>
 </tr>
 <tr>
   <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/content-lifecycle.bpmn"><code>Content lifecycle</code></a><br><span class="p">folio-assistant-core/processes/content/content-lifecycle.bpmn</span></td>
   <td>One cycle of a folio from plan to retirement, calling editing and the draft-to-publication path as call activities.<div class="f"><span class="k">activities</span> 10</div><div class="f"><span class="k">lanes</span> Programme manager · Work plan — beans (shared by humans and agents) · Editors + authoring agents · Validation and QA (mechanical + agents) · Review team and SMEs · Publication manager</div><div class="f"><span class="k">skills</span> bean-coordination, content-author, content-feedback, content-plan, content-publish, content-retire, content-review, content-test, content-validate, todo-manager</div></td>
+</tr>
+<tr>
+  <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/contributor-feedback.bpmn"><code>Contributor feedback on a working draft</code></a><br><span class="p">folio-assistant-core/processes/content/contributor-feedback.bpmn</span></td>
+  <td>A document is still being written, and the Authoring Committee gives feedback on it in a shared Contributor Feedback sheet.<div class="f"><span class="k">activities</span> 7</div><div class="f"><span class="k">lanes</span> Authoring Committee · Authoring agent · Editor</div><div class="f"><span class="k">skills</span> review-sheet-script</div></td>
 </tr>
 <tr>
   <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/draft-to-publication.bpmn"><code>Draft, review and publish</code></a><br><span class="p">folio-assistant-core/processes/content/draft-to-publication.bpmn</span></td>
@@ -1380,6 +1400,10 @@ window.addEventListener('resize',measure);window.addEventListener('load',measure
 <tr>
   <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/evidence-retrieval.bpmn"><code>Evidence for a recommendation</code></a><br><span class="p">folio-assistant-core/processes/content/evidence-retrieval.bpmn</span></td>
   <td>Frame a question for a recommendation, retrieve and appraise evidence from trusted sources, and either attach it or record the gap.<div class="f"><span class="k">activities</span> 10</div><div class="f"><span class="k">lanes</span> Author / guideline developer (person) · Evidence agent (system) · Trusted registries and observatories (external) · Work plan — beans (shared)</div><div class="f"><span class="k">skills</span> content-author, content-review, document-intake, evidence-appraisal, registry-authority-contract, todo-manager</div></td>
+</tr>
+<tr>
+  <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/public-comment-release.bpmn"><code>Release a draft for public comment</code></a><br><span class="p">folio-assistant-core/processes/content/public-comment-release.bpmn</span></td>
+  <td>The whole public comment cycle around the comments themselves.<div class="f"><span class="k">activities</span> 7</div><div class="f"><span class="k">lanes</span> Review committee and editor · Editor · Release build and archive (pipeline)</div><div class="f"><span class="k">skills</span> document-publishing, public-comment, review-sheet-script</div></td>
 </tr>
 <tr>
   <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/public-comment.bpmn"><code>Public comment on a review draft</code></a><br><span class="p">folio-assistant-core/processes/content/public-comment.bpmn</span></td>

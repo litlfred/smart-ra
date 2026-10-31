@@ -1023,13 +1023,13 @@ window.addEventListener('resize',measure);window.addEventListener('load',measure
       <td><strong>Read the built Questionnaire JSON</strong><br /><code class="language-plaintext highlighter-rouge">Task_Read</code></td>
       <td>FHIR modeller</td>
       <td><code class="language-plaintext highlighter-rouge">fhir-questionnaire-wireframe</code></td>
-      <td>fsh-generated/resources/Questionnaire-<id>.json, or the IG's published Questionnaire-<id>.json — never FSH. The JSON is what every renderer and reader receives, so it is what is judged.</id></id></td>
+      <td>fsh-generated/resources/Questionnaire-&lt;id&gt;.json, or the IG’s published Questionnaire-&lt;id&gt;.json — never FSH. The JSON is what every renderer and reader receives, so it is what is judged.</td>
     </tr>
     <tr>
       <td><strong>Render the wireframe and the LHC-Forms view</strong><br /><code class="language-plaintext highlighter-rouge">Task_Render</code></td>
       <td>FHIR modeller</td>
       <td><code class="language-plaintext highlighter-rouge">fhir-questionnaire-wireframe</code></td>
-      <td>A mid-fidelity wireframe with one field per answerable item, each carrying data-element and sitting in a data-layout web or mobile subtree; and the form view, the same JSON in the vendored <lhc-forms> web component on the IG site's form page. Never a CDN at runtime (owner, 2026-10-14).</lhc-forms></td>
+      <td>A mid-fidelity wireframe with one field per answerable item, each carrying data-element and sitting in a data-layout web or mobile subtree; and the form view, the same JSON in the vendored &lt;lhc-forms&gt; web component on the IG site’s form page. Never a CDN at runtime (owner, 2026-10-14).</td>
     </tr>
     <tr>
       <td><strong>Screenshots, web and mobile</strong><br /><code class="language-plaintext highlighter-rouge">Task_Screens</code></td>
@@ -1041,7 +1041,7 @@ window.addEventListener('resize',measure);window.addEventListener('load',measure
       <td><strong>Check field for field</strong><br /><code class="language-plaintext highlighter-rouge">Task_Fidelity</code></td>
       <td>Build pipeline — rendering, screenshots, fidelity</td>
       <td><code class="language-plaintext highlighter-rouge">fhir-questionnaire-wireframe</code></td>
-      <td>fhir-harness/scripts/check-wireframe-questionnaire.ts <wireframe.html> <Questionnaire.json>, per layout. Exit 0 faithful, 1 a finding, 2 cannot tell, which is never a pass. The findings become the output's fidelity[] and are shown to the reviewers.</Questionnaire.json></wireframe.html></td>
+      <td>fhir-harness/scripts/check-wireframe-questionnaire.ts &lt;wireframe.html&gt; &lt;Questionnaire.json&gt;, per layout. Exit 0 faithful, 1 a finding, 2 cannot tell, which is never a pass. The findings become the output’s fidelity[] and are shown to the reviewers.</td>
     </tr>
     <tr>
       <td><strong>Design review</strong><br /><code class="language-plaintext highlighter-rouge">Call_Review</code></td>
@@ -1053,7 +1053,7 @@ window.addEventListener('resize',measure);window.addEventListener('load',measure
       <td><strong>Stage the renderings</strong><br /><code class="language-plaintext highlighter-rouge">Task_Stage</code></td>
       <td>Build pipeline — rendering, screenshots, fidelity</td>
       <td><code class="language-plaintext highlighter-rouge">feature-staging</code></td>
-      <td>The branch’s wireframes and form pages published under STAGING/<slug>/ by feature-staging.</slug></td>
+      <td>The branch’s wireframes and form pages published under STAGING/&lt;slug&gt;/ by feature-staging.</td>
     </tr>
     <tr>
       <td><strong>Ask for review with deep links</strong><br /><code class="language-plaintext highlighter-rouge">Task_AskReview</code></td>

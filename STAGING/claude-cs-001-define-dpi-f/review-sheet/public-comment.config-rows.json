@@ -1,15 +1,35 @@
 [
  [
+  "Instructions",
+  "The script's settings. Work happens on Review Public Comments and Review Change Sets; nothing here needs you unless you install the script. Do not edit this tab: the agent writes it, except EDITORS, which only the owner edits."
+ ],
+ [
+  "Instructions - Install script",
+  "Once per sheet, by the sheet's owner. Made with File, then Make a copy, of the template? It is already set up: choose Review links, then Install, allow it (step 5), and you are done. Otherwise (details: https://github.com/litlfred/folio-assistant-core/blob/main/skills/content/folio-document-adapter/review-sheet-script.md#installing-the-script-step-by-step):\n1. Get the short stub: open https://github.com/litlfred/folio-assistant-core/blob/main/tools/review-sheet-sync/dist/Stub.gs and press \"Copy raw file\" (the two-squares button at the top right of the code)\n2. Here, choose Extensions, then Apps Script. Name the project after this sheet (click \"Untitled project\"). \"Unable to open the file\"? Use a private window signed in to the owner's account only\n3. Click Code.gs, select all, delete, paste the stub and save (Ctrl+S or Cmd+S)\n4. Next to Libraries, press +, paste the Script ID 1us7_ApIq_XvDG-V1XtqdcyHucF0hSlST0qracv1Tw9KTb4-lAFvK1bMQ, press Look up, choose Version HEAD (Development mode), set Identifier to Review, and press Add\n5. Reload the sheet and choose Review links, then Install. Google asks to allow it, then says \"Google hasn't verified this app. The app is requesting access to sensitive info in your Google Account.\" That is expected for a sheet's own script. Choose Advanced, then Go to <project name> (unsafe), then Allow. Why: https://support.google.com/cloud/answer/7454865\n6. Review links, then Refresh now, checks it\n   • Updates need nothing here: the code lives once in the Folio Review Library (https://script.google.com/home/projects/1us7_ApIq_XvDG-V1XtqdcyHucF0hSlST0qracv1Tw9KTb4-lAFvK1bMQ/edit), and every sheet runs its latest version"
+ ],
+ [
+  "Instructions - Editors",
+  "Who may set Ready for agent and Ready for merge: the emails in the orange EDITORS cell below (column B).\n   • Share each of them as Editor first (Share button, pick Editor)\n   • Type their emails in the EDITORS cell; only the owner can change it\n   • Format: plain emails only, no names; one per line (Ctrl+Enter, or Cmd+Enter on a Mac, starts a new line in a cell). Commas or semicolons also work\n   • Example, for two editors:\n        ana@example.org\n        ben@example.org\n   • Anything that is not an email is left out, and Refresh now says which\n   • Choose Review links, then Refresh now: the two Ready columns are locked to the owner plus them\n   • Leave it empty and only the owner can set them (the default)"
+ ],
+ [
   "Key",
-  "Value (JSON, written by the agent from sheet-sync.json; do not edit)"
+  "Value (written by the agent from sheet-sync.json; do not edit, except EDITORS)"
+ ],
+ [
+  "EDITORS",
+  ""
  ],
  [
   "CFG",
-  "|{\n  \"SOURCE\": \"review/public-comment/sheet-sync.json\",\n  \"MODE\": \"public-comment\",\n  \"RPC\": \"Review Public Comments\",\n  \"RCS\": \"Review Change Sets\",\n  \"AGENT\": \"Agent\",\n  \"DRAFT\": \"https://litlfred.github.io/smart-ra/draft/#page=\",\n  \"PC_PAGE\": \"https://litlfred.github.io/smart-ra/en/folio-assistant-core/public-comments/folio/dpi-h-ra/index.html#\"\n}"
+  "|{\n  \"SOURCE\": \"review/public-comment/sheet-sync.json\",\n  \"MODE\": \"public-comment\",\n  \"RPC\": \"Review Public Comments\",\n  \"RCS\": \"Review Change Sets\",\n  \"AGENT\": \"Agent - Comments\",\n  \"AGENT_CS\": \"Agent - Change Sets\",\n  \"DRAFT\": \"https://litlfred.github.io/smart-ra/draft/#page=\",\n  \"PC_PAGE\": \"https://litlfred.github.io/smart-ra/en/folio-assistant-core/public-comments/folio/dpi-h-ra/index.html#\"\n}"
  ],
  [
   "COLS",
-  "|{\n  \"rpc\": {\n    \"no\": \"No.\",\n    \"sections\": \"Sections\",\n    \"page\": \"Page\",\n    \"lines\": \"Line no(s) / Table / Figure\",\n    \"comment\": \"Comment / issue\",\n    \"revision\": \"Suggested revision\",\n    \"feedback\": \"Architect Feedback (initials)\",\n    \"disposition\": \"Disposition\",\n    \"status\": \"Status\",\n    \"agentic\": \"Agentic status\"\n  },\n  \"rcs\": {\n    \"cs\": \"Change-set\",\n    \"sections\": \"Sections\",\n    \"pages\": \"Pages\",\n    \"comments\": \"Public Comments\",\n    \"revisions\": \"Suggested Revisions\",\n    \"feedback\": \"PC Architect Feedback\",\n    \"dispositions\": \"Dispositions\",\n    \"agentic\": \"Agentic status\",\n    \"staging\": \"Staging review page\"\n  },\n  \"agent\": {\n    \"no\": \"No.\",\n    \"pc\": \"Comment ref\",\n    \"agentic\": \"Agentic status\",\n    \"cs\": \"Change-sets\",\n    \"csId\": \"Change-set\",\n    \"prs\": \"Pull request (change set)\",\n    \"changes\": \"What the PRs changed (change set)\",\n    \"done\": \"Agent completed (UTC, change set)\",\n    \"basis\": \"Feedback basis (change set)\",\n    \"staging\": \"Staging review page (change set)\",\n    \"built\": \"Staging built (UTC, change set)\"\n  }\n}"
+  "|{\n  \"rpc\": {\n    \"no\": \"No.\",\n    \"sections\": \"Sections\",\n    \"page\": \"Page\",\n    \"lines\": \"Line no(s) / Table / Figure\",\n    \"comment\": \"Comment / issue\",\n    \"revision\": \"Suggested revision\",\n    \"feedback\": \"Committee Feedback (initials)\",\n    \"disposition\": \"Disposition\",\n    \"status\": \"Status\",\n    \"agentic\": \"Agentic status\"\n  },\n  \"rcs\": {\n    \"cs\": \"Change-set\",\n    \"sections\": \"Sections\",\n    \"pages\": \"Pages\",\n    \"comments\": \"Public Comments\",\n    \"revisions\": \"Suggested Revisions\",\n    \"feedback\": \"PC Committee Feedback\",\n    \"dispositions\": \"Dispositions\",\n    \"agentFeedback\": \"Change Set Feedback (agent)\",\n    \"agentic\": \"Agentic status\",\n    \"staging\": \"Staging review\",\n    \"status\": \"Agentic status (filter)\"\n  },\n  \"agent\": {\n    \"no\": \"No.\",\n    \"pc\": \"Comment ref\",\n    \"agentic\": \"Agentic status\",\n    \"cs\": \"Change-sets\",\n    \"csId\": \"Change-set\",\n    \"prs\": \"Pull request (change set)\",\n    \"changes\": \"What the PRs changed (change set)\",\n    \"done\": \"Agent completed (UTC, change set)\",\n    \"basis\": \"Feedback basis (change set)\",\n    \"staging\": \"Staging review page (change set)\",\n    \"built\": \"Staging built (UTC, change set)\",\n    \"head\": \"PR head (change set)\",\n    \"builtFrom\": \"Staging built from (change set)\","
+ ],
+ [
+  "COLS",
+  "|    \"deploy\": \"Staging deploy (change set)\"\n  }\n}"
  ],
  [
   "DATA",

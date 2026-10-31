@@ -1189,7 +1189,7 @@ window.addEventListener('resize',measure);window.addEventListener('load',measure
     <tr>
       <td>Publication manager</td>
       <td><code class="language-plaintext highlighter-rouge">publication-manager</code></td>
-      <td>Owns where things are published: every identifier the content mints must be a file some step publishes, at /<version>/ for programs and /v<major>/ for people; and the first release.</major></version></td>
+      <td>Owns where things are published: every identifier the content mints must be a file some step publishes, at /&lt;version&gt;/ for programs and /v&lt;major&gt;/ for people; and the first release.</td>
     </tr>
     <tr>
       <td>Build pipeline</td>
@@ -1264,13 +1264,13 @@ window.addEventListener('resize',measure);window.addEventListener('load',measure
       <td><strong>6 · Split content from tools</strong><br /><code class="language-plaintext highlighter-rouge">Task_Split</code></td>
       <td>Platform authoring agent</td>
       <td><code class="language-plaintext highlighter-rouge">kg-separation</code></td>
-      <td>Create <name>-tools as a sibling directory and move the code: the Zod source, the generators, the README and diagram writers, the content checks. Cut its import cone to its own files and declared packages. Both start at the content's version.</name></td>
+      <td>Create &lt;name&gt;-tools as a sibling directory and move the code: the Zod source, the generators, the README and diagram writers, the content checks. Cut its import cone to its own files and declared packages. Both start at the content’s version.</td>
     </tr>
     <tr>
       <td><strong>7 · Plan publication</strong><br /><code class="language-plaintext highlighter-rouge">Task_Plan</code></td>
       <td>Publication manager</td>
       <td><code class="language-plaintext highlighter-rouge">instance-publication</code></td>
-      <td>Every identifier the content mints is a file some step publishes: /v<major>/, for what programs read and pages people read alike; the exact release is the pin's. Name collisions between published files are resolved here.</major></td>
+      <td>Every identifier the content mints is a file some step publishes: /v&lt;major&gt;/, for what programs read and pages people read alike; the exact release is the pin’s. Name collisions between published files are resolved here.</td>
     </tr>
     <tr>
       <td><strong>8 · Rehearse standalone</strong><br /><code class="language-plaintext highlighter-rouge">Task_Rehearse</code></td>
@@ -1318,7 +1318,7 @@ window.addEventListener('resize',measure);window.addEventListener('load',measure
       <td><strong>12 · First release</strong><br /><code class="language-plaintext highlighter-rouge">Task_Release</code></td>
       <td>Publication manager</td>
       <td><code class="language-plaintext highlighter-rouge">package-release</code></td>
-      <td>Tag each repository, publish /v<major>/. From here the two are versioned independently; a tools release lists the content majors it supports.</major></td>
+      <td>Tag each repository, publish /v&lt;major&gt;/. From here the two are versioned independently; a tools release lists the content majors it supports.</td>
     </tr>
     <tr>
       <td><strong>Every identifier dereferences</strong><br /><code class="language-plaintext highlighter-rouge">Task_Verify</code></td>
