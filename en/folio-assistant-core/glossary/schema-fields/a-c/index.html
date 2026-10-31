@@ -25,16 +25,16 @@
       background-image: none;
     }
 
-    .site-nav > ul.nav-list:first-child > li:nth-child(2) > ul > li:nth-child(10) > ul > li:nth-child(1) > a {
+    .site-nav > ul.nav-list:first-child > li:nth-child(2) > ul > li:nth-child(11) > ul > li:nth-child(1) > a {
       font-weight: 600;
       text-decoration: none;
     }.site-nav > ul.nav-list:first-child > li:nth-child(2) > button svg,
-    .site-nav > ul.nav-list:first-child > li:nth-child(2) > ul > li:nth-child(10) > button svg,
-    .site-nav > ul.nav-list:first-child > li:nth-child(2) > ul > li:nth-child(10) > ul > li:nth-child(1) > button svg {
+    .site-nav > ul.nav-list:first-child > li:nth-child(2) > ul > li:nth-child(11) > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(2) > ul > li:nth-child(11) > ul > li:nth-child(1) > button svg {
       transform: rotate(-90deg);
     }.site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(2) > ul.nav-list,
-    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(2) > ul.nav-list > li.nav-list-item:nth-child(10) > ul.nav-list,
-    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(2) > ul.nav-list > li.nav-list-item:nth-child(10) > ul.nav-list > li.nav-list-item:nth-child(1) > ul.nav-list {
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(2) > ul.nav-list > li.nav-list-item:nth-child(11) > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(2) > ul.nav-list > li.nav-list-item:nth-child(11) > ul.nav-list > li.nav-list-item:nth-child(1) > ul.nav-list {
       display: block;
     }
   </style>
@@ -650,7 +650,7 @@
   all, and a fetch for that would put a spinner in front of a badge.
 -->
 <!-- NOT MOVED: same reason as fa-site-links above. -->
-<script type="application/json" id="fa-declared-kinds">["archimate","beans","folio","fsh-guts","library","public-comments","todo-items","todos","uploads"]</script>
+<script type="application/json" id="fa-declared-kinds">["archimate","beans","folio","fsh-guts","glossary","library","public-comments","todo-items","todos","uploads"]</script>
 <!--
   FIRST of the deferred scripts: it fills `#fa-navbar-row` and
   `meta[name=fa-tiles]` before any reader runs (bean `gp2f`).
@@ -877,16 +877,16 @@
 
 <p>Candidate terms extracted from every schema field with a doc comment: <code class="language-plaintext highlighter-rouge">&lt;Declaration&gt;.&lt;field&gt;</code> as the label, the comment’s first paragraph as the definition. Each is the asset’s own text, verbatim and not curated, and carries the badge “candidate, extracted”. A person promotes one by authoring it. Authored terms are on their owning instance’s page, and those pages, the counts and the sources are linked from the <a href="../../../../../en/folio-assistant-core/glossary/">glossary index</a>.</p>
 
-<p>From: bootstrap-tools 44 (<a href="../../../../../assets/glossary/bootstrap-tools--kg-schema-fields.skos.jsonld">SKOS</a>) · cat-harness-tools 2233 (<a href="../../../../../assets/glossary/cat-harness-tools--kg-schema-fields.skos.jsonld">SKOS</a>) · fhir-harness 127 (<a href="../../../../../assets/glossary/fhir-harness--kg-schema-fields.skos.jsonld">SKOS</a>) · folio-assistant-core 181 (<a href="../../../../../assets/glossary/folio-assistant-core--kg-schema-fields.skos.jsonld">SKOS</a>) · smart-base 13 (<a href="../../../../../assets/glossary/smart-base--kg-schema-fields.skos.jsonld">SKOS</a>).</p>
+<p>From: bootstrap-tools 44 (<a href="../../../../../assets/glossary/bootstrap-tools--kg-schema-fields.skos.jsonld">SKOS</a>) · cat-harness-tools 2249 (<a href="../../../../../assets/glossary/cat-harness-tools--kg-schema-fields.skos.jsonld">SKOS</a>) · fhir-harness 127 (<a href="../../../../../assets/glossary/fhir-harness--kg-schema-fields.skos.jsonld">SKOS</a>) · folio-assistant-core 181 (<a href="../../../../../assets/glossary/folio-assistant-core--kg-schema-fields.skos.jsonld">SKOS</a>) · smart-base 13 (<a href="../../../../../assets/glossary/smart-base--kg-schema-fields.skos.jsonld">SKOS</a>).</p>
 
 <p>One of 7 pages of this type, split by the first letter of the label: <a href="../../../../../en/folio-assistant-core/glossary/schema-fields/">all parts</a>.</p>
 
-<p><strong>Size:</strong> this page holds 474 terms and is 281 KB before compression, fetched in one request, within its budget of 1.0 MB. There is no search index: the filter below runs over this page, and the A–Z bar jumps within it.</p>
+<p><strong>Size:</strong> this page holds 480 terms and is 285 KB before compression, fetched in one request, within its budget of 1.0 MB. There is no search index: the filter below runs over this page, and the A–Z bar jumps within it.</p>
 
 <div class="table-wrapper"><table class="fa-gloss-mapping">
 <caption>Already somebody else's concept? — <code>check:term-mapping</code>, bean <code>7wou</code></caption>
 <thead><tr><th>target</th><th>mapped</th><th>unmapped</th><th>undetermined</th><th>why undetermined</th></tr></thead>
-<tbody><tr><td><code>fhir</code></td><td>0</td><td>2539</td><td>0</td><td>—</td></tr><tr><td><code>skos</code></td><td>0</td><td>2539</td><td>0</td><td>—</td></tr></tbody>
+<tbody><tr><td><code>fhir</code></td><td>0</td><td>2537</td><td>0</td><td>—</td></tr><tr><td><code>skos</code></td><td>0</td><td>2537</td><td>0</td><td>—</td></tr></tbody>
 </table></div>
 <p class="fa-gloss-mapping-note"><strong>Undetermined is never “no match”.</strong> 
 A vocabulary that could not be reached has said nothing, and the column above keeps that 
@@ -896,7 +896,7 @@ be a term this corpus is right to coin.</p>
 
 <p><label for="fa-gloss-q">Filter terms</label>
 <input id="fa-gloss-q" type="search" autocomplete="off" style="min-height:44px;width:100%;max-width:32rem" /></p>
-<p aria-live="polite"><span id="fa-gloss-n">474</span> shown</p>
+<p aria-live="polite"><span id="fa-gloss-n">480</span> shown</p>
 
 <nav aria-label="Letters"><a href="#letter-A">A</a> <a href="#letter-B">B</a> <a href="#letter-C">C</a></nav>
 <h2 id="letter-A">
@@ -1328,6 +1328,41 @@ AptDependency.version <span class="fa-gloss-status">candidate, extracted</span>
 <p>Debian version relation (e.g., &quot;&gt;=2.3&quot;). Omit for any version.</p>
 <p class="fa-gloss-meta">Schema fields of cat-harness-tools · source <a href="https://github.com/litlfred/cat-harness-tools/blob/main/schemas/conduct/assistant-package.ts"><code>cat-harness-tools/schemas/conduct/assistant-package.ts#AptDependency.version</code></a></p>
 </dd>
+<dt id="cat-harness-tools--kg-schema-fields--archimate.archimateconfigfigureschema.basis" data-fa-state="extracted" data-fa-gloss="">
+ArchimateConfigFigureSchema.basis <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>How the match was made: <code>same-elements</code> when the figure shows exactly the view's elements, <code>by-eye</code> when a person compared the two pictures.</p>
+<p class="fa-gloss-meta">Schema fields of cat-harness-tools · source <a href="https://github.com/litlfred/cat-harness-tools/blob/main/archimate/schemas/archimate.ts"><code>cat-harness-tools/archimate/schemas/archimate.ts#ArchimateConfigFigureSchema.basis</code></a></p>
+</dd>
+<dt id="cat-harness-tools--kg-schema-fields--archimate.archimateconfigfigureschema.block" data-fa-state="extracted" data-fa-gloss="">
+ArchimateConfigFigureSchema.block <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>The document block holding the figure, relative to the instance root.</p>
+<p class="fa-gloss-meta">Schema fields of cat-harness-tools · source <a href="https://github.com/litlfred/cat-harness-tools/blob/main/archimate/schemas/archimate.ts"><code>cat-harness-tools/archimate/schemas/archimate.ts#ArchimateConfigFigureSchema.block</code></a></p>
+</dd>
+<dt id="cat-harness-tools--kg-schema-fields--archimate.archimateconfigfigureschema.label" data-fa-state="extracted" data-fa-gloss="">
+ArchimateConfigFigureSchema.label <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>What the document calls it, e.g. <code>Figure 3.7.1</code>.</p>
+<p class="fa-gloss-meta">Schema fields of cat-harness-tools · source <a href="https://github.com/litlfred/cat-harness-tools/blob/main/archimate/schemas/archimate.ts"><code>cat-harness-tools/archimate/schemas/archimate.ts#ArchimateConfigFigureSchema.label</code></a></p>
+</dd>
+<dt id="cat-harness-tools--kg-schema-fields--archimate.archimateconfigfigureschema.model" data-fa-state="extracted" data-fa-gloss="">
+ArchimateConfigFigureSchema.model <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>The model's id, as in <code>models</code>.</p>
+<p class="fa-gloss-meta">Schema fields of cat-harness-tools · source <a href="https://github.com/litlfred/cat-harness-tools/blob/main/archimate/schemas/archimate.ts"><code>cat-harness-tools/archimate/schemas/archimate.ts#ArchimateConfigFigureSchema.model</code></a></p>
+</dd>
+<dt id="cat-harness-tools--kg-schema-fields--archimate.archimateconfigfigureschema.view" data-fa-state="extracted" data-fa-gloss="">
+ArchimateConfigFigureSchema.view <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>The view's Archi id.</p>
+<p class="fa-gloss-meta">Schema fields of cat-harness-tools · source <a href="https://github.com/litlfred/cat-harness-tools/blob/main/archimate/schemas/archimate.ts"><code>cat-harness-tools/archimate/schemas/archimate.ts#ArchimateConfigFigureSchema.view</code></a></p>
+</dd>
 <dt id="cat-harness-tools--kg-schema-fields--archimate.archimateconfigmodelschema.description" data-fa-state="extracted" data-fa-gloss="">
 ArchimateConfigModelSchema.description <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
@@ -1362,6 +1397,13 @@ ArchimateConfigSchema.directory <span class="fa-gloss-status">candidate, extract
 <dd>
 <p>The <code>&lt;instance&gt;.json</code> directory id of graph typology <code>archimate</code> the models are held in.</p>
 <p class="fa-gloss-meta">Schema fields of cat-harness-tools · source <a href="https://github.com/litlfred/cat-harness-tools/blob/main/archimate/schemas/archimate.ts"><code>cat-harness-tools/archimate/schemas/archimate.ts#ArchimateConfigSchema.directory</code></a></p>
+</dd>
+<dt id="cat-harness-tools--kg-schema-fields--archimate.archimateconfigschema.figures" data-fa-state="extracted" data-fa-gloss="">
+ArchimateConfigSchema.figures <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>The document's figures that are views of these models.</p>
+<p class="fa-gloss-meta">Schema fields of cat-harness-tools · source <a href="https://github.com/litlfred/cat-harness-tools/blob/main/archimate/schemas/archimate.ts"><code>cat-harness-tools/archimate/schemas/archimate.ts#ArchimateConfigSchema.figures</code></a></p>
 </dd>
 <dt id="cat-harness-tools--kg-schema-fields--archimate.archimateelement.folder" data-fa-state="extracted" data-fa-gloss="">
 ArchimateElement.folder <span class="fa-gloss-status">candidate, extracted</span>

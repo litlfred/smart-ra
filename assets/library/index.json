@@ -3148,6 +3148,55 @@
       "view": "/en/cat-harness/library/dpi-h-ra/crdm-walkthrough-2026-10-06/"
     },
     {
+      "id": "mehl-2023-full-stac-oqad018",
+      "instance": "dpi-h-ra",
+      "dir": "library/mehl-2023-full-stac-oqad018",
+      "title": "A full-STAC remedy for global digital health transformation: open standards, technologies, architectures and content",
+      "provenance": "ingested",
+      "rung": "paged",
+      "docId": "mehl-2023-full-stac-oqad018",
+      "sourceFile": "mehl-2023-full-stac-oqad018.pdf",
+      "sourceSha256": "d155556b5ef4d5f6229be7f369d22d22d0bec106ce3b49acd85b9d0387b71077",
+      "arxiv": "",
+      "doi": "10.1093/oodh/oqad018",
+      "documentClass": "",
+      "sections": 5,
+      "blocks": 5,
+      "images": 0,
+      "ocrPages": 0,
+      "hasOcr": false,
+      "hasManifest": true,
+      "hasStructure": true,
+      "hasImagesJson": true,
+      "pageStart": 1,
+      "pageEnd": 5,
+      "words": 3980,
+      "chars": 31177,
+      "bytes": 132523,
+      "upload": "match",
+      "uploadInstance": "dpi-h-ra",
+      "avatar": {
+        "href": "/assets/library/avatars/dpi-h-ra/mehl-2023-full-stac-oqad018.png",
+        "src": "library/mehl-2023-full-stac-oqad018/cover.png",
+        "source": "cover"
+      },
+      "referencedBy": [],
+      "summaries": {
+        "prose": 5,
+        "summarised": 0,
+        "backlog": 5,
+        "draft": 0,
+        "confirmed": 0,
+        "stale": 0,
+        "rejected": 0,
+        "notSummarised": 5,
+        "unreadable": 0,
+        "empty": 0
+      },
+      "view": "/en/cat-harness/library/dpi-h-ra/mehl-2023-full-stac-oqad018/",
+      "viewable": "pdf"
+    },
+    {
       "id": "who-dpi-h-reference-architecture-draft-v1",
       "instance": "dpi-h-ra",
       "dir": "library/who-dpi-h-reference-architecture-draft-v1",
@@ -4366,6 +4415,18 @@
       "declaredFiles": 0
     },
     {
+      "file": "mehl-2023-full-stac",
+      "kind": "intake",
+      "instance": "dpi-h-ra",
+      "path": "uploads/mehl-2023-full-stac",
+      "bytes": 1109172,
+      "ext": "",
+      "ingestedBy": "mehl-2023-full-stac-oqad018",
+      "docId": "mehl-2023-full-stac-oqad018",
+      "title": "A full-STAC remedy for global digital health transformation: open standards, technologies, architectures and content",
+      "declaredFiles": 1
+    },
+    {
       "file": "output.mp4",
       "kind": "file",
       "instance": "dpi-h-ra",
@@ -5037,8 +5098,8 @@
     {
       "instance": "dpi-h-ra",
       "dir": "uploads",
-      "total": 6,
-      "ingested": 2,
+      "total": 7,
+      "ingested": 3,
       "uningested": 4
     },
     {

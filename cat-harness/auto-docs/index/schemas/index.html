@@ -628,7 +628,7 @@
   all, and a fetch for that would put a spinner in front of a badge.
 -->
 <!-- NOT MOVED: same reason as fa-site-links above. -->
-<script type="application/json" id="fa-declared-kinds">["archimate","beans","folio","fsh-guts","library","public-comments","todo-items","todos","uploads"]</script>
+<script type="application/json" id="fa-declared-kinds">["archimate","beans","folio","fsh-guts","glossary","library","public-comments","todo-items","todos","uploads"]</script>
 <!--
   FIRST of the deferred scripts: it fills `#fa-navbar-row` and
   `meta[name=fa-tiles]` before any reader runs (bean `gp2f`).
@@ -917,7 +917,7 @@
 </div>
 
 <ul class="subs">
-<li><a href="cat-harness-tools-archimate-schemas/">cat-harness-tools-archimate-schemas</a> <span class="p">cat-harness-tools/archimate/schemas</span> <span class="n">2</span></li>
+<li><a href="cat-harness-tools-archimate-schemas/">cat-harness-tools-archimate-schemas</a> <span class="p">cat-harness-tools/archimate/schemas</span> <span class="n">3</span></li>
 <li><a href="cat-harness-tools-openapi-schemas/">cat-harness-tools-openapi-schemas</a> <span class="p">cat-harness-tools/openapi/schemas</span> <span class="n">1</span></li>
 <li><a href="cat-harness-tools-schemas/">cat-harness-tools-schemas</a> <span class="p">cat-harness-tools/schemas</span> <span class="n">209</span></li>
 <li><a href="core-schemas/">core-schemas</a> <span class="p">folio-assistant-core/schemas</span> <span class="n">16</span></li>
@@ -936,6 +936,10 @@
 <tr>
   <td><a href="https://github.com/litlfred/cat-harness-tools/blob/main/archimate/schemas/archimate.ts"><code>archimate</code></a><br><span class="p">cat-harness-tools/archimate/schemas/archimate.ts</span></td>
   <td>The ArchiMate harness's shapes: what an instance declares, and how an Archi model becomes nodes — the model, each of its views, elements and relationships — with an IRI each.</td>
+</tr>
+<tr>
+  <td><a href="https://github.com/litlfred/cat-harness-tools/blob/main/archimate/schemas/metamodel.ts"><code>metamodel</code></a><br><span class="p">cat-harness-tools/archimate/schemas/metamodel.ts</span></td>
+  <td>The metamodel a model actually uses, derived from the model and checked against ArchiMate's relationship table.</td>
 </tr>
 <tr>
   <td><a href="https://github.com/litlfred/cat-harness-tools/blob/main/archimate/schemas/slugs.ts"><code>slugs</code></a><br><span class="p">cat-harness-tools/archimate/schemas/slugs.ts</span></td>

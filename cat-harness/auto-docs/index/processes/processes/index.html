@@ -628,7 +628,7 @@
   all, and a fetch for that would put a spinner in front of a badge.
 -->
 <!-- NOT MOVED: same reason as fa-site-links above. -->
-<script type="application/json" id="fa-declared-kinds">["archimate","beans","folio","fsh-guts","library","public-comments","todo-items","todos","uploads"]</script>
+<script type="application/json" id="fa-declared-kinds">["archimate","beans","folio","fsh-guts","glossary","library","public-comments","todo-items","todos","uploads"]</script>
 <!--
   FIRST of the deferred scripts: it fills `#fa-navbar-row` and
   `meta[name=fa-tiles]` before any reader runs (bean `gp2f`).
@@ -919,7 +919,7 @@
 <ul class="subs">
 <li><a href="../core-processes/">core-processes</a> <span class="p">folio-assistant-core/processes</span> <span class="n">19</span></li>
 <li><a href="../fhir-harness-processes/">fhir-harness-processes</a> <span class="p">fhir-harness/processes</span> <span class="n">5</span></li>
-<li><strong>processes</strong> <span class="p">cat-harness/processes</span> <span class="n">76</span></li>
+<li><strong>processes</strong> <span class="p">cat-harness/processes</span> <span class="n">77</span></li>
 <li><a href="../smart-base-house-processes/">smart-base-house-processes</a> <span class="p">smart-base/processes</span> <span class="n">6</span></li>
 <li><a href="../smart-base-processes/">smart-base-processes</a> <span class="p">smart-base/methodologies/processes</span> <span class="n">1</span></li>
 <li><a href="../who-iris-processes/">who-iris-processes</a> <span class="p">who-iris/processes</span> <span class="n">4</span></li>
@@ -1220,6 +1220,10 @@
 <tr>
   <td><a href="https://github.com/litlfred/cat-harness/blob/main/processes/sdlc/upstream-version-adoption.bpmn"><code>Adopting an upstream version bump</code></a><br><span class="p">cat-harness/processes/sdlc/upstream-version-adoption.bpmn</span></td>
   <td>A REUSABLE SUBPROCESS, entered once per pinned upstream dependency that has fallen behind a release.<div class="f"><span class="k">activities</span> 12</div><div class="f"><span class="k">lanes</span> Agent · CI/CD Pipeline · Reviewer / SME · Publication manager</div><div class="f"><span class="k">skills</span> bean-coordination, content-test, decision-audit, delivery-summary, feature-staging, prepare-merge, staging-review, todo-manager, upstream-version-adoption</div></td>
+</tr>
+<tr>
+  <td><a href="https://github.com/litlfred/cat-harness/blob/main/processes/ui/archimate-publish.bpmn"><code>Publish an ArchiMate model — every picture derived from it</code></a><br><span class="p">cat-harness/processes/ui/archimate-publish.bpmn</span></td>
+  <td>An ArchiMate model is authored in Archi and committed; everything a reader sees is derived from it by three mechanical Tools, in order, in the pipeline lane: <code>archimate-check</code> (it parses and resolves), `archimate-metamo…<div class="f"><span class="k">activities</span> 4</div><div class="f"><span class="k">lanes</span> Model author · CI/CD Pipeline</div><div class="f"><span class="k">skills</span> archimate-models</div></td>
 </tr>
 <tr>
   <td><a href="https://github.com/litlfred/cat-harness/blob/main/processes/ui/ingest-theme.bpmn"><code>Ingestion subprocess — ingest a theme</code></a><br><span class="p">cat-harness/processes/ui/ingest-theme.bpmn</span></td>

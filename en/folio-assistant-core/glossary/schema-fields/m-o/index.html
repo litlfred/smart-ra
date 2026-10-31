@@ -25,16 +25,16 @@
       background-image: none;
     }
 
-    .site-nav > ul.nav-list:first-child > li:nth-child(2) > ul > li:nth-child(10) > ul > li:nth-child(4) > a {
+    .site-nav > ul.nav-list:first-child > li:nth-child(2) > ul > li:nth-child(11) > ul > li:nth-child(4) > a {
       font-weight: 600;
       text-decoration: none;
     }.site-nav > ul.nav-list:first-child > li:nth-child(2) > button svg,
-    .site-nav > ul.nav-list:first-child > li:nth-child(2) > ul > li:nth-child(10) > button svg,
-    .site-nav > ul.nav-list:first-child > li:nth-child(2) > ul > li:nth-child(10) > ul > li:nth-child(4) > button svg {
+    .site-nav > ul.nav-list:first-child > li:nth-child(2) > ul > li:nth-child(11) > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(2) > ul > li:nth-child(11) > ul > li:nth-child(4) > button svg {
       transform: rotate(-90deg);
     }.site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(2) > ul.nav-list,
-    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(2) > ul.nav-list > li.nav-list-item:nth-child(10) > ul.nav-list,
-    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(2) > ul.nav-list > li.nav-list-item:nth-child(10) > ul.nav-list > li.nav-list-item:nth-child(4) > ul.nav-list {
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(2) > ul.nav-list > li.nav-list-item:nth-child(11) > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(2) > ul.nav-list > li.nav-list-item:nth-child(11) > ul.nav-list > li.nav-list-item:nth-child(4) > ul.nav-list {
       display: block;
     }
   </style>
@@ -650,7 +650,7 @@
   all, and a fetch for that would put a spinner in front of a badge.
 -->
 <!-- NOT MOVED: same reason as fa-site-links above. -->
-<script type="application/json" id="fa-declared-kinds">["archimate","beans","folio","fsh-guts","library","public-comments","todo-items","todos","uploads"]</script>
+<script type="application/json" id="fa-declared-kinds">["archimate","beans","folio","fsh-guts","glossary","library","public-comments","todo-items","todos","uploads"]</script>
 <!--
   FIRST of the deferred scripts: it fills `#fa-navbar-row` and
   `meta[name=fa-tiles]` before any reader runs (bean `gp2f`).
@@ -877,16 +877,16 @@
 
 <p>Candidate terms extracted from every schema field with a doc comment: <code class="language-plaintext highlighter-rouge">&lt;Declaration&gt;.&lt;field&gt;</code> as the label, the comment’s first paragraph as the definition. Each is the asset’s own text, verbatim and not curated, and carries the badge “candidate, extracted”. A person promotes one by authoring it. Authored terms are on their owning instance’s page, and those pages, the counts and the sources are linked from the <a href="../../../../../en/folio-assistant-core/glossary/">glossary index</a>.</p>
 
-<p>From: bootstrap-tools 44 (<a href="../../../../../assets/glossary/bootstrap-tools--kg-schema-fields.skos.jsonld">SKOS</a>) · cat-harness-tools 2233 (<a href="../../../../../assets/glossary/cat-harness-tools--kg-schema-fields.skos.jsonld">SKOS</a>) · fhir-harness 127 (<a href="../../../../../assets/glossary/fhir-harness--kg-schema-fields.skos.jsonld">SKOS</a>) · folio-assistant-core 181 (<a href="../../../../../assets/glossary/folio-assistant-core--kg-schema-fields.skos.jsonld">SKOS</a>) · smart-base 13 (<a href="../../../../../assets/glossary/smart-base--kg-schema-fields.skos.jsonld">SKOS</a>).</p>
+<p>From: bootstrap-tools 44 (<a href="../../../../../assets/glossary/bootstrap-tools--kg-schema-fields.skos.jsonld">SKOS</a>) · cat-harness-tools 2249 (<a href="../../../../../assets/glossary/cat-harness-tools--kg-schema-fields.skos.jsonld">SKOS</a>) · fhir-harness 127 (<a href="../../../../../assets/glossary/fhir-harness--kg-schema-fields.skos.jsonld">SKOS</a>) · folio-assistant-core 181 (<a href="../../../../../assets/glossary/folio-assistant-core--kg-schema-fields.skos.jsonld">SKOS</a>) · smart-base 13 (<a href="../../../../../assets/glossary/smart-base--kg-schema-fields.skos.jsonld">SKOS</a>).</p>
 
 <p>One of 7 pages of this type, split by the first letter of the label: <a href="../../../../../en/folio-assistant-core/glossary/schema-fields/">all parts</a>.</p>
 
-<p><strong>Size:</strong> this page holds 202 terms and is 122 KB before compression, fetched in one request, within its budget of 1.0 MB. There is no search index: the filter below runs over this page, and the A–Z bar jumps within it.</p>
+<p><strong>Size:</strong> this page holds 209 terms and is 126 KB before compression, fetched in one request, within its budget of 1.0 MB. There is no search index: the filter below runs over this page, and the A–Z bar jumps within it.</p>
 
 <div class="table-wrapper"><table class="fa-gloss-mapping">
 <caption>Already somebody else's concept? — <code>check:term-mapping</code>, bean <code>7wou</code></caption>
 <thead><tr><th>target</th><th>mapped</th><th>unmapped</th><th>undetermined</th><th>why undetermined</th></tr></thead>
-<tbody><tr><td><code>fhir</code></td><td>0</td><td>2539</td><td>0</td><td>—</td></tr><tr><td><code>skos</code></td><td>0</td><td>2539</td><td>0</td><td>—</td></tr></tbody>
+<tbody><tr><td><code>fhir</code></td><td>0</td><td>2537</td><td>0</td><td>—</td></tr><tr><td><code>skos</code></td><td>0</td><td>2537</td><td>0</td><td>—</td></tr></tbody>
 </table></div>
 <p class="fa-gloss-mapping-note"><strong>Undetermined is never “no match”.</strong> 
 A vocabulary that could not be reached has said nothing, and the column above keeps that 
@@ -896,7 +896,7 @@ be a term this corpus is right to coin.</p>
 
 <p><label for="fa-gloss-q">Filter terms</label>
 <input id="fa-gloss-q" type="search" autocomplete="off" style="min-height:44px;width:100%;max-width:32rem" /></p>
-<p aria-live="polite"><span id="fa-gloss-n">202</span> shown</p>
+<p aria-live="polite"><span id="fa-gloss-n">209</span> shown</p>
 
 <nav aria-label="Letters"><a href="#letter-M">M</a> <a href="#letter-N">N</a> <a href="#letter-O">O</a></nav>
 <h2 id="letter-M">
@@ -1257,6 +1257,55 @@ MergeReviewSchema.repository <span class="fa-gloss-status">candidate, extracted<
 <dd>
 <p>The repository <code>pr</code> is in, <code>owner/repo</code>. Optional, as <code>pr</code> is: the gate looks a verdict up by its head sha, but a reader of the store cannot link a pull request number without it. A reader links only an <code>owner/repo</code> spelling, so a malformed one costs the link, never the verdict.</p>
 <p class="fa-gloss-meta">Schema fields of cat-harness-tools · source <a href="https://github.com/litlfred/cat-harness-tools/blob/main/schemas/sdlc/red-flag.ts"><code>cat-harness-tools/schemas/sdlc/red-flag.ts#MergeReviewSchema.repository</code></a></p>
+</dd>
+<dt id="cat-harness-tools--kg-schema-fields--metamodel.metamodel.notallowed" data-fa-state="extracted" data-fa-gloss="">
+Metamodel.notAllowed <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Relationships following a pattern ArchiMate does not allow.</p>
+<p class="fa-gloss-meta">Schema fields of cat-harness-tools · source <a href="https://github.com/litlfred/cat-harness-tools/blob/main/archimate/schemas/metamodel.ts"><code>cat-harness-tools/archimate/schemas/metamodel.ts#Metamodel.notAllowed</code></a></p>
+</dd>
+<dt id="cat-harness-tools--kg-schema-fields--metamodel.metamodel.placeholderrelationships" data-fa-state="extracted" data-fa-gloss="">
+Metamodel.placeholderRelationships <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Relationships with a placeholder at either end: the hand-drawn metamodel, left out of <code>patterns</code>.</p>
+<p class="fa-gloss-meta">Schema fields of cat-harness-tools · source <a href="https://github.com/litlfred/cat-harness-tools/blob/main/archimate/schemas/metamodel.ts"><code>cat-harness-tools/archimate/schemas/metamodel.ts#Metamodel.placeholderRelationships</code></a></p>
+</dd>
+<dt id="cat-harness-tools--kg-schema-fields--metamodel.metamodelpattern.allowed" data-fa-state="extracted" data-fa-gloss="">
+MetamodelPattern.allowed <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Allowed by ArchiMate's table; undefined when the table does not know a type.</p>
+<p class="fa-gloss-meta">Schema fields of cat-harness-tools · source <a href="https://github.com/litlfred/cat-harness-tools/blob/main/archimate/schemas/metamodel.ts"><code>cat-harness-tools/archimate/schemas/metamodel.ts#MetamodelPattern.allowed</code></a></p>
+</dd>
+<dt id="cat-harness-tools--kg-schema-fields--metamodel.metamodelpattern.relationship" data-fa-state="extracted" data-fa-gloss="">
+MetamodelPattern.relationship <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>The relationship type as the model reader gives it, e.g. <code>Realization</code>.</p>
+<p class="fa-gloss-meta">Schema fields of cat-harness-tools · source <a href="https://github.com/litlfred/cat-harness-tools/blob/main/archimate/schemas/metamodel.ts"><code>cat-harness-tools/archimate/schemas/metamodel.ts#MetamodelPattern.relationship</code></a></p>
+</dd>
+<dt id="cat-harness-tools--kg-schema-fields--metamodel.metamodelpattern.relationships" data-fa-state="extracted" data-fa-gloss="">
+MetamodelPattern.relationships <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>The relationships that follow it, by id, in model order.</p>
+<p class="fa-gloss-meta">Schema fields of cat-harness-tools · source <a href="https://github.com/litlfred/cat-harness-tools/blob/main/archimate/schemas/metamodel.ts"><code>cat-harness-tools/archimate/schemas/metamodel.ts#MetamodelPattern.relationships</code></a></p>
+</dd>
+<dt id="cat-harness-tools--kg-schema-fields--metamodel.metamodeltype.elements" data-fa-state="extracted" data-fa-gloss="">
+MetamodelType.elements <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Elements of this type, placeholders not counted.</p>
+<p class="fa-gloss-meta">Schema fields of cat-harness-tools · source <a href="https://github.com/litlfred/cat-harness-tools/blob/main/archimate/schemas/metamodel.ts"><code>cat-harness-tools/archimate/schemas/metamodel.ts#MetamodelType.elements</code></a></p>
+</dd>
+<dt id="cat-harness-tools--kg-schema-fields--metamodel.metamodeltype.ids" data-fa-state="extracted" data-fa-gloss="">
+MetamodelType.ids <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Their ids, in model order: what a reader opens from the type's box.</p>
+<p class="fa-gloss-meta">Schema fields of cat-harness-tools · source <a href="https://github.com/litlfred/cat-harness-tools/blob/main/archimate/schemas/metamodel.ts"><code>cat-harness-tools/archimate/schemas/metamodel.ts#MetamodelType.ids</code></a></p>
 </dd>
 <dt id="cat-harness-tools--kg-schema-fields--methodology.methodologyfrontmatterschema.applies-when" data-fa-state="extracted" data-fa-gloss="">
 MethodologyFrontMatterSchema.applies-when <span class="fa-gloss-status">candidate, extracted</span>
