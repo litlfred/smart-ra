@@ -629,7 +629,7 @@
      `avatars:css:check` fails the build when it is stale. One stylesheet
      rather than 68 assets: the glyph is a mask and the colour is a property,
      so a scheme swap is a custom property and the trash state is a selector. -->
-<link rel="stylesheet" href="../../../assets/css/avatars.css?v=780d571c53c1">
+<link rel="stylesheet" href="../../../assets/css/avatars.css?v=a0806788c1f5">
 
 <!--
   The kinds THIS INSTANCE DECLARES, for the avatar fan.
@@ -823,7 +823,23 @@ function go(){
     .then(function(f){fill(d,f,r);})
     .catch(function(){d.textContent='\u2014 build details unavailable';measure();});
 }
-measure();
+// First visit to a preview: the shared stylesheets 404 until the worker is
+// in control, so the page would paint unstyled (a page-wide search icon) for
+// the moment before the reload. Hide it until then, only when a stylesheet
+// in the head actually failed, and show it again if no reload comes.
+function unstyled(){var l=document.querySelectorAll('link[rel="stylesheet"]');for(var i=0;i<l.length;i++){if(l[i].disabled)continue;try{if(!l[i].sheet||!l[i].sheet.cssRules.length)return true;}catch(e){}}return false;}
+function share(){
+  var r=root();if(!r||!('serviceWorker' in navigator))return;
+  var k='fa-share:'+r,s=document.documentElement.style;
+  var hide=!navigator.serviceWorker.controller&&!sessionStorage.getItem(k)&&unstyled();
+  function show(){if(hide){hide=false;s.removeProperty('visibility');}}
+  if(hide){s.setProperty('visibility','hidden');setTimeout(show,4000);}
+  navigator.serviceWorker.register(r+'staging-sw.js',{scope:r}).then(function(){
+    if(navigator.serviceWorker.controller||sessionStorage.getItem(k))return show();
+    return navigator.serviceWorker.ready.then(function(){sessionStorage.setItem(k,'1');location.reload();});
+  }).catch(show);
+}
+measure();share();
 if(document.readyState!=='loading')go();else document.addEventListener('DOMContentLoaded',go);
 window.addEventListener('resize',measure);window.addEventListener('load',measure);
 })();</script><script type="application/json" id="fa-rail" data-fa-root="https://litlfred.github.io/folio-assistant" data-fa-to-root="../../..">{"data":"rail-1nr7jo2rxsc","here":"/en/folio-assistant-core/glossary/","documentIndex":{"label":"On this page","icon":"§","items":[{"href":"#already-somebody-elses-concept","label":"Already somebody else’s concept?"},{"href":"#pages","label":"Pages"},{"href":"#authored-terms","label":"Authored terms","children":[{"href":"#bootstrap-terms","label":"Bootstrap terms","depth":1},{"href":"#every-other-authored-term-az","label":"Every other authored term, A–Z","depth":1}],"fold":"2 sub-sections"},{"href":"#sources","label":"Sources","children":[{"href":"#authored","label":"Authored","depth":1},{"href":"#extracted-from-knowledge-graph-assets","label":"Extracted from knowledge-graph assets","depth":1}],"fold":"2 sub-sections"}],"collapsible":true}}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../">Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector</a></nav>
@@ -932,13 +948,13 @@ window.addEventListener('resize',measure);window.addEventListener('load',measure
 </h1>
     
 
-<p>Every term the instances in this repository define or carry, as W3C SKOS. Terms link to the external concepts they match rather than copying them. 4160 terms: <strong>41 authored</strong> in 7 glossaries, one page per instance that owns them, and <strong>4076 extracted</strong> from knowledge-graph assets in 26 generated schemes, one page per asset type, plus the sources below.</p>
+<p>Every term the instances in this repository define or carry, as W3C SKOS. Terms link to the external concepts they match rather than copying them. 4165 terms: <strong>41 authored</strong> in 7 glossaries, one page per instance that owns them, and <strong>4078 extracted</strong> from knowledge-graph assets in 26 generated schemes, one page per asset type, plus the sources below.</p>
 
 <div class="table-wrapper"><table>
 <thead><tr><th>state</th><th>what it means</th><th>terms</th></tr></thead>
 <tbody>
 <tr><td>authored</td><td>A person wrote or approved the definition.</td><td>41</td></tr>
-<tr><td>candidate, extracted</td><td>Lifted from a knowledge-graph asset's own title and description, verbatim, and not curated. The definition is the asset's text, the source links to the asset, and an asset with no description gives a term with none. A person promotes one by authoring it.</td><td>4076</td></tr>
+<tr><td>candidate, extracted</td><td>Lifted from a knowledge-graph asset's own title and description, verbatim, and not curated. The definition is the asset's text, the source links to the asset, and an asset with no description gives a term with none. A person promotes one by authoring it.</td><td>4078</td></tr>
 <tr><td>could-not-extract</td><td>The source names a term the extractor could not read, and says why.</td><td>5</td></tr>
 </tbody>
 </table></div>
@@ -956,7 +972,7 @@ window.addEventListener('resize',measure);window.addEventListener('load',measure
 <div class="table-wrapper"><table class="fa-gloss-mapping">
 <caption>Already somebody else's concept? — <code>check:term-mapping</code>, bean <code>7wou</code></caption>
 <thead><tr><th>target</th><th>mapped</th><th>unmapped</th><th>undetermined</th><th>why undetermined</th></tr></thead>
-<tbody><tr><td><code>fhir</code></td><td>0</td><td>3859</td><td>0</td><td>—</td></tr><tr><td><code>skos</code></td><td>0</td><td>3859</td><td>0</td><td>—</td></tr></tbody>
+<tbody><tr><td><code>fhir</code></td><td>0</td><td>3862</td><td>0</td><td>—</td></tr><tr><td><code>skos</code></td><td>0</td><td>3862</td><td>0</td><td>—</td></tr></tbody>
 </table></div>
 <p class="fa-gloss-mapping-note"><strong>Undetermined is never “no match”.</strong> 
 A vocabulary that could not be reached has said nothing, and the column above keeps that 
@@ -979,7 +995,7 @@ be a term this corpus is right to coin.</p>
 <tr><td>this page</td><td>counts and sources</td><td>—</td><td>13 KB</td></tr>
 <tr><td><a href="../../../en/folio-assistant-core/glossary/instance/bootstrap/">bootstrap</a></td><td>authored terms of bootstrap</td><td>22</td><td>26 KB</td></tr>
 <tr><td><a href="../../../en/folio-assistant-core/glossary/instance/cat-harness/">cat-harness</a></td><td>authored terms of cat-harness</td><td>14</td><td>17 KB</td></tr>
-<tr><td><a href="../../../en/folio-assistant-core/glossary/instance/dpi-h-ra/">dpi-h-ra</a></td><td>authored terms of dpi-h-ra</td><td>43</td><td>44 KB</td></tr>
+<tr><td><a href="../../../en/folio-assistant-core/glossary/instance/dpi-h-ra/">dpi-h-ra</a></td><td>authored terms of dpi-h-ra</td><td>46</td><td>47 KB</td></tr>
 <tr><td><a href="../../../en/folio-assistant-core/glossary/instance/fhir-harness/">fhir-harness</a></td><td>authored terms of fhir-harness</td><td>0</td><td>2 KB</td></tr>
 <tr><td><a href="../../../en/folio-assistant-core/glossary/instance/folio-assistant-core/">folio-assistant-core</a></td><td>authored terms of folio-assistant-core</td><td>4</td><td>10 KB</td></tr>
 <tr><td><a href="../../../en/folio-assistant-core/glossary/instance/who-iris/">who-iris</a></td><td>authored terms of who-iris</td><td>1</td><td>4 KB</td></tr>
@@ -987,7 +1003,7 @@ be a term this corpus is right to coin.</p>
 <tr><td><a href="../../../en/folio-assistant-core/glossary/tools/">Tools</a></td><td>candidates, extracted</td><td>65</td><td>75 KB</td></tr>
 <tr><td><a href="../../../en/folio-assistant-core/glossary/bpmn-activities/">BPMN activities</a></td><td>candidates, extracted</td><td>1029</td><td>953 KB</td></tr>
 <tr><td><a href="../../../en/folio-assistant-core/glossary/dmn-decisions/">DMN decisions</a></td><td>candidates, extracted</td><td>14</td><td>11 KB</td></tr>
-<tr><td><a href="../../../en/folio-assistant-core/glossary/schema-fields/">Schema fields</a></td><td>candidates, extracted</td><td>2614</td><td>1.6 MB</td></tr>
+<tr><td><a href="../../../en/folio-assistant-core/glossary/schema-fields/">Schema fields</a></td><td>candidates, extracted</td><td>2616</td><td>1.6 MB</td></tr>
 </tbody></table></div></div>
 
 <p><strong>Size:</strong> this page is 13 KB before compression, within its budget of 64 KB; each instance’s and each asset type’s page has a budget of 1.0 MB. There is no search index: the filter on each page runs over that page, and its A–Z bar jumps within it. The SKOS files in the sources are the machine-readable form.</p>
@@ -1021,7 +1037,7 @@ be a term this corpus is right to coin.</p>
 <ul>
 <li><a href="../../../en/folio-assistant-core/glossary/instance/bootstrap/">bootstrap</a>: 22 terms in Bootstrap terms</li>
 <li><a href="../../../en/folio-assistant-core/glossary/instance/cat-harness/">cat-harness</a>: 14 terms in Folio Assistant platform terms (cat-harness)</li>
-<li><a href="../../../en/folio-assistant-core/glossary/instance/dpi-h-ra/">dpi-h-ra</a>: 43 terms in Glossary of the Reference Architecture and Guidance for DPI-H, Full-STAC: open Standards, Technologies, Architectures and Content</li>
+<li><a href="../../../en/folio-assistant-core/glossary/instance/dpi-h-ra/">dpi-h-ra</a>: 46 terms in Glossary of the Reference Architecture and Guidance for DPI-H, Full-STAC: open Standards, Technologies, Architectures and Content</li>
 <li><a href="../../../en/folio-assistant-core/glossary/instance/fhir-harness/">fhir-harness</a>: 0 terms in </li>
 <li><a href="../../../en/folio-assistant-core/glossary/instance/folio-assistant-core/">folio-assistant-core</a>: 4 terms in Folio Assistant platform terms, Guideline domain</li>
 <li><a href="../../../en/folio-assistant-core/glossary/instance/who-iris/">who-iris</a>: 1 terms in WHO house terms</li>
@@ -1044,7 +1060,7 @@ be a term this corpus is right to coin.</p>
     
 
 <ul>
-<li><strong>Glossary of the Reference Architecture and Guidance for DPI-H</strong> (dpi-h-ra, 33 terms) · <a href="../../../assets/glossary/dpi-h-ra--dpi-h-ra.skos.jsonld">SKOS JSON-LD</a> · <code>glossary/dpi-h-ra.glossary.json</code></li>
+<li><strong>Glossary of the Reference Architecture and Guidance for DPI-H</strong> (dpi-h-ra, 36 terms) · <a href="../../../assets/glossary/dpi-h-ra--dpi-h-ra.skos.jsonld">SKOS JSON-LD</a> · <code>glossary/dpi-h-ra.glossary.json</code></li>
 <li><strong>Full-STAC: open Standards, Technologies, Architectures and Content</strong> (dpi-h-ra, 10 terms) · <a href="../../../assets/glossary/dpi-h-ra--full-stac.skos.jsonld">SKOS JSON-LD</a> · <code>glossary/full-stac.glossary.json</code></li>
 <li><strong>Bootstrap terms</strong> (bootstrap, 22 terms) · <a href="../../../assets/glossary/bootstrap--terms.skos.jsonld">SKOS JSON-LD</a> · <code>bootstrap/schemas/graph.schema.json</code></li>
 <li><strong>Folio Assistant platform terms (cat-harness)</strong> (cat-harness, 14 terms) · <a href="../../../assets/glossary/cat-harness--platform.skos.jsonld">SKOS JSON-LD</a> · <code>folio-assistant-core/glossary/cat-harness.glossary.json</code></li>
@@ -1071,12 +1087,12 @@ be a term this corpus is right to coin.</p>
 <tr><td>bootstrap</td><td>13 · <a href="../../../assets/glossary/bootstrap--kg-skills.skos.jsonld">SKOS</a></td><td>—</td><td>38 · <a href="../../../assets/glossary/bootstrap--kg-bpmn-activities.skos.jsonld">SKOS</a></td><td>—</td><td>—</td></tr>
 <tr><td>bootstrap-tools</td><td>3 · <a href="../../../assets/glossary/bootstrap-tools--kg-skills.skos.jsonld">SKOS</a></td><td>—</td><td>7 · <a href="../../../assets/glossary/bootstrap-tools--kg-bpmn-activities.skos.jsonld">SKOS</a></td><td>—</td><td>44 · <a href="../../../assets/glossary/bootstrap-tools--kg-schema-fields.skos.jsonld">SKOS</a></td></tr>
 <tr><td>cat-harness</td><td>248 · <a href="../../../assets/glossary/cat-harness--kg-skills.skos.jsonld">SKOS</a></td><td>—</td><td>581 · <a href="../../../assets/glossary/cat-harness--kg-bpmn-activities.skos.jsonld">SKOS</a></td><td>10 · <a href="../../../assets/glossary/cat-harness--kg-dmn-decisions.skos.jsonld">SKOS</a></td><td>—</td></tr>
-<tr><td>cat-harness-tools</td><td>—</td><td>1 · <a href="../../../assets/glossary/cat-harness-tools--kg-tools.skos.jsonld">SKOS</a></td><td>—</td><td>—</td><td>2249 · <a href="../../../assets/glossary/cat-harness-tools--kg-schema-fields.skos.jsonld">SKOS</a></td></tr>
+<tr><td>cat-harness-tools</td><td>—</td><td>1 · <a href="../../../assets/glossary/cat-harness-tools--kg-tools.skos.jsonld">SKOS</a></td><td>—</td><td>—</td><td>2251 · <a href="../../../assets/glossary/cat-harness-tools--kg-schema-fields.skos.jsonld">SKOS</a></td></tr>
 <tr><td>fhir-harness</td><td>18 · <a href="../../../assets/glossary/fhir-harness--kg-skills.skos.jsonld">SKOS</a></td><td>33 · <a href="../../../assets/glossary/fhir-harness--kg-tools.skos.jsonld">SKOS</a></td><td>45 · <a href="../../../assets/glossary/fhir-harness--kg-bpmn-activities.skos.jsonld">SKOS</a></td><td>—</td><td>127 · <a href="../../../assets/glossary/fhir-harness--kg-schema-fields.skos.jsonld">SKOS</a></td></tr>
 <tr><td>folio-assistant-core</td><td>43 · <a href="../../../assets/glossary/folio-assistant-core--kg-skills.skos.jsonld">SKOS</a></td><td>16 · <a href="../../../assets/glossary/folio-assistant-core--kg-tools.skos.jsonld">SKOS</a></td><td>207 · <a href="../../../assets/glossary/folio-assistant-core--kg-bpmn-activities.skos.jsonld">SKOS</a></td><td>4 · <a href="../../../assets/glossary/folio-assistant-core--kg-dmn-decisions.skos.jsonld">SKOS</a></td><td>181 · <a href="../../../assets/glossary/folio-assistant-core--kg-schema-fields.skos.jsonld">SKOS</a></td></tr>
 <tr><td>smart-base</td><td>24 · <a href="../../../assets/glossary/smart-base--kg-skills.skos.jsonld">SKOS</a></td><td>14 · <a href="../../../assets/glossary/smart-base--kg-tools.skos.jsonld">SKOS</a></td><td>117 · <a href="../../../assets/glossary/smart-base--kg-bpmn-activities.skos.jsonld">SKOS</a></td><td>—</td><td>13 · <a href="../../../assets/glossary/smart-base--kg-schema-fields.skos.jsonld">SKOS</a></td></tr>
 <tr><td>who-iris</td><td>5 · <a href="../../../assets/glossary/who-iris--kg-skills.skos.jsonld">SKOS</a></td><td>1 · <a href="../../../assets/glossary/who-iris--kg-tools.skos.jsonld">SKOS</a></td><td>34 · <a href="../../../assets/glossary/who-iris--kg-bpmn-activities.skos.jsonld">SKOS</a></td><td>—</td><td>—</td></tr>
-<tr><td><strong>total</strong></td><td><strong>354</strong></td><td><strong>65</strong></td><td><strong>1029</strong></td><td><strong>14</strong></td><td><strong>2614</strong></td></tr>
+<tr><td><strong>total</strong></td><td><strong>354</strong></td><td><strong>65</strong></td><td><strong>1029</strong></td><td><strong>14</strong></td><td><strong>2616</strong></td></tr>
 </tbody></table></div></div>
 
           

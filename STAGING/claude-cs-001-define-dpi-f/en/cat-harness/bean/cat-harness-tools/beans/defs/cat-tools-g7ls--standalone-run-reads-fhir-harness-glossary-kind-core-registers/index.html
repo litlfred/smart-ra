@@ -180,7 +180,23 @@ function go(){
     .then(function(f){fill(d,f,r);})
     .catch(function(){d.textContent='\u2014 build details unavailable';measure();});
 }
-measure();
+// First visit to a preview: the shared stylesheets 404 until the worker is
+// in control, so the page would paint unstyled (a page-wide search icon) for
+// the moment before the reload. Hide it until then, only when a stylesheet
+// in the head actually failed, and show it again if no reload comes.
+function unstyled(){var l=document.querySelectorAll('link[rel="stylesheet"]');for(var i=0;i<l.length;i++){if(l[i].disabled)continue;try{if(!l[i].sheet||!l[i].sheet.cssRules.length)return true;}catch(e){}}return false;}
+function share(){
+  var r=root();if(!r||!('serviceWorker' in navigator))return;
+  var k='fa-share:'+r,s=document.documentElement.style;
+  var hide=!navigator.serviceWorker.controller&&!sessionStorage.getItem(k)&&unstyled();
+  function show(){if(hide){hide=false;s.removeProperty('visibility');}}
+  if(hide){s.setProperty('visibility','hidden');setTimeout(show,4000);}
+  navigator.serviceWorker.register(r+'staging-sw.js',{scope:r}).then(function(){
+    if(navigator.serviceWorker.controller||sessionStorage.getItem(k))return show();
+    return navigator.serviceWorker.ready.then(function(){sessionStorage.setItem(k,'1');location.reload();});
+  }).catch(show);
+}
+measure();share();
 if(document.readyState!=='loading')go();else document.addEventListener('DOMContentLoaded',go);
 window.addEventListener('resize',measure);window.addEventListener('load',measure);
 })();</script><script type="application/json" id="fa-rail" data-fa-root="../../../../../../.." data-fa-to-root="../../../../../../..">{"data":"rail-26izpv5isgk","here":"/en/cat-harness/bean/cat-harness-tools/beans/defs/cat-tools-g7ls--standalone-run-reads-fhir-harness-glossary-kind-core-registers/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../">folio-assistant</a></nav>
@@ -192,11 +208,11 @@ window.addEventListener('resize',measure);window.addEventListener('load',measure
 <dl>
 <dt>$schema</dt><dd>bean/1.0.0</dd>
 <dt>title</dt><dd>STANDALONE LOAD ERRORS: ~250 cat-harness-tools tests fail to load standalone because fhir-harness.json declares the &quot;glossary&quot; kind that only folio-assistant-core registers</dd>
-<dt>status</dt><dd>todo</dd>
+<dt>status</dt><dd>done</dd>
 <dt>type</dt><dd>bug</dd>
 <dt>priority</dt><dd>normal</dd>
 <dt>created_at</dt><dd>2026-10-31T01:40:00Z</dd>
-<dt>updated_at</dt><dd>2026-10-31T01:40:00Z</dd>
+<dt>updated_at</dt><dd>2026-10-31T08:30:00Z</dd>
 <dt>parent</dt><dd>folio-assistant-1xhc</dd>
 </dl>
 </main>

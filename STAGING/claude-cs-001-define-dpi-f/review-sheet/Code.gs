@@ -28,7 +28,7 @@
  * so a pasted copy can be checked (skill review-sheet-script, "Trusting the
  * script").
  */
-// folio-assistant-core tools/review-sheet-sync at e7b4094fd22055f205b52ba3c6c980b11285e228.
+// folio-assistant-core tools/review-sheet-sync at 222e8064a21add9e21e157085fc1a83115e0de71.
 
 const CONFIG_TAB = 'Config';
 let CFG = null, COLS = null, DATA = null, DRAFTING = false, WATCHED = [];

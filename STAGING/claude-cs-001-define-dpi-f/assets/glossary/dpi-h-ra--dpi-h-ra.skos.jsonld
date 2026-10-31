@@ -56,6 +56,26 @@
       "skos:note": "candidate"
     },
     {
+      "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra/archimate",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "ArchiMate"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "An open enterprise architecture modelling language, published by The Open Group, for describing and visualising an architecture across business, application and technology layers. The models in this guidance are written in ArchiMate."
+        }
+      ],
+      "skos:scopeNote": "Added to the RA glossary table in CS-001 (smart-ra#185, public comments No. 136 and No. 327), per committee feedback (CL). A candidate until the RA editors adopt it through the public review.",
+      "dcterms:source": "folio/dpi-h-ra/glossary/t-glossary-lead-a31853.md",
+      "skos:note": "candidate"
+    },
+    {
       "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra/capability",
       "@type": "skos:Concept",
       "skos:inScheme": {
@@ -318,6 +338,29 @@
         }
       ],
       "skos:scopeNote": "The RA draft's own wording, verbatim. A candidate until the RA editors adopt it through the public review.",
+      "dcterms:source": "folio/dpi-h-ra/glossary/t-glossary-lead-a31853.md",
+      "skos:note": "candidate"
+    },
+    {
+      "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra/foundational-digital-public-infrastructure",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "Foundational Digital Public Infrastructure"
+        }
+      ],
+      "skos:altLabel": [
+        "DPI-F"
+      ],
+      "skos:definition": [
+        {
+          "@value": "Foundational Digital Public Infrastructure (DPI-F) is the digital public infrastructure, such as identity, payments and data exchange, upon which the health sector can build. DPI-H is distinct from DPI-F and builds on it."
+        }
+      ],
+      "skos:scopeNote": "Added to the RA glossary table in CS-001 (smart-ra#185, public comments No. 136 and No. 327), per committee feedback (CL). A candidate until the RA editors adopt it through the public review.",
       "dcterms:source": "folio/dpi-h-ra/glossary/t-glossary-lead-a31853.md",
       "skos:note": "candidate"
     },
@@ -650,6 +693,26 @@
         }
       ],
       "skos:scopeNote": "The RA draft's own wording, verbatim. A candidate until the RA editors adopt it through the public review.",
+      "dcterms:source": "folio/dpi-h-ra/glossary/t-glossary-lead-a31853.md",
+      "skos:note": "candidate"
+    },
+    {
+      "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra/togaf",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "TOGAF"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "The Open Group Architecture Framework, an enterprise architecture framework and method, published by The Open Group, for developing an enterprise architecture."
+        }
+      ],
+      "skos:scopeNote": "Added to the RA glossary table in CS-001 (smart-ra#185, public comments No. 136 and No. 327), per committee feedback (CL). A candidate until the RA editors adopt it through the public review.",
       "dcterms:source": "folio/dpi-h-ra/glossary/t-glossary-lead-a31853.md",
       "skos:note": "candidate"
     },

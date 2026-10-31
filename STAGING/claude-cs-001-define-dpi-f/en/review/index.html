@@ -80,7 +80,12 @@
   .diff-fields caption { text-align: left; font-weight: 600; padding: .25rem 0; }
   .diff-fields th, .diff-fields td { border: 1px solid var(--rule); padding: .25rem .4rem; text-align: left; vertical-align: top; overflow-wrap: anywhere; }
   .diff-fields td:last-child { white-space: nowrap; font-weight: 600; }
-  .diff-sbs iframe { width: 100%; height: 22rem; border: 1px solid var(--rule); border-radius: .3rem; background: #fff; }
+  .diff-sbs iframe { width: 100%; height: 22rem; border: 1px solid var(--rule); border-radius: 0 0 .3rem .3rem; background: #fff; display: block; }
+  .sbs-head { padding: .35rem .6rem; border-radius: .3rem .3rem 0 0; font-size: .9rem; color: #fff; overflow-wrap: anywhere; }
+  .sbs-side-base { background: #5f6368; }
+  .sbs-side-head { background: #4F6F52; }
+  .sbs-head a, .sbs-head code { color: #fff; }
+  .sbs-head code { background: rgba(0,0,0,.25); padding: 0 .25rem; border-radius: .2rem; }
   @media (max-width: 40rem) { .diff-sbs { grid-template-columns: 1fr; } }
   /* Visual diff (0rxe): pictures on a white card, since they are screenshots
      of light pages; the mode buttons are native radios, one click each. */
@@ -106,86 +111,25 @@
   :root[data-fa-scheme="dark"] .h1 { background: #184f95; color: #ffffff; } :root[data-fa-scheme="dark"] .h2 { background: #256abf; color: #ffffff; } :root[data-fa-scheme="dark"] .h3 { background: #3987e5; color: #161616; }
   :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
   button.linklike { border: 0; padding: 0; min-height: 0; background: none; color: var(--link); text-decoration: underline; cursor: pointer; font: inherit; text-align: left; }
+  /* What to expect (cat-harness-tools#1153): the PR's own summary, in a card. */
+  #brief { border: 1px solid var(--rule); border-radius: .5rem; padding: .25rem 1rem .5rem; margin: 1rem 0; }
+  #brief h2 { margin-top: .75rem; }
+  #brief h3 { font-size: 1rem; margin: .75rem 0 .25rem; }
+  #brief ul, #brief ol { padding-left: 1.25rem; }
+  #brief ul { list-style: disc; }
+  #brief li { border: 0; padding: .1rem 0; }
+  #brief ul.brief-where { list-style: none; padding-left: 0; }
+  .brief-body { max-height: 28rem; overflow: auto; }
+  .brief-chip { font-weight: 600; padding: .05rem .45rem; border-radius: .3rem; background: #4F6F52; color: #fff; }
   h2:focus-visible { outline: 3px solid var(--link); outline-offset: 2px; }
 </style>
 <link rel="stylesheet" href="../../assets/css/navbar.css"><script src="../../assets/navbar/rail-1nr7jo2rxsc.js" defer></script><script src="../../assets/js/navbar.js" defer></script><script src="../../assets/navbar/row-2acuhncsmbg.js" defer></script><link rel="stylesheet" href="../../assets/css/navbar-row.css"><script src="../../assets/js/navbar-row.js" defer></script><meta name="fa-search-exclude" content="true"><script src="../../assets/js/vendor/lunr.min.js" defer></script><script src="../../assets/js/just-the-docs.js" defer></script><link rel="stylesheet" href="../../assets/page-layout.css" data-fa-page-layout><script src="../../assets/page-layout.js" defer data-fa-page-layout></script><meta name="fa-platform-base" content="https://litlfred.github.io/folio-assistant" data-fa-platform-ui><link rel="stylesheet" href="../../assets/css/docs-ui.css" data-fa-platform-ui><script src="../../assets/js/docs-ui.js" defer data-fa-platform-ui></script><meta name="fa-pinned-data" content="../.."></head>
-<body><div data-fa-staging-banner lang="en" dir="ltr" style="background:#4F6F52;color:#fff;padding:8px 16px;font-size:14px;text-align:center;position:fixed;top:0;left:0;right:0;box-sizing:border-box;z-index:2147483001;font-family:system-ui">🔀 <b>FEATURE BRANCH</b> <span data-fa-staging-detail>— loading build details…</span></div><style>:root{--fa-staging-offset:0px}body{margin:0}.side-bar,.fa-nav{top:var(--fa-staging-offset,0px)!important}html{padding-top:var(--fa-staging-offset,0px)}</style><script>(function(){
-function el(t,a,x){var e=document.createElement(t);if(a)for(var k in a)e.setAttribute(k,a[k]);if(x!=null)e.textContent=x;return e;}
-function link(href,text,extra){var a=el('a',{href:href,style:'color:#fff;text-decoration:underline'},text);if(extra)a.setAttribute('style',a.getAttribute('style')+';'+extra);return a;}
-function chip(text){return el('span',{style:"font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:rgba(0,0,0,.22);color:#fff;padding:1px 6px;border-radius:3px"},text);}
-function sep(){return document.createTextNode(' \u00b7 ');}
-function root(){var m=location.pathname.match(/^(.*\/STAGING\/[^/]+\/)/);return m?m[1]:null;}
-function measure(){var b=document.querySelector('[data-fa-staging-banner]');if(!b)return;document.documentElement.style.setProperty('--fa-staging-offset',b.getBoundingClientRect().height+'px');}
-function fill(d,f,r){
-  while(d.firstChild)d.removeChild(d.firstChild);
-  d.appendChild(document.createTextNode('\u2014 '));
-  var b=link(f.branchUrl,'');b.appendChild(chip(f.branch));d.appendChild(b);
-  d.appendChild(sep());d.appendChild(document.createTextNode('commit '));d.appendChild(chip(f.sha));
-  d.appendChild(sep());d.appendChild(document.createTextNode('built '+f.built));
-  d.appendChild(sep());d.appendChild(link(f.prUrl,f.pr&&f.pr!=='n/a'?'PR #'+f.pr:'no open PR found'));
-  if(f.issue){d.appendChild(sep());d.appendChild(link(f.issueUrl,'issue #'+f.issue));}
-  d.appendChild(sep());
-  var rel=location.pathname.slice(r.length);
-  if(rel===''||rel.charAt(rel.length-1)==='/')rel+='index.html';
-  if(!f.mainPagesKnown){
-    d.appendChild(link(f.mainSite+'/','compare with '+(f.beforeRef||'main')+' \u2197'));
-  }else if(f.newPages.indexOf(rel)>=0){
-    d.appendChild(link(f.mainSite+'/',(f.beforeRef||'main')+' \u2197'));
-    d.appendChild(document.createTextNode(' '));
-    d.appendChild(el('span',{style:'opacity:.85'},'(new page)'));
-  }else{
-    d.appendChild(link(f.mainSite+'/'+rel,'compare with '+(f.beforeRef||'main')+' \u2197'));
-  }
-  d.appendChild(sep());d.appendChild(link(f.runUrl,'build log'));
-  if(f.checksUrl){d.appendChild(sep());d.appendChild(link(f.checksUrl,'CI results'));}
-  stamp(f);
-  measure();
-  fresh(d,f);
-}
-// Live staleness (owner, 2026-10-31, option C): ask GitHub for the branch's
-// head now and say so when it has moved past the commit this preview was
-// built from. Unauthenticated, one request per page view; on any failure
-// (rate limit, offline, a deleted branch) it says nothing rather than guess.
-function fresh(d,f){
-  var m=String(f.branchUrl||'').match(/^https:\/\/github\.com\/([^/]+)\/([^/]+)\//);
-  if(!m||!f.branch||!f.sha||typeof fetch!=='function')return;
-  fetch('https://api.github.com/repos/'+m[1]+'/'+m[2]+'/commits/'+encodeURIComponent(f.branch),
-    {headers:{Accept:'application/vnd.github.sha'},cache:'no-store'})
-    .then(function(x){if(!x.ok)throw 0;return x.text();})
-    .then(function(head){
-      head=String(head).trim();
-      if(!/^[0-9a-f]{7,40}$/.test(head)||head.indexOf(f.sha)===0)return;
-      d.appendChild(sep());
-      var w=el('strong',{'data-fa-staging-stale':'',style:'background:#b00020;padding:0 .4em;border-radius:3px'},'\u26a0 stale: the branch is now at ');
-      w.appendChild(chip(head.slice(0,7)));
-      w.appendChild(document.createTextNode(', newer than this preview'));
-      d.appendChild(w);measure();
-    }).catch(function(){});
-}
-function stamp(f){
-  var p=document.querySelector('.fa-build-stamp');if(!p)return;
-  while(p.firstChild)p.removeChild(p.firstChild);
-  p.appendChild(document.createTextNode('deployed '));
-  var a=link(f.runUrl,'');a.appendChild(el('code',null,f.sha));p.appendChild(a);
-  p.appendChild(document.createTextNode(' · '+f.built));
-}
-function go(){
-  measure();
-  var d=document.querySelector('[data-fa-staging-detail]');if(!d)return;
-  var r=root();
-  if(!r){d.textContent='\u2014 build details unavailable (not served from a preview path)';return;}
-  fetch(r+'staging.json',{cache:'no-store'}).then(function(x){if(!x.ok)throw 0;return x.json();})
-    .then(function(f){fill(d,f,r);})
-    .catch(function(){d.textContent='\u2014 build details unavailable';measure();});
-}
-measure();
-if(document.readyState!=='loading')go();else document.addEventListener('DOMContentLoaded',go);
-window.addEventListener('resize',measure);window.addEventListener('load',measure);
-})();</script><script type="application/json" id="fa-navbar-row" data-fa-root="../.." data-fa-row-src="row-2acuhncsmbg"></script><script type="application/json" id="fa-rail" data-fa-root="https://litlfred.github.io/folio-assistant" data-fa-to-root="../..">{"data":"rail-1nr7jo2rxsc","here":"/en/review/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../">Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector</a></nav><div id="main-header" class="main-header fa-site-bar fa-page-bar"><a class="fa-page-bar-home" href="../../">Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector</a><div class="search" role="search"><div class="search-input-wrap"><input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search this site" autocomplete="off"><label for="search-input" class="search-label"><span class="sr-only">Search this site</span></label></div><div id="search-results" class="search-results"></div></div><span class="fa-page-bar-locale" data-fa-slot="locale"></span></div>
+<body><script type="application/json" id="fa-navbar-row" data-fa-root="../.." data-fa-row-src="row-2acuhncsmbg"></script><script type="application/json" id="fa-rail" data-fa-root="https://litlfred.github.io/folio-assistant" data-fa-to-root="../..">{"data":"rail-1nr7jo2rxsc","here":"/en/review/","documentIndex":{"label":"On this page","icon":"§","items":[{"href":"#brief-h","label":"What to expect in this review"},{"href":"#rendered-h","label":"Rendered pages this change alters"}],"collapsible":true}}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../">Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector</a></nav><div id="main-header" class="main-header fa-site-bar fa-page-bar"><a class="fa-page-bar-home" href="../../">Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector</a><div class="search" role="search"><div class="search-input-wrap"><input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search this site" autocomplete="off"><label for="search-input" class="search-label"><span class="sr-only">Search this site</span></label></div><div id="search-results" class="search-results"></div></div><span class="fa-page-bar-locale" data-fa-slot="locale"></span></div>
 <div class="layout">
 <aside id="navpane" aria-label="Navigation"></aside>
 <main>
 <h1>What changed</h1>
+<section id="brief" aria-labelledby="brief-h"><h2 id="brief-h">What to expect in this review</h2><p class="muted">Loading the pull request's summary…</p></section>
 <p id="summary" class="muted"></p>
 <p id="status" role="status" aria-live="polite">Loading the ChangeSet…</p>
 <div class="nav">
@@ -424,31 +368,187 @@ var renderFields = function renderFields(doc, s) {
   }
   return box;
 };
-var renderSideBySide = function renderSideBySide(doc, before, after) {
-  const box = doc.createElement("div");
+var renderSideBySide = function renderSideBySide(doc, before, after, opts) {
+  const o = opts || {}, box = doc.createElement("div");
   box.className = "diff diff-sbs";
-  const pane = (title, href) => {
-    const col = doc.createElement("div"), h = doc.createElement("div");
-    h.className = "muted";
-    h.textContent = title;
-    col.appendChild(h);
+  const link = (text, href) => {
+    if (!href || !/^https?:/i.test(href)) {
+      const c = doc.createElement("code");
+      c.textContent = text;
+      return c;
+    }
+    const a = doc.createElement("a");
+    a.href = href;
+    a.target = "_blank";
+    a.rel = "noopener";
+    a.textContent = text;
+    return a;
+  }, header = (side) => {
+    const h = doc.createElement("div");
+    h.className = "sbs-head sbs-side-" + side;
+    const b = doc.createElement("b");
+    b.textContent = side === "base" ? o.beforeName && o.beforeName !== "main" ? o.beforeName : "Main" : "This preview";
+    h.appendChild(b);
+    const f = o.facts;
+    if (side === "head" && f) {
+      const add = (label, node) => {
+        h.appendChild(doc.createTextNode(" \xB7 " + label));
+        h.appendChild(node);
+      };
+      if (f.branch)
+        add("", link(f.branch, f.branchUrl));
+      if (f.sha) {
+        const m = (f.branchUrl || "").match(/^(https:\/\/github\.com\/[^/]+\/[^/]+)\//);
+        add("commit ", link(f.sha, m ? m[1] + "/commit/" + f.sha : void 0));
+      }
+      if (f.pr && f.pr !== "n/a")
+        add("", link("PR #" + f.pr, f.prUrl));
+      if (f.runUrl)
+        add("", link("build log", f.runUrl));
+    } else if (side === "base")
+      h.appendChild(doc.createTextNode(" \xB7 published site"));
+    return h;
+  }, pane = (side, href) => {
+    const col = doc.createElement("div");
+    col.className = "sbs-pane";
+    col.appendChild(header(side));
     if (href === null) {
       const p = doc.createElement("p");
       p.className = "muted";
-      p.textContent = title === "Main" ? "Not on main: this block is new." : "Not on this preview: this block was removed.";
+      p.textContent = side === "base" ? "Not on " + (o.beforeName || "main") + ": this block is new." : "Not on this preview: this block was removed.";
       col.appendChild(p);
     } else {
       const f = doc.createElement("iframe");
       f.src = href;
-      f.title = title + ": " + href;
+      f.title = (side === "base" ? o.beforeName || "Main" : "This preview") + ": " + href;
       f.loading = "lazy";
+      const mark = o.mark;
+      if (mark) {
+        const runs = o.runs && o.runs[side] || [], cls = "fa-change-" + side;
+        f.addEventListener("load", () => {
+          let tries = 0;
+          const go = () => {
+            if (mark(f, runs, cls) === 0 && runs.length && ++tries < 4)
+              setTimeout(go, 400 * tries);
+          };
+          go();
+          setTimeout(() => mark(f, runs, cls), 1200);
+        });
+      }
       col.appendChild(f);
     }
     return col;
   };
-  box.appendChild(pane("Main", before));
-  box.appendChild(pane("This preview", after));
+  box.appendChild(pane("base", before));
+  box.appendChild(pane("head", after));
   return box;
+};
+var changeRuns = function changeRuns(ops) {
+  const out = { base: [], head: [] };
+  let base = "", head = "";
+  for (const o of ops)
+    if (o.op === "same") {
+      base += o.text;
+      head += o.text;
+    } else if (o.op === "del") {
+      if (o.text.trim())
+        out.base.push({ before: base.slice(-40), text: o.text });
+      base += o.text;
+    } else if (o.op === "ins") {
+      if (o.text.trim())
+        out.head.push({ before: head.slice(-40), text: o.text });
+      head += o.text;
+    }
+  return out;
+};
+var markInFrame = function markInFrame(f, runs, cls) {
+  let d = null;
+  try {
+    d = f.contentDocument;
+  } catch {
+    return 0;
+  }
+  if (!d || !d.body)
+    return 0;
+  const w = d.defaultView;
+  if (!d.getElementById("fa-review-frame-style")) {
+    const st = d.createElement("style");
+    st.id = "fa-review-frame-style";
+    st.textContent = "[data-fa-staging-banner]{display:none!important}html{padding-top:0!important}.side-bar,.fa-nav{top:0!important}mark.fa-change-base{background:#fbdada;color:#5c0b0b;outline:2px solid #c0392b}mark.fa-change-head{background:#d7f5dc;color:#0b3d17;outline:2px solid #2e7d32}";
+    (d.head || d.body).appendChild(st);
+  }
+  const scrollTo = (m) => {
+    const r = m.getBoundingClientRect();
+    w.scrollTo(0, Math.max(0, r.top + w.scrollY - w.innerHeight / 3));
+  }, had = d.querySelectorAll("mark." + cls);
+  if (had.length) {
+    scrollTo(had[0]);
+    return had.length;
+  }
+  if (!runs.length)
+    return 0;
+  const ok = /[\p{L}\p{N}]/u, norm = (t) => Array.from(t).filter((c) => ok.test(c)).map((c) => c.toLowerCase()[0]).join("");
+  let id = "";
+  try {
+    id = decodeURIComponent((w.location.hash || "").slice(1));
+  } catch {}
+  const block = id ? d.getElementById(id) : null, tryIn = (root) => {
+    const chars = [], where = [], walker = d.createTreeWalker(root, 4);
+    for (let n = walker.nextNode();n; n = walker.nextNode()) {
+      const p = n.parentElement;
+      if (!p || p.closest("script,style,noscript,[data-fa-staging-banner]"))
+        continue;
+      for (let i = 0;i < n.data.length; i++) {
+        const c = n.data[i];
+        if (ok.test(c)) {
+          chars.push(c.toLowerCase()[0]);
+          where.push([n, i]);
+        }
+      }
+    }
+    const s = chars.join(""), segs = [];
+    let from = 0;
+    for (const r of runs) {
+      const t = norm(r.text);
+      if (!t)
+        continue;
+      const ctx = norm(r.before);
+      let at = ctx ? s.indexOf(ctx + t, from) : -1;
+      if (at >= 0)
+        at += ctx.length;
+      else
+        at = s.indexOf(t, from);
+      if (at < 0)
+        continue;
+      from = at + t.length;
+      for (let k = at;k < at + t.length; ) {
+        const node = where[k][0], s0 = where[k][1];
+        let e = s0;
+        while (k < at + t.length && where[k][0] === node) {
+          e = where[k][1];
+          k++;
+        }
+        segs.push([node, s0, e + 1]);
+      }
+    }
+    return segs;
+  };
+  let segs = block ? tryIn(block) : [];
+  if (!segs.length)
+    segs = tryIn(d.body);
+  if (!segs.length)
+    return 0;
+  const marks = [];
+  segs.slice().reverse().forEach(([node, s0, e]) => {
+    node.splitText(e);
+    const mid = node.splitText(s0), m = d.createElement("mark");
+    m.className = cls;
+    mid.replaceWith(m);
+    m.appendChild(mid);
+    marks.unshift(m);
+  });
+  scrollTo(marks[0]);
+  return marks.length;
 };
 var renderVisual = function renderVisual(doc, v, prefix, group) {
   const box = doc.createElement("div");
@@ -988,6 +1088,235 @@ var renderMeasured = function renderMeasured(box, model) {
   });
   box.appendChild(ul);
 };
+var briefRepo = function briefRepo(st) {
+  const m = String(st && (st.branchUrl || st.prUrl) || "").match(/^https:\/\/github\.com\/([A-Za-z0-9_.-]+)\/([A-Za-z0-9_.-]+)\//);
+  return m ? { owner: m[1], repo: m[2] } : null;
+};
+var closedIssue = function closedIssue(body) {
+  const m = String(body || "").match(/\b(?:close[sd]?|fix(?:e[sd])?|resolve[sd]?)\s+#(\d+)\b/i);
+  return m ? Number(m[1]) : null;
+};
+var briefText = function briefText(body) {
+  const b = String(body || "").replace(/\r\n?/g, `
+`), m = b.match(/<!--\s*review-brief\s*-->([\s\S]*?)<!--\s*\/review-brief\s*-->/i);
+  if (m)
+    return { text: m[1].trim(), marked: !0 };
+  let t = b.replace(/<!--[\s\S]*?-->/g, "");
+  t = t.replace(/\n-{3,}\s*\n(?:\s*(?:_Generated by[^\n]*|\uD83E\uDD16[^\n]*|https:\/\/claude\.ai\/code\/\S*)\s*\n?)+\s*$/, `
+`);
+  t = t.split(`
+`).filter(function(l) {
+    return !/^_Requested by \*\*/.test(l.trim());
+  }).join(`
+`);
+  return { text: t.trim(), marked: !1 };
+};
+var briefModel = function briefModel(o) {
+  const t = briefText(o.pr ? o.pr.body : null), cs = o.pr ? String(o.pr.title).match(/^\s*(CS-\d+)\b/i) : null;
+  return {
+    source: o.pr ? o.source : "none",
+    pr: o.pr,
+    issue: o.issue,
+    changeSet: cs ? cs[1].toUpperCase() : null,
+    text: t.text,
+    marked: t.marked,
+    fetchedAt: o.fetchedAt || null
+  };
+};
+var whereToLook = function whereToLook(changes, max) {
+  const by = {}, order = [];
+  (changes || []).forEach(function(c) {
+    const s = (c.head || c.base || {}).section || "(listed in no section)";
+    if (!(s in by)) {
+      by[s] = 0;
+      order.push(s);
+    }
+    by[s]++;
+  });
+  return order.map(function(s, i) {
+    return { section: s, count: by[s], i };
+  }).sort(function(a, b) {
+    return b.count - a.count || a.i - b.i;
+  }).slice(0, max).map(function(r) {
+    return { section: r.section, count: r.count };
+  });
+};
+var briefBlocks = function briefBlocks(md) {
+  const out = [];
+  let para = [], list = null;
+  function flush() {
+    if (para.length) {
+      out.push({ type: "p", text: para.join(" ") });
+      para = [];
+    }
+    if (list) {
+      out.push(list);
+      list = null;
+    }
+  }
+  String(md || "").split(`
+`).forEach(function(raw) {
+    const l = raw.replace(/\s+$/, "");
+    let m;
+    if (!l.trim()) {
+      flush();
+      return;
+    }
+    if (m = l.match(/^\s{0,3}(#{1,6})\s+(.*)$/)) {
+      flush();
+      out.push({ type: "h", level: m[1].length, text: m[2] });
+      return;
+    }
+    if (/^\s{0,3}(?:-{3,}|\*{3,}|_{3,})\s*$/.test(l)) {
+      flush();
+      out.push({ type: "hr" });
+      return;
+    }
+    if (m = l.match(/^\s{0,3}([-*+]|\d+[.)])\s+(.*)$/)) {
+      const type = /\d/.test(m[1]) ? "ol" : "ul";
+      if (para.length) {
+        out.push({ type: "p", text: para.join(" ") });
+        para = [];
+      }
+      if (!list || list.type !== type) {
+        if (list)
+          out.push(list);
+        list = { type, items: [] };
+      }
+      list.items.push(m[2]);
+      return;
+    }
+    if (list && /^\s+\S/.test(raw)) {
+      list.items[list.items.length - 1] += " " + l.trim();
+      return;
+    }
+    if (list) {
+      out.push(list);
+      list = null;
+    }
+    para.push(l.trim());
+  });
+  flush();
+  return out;
+};
+var briefInline = function briefInline(doc, parent, text) {
+  const re = /\*\*([^*]+)\*\*|`([^`]+)`|\[([^\]]+)\]\(([^)\s]+)\)|(https?:\/\/[^\s<>()]+[^\s<>().,;:!?'"])/g, s = String(text || "");
+  let last = 0, m;
+  while (m = re.exec(s)) {
+    if (m.index > last)
+      parent.appendChild(doc.createTextNode(s.slice(last, m.index)));
+    if (m[1] !== void 0) {
+      const b = doc.createElement("strong");
+      b.textContent = m[1];
+      parent.appendChild(b);
+    } else if (m[2] !== void 0) {
+      const c = doc.createElement("code");
+      c.textContent = m[2];
+      parent.appendChild(c);
+    } else {
+      const label = m[3] !== void 0 ? m[3] : m[5], url = m[3] !== void 0 ? m[4] : m[5];
+      if (/^https?:\/\//i.test(url)) {
+        const a = doc.createElement("a");
+        a.setAttribute("href", url);
+        a.setAttribute("rel", "noopener");
+        a.textContent = label;
+        parent.appendChild(a);
+      } else
+        parent.appendChild(doc.createTextNode(m[0]));
+    }
+    last = re.lastIndex;
+  }
+  if (last < s.length)
+    parent.appendChild(doc.createTextNode(s.slice(last)));
+};
+var renderBrief = function renderBrief(doc, box, model, where, jump) {
+  while (box.firstChild)
+    box.removeChild(box.firstChild);
+  function el(tag, text, cls) {
+    const e = doc.createElement(tag);
+    if (text !== void 0)
+      e.textContent = text;
+    if (cls)
+      e.className = cls;
+    return e;
+  }
+  const h = el("h2", "What to expect in this review");
+  h.id = "brief-h";
+  box.appendChild(h);
+  const head = el("p");
+  if (model.changeSet) {
+    head.appendChild(el("span", "Change set " + model.changeSet, "brief-chip"));
+    head.appendChild(doc.createTextNode(" "));
+  }
+  if (model.pr) {
+    const a = el("a", "PR #" + model.pr.number + ": " + model.pr.title);
+    if (/^https:\/\//.test(model.pr.url))
+      a.setAttribute("href", model.pr.url);
+    head.appendChild(a);
+  } else
+    head.appendChild(el("span", "No pull request found for this preview, so there is no summary from it.", "muted"));
+  if (model.issue) {
+    head.appendChild(doc.createTextNode(" \xB7 "));
+    const ia = el("a", "Issue #" + model.issue.number + (model.issue.title ? ": " + model.issue.title : ""));
+    if (/^https:\/\//.test(model.issue.url))
+      ia.setAttribute("href", model.issue.url);
+    head.appendChild(ia);
+  }
+  box.appendChild(head);
+  if (model.pr) {
+    const body = el("div", void 0, "brief-body"), blocks = briefBlocks(model.text);
+    if (!blocks.length)
+      body.appendChild(el("p", "The pull request has no description.", "muted"));
+    blocks.forEach(function(b) {
+      if (b.type === "hr") {
+        body.appendChild(el("hr"));
+        return;
+      }
+      if (b.type === "h") {
+        const hh = el("h3");
+        briefInline(doc, hh, b.text || "");
+        body.appendChild(hh);
+        return;
+      }
+      if (b.type === "p") {
+        const p = el("p");
+        briefInline(doc, p, b.text || "");
+        body.appendChild(p);
+        return;
+      }
+      const l = el(b.type);
+      (b.items || []).forEach(function(it) {
+        const li = el("li");
+        briefInline(doc, li, it);
+        l.appendChild(li);
+      });
+      body.appendChild(l);
+    });
+    box.appendChild(body);
+  }
+  if (where && where.length) {
+    box.appendChild(el("h3", "Sections this change touches"));
+    const ul = el("ul", void 0, "brief-where");
+    where.forEach(function(w) {
+      const li = el("li"), name = w.section.indexOf("::") >= 0 ? w.section.split("::").pop() || w.section : w.section;
+      if (jump) {
+        const btn = el("button", name, "linklike");
+        btn.setAttribute("type", "button");
+        btn.addEventListener("click", function() {
+          jump(w.section);
+        });
+        li.appendChild(btn);
+      } else
+        li.appendChild(el("span", name));
+      li.appendChild(doc.createTextNode(" (" + w.count + " changed block" + (w.count === 1 ? "" : "s") + ")"));
+      ul.appendChild(li);
+    });
+    box.appendChild(ul);
+  }
+  const src = model.source === "live" ? "Read from GitHub when this page opened." : model.source === "snapshot" ? "Read from the copy taken when this preview was staged" + (model.fetchedAt ? " (" + model.fetchedAt + ")" : "") + ": GitHub could not be reached, so a later edit to the pull request may not show." : "";
+  if (src)
+    box.appendChild(el("p", src + (model.marked ? " This is the pull request's review brief." : ""), "muted"));
+};
 </script>
 <script>
 (function () {
@@ -1192,7 +1521,15 @@ var renderMeasured = function renderMeasured(box, model) {
     } else if (id === "inline") {
       out = renderInline(document, base ? base.html : null, head ? head.html : null, wordDiff, cleanRendered);
     } else if (id === "side-by-side") {
-      out = renderSideBySide(document, ctx.before, ctx.after);
+      // The rendered text of each side, diffed, says where each pane scrolls to.
+      var runs = null;
+      if (base || head) {
+        var bt = base ? cleanRendered(document, base.html).textContent || "" : "";
+        var ht = head ? cleanRendered(document, head.html).textContent || "" : "";
+        var sops = wordDiff(bt, ht);
+        if (sops) runs = changeRuns(sops);
+      }
+      out = renderSideBySide(document, ctx.before, ctx.after, { beforeName: ctx.beforeName, facts: ctx.facts, runs: runs, mark: markInFrame });
     } else if (id === "visual") {
       out = renderVisual(document, ctx.visual, ROOT, "vis-" + panel.id);
     } else if (id === "fields") {
@@ -1289,6 +1626,42 @@ var renderMeasured = function renderMeasured(box, model) {
   function get(url) {
     return fetch(url).then(function (r) { if (!r.ok) throw new Error(String(r.status)); return r.json(); });
   }
+
+  // What to expect (cat-harness-tools#1153): the PR and the issue it closes,
+  // live from GitHub, else the copy staged with the preview. Any branch has a
+  // PR; a change set only adds detail. "Where to look" joins when the
+  // ChangeSet loads.
+  var briefBox = document.getElementById("brief");
+  var BRIEF = null, WHERE = null, JUMP = null;
+  function drawBrief() { if (BRIEF) renderBrief(document, briefBox, BRIEF, WHERE, JUMP); }
+  function gh(path) {
+    return fetch("https://api.github.com/" + path, { headers: { Accept: "application/vnd.github+json" } })
+      .then(function (r) { if (!r.ok) throw new Error(String(r.status)); return r.json(); });
+  }
+  get(ROOT + "staging.json").catch(function () { return {}; }).then(function (st) {
+    var rp = briefRepo(st);
+    var prn = st && /^\d+$/.test(String(st.pr || "")) ? String(st.pr) : null;
+    var live = rp && prn && typeof fetch === "function"
+      ? gh("repos/" + rp.owner + "/" + rp.repo + "/pulls/" + prn).then(function (p) {
+          var pr = { number: p.number, title: p.title || "", body: p.body || "", url: p.html_url || "" };
+          var n = closedIssue(pr.body) || (st.issue && /^\d+$/.test(String(st.issue)) ? Number(st.issue) : null);
+          var issue = n ? gh("repos/" + rp.owner + "/" + rp.repo + "/issues/" + n).then(function (i) {
+            return { number: i.number, title: i.title || "", url: i.html_url || "" };
+          }).catch(function () { return { number: n, title: "", url: "https://github.com/" + rp.owner + "/" + rp.repo + "/issues/" + n }; }) : Promise.resolve(null);
+          return issue.then(function (i) { return { pr: pr, issue: i, source: "live" }; });
+        })
+      : Promise.reject(new Error("no PR"));
+    return live.catch(function () {
+      return get(ROOT + "review-brief.json").then(function (b) {
+        return { pr: b.pr || null, issue: b.issue || null, source: "snapshot", fetchedAt: b.fetchedAt || null };
+      });
+    }).catch(function () { return { pr: null, issue: null, source: "none" }; }).then(function (r) {
+      // The main site, or a preview with no PR: nothing to summarise, so no pane.
+      if (!r.pr && !prn) { briefBox.hidden = true; return; }
+      BRIEF = briefModel({ staging: st, pr: r.pr, issue: r.issue, source: r.source, fetchedAt: r.fetchedAt });
+      drawBrief();
+    });
+  });
 
   // The rendered list (bean bnjs): fetched on its own, so a preview with a
   // ChangeSet but no rendered impact still shows its blocks, and says why
@@ -1409,6 +1782,8 @@ var renderMeasured = function renderMeasured(box, model) {
             structure: structureFile && structureFile.blocks ? structureFile.blocks[c.label] || null : null,
             before: before,
             after: after,
+            beforeName: beforeName,
+            facts: st && st.branch ? st : null,
           });
           li.appendChild(v.row);
           li.appendChild(v.panel);
@@ -1478,6 +1853,9 @@ var renderMeasured = function renderMeasured(box, model) {
           list.querySelector('h2[data-section="(unchanged)"]');
         if (t) { t.focus(); t.scrollIntoView({ block: "start" }); }
       }
+      WHERE = whereToLook(cs.changes, 6);
+      JUMP = jumpSection;
+      drawBrief();
       if (OUTLINE && OUTLINE.documents) {
         var rowBy = {};
         heat.rows.forEach(function (r) { rowBy[r.section] = r; });
