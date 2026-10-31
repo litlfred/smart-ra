@@ -5,7 +5,7 @@
 - Articulation of health-specific requirements that foundational DPI would need to satisfy
 - Articulation of minimum capabilities for Resilient Essential Data and Digital Health Infrastructure (REDDHI)
 - Introduction of additional components not previously described as part of a digital health architecture — Logical Information Model Repository (LIMR), Computable Decision Support Engine, Benefits Package Registry, Public Health Surveillance Platform, Supplier Registry
-- Reconceptualisation of the shared health record as the **Lifelong Health Record**, a capability-based framing that reflects the person-centred, longitudinal nature of health information, without prescribing how countries implement it
+- Reconceptualization of the shared health record as the **Lifelong Health Record**, a capability-based framing that reflects the person-centred, longitudinal nature of health information, without prescribing how countries implement it
 - Introduction of a **Semantic Governance Infrastructure**
 - Introduction of SMART Guidelines as a standard for computable clinical and health content that connect clinical guidelines to DPI-H
 - A structured framework and methodology that countries can adopt and adapt to their context to make architecture decisions
