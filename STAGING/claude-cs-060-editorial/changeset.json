@@ -1,0 +1,62 @@
+{
+  "$schema": "folio-changeset/v1",
+  "folio": "folio",
+  "base": {
+    "ref": "origin/main",
+    "commit": "eb2d9f69d5c7b3e2ab127095bef6fea9bc679fb1"
+  },
+  "head": {
+    "ref": "worktree",
+    "commit": null
+  },
+  "summary": {
+    "added": 0,
+    "removed": 0,
+    "changed": 2,
+    "unchanged": 931,
+    "renamed": 0,
+    "prose": 2,
+    "manifest": 0,
+    "moved": 0
+  },
+  "changes": [
+    {
+      "change": "changed",
+      "label": "prose:3-5-3-1-1f0816",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-5-3-1-1f0816.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-5-3-1",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-5-3-1-1f0816.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-5-3-1",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-5-3-1-f35f6f",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-5-3-1-f35f6f.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-5-3-1",
+        "index": 4
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-5-3-1-f35f6f.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-5-3-1",
+        "index": 4
+      }
+    }
+  ]
+}
