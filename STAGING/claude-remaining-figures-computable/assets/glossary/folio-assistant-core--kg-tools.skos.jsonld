@@ -74,6 +74,46 @@
       "skos:note": "candidate"
     },
     {
+      "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-tools/check-dsa-hash",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-tools"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "Verify Data Sharing Agreement hash, citation, and vocabulary terms"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "Verify a Data Sharing Agreement (DSA) directory or single version: checks that every JSON-LD term in `agreement.jsonld` and `dcat.jsonld` is defined in the SHA-256-pinned official W3C ODRL 2.2, W3C DCAT 3 (with SPDX 2.2.2 and ADMS), or DCMI Metadata Terms contexts; checks that the ODRL 2.2 Agreement's `uid` is the version's fixed-version URL and its `dcterms:source` cites the DCAT 3 `dcat:Distribution` whose `spdx:checksum` is checked; verifies that the SHA-256 digest of `agreement.md` matches `spdx:checksumValue`; and checks `dcat:previousVersion` and hash distinctness across versions."
+        }
+      ],
+      "skos:notation": "check-dsa-hash",
+      "dcterms:source": "folio-assistant-core/tools/check-dsa-hash/check-dsa-hash.ts#check-dsa-hash",
+      "skos:note": "candidate"
+    },
+    {
+      "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-tools/diig-phases-svg",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-tools"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "DIIG phases, steps and resources chart"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "Draw a DIIG \"phases, steps and resources\" chart as SVG from `diig-phases-figure/v1` data on a who-iris library entry (DIIG Fig. 1.1.1, or a handbook's republished version such as the product catalogue handbook's Fig. 4), or from a folio's `diig-phases-adaptation/v1` file that adds its own tiles and marks itself \"(this document)\". Every label comes from the data; tiles link to their library entry or glossary concept."
+        }
+      ],
+      "skos:notation": "diig-phases-svg",
+      "dcterms:source": "folio-assistant-core/tools/diig-phases-svg/diig-phases-svg.ts#diig-phases-svg",
+      "skos:note": "candidate"
+    },
+    {
       "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-tools/dublin-core-render",
       "@type": "skos:Concept",
       "skos:inScheme": {
@@ -274,6 +314,26 @@
       "skos:note": "candidate"
     },
     {
+      "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-tools/glossary-table",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-tools"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "Glossary and acronyms tables"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "Rewrite the glossary and acronyms tables of a document from its folio-glossary/v1 schemes, as `glossary/glossary-tables.json` (folio-glossary-tables/v1) lists them: terms with their altLabels, definitions and editorial notes, or acronyms (notation and prefLabel). The block's caption and footnotes are left alone. `--check` writes nothing and fails when a table is stale."
+        }
+      ],
+      "skos:notation": "glossary-table",
+      "dcterms:source": "folio-assistant-core/tools/glossary-table/glossary-table.ts#glossary-table",
+      "skos:note": "candidate"
+    },
+    {
       "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-tools/l1-coverage",
       "@type": "skos:Concept",
       "skos:inScheme": {
@@ -294,6 +354,26 @@
       "skos:note": "candidate"
     },
     {
+      "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-tools/review-log-watch",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-tools"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "Check a review log and its repository's issues for changes"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "The mechanical check a review-log watcher runs on every poll (owner, 2026-11-01; Q-WATCH1 B). Given a drafting sheet's Contributor Feedback values and the folio repository, it reads the repository's open and closed issues (pull requests, issues labelled `no-sheet` and, with `--author`, issues someone else opened left out) and compares a digest of them and of the cells people set (Title, Selected Sections, Contributor Feedback, Disposition, Ready for agent, Ready for merge, Dispositions confirmed) with the last check's. Unchanged: it prints `{\"status\":\"unchanged\"}` and exits 0, and the watcher does nothing more. Changed: it lists what changed (issue opened, updated or closed; a cell's old and new text), the Contributor Feedback rows to append, one per issue that no row's Issue cell links yet (Q-WATCH2 B; a closed issue's row marked `closed`), and `closedRows`, the rows linking a closed issue, which the watcher hides with their text struck through (owner, 10:18Z): Title is the issue's title, the first Contributor Feedback column `@login (#N): first paragraph`, Issue the issue's URL. It exits 10. It writes no sheet and no issue: the watcher appends the rows and does the agent pass. With `--accept` it stores the new state, so the next poll compares against it."
+        }
+      ],
+      "skos:notation": "review-log-watch",
+      "dcterms:source": "folio-assistant-core/tools/review-log-watch/review-log-watch.ts#review-log-watch",
+      "skos:note": "candidate"
+    },
+    {
       "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-tools/review-sheet-sync",
       "@type": "skos:Concept",
       "skos:inScheme": {
@@ -311,6 +391,26 @@
       ],
       "skos:notation": "review-sheet-sync",
       "dcterms:source": "folio-assistant-core/tools/review-sheet-sync/review-sheet-sync.ts#review-sheet-sync",
+      "skos:note": "candidate"
+    },
+    {
+      "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-tools/smart-approach-svg",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-tools"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "WHO SMART Guidelines approach chart"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "Draw the WHO SMART Guidelines approach chart (knowledge layers L1–L5 with their products, and their country adaptations, between the research, localisation and impact bands) as SVG from `smart-guidelines-approach-figure/v1` data on a who-iris library entry, such as the product catalogue handbook's Fig. 5. Every label comes from the data."
+        }
+      ],
+      "skos:notation": "smart-approach-svg",
+      "dcterms:source": "folio-assistant-core/tools/smart-approach-svg/smart-approach-svg.ts#smart-approach-svg",
       "skos:note": "candidate"
     },
     {

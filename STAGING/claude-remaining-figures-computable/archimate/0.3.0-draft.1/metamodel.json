@@ -91,7 +91,7 @@
     {
       "type": "Grouping",
       "layer": "Other",
-      "elements": 37,
+      "elements": 40,
       "ids": [
         "id-f3d609a68a0a4a9f96e733f0fd544701",
         "id-7a412a25c6384d72bde19e407d329b3c",
@@ -125,6 +125,9 @@
         "id-077b000f20b95c899adb1143f8ee8cd5",
         "id-d2c9f668c9c2526da7344e57cdf656d2",
         "id-e12108f9f25257a9bfed47e23ac4205a",
+        "id-911b6f08736c5fa88da46a2006ce20f1",
+        "id-a34b63705e585f7eae94bfeec2653860",
+        "id-ecda3a55c2055e4d84c1487f5f39ad83",
         "id-58ea4cb44d71574ebfe28b1c5f835fbc",
         "id-30a90289221f56d3833bf2156398bbda",
         "id-038e0f501d8752e0abf7978d76dde956",
@@ -296,6 +299,29 @@
         "id-9410790dc72a4831b7bdd40e85a8158d",
         "id-0115ed19cda749078ae41e91e9895a7d",
         "id-5dc77dae1bce5d11b288830795b31bdf"
+      ]
+    },
+    {
+      "type": "Principle",
+      "layer": "Motivation",
+      "elements": 16,
+      "ids": [
+        "id-b3b5fa57a4175e8aba97a8ae6937261b",
+        "id-9f24d402d4c751ca8ae0b7c96a97be22",
+        "id-d3555a08115e5cc4b4eca35cc7c9b271",
+        "id-5992a09d36d25f4e8127772293e17306",
+        "id-8537cae9279f56f497fb16fe2b69645c",
+        "id-cc9874ea33cf5abb8926e7ba0d066fbf",
+        "id-ff0de1b5f65f5706b6cddb3e6516c764",
+        "id-e7aed68e5d2f556c8ed10f79c597e09b",
+        "id-f821c25b476d58e08fc51be5b438620d",
+        "id-5a122a2938d65ea0907e1eab69594898",
+        "id-513e48311c88539d8696df4fb3f8c2bd",
+        "id-4685f9d657585e57b68598489f6d17aa",
+        "id-6cc2e0235445596a830d3691d0288f81",
+        "id-b4d9471b1b84504f8555588d4509efb6",
+        "id-889faac870555541b497fc24f4cd7849",
+        "id-f39d09b8a9ed5dd8825c417008a8a666"
       ]
     },
     {
@@ -489,16 +515,6 @@
       ]
     },
     {
-      "type": "Principle",
-      "layer": "Motivation",
-      "elements": 3,
-      "ids": [
-        "id-b3b5fa57a4175e8aba97a8ae6937261b",
-        "id-9f24d402d4c751ca8ae0b7c96a97be22",
-        "id-d3555a08115e5cc4b4eca35cc7c9b271"
-      ]
-    },
-    {
       "type": "ValueStream",
       "layer": "Strategy",
       "elements": 3,
@@ -538,7 +554,7 @@
       "source": "Grouping",
       "relationship": "Aggregation",
       "target": "ApplicationComponent",
-      "count": 61,
+      "count": 66,
       "allowed": true,
       "relationships": [
         "id-660cd19b336a5a9f8b6eb8af40b19d05",
@@ -593,6 +609,11 @@
         "id-90fd6d5da92f5688b6a432dccca9766a",
         "id-7ef3cf2ae3855aaf850c1c4c7811b4a3",
         "id-2e5c03bbe9565ff8aa8018758a459115",
+        "id-f1153b1c0a3e5063815a772eca197722",
+        "id-379ad076600e5dcf93bab5a23b4f888c",
+        "id-ef45e062f2475a62acbc9c6a369a827d",
+        "id-2c9cab191b345968ba7bf63c28744171",
+        "id-aa1bca26d76857ca93caa98b631e2411",
         "id-2ecf47dbf0ec5b44b77df4f40132fc4e",
         "id-26dfc308f4275b0ea8881eb2b2828358",
         "id-6901c903d5cc52979fce7abebbbf50e3",
@@ -725,6 +746,32 @@
         "id-06b696e72f0b5ab4940f3ba56b046260",
         "id-4e5baed957555ce5952eb78f1069c743",
         "id-2b4950b5f7cf5256a7fb52696e5c90e2"
+      ]
+    },
+    {
+      "source": "Grouping",
+      "relationship": "Aggregation",
+      "target": "Principle",
+      "count": 17,
+      "allowed": true,
+      "relationships": [
+        "id-19b581609c0d530c919fefdc8c74e8ef",
+        "id-53252e1b57485c0792274733f3959cd4",
+        "id-52d87769f71c57bf8b37ec8095df675b",
+        "id-0de1401128fb5089b9cf38e4de3b7269",
+        "id-4073fd3f3c795bb797fdcdf8e1890607",
+        "id-17be276f8ed15deca10e723e717ad5fd",
+        "id-c84e76c2ea6753788894291c15ee87ba",
+        "id-e1e2604647fe5e24948888dafb6b64dd",
+        "id-8973fe15794b5b66a12c8c49d9a94eda",
+        "id-76beee1f07f45baca24614ea69875eef",
+        "id-3ef4d25156b4511ca5bf5926015a88c3",
+        "id-c06960b9f6d956d1a463edac0af50521",
+        "id-77db8c517da95954a7810b183a42dff1",
+        "id-95f4055f5ab4528ab22b8a19b5b6b551",
+        "id-f688e5874a355b0f8f964792dae058f6",
+        "id-11f84e8e2b445873b0c8c398b3088cb1",
+        "id-5a887607a29153c39e0ba43ff44095c1"
       ]
     },
     {
@@ -1299,18 +1346,6 @@
         "id-3dee99a3696c5143ab56ff64bee2e32d",
         "id-d06a6e18affc537a984b5bbaa478bbbb",
         "id-8b929d035d7b5affbd1ef52d08e66bd9"
-      ]
-    },
-    {
-      "source": "Grouping",
-      "relationship": "Aggregation",
-      "target": "Principle",
-      "count": 3,
-      "allowed": true,
-      "relationships": [
-        "id-19b581609c0d530c919fefdc8c74e8ef",
-        "id-53252e1b57485c0792274733f3959cd4",
-        "id-52d87769f71c57bf8b37ec8095df675b"
       ]
     },
     {

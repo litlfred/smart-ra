@@ -936,24 +936,24 @@ window.addEventListener('resize',measure);window.addEventListener('load',measure
 
 <p>Candidate terms extracted from every Tool node: <code class="language-plaintext highlighter-rouge">title</code> as the label, <code class="language-plaintext highlighter-rouge">description</code> as the definition, the Tool id as the code. Each is the asset’s own text, verbatim and not curated, and carries the badge “candidate, extracted”. A person promotes one by authoring it. Authored terms are on their owning instance’s page, and those pages, the counts and the sources are linked from the <a href="../../../../en/folio-assistant-core/glossary/">glossary index</a>.</p>
 
-<p>From: cat-harness-tools 1 (<a href="../../../../assets/glossary/cat-harness-tools--kg-tools.skos.jsonld">SKOS</a>) · fhir-harness 33 (<a href="../../../../assets/glossary/fhir-harness--kg-tools.skos.jsonld">SKOS</a>) · folio-assistant-core 17 (<a href="../../../../assets/glossary/folio-assistant-core--kg-tools.skos.jsonld">SKOS</a>) · smart-base 14 (<a href="../../../../assets/glossary/smart-base--kg-tools.skos.jsonld">SKOS</a>) · who-iris 1 (<a href="../../../../assets/glossary/who-iris--kg-tools.skos.jsonld">SKOS</a>).</p>
+<p>From: cat-harness-tools 1 (<a href="../../../../assets/glossary/cat-harness-tools--kg-tools.skos.jsonld">SKOS</a>) · fhir-harness 33 (<a href="../../../../assets/glossary/fhir-harness--kg-tools.skos.jsonld">SKOS</a>) · folio-assistant-core 22 (<a href="../../../../assets/glossary/folio-assistant-core--kg-tools.skos.jsonld">SKOS</a>) · smart-base 14 (<a href="../../../../assets/glossary/smart-base--kg-tools.skos.jsonld">SKOS</a>) · who-iris 1 (<a href="../../../../assets/glossary/who-iris--kg-tools.skos.jsonld">SKOS</a>).</p>
 
-<p><strong>Size:</strong> this page holds 66 terms and is 77 KB before compression, fetched in one request, within its budget of 1.0 MB. There is no search index: the filter below runs over this page, and the A–Z bar jumps within it.</p>
+<p><strong>Size:</strong> this page holds 71 terms and is 83 KB before compression, fetched in one request, within its budget of 1.0 MB. There is no search index: the filter below runs over this page, and the A–Z bar jumps within it.</p>
 
 <div class="table-wrapper"><table class="fa-gloss-mapping">
 <caption>Already somebody else's concept? — <code>check:term-mapping</code>, bean <code>7wou</code></caption>
 <thead><tr><th>target</th><th>mapped</th><th>unmapped</th><th>undetermined</th><th>why undetermined</th></tr></thead>
-<tbody><tr><td><code>fhir</code></td><td>0</td><td>44</td><td>0</td><td>—</td></tr><tr><td><code>skos</code></td><td>0</td><td>44</td><td>0</td><td>—</td></tr></tbody>
+<tbody><tr><td><code>fhir</code></td><td>0</td><td>45</td><td>0</td><td>—</td></tr><tr><td><code>skos</code></td><td>0</td><td>45</td><td>0</td><td>—</td></tr></tbody>
 </table></div>
 <p class="fa-gloss-mapping-note"><strong>Undetermined is never “no match”.</strong> 
 A vocabulary that could not be reached has said nothing, and the column above keeps that 
 apart from a checked miss. The counts are reported and not graded: an unmapped candidate may 
 be a term this corpus is right to coin.</p>
-<p class="fa-gloss-mapping-perterm"><strong>Per term.</strong> Every term on this page is in no single state on <code>fhir</code>, so each entry states its own, and in no single state on <code>skos</code>, so each entry states its own, unless its entry says otherwise. 66 entries say otherwise.</p>
+<p class="fa-gloss-mapping-perterm"><strong>Per term.</strong> Every term on this page is in no single state on <code>fhir</code>, so each entry states its own, and in no single state on <code>skos</code>, so each entry states its own, unless its entry says otherwise. 71 entries say otherwise.</p>
 
 <p><label for="fa-gloss-q">Filter terms</label>
 <input id="fa-gloss-q" type="search" autocomplete="off" style="min-height:44px;width:100%;max-width:32rem" /></p>
-<p aria-live="polite"><span id="fa-gloss-n">66</span> shown</p>
+<p aria-live="polite"><span id="fa-gloss-n">71</span> shown</p>
 
 <nav aria-label="Letters"><a href="#letter-A">A</a> <a href="#letter-B">B</a> <a href="#letter-C">C</a> <a href="#letter-D">D</a> <a href="#letter-E">E</a> <a href="#letter-F">F</a> <a href="#letter-G">G</a> <a href="#letter-I">I</a> <a href="#letter-L">L</a> <a href="#letter-M">M</a> <a href="#letter-P">P</a> <a href="#letter-R">R</a> <a href="#letter-S">S</a> <a href="#letter-V">V</a> <a href="#letter-W">W</a></nav>
 <h2 id="letter-A">
@@ -1065,6 +1065,14 @@ Check a Questionnaire field for field against the wireframe it was derived from 
 <p class="fa-gloss-meta">Tools of fhir-harness · source <a href="https://github.com/litlfred/fhir-harness/blob/main/tools/check-wireframe-questionnaire/check-wireframe-questionnaire.ts"><code>fhir-harness/tools/check-wireframe-questionnaire/check-wireframe-questionnaire.ts#check-wireframe-questionnaire</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
+<dt id="folio-assistant-core--kg-tools--review-log-watch" data-fa-state="extracted" data-fa-gloss="">
+Check a review log and its repository's issues for changes <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>The mechanical check a review-log watcher runs on every poll (owner, 2026-11-01; Q-WATCH1 B). Given a drafting sheet's Contributor Feedback values and the folio repository, it reads the repository's open and closed issues (pull requests, issues labelled <code>no-sheet</code> and, with <code>--author</code>, issues someone else opened left out) and compares a digest of them and of the cells people set (Title, Selected Sections, Contributor Feedback, Disposition, Ready for agent, Ready for merge, Dispositions confirmed) with the last check's. Unchanged: it prints <code>&#123;&quot;status&quot;:&quot;unchanged&quot;}</code> and exits 0, and the watcher does nothing more. Changed: it lists what changed (issue opened, updated or closed; a cell's old and new text), the Contributor Feedback rows to append, one per issue that no row's Issue cell links yet (Q-WATCH2 B; a closed issue's row marked <code>closed</code>), and <code>closedRows</code>, the rows linking a closed issue, which the watcher hides with their text struck through (owner, 10:18Z): Title is the issue's title, the first Contributor Feedback column <code>@login (#N): first paragraph</code>, Issue the issue's URL. It exits 10. It writes no sheet and no issue: the watcher appends the rows and does the agent pass. With <code>--accept</code> it stores the new state, so the next poll compares against it.</p>
+<p class="fa-gloss-meta">Tools of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/tools/review-log-watch/review-log-watch.ts"><code>folio-assistant-core/tools/review-log-watch/review-log-watch.ts#review-log-watch</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
 <dt id="fhir-harness--kg-tools--sdc-checks" data-fa-state="extracted" data-fa-gloss="">
 Check an IG's built Questionnaires with CSIRO's SDC libraries <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
@@ -1106,6 +1114,14 @@ DAK spreadsheets → DMN, PlanDefinitions, CQL, requirements, logical models <sp
 <p>Run WHO's <code>extract_dak.py</code> in a DAK or IG repository: it reads the DAK template spreadsheets (<code>input/decision-logic/*.xlsx</code> via <code>dt_extractor</code>, <code>input/system-requirements/*.xlsx</code> via <code>req_extractor</code>, <code>input/dictionary/*.xlsx</code> via <code>dd_extractor</code>) and the BPMN, and writes the DMN decision tables, the CPG recommendation PlanDefinitions with their citations, CQL library skeletons, Requirements and logical-model FSH. The authoring path the WHO IG Starter Kit (<code>l3_decisiontables</code>, <code>l3_cql</code>) prescribes: an adapted decision or scheduling table is an edited copy of the upstream DAK's spreadsheet, never a parallel format.</p>
 <p class="fa-gloss-meta">Tools of smart-base · source <a href="https://github.com/litlfred/smart-base/blob/main/smart-base/tools/extract-dak/extract-dak.ts"><code>smart-base/tools/extract-dak/extract-dak.ts#extract-dak</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> cannot be told from the committed result: no row for scheme <code>kg-tools</code> of <code>smart-base</code> on <code>fhir</code> · <code>skos</code> cannot be told from the committed result: no row for scheme <code>kg-tools</code> of <code>smart-base</code> on <code>skos</code></p>
+</dd>
+<dt id="folio-assistant-core--kg-tools--diig-phases-svg" data-fa-state="extracted" data-fa-gloss="">
+DIIG phases, steps and resources chart <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Draw a DIIG &quot;phases, steps and resources&quot; chart as SVG from <code>diig-phases-figure/v1</code> data on a who-iris library entry (DIIG Fig. 1.1.1, or a handbook's republished version such as the product catalogue handbook's Fig. 4), or from a folio's <code>diig-phases-adaptation/v1</code> file that adds its own tiles and marks itself &quot;(this document)&quot;. Every label comes from the data; tiles link to their library entry or glossary concept.</p>
+<p class="fa-gloss-meta">Tools of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/tools/diig-phases-svg/diig-phases-svg.ts"><code>folio-assistant-core/tools/diig-phases-svg/diig-phases-svg.ts#diig-phases-svg</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="smart-base--kg-tools--dmn-to-questionnaire" data-fa-state="extracted" data-fa-gloss="">
 DMN → FHIR Questionnaire <span class="fa-gloss-status">candidate, extracted</span>
@@ -1239,6 +1255,14 @@ Generate an IG instance's reader-facing pages from its artefact index <span clas
 <dd>
 <p>Write <code>&lt;instance&gt;/docs/</code> — an index page, one page per artefact, a page per over-large category and per menu group — from <code>fhir-artifact-index/index.json</code> (and <code>menu.json</code> when ingested), styled by the template chrome an owning instance ingested. Moved down to this layer because nothing in it was one IG's own (#1767); with <code>--summary</code> it writes an instance's landing page, opening with that instance's harness section. For an instance whose docs declare <code>igSite</code> (bean <code>mftp</code>) it writes no index, menu or category pages — the IG site's own replace them — and only a front-matter <code>artifacts.md</code> naming the Tool that drew it. Where an instance declares a visualiser <code>renderedBy: ig-pages</code>, it also writes that visualiser's route page, <code>&lt;base&gt;/&lt;instance&gt;/&lt;id&gt;/</code>, which opens the artefact index; with <code>--site &lt;dir&gt;</code> it writes only those route pages, under that site. For an IG whose SOURCE is at hand, <a href="#fhir-harness--kg-tools--build-ig-site"><code>build-ig-site</code></a> renders the IG's own pages instead; this is for an IG known only by what it published.</p>
 <p class="fa-gloss-meta">Tools of fhir-harness · source <a href="https://github.com/litlfred/fhir-harness/blob/main/tools/ig-pages/ig-pages.ts"><code>fhir-harness/tools/ig-pages/ig-pages.ts#ig-pages</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="folio-assistant-core--kg-tools--glossary-table" data-fa-state="extracted" data-fa-gloss="">
+Glossary and acronyms tables <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Rewrite the glossary and acronyms tables of a document from its folio-glossary/v1 schemes, as <code>glossary/glossary-tables.json</code> (folio-glossary-tables/v1) lists them: terms with their altLabels, definitions and editorial notes, or acronyms (notation and prefLabel). The block's caption and footnotes are left alone. <code>--check</code> writes nothing and fails when a table is stale.</p>
+<p class="fa-gloss-meta">Tools of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/tools/glossary-table/glossary-table.ts"><code>folio-assistant-core/tools/glossary-table/glossary-table.ts#glossary-table</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="folio-assistant-core--kg-tools--glossary-build" data-fa-state="extracted" data-fa-gloss="">
@@ -1583,6 +1607,14 @@ ValueSets → JSON Schema <span class="fa-gloss-status">candidate, extracted</sp
 <p class="fa-gloss-meta">Tools of fhir-harness · source <a href="https://github.com/litlfred/fhir-harness/blob/main/tools/valueset-schemas/valueset-schemas.ts"><code>fhir-harness/tools/valueset-schemas/valueset-schemas.ts#valueset-schemas</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
+<dt id="folio-assistant-core--kg-tools--check-dsa-hash" data-fa-state="extracted" data-fa-gloss="">
+Verify Data Sharing Agreement hash, citation, and vocabulary terms <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Verify a Data Sharing Agreement (DSA) directory or single version: checks that every JSON-LD term in <code>agreement.jsonld</code> and <code>dcat.jsonld</code> is defined in the SHA-256-pinned official W3C ODRL 2.2, W3C DCAT 3 (with SPDX 2.2.2 and ADMS), or DCMI Metadata Terms contexts; checks that the ODRL 2.2 Agreement's <code>uid</code> is the version's fixed-version URL and its <code>dcterms:source</code> cites the DCAT 3 <code>dcat:Distribution</code> whose <code>spdx:checksum</code> is checked; verifies that the SHA-256 digest of <code>agreement.md</code> matches <code>spdx:checksumValue</code>; and checks <code>dcat:previousVersion</code> and hash distinctness across versions.</p>
+<p class="fa-gloss-meta">Tools of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/tools/check-dsa-hash/check-dsa-hash.ts"><code>folio-assistant-core/tools/check-dsa-hash/check-dsa-hash.ts#check-dsa-hash</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
 </dl>
 <h2 id="letter-W">
   
@@ -1593,6 +1625,14 @@ ValueSets → JSON Schema <span class="fa-gloss-status">candidate, extracted</sp
 </h2>
     
 <dl class="fa-gloss">
+<dt id="folio-assistant-core--kg-tools--smart-approach-svg" data-fa-state="extracted" data-fa-gloss="">
+WHO SMART Guidelines approach chart <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Draw the WHO SMART Guidelines approach chart (knowledge layers L1–L5 with their products, and their country adaptations, between the research, localisation and impact bands) as SVG from <code>smart-guidelines-approach-figure/v1</code> data on a who-iris library entry, such as the product catalogue handbook's Fig. 5. Every label comes from the data.</p>
+<p class="fa-gloss-meta">Tools of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/tools/smart-approach-svg/smart-approach-svg.ts"><code>folio-assistant-core/tools/smart-approach-svg/smart-approach-svg.ts#smart-approach-svg</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
 <dt id="who-iris--kg-tools--iris-pages" data-fa-state="extracted" data-fa-gloss="">
 who-iris catalogue and docs pages <span class="fa-gloss-status">candidate, extracted</span>
 </dt>

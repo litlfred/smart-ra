@@ -1007,8 +1007,12 @@ window.addEventListener('resize',measure);window.addEventListener('load',measure
 <li><a href="../who-iris-processes/">who-iris-processes</a> <span class="p">who-iris/processes</span> <span class="n" data-da-count="index/processes/who-iris-processes" data-da-count-state="pending">…</span></li>
 </ul>
 
-
-<div class="table-wrapper"><table id="da-index">
+<div class="fa-table-filter">
+<label for="fa-table-filter-0">Filter this table</label>
+<input type="search" id="fa-table-filter-0" autocomplete="off" spellcheck="false" aria-describedby="fa-table-filter-0-count">
+<span class="fa-table-filter-count" id="fa-table-filter-0-count" aria-live="polite"></span>
+</div>
+<div class="table-wrapper"><table id="da-index" data-fa-filtered="true">
 <thead><tr><th>Artefact</th><th>What it declares about itself</th></tr></thead>
 <tbody>
 <tr>
@@ -1045,7 +1049,7 @@ window.addEventListener('resize',measure);window.addEventListener('load',measure
 </tr>
 <tr>
   <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/contributor-feedback.bpmn"><code>Contributor feedback on a working draft</code></a><br><span class="p">folio-assistant-core/processes/content/contributor-feedback.bpmn</span></td>
-  <td>A document is still being written, and the Authoring Committee gives feedback on it in a shared Contributor Feedback sheet.<div class="f"><span class="k">activities</span> 7</div><div class="f"><span class="k">lanes</span> Authoring Committee · Authoring agent · Editor</div><div class="f"><span class="k">skills</span> review-sheet-script</div></td>
+  <td>A document is still being written, and the Authoring Committee gives feedback on it in a shared Contributor Feedback sheet.<div class="f"><span class="k">activities</span> 8</div><div class="f"><span class="k">lanes</span> Authoring Committee · Authoring agent · Editor · QA reviewer (independent)</div><div class="f"><span class="k">skills</span> review-sheet-script</div></td>
 </tr>
 <tr>
   <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/draft-to-publication.bpmn"><code>Draft, review and publish</code></a><br><span class="p">folio-assistant-core/processes/content/draft-to-publication.bpmn</span></td>
@@ -1064,12 +1068,20 @@ window.addEventListener('resize',measure);window.addEventListener('load',measure
   <td>Frame a question for a recommendation, retrieve and appraise evidence from trusted sources, and either attach it or record the gap.<div class="f"><span class="k">activities</span> 10</div><div class="f"><span class="k">lanes</span> Author / guideline developer (person) · Evidence agent (system) · Trusted registries and observatories (external) · Work plan — beans (shared)</div><div class="f"><span class="k">skills</span> content-author, content-review, document-intake, evidence-appraisal, registry-authority-contract, todo-manager</div></td>
 </tr>
 <tr>
+  <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/public-comment-change.bpmn"><code>Make a decided public comment change</code></a><br><span class="p">folio-assistant-core/processes/content/public-comment-change.bpmn</span></td>
+  <td>Called by Process_PublicComment (CallActivity_MakeChange) once the editor's decision on a comment changes the document.<div class="f"><span class="k">activities</span> 4</div><div class="f"><span class="k">lanes</span> Author (human or agentic) · Change set — feature branch and staging · QA reviewer (independent)</div><div class="f"><span class="k">skills</span> public-comment, staging-review</div></td>
+</tr>
+<tr>
   <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/public-comment-release.bpmn"><code>Release a draft for public comment</code></a><br><span class="p">folio-assistant-core/processes/content/public-comment-release.bpmn</span></td>
-  <td>The whole public comment cycle around the comments themselves.<div class="f"><span class="k">activities</span> 7</div><div class="f"><span class="k">lanes</span> Review committee and editor · Editor · Release build and archive (pipeline)</div><div class="f"><span class="k">skills</span> document-publishing, public-comment, review-sheet-script</div></td>
+  <td>The whole public comment cycle around the comments themselves.<div class="f"><span class="k">activities</span> 7</div><div class="f"><span class="k">lanes</span> Review committee and editor · Editor · Release build and archive (pipeline)</div><div class="f"><span class="k">skills</span> document-publishing, public-comment, public-comment-channels, review-sheet-script</div></td>
 </tr>
 <tr>
   <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/public-comment.bpmn"><code>Public comment on a review draft</code></a><br><span class="p">folio-assistant-core/processes/content/public-comment.bpmn</span></td>
-  <td>A frozen, line-numbered draft went out for public review.<div class="f"><span class="k">activities</span> 12</div><div class="f"><span class="k">lanes</span> Public commenter · Intake agent · Review coordinator · Review committee · Editor · Author (human or agentic) · Change set — feature branch and staging</div><div class="f"><span class="k">skills</span> block-actions, public-comment, staging-review</div></td>
+  <td>A frozen, line-numbered draft went out for public review.<div class="f"><span class="k">activities</span> 10</div><div class="f"><span class="k">lanes</span> Public commenter · Intake agent · Review coordinator · Review committee · Editor</div><div class="f"><span class="k">skills</span> block-actions, public-comment</div></td>
+</tr>
+<tr>
+  <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/review-log-watch.bpmn"><code>Review-log watch</code></a><br><span class="p">folio-assistant-core/processes/content/review-log-watch.bpmn</span></td>
+  <td>One poll of one drafting review log (a Contributor Feedback sheet) and its folio repository.<div class="f"><span class="k">activities</span> 5</div><div class="f"><span class="k">lanes</span> Log watcher (authoring agent)</div><div class="f"><span class="k">skills</span> review-log-watch, review-sheet-script</div></td>
 </tr>
 <tr>
   <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/global-tasks.bpmn"><code>Shared steps (folio-assistant-core)</code></a><br><span class="p">folio-assistant-core/processes/global-tasks.bpmn</span></td>
@@ -1119,7 +1131,28 @@ window.addEventListener('resize',measure);window.addEventListener('load',measure
    ownership before pruning — the same line the viewer generators emit. */
 var SCOPE = "core-processes";
 </script>
-
+<script>
+(function () {
+  var input = document.getElementById("fa-table-filter-0");
+  var count = document.getElementById("fa-table-filter-0-count");
+  var table = document.querySelector("table[data-fa-filtered]");
+  if (!input || !count || !table || !table.tBodies[0]) return;
+  var rows = Array.prototype.slice.call(table.tBodies[0].rows);
+  var texts = rows.map(function (r) { return (r.textContent || "").toLowerCase(); });
+  function apply() {
+    var words = input.value.toLowerCase().split(/\s+/).filter(Boolean);
+    var shown = 0;
+    rows.forEach(function (row, n) {
+      var hit = words.every(function (w) { return texts[n].indexOf(w) !== -1; });
+      row.hidden = !hit;
+      if (hit) shown++;
+    });
+    count.textContent = shown + " of " + rows.length + " rows";
+  }
+  input.addEventListener("input", apply);
+  apply();
+})();
+</script>
 <script>
 (function () {
   var badges = document.querySelectorAll(".da-page [data-da-count]");

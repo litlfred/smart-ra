@@ -937,11 +937,11 @@ window.addEventListener('resize',measure);window.addEventListener('load',measure
 
 <p>Candidate terms extracted from every BPMN task and call activity: <code class="language-plaintext highlighter-rouge">name</code> as the label, its own <code class="language-plaintext highlighter-rouge">&lt;documentation&gt;</code> as the definition, the element id as the code. Each is the asset’s own text, verbatim and not curated, and carries the badge “candidate, extracted”. A person promotes one by authoring it. Authored terms are on their owning instance’s page, and those pages, the counts and the sources are linked from the <a href="../../../../../en/folio-assistant-core/glossary/">glossary index</a>.</p>
 
-<p>From: bootstrap 38 (<a href="../../../../../assets/glossary/bootstrap--kg-bpmn-activities.skos.jsonld">SKOS</a>) · bootstrap-tools 7 (<a href="../../../../../assets/glossary/bootstrap-tools--kg-bpmn-activities.skos.jsonld">SKOS</a>) · cat-harness 581 (<a href="../../../../../assets/glossary/cat-harness--kg-bpmn-activities.skos.jsonld">SKOS</a>) · fhir-harness 45 (<a href="../../../../../assets/glossary/fhir-harness--kg-bpmn-activities.skos.jsonld">SKOS</a>) · folio-assistant-core 222 (<a href="../../../../../assets/glossary/folio-assistant-core--kg-bpmn-activities.skos.jsonld">SKOS</a>) · smart-base 117 (<a href="../../../../../assets/glossary/smart-base--kg-bpmn-activities.skos.jsonld">SKOS</a>) · who-iris 34 (<a href="../../../../../assets/glossary/who-iris--kg-bpmn-activities.skos.jsonld">SKOS</a>).</p>
+<p>From: bootstrap 38 (<a href="../../../../../assets/glossary/bootstrap--kg-bpmn-activities.skos.jsonld">SKOS</a>) · bootstrap-tools 7 (<a href="../../../../../assets/glossary/bootstrap-tools--kg-bpmn-activities.skos.jsonld">SKOS</a>) · cat-harness 581 (<a href="../../../../../assets/glossary/cat-harness--kg-bpmn-activities.skos.jsonld">SKOS</a>) · fhir-harness 45 (<a href="../../../../../assets/glossary/fhir-harness--kg-bpmn-activities.skos.jsonld">SKOS</a>) · folio-assistant-core 230 (<a href="../../../../../assets/glossary/folio-assistant-core--kg-bpmn-activities.skos.jsonld">SKOS</a>) · smart-base 117 (<a href="../../../../../assets/glossary/smart-base--kg-bpmn-activities.skos.jsonld">SKOS</a>) · who-iris 34 (<a href="../../../../../assets/glossary/who-iris--kg-bpmn-activities.skos.jsonld">SKOS</a>).</p>
 
 <p>One of 3 pages of this type, split by the first letter of the label: <a href="../../../../../en/folio-assistant-core/glossary/bpmn-activities/">all parts</a>.</p>
 
-<p><strong>Size:</strong> this page holds 367 terms and is 341 KB before compression, fetched in one request, within its budget of 1.0 MB. There is no search index: the filter below runs over this page, and the A–Z bar jumps within it.</p>
+<p><strong>Size:</strong> this page holds 369 terms and is 343 KB before compression, fetched in one request, within its budget of 1.0 MB. There is no search index: the filter below runs over this page, and the A–Z bar jumps within it.</p>
 
 <div class="table-wrapper"><table class="fa-gloss-mapping">
 <caption>Already somebody else's concept? — <code>check:term-mapping</code>, bean <code>7wou</code></caption>
@@ -952,11 +952,11 @@ window.addEventListener('resize',measure);window.addEventListener('load',measure
 A vocabulary that could not be reached has said nothing, and the column above keeps that 
 apart from a checked miss. The counts are reported and not graded: an unmapped candidate may 
 be a term this corpus is right to coin.</p>
-<p class="fa-gloss-mapping-perterm"><strong>Per term.</strong> Every term on this page is in no single state on <code>fhir</code>, so each entry states its own, and in no single state on <code>skos</code>, so each entry states its own, unless its entry says otherwise. 367 entries say otherwise.</p>
+<p class="fa-gloss-mapping-perterm"><strong>Per term.</strong> Every term on this page is in no single state on <code>fhir</code>, so each entry states its own, and in no single state on <code>skos</code>, so each entry states its own, unless its entry says otherwise. 369 entries say otherwise.</p>
 
 <p><label for="fa-gloss-q">Filter terms</label>
 <input id="fa-gloss-q" type="search" autocomplete="off" style="min-height:44px;width:100%;max-width:32rem" /></p>
-<p aria-live="polite"><span id="fa-gloss-n">367</span> shown</p>
+<p aria-live="polite"><span id="fa-gloss-n">369</span> shown</p>
 
 <nav aria-label="Letters"><a href="#letter-R">R</a> <a href="#letter-S">S</a> <a href="#letter-T">T</a> <a href="#letter-U">U</a> <a href="#letter-V">V</a> <a href="#letter-W">W</a></nav>
 <h2 id="letter-R">
@@ -1118,6 +1118,14 @@ Read the built Questionnaire JSON <span class="fa-gloss-status">candidate, extra
 <dd>
 <p>fsh-generated/resources/Questionnaire-&lt;id&gt;.json, or the IG's published Questionnaire-&lt;id&gt;.json — never FSH. The JSON is what every renderer and reader receives, so it is what is judged.</p>
 <p class="fa-gloss-meta">BPMN activities of fhir-harness · source <a href="https://github.com/litlfred/fhir-harness/blob/main/processes/content/questionnaire-wireframe-review.bpmn"><code>fhir-harness/processes/content/questionnaire-wireframe-review.bpmn#Task_Read</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="folio-assistant-core--kg-bpmn-activities--process_reviewlogwatch.task_readsheet" data-fa-state="extracted" data-fa-gloss="">
+Read the Contributor Feedback tab <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Reads Watch!F1:I1, the hash of the person-set cells that the sheet script writes on every refresh (Q-WATCH4 A), and Contributor Feedback's header row and Issue column, and saves them as JSON for the check. A sheet without the Watch hash yet is read whole. Reading is not agent work: it changes nothing.</p>
+<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/review-log-watch.bpmn"><code>folio-assistant-core/processes/content/review-log-watch.bpmn#Task_ReadSheet</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="who-iris--kg-bpmn-activities--process_iriscdnnightly.task_readcursor" data-fa-state="extracted" data-fa-gloss="">
@@ -2360,12 +2368,12 @@ Review the change <span class="fa-gloss-status">candidate, extracted</span>
 <p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/content-change-review.bpmn"><code>folio-assistant-core/processes/content/content-change-review.bpmn#Call_CommitteeReview</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
-<dt id="folio-assistant-core--kg-bpmn-activities--process_publiccomment.callactivity_changeset" data-fa-state="extracted" data-fa-gloss="">
+<dt id="folio-assistant-core--kg-bpmn-activities--process_publiccommentchange.callactivity_changeset" data-fa-state="extracted" data-fa-gloss="">
 Review the change set on its staging preview <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
 <p>The existing content-change review, unchanged, of the author's branch: its PR lists the PC refs it answers, and its staging preview is the after side of every deep link. A change the reviewers send back returns to the author inside that process.</p>
-<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/public-comment.bpmn"><code>folio-assistant-core/processes/content/public-comment.bpmn#CallActivity_ChangeSet</code></a></p>
+<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/public-comment-change.bpmn"><code>folio-assistant-core/processes/content/public-comment-change.bpmn#CallActivity_ChangeSet</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_dsadocumentlifecycle.task_review" data-fa-state="extracted" data-fa-gloss="">
@@ -2680,6 +2688,14 @@ Run the release security gate [security:gate] <span class="fa-gloss-status">cand
 <p class="fa-gloss-meta">BPMN activities of cat-harness · source <a href="https://github.com/litlfred/cat-harness/blob/main/processes/sdlc/docs-site-publish.bpmn"><code>cat-harness/processes/sdlc/docs-site-publish.bpmn#Task_SecurityGate</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
+<dt id="folio-assistant-core--kg-bpmn-activities--process_reviewlogwatch.task_runcheck" data-fa-state="extracted" data-fa-gloss="">
+Run the review-log-watch check <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Runs Tool review-log-watch with the folio repository, the saved values and the log's state file. The tool reads the repository's open and closed issues (no pull requests, no issue labelled no-sheet) and compares a digest of them and of the cells people set (Title, Selected Sections, Contributor Feedback, Disposition, Ready for agent, Ready for merge, Dispositions confirmed) with the last check's. It writes nothing.</p>
+<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/review-log-watch.bpmn"><code>folio-assistant-core/processes/content/review-log-watch.bpmn#Task_RunCheck</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
 <dt id="cat-harness--kg-bpmn-activities--process_upstreamadoption.task_gates" data-fa-state="extracted" data-fa-gloss="">
 Run the row's gates tests · e2e · site-links <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
@@ -2990,7 +3006,7 @@ Set Ready for agent to Yes <span class="fa-gloss-status">candidate, extracted</s
 Set Ready for merge to Yes <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
-<p>An Editor sets the row's Ready for merge (Orange) to Yes. Person-only.</p>
+<p>An Editor sets the row's Ready for merge (Orange) to Yes once the QA gate has passed for the pull request's head commit. Person-only. Set earlier, the agent does not merge until the gate passes, and its feedback says so.</p>
 <p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/contributor-feedback.bpmn"><code>folio-assistant-core/processes/content/contributor-feedback.bpmn#Task_ReadyForMerge</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
@@ -3006,7 +3022,7 @@ Set up IG repository from template <span class="fa-gloss-status">candidate, extr
 Set up the comment channels, with instructions and links <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
-<p>Before anything is sent, the editor sets up each channel the review will use: the review sheet, the GitHub issue forms, an offline Excel sheet and a Google Form, each constrained to the release's fixed references, with precise instructions, all links, and how submitters are recorded. Skills: public-comment, review-sheet-script.</p>
+<p>Before anything is sent, the editor sets up each channel the review will use: the review sheet, the GitHub issue forms, an offline Excel sheet and a Google Form, each constrained to the release's fixed references, with precise instructions, all links, and how submitters are recorded. Skills: public-comment-channels, public-comment, review-sheet-script.</p>
 <p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/public-comment-release.bpmn"><code>folio-assistant-core/processes/content/public-comment-release.bpmn#Task_SetUpChannels</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
@@ -3870,7 +3886,7 @@ Write structure.json (TOC, page ranges, metadata) <span class="fa-gloss-status">
 Write the announcement, with links <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
-<p>A short communication for the public: what is under review, the comment period, a high-level description of the process, and links to the release, every channel and the published process. Skill: public-comment.</p>
+<p>A short communication for the public: what is under review, the comment period, a high-level description of the process, and links to the release, every channel and the published process. Skills: public-comment-channels, public-comment.</p>
 <p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/public-comment-release.bpmn"><code>folio-assistant-core/processes/content/public-comment-release.bpmn#Task_WriteAnnouncement</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
