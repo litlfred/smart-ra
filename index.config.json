@@ -171,7 +171,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/folio-assistant-core",
-          "ref": "6cd0644e7d38e46c1876816574562554656db224",
+          "ref": "1b15034d90dc1995223ed1c1df6a2d9856dc1e4b",
           "overrides": {
             "folio-assistant-core": {
               "whole": true
@@ -186,9 +186,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-31",
-              "ref": "6cd0644e7d38e46c1876816574562554656db224",
-              "evidence": "litlfred asked 2026-10-31 13:22Z (Folio Assistant project thread) to add organizations and acronyms with schema support; the change is folio-assistant-core#412, merged"
+              "on": "2026-11-01",
+              "ref": "1b15034d90dc1995223ed1c1df6a2d9856dc1e4b",
+              "evidence": "litlfred, 2026-11-01 18:30:17Z in the 'Make section headers and comments easier to read' thread: 'no merge yet... i want to see it' — preview-only staging branch pinning the unmerged PR heads (cat-harness-tools#1308, cat-harness#929, folio-assistant-core#508)."
             }
           }
         }
@@ -199,7 +199,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness",
-          "ref": "b5ffdff01932907c9ae55bb51cf430965add62a4",
+          "ref": "880b1f565c9c764932862186a0fc5c78613ab02f",
           "overrides": {
             "cat-harness": {
               "whole": true
@@ -214,9 +214,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-31",
-              "ref": "b5ffdff01932907c9ae55bb51cf430965add62a4",
-              "evidence": "litlfred, 2026-10-31 01:59:58Z (via coordinator): 'merge repin winfow + 3hts' (window to ~05:00Z); main tip b5ffdff (re-pin cat-harness and tools past the archimate fix (cat-harness#831, tools#1070))."
+              "on": "2026-11-01",
+              "ref": "880b1f565c9c764932862186a0fc5c78613ab02f",
+              "evidence": "litlfred, 2026-11-01 18:30:17Z in the 'Make section headers and comments easier to read' thread: 'no merge yet... i want to see it' — preview-only staging branch pinning the unmerged PR heads (cat-harness-tools#1308, cat-harness#929, folio-assistant-core#508)."
             }
           }
         }
@@ -227,7 +227,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness-tools",
-          "ref": "6d02c6a004edeba45bb17880f28fa9067613986b",
+          "ref": "ca9b2d4645795a8f076bf8318dfca9dc772a9101",
           "overrides": {
             "cat-harness-tools": {
               "whole": true
@@ -239,9 +239,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-31",
-              "ref": "6d02c6a004edeba45bb17880f28fa9067613986b",
-              "evidence": "litlfred asked 2026-10-31 13:22Z (Folio Assistant project thread) for organizations and acronyms; folio-assistant-core 6cd0644 (#412) needs a cat-harness-tools that loads event subprocesses (core#399), so tools moves to main"
+              "on": "2026-11-01",
+              "ref": "ca9b2d4645795a8f076bf8318dfca9dc772a9101",
+              "evidence": "litlfred, 2026-11-01 18:30:17Z in the 'Make section headers and comments easier to read' thread: 'no merge yet... i want to see it' — preview-only staging branch pinning the unmerged PR heads (cat-harness-tools#1308, cat-harness#929, folio-assistant-core#508)."
             }
           }
         }
