@@ -9,7 +9,7 @@
     {
       "harness": "smart-base",
       "repository": "litlfred/smart-base",
-      "ref": "a3e89d4fdf7419391d20d4ef6acdf22bb7a27872"
+      "ref": "e11a0473880b7ab3c88c9ddce4f724d3d6b2f89e"
     },
     {
       "harness": "fhir-harness",
@@ -220,14 +220,14 @@
     {
       "instance": "smart-base",
       "repository": "litlfred/smart-base",
-      "sha": "a3e89d4fdf7419391d20d4ef6acdf22bb7a27872",
+      "sha": "e11a0473880b7ab3c88c9ddce4f724d3d6b2f89e",
       "upstreamRoot": "smart-base",
       "path": "smart-base",
       "via": "smart-base",
       "pinnedBy": "declared",
       "declaration": {
         "file": "smart-base.json",
-        "sha256": "3737ea9c9d7766a84b304e737cc3665f8df7da61e96cdae404255d0f3a0f033d"
+        "sha256": "c35192fa37875088ce3dcae8182b809226b8c3b49f19d15ddf551a16fbade572"
       },
       "directories": [
         {
@@ -269,21 +269,21 @@
           "id": "methodologies",
           "path": "smart-base/methodologies",
           "upstreamPath": "smart-base/methodologies",
-          "treeDigest": "8ef4e955f17311223455ff0039d2eaa6409ac9aaa9a39266d476c4799b1c59f5",
+          "treeDigest": "86eb960936709968ba9d67b0dfc1f71e81688704259cf7452a9db0d7f2b0c0e4",
           "files": 7
         },
         {
           "id": "processes",
           "path": "smart-base/methodologies/processes",
           "upstreamPath": "smart-base/methodologies/processes",
-          "treeDigest": "a66bdacff8619b4cd6697a24c8596b2b2abafceb5ae73c7cc295c4d018bab314",
+          "treeDigest": "f2b48482d40497763bcd6c33dba4de5961f94b6274edc76ecfd907486f1f32a8",
           "files": 4
         },
         {
           "id": "smart-base-house-processes",
           "path": "smart-base/processes",
           "upstreamPath": "smart-base/processes",
-          "treeDigest": "15d13f0079e532fd80066b8ad8221526f7a6a6551b7fdcc7a2e4a4c2387e8797",
+          "treeDigest": "b0696ac2caa1b6ef45d73c13abb9096f2c4e1ebcc30558d6f3b7bb610097790c",
           "files": 19
         },
         {
@@ -346,7 +346,7 @@
           "id": "smart-base-schemas",
           "path": "smart-base/schemas",
           "upstreamPath": "smart-base/schemas",
-          "treeDigest": "4a8da447d0b7fdfdf4ac1f2b99fe114cad04c852a81cbdb7d8e29855da6da9d8",
+          "treeDigest": "3379dbd70975380be8a4b5475a76e358c3de32df0a34b73802d763f66c9d8c22",
           "files": 38
         },
         {
@@ -360,8 +360,8 @@
           "id": "smart-base-scripts",
           "path": "smart-base/scripts",
           "upstreamPath": "smart-base/scripts",
-          "treeDigest": "bc0c412688e2dc81c747ccd07dc514ff5270e4c29744af17f39805b3e56e14c8",
-          "files": 59
+          "treeDigest": "a8e1dd1f6ef11b67fe937bc2184cf83561a9ef2e17194a1c3809bda18bdc633a",
+          "files": 63
         },
         {
           "id": "smart-base-kg",
@@ -374,7 +374,7 @@
           "id": "smart-base-skills",
           "path": "smart-base/skills",
           "upstreamPath": "smart-base/skills",
-          "treeDigest": "c9f2f950d1956ef43b23ed81f13f95dd7043573a6f69f0811dd0f375f67d0334",
+          "treeDigest": "a333d159ddf7547b4f78c064efe81b6845c342b8f577683c83d52c3474c86db3",
           "files": 35
         },
         {
@@ -388,7 +388,7 @@
           "id": "smart-base-code-lists",
           "path": "smart-base/code-lists",
           "upstreamPath": "smart-base/code-lists",
-          "treeDigest": "ff8304b3fd18475d968af6a2057e10d6b8cae226aae6bf09e6da41c3348bbb3e",
+          "treeDigest": "730481afa4d9735235d5d827fcca65cf5c57b860a467923852368cc0aa77ef7a",
           "files": 8
         }
       ],
@@ -403,14 +403,14 @@
         },
         {
           "src": "package.json",
-          "sha256": "dc2384085132320b24c3465450a724d444e8522f1a73b425217cb55bc8479763"
+          "sha256": "21ed5d7b74900fe0f069149972fd96e79a7376994a346f85710321ebf5469871"
         }
       ],
       "trust": {
         "basis": "consent",
         "by": "litlfred",
-        "on": "2026-10-30",
-        "ref": "a3e89d4fdf7419391d20d4ef6acdf22bb7a27872",
+        "on": "2026-11-01",
+        "ref": "e11a0473880b7ab3c88c9ddce4f724d3d6b2f89e",
         "approver": "unverified"
       }
     },
