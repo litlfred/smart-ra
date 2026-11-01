@@ -171,7 +171,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/folio-assistant-core",
-          "ref": "6cd0644e7d38e46c1876816574562554656db224",
+          "ref": "adc6e9047fbca421aa06ab9510ecafbd535a28ec",
           "overrides": {
             "folio-assistant-core": {
               "whole": true
@@ -186,9 +186,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-31",
-              "ref": "6cd0644e7d38e46c1876816574562554656db224",
-              "evidence": "litlfred asked 2026-10-31 13:22Z (Folio Assistant project thread) to add organizations and acronyms with schema support; the change is folio-assistant-core#412, merged"
+              "on": "2026-11-01",
+              "ref": "adc6e9047fbca421aa06ab9510ecafbd535a28ec",
+              "evidence": "litlfred, 2026-11-01 ~18:10Z in the Integrated view thread: rename the landing entry 'dpi-h-ra (933 blocks)' to the document title with '- Working Draft', and drop the odd 'The document' link. Preview-only pin of branch claude/landing-document-titles (folio-assistant-core#510); not for main."
             }
           }
         }
@@ -227,7 +227,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness-tools",
-          "ref": "c0038d1ce68178d0bbe6c26d4a162cd4d3fd5dac",
+          "ref": "92790d661d9cf7dbf69641c19465fb3f990e2b62",
           "overrides": {
             "cat-harness-tools": {
               "whole": true
@@ -240,8 +240,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-11-01",
-              "ref": "c0038d1ce68178d0bbe6c26d4a162cd4d3fd5dac",
-              "evidence": "litlfred, 2026-11-01 16:40:15Z in the Integrated view thread: 'can we apply a similar poster theme to other views? ... can you do a few an show me review staging url w/ so i can see in context'. Preview-only pin of branch claude/poster-theme-views (cat-harness-tools); not for main."
+              "ref": "92790d661d9cf7dbf69641c19465fb3f990e2b62",
+              "evidence": "litlfred, 2026-11-01 16:40:15Z in the Integrated view thread: 'can we apply a similar poster theme to other views? ... can you do a few an show me review staging url w/ so i can see in context'. Preview-only pin of branch claude/poster-theme-views (cat-harness-tools); not for main. Re-pinned 18:15Z to fix the key overflow the owner reported at 18:11Z ('text overflow on key in Fig 2.3')."
             }
           }
         }

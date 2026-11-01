@@ -11,7 +11,10 @@ import { chapterRef, paper } from "../schema/builders";
  */
 export default paper({
   title: "Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector",
-  meta: { subtitle: "A Digital Transformation Handbook for Digital Public Infrastructure for Health (DPI-H)" },
+  meta: {
+    subtitle: "A Digital Transformation Handbook for Digital Public Infrastructure for Health (DPI-H)",
+    status: "Working Draft",
+  },
   authors: ["World Health Organization","International Telecommunication Union"],
   date: "2026-07-08",
   chapters: [
