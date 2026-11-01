@@ -27,18 +27,18 @@ jobs:
       - name: Render (before playwright --with-deps)
         run: |
           node_modules/.bin/playwright install chromium
-          cp -r smart-base smart-base.orig
-          bun run cat smart-base:processes:render:check || true
+          mkdir -p "$RUNNER_TEMP/orig" && cp -r smart-base/. "$RUNNER_TEMP/orig/"
+          bun run smart-base/scripts/render-processes.ts --check || true
       - run: node_modules/.bin/playwright install --with-deps chromium
       - name: Fonts AFTER playwright deps
         run: fc-list | sort | md5sum; fc-match Arial; fc-match sans-serif; fc-list | grep -i -E 'arial|liberation|arimo' | head
       - name: Render (after) and diff
         run: |
-          bun run cat smart-base:processes:render:check || true
-          bun run cat smart-base:processes:render || true
+          bun run smart-base/scripts/render-processes.ts --check || true
+          bun run smart-base/scripts/render-processes.ts || true
           for f in smart-base/processes/content/dak-l3-ig.svg smart-base/processes/content/SGAuthoring.DAKLifecycle.svg; do
             echo "=== $f"
-            python3 - "$f" "smart-base.orig/${f#smart-base/}" <<'PY'
+            python3 - "$f" "$RUNNER_TEMP/orig/${f#smart-base/}" <<'PY'
           import sys,difflib,re
           a=open(sys.argv[2]).read(); b=open(sys.argv[1]).read()
           print('orig',len(a),'new',len(b))
