@@ -346,7 +346,7 @@ ELEMENTS = {
     ),
 }
 
-# Reused elements from 0.2.0 and 0.3.0-draft.1 (dth_sc.py, dth_pc.py, dth_phc.py)
+# Reused elements from 0.2.0 and 0.3.0-draft.2 (dth_sc.py, dth_pc.py, dth_phc.py)
 EXISTING = {
     "nra": "id-8e67c8e9e1195cdc857b03a2c640e7fe",                     # National Regulatory Authority (BusinessRole, dth_sc.py; id-sc-role-nmra)
     "product-registry": "id-59c26d672a4248e0bb83cf4d26cba10c",        # Product Registry (ApplicationComponent, 0.2.0)

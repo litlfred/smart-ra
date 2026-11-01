@@ -12,7 +12,7 @@ Models the shared digital health implementation and health-system roles and
 actors used by more than one DTH as ArchiMate BusinessRoles and BusinessActors
 with stable UUID5 IRIs, so DTH persona blocks and BPMN swimlanes link to one
 definition in smart-ra. Also links to the shared end-user and regulatory roles
-already introduced in 0.3.0-draft.1 (Health worker, Health service user,
+already introduced in 0.3.0-draft.2 (Health worker, Health service user,
 National Regulatory Authority) and the existing 0.2.0 Stakeholders (Ministry of
 Health, Health Workers, Patients).
 
@@ -113,7 +113,7 @@ ELEMENTS = {
     ),
 }
 
-# Reused elements from 0.2.0 and 0.3.0-draft.1 (dth_sc.py, dth_phc.py)
+# Reused elements from 0.2.0 and 0.3.0-draft.2 (dth_sc.py, dth_phc.py)
 EXISTING = {
     "ministry-of-health": "id-1c5c0bc9234e4282b654dbc71b9da706",   # Ministry of Health (Stakeholder, 0.2.0)
     "health-workers-sh": "id-8d3dd8b68d504c2a9fe8cf414b16c127",    # Health Workers (Stakeholder, 0.2.0)
