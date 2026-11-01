@@ -21,6 +21,8 @@ A spec (e.g. dth_sc.py) is a Python file defining:
             ("box", key) | ("group", key, cols, [children])
             | ("row", [children]) | ("col", [children])
   VIEW_CONNECTIONS {view name: [(type, sourceKey, targetKey)]}  drawn lines
+  RENAMES   optional {key: new name} for EXISTING elements; the old name is
+            kept as property formerName, and a renamed element is left alone
 
 Ids are uuid5 of the spec's namespace and the key, so they are stable across
 runs: a later edit of the spec keeps every id it does not change. Shared
@@ -84,6 +86,9 @@ FOLDER_OF = {
                  "Representation Product"),
     "application": ("ApplicationComponent ApplicationCollaboration ApplicationInterface ApplicationFunction "
                     "ApplicationInteraction ApplicationProcess ApplicationEvent ApplicationService DataObject"),
+    "technology": ("Node Device SystemSoftware TechnologyCollaboration TechnologyInterface Path "
+                   "CommunicationNetwork TechnologyFunction TechnologyProcess TechnologyInteraction "
+                   "TechnologyEvent TechnologyService Artifact"),
     "motivation": "Stakeholder Driver Assessment Goal Outcome Principle Requirement Constraint Meaning Value",
     "strategy": "Resource Capability ValueStream CourseOfAction",
     "other": "Location Grouping Junction",
@@ -163,6 +168,19 @@ def main(argv):
         if f'id="{eid}"' not in xml:
             raise SystemExit(f"EXISTING {key} = {eid} is not in the base model")
     added = 0
+    for key, new in getattr(s, "RENAMES", {}).items():
+        eid = s.EXISTING[key]
+        m = re.search(r'(<element [^>]*?)name="([^"]*)"([^>]*?id="' + re.escape(eid) + r'"[^>]*?)(/?)>', xml)
+        if not m or m.group(2) == esc(new):
+            continue
+        prop = f'\n      <property key="formerName" value="{m.group(2)}"/>'
+        head = f'{m.group(1)}name="{esc(new)}"{m.group(3)}>'
+        if m.group(4):  # self-closing: give it a body
+            xml = xml[:m.start()] + head + prop + "\n    </element>" + xml[m.end():]
+        else:  # properties come after any documentation, before </element>
+            close = xml.index("</element>", m.end())
+            xml = xml[:m.start()] + head + xml[m.end():close].rstrip() + prop + "\n    " + xml[close:]
+        added += 1
     for key, (etype, name, doc, props) in s.ELEMENTS.items():
         eid = ids("element", key)
         idx[key] = eid
