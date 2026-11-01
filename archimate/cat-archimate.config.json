@@ -9,16 +9,10 @@
       "description": "The current ArchiMate model of the DPI-H reference architecture, for the IG's version 0.2.0 (sushi-config.yaml)."
     },
     {
-      "id": "0.3.0-draft.2",
-      "file": "0.3.0-draft.2/WHOBaseFile.archimate",
-      "title": "WHO Reference Architecture 0.3.0-draft.2",
-      "description": "0.3.0-draft.1 plus the DTH views and elements for primary health care person-centred point of service (dth-phc), shared DTH roles and actors, and substandard and falsified medical products reporting (dth-sfp), and the fhir-actor and logical-model property tags, made by tools/archimate-dth/add_views.py with dth_phc.py, dth_shared_roles.py and dth_sfp.py (and the updated dth_sc.py and dth_pc.py). draft.1 stays as published."
-    },
-    {
       "id": "0.3.0-draft.1",
       "file": "0.3.0-draft.1/WHOBaseFile.archimate",
       "title": "WHO Reference Architecture 0.3.0-draft.1",
-      "description": "0.2.0 plus the supply chain views and elements from the DTH for health supply chain architecture (dth-sc), made by tools/archimate-dth/add_views.py with dth_sc.py. Draft: the product catalogue views (dth-pc) are to be added to the same folder."
+      "description": "0.2.0 plus the DTH views and elements for supply chain (dth-sc), product catalogue (dth-pc), primary health care person-centred point of service (dth-phc), shared DTH roles and actors, and substandard and falsified medical products reporting (dth-sfp), made by tools/archimate-dth/add_views.py with dth_sc.py, dth_pc.py, dth_phc.py, dth_shared_roles.py and dth_sfp.py."
     },
     {
       "id": "0.2.0-draft.3",
