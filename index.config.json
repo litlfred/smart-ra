@@ -171,7 +171,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/folio-assistant-core",
-          "ref": "7885df2b651f86efa105da9523db79a26c35e0f4",
+          "ref": "f94cd80325a7cfa098b01dadd490aa238769d4c4",
           "overrides": {
             "folio-assistant-core": {
               "whole": true
@@ -187,8 +187,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-11-01",
-              "ref": "7885df2b651f86efa105da9523db79a26c35e0f4",
-              "evidence": "litlfred tapped Q-NAV-3 A 'All five layers to main' 2026-11-01 17:54:45Z and Q-NAV-2 A 'Merge #1262 and re-pin' 16:47:10Z (Folio Assistant thread 'Collapse bibliography entries in left navbar'); 18:41Z chose B on Q-NAV-4 (merge #213 on green). Moved to main past the lower-layer gate fixes (cat-harness#924, cat-harness-tools#1304/#1306)."
+              "ref": "f94cd80325a7cfa098b01dadd490aa238769d4c4",
+              "evidence": "litlfred, 2026-11-01 21:37:23Z card Q-STY-4 A 'Re-pin now' in the 'Make section headers and comments easier to read' thread: re-pin to main after cat-harness#929, cat-harness-tools#1308, folio-assistant-core#508 merged (block panel, headings, comments pane)."
             }
           }
         }
@@ -199,7 +199,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness",
-          "ref": "514f4b49245e10e2edf5d876e30977636d6e930a",
+          "ref": "676c507b6a8eb708dbed191e66cf9621fca11ec1",
           "overrides": {
             "cat-harness": {
               "whole": true
@@ -215,8 +215,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-11-01",
-              "ref": "514f4b49245e10e2edf5d876e30977636d6e930a",
-              "evidence": "litlfred tapped Q-NAV-3 A 'All five layers to main' 2026-11-01 17:54:45Z and Q-NAV-2 A 'Merge #1262 and re-pin' 16:47:10Z (Folio Assistant thread 'Collapse bibliography entries in left navbar'); 18:41Z chose B on Q-NAV-4 (merge #213 on green). Moved to main past the lower-layer gate fixes (cat-harness#924, cat-harness-tools#1304/#1306)."
+              "ref": "676c507b6a8eb708dbed191e66cf9621fca11ec1",
+              "evidence": "litlfred, 2026-11-01 21:37:23Z card Q-STY-4 A 'Re-pin now' in the 'Make section headers and comments easier to read' thread: re-pin to main after cat-harness#929, cat-harness-tools#1308, folio-assistant-core#508 merged (block panel, headings, comments pane)."
             }
           }
         }
@@ -227,7 +227,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness-tools",
-          "ref": "38158568ab583572769a21121b70500eb752e8b9",
+          "ref": "fd9482751b06d4098b1201cfe84cc4e0b69c8a4b",
           "overrides": {
             "cat-harness-tools": {
               "whole": true
@@ -240,8 +240,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-11-01",
-              "ref": "38158568ab583572769a21121b70500eb752e8b9",
-              "evidence": "litlfred tapped Q-NAV-7 A 'Merge after #1320, 1 red' 2026-11-01 19:33:25Z (Folio Assistant thread 'Collapse bibliography entries in left navbar', cmsg_017WNUkNK8kdDziPK58Pv6G9MDTWQMPcqcoDsSX9hUyxke): re-pin tools to main past cat-harness-tools#1320 (standalone checks skipped in layer mode)."
+              "ref": "fd9482751b06d4098b1201cfe84cc4e0b69c8a4b",
+              "evidence": "litlfred, 2026-11-01 21:37:23Z card Q-STY-4 A 'Re-pin now' in the 'Make section headers and comments easier to read' thread: re-pin to main after cat-harness#929, cat-harness-tools#1308, folio-assistant-core#508 merged (block panel, headings, comments pane)."
             }
           }
         }
