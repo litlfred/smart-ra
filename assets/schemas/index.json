@@ -3257,7 +3257,8 @@
       "module": "folio-assistant-core/schemas/acronyms.ts",
       "instance": "folio-assistant-core",
       "name": "acronyms",
-      "graphNode": "undeclared",
+      "graphNode": "none",
+      "reason": "functions that find acronyms in prose; no schema",
       "summary": "Acronyms in prose, and whether a glossary a folio can see already holds",
       "isTest": false
     },
@@ -3361,7 +3362,7 @@
       "module": "folio-assistant-core/schemas/figure-data.ts",
       "instance": "folio-assistant-core",
       "name": "figure-data",
-      "graphNode": "undeclared",
+      "graphNode": "schema",
       "summary": "The shapes of figure data held on a library entry's `figure-data/`: a",
       "isTest": false
     },

@@ -582,7 +582,7 @@
 -->
 <!-- The harness icon row's own style, which railed pages load without docs-ui.css (beans `lhvt`, `9rq1`). -->
 <link rel="stylesheet" href="../../../assets/css/navbar-row.css?v=7d7d00921e0f">
-<link rel="stylesheet" href="../../../assets/css/docs-ui.css?v=2ed7923cda66">
+<link rel="stylesheet" href="../../../assets/css/docs-ui.css?v=18eb22b50395">
 <!-- Narrow viewports: wide content scrolls in its own box, never the page
      (bean `2r2n`). The standalone viewers inline the same file through
      `withViewerNav`, so both kinds of page read one set of rules. -->
@@ -641,11 +641,11 @@
 <script src="../../../assets/js/kg-render.js" defer></script>
 <!-- BEFORE docs-ui.js, which calls it: the one drawing of the harness icon row (beans `lhvt`, `9rq1`). -->
 <script src="../../../assets/js/navbar-row.js?v=6bb19e1d17a5" defer></script>
-<script src="../../../assets/js/docs-ui.js?v=9ffac52f2026" defer></script>
+<script src="../../../assets/js/docs-ui.js?v=52e4c68c64c7" defer></script>
 <!-- The edit, source and feedback links of every page, from the platform's one
   recipe (cat-harness-tools/src/core/edit-links.ts, bean v433): links carry their
   facts and this builds the hrefs. -->
-<script src="../../../assets/js/edit-links.js?v=81bb303b6bc2" defer></script>
+<script src="../../../assets/js/edit-links.js?v=4f82faf45c35" defer></script>
 
 <!--
   The work-plan dashboard. SELF-MOUNTING on any page carrying
@@ -933,7 +933,7 @@ Called from <a href="draft-to-publication.html">Process_Publication</a>. Skills:
       <td><strong>Build the public comment release</strong><br /><code class="language-plaintext highlighter-rouge">Task_BuildPcRelease</code></td>
       <td>Release build and archive (pipeline)</td>
       <td><code class="language-plaintext highlighter-rouge">document-publishing</code></td>
-      <td>Freeze the draft as “Draft for Public Comment Release vX”: a PDF with fixed line numbers and a site copy under a permanent PC/&lt;version&gt;/ path (not STAGING, never deleted on merge). Every channel cites this release’s pages, lines and block ids. Line numbers run continuously through the document. Run <code class="language-plaintext highlighter-rouge">bun run cat pc:pdf</code> for the line-numbered PDF and its line map, then <code class="language-plaintext highlighter-rouge">bun run cat pc:release freeze</code> for the write-once copy under PC/&lt;version&gt;/. Skill: document-publishing.</td>
+      <td>Freeze the draft as “Draft for Public Comment Release vX”: a PDF with fixed line numbers and a site copy under a permanent PC/&lt;version&gt;/ path (not STAGING, never deleted on merge). Every channel cites this release’s pages, lines and block ids. Line numbers run continuously through the document. Freeze from a FULL build (owner, 2026-11-01): dispatch the preview workflow for the branch with build_type: full first, because a preview borrows main’s search index and slices; pc:release freeze refuses a preview build. Run <code class="language-plaintext highlighter-rouge">bun run cat pc:pdf</code> for the line-numbered PDF and its line map, then <code class="language-plaintext highlighter-rouge">bun run cat pc:release freeze</code> for the write-once copy under PC/&lt;version&gt;/. Skill: document-publishing.</td>
     </tr>
     <tr>
       <td><strong>Set up the comment channels, with instructions and links</strong><br /><code class="language-plaintext highlighter-rouge">Task_SetUpChannels</code></td>

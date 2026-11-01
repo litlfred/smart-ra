@@ -582,7 +582,7 @@
 -->
 <!-- The harness icon row's own style, which railed pages load without docs-ui.css (beans `lhvt`, `9rq1`). -->
 <link rel="stylesheet" href="../../../../../assets/css/navbar-row.css?v=7d7d00921e0f">
-<link rel="stylesheet" href="../../../../../assets/css/docs-ui.css?v=2ed7923cda66">
+<link rel="stylesheet" href="../../../../../assets/css/docs-ui.css?v=18eb22b50395">
 <!-- Narrow viewports: wide content scrolls in its own box, never the page
      (bean `2r2n`). The standalone viewers inline the same file through
      `withViewerNav`, so both kinds of page read one set of rules. -->
@@ -641,11 +641,11 @@
 <script src="../../../../../assets/js/kg-render.js" defer></script>
 <!-- BEFORE docs-ui.js, which calls it: the one drawing of the harness icon row (beans `lhvt`, `9rq1`). -->
 <script src="../../../../../assets/js/navbar-row.js?v=6bb19e1d17a5" defer></script>
-<script src="../../../../../assets/js/docs-ui.js?v=9ffac52f2026" defer></script>
+<script src="../../../../../assets/js/docs-ui.js?v=52e4c68c64c7" defer></script>
 <!-- The edit, source and feedback links of every page, from the platform's one
   recipe (cat-harness-tools/src/core/edit-links.ts, bean v433): links carry their
   facts and this builds the hrefs. -->
-<script src="../../../../../assets/js/edit-links.js?v=81bb303b6bc2" defer></script>
+<script src="../../../../../assets/js/edit-links.js?v=4f82faf45c35" defer></script>
 
 <!--
   The work-plan dashboard. SELF-MOUNTING on any page carrying
@@ -977,7 +977,11 @@
 </tr>
 <tr>
   <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/evidence-retrieval.bpmn"><code>Evidence for a recommendation</code></a><br><span class="p">folio-assistant-core/processes/content/evidence-retrieval.bpmn</span></td>
-  <td>Frame a question for a recommendation, retrieve and appraise evidence from trusted sources, and either attach it or record the gap.<div class="f"><span class="k">activities</span> 10</div><div class="f"><span class="k">lanes</span> Author / guideline developer (person) · Evidence agent (system) · Trusted registries and observatories (external) · Work plan — beans (shared)</div><div class="f"><span class="k">skills</span> content-author, content-review, document-intake, evidence-appraisal, registry-authority-contract, todo-manager</div></td>
+  <td>Frame a question for a recommendation, retrieve and appraise evidence from trusted sources, and either attach it or record the gap; a change that states or alters no recommendation ends at its own event before any searc…<div class="f"><span class="k">activities</span> 10</div><div class="f"><span class="k">lanes</span> Author / guideline developer (person) · Evidence agent (system) · Trusted registries and observatories (external) · Work plan — beans (shared)</div><div class="f"><span class="k">skills</span> content-author, content-review, document-intake, evidence-appraisal, registry-authority-contract, todo-manager</div></td>
+</tr>
+<tr>
+  <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/guideline-updates.bpmn"><code>Guideline Updates</code></a><br><span class="p">folio-assistant-core/processes/content/guideline-updates.bpmn</span></td>
+  <td>Taking up a new version of a guideline, or a changed lower layer, is a re-pin and a review at once.<div class="f"><span class="k">activities</span> 8</div><div class="f"><span class="k">lanes</span> Guideline publisher · Re-pin steward and build pipeline · Adaptation team (human or agentic) · Adaptation committee (policy, clinical, programme)</div><div class="f"><span class="k">skills</span> content-publish, content-review, decision-audit, prepare-merge, remote-mount, rendered-impact</div></td>
 </tr>
 <tr>
   <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/public-comment-change.bpmn"><code>Make a decided public comment change</code></a><br><span class="p">folio-assistant-core/processes/content/public-comment-change.bpmn</span></td>

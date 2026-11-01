@@ -2346,7 +2346,7 @@
       ],
       "skos:definition": [
         {
-          "@value": "Before anything is drafted: the author reads the guidance ALREADY in this content, frames the question as PICO, retrieves candidates across the three evidence classes, and has each candidate's authority resolved against its publisher's own API. A recommendation reaches the drafting step with its evidence attached, or with the gap recorded. This step has nothing to do for content that carries no recommendations -- a mathematics folio has none -- and is skipped there rather than satisfied vacuously."
+          "@value": "Before anything is drafted: the author reads the guidance ALREADY in this content, frames the question as PICO, retrieves candidates across the three evidence classes, and has each candidate's authority resolved against its publisher's own API. A recommendation reaches the drafting step with its evidence attached, or with the gap recorded. This step has nothing to do for content that carries no recommendations -- a mathematics folio has none, and a figure redrawn from its own source adds none -- and the subprocess's first gateway (Gateway_RecommendationInPlay) ends it there at its own event, recording the answer, rather than satisfying the search vacuously."
         }
       ],
       "skos:notation": "CallActivity_Evidence",
@@ -3271,6 +3271,166 @@
       ],
       "skos:notation": "Task_SeedPlan",
       "dcterms:source": "folio-assistant-core/processes/conduct/getting-started.bpmn#Task_SeedPlan",
+      "skos:note": "candidate"
+    },
+    {
+      "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-bpmn-activities/process_guidelineupdates.task_changenotes",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-bpmn-activities"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "Publish the version with its change notes"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "The publisher states what changed, what was added and what was withdrawn, and why, in words a country team can act on. The notes go with the release, so the comparison below starts from the publisher's own account rather than only from a diff."
+        }
+      ],
+      "skos:notation": "Task_ChangeNotes",
+      "dcterms:source": "folio-assistant-core/processes/content/guideline-updates.bpmn#Task_ChangeNotes",
+      "skos:note": "candidate"
+    },
+    {
+      "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-bpmn-activities/process_guidelineupdates.task_decide",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-bpmn-activities"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "Decide each adaptation: keep, revise or retire"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "One recorded decision per affected adaptation, with its reason: keep it as is, revise it to the new version, or retire it because the new version now covers it. A decision to diverge from the new version is recorded as such."
+        }
+      ],
+      "skos:notation": "Task_Decide",
+      "dcterms:source": "folio-assistant-core/processes/content/guideline-updates.bpmn#Task_Decide",
+      "skos:note": "candidate"
+    },
+    {
+      "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-bpmn-activities/process_guidelineupdates.task_impact",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-bpmn-activities"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "Compare old, new and our adaptations"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "Attach the impact report to the re-pin: the changes that reach this site (only what it mounts), and its own files that look like adaptations of a changed file. The team adds what a diff cannot see: which policies, local decisions and translations rest on the changed text."
+        }
+      ],
+      "skos:notation": "Task_Impact",
+      "dcterms:source": "folio-assistant-core/processes/content/guideline-updates.bpmn#Task_Impact",
+      "skos:note": "candidate"
+    },
+    {
+      "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-bpmn-activities/process_guidelineupdates.task_mapcone",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-bpmn-activities"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "Map the affected layers in order"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "Run the re-pin planner (mount:repin:cone) with the fleet and the changed repository. It lists every site downstream in waves, so a site moves only after the layers it takes from have moved, and marks which sites are ready now."
+        }
+      ],
+      "skos:notation": "Task_MapCone",
+      "dcterms:source": "folio-assistant-core/processes/content/guideline-updates.bpmn#Task_MapCone",
+      "skos:note": "candidate"
+    },
+    {
+      "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-bpmn-activities/process_guidelineupdates.task_merge",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-bpmn-activities"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "Merge the re-pin with its decided revisions"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "The re-pin merges when its checks are green and every decision it needs is recorded. Its pull request cites the decisions, which become the release notes for this site's update."
+        }
+      ],
+      "skos:notation": "Task_Merge",
+      "dcterms:source": "folio-assistant-core/processes/content/guideline-updates.bpmn#Task_Merge",
+      "skos:note": "candidate"
+    },
+    {
+      "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-bpmn-activities/process_guidelineupdates.task_openrepin",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-bpmn-activities"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "Open the re-pin for the next ready layer"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "For each site that is ready now, open one re-pin pull request that moves its pins from the old version to the new one. Its staging preview is a full build with QA. A site's standing consent may let its own workflow open this pull request."
+        }
+      ],
+      "skos:notation": "Task_OpenRepin",
+      "dcterms:source": "folio-assistant-core/processes/content/guideline-updates.bpmn#Task_OpenRepin",
+      "skos:note": "candidate"
+    },
+    {
+      "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-bpmn-activities/process_guidelineupdates.task_review",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-bpmn-activities"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "Review the impact with stakeholders"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "The committee reads the old version, the new version and each affected adaptation side by side on the staging preview, and hears the adaptation team's account of what rests on them."
+        }
+      ],
+      "skos:notation": "Task_Review",
+      "dcterms:source": "folio-assistant-core/processes/content/guideline-updates.bpmn#Task_Review",
+      "skos:note": "candidate"
+    },
+    {
+      "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-bpmn-activities/process_guidelineupdates.task_revise",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-bpmn-activities"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "Revise the adaptations as decided"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "Each revision is an ordinary content change, reviewed on its staging preview through content change review, on the re-pin's branch or a branch that merges with it."
+        }
+      ],
+      "skos:notation": "Task_Revise",
+      "dcterms:source": "folio-assistant-core/processes/content/guideline-updates.bpmn#Task_Revise",
       "skos:note": "candidate"
     },
     {
@@ -4446,7 +4606,7 @@
       ],
       "skos:definition": [
         {
-          "@value": "Freeze the draft as \"Draft for Public Comment Release vX\": a PDF with fixed line numbers and a site copy under a permanent PC/<version>/ path (not STAGING, never deleted on merge). Every channel cites this release's pages, lines and block ids. Line numbers run continuously through the document. Run `bun run cat pc:pdf` for the line-numbered PDF and its line map, then `bun run cat pc:release freeze` for the write-once copy under PC/<version>/. Skill: document-publishing."
+          "@value": "Freeze the draft as \"Draft for Public Comment Release vX\": a PDF with fixed line numbers and a site copy under a permanent PC/<version>/ path (not STAGING, never deleted on merge). Every channel cites this release's pages, lines and block ids. Line numbers run continuously through the document. Freeze from a FULL build (owner, 2026-11-01): dispatch the preview workflow for the branch with build_type: full first, because a preview borrows main's search index and slices; pc:release freeze refuses a preview build. Run `bun run cat pc:pdf` for the line-numbered PDF and its line map, then `bun run cat pc:release freeze` for the write-once copy under PC/<version>/. Skill: document-publishing."
         }
       ],
       "skos:notation": "Task_BuildPcRelease",
