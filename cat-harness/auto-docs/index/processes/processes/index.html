@@ -9,13 +9,7 @@
 
   <link rel="stylesheet" href="../../../../../assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
 
-  <style id="jtd-nav-activation">
   
-    .site-nav ul li a {
-      background-image: none;
-    }
-
-  </style>
 
   
 
@@ -588,7 +582,7 @@
 -->
 <!-- The harness icon row's own style, which railed pages load without docs-ui.css (beans `lhvt`, `9rq1`). -->
 <link rel="stylesheet" href="../../../../../assets/css/navbar-row.css?v=7d7d00921e0f">
-<link rel="stylesheet" href="../../../../../assets/css/docs-ui.css?v=6071ae228cf3">
+<link rel="stylesheet" href="../../../../../assets/css/docs-ui.css?v=2ed7923cda66">
 <!-- Narrow viewports: wide content scrolls in its own box, never the page
      (bean `2r2n`). The standalone viewers inline the same file through
      `withViewerNav`, so both kinds of page read one set of rules. -->
@@ -646,8 +640,8 @@
 <!-- BEFORE docs-ui.js and work-plan.js: both read window.faRender. -->
 <script src="../../../../../assets/js/kg-render.js" defer></script>
 <!-- BEFORE docs-ui.js, which calls it: the one drawing of the harness icon row (beans `lhvt`, `9rq1`). -->
-<script src="../../../../../assets/js/navbar-row.js?v=7dce6a7e2ab0" defer></script>
-<script src="../../../../../assets/js/docs-ui.js?v=59c1d8d3ff0a" defer></script>
+<script src="../../../../../assets/js/navbar-row.js?v=6bb19e1d17a5" defer></script>
+<script src="../../../../../assets/js/docs-ui.js?v=9ffac52f2026" defer></script>
 <!-- The edit, source and feedback links of every page, from the platform's one
   recipe (cat-harness-tools/src/core/edit-links.ts, bean v433): links carry their
   facts and this builds the hrefs. -->
@@ -917,12 +911,12 @@
 </div>
 
 <ul class="subs">
-<li><a href="../core-processes/">core-processes</a> <span class="p">folio-assistant-core/processes</span> <span class="n">25</span></li>
-<li><a href="../fhir-harness-processes/">fhir-harness-processes</a> <span class="p">fhir-harness/processes</span> <span class="n">5</span></li>
-<li><strong>processes</strong> <span class="p">cat-harness/processes</span> <span class="n">77</span></li>
-<li><a href="../smart-base-house-processes/">smart-base-house-processes</a> <span class="p">smart-base/processes</span> <span class="n">6</span></li>
-<li><a href="../smart-base-processes/">smart-base-processes</a> <span class="p">smart-base/methodologies/processes</span> <span class="n">1</span></li>
-<li><a href="../who-iris-processes/">who-iris-processes</a> <span class="p">who-iris/processes</span> <span class="n">4</span></li>
+<li><a href="../core-processes/">core-processes</a> <span class="p">folio-assistant-core/processes</span> <span class="n" data-da-count="index/processes/core-processes" data-da-count-state="pending">…</span></li>
+<li><a href="../fhir-harness-processes/">fhir-harness-processes</a> <span class="p">fhir-harness/processes</span> <span class="n" data-da-count="index/processes/fhir-harness-processes" data-da-count-state="pending">…</span></li>
+<li><strong>processes</strong> <span class="p">cat-harness/processes</span> <span class="n" data-da-count="index/processes/processes" data-da-count-state="pending">…</span></li>
+<li><a href="../smart-base-house-processes/">smart-base-house-processes</a> <span class="p">smart-base/processes</span> <span class="n" data-da-count="index/processes/smart-base-house-processes" data-da-count-state="pending">…</span></li>
+<li><a href="../smart-base-processes/">smart-base-processes</a> <span class="p">smart-base/methodologies/processes</span> <span class="n" data-da-count="index/processes/smart-base-processes" data-da-count-state="pending">…</span></li>
+<li><a href="../who-iris-processes/">who-iris-processes</a> <span class="p">who-iris/processes</span> <span class="n" data-da-count="index/processes/who-iris-processes" data-da-count-state="pending">…</span></li>
 </ul>
 
 <div class="fa-table-filter">
@@ -1039,7 +1033,7 @@
 </tr>
 <tr>
   <td><a href="https://github.com/litlfred/cat-harness/blob/main/processes/process/ask-the-person.bpmn"><code>Ask the person</code></a><br><span class="p">cat-harness/processes/process/ask-the-person.bpmn</span></td>
-  <td>The ONE way a question or decision is put to a person.<div class="f"><span class="k">activities</span> 6</div><div class="f"><span class="k">lanes</span> Agent · Person</div><div class="f"><span class="k">skills</span> ask-the-person, decision-comparison, interaction-modality, symbiotic-interaction</div></td>
+  <td>The ONE way a question or decision is put to a person.<div class="f"><span class="k">activities</span> 7</div><div class="f"><span class="k">lanes</span> Agent · Person</div><div class="f"><span class="k">skills</span> ask-the-person, decision-comparison, hand-back-to-discussion, interaction-modality, symbiotic-interaction</div></td>
 </tr>
 <tr>
   <td><a href="https://github.com/litlfred/cat-harness/blob/main/processes/process/crdm-close.bpmn"><code>CRDM close-out</code></a><br><span class="p">cat-harness/processes/process/crdm-close.bpmn</span></td>
@@ -1072,6 +1066,10 @@
 <tr>
   <td><a href="https://github.com/litlfred/cat-harness/blob/main/processes/process/crdm-signoff.bpmn"><code>CRDM Phase 5 — beans and sign-off</code></a><br><span class="p">cat-harness/processes/process/crdm-signoff.bpmn</span></td>
   <td>The approved requirements become work-plan items, the BA signs off, and the branch is announced on the issue.<div class="f"><span class="k">activities</span> 7</div><div class="f"><span class="k">lanes</span> BA / Feature Requestor · Agent</div><div class="f"><span class="k">skills</span> adjudication, coordinate, crdm-requirements-workflow, kg-contribution-offer, placement, todo-manager</div></td>
+</tr>
+<tr>
+  <td><a href="https://github.com/litlfred/cat-harness/blob/main/processes/process/hand-back-to-discussion.bpmn"><code>Hand back to the discussion</code></a><br><span class="p">cat-harness/processes/process/hand-back-to-discussion.bpmn</span></td>
+  <td>How a sibling agent gets a card, question, result, blocker or context in front of the person: through the discussion agent that is talking with them, never only in its own thread.<div class="f"><span class="k">activities</span> 8</div><div class="f"><span class="k">lanes</span> Sibling · Discussion agent</div><div class="f"><span class="k">skills</span> ask-the-person, hand-back-to-discussion, symbiotic-interaction</div></td>
 </tr>
 <tr>
   <td><a href="https://github.com/litlfred/cat-harness/blob/main/processes/process/render-kg-to-cdn.bpmn"><code>Render a Knowledge Graph to a CDN</code></a><br><span class="p">cat-harness/processes/process/render-kg-to-cdn.bpmn</span></td>
@@ -1269,6 +1267,24 @@ var SCOPE = "processes";
   }
   input.addEventListener("input", apply);
   apply();
+})();
+</script>
+<script>
+(function () {
+  var badges = document.querySelectorAll(".da-page [data-da-count]");
+  if (!badges.length) return;
+  function set(counts) {
+    Array.prototype.forEach.call(badges, function (b) {
+      var n = counts ? counts[b.getAttribute("data-da-count")] : undefined;
+      var ok = typeof n === "number" && isFinite(n);
+      b.textContent = ok ? String(n) : "";
+      b.setAttribute("data-da-count-state", ok ? "some" : counts ? "absent" : "error");
+    });
+  }
+  fetch("../../../../../assets/auto-docs/index.json", { cache: "no-cache" })
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (j) { set(j && j.counts && typeof j.counts === "object" ? j.counts : null); })
+    .catch(function () { set(null); });
 })();
 </script>
 

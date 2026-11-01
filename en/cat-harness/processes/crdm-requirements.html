@@ -9,13 +9,7 @@
 
   <link rel="stylesheet" href="../../../assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
 
-  <style id="jtd-nav-activation">
   
-    .site-nav ul li a {
-      background-image: none;
-    }
-
-  </style>
 
   
 
@@ -588,7 +582,7 @@
 -->
 <!-- The harness icon row's own style, which railed pages load without docs-ui.css (beans `lhvt`, `9rq1`). -->
 <link rel="stylesheet" href="../../../assets/css/navbar-row.css?v=7d7d00921e0f">
-<link rel="stylesheet" href="../../../assets/css/docs-ui.css?v=6071ae228cf3">
+<link rel="stylesheet" href="../../../assets/css/docs-ui.css?v=2ed7923cda66">
 <!-- Narrow viewports: wide content scrolls in its own box, never the page
      (bean `2r2n`). The standalone viewers inline the same file through
      `withViewerNav`, so both kinds of page read one set of rules. -->
@@ -646,8 +640,8 @@
 <!-- BEFORE docs-ui.js and work-plan.js: both read window.faRender. -->
 <script src="../../../assets/js/kg-render.js" defer></script>
 <!-- BEFORE docs-ui.js, which calls it: the one drawing of the harness icon row (beans `lhvt`, `9rq1`). -->
-<script src="../../../assets/js/navbar-row.js?v=7dce6a7e2ab0" defer></script>
-<script src="../../../assets/js/docs-ui.js?v=59c1d8d3ff0a" defer></script>
+<script src="../../../assets/js/navbar-row.js?v=6bb19e1d17a5" defer></script>
+<script src="../../../assets/js/docs-ui.js?v=9ffac52f2026" defer></script>
 <!-- The edit, source and feedback links of every page, from the platform's one
   recipe (cat-harness-tools/src/core/edit-links.ts, bean v433): links carry their
   facts and this builds the hrefs. -->
@@ -835,7 +829,7 @@
         <main>
           
             <blockquote class="note">
-  <p>Generated from <code class="language-plaintext highlighter-rouge">cat-harness/processes/process/crdm-requirements.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a></p>
+  <p>Generated from <code class="language-plaintext highlighter-rouge">cat-harness/processes/process/crdm-requirements.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a> · <a href="cat-harness/">cat-harness processes</a></p>
 </blockquote>
 
 <h1 id="crdm-requirements">
@@ -855,26 +849,26 @@
 <div class="pt-diagram" data-panel="crdm-requirements.tasks.json">
 <img src="../../../assets/img/workflows/crdm-requirements.svg" alt="BPMN diagram: CRDM requirements" />
 <div class="pt-layer">
-<button type="button" class="pt-mark" data-task="BA_Submit" style="left:15.89%;top:12.82%" aria-expanded="false" aria-label="About step: Describe the need (chat, issue, discussion)" title="About: Describe the need (chat, issue, discussion)">i</button>
-<button type="button" class="pt-mark" data-task="A_Detect" style="left:22.3%;top:56.41%" aria-expanded="false" aria-label="About step: Detect feature request (crdm-detect skill)" title="About: Detect feature request (crdm-detect skill)">i</button>
-<a class="pt-go" href="crdm-issue-linking.html" style="left:46.05%;top:56.41%;width:4.49%;height:20.51%" aria-label="Open subprocess: Link the work to an issue" title="Open subprocess: Link the work to an issue"></a>
-<button type="button" class="pt-mark" data-task="Call_Issue" style="left:50.55%;top:56.41%" aria-expanded="false" aria-label="About step: Link the work to an issue" title="About: Link the work to an issue">i</button>
-<a class="pt-go" href="crdm-needs.html" style="left:52.47%;top:56.41%;width:4.49%;height:20.51%" aria-label="Open subprocess: Phase 1 Needs" title="Open subprocess: Phase 1 Needs"></a>
-<button type="button" class="pt-mark" data-task="Call_Needs" style="left:56.96%;top:56.41%" aria-expanded="false" aria-label="About step: Phase 1 Needs" title="About: Phase 1 Needs">i</button>
-<a class="pt-go" href="crdm-requirements-definition.html" style="left:58.89%;top:56.41%;width:4.49%;height:20.51%" aria-label="Open subprocess: Phases 2–4 BPA + requirements" title="Open subprocess: Phases 2–4 BPA + requirements"></a>
-<button type="button" class="pt-mark" data-task="Call_Requirements" style="left:63.38%;top:56.41%" aria-expanded="false" aria-label="About step: Phases 2–4 BPA + requirements" title="About: Phases 2–4 BPA + requirements">i</button>
-<a class="pt-go" href="crdm-data-model.html" style="left:65.31%;top:56.41%;width:4.49%;height:20.51%" aria-label="Open subprocess: Data model Entities + cardinalities" title="Open subprocess: Data model Entities + cardinalities"></a>
-<button type="button" class="pt-mark" data-task="Call_DataModel" style="left:69.8%;top:56.41%" aria-expanded="false" aria-label="About step: Data model Entities + cardinalities" title="About: Data model Entities + cardinalities">i</button>
-<a class="pt-go" href="crdm-signoff.html" style="left:71.73%;top:56.41%;width:4.49%;height:20.51%" aria-label="Open subprocess: Phase 5 Beans + sign-off" title="Open subprocess: Phase 5 Beans + sign-off"></a>
-<button type="button" class="pt-mark" data-task="Call_Signoff" style="left:76.22%;top:56.41%" aria-expanded="false" aria-label="About step: Phase 5 Beans + sign-off" title="About: Phase 5 Beans + sign-off">i</button>
-<a class="pt-go" href="crdm-deliver.html" style="left:78.15%;top:56.41%;width:4.49%;height:20.51%" aria-label="Open subprocess: Phase 6 Implement + acceptance" title="Open subprocess: Phase 6 Implement + acceptance"></a>
-<button type="button" class="pt-mark" data-task="Call_Deliver" style="left:82.64%;top:56.41%" aria-expanded="false" aria-label="About step: Phase 6 Implement + acceptance" title="About: Phase 6 Implement + acceptance">i</button>
-<a class="pt-go" href="crdm-close.html" style="left:84.56%;top:56.41%;width:4.49%;height:20.51%" aria-label="Open subprocess: Close-out" title="Open subprocess: Close-out"></a>
-<button type="button" class="pt-mark" data-task="Call_Close" style="left:89.06%;top:56.41%" aria-expanded="false" aria-label="About step: Close-out" title="About: Close-out">i</button>
-<a class="pt-go" href="bean-open.html" style="left:37.07%;top:56.41%;width:3.85%;height:20.51%" aria-label="Open subprocess: Open the bean" title="Open subprocess: Open the bean"></a>
-<button type="button" class="pt-mark" data-task="Call_BeanOpen" style="left:40.92%;top:56.41%" aria-expanded="false" aria-label="About step: Open the bean" title="About: Open the bean">i</button>
-<a class="pt-go" href="bean-close.html" style="left:90.98%;top:56.41%;width:3.85%;height:20.51%" aria-label="Open subprocess: Close the bean" title="Open subprocess: Close the bean"></a>
-<button type="button" class="pt-mark" data-task="Call_BeanClose" style="left:94.83%;top:56.41%" aria-expanded="false" aria-label="About step: Close the bean" title="About: Close the bean">i</button>
+<button type="button" class="pt-mark" data-task="BA_Submit" style="left:15.68%;top:12.82%" aria-expanded="false" aria-label="About step: Describe the need (chat, issue, discussion)" title="About: Describe the need (chat, issue, discussion)">i</button>
+<button type="button" class="pt-mark" data-task="A_Detect" style="left:22.02%;top:56.41%" aria-expanded="false" aria-label="About step: Detect feature request (crdm-detect skill)" title="About: Detect feature request (crdm-detect skill)">i</button>
+<a class="pt-go" href="crdm-issue-linking.html" style="left:45.47%;top:56.41%;width:4.44%;height:20.51%" aria-label="Open subprocess: Link the work to an issue" title="Open subprocess: Link the work to an issue"></a>
+<button type="button" class="pt-mark" data-task="Call_Issue" style="left:49.9%;top:56.41%" aria-expanded="false" aria-label="About step: Link the work to an issue" title="About: Link the work to an issue">i</button>
+<a class="pt-go" href="crdm-needs.html" style="left:51.81%;top:56.41%;width:4.44%;height:20.51%" aria-label="Open subprocess: Phase 1 Needs" title="Open subprocess: Phase 1 Needs"></a>
+<button type="button" class="pt-mark" data-task="Call_Needs" style="left:56.24%;top:56.41%" aria-expanded="false" aria-label="About step: Phase 1 Needs" title="About: Phase 1 Needs">i</button>
+<a class="pt-go" href="crdm-requirements-definition.html" style="left:57.51%;top:56.41%;width:5.7%;height:20.51%" aria-label="Open subprocess: Phases 2–4 BPA + requirements" title="Open subprocess: Phases 2–4 BPA + requirements"></a>
+<button type="button" class="pt-mark" data-task="Call_Requirements" style="left:63.21%;top:56.41%" aria-expanded="false" aria-label="About step: Phases 2–4 BPA + requirements" title="About: Phases 2–4 BPA + requirements">i</button>
+<a class="pt-go" href="crdm-data-model.html" style="left:64.48%;top:56.41%;width:5.7%;height:20.51%" aria-label="Open subprocess: Data model Entities + cardinalities" title="Open subprocess: Data model Entities + cardinalities"></a>
+<button type="button" class="pt-mark" data-task="Call_DataModel" style="left:70.18%;top:56.41%" aria-expanded="false" aria-label="About step: Data model Entities + cardinalities" title="About: Data model Entities + cardinalities">i</button>
+<a class="pt-go" href="crdm-signoff.html" style="left:71.45%;top:56.41%;width:4.44%;height:20.51%" aria-label="Open subprocess: Phase 5 Beans + sign-off" title="Open subprocess: Phase 5 Beans + sign-off"></a>
+<button type="button" class="pt-mark" data-task="Call_Signoff" style="left:75.89%;top:56.41%" aria-expanded="false" aria-label="About step: Phase 5 Beans + sign-off" title="About: Phase 5 Beans + sign-off">i</button>
+<a class="pt-go" href="crdm-deliver.html" style="left:77.15%;top:54.74%;width:5.7%;height:23.85%" aria-label="Open subprocess: Phase 6 Implement + acceptance" title="Open subprocess: Phase 6 Implement + acceptance"></a>
+<button type="button" class="pt-mark" data-task="Call_Deliver" style="left:82.86%;top:54.74%" aria-expanded="false" aria-label="About step: Phase 6 Implement + acceptance" title="About: Phase 6 Implement + acceptance">i</button>
+<a class="pt-go" href="crdm-close.html" style="left:84.13%;top:56.41%;width:4.44%;height:20.51%" aria-label="Open subprocess: Close-out" title="Open subprocess: Close-out"></a>
+<button type="button" class="pt-mark" data-task="Call_Close" style="left:88.56%;top:56.41%" aria-expanded="false" aria-label="About step: Close-out" title="About: Close-out">i</button>
+<a class="pt-go" href="bean-open.html" style="left:36.6%;top:56.41%;width:3.8%;height:20.51%" aria-label="Open subprocess: Open the bean" title="Open subprocess: Open the bean"></a>
+<button type="button" class="pt-mark" data-task="Call_BeanOpen" style="left:40.4%;top:56.41%" aria-expanded="false" aria-label="About step: Open the bean" title="About: Open the bean">i</button>
+<a class="pt-go" href="bean-close.html" style="left:89.83%;top:56.41%;width:5.07%;height:20.51%" aria-label="Open subprocess: Close the bean" title="Open subprocess: Close the bean"></a>
+<button type="button" class="pt-mark" data-task="Call_BeanClose" style="left:94.9%;top:56.41%" aria-expanded="false" aria-label="About step: Close the bean" title="About: Close the bean">i</button>
 </div>
 <div class="pt-panel" role="dialog" aria-label="Task details" hidden=""></div>
 </div>

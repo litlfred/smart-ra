@@ -9,13 +9,7 @@
 
   <link rel="stylesheet" href="../../../assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
 
-  <style id="jtd-nav-activation">
   
-    .site-nav ul li a {
-      background-image: none;
-    }
-
-  </style>
 
   
 
@@ -588,7 +582,7 @@
 -->
 <!-- The harness icon row's own style, which railed pages load without docs-ui.css (beans `lhvt`, `9rq1`). -->
 <link rel="stylesheet" href="../../../assets/css/navbar-row.css?v=7d7d00921e0f">
-<link rel="stylesheet" href="../../../assets/css/docs-ui.css?v=6071ae228cf3">
+<link rel="stylesheet" href="../../../assets/css/docs-ui.css?v=2ed7923cda66">
 <!-- Narrow viewports: wide content scrolls in its own box, never the page
      (bean `2r2n`). The standalone viewers inline the same file through
      `withViewerNav`, so both kinds of page read one set of rules. -->
@@ -646,8 +640,8 @@
 <!-- BEFORE docs-ui.js and work-plan.js: both read window.faRender. -->
 <script src="../../../assets/js/kg-render.js" defer></script>
 <!-- BEFORE docs-ui.js, which calls it: the one drawing of the harness icon row (beans `lhvt`, `9rq1`). -->
-<script src="../../../assets/js/navbar-row.js?v=7dce6a7e2ab0" defer></script>
-<script src="../../../assets/js/docs-ui.js?v=59c1d8d3ff0a" defer></script>
+<script src="../../../assets/js/navbar-row.js?v=6bb19e1d17a5" defer></script>
+<script src="../../../assets/js/docs-ui.js?v=9ffac52f2026" defer></script>
 <!-- The edit, source and feedback links of every page, from the platform's one
   recipe (cat-harness-tools/src/core/edit-links.ts, bean v433): links carry their
   facts and this builds the hrefs. -->
@@ -835,7 +829,7 @@
         <main>
           
             <blockquote class="note">
-  <p>Generated from <code class="language-plaintext highlighter-rouge">cat-harness/processes/sdlc/code-change-review.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a></p>
+  <p>Generated from <code class="language-plaintext highlighter-rouge">cat-harness/processes/sdlc/code-change-review.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a> · <a href="cat-harness/">cat-harness processes</a></p>
 </blockquote>
 
 <h1 id="code-change-and-review">
@@ -859,21 +853,21 @@
 <div class="pt-diagram" data-panel="code-change-review.tasks.json">
 <img src="../../../assets/img/workflows/code-change-review.svg" alt="BPMN diagram: Code change and review" />
 <div class="pt-layer">
-<a class="pt-go" href="bean-open.html" style="left:8.58%;top:10.38%;width:6.86%;height:15.09%" aria-label="Open subprocess: Open the bean" title="Open subprocess: Open the bean"></a>
-<button type="button" class="pt-mark" data-task="Task_ClaimBean" style="left:15.44%;top:10.38%" aria-expanded="false" aria-label="About step: Open the bean" title="About: Open the bean">i</button>
-<button type="button" class="pt-mark" data-task="Task_BranchAndAnnounce" style="left:30.15%;top:10.38%" aria-expanded="false" aria-label="About step: Branch, and announce it" title="About: Branch, and announce it">i</button>
-<button type="button" class="pt-mark" data-task="Task_Implement" style="left:39.46%;top:10.38%" aria-expanded="false" aria-label="About step: Make the change" title="About: Make the change">i</button>
-<button type="button" class="pt-mark" data-task="Task_RunGates" style="left:48.77%;top:10.38%" aria-expanded="false" aria-label="About step: Run the platform's own gates" title="About: Run the platform's own gates">i</button>
-<button type="button" class="pt-mark" data-task="Task_CommitAndOpenPR" style="left:58.09%;top:10.38%" aria-expanded="false" aria-label="About step: Commit, push, open the PR" title="About: Commit, push, open the PR">i</button>
-<button type="button" class="pt-mark" data-task="Task_Diagnose" style="left:65.93%;top:33.02%" aria-expanded="false" aria-label="About step: Root-cause the failure" title="About: Root-cause the failure">i</button>
-<button type="button" class="pt-mark" data-task="Task_AddressReview" style="left:73.28%;top:33.02%" aria-expanded="false" aria-label="About step: Address the review" title="About: Address the review">i</button>
-<a class="pt-go" href="merge-base.html" style="left:73.77%;top:10.38%;width:6.86%;height:15.09%" aria-label="Open subprocess: Prepare the merge, and watch it through" title="Open subprocess: Prepare the merge, and watch it through"></a>
-<button type="button" class="pt-mark" data-task="Task_PrepareMerge" style="left:80.64%;top:10.38%" aria-expanded="false" aria-label="About step: Prepare the merge, and watch it through" title="About: Prepare the merge, and watch it through">i</button>
-<button type="button" class="pt-mark" data-task="Task_CloseBean" style="left:80.64%;top:33.02%" aria-expanded="false" aria-label="About step: Record what was done" title="About: Record what was done">i</button>
-<a class="pt-go" href="bean-close.html" style="left:84.56%;top:33.02%;width:6.86%;height:15.09%" aria-label="Open subprocess: Close the bean" title="Open subprocess: Close the bean"></a>
-<button type="button" class="pt-mark" data-task="Task_ArchiveBean" style="left:91.42%;top:33.02%" aria-expanded="false" aria-label="About step: Close the bean" title="About: Close the bean">i</button>
-<button type="button" class="pt-mark" data-task="Task_RunCI" style="left:60.05%;top:60.38%" aria-expanded="false" aria-label="About step: Run the gates against the merge of head into base" title="About: Run the gates against the merge of head into base">i</button>
-<button type="button" class="pt-mark" data-task="Task_Review" style="left:69.36%;top:81.13%" aria-expanded="false" aria-label="About step: Review the change" title="About: Review the change">i</button>
+<a class="pt-go" href="bean-open.html" style="left:8.5%;top:31.13%;width:6.8%;height:15.09%" aria-label="Open subprocess: Open the bean" title="Open subprocess: Open the bean"></a>
+<button type="button" class="pt-mark" data-task="Task_ClaimBean" style="left:15.29%;top:31.13%" aria-expanded="false" aria-label="About step: Open the bean" title="About: Open the bean">i</button>
+<button type="button" class="pt-mark" data-task="Task_BranchAndAnnounce" style="left:29.85%;top:31.13%" aria-expanded="false" aria-label="About step: Branch, and announce it" title="About: Branch, and announce it">i</button>
+<button type="button" class="pt-mark" data-task="Task_Implement" style="left:39.08%;top:31.13%" aria-expanded="false" aria-label="About step: Make the change" title="About: Make the change">i</button>
+<button type="button" class="pt-mark" data-task="Task_RunGates" style="left:48.3%;top:31.13%" aria-expanded="false" aria-label="About step: Run the platform's own gates" title="About: Run the platform's own gates">i</button>
+<button type="button" class="pt-mark" data-task="Task_CommitAndOpenPR" style="left:57.52%;top:31.13%" aria-expanded="false" aria-label="About step: Commit, push, open the PR" title="About: Commit, push, open the PR">i</button>
+<button type="button" class="pt-mark" data-task="Task_Diagnose" style="left:65.29%;top:53.77%" aria-expanded="false" aria-label="About step: Root-cause the failure" title="About: Root-cause the failure">i</button>
+<button type="button" class="pt-mark" data-task="Task_AddressReview" style="left:72.57%;top:53.77%" aria-expanded="false" aria-label="About step: Address the review" title="About: Address the review">i</button>
+<a class="pt-go" href="merge-base.html" style="left:73.06%;top:31.13%;width:8.74%;height:15.09%" aria-label="Open subprocess: Prepare the merge, and watch it through" title="Open subprocess: Prepare the merge, and watch it through"></a>
+<button type="button" class="pt-mark" data-task="Task_PrepareMerge" style="left:81.8%;top:31.13%" aria-expanded="false" aria-label="About step: Prepare the merge, and watch it through" title="About: Prepare the merge, and watch it through">i</button>
+<button type="button" class="pt-mark" data-task="Task_CloseBean" style="left:80.83%;top:53.77%" aria-expanded="false" aria-label="About step: Record what was done" title="About: Record what was done">i</button>
+<a class="pt-go" href="bean-close.html" style="left:84.71%;top:53.77%;width:6.8%;height:15.09%" aria-label="Open subprocess: Close the bean" title="Open subprocess: Close the bean"></a>
+<button type="button" class="pt-mark" data-task="Task_ArchiveBean" style="left:91.5%;top:53.77%" aria-expanded="false" aria-label="About step: Close the bean" title="About: Close the bean">i</button>
+<button type="button" class="pt-mark" data-task="Task_RunCI" style="left:59.47%;top:3.77%" aria-expanded="false" aria-label="About step: Run the gates against the merge of head into base" title="About: Run the gates against the merge of head into base">i</button>
+<button type="button" class="pt-mark" data-task="Task_Review" style="left:68.69%;top:81.13%" aria-expanded="false" aria-label="About step: Review the change" title="About: Review the change">i</button>
 </div>
 <div class="pt-panel" role="dialog" aria-label="Task details" hidden=""></div>
 </div>

@@ -9,13 +9,7 @@
 
   <link rel="stylesheet" href="../../../assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
 
-  <style id="jtd-nav-activation">
   
-    .site-nav ul li a {
-      background-image: none;
-    }
-
-  </style>
 
   
 
@@ -588,7 +582,7 @@
 -->
 <!-- The harness icon row's own style, which railed pages load without docs-ui.css (beans `lhvt`, `9rq1`). -->
 <link rel="stylesheet" href="../../../assets/css/navbar-row.css?v=7d7d00921e0f">
-<link rel="stylesheet" href="../../../assets/css/docs-ui.css?v=6071ae228cf3">
+<link rel="stylesheet" href="../../../assets/css/docs-ui.css?v=2ed7923cda66">
 <!-- Narrow viewports: wide content scrolls in its own box, never the page
      (bean `2r2n`). The standalone viewers inline the same file through
      `withViewerNav`, so both kinds of page read one set of rules. -->
@@ -646,8 +640,8 @@
 <!-- BEFORE docs-ui.js and work-plan.js: both read window.faRender. -->
 <script src="../../../assets/js/kg-render.js" defer></script>
 <!-- BEFORE docs-ui.js, which calls it: the one drawing of the harness icon row (beans `lhvt`, `9rq1`). -->
-<script src="../../../assets/js/navbar-row.js?v=7dce6a7e2ab0" defer></script>
-<script src="../../../assets/js/docs-ui.js?v=59c1d8d3ff0a" defer></script>
+<script src="../../../assets/js/navbar-row.js?v=6bb19e1d17a5" defer></script>
+<script src="../../../assets/js/docs-ui.js?v=9ffac52f2026" defer></script>
 <!-- The edit, source and feedback links of every page, from the platform's one
   recipe (cat-harness-tools/src/core/edit-links.ts, bean v433): links carry their
   facts and this builds the hrefs. -->
@@ -835,7 +829,7 @@
         <main>
           
             <blockquote class="note">
-  <p>Generated from <code class="language-plaintext highlighter-rouge">cat-harness/processes/process/crdm-signoff.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a></p>
+  <p>Generated from <code class="language-plaintext highlighter-rouge">cat-harness/processes/process/crdm-signoff.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a> · <a href="cat-harness/">cat-harness processes</a></p>
 </blockquote>
 
 <h1 id="crdm-phase-5--beans-and-sign-off">
@@ -855,15 +849,15 @@
 <div class="pt-diagram" data-panel="crdm-signoff.tasks.json">
 <img src="../../../assets/img/workflows/crdm-signoff.svg" alt="BPMN diagram: CRDM Phase 5 — beans and sign-off" />
 <div class="pt-layer">
-<button type="button" class="pt-mark" data-task="A_CreateBeans" style="left:27.81%;top:51.16%" aria-expanded="false" aria-label="About step: Phase 5: Create beans" title="About: Phase 5: Create beans">i</button>
-<a class="pt-go" href="adjudication.html" style="left:31.18%;top:11.63%;width:7.87%;height:18.6%" aria-label="Open subprocess: Sign off on requirements" title="Open subprocess: Sign off on requirements"></a>
-<button type="button" class="pt-mark" data-task="BA_Signoff" style="left:39.04%;top:11.63%" aria-expanded="false" aria-label="About step: Sign off on requirements" title="About: Sign off on requirements">i</button>
-<button type="button" class="pt-mark" data-task="A_RecordSignoff" style="left:39.04%;top:74.42%" aria-expanded="false" aria-label="About step: Record the sign-off as a requirement-signoff attestation" title="About: Record the sign-off as a requirement-signoff attestation">i</button>
-<button type="button" class="pt-mark" data-task="A_AnnounceBranch" style="left:89.61%;top:51.16%" aria-expanded="false" aria-label="About step: Announce the branch on the issue" title="About: Announce the branch on the issue">i</button>
-<button type="button" class="pt-mark" data-task="A_OfferKg" style="left:50.28%;top:51.16%" aria-expanded="false" aria-label="About step: Offer the knowledge-graph destinations for the agreed set" title="About: Offer the knowledge-graph destinations for the agreed set">i</button>
-<a class="pt-go" href="ask-the-person.html" style="left:53.65%;top:11.63%;width:7.87%;height:18.6%" aria-label="Open subprocess: Choose a destination, or none" title="Open subprocess: Choose a destination, or none"></a>
-<button type="button" class="pt-mark" data-task="BA_ChooseKg" style="left:61.52%;top:11.63%" aria-expanded="false" aria-label="About step: Choose a destination, or none" title="About: Choose a destination, or none">i</button>
-<button type="button" class="pt-mark" data-task="A_RecordKg" style="left:78.93%;top:70.93%" aria-expanded="false" aria-label="About step: Run placement, and raise a bean for the authoring" title="About: Run placement, and raise a bean for the authoring">i</button>
+<button type="button" class="pt-mark" data-task="A_CreateBeans" style="left:27.2%;top:50.81%" aria-expanded="false" aria-label="About step: Phase 5: Create beans" title="About: Phase 5: Create beans">i</button>
+<a class="pt-go" href="adjudication.html" style="left:30.49%;top:11.55%;width:7.69%;height:18.48%" aria-label="Open subprocess: Sign off on requirements" title="Open subprocess: Sign off on requirements"></a>
+<button type="button" class="pt-mark" data-task="BA_Signoff" style="left:38.19%;top:11.55%" aria-expanded="false" aria-label="About step: Sign off on requirements" title="About: Sign off on requirements">i</button>
+<button type="button" class="pt-mark" data-task="A_RecordSignoff" style="left:39.29%;top:70.32%" aria-expanded="false" aria-label="About step: Record the sign-off as a requirement-signoff attestation" title="About: Record the sign-off as a requirement-signoff attestation">i</button>
+<button type="button" class="pt-mark" data-task="A_AnnounceBranch" style="left:89.84%;top:50.81%" aria-expanded="false" aria-label="About step: Announce the branch on the issue" title="About: Announce the branch on the issue">i</button>
+<button type="button" class="pt-mark" data-task="A_OfferKg" style="left:50.27%;top:46.19%" aria-expanded="false" aria-label="About step: Offer the knowledge-graph destinations for the agreed set" title="About: Offer the knowledge-graph destinations for the agreed set">i</button>
+<a class="pt-go" href="ask-the-person.html" style="left:52.47%;top:11.55%;width:9.89%;height:18.48%" aria-label="Open subprocess: Choose a destination, or none" title="Open subprocess: Choose a destination, or none"></a>
+<button type="button" class="pt-mark" data-task="BA_ChooseKg" style="left:62.36%;top:11.55%" aria-expanded="false" aria-label="About step: Choose a destination, or none" title="About: Choose a destination, or none">i</button>
+<button type="button" class="pt-mark" data-task="A_RecordKg" style="left:79.95%;top:65.82%" aria-expanded="false" aria-label="About step: Run placement, and raise a bean for the authoring" title="About: Run placement, and raise a bean for the authoring">i</button>
 </div>
 <div class="pt-panel" role="dialog" aria-label="Task details" hidden=""></div>
 </div>

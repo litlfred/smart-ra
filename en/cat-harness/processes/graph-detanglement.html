@@ -9,13 +9,7 @@
 
   <link rel="stylesheet" href="../../../assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
 
-  <style id="jtd-nav-activation">
   
-    .site-nav ul li a {
-      background-image: none;
-    }
-
-  </style>
 
   
 
@@ -588,7 +582,7 @@
 -->
 <!-- The harness icon row's own style, which railed pages load without docs-ui.css (beans `lhvt`, `9rq1`). -->
 <link rel="stylesheet" href="../../../assets/css/navbar-row.css?v=7d7d00921e0f">
-<link rel="stylesheet" href="../../../assets/css/docs-ui.css?v=6071ae228cf3">
+<link rel="stylesheet" href="../../../assets/css/docs-ui.css?v=2ed7923cda66">
 <!-- Narrow viewports: wide content scrolls in its own box, never the page
      (bean `2r2n`). The standalone viewers inline the same file through
      `withViewerNav`, so both kinds of page read one set of rules. -->
@@ -646,8 +640,8 @@
 <!-- BEFORE docs-ui.js and work-plan.js: both read window.faRender. -->
 <script src="../../../assets/js/kg-render.js" defer></script>
 <!-- BEFORE docs-ui.js, which calls it: the one drawing of the harness icon row (beans `lhvt`, `9rq1`). -->
-<script src="../../../assets/js/navbar-row.js?v=7dce6a7e2ab0" defer></script>
-<script src="../../../assets/js/docs-ui.js?v=59c1d8d3ff0a" defer></script>
+<script src="../../../assets/js/navbar-row.js?v=6bb19e1d17a5" defer></script>
+<script src="../../../assets/js/docs-ui.js?v=9ffac52f2026" defer></script>
 <!-- The edit, source and feedback links of every page, from the platform's one
   recipe (cat-harness-tools/src/core/edit-links.ts, bean v433): links carry their
   facts and this builds the hrefs. -->
@@ -835,7 +829,7 @@
         <main>
           
             <blockquote class="note">
-  <p>Generated from <code class="language-plaintext highlighter-rouge">cat-harness/processes/kg/graph-detanglement.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a></p>
+  <p>Generated from <code class="language-plaintext highlighter-rouge">cat-harness/processes/kg/graph-detanglement.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a> · <a href="cat-harness/">cat-harness processes</a></p>
 </blockquote>
 
 <h1 id="a-sub-graph-wants-to-leave">
@@ -867,23 +861,23 @@
 <div class="pt-diagram" data-panel="graph-detanglement.tasks.json">
 <img src="../../../assets/img/workflows/graph-detanglement.svg" alt="BPMN diagram: A sub-graph wants to leave" />
 <div class="pt-layer">
-<button type="button" class="pt-mark" data-task="Task_Brief" style="left:22.4%;top:9.46%" aria-expanded="false" aria-label="About step: Brief the topic before touching anything" title="About: Brief the topic before touching anything">i</button>
-<button type="button" class="pt-mark" data-task="Task_Declare" style="left:31.36%;top:9.46%" aria-expanded="false" aria-label="About step: 1 · Declare in place (nothing moves)" title="About: 1 · Declare in place (nothing moves)">i</button>
-<button type="button" class="pt-mark" data-task="Task_Measure" style="left:45.7%;top:9.46%" aria-expanded="false" aria-label="About step: 2a · Measure — unassigned column FIRST" title="About: 2a · Measure — unassigned column FIRST">i</button>
-<button type="button" class="pt-mark" data-task="Task_Move" style="left:45.7%;top:34.66%" aria-expanded="false" aria-label="About step: 2b · Prune, merge, factor — or the classification is wrong" title="About: 2b · Prune, merge, factor — or the classification is wrong">i</button>
-<button type="button" class="pt-mark" data-task="Task_Isolate" style="left:60.04%;top:9.46%" aria-expanded="false" aria-label="About step: 3 · Isolate — own declaration, namespace, artefact" title="About: 3 · Isolate — own declaration, namespace, artefact">i</button>
-<button type="button" class="pt-mark" data-task="Task_Propose" style="left:74.37%;top:9.46%" aria-expanded="false" aria-label="About step: Report what would move — sizes, and what breaks" title="About: Report what would move — sizes, and what breaks">i</button>
-<a class="pt-go" href="ask-the-person.html" style="left:67.92%;top:80.32%;width:6.45%;height:12.6%" aria-label="Open subprocess: Authorise the extraction" title="Open subprocess: Authorise the extraction"></a>
-<button type="button" class="pt-mark" data-task="Task_Authorise" style="left:74.37%;top:80.32%" aria-expanded="false" aria-label="About step: Authorise the extraction" title="About: Authorise the extraction">i</button>
-<button type="button" class="pt-mark" data-task="Task_Extract" style="left:88.71%;top:9.46%" aria-expanded="false" aria-label="About step: 4 · Extract — a directory move, not a file-by-file sift" title="About: 4 · Extract — a directory move, not a file-by-file sift">i</button>
-<a class="pt-go" href="bean-open.html" style="left:5.91%;top:9.46%;width:4.3%;height:12.6%" aria-label="Open subprocess: Open the bean" title="Open subprocess: Open the bean"></a>
-<button type="button" class="pt-mark" data-task="Call_BeanOpen" style="left:10.22%;top:9.46%" aria-expanded="false" aria-label="About step: Open the bean" title="About: Open the bean">i</button>
-<a class="pt-go" href="bean-close.html" style="left:78.03%;top:80.32%;width:4.3%;height:12.6%" aria-label="Open subprocess: Close the bean" title="Open subprocess: Close the bean"></a>
-<button type="button" class="pt-mark" data-task="Call_BeanClose" style="left:82.33%;top:80.32%" aria-expanded="false" aria-label="About step: Close the bean" title="About: Close the bean">i</button>
-<a class="pt-go" href="bean-close.html" style="left:91.29%;top:9.46%;width:4.3%;height:12.6%" aria-label="Open subprocess: Close the bean" title="Open subprocess: Close the bean"></a>
-<button type="button" class="pt-mark" data-task="Call_BeanClose_2" style="left:95.59%;top:9.46%" aria-expanded="false" aria-label="About step: Close the bean" title="About: Close the bean">i</button>
-<a class="pt-go" href="bean-close.html" style="left:41.47%;top:55.13%;width:4.3%;height:12.6%" aria-label="Open subprocess: Close the bean" title="Open subprocess: Close the bean"></a>
-<button type="button" class="pt-mark" data-task="Call_BeanClose_3" style="left:45.77%;top:55.13%" aria-expanded="false" aria-label="About step: Close the bean" title="About: Close the bean">i</button>
+<button type="button" class="pt-mark" data-task="Task_Brief" style="left:21.93%;top:8.73%" aria-expanded="false" aria-label="About step: Brief the topic before touching anything" title="About: Brief the topic before touching anything">i</button>
+<button type="button" class="pt-mark" data-task="Task_Declare" style="left:30.7%;top:8.73%" aria-expanded="false" aria-label="About step: 1 · Declare in place (nothing moves)" title="About: 1 · Declare in place (nothing moves)">i</button>
+<button type="button" class="pt-mark" data-task="Task_Measure" style="left:44.74%;top:8.73%" aria-expanded="false" aria-label="About step: 2a · Measure — unassigned column FIRST" title="About: 2a · Measure — unassigned column FIRST">i</button>
+<button type="button" class="pt-mark" data-task="Task_Move" style="left:44.74%;top:34.13%" aria-expanded="false" aria-label="About step: 2b · Prune, merge, factor — or the classification is wrong" title="About: 2b · Prune, merge, factor — or the classification is wrong">i</button>
+<button type="button" class="pt-mark" data-task="Task_Isolate" style="left:59.47%;top:8.73%" aria-expanded="false" aria-label="About step: 3 · Isolate — own declaration, namespace, artefact" title="About: 3 · Isolate — own declaration, namespace, artefact">i</button>
+<button type="button" class="pt-mark" data-task="Task_Propose" style="left:73.51%;top:6.27%" aria-expanded="false" aria-label="About step: Report what would move — sizes, and what breaks" title="About: Report what would move — sizes, and what breaks">i</button>
+<a class="pt-go" href="ask-the-person.html" style="left:67.19%;top:80.16%;width:6.32%;height:12.7%" aria-label="Open subprocess: Authorise the extraction" title="Open subprocess: Authorise the extraction"></a>
+<button type="button" class="pt-mark" data-task="Task_Authorise" style="left:73.51%;top:80.16%" aria-expanded="false" aria-label="About step: Authorise the extraction" title="About: Authorise the extraction">i</button>
+<button type="button" class="pt-mark" data-task="Task_Extract" style="left:87.54%;top:8.73%" aria-expanded="false" aria-label="About step: 4 · Extract — a directory move, not a file-by-file sift" title="About: 4 · Extract — a directory move, not a file-by-file sift">i</button>
+<a class="pt-go" href="bean-open.html" style="left:5.79%;top:8.73%;width:4.21%;height:12.7%" aria-label="Open subprocess: Open the bean" title="Open subprocess: Open the bean"></a>
+<button type="button" class="pt-mark" data-task="Call_BeanOpen" style="left:10%;top:8.73%" aria-expanded="false" aria-label="About step: Open the bean" title="About: Open the bean">i</button>
+<a class="pt-go" href="bean-close.html" style="left:76.39%;top:80.16%;width:5.61%;height:12.7%" aria-label="Open subprocess: Close the bean" title="Open subprocess: Close the bean"></a>
+<button type="button" class="pt-mark" data-task="Call_BeanClose" style="left:82%;top:80.16%" aria-expanded="false" aria-label="About step: Close the bean" title="About: Close the bean">i</button>
+<a class="pt-go" href="bean-close.html" style="left:90.07%;top:8.73%;width:5.61%;height:12.7%" aria-label="Open subprocess: Close the bean" title="Open subprocess: Close the bean"></a>
+<button type="button" class="pt-mark" data-task="Call_BeanClose_2" style="left:95.68%;top:8.73%" aria-expanded="false" aria-label="About step: Close the bean" title="About: Close the bean">i</button>
+<a class="pt-go" href="bean-close.html" style="left:39.89%;top:54.76%;width:5.61%;height:12.7%" aria-label="Open subprocess: Close the bean" title="Open subprocess: Close the bean"></a>
+<button type="button" class="pt-mark" data-task="Call_BeanClose_3" style="left:45.51%;top:54.76%" aria-expanded="false" aria-label="About step: Close the bean" title="About: Close the bean">i</button>
 </div>
 <div class="pt-panel" role="dialog" aria-label="Task details" hidden=""></div>
 </div>

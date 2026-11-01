@@ -9,13 +9,7 @@
 
   <link rel="stylesheet" href="../../../assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
 
-  <style id="jtd-nav-activation">
   
-    .site-nav ul li a {
-      background-image: none;
-    }
-
-  </style>
 
   
 
@@ -588,7 +582,7 @@
 -->
 <!-- The harness icon row's own style, which railed pages load without docs-ui.css (beans `lhvt`, `9rq1`). -->
 <link rel="stylesheet" href="../../../assets/css/navbar-row.css?v=7d7d00921e0f">
-<link rel="stylesheet" href="../../../assets/css/docs-ui.css?v=6071ae228cf3">
+<link rel="stylesheet" href="../../../assets/css/docs-ui.css?v=2ed7923cda66">
 <!-- Narrow viewports: wide content scrolls in its own box, never the page
      (bean `2r2n`). The standalone viewers inline the same file through
      `withViewerNav`, so both kinds of page read one set of rules. -->
@@ -646,8 +640,8 @@
 <!-- BEFORE docs-ui.js and work-plan.js: both read window.faRender. -->
 <script src="../../../assets/js/kg-render.js" defer></script>
 <!-- BEFORE docs-ui.js, which calls it: the one drawing of the harness icon row (beans `lhvt`, `9rq1`). -->
-<script src="../../../assets/js/navbar-row.js?v=7dce6a7e2ab0" defer></script>
-<script src="../../../assets/js/docs-ui.js?v=59c1d8d3ff0a" defer></script>
+<script src="../../../assets/js/navbar-row.js?v=6bb19e1d17a5" defer></script>
+<script src="../../../assets/js/docs-ui.js?v=9ffac52f2026" defer></script>
 <!-- The edit, source and feedback links of every page, from the platform's one
   recipe (cat-harness-tools/src/core/edit-links.ts, bean v433): links carry their
   facts and this builds the hrefs. -->
@@ -835,7 +829,7 @@
         <main>
           
             <blockquote class="note">
-  <p>Generated from <code class="language-plaintext highlighter-rouge">cat-harness/processes/library/copy-out-materialized.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a></p>
+  <p>Generated from <code class="language-plaintext highlighter-rouge">cat-harness/processes/library/copy-out-materialized.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a> · <a href="cat-harness/">cat-harness processes</a></p>
 </blockquote>
 
 <h1 id="copy-out-materialized-content--to-work-on-somebody-elses-bytes">
@@ -849,7 +843,7 @@
 
 <p><code class="language-plaintext highlighter-rouge">Process_CopyOutMaterialized</code> · strict · 5 step(s)</p>
 
-<p>Somebody wants to change content this repository holds a read-only materialized copy of: copy it into their own <code class="language-plaintext highlighter-rouge">folio/</code>, recording which original it came out of. Materialized content is read-only. The owner, 2026-09-21: “if we have a materialized <stub>/<sub-graph>, the contents of it should be immutable ... you would need to copy/mateiralize it to your own folio/ in order to mess around with it." And 2026-09-22, choosing between advising and enforcing: enforce from the start.</sub-graph></stub></p>
+<p>Somebody wants to change content this repository holds a read-only materialized copy of: copy it into their own <code class="language-plaintext highlighter-rouge">folio/</code>, recording which original it came out of. Materialized content is read-only. The owner, 2026-09-21: “if we have a materialized &lt;stub&gt;/&lt;sub-graph&gt;, the contents of it should be immutable … you would need to copy/mateiralize it to your own folio/ in order to mess around with it.” And 2026-09-22, choosing between advising and enforcing: enforce from the start.</p>
 
 <p>STRICT, and the reason is narrow. Only one step here is a gate, and it is Gateway_Frozen: whether the target is read-only at all. Everything after it is mechanical. What makes the process strict is that skipping it does not fail loudly — an edit in place succeeds, and is only caught later by check:materialized-fixity hashing bytes against the digest their record carries. A process whose omission looks exactly like compliance is the vlhk shape, and advisory would not hold it.</p>
 
@@ -864,7 +858,7 @@
 <button type="button" class="pt-mark" data-task="Task_EditDirectly" style="left:38.7%;top:6.79%" aria-expanded="false" aria-label="About step: Edit it in place — it is your own content" title="About: Edit it in place — it is your own content">i</button>
 <button type="button" class="pt-mark" data-task="Task_ReadSource" style="left:38.7%;top:31.48%" aria-expanded="false" aria-label="About step: Read the original — and write nothing" title="About: Read the original — and write nothing">i</button>
 <button type="button" class="pt-mark" data-task="Task_Land" style="left:54.52%;top:56.17%" aria-expanded="false" aria-label="About step: Land the bytes in the copier's own folio/" title="About: Land the bytes in the copier's own folio/">i</button>
-<button type="button" class="pt-mark" data-task="Task_RecordProvenance" style="left:70.34%;top:56.17%" aria-expanded="false" aria-label="About step: Record provenance.local — what this is a copy OF" title="About: Record provenance.local — what this is a copy OF">i</button>
+<button type="button" class="pt-mark" data-task="Task_RecordProvenance" style="left:70.34%;top:56.11%" aria-expanded="false" aria-label="About step: Record provenance.local — what this is a copy OF" title="About: Record provenance.local — what this is a copy OF">i</button>
 <button type="button" class="pt-mark" data-task="Task_VerifySourceUntouched" style="left:86.16%;top:80.86%" aria-expanded="false" aria-label="About step: Verify the ORIGINAL still hashes to its digest" title="About: Verify the ORIGINAL still hashes to its digest">i</button>
 </div>
 <div class="pt-panel" role="dialog" aria-label="Task details" hidden=""></div>

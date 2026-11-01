@@ -9,13 +9,7 @@
 
   <link rel="stylesheet" href="../../../assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
 
-  <style id="jtd-nav-activation">
   
-    .site-nav ul li a {
-      background-image: none;
-    }
-
-  </style>
 
   
 
@@ -588,7 +582,7 @@
 -->
 <!-- The harness icon row's own style, which railed pages load without docs-ui.css (beans `lhvt`, `9rq1`). -->
 <link rel="stylesheet" href="../../../assets/css/navbar-row.css?v=7d7d00921e0f">
-<link rel="stylesheet" href="../../../assets/css/docs-ui.css?v=6071ae228cf3">
+<link rel="stylesheet" href="../../../assets/css/docs-ui.css?v=2ed7923cda66">
 <!-- Narrow viewports: wide content scrolls in its own box, never the page
      (bean `2r2n`). The standalone viewers inline the same file through
      `withViewerNav`, so both kinds of page read one set of rules. -->
@@ -646,8 +640,8 @@
 <!-- BEFORE docs-ui.js and work-plan.js: both read window.faRender. -->
 <script src="../../../assets/js/kg-render.js" defer></script>
 <!-- BEFORE docs-ui.js, which calls it: the one drawing of the harness icon row (beans `lhvt`, `9rq1`). -->
-<script src="../../../assets/js/navbar-row.js?v=7dce6a7e2ab0" defer></script>
-<script src="../../../assets/js/docs-ui.js?v=59c1d8d3ff0a" defer></script>
+<script src="../../../assets/js/navbar-row.js?v=6bb19e1d17a5" defer></script>
+<script src="../../../assets/js/docs-ui.js?v=9ffac52f2026" defer></script>
 <!-- The edit, source and feedback links of every page, from the platform's one
   recipe (cat-harness-tools/src/core/edit-links.ts, bean v433): links carry their
   facts and this builds the hrefs. -->
@@ -835,7 +829,7 @@
         <main>
           
             <blockquote class="note">
-  <p>Generated from <code class="language-plaintext highlighter-rouge">cat-harness/processes/sdlc/upstream-version-adoption.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a></p>
+  <p>Generated from <code class="language-plaintext highlighter-rouge">cat-harness/processes/sdlc/upstream-version-adoption.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a> · <a href="cat-harness/">cat-harness processes</a></p>
 </blockquote>
 
 <h1 id="adopting-an-upstream-version-bump">
@@ -859,22 +853,22 @@
 <div class="pt-diagram" data-panel="upstream-version-adoption.tasks.json">
 <img src="../../../assets/img/workflows/upstream-version-adoption.svg" alt="BPMN diagram: Adopting an upstream version bump" />
 <div class="pt-layer">
-<button type="button" class="pt-mark" data-task="A_Scope" style="left:26.27%;top:6.51%" aria-expanded="false" aria-label="About step: Scope the delta pinned → candidate" title="About: Scope the delta pinned → candidate">i</button>
-<button type="button" class="pt-mark" data-task="A_Impact" style="left:33.05%;top:6.51%" aria-expanded="false" aria-label="About step: Impact analysis what of ours binds it" title="About: Impact analysis what of ours binds it">i</button>
-<button type="button" class="pt-mark" data-task="Task_Mvp" style="left:39.83%;top:38.97%" aria-expanded="false" aria-label="About step: MVP: build the candidate on a staging branch" title="About: MVP: build the candidate on a staging branch">i</button>
-<button type="button" class="pt-mark" data-task="Task_Gates" style="left:46.61%;top:38.97%" aria-expanded="false" aria-label="About step: Run the row's gates tests · e2e · site-links" title="About: Run the row's gates tests · e2e · site-links">i</button>
-<button type="button" class="pt-mark" data-task="A_Evidence" style="left:53.39%;top:6.51%" aria-expanded="false" aria-label="About step: Post the MVP evidence staging URL + gate results" title="About: Post the MVP evidence staging URL + gate results">i</button>
-<button type="button" class="pt-mark" data-task="R_Review" style="left:60.17%;top:61.04%" aria-expanded="false" aria-label="About step: Review the MVP against what we bind to" title="About: Review the MVP against what we bind to">i</button>
-<a class="pt-go" href="options-analysis.html" style="left:68.98%;top:6.51%;width:4.75%;height:10.39%" aria-label="Open subprocess: Options analysis adopt · hold · decline" title="Open subprocess: Options analysis adopt · hold · decline"></a>
-<button type="button" class="pt-mark" data-task="Call_OptionsAnalysis" style="left:73.73%;top:6.51%" aria-expanded="false" aria-label="About step: Options analysis adopt · hold · decline" title="About: Options analysis adopt · hold · decline">i</button>
-<a class="pt-go" href="ask-the-person.html" style="left:68.98%;top:83.12%;width:4.75%;height:10.39%" aria-label="Open subprocess: Adopt, hold or decline" title="Open subprocess: Adopt, hold or decline"></a>
-<button type="button" class="pt-mark" data-task="PM_Decide" style="left:73.73%;top:83.12%" aria-expanded="false" aria-label="About step: Adopt, hold or decline" title="About: Adopt, hold or decline">i</button>
-<button type="button" class="pt-mark" data-task="A_ApplyPin" style="left:87.29%;top:6.51%" aria-expanded="false" aria-label="About step: Move the pin and open the PR" title="About: Move the pin and open the PR">i</button>
-<button type="button" class="pt-mark" data-task="A_RecordOutcome" style="left:87.29%;top:19.49%" aria-expanded="false" aria-label="About step: Record the hold or the decline" title="About: Record the hold or the decline">i</button>
-<a class="pt-go" href="bean-open.html" style="left:12.03%;top:6.51%;width:4.07%;height:10.39%" aria-label="Open subprocess: Open the bean" title="Open subprocess: Open the bean"></a>
-<button type="button" class="pt-mark" data-task="Call_BeanOpen" style="left:16.1%;top:6.51%" aria-expanded="false" aria-label="About step: Open the bean" title="About: Open the bean">i</button>
-<a class="pt-go" href="bean-close.html" style="left:91.02%;top:6.51%;width:4.07%;height:10.39%" aria-label="Open subprocess: Close the bean" title="Open subprocess: Close the bean"></a>
-<button type="button" class="pt-mark" data-task="Call_BeanClose" style="left:95.08%;top:6.51%" aria-expanded="false" aria-label="About step: Close the bean" title="About: Close the bean">i</button>
+<button type="button" class="pt-mark" data-task="A_Scope" style="left:25.9%;top:6.36%" aria-expanded="false" aria-label="About step: Scope the delta pinned → candidate" title="About: Scope the delta pinned → candidate">i</button>
+<button type="button" class="pt-mark" data-task="A_Impact" style="left:33.06%;top:6.43%" aria-expanded="false" aria-label="About step: Impact analysis what of ours binds it" title="About: Impact analysis what of ours binds it">i</button>
+<button type="button" class="pt-mark" data-task="Task_Mvp" style="left:40.23%;top:37.6%" aria-expanded="false" aria-label="About step: MVP: build the candidate on a staging branch" title="About: MVP: build the candidate on a staging branch">i</button>
+<button type="button" class="pt-mark" data-task="Task_Gates" style="left:47.39%;top:38.9%" aria-expanded="false" aria-label="About step: Run the row's gates tests · e2e · site-links" title="About: Run the row's gates tests · e2e · site-links">i</button>
+<button type="button" class="pt-mark" data-task="A_Evidence" style="left:54.56%;top:3.96%" aria-expanded="false" aria-label="About step: Post the MVP evidence staging URL + gate results" title="About: Post the MVP evidence staging URL + gate results">i</button>
+<button type="button" class="pt-mark" data-task="R_Review" style="left:61.73%;top:61.04%" aria-expanded="false" aria-label="About step: Review the MVP against what we bind to" title="About: Review the MVP against what we bind to">i</button>
+<a class="pt-go" href="options-analysis.html" style="left:68.89%;top:6.49%;width:5.86%;height:10.39%" aria-label="Open subprocess: Options analysis adopt · hold · decline" title="Open subprocess: Options analysis adopt · hold · decline"></a>
+<button type="button" class="pt-mark" data-task="Call_OptionsAnalysis" style="left:74.76%;top:6.49%" aria-expanded="false" aria-label="About step: Options analysis adopt · hold · decline" title="About: Options analysis adopt · hold · decline">i</button>
+<a class="pt-go" href="ask-the-person.html" style="left:69.54%;top:83.12%;width:4.56%;height:10.39%" aria-label="Open subprocess: Adopt, hold or decline" title="Open subprocess: Adopt, hold or decline"></a>
+<button type="button" class="pt-mark" data-task="PM_Decide" style="left:74.1%;top:83.12%" aria-expanded="false" aria-label="About step: Adopt, hold or decline" title="About: Adopt, hold or decline">i</button>
+<button type="button" class="pt-mark" data-task="A_ApplyPin" style="left:87.79%;top:6.49%" aria-expanded="false" aria-label="About step: Move the pin and open the PR" title="About: Move the pin and open the PR">i</button>
+<button type="button" class="pt-mark" data-task="A_RecordOutcome" style="left:87.79%;top:19.48%" aria-expanded="false" aria-label="About step: Record the hold or the decline" title="About: Record the hold or the decline">i</button>
+<a class="pt-go" href="bean-open.html" style="left:11.56%;top:6.49%;width:3.91%;height:10.39%" aria-label="Open subprocess: Open the bean" title="Open subprocess: Open the bean"></a>
+<button type="button" class="pt-mark" data-task="Call_BeanOpen" style="left:15.47%;top:6.49%" aria-expanded="false" aria-label="About step: Open the bean" title="About: Open the bean">i</button>
+<a class="pt-go" href="bean-close.html" style="left:90.07%;top:6.49%;width:5.21%;height:10.39%" aria-label="Open subprocess: Close the bean" title="Open subprocess: Close the bean"></a>
+<button type="button" class="pt-mark" data-task="Call_BeanClose" style="left:95.28%;top:6.49%" aria-expanded="false" aria-label="About step: Close the bean" title="About: Close the bean">i</button>
 </div>
 <div class="pt-panel" role="dialog" aria-label="Task details" hidden=""></div>
 </div>

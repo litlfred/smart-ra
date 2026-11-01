@@ -9,13 +9,7 @@
 
   <link rel="stylesheet" href="../../../assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
 
-  <style id="jtd-nav-activation">
   
-    .site-nav ul li a {
-      background-image: none;
-    }
-
-  </style>
 
   
 
@@ -588,7 +582,7 @@
 -->
 <!-- The harness icon row's own style, which railed pages load without docs-ui.css (beans `lhvt`, `9rq1`). -->
 <link rel="stylesheet" href="../../../assets/css/navbar-row.css?v=7d7d00921e0f">
-<link rel="stylesheet" href="../../../assets/css/docs-ui.css?v=6071ae228cf3">
+<link rel="stylesheet" href="../../../assets/css/docs-ui.css?v=2ed7923cda66">
 <!-- Narrow viewports: wide content scrolls in its own box, never the page
      (bean `2r2n`). The standalone viewers inline the same file through
      `withViewerNav`, so both kinds of page read one set of rules. -->
@@ -646,8 +640,8 @@
 <!-- BEFORE docs-ui.js and work-plan.js: both read window.faRender. -->
 <script src="../../../assets/js/kg-render.js" defer></script>
 <!-- BEFORE docs-ui.js, which calls it: the one drawing of the harness icon row (beans `lhvt`, `9rq1`). -->
-<script src="../../../assets/js/navbar-row.js?v=7dce6a7e2ab0" defer></script>
-<script src="../../../assets/js/docs-ui.js?v=59c1d8d3ff0a" defer></script>
+<script src="../../../assets/js/navbar-row.js?v=6bb19e1d17a5" defer></script>
+<script src="../../../assets/js/docs-ui.js?v=9ffac52f2026" defer></script>
 <!-- The edit, source and feedback links of every page, from the platform's one
   recipe (cat-harness-tools/src/core/edit-links.ts, bean v433): links carry their
   facts and this builds the hrefs. -->
@@ -835,7 +829,7 @@
         <main>
           
             <blockquote class="note">
-  <p>Generated from <code class="language-plaintext highlighter-rouge">cat-harness/processes/kg/copy-into-folio.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a></p>
+  <p>Generated from <code class="language-plaintext highlighter-rouge">cat-harness/processes/kg/copy-into-folio.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a> · <a href="cat-harness/">cat-harness processes</a></p>
 </blockquote>
 
 <h1 id="copy-a-knowledge-graph-asset-into-a-folio">
@@ -864,14 +858,14 @@
 <div class="pt-diagram" data-panel="copy-into-folio.tasks.json">
 <img src="../../../assets/img/workflows/copy-into-folio.svg" alt="BPMN diagram: Copy a knowledge-graph asset into a folio" />
 <div class="pt-layer">
-<button type="button" class="pt-mark" data-task="Task_ChooseAsset" style="left:19.49%;top:8.44%" aria-expanded="false" aria-label="About step: Select upstream asset and target folio" title="About: Select upstream asset and target folio">i</button>
-<button type="button" class="pt-mark" data-task="Task_ProbeWriteCapability" style="left:20.06%;top:34.42%" aria-expanded="false" aria-label="About step: Probe write capability (git-push, github-api, github-connector)" title="About: Probe write capability (git-push, github-api, github-connector)">i</button>
-<button type="button" class="pt-mark" data-task="Task_InspectReadOnly" style="left:39.27%;top:8.44%" aria-expanded="false" aria-label="About step: Browse in place and emit KgAsset snippet (read-only)" title="About: Browse in place and emit KgAsset snippet (read-only)">i</button>
-<button type="button" class="pt-mark" data-task="Task_ReadUpstreamAsset" style="left:39.27%;top:59.09%" aria-expanded="false" aria-label="About step: Read upstream asset and origin — write nothing" title="About: Read upstream asset and origin — write nothing">i</button>
-<button type="button" class="pt-mark" data-task="Task_CopyAndDeclareAsset" style="left:53.39%;top:34.42%" aria-expanded="false" aria-label="About step: Copy asset into target folio and declare in assets[]" title="About: Copy asset into target folio and declare in assets[]">i</button>
-<button type="button" class="pt-mark" data-task="Task_StampAssetSource" style="left:66.95%;top:34.42%" aria-expanded="false" aria-label="About step: Stamp KgAsset.source { instance, path, ref }" title="About: Stamp KgAsset.source { instance, path, ref }">i</button>
-<button type="button" class="pt-mark" data-task="Task_ValidateDeclaredAsset" style="left:80.51%;top:82.47%" aria-expanded="false" aria-label="About step: Validate declared asset and provenance (check:declared-assets)" title="About: Validate declared asset and provenance (check:declared-assets)">i</button>
-<button type="button" class="pt-mark" data-task="Task_WorkOnCopy" style="left:93.5%;top:8.44%" aria-expanded="false" aria-label="About step: Edit, comment or raise todos on the folio's copy" title="About: Edit, comment or raise todos on the folio's copy">i</button>
+<button type="button" class="pt-mark" data-task="Task_ChooseAsset" style="left:19.49%;top:57.66%" aria-expanded="false" aria-label="About step: Select upstream asset and target folio" title="About: Select upstream asset and target folio">i</button>
+<button type="button" class="pt-mark" data-task="Task_ProbeWriteCapability" style="left:20.06%;top:30.45%" aria-expanded="false" aria-label="About step: Probe write capability (git-push, github-api, github-connector)" title="About: Probe write capability (git-push, github-api, github-connector)">i</button>
+<button type="button" class="pt-mark" data-task="Task_InspectReadOnly" style="left:39.27%;top:55.19%" aria-expanded="false" aria-label="About step: Browse in place and emit KgAsset snippet (read-only)" title="About: Browse in place and emit KgAsset snippet (read-only)">i</button>
+<button type="button" class="pt-mark" data-task="Task_ReadUpstreamAsset" style="left:39.27%;top:5.78%" aria-expanded="false" aria-label="About step: Read upstream asset and origin — write nothing" title="About: Read upstream asset and origin — write nothing">i</button>
+<button type="button" class="pt-mark" data-task="Task_CopyAndDeclareAsset" style="left:53.39%;top:30.45%" aria-expanded="false" aria-label="About step: Copy asset into target folio and declare in assets[]" title="About: Copy asset into target folio and declare in assets[]">i</button>
+<button type="button" class="pt-mark" data-task="Task_StampAssetSource" style="left:66.95%;top:31.69%" aria-expanded="false" aria-label="About step: Stamp KgAsset.source { instance, path, ref }" title="About: Stamp KgAsset.source { instance, path, ref }">i</button>
+<button type="button" class="pt-mark" data-task="Task_ValidateDeclaredAsset" style="left:80.51%;top:79.87%" aria-expanded="false" aria-label="About step: Validate declared asset and provenance (check:declared-assets)" title="About: Validate declared asset and provenance (check:declared-assets)">i</button>
+<button type="button" class="pt-mark" data-task="Task_WorkOnCopy" style="left:93.5%;top:56.43%" aria-expanded="false" aria-label="About step: Edit, comment or raise todos on the folio's copy" title="About: Edit, comment or raise todos on the folio's copy">i</button>
 </div>
 <div class="pt-panel" role="dialog" aria-label="Task details" hidden=""></div>
 </div>

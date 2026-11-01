@@ -9,13 +9,7 @@
 
   <link rel="stylesheet" href="../../../assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
 
-  <style id="jtd-nav-activation">
   
-    .site-nav ul li a {
-      background-image: none;
-    }
-
-  </style>
 
   
 
@@ -588,7 +582,7 @@
 -->
 <!-- The harness icon row's own style, which railed pages load without docs-ui.css (beans `lhvt`, `9rq1`). -->
 <link rel="stylesheet" href="../../../assets/css/navbar-row.css?v=7d7d00921e0f">
-<link rel="stylesheet" href="../../../assets/css/docs-ui.css?v=6071ae228cf3">
+<link rel="stylesheet" href="../../../assets/css/docs-ui.css?v=2ed7923cda66">
 <!-- Narrow viewports: wide content scrolls in its own box, never the page
      (bean `2r2n`). The standalone viewers inline the same file through
      `withViewerNav`, so both kinds of page read one set of rules. -->
@@ -646,8 +640,8 @@
 <!-- BEFORE docs-ui.js and work-plan.js: both read window.faRender. -->
 <script src="../../../assets/js/kg-render.js" defer></script>
 <!-- BEFORE docs-ui.js, which calls it: the one drawing of the harness icon row (beans `lhvt`, `9rq1`). -->
-<script src="../../../assets/js/navbar-row.js?v=7dce6a7e2ab0" defer></script>
-<script src="../../../assets/js/docs-ui.js?v=59c1d8d3ff0a" defer></script>
+<script src="../../../assets/js/navbar-row.js?v=6bb19e1d17a5" defer></script>
+<script src="../../../assets/js/docs-ui.js?v=9ffac52f2026" defer></script>
 <!-- The edit, source and feedback links of every page, from the platform's one
   recipe (cat-harness-tools/src/core/edit-links.ts, bean v433): links carry their
   facts and this builds the hrefs. -->
@@ -835,7 +829,7 @@
         <main>
           
             <blockquote class="note">
-  <p>Generated from <code class="language-plaintext highlighter-rouge">cat-harness/processes/sdlc/test-data-curation.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a></p>
+  <p>Generated from <code class="language-plaintext highlighter-rouge">cat-harness/processes/sdlc/test-data-curation.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a> · <a href="cat-harness/">cat-harness processes</a></p>
 </blockquote>
 
 <h1 id="test-data-curation--fixed-sets-and-generated-recipes">
@@ -859,17 +853,17 @@
 <div class="pt-diagram" data-panel="test-data-curation.tasks.json">
 <img src="../../../assets/img/workflows/test-data-curation.svg" alt="BPMN diagram: Test Data Curation — Fixed Sets and Generated Recipes" />
 <div class="pt-layer">
-<button type="button" class="pt-mark" data-task="Task_ClassifySet" style="left:29.56%;top:24.47%" aria-expanded="false" aria-label="About step: Classify data set: fixed (curated) or generated (recipe)" title="About: Classify data set: fixed (curated) or generated (recipe)">i</button>
-<button type="button" class="pt-mark" data-task="Task_CurateFixed" style="left:46.69%;top:8.51%" aria-expanded="false" aria-label="About step: Author fixed set in test-data-fixed/ with $schema test-data-fixed/1.0.0" title="About: Author fixed set in test-data-fixed/ with $schema test-data-fixed/1.0.0">i</button>
-<a class="pt-go" href="sme-test-data-review.html" style="left:54.42%;top:8.51%;width:9.39%;height:17.02%" aria-label="Open subprocess: SME review of cases or cohorts" title="Open subprocess: SME review of cases or cohorts"></a>
-<button type="button" class="pt-mark" data-task="Call_SmeReview" style="left:63.81%;top:8.51%" aria-expanded="false" aria-label="About step: SME review of cases or cohorts" title="About: SME review of cases or cohorts">i</button>
-<button type="button" class="pt-mark" data-task="Call_ContentTypeSpecialisation" style="left:47.24%;top:40.43%" aria-expanded="false" aria-label="About step: Synthesise recipe via content-type specialisation [its own subprocess]" title="About: Synthesise recipe via content-type specialisation [its own subprocess]">i</button>
-<button type="button" class="pt-mark" data-task="Task_WriteRecipe" style="left:59.94%;top:40.43%" aria-expanded="false" aria-label="About step: Write recipe in test-data-generated/ with $schema test-data-generated/1.0.0" title="About: Write recipe in test-data-generated/ with $schema test-data-generated/1.0.0">i</button>
-<button type="button" class="pt-mark" data-task="Task_VerifySelfIdentifying" style="left:82.32%;top:73.4%" aria-expanded="false" aria-label="About step: Verify file self-identifies by $schema and kind and bind into test plan" title="About: Verify file self-identifies by $schema and kind and bind into test plan">i</button>
-<a class="pt-go" href="bean-open.html" style="left:8.56%;top:24.47%;width:6.63%;height:17.02%" aria-label="Open subprocess: Open the bean" title="Open subprocess: Open the bean"></a>
-<button type="button" class="pt-mark" data-task="Call_BeanOpen" style="left:15.19%;top:24.47%" aria-expanded="false" aria-label="About step: Open the bean" title="About: Open the bean">i</button>
-<a class="pt-go" href="bean-close.html" style="left:84.81%;top:73.4%;width:6.63%;height:17.02%" aria-label="Open subprocess: Close the bean" title="Open subprocess: Close the bean"></a>
-<button type="button" class="pt-mark" data-task="Call_BeanClose" style="left:91.44%;top:73.4%" aria-expanded="false" aria-label="About step: Close the bean" title="About: Close the bean">i</button>
+<button type="button" class="pt-mark" data-task="Task_ClassifySet" style="left:29.16%;top:24.47%" aria-expanded="false" aria-label="About step: Classify data set: fixed (curated) or generated (recipe)" title="About: Classify data set: fixed (curated) or generated (recipe)">i</button>
+<button type="button" class="pt-mark" data-task="Task_CurateFixed" style="left:46.05%;top:8.51%" aria-expanded="false" aria-label="About step: Author fixed set in test-data-fixed/ with $schema test-data-fixed/1.0.0" title="About: Author fixed set in test-data-fixed/ with $schema test-data-fixed/1.0.0">i</button>
+<a class="pt-go" href="sme-test-data-review.html" style="left:53.41%;top:7.13%;width:9.81%;height:19.79%" aria-label="Open subprocess: SME review of cases or cohorts" title="Open subprocess: SME review of cases or cohorts"></a>
+<button type="button" class="pt-mark" data-task="Call_SmeReview" style="left:63.22%;top:7.13%" aria-expanded="false" aria-label="About step: SME review of cases or cohorts" title="About: SME review of cases or cohorts">i</button>
+<button type="button" class="pt-mark" data-task="Call_ContentTypeSpecialisation" style="left:46.59%;top:37.02%" aria-expanded="false" aria-label="About step: Synthesise recipe via content-type specialisation [its own subprocess]" title="About: Synthesise recipe via content-type specialisation [its own subprocess]">i</button>
+<button type="button" class="pt-mark" data-task="Task_WriteRecipe" style="left:59.13%;top:37.13%" aria-expanded="false" aria-label="About step: Write recipe in test-data-generated/ with $schema test-data-generated/1.0.0" title="About: Write recipe in test-data-generated/ with $schema test-data-generated/1.0.0">i</button>
+<button type="button" class="pt-mark" data-task="Task_VerifySelfIdentifying" style="left:81.2%;top:73.4%" aria-expanded="false" aria-label="About step: Verify file self-identifies by $schema and kind and bind into test plan" title="About: Verify file self-identifies by $schema and kind and bind into test plan">i</button>
+<a class="pt-go" href="bean-open.html" style="left:8.45%;top:24.47%;width:6.54%;height:17.02%" aria-label="Open subprocess: Open the bean" title="Open subprocess: Open the bean"></a>
+<button type="button" class="pt-mark" data-task="Call_BeanOpen" style="left:14.99%;top:24.47%" aria-expanded="false" aria-label="About step: Open the bean" title="About: Open the bean">i</button>
+<a class="pt-go" href="bean-close.html" style="left:83.38%;top:73.4%;width:8.72%;height:17.02%" aria-label="Open subprocess: Close the bean" title="Open subprocess: Close the bean"></a>
+<button type="button" class="pt-mark" data-task="Call_BeanClose" style="left:92.1%;top:73.4%" aria-expanded="false" aria-label="About step: Close the bean" title="About: Close the bean">i</button>
 </div>
 <div class="pt-panel" role="dialog" aria-label="Task details" hidden=""></div>
 </div>

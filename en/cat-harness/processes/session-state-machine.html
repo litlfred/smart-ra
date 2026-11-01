@@ -9,13 +9,7 @@
 
   <link rel="stylesheet" href="../../../assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
 
-  <style id="jtd-nav-activation">
   
-    .site-nav ul li a {
-      background-image: none;
-    }
-
-  </style>
 
   
 
@@ -588,7 +582,7 @@
 -->
 <!-- The harness icon row's own style, which railed pages load without docs-ui.css (beans `lhvt`, `9rq1`). -->
 <link rel="stylesheet" href="../../../assets/css/navbar-row.css?v=7d7d00921e0f">
-<link rel="stylesheet" href="../../../assets/css/docs-ui.css?v=6071ae228cf3">
+<link rel="stylesheet" href="../../../assets/css/docs-ui.css?v=2ed7923cda66">
 <!-- Narrow viewports: wide content scrolls in its own box, never the page
      (bean `2r2n`). The standalone viewers inline the same file through
      `withViewerNav`, so both kinds of page read one set of rules. -->
@@ -646,8 +640,8 @@
 <!-- BEFORE docs-ui.js and work-plan.js: both read window.faRender. -->
 <script src="../../../assets/js/kg-render.js" defer></script>
 <!-- BEFORE docs-ui.js, which calls it: the one drawing of the harness icon row (beans `lhvt`, `9rq1`). -->
-<script src="../../../assets/js/navbar-row.js?v=7dce6a7e2ab0" defer></script>
-<script src="../../../assets/js/docs-ui.js?v=59c1d8d3ff0a" defer></script>
+<script src="../../../assets/js/navbar-row.js?v=6bb19e1d17a5" defer></script>
+<script src="../../../assets/js/docs-ui.js?v=9ffac52f2026" defer></script>
 <!-- The edit, source and feedback links of every page, from the platform's one
   recipe (cat-harness-tools/src/core/edit-links.ts, bean v433): links carry their
   facts and this builds the hrefs. -->
@@ -835,7 +829,7 @@
         <main>
           
             <blockquote class="note">
-  <p>Generated from <code class="language-plaintext highlighter-rouge">cat-harness/processes/process/session-state-machine.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a></p>
+  <p>Generated from <code class="language-plaintext highlighter-rouge">cat-harness/processes/process/session-state-machine.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a> · <a href="cat-harness/">cat-harness processes</a></p>
 </blockquote>
 
 <h1 id="session-state-machine">
@@ -863,8 +857,8 @@
 <a class="pt-go" href="ask-the-person.html" style="left:16.67%;top:57.26%;width:9.93%;height:12.9%" aria-label="Open subprocess: Ask who is acting" title="Open subprocess: Ask who is acting"></a>
 <button type="button" class="pt-mark" data-task="A_AskWhoIsActing" style="left:26.6%;top:57.26%" aria-expanded="false" aria-label="About step: Ask who is acting" title="About: Ask who is acting">i</button>
 <button type="button" class="pt-mark" data-task="A_OpenSession" style="left:40.78%;top:20.16%" aria-expanded="false" aria-label="About step: Open the session record" title="About: Open the session record">i</button>
-<a class="pt-go" href="secure-agent-permissions.html" style="left:45.04%;top:20.16%;width:9.93%;height:12.9%" aria-label="Open subprocess: Secure the agent's permissions" title="Open subprocess: Secure the agent's permissions"></a>
-<button type="button" class="pt-mark" data-task="Call_SecurePermissions" style="left:54.96%;top:20.16%" aria-expanded="false" aria-label="About step: Secure the agent's permissions" title="About: Secure the agent's permissions">i</button>
+<a class="pt-go" href="secure-agent-permissions.html" style="left:43.62%;top:20.16%;width:12.77%;height:12.9%" aria-label="Open subprocess: Secure the agent's permissions" title="Open subprocess: Secure the agent's permissions"></a>
+<button type="button" class="pt-mark" data-task="Call_SecurePermissions" style="left:56.38%;top:20.16%" aria-expanded="false" aria-label="About step: Secure the agent's permissions" title="About: Secure the agent's permissions">i</button>
 <button type="button" class="pt-mark" data-task="A_ReadTurn" style="left:69.15%;top:20.16%" aria-expanded="false" aria-label="About step: Take in the turn" title="About: Take in the turn">i</button>
 <button type="button" class="pt-mark" data-task="A_Touch" style="left:89.72%;top:4.03%" aria-expanded="false" aria-label="About step: Refresh `updatedAt` only" title="About: Refresh `updatedAt` only">i</button>
 <button type="button" class="pt-mark" data-task="A_UpdateSession" style="left:89.72%;top:20.16%" aria-expanded="false" aria-label="About step: Write what changed" title="About: Write what changed">i</button>

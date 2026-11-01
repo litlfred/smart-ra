@@ -9,13 +9,7 @@
 
   <link rel="stylesheet" href="../../../assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
 
-  <style id="jtd-nav-activation">
   
-    .site-nav ul li a {
-      background-image: none;
-    }
-
-  </style>
 
   
 
@@ -588,7 +582,7 @@
 -->
 <!-- The harness icon row's own style, which railed pages load without docs-ui.css (beans `lhvt`, `9rq1`). -->
 <link rel="stylesheet" href="../../../assets/css/navbar-row.css?v=7d7d00921e0f">
-<link rel="stylesheet" href="../../../assets/css/docs-ui.css?v=6071ae228cf3">
+<link rel="stylesheet" href="../../../assets/css/docs-ui.css?v=2ed7923cda66">
 <!-- Narrow viewports: wide content scrolls in its own box, never the page
      (bean `2r2n`). The standalone viewers inline the same file through
      `withViewerNav`, so both kinds of page read one set of rules. -->
@@ -646,8 +640,8 @@
 <!-- BEFORE docs-ui.js and work-plan.js: both read window.faRender. -->
 <script src="../../../assets/js/kg-render.js" defer></script>
 <!-- BEFORE docs-ui.js, which calls it: the one drawing of the harness icon row (beans `lhvt`, `9rq1`). -->
-<script src="../../../assets/js/navbar-row.js?v=7dce6a7e2ab0" defer></script>
-<script src="../../../assets/js/docs-ui.js?v=59c1d8d3ff0a" defer></script>
+<script src="../../../assets/js/navbar-row.js?v=6bb19e1d17a5" defer></script>
+<script src="../../../assets/js/docs-ui.js?v=9ffac52f2026" defer></script>
 <!-- The edit, source and feedback links of every page, from the platform's one
   recipe (cat-harness-tools/src/core/edit-links.ts, bean v433): links carry their
   facts and this builds the hrefs. -->
@@ -835,7 +829,7 @@
         <main>
           
             <blockquote class="note">
-  <p>Generated from <code class="language-plaintext highlighter-rouge">cat-harness/processes/sdlc/feature-staging.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a></p>
+  <p>Generated from <code class="language-plaintext highlighter-rouge">cat-harness/processes/sdlc/feature-staging.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a> · <a href="cat-harness/">cat-harness processes</a></p>
 </blockquote>
 
 <h1 id="staging-a-feature-branch-preview-and-taking-it-down">
@@ -863,19 +857,19 @@
 <div class="pt-diagram" data-panel="feature-staging.tasks.json">
 <img src="../../../assets/img/workflows/feature-staging.svg" alt="BPMN diagram: Staging a feature branch preview, and taking it down" />
 <div class="pt-layer">
-<button type="button" class="pt-mark" data-task="Task_Build" style="left:30.7%;top:7.14%" aria-expanded="false" aria-label="About step: Build the docs site Jekyll · TypeDoc · KG export" title="About: Build the docs site Jekyll · TypeDoc · KG export">i</button>
-<a class="pt-go" href="render-kg-to-cdn.html" style="left:31.58%;top:7.14%;width:14.91%;height:10.39%" aria-label="Open subprocess: Push to the CDN at STAGING/&amp;lt;slug&amp;gt;/" title="Open subprocess: Push to the CDN at STAGING/&amp;lt;slug&amp;gt;/"></a>
-<button type="button" class="pt-mark" data-task="Task_Deploy" style="left:46.49%;top:7.14%" aria-expanded="false" aria-label="About step: Push to the CDN at STAGING/&amp;lt;slug&amp;gt;/" title="About: Push to the CDN at STAGING/&amp;lt;slug&amp;gt;/">i</button>
-<button type="button" class="pt-mark" data-task="Task_LogRendered" style="left:62.28%;top:7.14%" aria-expanded="false" aria-label="About step: Append `rendered` to the render log" title="About: Append `rendered` to the render log">i</button>
-<button type="button" class="pt-mark" data-task="Task_Comment" style="left:78.07%;top:7.14%" aria-expanded="false" aria-label="About step: Comment the preview URL on the PR" title="About: Comment the preview URL on the PR">i</button>
-<button type="button" class="pt-mark" data-task="Task_Slug" style="left:30.7%;top:30.52%" aria-expanded="false" aria-label="About step: Derive the slug from the head ref" title="About: Derive the slug from the head ref">i</button>
-<button type="button" class="pt-mark" data-task="Task_Remove" style="left:64.04%;top:22.73%" aria-expanded="false" aria-label="About step: Remove the preview AND append `removed` — one commit" title="About: Remove the preview AND append `removed` — one commit">i</button>
-<button type="button" class="pt-mark" data-task="Task_LogRetained" style="left:64.04%;top:39.61%" aria-expanded="false" aria-label="About step: Append `retained`, with why it stays" title="About: Append `retained`, with why it stays">i</button>
-<button type="button" class="pt-mark" data-task="Task_Notice" style="left:79.82%;top:39.61%" aria-expanded="false" aria-label="About step: Post the retention notice on the PR" title="About: Post the retention notice on the PR">i</button>
-<button type="button" class="pt-mark" data-task="Task_Validate" style="left:32.46%;top:56.49%" aria-expanded="false" aria-label="About step: Check the slug's SHAPE and that the confirmation repeats it" title="About: Check the slug's SHAPE and that the confirmation repeats it">i</button>
-<button type="button" class="pt-mark" data-task="Task_Preflight" style="left:49.12%;top:56.49%" aria-expanded="false" aria-label="About step: Re-evaluate liveness AT REMOVAL TIME" title="About: Re-evaluate liveness AT REMOVAL TIME">i</button>
-<button type="button" class="pt-mark" data-task="Task_RemoveDisp" style="left:79.82%;top:48.7%" aria-expanded="false" aria-label="About step: Remove it AND append `removed` — one commit" title="About: Remove it AND append `removed` — one commit">i</button>
-<button type="button" class="pt-mark" data-task="H_Confirm" style="left:32.46%;top:81.17%" aria-expanded="false" aria-label="About step: Repeat the slug, exactly, to confirm" title="About: Repeat the slug, exactly, to confirm">i</button>
+<button type="button" class="pt-mark" data-task="Task_Build" style="left:30.34%;top:5.78%" aria-expanded="false" aria-label="About step: Build the docs site Jekyll · TypeDoc · KG export" title="About: Build the docs site Jekyll · TypeDoc · KG export">i</button>
+<a class="pt-go" href="render-kg-to-cdn.html" style="left:31.2%;top:6.3%;width:15.38%;height:12.08%" aria-label="Open subprocess: Push to the CDN at STAGING/&amp;lt;slug&amp;gt;/" title="Open subprocess: Push to the CDN at STAGING/&amp;lt;slug&amp;gt;/"></a>
+<button type="button" class="pt-mark" data-task="Task_Deploy" style="left:46.58%;top:6.3%" aria-expanded="false" aria-label="About step: Push to the CDN at STAGING/&amp;lt;slug&amp;gt;/" title="About: Push to the CDN at STAGING/&amp;lt;slug&amp;gt;/">i</button>
+<button type="button" class="pt-mark" data-task="Task_LogRendered" style="left:62.82%;top:7.14%" aria-expanded="false" aria-label="About step: Append `rendered` to the render log" title="About: Append `rendered` to the render log">i</button>
+<button type="button" class="pt-mark" data-task="Task_Comment" style="left:79.06%;top:7.08%" aria-expanded="false" aria-label="About step: Comment the preview URL on the PR" title="About: Comment the preview URL on the PR">i</button>
+<button type="button" class="pt-mark" data-task="Task_Slug" style="left:29.91%;top:30.52%" aria-expanded="false" aria-label="About step: Derive the slug from the head ref" title="About: Derive the slug from the head ref">i</button>
+<button type="button" class="pt-mark" data-task="Task_Remove" style="left:64.53%;top:20.19%" aria-expanded="false" aria-label="About step: Remove the preview AND append `removed` — one commit" title="About: Remove the preview AND append `removed` — one commit">i</button>
+<button type="button" class="pt-mark" data-task="Task_LogRetained" style="left:64.1%;top:39.61%" aria-expanded="false" aria-label="About step: Append `retained`, with why it stays" title="About: Append `retained`, with why it stays">i</button>
+<button type="button" class="pt-mark" data-task="Task_Notice" style="left:80.34%;top:39.61%" aria-expanded="false" aria-label="About step: Post the retention notice on the PR" title="About: Post the retention notice on the PR">i</button>
+<button type="button" class="pt-mark" data-task="Task_Validate" style="left:32.05%;top:53.9%" aria-expanded="false" aria-label="About step: Check the slug's SHAPE and that the confirmation repeats it" title="About: Check the slug's SHAPE and that the confirmation repeats it">i</button>
+<button type="button" class="pt-mark" data-task="Task_Preflight" style="left:49.15%;top:56.43%" aria-expanded="false" aria-label="About step: Re-evaluate liveness AT REMOVAL TIME" title="About: Re-evaluate liveness AT REMOVAL TIME">i</button>
+<button type="button" class="pt-mark" data-task="Task_RemoveDisp" style="left:80.34%;top:48.7%" aria-expanded="false" aria-label="About step: Remove it AND append `removed` — one commit" title="About: Remove it AND append `removed` — one commit">i</button>
+<button type="button" class="pt-mark" data-task="H_Confirm" style="left:32.05%;top:82.73%" aria-expanded="false" aria-label="About step: Repeat the slug, exactly, to confirm" title="About: Repeat the slug, exactly, to confirm">i</button>
 </div>
 <div class="pt-panel" role="dialog" aria-label="Task details" hidden=""></div>
 </div>
@@ -1103,7 +1097,7 @@
       <td><strong>Build the docs site Jekyll · TypeDoc · KG export</strong><br /><code class="language-plaintext highlighter-rouge">Task_Build</code></td>
       <td>CI/CD Pipeline</td>
       <td><code class="language-plaintext highlighter-rouge">feature-staging</code></td>
-      <td>Build the preview from the PR’s head: regenerate the generated docs, trim what this preview does not need, render the BPMN diagrams, then Jekyll, TypeDoc and the knowledge-graph export, with the staging banner and SEO identity claims stripped.</td>
+      <td>Build the preview from the PR’s head: regenerate the generated docs, trim what this preview does not need, render the BPMN diagrams, then Jekyll, TypeDoc and the knowledge-graph export, with the staging banner and SEO identity claims stripped. A PREVIEW REBUILDS ONLY ITS DEPENDENCY CONE (owner cards Q-CONE-1 C and Q-CONE-2 B, 2026-11-01): main’s writer records say what each derive:publish writer and each step of the QA working copy READ. A writer or QA step whose recorded reads all match is not run, and main’s outputs for it are put back. Every other one runs. QA is not left out of a preview, only narrowed to what the change can reach. Inside a preview’s QA build, <code class="language-plaintext highlighter-rouge">skill:register</code> also leaves to derive:publish the two pages that derive:publish builds anyway and that no later QA step reads (<code class="language-plaintext highlighter-rouge">skills:docs</code> and <code class="language-plaintext highlighter-rouge">lsi:viz</code>), so they are built once.</td>
     </tr>
     <tr>
       <td><strong>Push to the CDN at STAGING/&lt;slug&gt;/</strong><br /><code class="language-plaintext highlighter-rouge">Task_Deploy</code></td>
@@ -1121,7 +1115,7 @@
       <td><strong>Comment the preview URL on the PR</strong><br /><code class="language-plaintext highlighter-rouge">Task_Comment</code></td>
       <td>CI/CD Pipeline</td>
       <td><code class="language-plaintext highlighter-rouge">staging-review</code></td>
-      <td>Post, or update in place, one comment on the PR giving the preview URL (STAGING/<slug>/) and the commit it was built from. Pull-request events only.</slug></td>
+      <td>Post, or update in place, one comment on the PR giving the preview URL (STAGING/&lt;slug&gt;/) and the commit it was built from. Pull-request events only.</td>
     </tr>
     <tr>
       <td><strong>Derive the slug from the head ref</strong><br /><code class="language-plaintext highlighter-rouge">Task_Slug</code></td>
@@ -1163,7 +1157,7 @@
       <td><strong>Remove it AND append <code class="language-plaintext highlighter-rouge">removed</code> — one commit</strong><br /><code class="language-plaintext highlighter-rouge">Task_RemoveDisp</code></td>
       <td>CI/CD Pipeline</td>
       <td><code class="language-plaintext highlighter-rouge">deletion-requires-confirmation</code></td>
-      <td>Say what is going — size and file count — then remove STAGING/<slug>/ and append `removed` to the render log in the SAME commit, so a preview cannot vanish without a record of who dispatched it and why. The slug is a dispatch input, so the tool re-checks it by value rather than trusting the guard.</slug></td>
+      <td>Say what is going — size and file count — then remove STAGING/&lt;slug&gt;/ and append <code class="language-plaintext highlighter-rouge">removed</code> to the render log in the SAME commit, so a preview cannot vanish without a record of who dispatched it and why. The slug is a dispatch input, so the tool re-checks it by value rather than trusting the guard.</td>
     </tr>
     <tr>
       <td><strong>Repeat the slug, exactly, to confirm</strong><br /><code class="language-plaintext highlighter-rouge">H_Confirm</code></td>

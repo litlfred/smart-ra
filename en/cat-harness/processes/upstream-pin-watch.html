@@ -9,13 +9,7 @@
 
   <link rel="stylesheet" href="../../../assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
 
-  <style id="jtd-nav-activation">
   
-    .site-nav ul li a {
-      background-image: none;
-    }
-
-  </style>
 
   
 
@@ -588,7 +582,7 @@
 -->
 <!-- The harness icon row's own style, which railed pages load without docs-ui.css (beans `lhvt`, `9rq1`). -->
 <link rel="stylesheet" href="../../../assets/css/navbar-row.css?v=7d7d00921e0f">
-<link rel="stylesheet" href="../../../assets/css/docs-ui.css?v=6071ae228cf3">
+<link rel="stylesheet" href="../../../assets/css/docs-ui.css?v=2ed7923cda66">
 <!-- Narrow viewports: wide content scrolls in its own box, never the page
      (bean `2r2n`). The standalone viewers inline the same file through
      `withViewerNav`, so both kinds of page read one set of rules. -->
@@ -646,8 +640,8 @@
 <!-- BEFORE docs-ui.js and work-plan.js: both read window.faRender. -->
 <script src="../../../assets/js/kg-render.js" defer></script>
 <!-- BEFORE docs-ui.js, which calls it: the one drawing of the harness icon row (beans `lhvt`, `9rq1`). -->
-<script src="../../../assets/js/navbar-row.js?v=7dce6a7e2ab0" defer></script>
-<script src="../../../assets/js/docs-ui.js?v=59c1d8d3ff0a" defer></script>
+<script src="../../../assets/js/navbar-row.js?v=6bb19e1d17a5" defer></script>
+<script src="../../../assets/js/docs-ui.js?v=9ffac52f2026" defer></script>
 <!-- The edit, source and feedback links of every page, from the platform's one
   recipe (cat-harness-tools/src/core/edit-links.ts, bean v433): links carry their
   facts and this builds the hrefs. -->
@@ -835,7 +829,7 @@
         <main>
           
             <blockquote class="note">
-  <p>Generated from <code class="language-plaintext highlighter-rouge">cat-harness/processes/sdlc/upstream-pin-watch.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a></p>
+  <p>Generated from <code class="language-plaintext highlighter-rouge">cat-harness/processes/sdlc/upstream-pin-watch.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a> · <a href="cat-harness/">cat-harness processes</a></p>
 </blockquote>
 
 <h1 id="watching-a-pinned-upstream-dependency">
@@ -861,17 +855,17 @@
 <div class="pt-diagram" data-panel="upstream-pin-watch.tasks.json">
 <img src="../../../assets/img/workflows/upstream-pin-watch.svg" alt="BPMN diagram: Watching a pinned upstream dependency" />
 <div class="pt-layer">
-<button type="button" class="pt-mark" data-task="Task_ReadPins" style="left:21.52%;top:11.63%" aria-expanded="false" aria-label="About step: Read the pin registry upstream-pins.json" title="About: Read the pin registry upstream-pins.json">i</button>
-<button type="button" class="pt-mark" data-task="Task_QueryUpstream" style="left:30.22%;top:11.63%" aria-expanded="false" aria-label="About step: List upstream releases and compare to the pin" title="About: List upstream releases and compare to the pin">i</button>
-<button type="button" class="pt-mark" data-task="Task_CloseIssue" style="left:56.3%;top:34.88%" aria-expanded="false" aria-label="About step: Close the tracking issue" title="About: Close the tracking issue">i</button>
-<button type="button" class="pt-mark" data-task="Task_TrackIssue" style="left:56.3%;top:11.63%" aria-expanded="false" aria-label="About step: Open or EDIT the one tracking issue" title="About: Open or EDIT the one tracking issue">i</button>
-<button type="button" class="pt-mark" data-task="A_PickUp" style="left:77.17%;top:69.77%" aria-expanded="false" aria-label="About step: Pick up the stale pin" title="About: Pick up the stale pin">i</button>
-<a class="pt-go" href="upstream-version-adoption.html" style="left:79.78%;top:69.77%;width:6.09%;height:18.6%" aria-label="Open subprocess: Adopt the version bump" title="Open subprocess: Adopt the version bump"></a>
-<button type="button" class="pt-mark" data-task="Call_Adopt" style="left:85.87%;top:69.77%" aria-expanded="false" aria-label="About step: Adopt the version bump" title="About: Adopt the version bump">i</button>
-<a class="pt-go" href="bean-open.html" style="left:58.91%;top:69.77%;width:5.22%;height:18.6%" aria-label="Open subprocess: Open the bean" title="Open subprocess: Open the bean"></a>
-<button type="button" class="pt-mark" data-task="Call_BeanOpen" style="left:64.13%;top:69.77%" aria-expanded="false" aria-label="About step: Open the bean" title="About: Open the bean">i</button>
-<a class="pt-go" href="bean-close.html" style="left:88.48%;top:69.77%;width:5.22%;height:18.6%" aria-label="Open subprocess: Close the bean" title="Open subprocess: Close the bean"></a>
-<button type="button" class="pt-mark" data-task="Call_BeanClose" style="left:93.7%;top:69.77%" aria-expanded="false" aria-label="About step: Close the bean" title="About: Close the bean">i</button>
+<button type="button" class="pt-mark" data-task="Task_ReadPins" style="left:21.34%;top:11.63%" aria-expanded="false" aria-label="About step: Read the pin registry upstream-pins.json" title="About: Read the pin registry upstream-pins.json">i</button>
+<button type="button" class="pt-mark" data-task="Task_QueryUpstream" style="left:30.82%;top:11.4%" aria-expanded="false" aria-label="About step: List upstream releases and compare to the pin" title="About: List upstream releases and compare to the pin">i</button>
+<button type="button" class="pt-mark" data-task="Task_CloseIssue" style="left:56.68%;top:34.88%" aria-expanded="false" aria-label="About step: Close the tracking issue" title="About: Close the tracking issue">i</button>
+<button type="button" class="pt-mark" data-task="Task_TrackIssue" style="left:56.68%;top:11.4%" aria-expanded="false" aria-label="About step: Open or EDIT the one tracking issue" title="About: Open or EDIT the one tracking issue">i</button>
+<button type="button" class="pt-mark" data-task="A_PickUp" style="left:77.37%;top:69.77%" aria-expanded="false" aria-label="About step: Pick up the stale pin" title="About: Pick up the stale pin">i</button>
+<a class="pt-go" href="upstream-version-adoption.html" style="left:79.09%;top:69.77%;width:6.03%;height:18.6%" aria-label="Open subprocess: Adopt the version bump" title="Open subprocess: Adopt the version bump"></a>
+<button type="button" class="pt-mark" data-task="Call_Adopt" style="left:85.13%;top:69.77%" aria-expanded="false" aria-label="About step: Adopt the version bump" title="About: Adopt the version bump">i</button>
+<a class="pt-go" href="bean-open.html" style="left:58.41%;top:69.77%;width:5.17%;height:18.6%" aria-label="Open subprocess: Open the bean" title="Open subprocess: Open the bean"></a>
+<button type="button" class="pt-mark" data-task="Call_BeanOpen" style="left:63.58%;top:69.77%" aria-expanded="false" aria-label="About step: Open the bean" title="About: Open the bean">i</button>
+<a class="pt-go" href="bean-close.html" style="left:86.85%;top:69.77%;width:6.9%;height:18.6%" aria-label="Open subprocess: Close the bean" title="Open subprocess: Close the bean"></a>
+<button type="button" class="pt-mark" data-task="Call_BeanClose" style="left:93.75%;top:69.77%" aria-expanded="false" aria-label="About step: Close the bean" title="About: Close the bean">i</button>
 </div>
 <div class="pt-panel" role="dialog" aria-label="Task details" hidden=""></div>
 </div>

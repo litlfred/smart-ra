@@ -9,13 +9,7 @@
 
   <link rel="stylesheet" href="../../../assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
 
-  <style id="jtd-nav-activation">
   
-    .site-nav ul li a {
-      background-image: none;
-    }
-
-  </style>
 
   
 
@@ -588,7 +582,7 @@
 -->
 <!-- The harness icon row's own style, which railed pages load without docs-ui.css (beans `lhvt`, `9rq1`). -->
 <link rel="stylesheet" href="../../../assets/css/navbar-row.css?v=7d7d00921e0f">
-<link rel="stylesheet" href="../../../assets/css/docs-ui.css?v=6071ae228cf3">
+<link rel="stylesheet" href="../../../assets/css/docs-ui.css?v=2ed7923cda66">
 <!-- Narrow viewports: wide content scrolls in its own box, never the page
      (bean `2r2n`). The standalone viewers inline the same file through
      `withViewerNav`, so both kinds of page read one set of rules. -->
@@ -646,8 +640,8 @@
 <!-- BEFORE docs-ui.js and work-plan.js: both read window.faRender. -->
 <script src="../../../assets/js/kg-render.js" defer></script>
 <!-- BEFORE docs-ui.js, which calls it: the one drawing of the harness icon row (beans `lhvt`, `9rq1`). -->
-<script src="../../../assets/js/navbar-row.js?v=7dce6a7e2ab0" defer></script>
-<script src="../../../assets/js/docs-ui.js?v=59c1d8d3ff0a" defer></script>
+<script src="../../../assets/js/navbar-row.js?v=6bb19e1d17a5" defer></script>
+<script src="../../../assets/js/docs-ui.js?v=9ffac52f2026" defer></script>
 <!-- The edit, source and feedback links of every page, from the platform's one
   recipe (cat-harness-tools/src/core/edit-links.ts, bean v433): links carry their
   facts and this builds the hrefs. -->
@@ -835,7 +829,7 @@
         <main>
           
             <blockquote class="note">
-  <p>Generated from <code class="language-plaintext highlighter-rouge">cat-harness/processes/sdlc/test-plan-execution.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a></p>
+  <p>Generated from <code class="language-plaintext highlighter-rouge">cat-harness/processes/sdlc/test-plan-execution.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a> · <a href="cat-harness/">cat-harness processes</a></p>
 </blockquote>
 
 <h1 id="test-plan-execution">
@@ -859,26 +853,26 @@
 <div class="pt-diagram" data-panel="test-plan-execution.tasks.json">
 <img src="../../../assets/img/workflows/test-plan-execution.svg" alt="BPMN diagram: Test-plan execution" />
 <div class="pt-layer">
-<button type="button" class="pt-mark" data-task="A_Request" style="left:23.86%;top:6.43%" aria-expanded="false" aria-label="About step: Request certification of the system against plan P" title="About: Request certification of the system against plan P">i</button>
-<button type="button" class="pt-mark" data-task="A_ResolvePlan" style="left:32.16%;top:22.5%" aria-expanded="false" aria-label="About step: Resolve the plan [test-plan/v1]" title="About: Resolve the plan [test-plan/v1]">i</button>
-<button type="button" class="pt-mark" data-task="A_BindData" style="left:39.63%;top:22.5%" aria-expanded="false" aria-label="About step: Bind the test data [fixed or generated]" title="About: Bind the test data [fixed or generated]">i</button>
-<button type="button" class="pt-mark" data-task="A_Execute" style="left:47.1%;top:22.5%" aria-expanded="false" aria-label="About step: Execute every case, or skip it with a reason" title="About: Execute every case, or skip it with a reason">i</button>
-<button type="button" class="pt-mark" data-task="A_WriteRun" style="left:54.56%;top:22.5%" aria-expanded="false" aria-label="About step: Write the test run and the test report [folio-test-run/v1 + test-report/v1]" title="About: Write the test run and the test report [folio-test-run/v1 + test-report/v1]">i</button>
-<button type="button" class="pt-mark" data-task="A_ReExecuteSample" style="left:62.03%;top:38.58%" aria-expanded="false" aria-label="About step: Re-execute a sample, blind to the tester's verdicts" title="About: Re-execute a sample, blind to the tester's verdicts">i</button>
-<button type="button" class="pt-mark" data-task="A_RecordCertification" style="left:69.5%;top:52.35%" aria-expanded="false" aria-label="About step: Record the certification decision" title="About: Record the certification decision">i</button>
-<button type="button" class="pt-mark" data-task="A_RecordRefusal" style="left:69.5%;top:62.69%" aria-expanded="false" aria-label="About step: Record the refusal, with the failing cases" title="About: Record the refusal, with the failing cases">i</button>
-<button type="button" class="pt-mark" data-task="A_RecordUndetermined" style="left:69.5%;top:73.02%" aria-expanded="false" aria-label="About step: Record why it could not be decided" title="About: Record why it could not be decided">i</button>
-<a class="pt-go" href="qa-report-signing.html" style="left:73.65%;top:86.8%;width:6.22%;height:9.18%" aria-label="Open subprocess: Sign the certification" title="Open subprocess: Sign the certification"></a>
-<button type="button" class="pt-mark" data-task="Call_Sign" style="left:79.88%;top:86.8%" aria-expanded="false" aria-label="About step: Sign the certification" title="About: Sign the certification">i</button>
-<button type="button" class="pt-mark" data-task="A_FileCertification" style="left:88.17%;top:86.8%" aria-expanded="false" aria-label="About step: File the signed certification [qa-attestations/v1]" title="About: File the signed certification [qa-attestations/v1]">i</button>
-<a class="pt-go" href="bean-open.html" style="left:6.02%;top:6.43%;width:4.98%;height:9.18%" aria-label="Open subprocess: Open the bean" title="Open subprocess: Open the bean"></a>
-<button type="button" class="pt-mark" data-task="Call_BeanOpen" style="left:11%;top:6.43%" aria-expanded="false" aria-label="About step: Open the bean" title="About: Open the bean">i</button>
-<a class="pt-go" href="bean-close.html" style="left:90.25%;top:86.8%;width:4.98%;height:9.18%" aria-label="Open subprocess: Close the bean" title="Open subprocess: Close the bean"></a>
-<button type="button" class="pt-mark" data-task="Call_BeanClose" style="left:95.23%;top:86.8%" aria-expanded="false" aria-label="About step: Close the bean" title="About: Close the bean">i</button>
-<a class="pt-go" href="bean-close.html" style="left:71.58%;top:62.69%;width:4.98%;height:9.18%" aria-label="Open subprocess: Close the bean" title="Open subprocess: Close the bean"></a>
-<button type="button" class="pt-mark" data-task="Call_BeanClose_2" style="left:76.56%;top:62.69%" aria-expanded="false" aria-label="About step: Close the bean" title="About: Close the bean">i</button>
-<a class="pt-go" href="bean-close.html" style="left:71.58%;top:73.02%;width:4.98%;height:9.18%" aria-label="Open subprocess: Close the bean" title="Open subprocess: Close the bean"></a>
-<button type="button" class="pt-mark" data-task="Call_BeanClose_3" style="left:76.56%;top:73.02%" aria-expanded="false" aria-label="About step: Close the bean" title="About: Close the bean">i</button>
+<button type="button" class="pt-mark" data-task="A_Request" style="left:23.19%;top:6.42%" aria-expanded="false" aria-label="About step: Request certification of the system against plan P" title="About: Request certification of the system against plan P">i</button>
+<button type="button" class="pt-mark" data-task="A_ResolvePlan" style="left:31.25%;top:22.32%" aria-expanded="false" aria-label="About step: Resolve the plan [test-plan/v1]" title="About: Resolve the plan [test-plan/v1]">i</button>
+<button type="button" class="pt-mark" data-task="A_BindData" style="left:38.51%;top:22.32%" aria-expanded="false" aria-label="About step: Bind the test data [fixed or generated]" title="About: Bind the test data [fixed or generated]">i</button>
+<button type="button" class="pt-mark" data-task="A_Execute" style="left:45.77%;top:22.32%" aria-expanded="false" aria-label="About step: Execute every case, or skip it with a reason" title="About: Execute every case, or skip it with a reason">i</button>
+<button type="button" class="pt-mark" data-task="A_WriteRun" style="left:53.02%;top:22.32%" aria-expanded="false" aria-label="About step: Write the test run and the test report [folio-test-run/v1 + test-report/v1]" title="About: Write the test run and the test report [folio-test-run/v1 + test-report/v1]">i</button>
+<button type="button" class="pt-mark" data-task="A_ReExecuteSample" style="left:60.28%;top:38.22%" aria-expanded="false" aria-label="About step: Re-execute a sample, blind to the tester's verdicts" title="About: Re-execute a sample, blind to the tester's verdicts">i</button>
+<button type="button" class="pt-mark" data-task="A_RecordCertification" style="left:67.54%;top:52.07%" aria-expanded="false" aria-label="About step: Record the certification decision" title="About: Record the certification decision">i</button>
+<button type="button" class="pt-mark" data-task="A_RecordRefusal" style="left:68.75%;top:61.95%" aria-expanded="false" aria-label="About step: Record the refusal, with the failing cases" title="About: Record the refusal, with the failing cases">i</button>
+<button type="button" class="pt-mark" data-task="A_RecordUndetermined" style="left:68.15%;top:72.29%" aria-expanded="false" aria-label="About step: Record why it could not be decided" title="About: Record why it could not be decided">i</button>
+<a class="pt-go" href="qa-report-signing.html" style="left:72.38%;top:86.88%;width:6.05%;height:9.09%" aria-label="Open subprocess: Sign the certification" title="Open subprocess: Sign the certification"></a>
+<button type="button" class="pt-mark" data-task="Call_Sign" style="left:78.43%;top:86.88%" aria-expanded="false" aria-label="About step: Sign the certification" title="About: Sign the certification">i</button>
+<button type="button" class="pt-mark" data-task="A_FileCertification" style="left:87.3%;top:86.88%" aria-expanded="false" aria-label="About step: File the signed certification [qa-attestations/v1]" title="About: File the signed certification [qa-attestations/v1]">i</button>
+<a class="pt-go" href="bean-open.html" style="left:5.85%;top:6.42%;width:4.84%;height:9.09%" aria-label="Open subprocess: Open the bean" title="Open subprocess: Open the bean"></a>
+<button type="button" class="pt-mark" data-task="Call_BeanOpen" style="left:10.69%;top:6.42%" aria-expanded="false" aria-label="About step: Open the bean" title="About: Open the bean">i</button>
+<a class="pt-go" href="bean-close.html" style="left:88.91%;top:86.88%;width:6.45%;height:9.09%" aria-label="Open subprocess: Close the bean" title="Open subprocess: Close the bean"></a>
+<button type="button" class="pt-mark" data-task="Call_BeanClose" style="left:95.36%;top:86.88%" aria-expanded="false" aria-label="About step: Close the bean" title="About: Close the bean">i</button>
+<a class="pt-go" href="bean-close.html" style="left:70.36%;top:61.33%;width:4.84%;height:10.56%" aria-label="Open subprocess: Close the bean" title="Open subprocess: Close the bean"></a>
+<button type="button" class="pt-mark" data-task="Call_BeanClose_2" style="left:75.2%;top:61.33%" aria-expanded="false" aria-label="About step: Close the bean" title="About: Close the bean">i</button>
+<a class="pt-go" href="bean-close.html" style="left:70.36%;top:71.55%;width:4.84%;height:10.56%" aria-label="Open subprocess: Close the bean" title="Open subprocess: Close the bean"></a>
+<button type="button" class="pt-mark" data-task="Call_BeanClose_3" style="left:75.2%;top:71.55%" aria-expanded="false" aria-label="About step: Close the bean" title="About: Close the bean">i</button>
 </div>
 <div class="pt-panel" role="dialog" aria-label="Task details" hidden=""></div>
 </div>

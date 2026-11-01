@@ -9,13 +9,7 @@
 
   <link rel="stylesheet" href="../../../assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
 
-  <style id="jtd-nav-activation">
   
-    .site-nav ul li a {
-      background-image: none;
-    }
-
-  </style>
 
   
 
@@ -588,7 +582,7 @@
 -->
 <!-- The harness icon row's own style, which railed pages load without docs-ui.css (beans `lhvt`, `9rq1`). -->
 <link rel="stylesheet" href="../../../assets/css/navbar-row.css?v=7d7d00921e0f">
-<link rel="stylesheet" href="../../../assets/css/docs-ui.css?v=6071ae228cf3">
+<link rel="stylesheet" href="../../../assets/css/docs-ui.css?v=2ed7923cda66">
 <!-- Narrow viewports: wide content scrolls in its own box, never the page
      (bean `2r2n`). The standalone viewers inline the same file through
      `withViewerNav`, so both kinds of page read one set of rules. -->
@@ -646,8 +640,8 @@
 <!-- BEFORE docs-ui.js and work-plan.js: both read window.faRender. -->
 <script src="../../../assets/js/kg-render.js" defer></script>
 <!-- BEFORE docs-ui.js, which calls it: the one drawing of the harness icon row (beans `lhvt`, `9rq1`). -->
-<script src="../../../assets/js/navbar-row.js?v=7dce6a7e2ab0" defer></script>
-<script src="../../../assets/js/docs-ui.js?v=59c1d8d3ff0a" defer></script>
+<script src="../../../assets/js/navbar-row.js?v=6bb19e1d17a5" defer></script>
+<script src="../../../assets/js/docs-ui.js?v=9ffac52f2026" defer></script>
 <!-- The edit, source and feedback links of every page, from the platform's one
   recipe (cat-harness-tools/src/core/edit-links.ts, bean v433): links carry their
   facts and this builds the hrefs. -->
@@ -835,7 +829,7 @@
         <main>
           
             <blockquote class="note">
-  <p>Generated from <code class="language-plaintext highlighter-rouge">cat-harness/processes/sdlc/merge-base.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a></p>
+  <p>Generated from <code class="language-plaintext highlighter-rouge">cat-harness/processes/sdlc/merge-base.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a> · <a href="cat-harness/">cat-harness processes</a></p>
 </blockquote>
 
 <h1 id="merge-the-base-branch-in">
@@ -859,14 +853,14 @@
 <div class="pt-diagram" data-panel="merge-base.tasks.json">
 <img src="../../../assets/img/workflows/merge-base.svg" alt="BPMN diagram: Merge the base branch in" />
 <div class="pt-layer">
-<button type="button" class="pt-mark" data-task="Task_Merge" style="left:19.8%;top:24.47%" aria-expanded="false" aria-label="About step: Merge the base in, without committing" title="About: Merge the base in, without committing">i</button>
-<button type="button" class="pt-mark" data-task="Task_Classify" style="left:38.59%;top:24.47%" aria-expanded="false" aria-label="About step: Classify every conflicted path against the declared patterns" title="About: Classify every conflicted path against the declared patterns">i</button>
-<button type="button" class="pt-mark" data-task="Task_Resolve" style="left:57.38%;top:24.47%" aria-expanded="false" aria-label="About step: Resolve each by its declared strategy" title="About: Resolve each by its declared strategy">i</button>
-<button type="button" class="pt-mark" data-task="Task_Regen" style="left:70.81%;top:24.47%" aria-expanded="false" aria-label="About step: Regenerate, asking every CI gate" title="About: Regenerate, asking every CI gate">i</button>
-<button type="button" class="pt-mark" data-task="Task_Commit" style="left:89.6%;top:24.47%" aria-expanded="false" aria-label="About step: Commit the merge" title="About: Commit the merge">i</button>
-<button type="button" class="pt-mark" data-task="Task_Abort" style="left:70.81%;top:45.74%" aria-expanded="false" aria-label="About step: Abort, restore the tree, list what was refused" title="About: Abort, restore the tree, list what was refused">i</button>
-<button type="button" class="pt-mark" data-task="Task_ByHand" style="left:70.81%;top:73.4%" aria-expanded="false" aria-label="About step: Resolve by hand, then regenerate" title="About: Resolve by hand, then regenerate">i</button>
-<button type="button" class="pt-mark" data-task="Task_Report" style="left:21.81%;top:47.87%" aria-expanded="false" aria-label="About step: Report what the run found, once" title="About: Report what the run found, once">i</button>
+<button type="button" class="pt-mark" data-task="Task_Merge" style="left:19.54%;top:24.31%" aria-expanded="false" aria-label="About step: Merge the base in, without committing" title="About: Merge the base in, without committing">i</button>
+<button type="button" class="pt-mark" data-task="Task_Classify" style="left:38.08%;top:24.31%" aria-expanded="false" aria-label="About step: Classify every conflicted path against the declared patterns" title="About: Classify every conflicted path against the declared patterns">i</button>
+<button type="button" class="pt-mark" data-task="Task_Resolve" style="left:56.62%;top:24.31%" aria-expanded="false" aria-label="About step: Resolve each by its declared strategy" title="About: Resolve each by its declared strategy">i</button>
+<button type="button" class="pt-mark" data-task="Task_Regen" style="left:69.87%;top:24.31%" aria-expanded="false" aria-label="About step: Regenerate, asking every CI gate" title="About: Regenerate, asking every CI gate">i</button>
+<button type="button" class="pt-mark" data-task="Task_Commit" style="left:89.74%;top:24.31%" aria-expanded="false" aria-label="About step: Commit the merge" title="About: Commit the merge">i</button>
+<button type="button" class="pt-mark" data-task="Task_Abort" style="left:71.19%;top:45.45%" aria-expanded="false" aria-label="About step: Abort, restore the tree, list what was refused" title="About: Abort, restore the tree, list what was refused">i</button>
+<button type="button" class="pt-mark" data-task="Task_ByHand" style="left:70.2%;top:73.57%" aria-expanded="false" aria-label="About step: Resolve by hand, then regenerate" title="About: Resolve by hand, then regenerate">i</button>
+<button type="button" class="pt-mark" data-task="Task_Report" style="left:21.52%;top:47.57%" aria-expanded="false" aria-label="About step: Report what the run found, once" title="About: Report what the run found, once">i</button>
 </div>
 <div class="pt-panel" role="dialog" aria-label="Task details" hidden=""></div>
 </div>
@@ -1099,13 +1093,13 @@
       <td><strong>Classify every conflicted path against the declared patterns</strong><br /><code class="language-plaintext highlighter-rouge">Task_Classify</code></td>
       <td>merge:main command</td>
       <td><code class="language-plaintext highlighter-rouge">merge-conflict-patterns</code></td>
-      <td>The first matching pattern decides: take-base, generated-regions, qa-sidecar, or refuse. A path no pattern names refuses.</td>
+      <td>The first matching pattern decides: take-base, owned-tree, generated-regions, or refuse. A path no pattern names refuses.</td>
     </tr>
     <tr>
       <td><strong>Resolve each by its declared strategy</strong><br /><code class="language-plaintext highlighter-rouge">Task_Resolve</code></td>
       <td>merge:main command</td>
       <td><code class="language-plaintext highlighter-rouge">merge-conflict-patterns</code></td>
-      <td>qa-sidecar paths first, through <code class="language-plaintext highlighter-rouge">qa:resolve-conflicts</code>; take-base paths take the base’s copy; generated-regions files take the base’s side of each hunk, which lies inside a generated region by construction.</td>
+      <td>take-base paths take the base’s copy; generated-regions files take the base’s side of each hunk, which lies inside a generated region by construction.</td>
     </tr>
     <tr>
       <td><strong>Regenerate, asking every CI gate</strong><br /><code class="language-plaintext highlighter-rouge">Task_Regen</code></td>

@@ -9,13 +9,7 @@
 
   <link rel="stylesheet" href="../../../assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
 
-  <style id="jtd-nav-activation">
   
-    .site-nav ul li a {
-      background-image: none;
-    }
-
-  </style>
 
   
 
@@ -588,7 +582,7 @@
 -->
 <!-- The harness icon row's own style, which railed pages load without docs-ui.css (beans `lhvt`, `9rq1`). -->
 <link rel="stylesheet" href="../../../assets/css/navbar-row.css?v=7d7d00921e0f">
-<link rel="stylesheet" href="../../../assets/css/docs-ui.css?v=6071ae228cf3">
+<link rel="stylesheet" href="../../../assets/css/docs-ui.css?v=2ed7923cda66">
 <!-- Narrow viewports: wide content scrolls in its own box, never the page
      (bean `2r2n`). The standalone viewers inline the same file through
      `withViewerNav`, so both kinds of page read one set of rules. -->
@@ -646,8 +640,8 @@
 <!-- BEFORE docs-ui.js and work-plan.js: both read window.faRender. -->
 <script src="../../../assets/js/kg-render.js" defer></script>
 <!-- BEFORE docs-ui.js, which calls it: the one drawing of the harness icon row (beans `lhvt`, `9rq1`). -->
-<script src="../../../assets/js/navbar-row.js?v=7dce6a7e2ab0" defer></script>
-<script src="../../../assets/js/docs-ui.js?v=59c1d8d3ff0a" defer></script>
+<script src="../../../assets/js/navbar-row.js?v=6bb19e1d17a5" defer></script>
+<script src="../../../assets/js/docs-ui.js?v=9ffac52f2026" defer></script>
 <!-- The edit, source and feedback links of every page, from the platform's one
   recipe (cat-harness-tools/src/core/edit-links.ts, bean v433): links carry their
   facts and this builds the hrefs. -->
@@ -835,7 +829,7 @@
         <main>
           
             <blockquote class="note">
-  <p>Generated from <code class="language-plaintext highlighter-rouge">cat-harness/processes/library/content-acquisition.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a></p>
+  <p>Generated from <code class="language-plaintext highlighter-rouge">cat-harness/processes/library/content-acquisition.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a> · <a href="cat-harness/">cat-harness processes</a></p>
 </blockquote>
 
 <h1 id="content-acquisition">
@@ -855,8 +849,8 @@
 <div class="pt-diagram" data-panel="content-acquisition.tasks.json">
 <img src="../../../assets/img/workflows/content-acquisition.svg" alt="BPMN diagram: Content acquisition" />
 <div class="pt-layer">
-<a class="pt-go" href="ask-the-person.html" style="left:18.64%;top:62.86%;width:8.28%;height:22.86%" aria-label="Open subprocess: Say what is needed, and ask for a link OR a description" title="Open subprocess: Say what is needed, and ask for a link OR a description"></a>
-<button type="button" class="pt-mark" data-task="A_Ask" style="left:26.92%;top:62.86%" aria-expanded="false" aria-label="About step: Say what is needed, and ask for a link OR a description" title="About: Say what is needed, and ask for a link OR a description">i</button>
+<a class="pt-go" href="ask-the-person.html" style="left:17.46%;top:58.29%;width:10.65%;height:32%" aria-label="Open subprocess: Say what is needed, and ask for a link OR a description" title="Open subprocess: Say what is needed, and ask for a link OR a description"></a>
+<button type="button" class="pt-mark" data-task="A_Ask" style="left:28.11%;top:58.29%" aria-expanded="false" aria-label="About step: Say what is needed, and ask for a link OR a description" title="About: Say what is needed, and ask for a link OR a description">i</button>
 <button type="button" class="pt-mark" data-task="P_Respond" style="left:38.76%;top:14.29%" aria-expanded="false" aria-label="About step: Give a link, a description, or neither" title="About: Give a link, a description, or neither">i</button>
 <button type="button" class="pt-mark" data-task="A_PointToUpload" style="left:50.59%;top:62.86%" aria-expanded="false" aria-label="About step: Point at the upload target [scripts/upload-url.ts]" title="About: Point at the upload target [scripts/upload-url.ts]">i</button>
 <button type="button" class="pt-mark" data-task="P_Upload" style="left:62.43%;top:14.29%" aria-expanded="false" aria-label="About step: Drop the file in the queue" title="About: Drop the file in the queue">i</button>

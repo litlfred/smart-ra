@@ -9,13 +9,7 @@
 
   <link rel="stylesheet" href="../../../assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
 
-  <style id="jtd-nav-activation">
   
-    .site-nav ul li a {
-      background-image: none;
-    }
-
-  </style>
 
   
 
@@ -588,7 +582,7 @@
 -->
 <!-- The harness icon row's own style, which railed pages load without docs-ui.css (beans `lhvt`, `9rq1`). -->
 <link rel="stylesheet" href="../../../assets/css/navbar-row.css?v=7d7d00921e0f">
-<link rel="stylesheet" href="../../../assets/css/docs-ui.css?v=6071ae228cf3">
+<link rel="stylesheet" href="../../../assets/css/docs-ui.css?v=2ed7923cda66">
 <!-- Narrow viewports: wide content scrolls in its own box, never the page
      (bean `2r2n`). The standalone viewers inline the same file through
      `withViewerNav`, so both kinds of page read one set of rules. -->
@@ -646,8 +640,8 @@
 <!-- BEFORE docs-ui.js and work-plan.js: both read window.faRender. -->
 <script src="../../../assets/js/kg-render.js" defer></script>
 <!-- BEFORE docs-ui.js, which calls it: the one drawing of the harness icon row (beans `lhvt`, `9rq1`). -->
-<script src="../../../assets/js/navbar-row.js?v=7dce6a7e2ab0" defer></script>
-<script src="../../../assets/js/docs-ui.js?v=59c1d8d3ff0a" defer></script>
+<script src="../../../assets/js/navbar-row.js?v=6bb19e1d17a5" defer></script>
+<script src="../../../assets/js/docs-ui.js?v=9ffac52f2026" defer></script>
 <!-- The edit, source and feedback links of every page, from the platform's one
   recipe (cat-harness-tools/src/core/edit-links.ts, bean v433): links carry their
   facts and this builds the hrefs. -->
@@ -835,7 +829,7 @@
         <main>
           
             <blockquote class="note">
-  <p>Generated from <code class="language-plaintext highlighter-rouge">cat-harness/processes/library/sample-import.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a></p>
+  <p>Generated from <code class="language-plaintext highlighter-rouge">cat-harness/processes/library/sample-import.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a> · <a href="cat-harness/">cat-harness processes</a></p>
 </blockquote>
 
 <h1 id="sample-import-into-a-structured-data-store">
@@ -859,7 +853,7 @@
 <div class="pt-diagram" data-panel="sample-import.tasks.json">
 <img src="../../../assets/img/workflows/sample-import.svg" alt="BPMN diagram: Sample import into a structured data store" />
 <div class="pt-layer">
-<button type="button" class="pt-mark" data-task="Task_Scope" style="left:19.62%;top:10.53%" aria-expanded="false" aria-label="About step: Scope the sample: which items, which store, and is it PERMANENT?" title="About: Scope the sample: which items, which store, and is it PERMANENT?">i</button>
+<button type="button" class="pt-mark" data-task="Task_Scope" style="left:19.62%;top:9.28%" aria-expanded="false" aria-label="About step: Scope the sample: which items, which store, and is it PERMANENT?" title="About: Scope the sample: which items, which store, and is it PERMANENT?">i</button>
 <a class="pt-go" href="materialize-remote.html" style="left:25.54%;top:43.42%;width:10.22%;height:13.16%" aria-label="Open subprocess: Materialize remote content (the five gates)" title="Open subprocess: Materialize remote content (the five gates)"></a>
 <button type="button" class="pt-mark" data-task="Call_Materialize" style="left:35.75%;top:43.42%" aria-expanded="false" aria-label="About step: Materialize remote content (the five gates)" title="About: Materialize remote content (the five gates)">i</button>
 <button type="button" class="pt-mark" data-task="Task_Library" style="left:61.02%;top:35.53%" aria-expanded="false" aria-label="About step: Land it in library/" title="About: Land it in library/">i</button>

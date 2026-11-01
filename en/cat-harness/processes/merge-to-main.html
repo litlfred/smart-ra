@@ -9,13 +9,7 @@
 
   <link rel="stylesheet" href="../../../assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
 
-  <style id="jtd-nav-activation">
   
-    .site-nav ul li a {
-      background-image: none;
-    }
-
-  </style>
 
   
 
@@ -588,7 +582,7 @@
 -->
 <!-- The harness icon row's own style, which railed pages load without docs-ui.css (beans `lhvt`, `9rq1`). -->
 <link rel="stylesheet" href="../../../assets/css/navbar-row.css?v=7d7d00921e0f">
-<link rel="stylesheet" href="../../../assets/css/docs-ui.css?v=6071ae228cf3">
+<link rel="stylesheet" href="../../../assets/css/docs-ui.css?v=2ed7923cda66">
 <!-- Narrow viewports: wide content scrolls in its own box, never the page
      (bean `2r2n`). The standalone viewers inline the same file through
      `withViewerNav`, so both kinds of page read one set of rules. -->
@@ -646,8 +640,8 @@
 <!-- BEFORE docs-ui.js and work-plan.js: both read window.faRender. -->
 <script src="../../../assets/js/kg-render.js" defer></script>
 <!-- BEFORE docs-ui.js, which calls it: the one drawing of the harness icon row (beans `lhvt`, `9rq1`). -->
-<script src="../../../assets/js/navbar-row.js?v=7dce6a7e2ab0" defer></script>
-<script src="../../../assets/js/docs-ui.js?v=59c1d8d3ff0a" defer></script>
+<script src="../../../assets/js/navbar-row.js?v=6bb19e1d17a5" defer></script>
+<script src="../../../assets/js/docs-ui.js?v=9ffac52f2026" defer></script>
 <!-- The edit, source and feedback links of every page, from the platform's one
   recipe (cat-harness-tools/src/core/edit-links.ts, bean v433): links carry their
   facts and this builds the hrefs. -->
@@ -835,7 +829,7 @@
         <main>
           
             <blockquote class="note">
-  <p>Generated from <code class="language-plaintext highlighter-rouge">cat-harness/processes/sdlc/merge-to-main.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a></p>
+  <p>Generated from <code class="language-plaintext highlighter-rouge">cat-harness/processes/sdlc/merge-to-main.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a> · <a href="cat-harness/">cat-harness processes</a></p>
 </blockquote>
 
 <h1 id="merge-to-main">
@@ -863,21 +857,21 @@
 <div class="pt-diagram" data-panel="merge-to-main.tasks.json">
 <img src="../../../assets/img/workflows/merge-to-main.svg" alt="BPMN diagram: Merge to main" />
 <div class="pt-layer">
-<button type="button" class="pt-mark" data-task="Task_RegenProjections" style="left:15.26%;top:3.27%" aria-expanded="false" aria-label="About step: Regenerate harness projections (CI)" title="About: Regenerate harness projections (CI)">i</button>
-<button type="button" class="pt-mark" data-task="Task_ReadEvidence" style="left:21.51%;top:19.16%" aria-expanded="false" aria-label="About step: Read the head's evidence, live" title="About: Read the head's evidence, live">i</button>
-<button type="button" class="pt-mark" data-task="Task_LocalGates" style="left:34.01%;top:29.44%" aria-expanded="false" aria-label="About step: No CI: run the repo's own gates locally" title="About: No CI: run the repo's own gates locally">i</button>
-<a class="pt-go" href="merge-refusal.html" style="left:28.86%;top:39.72%;width:5.15%;height:7.48%" aria-label="Open subprocess: Hand it back" title="Open subprocess: Hand it back"></a>
-<button type="button" class="pt-mark" data-task="Call_HandBack" style="left:34.01%;top:39.72%" aria-expanded="false" aria-label="About step: Hand it back" title="About: Hand it back">i</button>
-<button type="button" class="pt-mark" data-task="Task_ReadAuthorisation" style="left:40.26%;top:19.16%" aria-expanded="false" aria-label="About step: Find the owner's authorisation for THIS merge" title="About: Find the owner's authorisation for THIS merge">i</button>
-<a class="pt-go" href="ask-the-person.html" style="left:47.61%;top:29.44%;width:5.15%;height:7.48%" aria-label="Open subprocess: Put the merge to the owner, evidence first" title="Open subprocess: Put the merge to the owner, evidence first"></a>
-<button type="button" class="pt-mark" data-task="Task_Ask" style="left:52.76%;top:29.44%" aria-expanded="false" aria-label="About step: Put the merge to the owner, evidence first" title="About: Put the merge to the owner, evidence first">i</button>
-<button type="button" class="pt-mark" data-task="Task_OwnerDecides" style="left:59.01%;top:76.17%" aria-expanded="false" aria-label="About step: Merge, hold or refuse" title="About: Merge, hold or refuse">i</button>
-<button type="button" class="pt-mark" data-task="Task_RecordAuthorisation" style="left:65.26%;top:19.16%" aria-expanded="false" aria-label="About step: Record who authorised, when, and the quote" title="About: Record who authorised, when, and the quote">i</button>
-<button type="button" class="pt-mark" data-task="Task_Merge" style="left:71.51%;top:19.16%" aria-expanded="false" aria-label="About step: Merge, pinned to the evaluated head" title="About: Merge, pinned to the evaluated head">i</button>
-<button type="button" class="pt-mark" data-task="Task_ConfirmBase" style="left:77.76%;top:19.16%" aria-expanded="false" aria-label="About step: Confirm main's CI on the merge commit" title="About: Confirm main's CI on the merge commit">i</button>
-<button type="button" class="pt-mark" data-task="Task_Republish" style="left:84.01%;top:19.16%" aria-expanded="false" aria-label="About step: Rebuild and republish the repository's site" title="About: Rebuild and republish the repository's site">i</button>
-<button type="button" class="pt-mark" data-task="Task_Repin" style="left:90.26%;top:19.16%" aria-expanded="false" aria-label="About step: Re-pin downstream mounts, as PRs" title="About: Re-pin downstream mounts, as PRs">i</button>
-<button type="button" class="pt-mark" data-task="Task_Report" style="left:96.51%;top:19.16%" aria-expanded="false" aria-label="About step: Note the bean, summarise on the issue" title="About: Note the bean, summarise on the issue">i</button>
+<button type="button" class="pt-mark" data-task="Task_RegenProjections" style="left:14.26%;top:3.27%" aria-expanded="false" aria-label="About step: Regenerate harness projections (CI)" title="About: Regenerate harness projections (CI)">i</button>
+<button type="button" class="pt-mark" data-task="Task_ReadEvidence" style="left:20.1%;top:19.16%" aria-expanded="false" aria-label="About step: Read the head's evidence, live" title="About: Read the head's evidence, live">i</button>
+<button type="button" class="pt-mark" data-task="Task_LocalGates" style="left:31.79%;top:29.44%" aria-expanded="false" aria-label="About step: No CI: run the repo's own gates locally" title="About: No CI: run the repo's own gates locally">i</button>
+<a class="pt-go" href="merge-refusal.html" style="left:26.98%;top:39.72%;width:4.81%;height:7.48%" aria-label="Open subprocess: Hand it back" title="Open subprocess: Hand it back"></a>
+<button type="button" class="pt-mark" data-task="Call_HandBack" style="left:31.79%;top:39.72%" aria-expanded="false" aria-label="About step: Hand it back" title="About: Hand it back">i</button>
+<button type="button" class="pt-mark" data-task="Task_ReadAuthorisation" style="left:37.63%;top:19.16%" aria-expanded="false" aria-label="About step: Find the owner's authorisation for THIS merge" title="About: Find the owner's authorisation for THIS merge">i</button>
+<a class="pt-go" href="ask-the-person.html" style="left:43.81%;top:28.88%;width:6.19%;height:8.6%" aria-label="Open subprocess: Put the merge to the owner, evidence first" title="Open subprocess: Put the merge to the owner, evidence first"></a>
+<button type="button" class="pt-mark" data-task="Task_Ask" style="left:50%;top:28.88%" aria-expanded="false" aria-label="About step: Put the merge to the owner, evidence first" title="About: Put the merge to the owner, evidence first">i</button>
+<button type="button" class="pt-mark" data-task="Task_OwnerDecides" style="left:55.84%;top:76.17%" aria-expanded="false" aria-label="About step: Merge, hold or refuse" title="About: Merge, hold or refuse">i</button>
+<button type="button" class="pt-mark" data-task="Task_RecordAuthorisation" style="left:61.68%;top:19.16%" aria-expanded="false" aria-label="About step: Record who authorised, when, and the quote" title="About: Record who authorised, when, and the quote">i</button>
+<button type="button" class="pt-mark" data-task="Task_Merge" style="left:67.53%;top:19.16%" aria-expanded="false" aria-label="About step: Merge, pinned to the evaluated head" title="About: Merge, pinned to the evaluated head">i</button>
+<button type="button" class="pt-mark" data-task="Task_ConfirmBase" style="left:73.37%;top:19.16%" aria-expanded="false" aria-label="About step: Confirm main's CI on the merge commit" title="About: Confirm main's CI on the merge commit">i</button>
+<button type="button" class="pt-mark" data-task="Task_Republish" style="left:79.21%;top:19.16%" aria-expanded="false" aria-label="About step: Rebuild and republish the repository's site" title="About: Rebuild and republish the repository's site">i</button>
+<button type="button" class="pt-mark" data-task="Task_Repin" style="left:85.05%;top:19.16%" aria-expanded="false" aria-label="About step: Re-pin downstream mounts, as PRs" title="About: Re-pin downstream mounts, as PRs">i</button>
+<button type="button" class="pt-mark" data-task="Task_Report" style="left:90.89%;top:19.16%" aria-expanded="false" aria-label="About step: Note the bean, summarise on the issue" title="About: Note the bean, summarise on the issue">i</button>
 </div>
 <div class="pt-panel" role="dialog" aria-label="Task details" hidden=""></div>
 </div>

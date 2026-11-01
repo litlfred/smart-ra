@@ -9,13 +9,7 @@
 
   <link rel="stylesheet" href="../../../assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
 
-  <style id="jtd-nav-activation">
   
-    .site-nav ul li a {
-      background-image: none;
-    }
-
-  </style>
 
   
 
@@ -588,7 +582,7 @@
 -->
 <!-- The harness icon row's own style, which railed pages load without docs-ui.css (beans `lhvt`, `9rq1`). -->
 <link rel="stylesheet" href="../../../assets/css/navbar-row.css?v=7d7d00921e0f">
-<link rel="stylesheet" href="../../../assets/css/docs-ui.css?v=6071ae228cf3">
+<link rel="stylesheet" href="../../../assets/css/docs-ui.css?v=2ed7923cda66">
 <!-- Narrow viewports: wide content scrolls in its own box, never the page
      (bean `2r2n`). The standalone viewers inline the same file through
      `withViewerNav`, so both kinds of page read one set of rules. -->
@@ -646,8 +640,8 @@
 <!-- BEFORE docs-ui.js and work-plan.js: both read window.faRender. -->
 <script src="../../../assets/js/kg-render.js" defer></script>
 <!-- BEFORE docs-ui.js, which calls it: the one drawing of the harness icon row (beans `lhvt`, `9rq1`). -->
-<script src="../../../assets/js/navbar-row.js?v=7dce6a7e2ab0" defer></script>
-<script src="../../../assets/js/docs-ui.js?v=59c1d8d3ff0a" defer></script>
+<script src="../../../assets/js/navbar-row.js?v=6bb19e1d17a5" defer></script>
+<script src="../../../assets/js/docs-ui.js?v=9ffac52f2026" defer></script>
 <!-- The edit, source and feedback links of every page, from the platform's one
   recipe (cat-harness-tools/src/core/edit-links.ts, bean v433): links carry their
   facts and this builds the hrefs. -->
@@ -835,7 +829,7 @@
         <main>
           
             <blockquote class="note">
-  <p>Generated from <code class="language-plaintext highlighter-rouge">cat-harness/processes/sdlc/merge-train.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a></p>
+  <p>Generated from <code class="language-plaintext highlighter-rouge">cat-harness/processes/sdlc/merge-train.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a> · <a href="cat-harness/">cat-harness processes</a></p>
 </blockquote>
 
 <h1 id="a-merge-train">
@@ -861,27 +855,27 @@
 <div class="pt-diagram" data-panel="merge-train.tasks.json">
 <img src="../../../assets/img/workflows/merge-train.svg" alt="BPMN diagram: A merge train" />
 <div class="pt-layer">
-<button type="button" class="pt-mark" data-task="Task_ReadLive" style="left:11.83%;top:7.47%" aria-expanded="false" aria-label="About step: Read each queued PR's live facts" title="About: Read each queued PR's live facts">i</button>
-<button type="button" class="pt-mark" data-task="Task_TakeNext" style="left:18.88%;top:7.47%" aria-expanded="false" aria-label="About step: Take the next PR in queue order" title="About: Take the next PR in queue order">i</button>
-<button type="button" class="pt-mark" data-task="Task_Admit" style="left:29.67%;top:7.47%" aria-expanded="false" aria-label="About step: Admit it to the train, record the train id" title="About: Admit it to the train, record the train id">i</button>
-<a class="pt-go" href="merge-refusal.html" style="left:24.27%;top:22.41%;width:5.39%;height:9.2%" aria-label="Open subprocess: Hand it back" title="Open subprocess: Hand it back"></a>
-<button type="button" class="pt-mark" data-task="Call_HandBack" style="left:29.67%;top:22.41%" aria-expanded="false" aria-label="About step: Hand it back" title="About: Hand it back">i</button>
-<button type="button" class="pt-mark" data-task="Task_SiblingFix" style="left:36.31%;top:38.51%" aria-expanded="false" aria-label="About step: Fix the PR, then re-signal ready" title="About: Fix the PR, then re-signal ready">i</button>
-<a class="pt-go" href="pr-checks-present.html" style="left:42.12%;top:54.6%;width:5.39%;height:9.2%" aria-label="Open subprocess: Find members with no CI on their head" title="Open subprocess: Find members with no CI on their head"></a>
-<button type="button" class="pt-mark" data-task="Call_ChecksPresent" style="left:47.51%;top:54.6%" aria-expanded="false" aria-label="About step: Find members with no CI on their head" title="About: Find members with no CI on their head">i</button>
-<a class="pt-go" href="merge-base.html" style="left:49.17%;top:54.6%;width:5.39%;height:9.2%" aria-label="Open subprocess: Merge each member onto the base" title="Open subprocess: Merge each member onto the base"></a>
-<button type="button" class="pt-mark" data-task="Call_MergeMembers" style="left:54.56%;top:54.6%" aria-expanded="false" aria-label="About step: Merge each member onto the base" title="About: Merge each member onto the base">i</button>
-<a class="pt-go" href="code-quality-gates.html" style="left:59.96%;top:54.6%;width:5.39%;height:9.2%" aria-label="Open subprocess: Run the gate set on the train" title="Open subprocess: Run the gate set on the train"></a>
-<button type="button" class="pt-mark" data-task="Call_Gates" style="left:65.35%;top:54.6%" aria-expanded="false" aria-label="About step: Run the gate set on the train" title="About: Run the gate set on the train">i</button>
-<button type="button" class="pt-mark" data-task="Task_RetryFlaky" style="left:76.14%;top:68.39%" aria-expanded="false" aria-label="About step: Retry a declared-flaky gate once" title="About: Retry a declared-flaky gate once">i</button>
-<button type="button" class="pt-mark" data-task="Task_Attribute" style="left:81.54%;top:22.41%" aria-expanded="false" aria-label="About step: Attribute the failure: each member's own CI first" title="About: Attribute the failure: each member's own CI first">i</button>
-<button type="button" class="pt-mark" data-task="Task_Bisect" style="left:74.48%;top:7.47%" aria-expanded="false" aria-label="About step: Bisect the train" title="About: Bisect the train">i</button>
-<button type="button" class="pt-mark" data-task="Task_Eject" style="left:65.35%;top:22.41%" aria-expanded="false" aria-label="About step: Eject the culprit, record why" title="About: Eject the culprit, record why">i</button>
-<a class="pt-go" href="merge-refusal.html" style="left:49.17%;top:22.41%;width:5.39%;height:9.2%" aria-label="Open subprocess: Hand the culprit back" title="Open subprocess: Hand the culprit back"></a>
-<button type="button" class="pt-mark" data-task="Call_EjectHandBack" style="left:54.56%;top:22.41%" aria-expanded="false" aria-label="About step: Hand the culprit back" title="About: Hand the culprit back">i</button>
-<a class="pt-go" href="merge-to-main.html" style="left:88.59%;top:7.47%;width:5.39%;height:9.2%" aria-label="Open subprocess: Land each member" title="Open subprocess: Land each member"></a>
-<button type="button" class="pt-mark" data-task="Call_MergeToMain" style="left:93.98%;top:7.47%" aria-expanded="false" aria-label="About step: Land each member" title="About: Land each member">i</button>
-<button type="button" class="pt-mark" data-task="Task_Override" style="left:11.83%;top:85.63%" aria-expanded="false" aria-label="About step: Place it by hand, with a reason" title="About: Place it by hand, with a reason">i</button>
+<button type="button" class="pt-mark" data-task="Task_ReadLive" style="left:11.13%;top:7.47%" aria-expanded="false" aria-label="About step: Read each queued PR's live facts" title="About: Read each queued PR's live facts">i</button>
+<button type="button" class="pt-mark" data-task="Task_TakeNext" style="left:17.77%;top:7.47%" aria-expanded="false" aria-label="About step: Take the next PR in queue order" title="About: Take the next PR in queue order">i</button>
+<button type="button" class="pt-mark" data-task="Task_Admit" style="left:27.93%;top:7.47%" aria-expanded="false" aria-label="About step: Admit it to the train, record the train id" title="About: Admit it to the train, record the train id">i</button>
+<a class="pt-go" href="merge-refusal.html" style="left:22.85%;top:22.41%;width:5.08%;height:9.2%" aria-label="Open subprocess: Hand it back" title="Open subprocess: Hand it back"></a>
+<button type="button" class="pt-mark" data-task="Call_HandBack" style="left:27.93%;top:22.41%" aria-expanded="false" aria-label="About step: Hand it back" title="About: Hand it back">i</button>
+<button type="button" class="pt-mark" data-task="Task_SiblingFix" style="left:34.18%;top:38.51%" aria-expanded="false" aria-label="About step: Fix the PR, then re-signal ready" title="About: Fix the PR, then re-signal ready">i</button>
+<a class="pt-go" href="pr-checks-present.html" style="left:39.65%;top:52.76%;width:7.03%;height:12.87%" aria-label="Open subprocess: Find members with no CI on their head" title="Open subprocess: Find members with no CI on their head"></a>
+<button type="button" class="pt-mark" data-task="Call_ChecksPresent" style="left:46.68%;top:52.76%" aria-expanded="false" aria-label="About step: Find members with no CI on their head" title="About: Find members with no CI on their head">i</button>
+<a class="pt-go" href="merge-base.html" style="left:48.24%;top:53.85%;width:6.64%;height:10.69%" aria-label="Open subprocess: Merge each member onto the base" title="Open subprocess: Merge each member onto the base"></a>
+<button type="button" class="pt-mark" data-task="Call_MergeMembers" style="left:54.88%;top:53.85%" aria-expanded="false" aria-label="About step: Merge each member onto the base" title="About: Merge each member onto the base">i</button>
+<a class="pt-go" href="code-quality-gates.html" style="left:59.96%;top:53.85%;width:7.03%;height:10.69%" aria-label="Open subprocess: Run the gate set on the train" title="Open subprocess: Run the gate set on the train"></a>
+<button type="button" class="pt-mark" data-task="Call_Gates" style="left:66.99%;top:53.85%" aria-expanded="false" aria-label="About step: Run the gate set on the train" title="About: Run the gate set on the train">i</button>
+<button type="button" class="pt-mark" data-task="Task_RetryFlaky" style="left:77.15%;top:68.39%" aria-expanded="false" aria-label="About step: Retry a declared-flaky gate once" title="About: Retry a declared-flaky gate once">i</button>
+<button type="button" class="pt-mark" data-task="Task_Attribute" style="left:82.23%;top:22.41%" aria-expanded="false" aria-label="About step: Attribute the failure: each member's own CI first" title="About: Attribute the failure: each member's own CI first">i</button>
+<button type="button" class="pt-mark" data-task="Task_Bisect" style="left:75.59%;top:7.47%" aria-expanded="false" aria-label="About step: Bisect the train" title="About: Bisect the train">i</button>
+<button type="button" class="pt-mark" data-task="Task_Eject" style="left:65.04%;top:22.41%" aria-expanded="false" aria-label="About step: Eject the culprit, record why" title="About: Eject the culprit, record why">i</button>
+<a class="pt-go" href="merge-refusal.html" style="left:48.24%;top:22.41%;width:6.64%;height:9.2%" aria-label="Open subprocess: Hand the culprit back" title="Open subprocess: Hand the culprit back"></a>
+<button type="button" class="pt-mark" data-task="Call_EjectHandBack" style="left:54.88%;top:22.41%" aria-expanded="false" aria-label="About step: Hand the culprit back" title="About: Hand the culprit back">i</button>
+<a class="pt-go" href="merge-to-main.html" style="left:88.09%;top:7.47%;width:6.64%;height:9.2%" aria-label="Open subprocess: Land each member" title="Open subprocess: Land each member"></a>
+<button type="button" class="pt-mark" data-task="Call_MergeToMain" style="left:94.73%;top:7.47%" aria-expanded="false" aria-label="About step: Land each member" title="About: Land each member">i</button>
+<button type="button" class="pt-mark" data-task="Task_Override" style="left:11.13%;top:85.63%" aria-expanded="false" aria-label="About step: Place it by hand, with a reason" title="About: Place it by hand, with a reason">i</button>
 </div>
 <div class="pt-panel" role="dialog" aria-label="Task details" hidden=""></div>
 </div>

@@ -9,13 +9,7 @@
 
   <link rel="stylesheet" href="../../../assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
 
-  <style id="jtd-nav-activation">
   
-    .site-nav ul li a {
-      background-image: none;
-    }
-
-  </style>
 
   
 
@@ -588,7 +582,7 @@
 -->
 <!-- The harness icon row's own style, which railed pages load without docs-ui.css (beans `lhvt`, `9rq1`). -->
 <link rel="stylesheet" href="../../../assets/css/navbar-row.css?v=7d7d00921e0f">
-<link rel="stylesheet" href="../../../assets/css/docs-ui.css?v=6071ae228cf3">
+<link rel="stylesheet" href="../../../assets/css/docs-ui.css?v=2ed7923cda66">
 <!-- Narrow viewports: wide content scrolls in its own box, never the page
      (bean `2r2n`). The standalone viewers inline the same file through
      `withViewerNav`, so both kinds of page read one set of rules. -->
@@ -646,8 +640,8 @@
 <!-- BEFORE docs-ui.js and work-plan.js: both read window.faRender. -->
 <script src="../../../assets/js/kg-render.js" defer></script>
 <!-- BEFORE docs-ui.js, which calls it: the one drawing of the harness icon row (beans `lhvt`, `9rq1`). -->
-<script src="../../../assets/js/navbar-row.js?v=7dce6a7e2ab0" defer></script>
-<script src="../../../assets/js/docs-ui.js?v=59c1d8d3ff0a" defer></script>
+<script src="../../../assets/js/navbar-row.js?v=6bb19e1d17a5" defer></script>
+<script src="../../../assets/js/docs-ui.js?v=9ffac52f2026" defer></script>
 <!-- The edit, source and feedback links of every page, from the platform's one
   recipe (cat-harness-tools/src/core/edit-links.ts, bean v433): links carry their
   facts and this builds the hrefs. -->
@@ -835,7 +829,7 @@
         <main>
           
             <blockquote class="note">
-  <p>Generated from <code class="language-plaintext highlighter-rouge">cat-harness/processes/sdlc/merge-refusal.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a></p>
+  <p>Generated from <code class="language-plaintext highlighter-rouge">cat-harness/processes/sdlc/merge-refusal.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a> · <a href="cat-harness/">cat-harness processes</a></p>
 </blockquote>
 
 <h1 id="a-refused-merge-train-member">
@@ -857,24 +851,24 @@
 <div class="pt-diagram" data-panel="merge-refusal.tasks.json">
 <img src="../../../assets/img/workflows/merge-refusal.svg" alt="BPMN diagram: A refused merge-train member" />
 <div class="pt-layer">
-<button type="button" class="pt-mark" data-task="Task_Record" style="left:25.98%;top:10.66%" aria-expanded="false" aria-label="About step: Record the refusal on the bean" title="About: Record the refusal on the bean">i</button>
-<button type="button" class="pt-mark" data-task="Task_Comment" style="left:33.84%;top:10.66%" aria-expanded="false" aria-label="About step: Comment on the PR once, linking the bean" title="About: Comment on the PR once, linking the bean">i</button>
-<button type="button" class="pt-mark" data-task="Task_HandBack" style="left:45.63%;top:10.66%" aria-expanded="false" aria-label="About step: Hand back, with a fail condition" title="About: Hand back, with a fail condition">i</button>
-<button type="button" class="pt-mark" data-task="Task_Fix" style="left:45.63%;top:50%" aria-expanded="false" aria-label="About step: Fix the PR, report on the PR" title="About: Fix the PR, report on the PR">i</button>
-<button type="button" class="pt-mark" data-task="Task_Dispatch" style="left:53.49%;top:27.87%" aria-expanded="false" aria-label="About step: Dispatch one agent, recorded on the bean" title="About: Dispatch one agent, recorded on the bean">i</button>
-<button type="button" class="pt-mark" data-task="Task_AgentFix" style="left:53.49%;top:77.87%" aria-expanded="false" aria-label="About step: Merge main in, regenerate, fix mechanical gates" title="About: Merge main in, regenerate, fix mechanical gates">i</button>
-<button type="button" class="pt-mark" data-task="Task_AskOwner" style="left:66.59%;top:77.87%" aria-expanded="false" aria-label="About step: Ask the owner on the PR, both sides quoted" title="About: Ask the owner on the PR, both sides quoted">i</button>
-<button type="button" class="pt-mark" data-task="Task_Retrain" style="left:66.59%;top:10.66%" aria-expanded="false" aria-label="About step: Re-enter a train on the new head" title="About: Re-enter a train on the new head">i</button>
-<button type="button" class="pt-mark" data-task="Task_Close" style="left:79.26%;top:10.66%" aria-expanded="false" aria-label="About step: Record the merge commit as evidence" title="About: Record the merge commit as evidence">i</button>
-<button type="button" class="pt-mark" data-task="Task_Scrap" style="left:79.26%;top:27.87%" aria-expanded="false" aria-label="About step: Scrap the bean, with the reason" title="About: Scrap the bean, with the reason">i</button>
-<a class="pt-go" href="bean-open.html" style="left:7.64%;top:10.66%;width:5.24%;height:13.11%" aria-label="Open subprocess: Open the bean" title="Open subprocess: Open the bean"></a>
-<button type="button" class="pt-mark" data-task="Call_BeanOpen" style="left:12.88%;top:10.66%" aria-expanded="false" aria-label="About step: Open the bean" title="About: Open the bean">i</button>
-<a class="pt-go" href="bean-close.html" style="left:68.78%;top:77.87%;width:5.24%;height:13.11%" aria-label="Open subprocess: Close the bean" title="Open subprocess: Close the bean"></a>
-<button type="button" class="pt-mark" data-task="Call_BeanClose" style="left:74.02%;top:77.87%" aria-expanded="false" aria-label="About step: Close the bean" title="About: Close the bean">i</button>
-<a class="pt-go" href="bean-close.html" style="left:81.44%;top:10.66%;width:5.24%;height:13.11%" aria-label="Open subprocess: Close the bean" title="Open subprocess: Close the bean"></a>
-<button type="button" class="pt-mark" data-task="Call_BeanClose_2" style="left:86.68%;top:10.66%" aria-expanded="false" aria-label="About step: Close the bean" title="About: Close the bean">i</button>
-<a class="pt-go" href="bean-close.html" style="left:88.43%;top:27.05%;width:5.24%;height:13.11%" aria-label="Open subprocess: Close the bean" title="Open subprocess: Close the bean"></a>
-<button type="button" class="pt-mark" data-task="Call_BeanClose_3" style="left:93.67%;top:27.05%" aria-expanded="false" aria-label="About step: Close the bean" title="About: Close the bean">i</button>
+<button type="button" class="pt-mark" data-task="Task_Record" style="left:24.69%;top:36.89%" aria-expanded="false" aria-label="About step: Record the refusal on the bean" title="About: Record the refusal on the bean">i</button>
+<button type="button" class="pt-mark" data-task="Task_Comment" style="left:32.16%;top:36.89%" aria-expanded="false" aria-label="About step: Comment on the PR once, linking the bean" title="About: Comment on the PR once, linking the bean">i</button>
+<button type="button" class="pt-mark" data-task="Task_HandBack" style="left:43.36%;top:36.89%" aria-expanded="false" aria-label="About step: Hand back, with a fail condition" title="About: Hand back, with a fail condition">i</button>
+<button type="button" class="pt-mark" data-task="Task_Fix" style="left:43.36%;top:7.38%" aria-expanded="false" aria-label="About step: Fix the PR, report on the PR" title="About: Fix the PR, report on the PR">i</button>
+<button type="button" class="pt-mark" data-task="Task_Dispatch" style="left:52.49%;top:54.1%" aria-expanded="false" aria-label="About step: Dispatch one agent, recorded on the bean" title="About: Dispatch one agent, recorded on the bean">i</button>
+<button type="button" class="pt-mark" data-task="Task_AgentFix" style="left:51.66%;top:77.87%" aria-expanded="false" aria-label="About step: Merge main in, regenerate, fix mechanical gates" title="About: Merge main in, regenerate, fix mechanical gates">i</button>
+<button type="button" class="pt-mark" data-task="Task_AskOwner" style="left:64.52%;top:77.87%" aria-expanded="false" aria-label="About step: Ask the owner on the PR, both sides quoted" title="About: Ask the owner on the PR, both sides quoted">i</button>
+<button type="button" class="pt-mark" data-task="Task_Retrain" style="left:64.52%;top:36.89%" aria-expanded="false" aria-label="About step: Re-enter a train on the new head" title="About: Re-enter a train on the new head">i</button>
+<button type="button" class="pt-mark" data-task="Task_Close" style="left:76.97%;top:36.89%" aria-expanded="false" aria-label="About step: Record the merge commit as evidence" title="About: Record the merge commit as evidence">i</button>
+<button type="button" class="pt-mark" data-task="Task_Scrap" style="left:76.97%;top:54.1%" aria-expanded="false" aria-label="About step: Scrap the bean, with the reason" title="About: Scrap the bean, with the reason">i</button>
+<a class="pt-go" href="bean-open.html" style="left:7.26%;top:36.89%;width:4.98%;height:13.11%" aria-label="Open subprocess: Open the bean" title="Open subprocess: Open the bean"></a>
+<button type="button" class="pt-mark" data-task="Call_BeanOpen" style="left:12.24%;top:36.89%" aria-expanded="false" aria-label="About step: Open the bean" title="About: Open the bean">i</button>
+<a class="pt-go" href="bean-close.html" style="left:66.18%;top:77.87%;width:6.64%;height:13.11%" aria-label="Open subprocess: Close the bean" title="Open subprocess: Close the bean"></a>
+<button type="button" class="pt-mark" data-task="Call_BeanClose" style="left:72.82%;top:77.87%" aria-expanded="false" aria-label="About step: Close the bean" title="About: Close the bean">i</button>
+<a class="pt-go" href="bean-close.html" style="left:79.05%;top:36.89%;width:6.64%;height:13.11%" aria-label="Open subprocess: Close the bean" title="Open subprocess: Close the bean"></a>
+<button type="button" class="pt-mark" data-task="Call_BeanClose_2" style="left:85.68%;top:36.89%" aria-expanded="false" aria-label="About step: Close the bean" title="About: Close the bean">i</button>
+<a class="pt-go" href="bean-close.html" style="left:87.34%;top:53.28%;width:6.64%;height:13.11%" aria-label="Open subprocess: Close the bean" title="Open subprocess: Close the bean"></a>
+<button type="button" class="pt-mark" data-task="Call_BeanClose_3" style="left:93.98%;top:53.28%" aria-expanded="false" aria-label="About step: Close the bean" title="About: Close the bean">i</button>
 </div>
 <div class="pt-panel" role="dialog" aria-label="Task details" hidden=""></div>
 </div>

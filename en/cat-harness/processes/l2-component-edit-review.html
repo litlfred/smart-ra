@@ -9,13 +9,7 @@
 
   <link rel="stylesheet" href="../../../assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
 
-  <style id="jtd-nav-activation">
   
-    .site-nav ul li a {
-      background-image: none;
-    }
-
-  </style>
 
   
 
@@ -588,7 +582,7 @@
 -->
 <!-- The harness icon row's own style, which railed pages load without docs-ui.css (beans `lhvt`, `9rq1`). -->
 <link rel="stylesheet" href="../../../assets/css/navbar-row.css?v=7d7d00921e0f">
-<link rel="stylesheet" href="../../../assets/css/docs-ui.css?v=6071ae228cf3">
+<link rel="stylesheet" href="../../../assets/css/docs-ui.css?v=2ed7923cda66">
 <!-- Narrow viewports: wide content scrolls in its own box, never the page
      (bean `2r2n`). The standalone viewers inline the same file through
      `withViewerNav`, so both kinds of page read one set of rules. -->
@@ -646,8 +640,8 @@
 <!-- BEFORE docs-ui.js and work-plan.js: both read window.faRender. -->
 <script src="../../../assets/js/kg-render.js" defer></script>
 <!-- BEFORE docs-ui.js, which calls it: the one drawing of the harness icon row (beans `lhvt`, `9rq1`). -->
-<script src="../../../assets/js/navbar-row.js?v=7dce6a7e2ab0" defer></script>
-<script src="../../../assets/js/docs-ui.js?v=59c1d8d3ff0a" defer></script>
+<script src="../../../assets/js/navbar-row.js?v=6bb19e1d17a5" defer></script>
+<script src="../../../assets/js/docs-ui.js?v=9ffac52f2026" defer></script>
 <!-- The edit, source and feedback links of every page, from the platform's one
   recipe (cat-harness-tools/src/core/edit-links.ts, bean v433): links carry their
   facts and this builds the hrefs. -->
@@ -835,7 +829,7 @@
         <main>
           
             <blockquote class="note">
-  <p>Generated from <code class="language-plaintext highlighter-rouge">smart-base/processes/content/l2-component-edit-review.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a></p>
+  <p>Generated from <code class="language-plaintext highlighter-rouge">smart-base/processes/content/l2-component-edit-review.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a> · <a href="smart-base/">smart-base processes</a></p>
 </blockquote>
 <h1 id="l2-component-edit-and-review">
   
@@ -944,13 +938,13 @@
       <td><strong>Render, stage, before/after [before-after-preview · feature-staging]</strong><br /><code class="language-plaintext highlighter-rouge">Task_RenderStage</code></td>
       <td>Authoring agent</td>
       <td><code class="language-plaintext highlighter-rouge">before-after-preview</code><br /><code class="language-plaintext highlighter-rouge">feature-staging</code></td>
-      <td>Render the component the way its reviewer reads it (column “renderer and diff”): the BPMN diagram (render:bpmn) with a visual-diff picture; the DMN decision table (smart-base-transform.py dmn2html) with each rule’s L1 citation; the data dictionary’s term diff (dak-data-dictionary-diff.ts) and the chosen wireframe of each form; personas, scenarios and requirements as a prose diff. Commit to the feature branch so it is staged as STAGING/<slug>/ on the platform's just-the-docs site (for smart-base, a folio-assistant staging re-pin, never the IG's /deploy), and make the before/after preview here, in the producing lane, so it exists when review starts.</slug></td>
+      <td>Render the component the way its reviewer reads it (column “renderer and diff”): the BPMN diagram (render:bpmn) with a visual-diff picture; the DMN decision table (smart-base-transform.py dmn2html) with each rule’s L1 citation; the data dictionary’s term diff (dak-data-dictionary-diff.ts) and the chosen wireframe of each form; personas, scenarios and requirements as a prose diff. Commit to the feature branch so it is staged as STAGING/&lt;slug&gt;/ on the platform’s just-the-docs site (for smart-base, a folio-assistant staging re-pin, never the IG’s /deploy), and make the before/after preview here, in the producing lane, so it exists when review starts.</td>
     </tr>
     <tr>
       <td><strong>Ask for review with staging deep links</strong><br /><code class="language-plaintext highlighter-rouge">Task_RequestReview</code></td>
       <td>Authoring agent</td>
       <td><code class="language-plaintext highlighter-rouge">staging-review</code><br /><code class="language-plaintext highlighter-rouge">interaction-modality</code></td>
-      <td>Ask the person in the reviewing role, following staging-review’s deep-link rule: one deep link per changed page and anchor on STAGING/<slug>/, each beside the same page on main as before (or "new page"), the pages taken from the change (rendered-impact) rather than chosen; no preview yet is said, not hidden. The request leads with what changed in prose, then the links, the before/after and the checker's findings, and puts its question in interaction-modality's form. Where it goes is a judgement, and more than one place may be right: this conversation, the GitHub issue the work came from, the pull request; each place carries the same links. A comment tagged on the PR becomes a review-comment todo (review-comments).</slug></td>
+      <td>Ask the person in the reviewing role, following staging-review’s deep-link rule: one deep link per changed page and anchor on STAGING/&lt;slug&gt;/, each beside the same page on main as before (or “new page”), the pages taken from the change (rendered-impact) rather than chosen; no preview yet is said, not hidden. The request leads with what changed in prose, then the links, the before/after and the checker’s findings, and puts its question in interaction-modality’s form. Where it goes is a judgement, and more than one place may be right: this conversation, the GitHub issue the work came from, the pull request; each place carries the same links. A comment tagged on the PR becomes a review-comment todo (review-comments).</td>
     </tr>
     <tr>
       <td><strong>Review the staged component</strong><br /><code class="language-plaintext highlighter-rouge">Call_Review</code></td>

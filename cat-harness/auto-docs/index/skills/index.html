@@ -9,13 +9,7 @@
 
   <link rel="stylesheet" href="../../../../assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
 
-  <style id="jtd-nav-activation">
   
-    .site-nav ul li a {
-      background-image: none;
-    }
-
-  </style>
 
   
 
@@ -588,7 +582,7 @@
 -->
 <!-- The harness icon row's own style, which railed pages load without docs-ui.css (beans `lhvt`, `9rq1`). -->
 <link rel="stylesheet" href="../../../../assets/css/navbar-row.css?v=7d7d00921e0f">
-<link rel="stylesheet" href="../../../../assets/css/docs-ui.css?v=6071ae228cf3">
+<link rel="stylesheet" href="../../../../assets/css/docs-ui.css?v=2ed7923cda66">
 <!-- Narrow viewports: wide content scrolls in its own box, never the page
      (bean `2r2n`). The standalone viewers inline the same file through
      `withViewerNav`, so both kinds of page read one set of rules. -->
@@ -646,8 +640,8 @@
 <!-- BEFORE docs-ui.js and work-plan.js: both read window.faRender. -->
 <script src="../../../../assets/js/kg-render.js" defer></script>
 <!-- BEFORE docs-ui.js, which calls it: the one drawing of the harness icon row (beans `lhvt`, `9rq1`). -->
-<script src="../../../../assets/js/navbar-row.js?v=7dce6a7e2ab0" defer></script>
-<script src="../../../../assets/js/docs-ui.js?v=59c1d8d3ff0a" defer></script>
+<script src="../../../../assets/js/navbar-row.js?v=6bb19e1d17a5" defer></script>
+<script src="../../../../assets/js/docs-ui.js?v=9ffac52f2026" defer></script>
 <!-- The edit, source and feedback links of every page, from the platform's one
   recipe (cat-harness-tools/src/core/edit-links.ts, bean v433): links carry their
   facts and this builds the hrefs. -->
@@ -917,12 +911,12 @@
 </div>
 
 <ul class="subs">
-<li><a href="bootstrap-tools-skills/">bootstrap-tools-skills</a> <span class="p">bootstrap-tools/skills</span> <span class="n">3</span></li>
-<li><a href="core-skills/">core-skills</a> <span class="p">folio-assistant-core/skills</span> <span class="n">44</span></li>
-<li><a href="fhir-ig-skills/">fhir-ig-skills</a> <span class="p">fhir-harness/skills</span> <span class="n">18</span></li>
-<li><a href="skills/">skills</a> <span class="p">cat-harness/skills</span> <span class="n">249</span></li>
-<li><a href="smart-base-skills/">smart-base-skills</a> <span class="p">smart-base/skills</span> <span class="n">24</span></li>
-<li><a href="who-iris-skills/">who-iris-skills</a> <span class="p">who-iris/skills</span> <span class="n">5</span></li>
+<li><a href="bootstrap-tools-skills/">bootstrap-tools-skills</a> <span class="p">bootstrap-tools/skills</span> <span class="n" data-da-count="index/skills/bootstrap-tools-skills" data-da-count-state="pending">…</span></li>
+<li><a href="core-skills/">core-skills</a> <span class="p">folio-assistant-core/skills</span> <span class="n" data-da-count="index/skills/core-skills" data-da-count-state="pending">…</span></li>
+<li><a href="fhir-ig-skills/">fhir-ig-skills</a> <span class="p">fhir-harness/skills</span> <span class="n" data-da-count="index/skills/fhir-ig-skills" data-da-count-state="pending">…</span></li>
+<li><a href="skills/">skills</a> <span class="p">cat-harness/skills</span> <span class="n" data-da-count="index/skills/skills" data-da-count-state="pending">…</span></li>
+<li><a href="smart-base-skills/">smart-base-skills</a> <span class="p">smart-base/skills</span> <span class="n" data-da-count="index/skills/smart-base-skills" data-da-count-state="pending">…</span></li>
+<li><a href="who-iris-skills/">who-iris-skills</a> <span class="p">who-iris/skills</span> <span class="n" data-da-count="index/skills/who-iris-skills" data-da-count-state="pending">…</span></li>
 </ul>
 
 <div class="fa-table-filter">
@@ -1108,6 +1102,10 @@
 <tr>
   <td><a href="https://github.com/litlfred/cat-harness/blob/main/skills/conduct/conduct-core/getting-started.md"><code>getting-started</code></a><br><span class="p">cat-harness/skills/conduct/conduct-core/getting-started.md</span></td>
   <td>Triage what a person means when they ask to create a folio, and route them.</td>
+</tr>
+<tr>
+  <td><a href="https://github.com/litlfred/cat-harness/blob/main/skills/conduct/conduct-core/hand-back-to-discussion.md"><code>hand-back-to-discussion</code></a><br><span class="p">cat-harness/skills/conduct/conduct-core/hand-back-to-discussion.md</span></td>
+  <td>A sibling agent, spawned during or working beside a live agent-human discussion, hands every card, question, decision, result, blocker or piece of context back to the discussion agent that is talking with the person, an…</td>
 </tr>
 <tr>
   <td><a href="https://github.com/litlfred/cat-harness/blob/main/skills/conduct/conduct-core/harness-projections.md"><code>harness-projections</code></a><br><span class="p">cat-harness/skills/conduct/conduct-core/harness-projections.md</span></td>
@@ -1416,6 +1414,10 @@
 <tr>
   <td><a href="https://github.com/litlfred/cat-harness/blob/main/skills/process/workflow/bpmn-authoring.md"><code>bpmn-authoring</code></a><br><span class="p">cat-harness/skills/process/workflow/bpmn-authoring.md</span></td>
   <td><span class="none">no description in the artefact</span></td>
+</tr>
+<tr>
+  <td><a href="https://github.com/litlfred/cat-harness/blob/main/skills/process/workflow/bpmn-detangle.md"><code>bpmn-detangle</code></a><br><span class="p">cat-harness/skills/process/workflow/bpmn-detangle.md</span></td>
+  <td>Make a BPMN diagram readable at 100% without zooming, and untangle it: keep it inside the size budget, give every label a place clear of other labels, flows and boxes, remove crossings, and swap lanes when another order…</td>
 </tr>
 <tr>
   <td><a href="https://github.com/litlfred/cat-harness/blob/main/skills/process/workflow/bpmn-processes.md"><code>bpmn-processes</code></a><br><span class="p">cat-harness/skills/process/workflow/bpmn-processes.md</span></td>
@@ -2098,8 +2100,20 @@
   <td><span class="none">no description in the artefact</span></td>
 </tr>
 <tr>
+  <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/skills/content/folio-document-adapter/public-comment-channels.md"><code>public-comment-channels</code></a><br><span class="p">folio-assistant-core/skills/content/folio-document-adapter/public-comment-channels.md</span></td>
+  <td>Set up the channels a public-comment release goes out on (an offline Excel sheet, a Google Form, a GitHub issue form, and the review sheet), each limited to the release's fixed references, with the editor's instructions…</td>
+</tr>
+<tr>
   <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/skills/content/folio-document-adapter/public-comment.md"><code>public-comment</code></a><br><span class="p">folio-assistant-core/skills/content/folio-document-adapter/public-comment.md</span></td>
   <td><span class="none">no description in the artefact</span></td>
+</tr>
+<tr>
+  <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/skills/content/folio-document-adapter/review-log-watch.md"><code>review-log-watch</code></a><br><span class="p">folio-assistant-core/skills/content/folio-document-adapter/review-log-watch.md</span></td>
+  <td>Poll a drafting review log (a Contributor Feedback sheet) and its folio repository's issues mechanically, with Tool <code>review-log-watch</code>, and start agent work only when a cell people set or an open issue changed.</td>
+</tr>
+<tr>
+  <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/skills/content/folio-document-adapter/review-sheet-agent-columns.md"><code>review-sheet-agent-columns</code></a><br><span class="p">folio-assistant-core/skills/content/folio-document-adapter/review-sheet-agent-columns.md</span></td>
+  <td>Whenever an agent works on a change set of a folio whose review sheet is kept by the Tool <code>review-sheet-sync</code>, it writes the Agent tabs' columns for that change set and its comments as it goes: status, step, what it did…</td>
 </tr>
 <tr>
   <td><a href="https://github.com/litlfred/folio-assistant-core/blob/main/skills/content/folio-document-adapter/review-sheet-script.md"><code>review-sheet-script</code></a><br><span class="p">folio-assistant-core/skills/content/folio-document-adapter/review-sheet-script.md</span></td>
@@ -2333,6 +2347,24 @@ var SCOPE = "";
   }
   input.addEventListener("input", apply);
   apply();
+})();
+</script>
+<script>
+(function () {
+  var badges = document.querySelectorAll(".da-page [data-da-count]");
+  if (!badges.length) return;
+  function set(counts) {
+    Array.prototype.forEach.call(badges, function (b) {
+      var n = counts ? counts[b.getAttribute("data-da-count")] : undefined;
+      var ok = typeof n === "number" && isFinite(n);
+      b.textContent = ok ? String(n) : "";
+      b.setAttribute("data-da-count-state", ok ? "some" : counts ? "absent" : "error");
+    });
+  }
+  fetch("../../../../assets/auto-docs/index.json", { cache: "no-cache" })
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (j) { set(j && j.counts && typeof j.counts === "object" ? j.counts : null); })
+    .catch(function () { set(null); });
 })();
 </script>
 

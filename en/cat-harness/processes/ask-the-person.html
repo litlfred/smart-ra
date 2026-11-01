@@ -9,13 +9,7 @@
 
   <link rel="stylesheet" href="../../../assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
 
-  <style id="jtd-nav-activation">
   
-    .site-nav ul li a {
-      background-image: none;
-    }
-
-  </style>
 
   
 
@@ -588,7 +582,7 @@
 -->
 <!-- The harness icon row's own style, which railed pages load without docs-ui.css (beans `lhvt`, `9rq1`). -->
 <link rel="stylesheet" href="../../../assets/css/navbar-row.css?v=7d7d00921e0f">
-<link rel="stylesheet" href="../../../assets/css/docs-ui.css?v=6071ae228cf3">
+<link rel="stylesheet" href="../../../assets/css/docs-ui.css?v=2ed7923cda66">
 <!-- Narrow viewports: wide content scrolls in its own box, never the page
      (bean `2r2n`). The standalone viewers inline the same file through
      `withViewerNav`, so both kinds of page read one set of rules. -->
@@ -646,8 +640,8 @@
 <!-- BEFORE docs-ui.js and work-plan.js: both read window.faRender. -->
 <script src="../../../assets/js/kg-render.js" defer></script>
 <!-- BEFORE docs-ui.js, which calls it: the one drawing of the harness icon row (beans `lhvt`, `9rq1`). -->
-<script src="../../../assets/js/navbar-row.js?v=7dce6a7e2ab0" defer></script>
-<script src="../../../assets/js/docs-ui.js?v=59c1d8d3ff0a" defer></script>
+<script src="../../../assets/js/navbar-row.js?v=6bb19e1d17a5" defer></script>
+<script src="../../../assets/js/docs-ui.js?v=9ffac52f2026" defer></script>
 <!-- The edit, source and feedback links of every page, from the platform's one
   recipe (cat-harness-tools/src/core/edit-links.ts, bean v433): links carry their
   facts and this builds the hrefs. -->
@@ -835,7 +829,7 @@
         <main>
           
             <blockquote class="note">
-  <p>Generated from <code class="language-plaintext highlighter-rouge">cat-harness/processes/process/ask-the-person.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a></p>
+  <p>Generated from <code class="language-plaintext highlighter-rouge">cat-harness/processes/process/ask-the-person.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a> · <a href="cat-harness/">cat-harness processes</a></p>
 </blockquote>
 
 <h1 id="ask-the-person">
@@ -847,7 +841,7 @@
 </h1>
     
 
-<p><code class="language-plaintext highlighter-rouge">Process_AskThePerson</code> · strict · 6 step(s)</p>
+<p><code class="language-plaintext highlighter-rouge">Process_AskThePerson</code> · strict · 7 step(s)</p>
 
 <p>The ONE way a question or decision is put to a person. Called as a subprocess from every step that asks; never run on its own. The rule it carries out is the box at the top of <code class="language-plaintext highlighter-rouge">interaction-modality</code>.</p>
 
@@ -863,12 +857,13 @@
 <div class="pt-diagram" data-panel="ask-the-person.tasks.json">
 <img src="../../../assets/img/workflows/ask-the-person.svg" alt="BPMN diagram: Ask the person" />
 <div class="pt-layer">
-<button type="button" class="pt-mark" data-task="A_Compose" style="left:23.11%;top:14.1%" aria-expanded="false" aria-label="About step: Compose the full question" title="About: Compose the full question">i</button>
-<button type="button" class="pt-mark" data-task="A_WriteInChat" style="left:36.55%;top:14.1%" aria-expanded="false" aria-label="About step: Write it in the chat" title="About: Write it in the chat">i</button>
-<button type="button" class="pt-mark" data-task="A_OfferCard" style="left:50%;top:14.1%" aria-expanded="false" aria-label="About step: Offer the same options as a tappable card" title="About: Offer the same options as a tappable card">i</button>
-<button type="button" class="pt-mark" data-task="U_Choose" style="left:50%;top:70.51%" aria-expanded="false" aria-label="About step: Choose an option" title="About: Choose an option">i</button>
-<button type="button" class="pt-mark" data-task="A_Record" style="left:73.53%;top:6.41%" aria-expanded="false" aria-label="About step: Record the answer" title="About: Record the answer">i</button>
-<button type="button" class="pt-mark" data-task="A_ProceedOnDefault" style="left:73.53%;top:37.18%" aria-expanded="false" aria-label="About step: Proceed on the stated default, question left open" title="About: Proceed on the stated default, question left open">i</button>
+<button type="button" class="pt-mark" data-task="A_Compose" style="left:20.99%;top:14.03%" aria-expanded="false" aria-label="About step: Compose the full question" title="About: Compose the full question">i</button>
+<button type="button" class="pt-mark" data-task="A_HandBack" style="left:37.79%;top:39.54%" aria-expanded="false" aria-label="About step: Hand it back to the discussion" title="About: Hand it back to the discussion">i</button>
+<button type="button" class="pt-mark" data-task="A_WriteInChat" style="left:40.08%;top:14.03%" aria-expanded="false" aria-label="About step: Write it in the chat" title="About: Write it in the chat">i</button>
+<button type="button" class="pt-mark" data-task="A_OfferCard" style="left:52.29%;top:14.03%" aria-expanded="false" aria-label="About step: Offer the same options as a tappable card" title="About: Offer the same options as a tappable card">i</button>
+<button type="button" class="pt-mark" data-task="U_Choose" style="left:55.34%;top:70.66%" aria-expanded="false" aria-label="About step: Choose an option" title="About: Choose an option">i</button>
+<button type="button" class="pt-mark" data-task="A_Record" style="left:75.95%;top:6.38%" aria-expanded="false" aria-label="About step: Record the answer" title="About: Record the answer">i</button>
+<button type="button" class="pt-mark" data-task="A_ProceedOnDefault" style="left:77.48%;top:36.99%" aria-expanded="false" aria-label="About step: Proceed on the stated default, question left open" title="About: Proceed on the stated default, question left open">i</button>
 </div>
 <div class="pt-panel" role="dialog" aria-label="Task details" hidden=""></div>
 </div>
@@ -1035,8 +1030,9 @@
     
 
 <ul>
-  <li><strong>Called by:</strong> <a href="graph-detanglement.html">A sub-graph wants to leave</a>, <a href="kg-separation.html">A knowledge graph leaves for its own repositories</a>, <a href="sub-kg-lifecycle.html">A sub-KG is staged in place, then leaves for its own repository</a>, <a href="content-acquisition.html">Content acquisition</a>, <a href="crdm-data-model.html">CRDM data model</a>, <a href="crdm-signoff.html">CRDM Phase 5 — beans and sign-off</a>, <a href="session-state-machine.html">Session state machine</a>, <a href="merge-to-main.html">Merge to main</a>, <a href="publish-alert.html">Alert the publication manager</a>, <a href="related-work.html">Related work: find, sort, summarize, ask to coordinate</a>, <a href="stalled-agent-triage.html">Stalled-agent triage: collect handovers, consolidate themes, recommend, re-route</a>, <a href="upstream-version-adoption.html">Adopting an upstream version bump</a>, <a href="getting-started.html">Getting started</a></li>
+  <li><strong>Called by:</strong> <a href="graph-detanglement.html">A sub-graph wants to leave</a>, <a href="kg-separation.html">A knowledge graph leaves for its own repositories</a>, <a href="sub-kg-lifecycle.html">A sub-KG is staged in place, then leaves for its own repository</a>, <a href="content-acquisition.html">Content acquisition</a>, <a href="crdm-data-model.html">CRDM data model</a>, <a href="crdm-signoff.html">CRDM Phase 5 — beans and sign-off</a>, <a href="hand-back-to-discussion.html">Hand back to the discussion</a>, <a href="session-state-machine.html">Session state machine</a>, <a href="merge-to-main.html">Merge to main</a>, <a href="publish-alert.html">Alert the publication manager</a>, <a href="related-work.html">Related work: find, sort, summarize, ask to coordinate</a>, <a href="stalled-agent-triage.html">Stalled-agent triage: collect handovers, consolidate themes, recommend, re-route</a>, <a href="upstream-version-adoption.html">Adopting an upstream version bump</a>, <a href="getting-started.html">Getting started</a></li>
   <li><strong>Calls:</strong> none</li>
+  <li><strong>Names the <code class="language-plaintext highlighter-rouge">ask-the-person</code> skill without calling this process:</strong> <a href="hand-back-to-discussion.html">Hand back to the discussion</a> — <code class="language-plaintext highlighter-rouge">activity-calls-skill-process</code> asks whether each should be a call activity.</li>
   <li><strong>Presented on:</strong> no docs page section shows this diagram</li>
   <li><strong>Running instances:</strong> none recorded</li>
 </ul>
@@ -1079,7 +1075,7 @@
 </h2>
     
 
-<p>Every one of the 6 step(s) is documented.</p>
+<p>Every one of the 7 step(s) is documented.</p>
 
 <div class="table-wrapper"><table>
   <thead>
@@ -1096,6 +1092,12 @@
       <td>Agent</td>
       <td><code class="language-plaintext highlighter-rouge">ask-the-person</code><br /><code class="language-plaintext highlighter-rouge">decision-comparison</code></td>
       <td>What is being decided, stated as what will differ; every id, path and coined name glossed; every option with its letter, a one-line explanation and its trade-off; the recommendation, first and marked; what will happen if no answer comes. Can the reader answer without opening anything? If not, it is not ready. More than one decision open: ask the next one in full and give a count for the rest.</td>
+    </tr>
+    <tr>
+      <td><strong>Hand it back to the discussion</strong><br /><code class="language-plaintext highlighter-rouge">A_HandBack</code></td>
+      <td>Agent</td>
+      <td><code class="language-plaintext highlighter-rouge">hand-back-to-discussion</code></td>
+      <td>The composed question goes, unchanged, to the discussion agent, which asks it through this same process on its <code class="language-plaintext highlighter-rouge">yes</code> branch and routes the answer back: the sibling’s half of <a href="hand-back-to-discussion.html"><code class="language-plaintext highlighter-rouge">Process_HandBackToDiscussion</code></a> (a task here, not a call, because that process calls this one). The sibling also shows it in its own thread, never only there.</td>
     </tr>
     <tr>
       <td><strong>Write it in the chat</strong><br /><code class="language-plaintext highlighter-rouge">A_WriteInChat</code></td>
@@ -1138,7 +1140,7 @@
 </h2>
     
 
-<p>Every one of the 1 decision(s) is documented.</p>
+<p>Every one of the 2 decision(s) is documented.</p>
 
 <div class="table-wrapper"><table>
   <thead>
@@ -1149,6 +1151,11 @@
     </tr>
   </thead>
   <tbody>
+    <tr>
+      <td><strong>Talking with the person?</strong><br /><code class="language-plaintext highlighter-rouge">GW_Discussing</code></td>
+      <td><code class="language-plaintext highlighter-rouge">yes</code> when this agent is the one the person is talking with right now. <code class="language-plaintext highlighter-rouge">no</code> when it is a sibling: a project thread, a subagent, a workflow agent or a session spawned while another agent holds the discussion. A sibling that is not sure takes <code class="language-plaintext highlighter-rouge">no</code>: one extra copy costs a line, a missed card stalls a decision (owner, 2026-10-31: “sublings not raising cards to main”, cat-harness#861).</td>
+      <td><strong>yes</strong> → Write it in the chat<br /><strong>no</strong> → Hand it back to the discussion</td>
+    </tr>
     <tr>
       <td><strong>Answered?</strong><br /><code class="language-plaintext highlighter-rouge">GW_Answered</code></td>
       <td><code class="language-plaintext highlighter-rouge">yes</code> when the person chose an option. <code class="language-plaintext highlighter-rouge">no</code> when nothing came, or the card was dismissed. A dismissal is NOT an answer and never selects the default as a choice; the question stays open in the chat.</td>

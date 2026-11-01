@@ -81,7 +81,7 @@
   .diff-fields th, .diff-fields td { border: 1px solid var(--rule); padding: .25rem .4rem; text-align: left; vertical-align: top; overflow-wrap: anywhere; }
   .diff-fields td:last-child { white-space: nowrap; font-weight: 600; }
   .diff-sbs iframe { width: 100%; height: 22rem; border: 1px solid var(--rule); border-radius: 0 0 .3rem .3rem; background: #fff; display: block; }
-  .sbs-head { padding: .35rem .6rem; border-radius: .3rem .3rem 0 0; font-size: .9rem; color: #fff; overflow-wrap: anywhere; }
+  .sbs-head { padding: .2rem .6rem; border-radius: .3rem .3rem 0 0; font-size: .85rem; line-height: 1.4; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .sbs-side-base { background: #5f6368; }
   .sbs-side-head { background: #4F6F52; }
   .sbs-head a, .sbs-head code { color: #fff; }
@@ -111,14 +111,25 @@
   :root[data-fa-scheme="dark"] .h1 { background: #184f95; color: #ffffff; } :root[data-fa-scheme="dark"] .h2 { background: #256abf; color: #ffffff; } :root[data-fa-scheme="dark"] .h3 { background: #3987e5; color: #161616; }
   :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
   button.linklike { border: 0; padding: 0; min-height: 0; background: none; color: var(--link); text-decoration: underline; cursor: pointer; font: inherit; text-align: left; }
+  /* What to expect (cat-harness-tools#1153): the PR's own summary, in a card. */
+  #brief { border: 1px solid var(--rule); border-radius: .5rem; padding: .25rem 1rem .5rem; margin: 1rem 0; }
+  #brief h2 { margin-top: .75rem; }
+  #brief h3 { font-size: 1rem; margin: .75rem 0 .25rem; }
+  #brief ul, #brief ol { padding-left: 1.25rem; }
+  #brief ul { list-style: disc; }
+  #brief li { border: 0; padding: .1rem 0; }
+  #brief ul.brief-where { list-style: none; padding-left: 0; }
+  .brief-body { max-height: 28rem; overflow: auto; }
+  .brief-chip { font-weight: 600; padding: .05rem .45rem; border-radius: .3rem; background: #4F6F52; color: #fff; }
   h2:focus-visible { outline: 3px solid var(--link); outline-offset: 2px; }
 </style>
 <link rel="stylesheet" href="../../assets/css/navbar.css"><script src="../../assets/navbar/rail-1nr7jo2rxsc.js" defer></script><script src="../../assets/js/navbar.js" defer></script><script src="../../assets/navbar/row-2acuhncsmbg.js" defer></script><link rel="stylesheet" href="../../assets/css/navbar-row.css"><script src="../../assets/js/navbar-row.js" defer></script><meta name="fa-search-exclude" content="true"><script src="../../assets/js/vendor/lunr.min.js" defer></script><script src="../../assets/js/just-the-docs.js" defer></script><link rel="stylesheet" href="../../assets/page-layout.css" data-fa-page-layout><script src="../../assets/page-layout.js" defer data-fa-page-layout></script><meta name="fa-platform-base" content="https://litlfred.github.io/folio-assistant" data-fa-platform-ui><link rel="stylesheet" href="../../assets/css/docs-ui.css" data-fa-platform-ui><script src="../../assets/js/docs-ui.js" defer data-fa-platform-ui></script><meta name="fa-pinned-data" content="../.."></head>
-<body><script type="application/json" id="fa-navbar-row" data-fa-root="../.." data-fa-row-src="row-2acuhncsmbg"></script><script type="application/json" id="fa-rail" data-fa-root="https://litlfred.github.io/folio-assistant" data-fa-to-root="../..">{"data":"rail-1nr7jo2rxsc","here":"/en/review/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../">Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector</a></nav><div id="main-header" class="main-header fa-site-bar fa-page-bar"><a class="fa-page-bar-home" href="../../">Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector</a><div class="search" role="search"><div class="search-input-wrap"><input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search this site" autocomplete="off"><label for="search-input" class="search-label"><span class="sr-only">Search this site</span></label></div><div id="search-results" class="search-results"></div></div><span class="fa-page-bar-locale" data-fa-slot="locale"></span></div>
+<body><script type="application/json" id="fa-navbar-row" data-fa-root="../.." data-fa-row-src="row-2acuhncsmbg"></script><script type="application/json" id="fa-rail" data-fa-root="https://litlfred.github.io/folio-assistant" data-fa-to-root="../..">{"data":"rail-1nr7jo2rxsc","here":"/en/review/","documentIndex":{"label":"On this page","icon":"§","items":[{"href":"#brief-h","label":"What to expect in this review"},{"href":"#rendered-h","label":"Rendered pages this change alters"}],"collapsible":true}}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../">Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector</a></nav><div id="main-header" class="main-header fa-site-bar fa-page-bar"><a class="fa-page-bar-home" href="../../">Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector</a><div class="search" role="search"><div class="search-input-wrap"><input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search this site" autocomplete="off"><label for="search-input" class="search-label"><span class="sr-only">Search this site</span></label></div><div id="search-results" class="search-results"></div></div><span class="fa-page-bar-locale" data-fa-slot="locale"></span></div>
 <div class="layout">
 <aside id="navpane" aria-label="Navigation"></aside>
 <main>
 <h1>What changed</h1>
+<section id="brief" aria-labelledby="brief-h"><h2 id="brief-h">What to expect in this review</h2><p class="muted">Loading the pull request's summary…</p></section>
 <p id="summary" class="muted"></p>
 <p id="status" role="status" aria-live="polite">Loading the ChangeSet…</p>
 <div class="nav">
@@ -152,7 +163,7 @@ var matchesCommentFilter = function matchesCommentFilter(status, kind, filter) {
     return kind === filter.slice(5);
   return !0;
 };
-var RENDERERS = [{"id":"word","label":"Word diff of the source","description":"The block's Markdown with removed words struck through and added words marked. Shows exactly what the author typed.","needs":["text"],"defaultFor":["*"]},{"id":"inline","label":"Inline, as rendered","description":"The block as a reader sees it now, with added words marked and removed words struck through where they were.","needs":["text"],"defaultFor":["prose","remark","definition","example","recommendation"]},{"id":"visual","label":"Pictures, before and after","description":"A picture of the block on the published page and on this preview, with a slider between them and a view that marks every changed pixel. For figures, diagrams and tables, whose markup says little.","needs":["screenshots"],"defaultFor":["table","figure","diagram","equation","simulator"]},{"id":"side-by-side","label":"Side by side","description":"The published page and this preview next to each other, each scrolled to the block. For tables, figures and anything whose layout is the change.","needs":["pages"],"defaultFor":["table","figure","diagram","equation","simulator"]},{"id":"fields","label":"Fields, before and after","description":"The block's fields side by side, one row each, with every added, removed and changed field named. For structured blocks — a persona, a requirement, a data element — whose source diff is unreadable.","needs":["structure"],"defaultFor":["@structured"]}];
+var RENDERERS = [{"id":"word","label":"Word diff of the source","description":"The block's Markdown with removed words struck through and added words marked. Shows exactly what the author typed.","needs":["text"],"defaultFor":[]},{"id":"inline","label":"Inline","description":"The block as a reader sees it now, with added words marked and removed words struck through where they were.","needs":["text"],"defaultFor":["*","prose","remark","definition","example","recommendation","table","figure","diagram","equation","simulator"]},{"id":"visual","label":"Pictures, before and after","description":"A picture of the block on the published page and on this preview, with a slider between them and a view that marks every changed pixel. For figures, diagrams and tables, whose markup says little.","needs":["screenshots"],"defaultFor":["table","figure","diagram","equation","simulator"]},{"id":"side-by-side","label":"Side by side","description":"The published page and this preview next to each other, each scrolled to the block. For tables, figures and anything whose layout is the change.","needs":["pages"],"defaultFor":["table","figure","diagram","equation","simulator"]},{"id":"fields","label":"Fields, before and after","description":"The block's fields side by side, one row each, with every added, removed and changed field named. For structured blocks — a persona, a requirement, a data element — whose source diff is unreadable.","needs":["structure"],"defaultFor":["@structured"]}];
 var wordDiff = function wordDiff(a, b, limit = 4000000) {
   const tok = (s) => s.match(/\s+|[\p{L}\p{N}_]+|[^\s\p{L}\p{N}_]/gu) || [], x = tok(a), y = tok(b);
   let pre = 0;
@@ -288,6 +299,19 @@ var renderInline = function renderInline(doc, baseHtml, headHtml, diff, clean) {
     d.textContent = text;
     head.appendChild(d);
   }
+  const key = (a) => (a.getAttribute("href") || "") + "\x01" + (a.textContent || "").trim(), had = new Set(baseHtml === null ? [] : Array.from(clean(doc, baseHtml).querySelectorAll("a[href]")).map(key));
+  head.querySelectorAll("a[href]").forEach((a) => {
+    if (had.has(key(a)) || !(a.textContent || "").trim())
+      return;
+    if (a.querySelector("ins") && (a.textContent || "") === Array.from(a.querySelectorAll("ins")).map((e) => e.textContent).join(""))
+      return;
+    const e = doc.createElement("ins");
+    e.className = "diff-link-added";
+    e.title = "link added";
+    while (a.firstChild)
+      e.appendChild(a.firstChild);
+    a.appendChild(e);
+  });
   while (head.firstChild)
     box.appendChild(head.firstChild);
   return box;
@@ -357,6 +381,7 @@ var renderFields = function renderFields(doc, s) {
   }
   return box;
 };
+var FRAME_CHROME_CSS = "[data-fa-staging-banner]{display:none!important}:root{--fa-staging-offset:0px!important}html{padding-top:0!important}nav.fa-nav,.fa-nav,.side-bar{display:none!important}body{padding-left:0!important}.main{margin-left:0!important;max-width:none!important}";
 var renderSideBySide = function renderSideBySide(doc, before, after, opts) {
   const o = opts || {}, box = doc.createElement("div");
   box.className = "diff diff-sbs";
@@ -394,8 +419,15 @@ var renderSideBySide = function renderSideBySide(doc, before, after, opts) {
         add("", link("PR #" + f.pr, f.prUrl));
       if (f.runUrl)
         add("", link("build log", f.runUrl));
-    } else if (side === "base")
+    } else if (side === "base") {
       h.appendChild(doc.createTextNode(" \xB7 published site"));
+      const sha = f && /^[0-9a-f]{7,40}$/i.test(f.baseSha || "") ? f.baseSha.slice(0, 7) : "", m = (f && f.branchUrl || "").match(/^(https:\/\/github\.com\/[^/]+\/[^/]+)\//);
+      if (sha) {
+        h.appendChild(doc.createTextNode(" \xB7 commit "));
+        h.appendChild(link(sha, m ? m[1] + "/commit/" + f.baseSha : void 0));
+      }
+    }
+    h.title = h.textContent || "";
     return h;
   }, pane = (side, href) => {
     const col = doc.createElement("div");
@@ -411,6 +443,16 @@ var renderSideBySide = function renderSideBySide(doc, before, after, opts) {
       f.src = href;
       f.title = (side === "base" ? o.beforeName || "Main" : "This preview") + ": " + href;
       f.loading = "lazy";
+      f.addEventListener("load", () => {
+        try {
+          const d = f.contentDocument;
+          if (!d || !d.head)
+            return;
+          const st = d.createElement("style");
+          st.textContent = FRAME_CHROME_CSS;
+          d.head.appendChild(st);
+        } catch {}
+      });
       const mark = o.mark;
       if (mark) {
         const runs = o.runs && o.runs[side] || [], cls = "fa-change-" + side;
@@ -1077,6 +1119,235 @@ var renderMeasured = function renderMeasured(box, model) {
   });
   box.appendChild(ul);
 };
+var briefRepo = function briefRepo(st) {
+  const m = String(st && (st.branchUrl || st.prUrl) || "").match(/^https:\/\/github\.com\/([A-Za-z0-9_.-]+)\/([A-Za-z0-9_.-]+)\//);
+  return m ? { owner: m[1], repo: m[2] } : null;
+};
+var closedIssue = function closedIssue(body) {
+  const m = String(body || "").match(/\b(?:close[sd]?|fix(?:e[sd])?|resolve[sd]?)\s+#(\d+)\b/i);
+  return m ? Number(m[1]) : null;
+};
+var briefText = function briefText(body) {
+  const b = String(body || "").replace(/\r\n?/g, `
+`), m = b.match(/<!--\s*review-brief\s*-->([\s\S]*?)<!--\s*\/review-brief\s*-->/i);
+  if (m)
+    return { text: m[1].trim(), marked: !0 };
+  let t = b.replace(/<!--[\s\S]*?-->/g, "");
+  t = t.replace(/\n-{3,}\s*\n(?:\s*(?:_Generated by[^\n]*|\uD83E\uDD16[^\n]*|https:\/\/claude\.ai\/code\/\S*)\s*\n?)+\s*$/, `
+`);
+  t = t.split(`
+`).filter(function(l) {
+    return !/^_Requested by \*\*/.test(l.trim());
+  }).join(`
+`);
+  return { text: t.trim(), marked: !1 };
+};
+var briefModel = function briefModel(o) {
+  const t = briefText(o.pr ? o.pr.body : null), cs = o.pr ? String(o.pr.title).match(/^\s*(CS-\d+)\b/i) : null;
+  return {
+    source: o.pr ? o.source : "none",
+    pr: o.pr,
+    issue: o.issue,
+    changeSet: cs ? cs[1].toUpperCase() : null,
+    text: t.text,
+    marked: t.marked,
+    fetchedAt: o.fetchedAt || null
+  };
+};
+var whereToLook = function whereToLook(changes, max) {
+  const by = {}, order = [];
+  (changes || []).forEach(function(c) {
+    const s = (c.head || c.base || {}).section || "(listed in no section)";
+    if (!(s in by)) {
+      by[s] = 0;
+      order.push(s);
+    }
+    by[s]++;
+  });
+  return order.map(function(s, i) {
+    return { section: s, count: by[s], i };
+  }).sort(function(a, b) {
+    return b.count - a.count || a.i - b.i;
+  }).slice(0, max).map(function(r) {
+    return { section: r.section, count: r.count };
+  });
+};
+var briefBlocks = function briefBlocks(md) {
+  const out = [];
+  let para = [], list = null;
+  function flush() {
+    if (para.length) {
+      out.push({ type: "p", text: para.join(" ") });
+      para = [];
+    }
+    if (list) {
+      out.push(list);
+      list = null;
+    }
+  }
+  String(md || "").split(`
+`).forEach(function(raw) {
+    const l = raw.replace(/\s+$/, "");
+    let m;
+    if (!l.trim()) {
+      flush();
+      return;
+    }
+    if (m = l.match(/^\s{0,3}(#{1,6})\s+(.*)$/)) {
+      flush();
+      out.push({ type: "h", level: m[1].length, text: m[2] });
+      return;
+    }
+    if (/^\s{0,3}(?:-{3,}|\*{3,}|_{3,})\s*$/.test(l)) {
+      flush();
+      out.push({ type: "hr" });
+      return;
+    }
+    if (m = l.match(/^\s{0,3}([-*+]|\d+[.)])\s+(.*)$/)) {
+      const type = /\d/.test(m[1]) ? "ol" : "ul";
+      if (para.length) {
+        out.push({ type: "p", text: para.join(" ") });
+        para = [];
+      }
+      if (!list || list.type !== type) {
+        if (list)
+          out.push(list);
+        list = { type, items: [] };
+      }
+      list.items.push(m[2]);
+      return;
+    }
+    if (list && /^\s+\S/.test(raw)) {
+      list.items[list.items.length - 1] += " " + l.trim();
+      return;
+    }
+    if (list) {
+      out.push(list);
+      list = null;
+    }
+    para.push(l.trim());
+  });
+  flush();
+  return out;
+};
+var briefInline = function briefInline(doc, parent, text) {
+  const re = /\*\*([^*]+)\*\*|`([^`]+)`|\[([^\]]+)\]\(([^)\s]+)\)|(https?:\/\/[^\s<>()]+[^\s<>().,;:!?'"])/g, s = String(text || "");
+  let last = 0, m;
+  while (m = re.exec(s)) {
+    if (m.index > last)
+      parent.appendChild(doc.createTextNode(s.slice(last, m.index)));
+    if (m[1] !== void 0) {
+      const b = doc.createElement("strong");
+      briefInline(doc, b, m[1]);
+      parent.appendChild(b);
+    } else if (m[2] !== void 0) {
+      const c = doc.createElement("code");
+      c.textContent = m[2];
+      parent.appendChild(c);
+    } else {
+      const label = m[3] !== void 0 ? m[3] : m[5], url = m[3] !== void 0 ? m[4] : m[5];
+      if (/^https?:\/\//i.test(url)) {
+        const a = doc.createElement("a");
+        a.setAttribute("href", url);
+        a.setAttribute("rel", "noopener");
+        a.textContent = label;
+        parent.appendChild(a);
+      } else
+        parent.appendChild(doc.createTextNode(m[0]));
+    }
+    last = re.lastIndex;
+  }
+  if (last < s.length)
+    parent.appendChild(doc.createTextNode(s.slice(last)));
+};
+var renderBrief = function renderBrief(doc, box, model, where, jump) {
+  while (box.firstChild)
+    box.removeChild(box.firstChild);
+  function el(tag, text, cls) {
+    const e = doc.createElement(tag);
+    if (text !== void 0)
+      e.textContent = text;
+    if (cls)
+      e.className = cls;
+    return e;
+  }
+  const h = el("h2", "What to expect in this review");
+  h.id = "brief-h";
+  box.appendChild(h);
+  const head = el("p");
+  if (model.changeSet) {
+    head.appendChild(el("span", "Change set " + model.changeSet, "brief-chip"));
+    head.appendChild(doc.createTextNode(" "));
+  }
+  if (model.pr) {
+    const a = el("a", "PR #" + model.pr.number + ": " + model.pr.title);
+    if (/^https:\/\//.test(model.pr.url))
+      a.setAttribute("href", model.pr.url);
+    head.appendChild(a);
+  } else
+    head.appendChild(el("span", "No pull request found for this preview, so there is no summary from it.", "muted"));
+  if (model.issue) {
+    head.appendChild(doc.createTextNode(" \xB7 "));
+    const ia = el("a", "Issue #" + model.issue.number + (model.issue.title ? ": " + model.issue.title : ""));
+    if (/^https:\/\//.test(model.issue.url))
+      ia.setAttribute("href", model.issue.url);
+    head.appendChild(ia);
+  }
+  box.appendChild(head);
+  if (model.pr) {
+    const body = el("div", void 0, "brief-body"), blocks = briefBlocks(model.text);
+    if (!blocks.length)
+      body.appendChild(el("p", "The pull request has no description.", "muted"));
+    blocks.forEach(function(b) {
+      if (b.type === "hr") {
+        body.appendChild(el("hr"));
+        return;
+      }
+      if (b.type === "h") {
+        const hh = el("h3");
+        briefInline(doc, hh, b.text || "");
+        body.appendChild(hh);
+        return;
+      }
+      if (b.type === "p") {
+        const p = el("p");
+        briefInline(doc, p, b.text || "");
+        body.appendChild(p);
+        return;
+      }
+      const l = el(b.type);
+      (b.items || []).forEach(function(it) {
+        const li = el("li");
+        briefInline(doc, li, it);
+        l.appendChild(li);
+      });
+      body.appendChild(l);
+    });
+    box.appendChild(body);
+  }
+  if (where && where.length) {
+    box.appendChild(el("h3", "Sections this change touches"));
+    const ul = el("ul", void 0, "brief-where");
+    where.forEach(function(w) {
+      const li = el("li"), name = w.section.indexOf("::") >= 0 ? w.section.split("::").pop() || w.section : w.section;
+      if (jump) {
+        const btn = el("button", name, "linklike");
+        btn.setAttribute("type", "button");
+        btn.addEventListener("click", function() {
+          jump(w.section);
+        });
+        li.appendChild(btn);
+      } else
+        li.appendChild(el("span", name));
+      li.appendChild(doc.createTextNode(" (" + w.count + " changed block" + (w.count === 1 ? "" : "s") + ")"));
+      ul.appendChild(li);
+    });
+    box.appendChild(ul);
+  }
+  const src = model.source === "live" ? "Read from GitHub when this page opened." : model.source === "snapshot" ? "Read from the copy taken when this preview was staged" + (model.fetchedAt ? " (" + model.fetchedAt + ")" : "") + ": GitHub could not be reached, so a later edit to the pull request may not show." : "";
+  if (src)
+    box.appendChild(el("p", src + (model.marked ? " This is the pull request's review brief." : ""), "muted"));
+};
 </script>
 <script>
 (function () {
@@ -1244,7 +1515,9 @@ var renderMeasured = function renderMeasured(box, model) {
   }
 
   // ── Diff renderers (bean d903) ─────────────────────────────────
-  var VIEW_KEY = "folio-review:view";
+  // v2 (owner, 2026-10-31, "default to inline"): a page-level choice made
+  // before, such as Side by side, is not carried over to override the new default.
+  var VIEW_KEY = "folio-review:view:v2";
   function loadView() { try { return window.localStorage.getItem(VIEW_KEY) || ""; } catch (e) { return ""; } }
   function saveView(v) { try { window.localStorage.setItem(VIEW_KEY, v); } catch (e) { /* the defaults, then */ } }
   function defaultFor(kind, structured) {
@@ -1387,6 +1660,42 @@ var renderMeasured = function renderMeasured(box, model) {
     return fetch(url).then(function (r) { if (!r.ok) throw new Error(String(r.status)); return r.json(); });
   }
 
+  // What to expect (cat-harness-tools#1153): the PR and the issue it closes,
+  // live from GitHub, else the copy staged with the preview. Any branch has a
+  // PR; a change set only adds detail. "Where to look" joins when the
+  // ChangeSet loads.
+  var briefBox = document.getElementById("brief");
+  var BRIEF = null, WHERE = null, JUMP = null;
+  function drawBrief() { if (BRIEF) renderBrief(document, briefBox, BRIEF, WHERE, JUMP); }
+  function gh(path) {
+    return fetch("https://api.github.com/" + path, { headers: { Accept: "application/vnd.github+json" } })
+      .then(function (r) { if (!r.ok) throw new Error(String(r.status)); return r.json(); });
+  }
+  get(ROOT + "staging.json").catch(function () { return {}; }).then(function (st) {
+    var rp = briefRepo(st);
+    var prn = st && /^\d+$/.test(String(st.pr || "")) ? String(st.pr) : null;
+    var live = rp && prn && typeof fetch === "function"
+      ? gh("repos/" + rp.owner + "/" + rp.repo + "/pulls/" + prn).then(function (p) {
+          var pr = { number: p.number, title: p.title || "", body: p.body || "", url: p.html_url || "" };
+          var n = closedIssue(pr.body) || (st.issue && /^\d+$/.test(String(st.issue)) ? Number(st.issue) : null);
+          var issue = n ? gh("repos/" + rp.owner + "/" + rp.repo + "/issues/" + n).then(function (i) {
+            return { number: i.number, title: i.title || "", url: i.html_url || "" };
+          }).catch(function () { return { number: n, title: "", url: "https://github.com/" + rp.owner + "/" + rp.repo + "/issues/" + n }; }) : Promise.resolve(null);
+          return issue.then(function (i) { return { pr: pr, issue: i, source: "live" }; });
+        })
+      : Promise.reject(new Error("no PR"));
+    return live.catch(function () {
+      return get(ROOT + "review-brief.json").then(function (b) {
+        return { pr: b.pr || null, issue: b.issue || null, source: "snapshot", fetchedAt: b.fetchedAt || null };
+      });
+    }).catch(function () { return { pr: null, issue: null, source: "none" }; }).then(function (r) {
+      // The main site, or a preview with no PR: nothing to summarise, so no pane.
+      if (!r.pr && !prn) { briefBox.hidden = true; return; }
+      BRIEF = briefModel({ staging: st, pr: r.pr, issue: r.issue, source: r.source, fetchedAt: r.fetchedAt });
+      drawBrief();
+    });
+  });
+
   // The rendered list (bean bnjs): fetched on its own, so a preview with a
   // ChangeSet but no rendered impact still shows its blocks, and says why
   // the page list is missing rather than showing an empty one.
@@ -1507,7 +1816,7 @@ var renderMeasured = function renderMeasured(box, model) {
             before: before,
             after: after,
             beforeName: beforeName,
-            facts: st && st.branch ? st : null,
+            facts: st && st.branch ? Object.assign({}, st, { baseSha: cs.base && cs.base.commit ? String(cs.base.commit) : "" }) : null,
           });
           li.appendChild(v.row);
           li.appendChild(v.panel);
@@ -1577,6 +1886,9 @@ var renderMeasured = function renderMeasured(box, model) {
           list.querySelector('h2[data-section="(unchanged)"]');
         if (t) { t.focus(); t.scrollIntoView({ block: "start" }); }
       }
+      WHERE = whereToLook(cs.changes, 6);
+      JUMP = jumpSection;
+      drawBrief();
       if (OUTLINE && OUTLINE.documents) {
         var rowBy = {};
         heat.rows.forEach(function (r) { rowBy[r.section] = r; });

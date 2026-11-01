@@ -9,13 +9,7 @@
 
   <link rel="stylesheet" href="../../../assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
 
-  <style id="jtd-nav-activation">
   
-    .site-nav ul li a {
-      background-image: none;
-    }
-
-  </style>
 
   
 
@@ -588,7 +582,7 @@
 -->
 <!-- The harness icon row's own style, which railed pages load without docs-ui.css (beans `lhvt`, `9rq1`). -->
 <link rel="stylesheet" href="../../../assets/css/navbar-row.css?v=7d7d00921e0f">
-<link rel="stylesheet" href="../../../assets/css/docs-ui.css?v=6071ae228cf3">
+<link rel="stylesheet" href="../../../assets/css/docs-ui.css?v=2ed7923cda66">
 <!-- Narrow viewports: wide content scrolls in its own box, never the page
      (bean `2r2n`). The standalone viewers inline the same file through
      `withViewerNav`, so both kinds of page read one set of rules. -->
@@ -646,8 +640,8 @@
 <!-- BEFORE docs-ui.js and work-plan.js: both read window.faRender. -->
 <script src="../../../assets/js/kg-render.js" defer></script>
 <!-- BEFORE docs-ui.js, which calls it: the one drawing of the harness icon row (beans `lhvt`, `9rq1`). -->
-<script src="../../../assets/js/navbar-row.js?v=7dce6a7e2ab0" defer></script>
-<script src="../../../assets/js/docs-ui.js?v=59c1d8d3ff0a" defer></script>
+<script src="../../../assets/js/navbar-row.js?v=6bb19e1d17a5" defer></script>
+<script src="../../../assets/js/docs-ui.js?v=9ffac52f2026" defer></script>
 <!-- The edit, source and feedback links of every page, from the platform's one
   recipe (cat-harness-tools/src/core/edit-links.ts, bean v433): links carry their
   facts and this builds the hrefs. -->
@@ -835,7 +829,7 @@
         <main>
           
             <blockquote class="note">
-  <p>Generated from <code class="language-plaintext highlighter-rouge">cat-harness/processes/kg/named-query-execution.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a></p>
+  <p>Generated from <code class="language-plaintext highlighter-rouge">cat-harness/processes/kg/named-query-execution.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a> · <a href="cat-harness/">cat-harness processes</a></p>
 </blockquote>
 
 <h1 id="execute-audited-named-queries-over-partitioned-w3c-n-quads-distributions">
@@ -856,20 +850,20 @@
   <li>FAIL-CLOSED GRAPH AVAILABILITY GUARD: Execution verifies all declared requiredSubgraphs are present in the Oxigraph store before SPARQL evaluation; missing partitions raise MissingPartitionError rather than returning silently incomplete results.</li>
   <li>SPARQL INJECTION PREVENTION: Parameters are strictly validated against manifest NamedQueryDef parameter schemas; IRIs and literals are escaped and substituted into pre-audited templates.</li>
   <li>UNIFIED THREE-SURFACE PARITY: Identical query semantics and result envelopes across CLI (bun run cat nquads:query), MCP (nquads-query tool), and Web (oxigraph-query-client.js).</li>
-  <li>SCOPED GRAPH MATCHING: Triple patterns match inside GRAPH ?g { … } or GRAPH <iri> { ... } to conform to W3C N-Quads 4th-slot named graph semantics.</iri></li>
+  <li>SCOPED GRAPH MATCHING: Triple patterns match inside GRAPH ?g { … } or GRAPH &lt;iri&gt; { … } to conform to W3C N-Quads 4th-slot named graph semantics.</li>
 </ol>
 <style>.pt-diagram{position:relative;width:100%}.pt-diagram>img{display:block;width:100%;height:auto}.pt-mark{position:absolute;transform:translate(-50%,-50%);width:1.35em;height:1.35em;padding:0;border-radius:50%;border:1px solid #1f6feb;background:#fff;color:#1f6feb;font:bold 0.8em/1 sans-serif;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 2px rgba(0,0,0,.25)}.pt-layer{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:2}.pt-layer>*{pointer-events:auto}.pt-go{position:absolute;display:block;border-radius:8px;cursor:pointer}.pt-go:hover,.pt-go:focus-visible{outline:2px solid #1f6feb;outline-offset:1px;background:rgba(31,111,235,.07)}.pt-mark{z-index:1}.pt-mark:hover,.pt-mark[aria-expanded=true]{background:#1f6feb;color:#fff}.pt-mark:focus-visible{outline:2px solid #1f6feb;outline-offset:2px}.pt-panel{position:absolute;z-index:5;margin:0.9em 0 0 -0.6em;max-width:min(26em,90vw);min-width:14em;padding:0.6em 0.7em;background:#fff;color:#1b1f24;border:1px solid #8c959f;border-radius:6px;box-shadow:0 4px 14px rgba(0,0,0,.18);font-size:0.85em;line-height:1.35}.pt-close{position:absolute;top:0.2em;right:0.35em;border:0;background:none;font-size:1.2em;cursor:pointer;color:inherit}.pt-obj{border:1px solid #57606a;border-radius:3px;margin:0.15em 0}.pt-head{border-bottom:1px solid #57606a;padding:0.15em 0.45em;background:#f6f8fa;text-decoration:underline}.pt-head .pt-st{text-decoration:none;display:inline-block;margin-right:0.35em}.pt-attr{padding:0.1em 0.45em}.pt-st,.pt-via{color:#57606a;font-size:0.9em}.pt-edge{color:#57606a;font-size:0.85em;padding-left:1em}.pt-role .pt-head{background:#fff8c5}.pt-skill .pt-head{background:#ddf4ff}.pt-task .pt-head{background:#f6f8fa}.pt-none{color:#57606a;font-style:italic;margin-top:0.3em}</style>
 
 <div class="pt-diagram" data-panel="named-query-execution.tasks.json">
 <img src="../../../assets/img/workflows/named-query-execution.svg" alt="BPMN diagram: Execute audited named queries over partitioned W3C N-Quads distributions" />
 <div class="pt-layer">
-<button type="button" class="pt-mark" data-task="A_ValidateParams" style="left:19.06%;top:8.04%" aria-expanded="false" aria-label="About step: Validate Arguments against Parameter Schema" title="About: Validate Arguments against Parameter Schema">i</button>
-<button type="button" class="pt-mark" data-task="A_RejectInvalidArgs" style="left:27.7%;top:25.89%" aria-expanded="false" aria-label="About step: Reject Request with ValidationError" title="About: Reject Request with ValidationError">i</button>
-<button type="button" class="pt-mark" data-task="A_CheckSubgraphs" style="left:27.7%;top:50.89%" aria-expanded="false" aria-label="About step: Check Graph Availability Guard (requiredSubgraphs)" title="About: Check Graph Availability Guard (requiredSubgraphs)">i</button>
-<button type="button" class="pt-mark" data-task="A_FetchPartitions" style="left:53.6%;top:68.75%" aria-expanded="false" aria-label="About step: Fetch &amp; Ingest Missing Subgraphs (.nq.gz)" title="About: Fetch &amp; Ingest Missing Subgraphs (.nq.gz)">i</button>
-<button type="button" class="pt-mark" data-task="A_RaiseMissingPartition" style="left:43.53%;top:84.82%" aria-expanded="false" aria-label="About step: Raise MissingPartitionError (Fail-Closed Guard)" title="About: Raise MissingPartitionError (Fail-Closed Guard)">i</button>
-<button type="button" class="pt-mark" data-task="A_BindExecute" style="left:65.11%;top:50.89%" aria-expanded="false" aria-label="About step: Bind Typed Parameters &amp; Execute SPARQL" title="About: Bind Typed Parameters &amp; Execute SPARQL">i</button>
-<button type="button" class="pt-mark" data-task="A_FormatResponse" style="left:76.62%;top:50.89%" aria-expanded="false" aria-label="About step: Format Universal Result Response Envelope" title="About: Format Universal Result Response Envelope">i</button>
+<button type="button" class="pt-mark" data-task="A_ValidateParams" style="left:19.93%;top:7.44%" aria-expanded="false" aria-label="About step: Validate Arguments against Parameter Schema" title="About: Validate Arguments against Parameter Schema">i</button>
+<button type="button" class="pt-mark" data-task="A_RejectInvalidArgs" style="left:30.39%;top:23.97%" aria-expanded="false" aria-label="About step: Reject Request with ValidationError" title="About: Reject Request with ValidationError">i</button>
+<button type="button" class="pt-mark" data-task="A_CheckSubgraphs" style="left:30.39%;top:47.11%" aria-expanded="false" aria-label="About step: Check Graph Availability Guard (requiredSubgraphs)" title="About: Check Graph Availability Guard (requiredSubgraphs)">i</button>
+<button type="button" class="pt-mark" data-task="A_FetchPartitions" style="left:56.54%;top:63.64%" aria-expanded="false" aria-label="About step: Fetch &amp; Ingest Missing Subgraphs (.nq.gz)" title="About: Fetch &amp; Ingest Missing Subgraphs (.nq.gz)">i</button>
+<button type="button" class="pt-mark" data-task="A_RaiseMissingPartition" style="left:47.39%;top:76.69%" aria-expanded="false" aria-label="About step: Raise MissingPartitionError (Fail-Closed Guard)" title="About: Raise MissingPartitionError (Fail-Closed Guard)">i</button>
+<button type="button" class="pt-mark" data-task="A_BindExecute" style="left:66.99%;top:47.11%" aria-expanded="false" aria-label="About step: Bind Typed Parameters &amp; Execute SPARQL" title="About: Bind Typed Parameters &amp; Execute SPARQL">i</button>
+<button type="button" class="pt-mark" data-task="A_FormatResponse" style="left:80.07%;top:47.11%" aria-expanded="false" aria-label="About step: Format Universal Result Response Envelope" title="About: Format Universal Result Response Envelope">i</button>
 </div>
 <div class="pt-panel" role="dialog" aria-label="Task details" hidden=""></div>
 </div>

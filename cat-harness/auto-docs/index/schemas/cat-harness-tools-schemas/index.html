@@ -9,13 +9,7 @@
 
   <link rel="stylesheet" href="../../../../../assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
 
-  <style id="jtd-nav-activation">
   
-    .site-nav ul li a {
-      background-image: none;
-    }
-
-  </style>
 
   
 
@@ -588,7 +582,7 @@
 -->
 <!-- The harness icon row's own style, which railed pages load without docs-ui.css (beans `lhvt`, `9rq1`). -->
 <link rel="stylesheet" href="../../../../../assets/css/navbar-row.css?v=7d7d00921e0f">
-<link rel="stylesheet" href="../../../../../assets/css/docs-ui.css?v=6071ae228cf3">
+<link rel="stylesheet" href="../../../../../assets/css/docs-ui.css?v=2ed7923cda66">
 <!-- Narrow viewports: wide content scrolls in its own box, never the page
      (bean `2r2n`). The standalone viewers inline the same file through
      `withViewerNav`, so both kinds of page read one set of rules. -->
@@ -646,8 +640,8 @@
 <!-- BEFORE docs-ui.js and work-plan.js: both read window.faRender. -->
 <script src="../../../../../assets/js/kg-render.js" defer></script>
 <!-- BEFORE docs-ui.js, which calls it: the one drawing of the harness icon row (beans `lhvt`, `9rq1`). -->
-<script src="../../../../../assets/js/navbar-row.js?v=7dce6a7e2ab0" defer></script>
-<script src="../../../../../assets/js/docs-ui.js?v=59c1d8d3ff0a" defer></script>
+<script src="../../../../../assets/js/navbar-row.js?v=6bb19e1d17a5" defer></script>
+<script src="../../../../../assets/js/docs-ui.js?v=9ffac52f2026" defer></script>
 <!-- The edit, source and feedback links of every page, from the platform's one
   recipe (cat-harness-tools/src/core/edit-links.ts, bean v433): links carry their
   facts and this builds the hrefs. -->
@@ -917,12 +911,12 @@
 </div>
 
 <ul class="subs">
-<li><a href="../cat-harness-tools-archimate-schemas/">cat-harness-tools-archimate-schemas</a> <span class="p">cat-harness-tools/archimate/schemas</span> <span class="n">3</span></li>
-<li><a href="../cat-harness-tools-openapi-schemas/">cat-harness-tools-openapi-schemas</a> <span class="p">cat-harness-tools/openapi/schemas</span> <span class="n">1</span></li>
-<li><strong>cat-harness-tools-schemas</strong> <span class="p">cat-harness-tools/schemas</span> <span class="n">209</span></li>
-<li><a href="../core-schemas/">core-schemas</a> <span class="p">folio-assistant-core/schemas</span> <span class="n">17</span></li>
-<li><a href="../fhir-harness-schemas/">fhir-harness-schemas</a> <span class="p">fhir-harness/schemas</span> <span class="n">13</span></li>
-<li><a href="../smart-base-schemas/">smart-base-schemas</a> <span class="p">smart-base/schemas</span> <span class="n">6</span></li>
+<li><a href="../cat-harness-tools-archimate-schemas/">cat-harness-tools-archimate-schemas</a> <span class="p">cat-harness-tools/archimate/schemas</span> <span class="n" data-da-count="index/schemas/cat-harness-tools-archimate-schemas" data-da-count-state="pending">…</span></li>
+<li><a href="../cat-harness-tools-openapi-schemas/">cat-harness-tools-openapi-schemas</a> <span class="p">cat-harness-tools/openapi/schemas</span> <span class="n" data-da-count="index/schemas/cat-harness-tools-openapi-schemas" data-da-count-state="pending">…</span></li>
+<li><strong>cat-harness-tools-schemas</strong> <span class="p">cat-harness-tools/schemas</span> <span class="n" data-da-count="index/schemas/cat-harness-tools-schemas" data-da-count-state="pending">…</span></li>
+<li><a href="../core-schemas/">core-schemas</a> <span class="p">folio-assistant-core/schemas</span> <span class="n" data-da-count="index/schemas/core-schemas" data-da-count-state="pending">…</span></li>
+<li><a href="../fhir-harness-schemas/">fhir-harness-schemas</a> <span class="p">fhir-harness/schemas</span> <span class="n" data-da-count="index/schemas/fhir-harness-schemas" data-da-count-state="pending">…</span></li>
+<li><a href="../smart-base-schemas/">smart-base-schemas</a> <span class="p">smart-base/schemas</span> <span class="n" data-da-count="index/schemas/smart-base-schemas" data-da-count-state="pending">…</span></li>
 </ul>
 
 <div class="fa-table-filter">
@@ -1518,8 +1512,16 @@
   <td>The change-size rule: thresholds, basis, and prose/KG versus code weighting.</td>
 </tr>
 <tr>
+  <td><a href="https://github.com/litlfred/cat-harness-tools/blob/main/schemas/sdlc/gates-report.ts"><code>gates-report</code></a><br><span class="p">cat-harness-tools/schemas/sdlc/gates-report.ts</span></td>
+  <td>The typed reports of <code>bun run cat gates</code> and <code>bun run cat check:merged</code> (issue litlfred/cat-harness-tools#1259, group 2; owner card Q-DS-14 A).</td>
+</tr>
+<tr>
   <td><a href="https://github.com/litlfred/cat-harness-tools/blob/main/schemas/sdlc/git-corpus.ts"><code>git-corpus</code></a><br><span class="p">cat-harness-tools/schemas/sdlc/git-corpus.ts</span></td>
   <td>What files this REPOSITORY contains — asked of git, never of the disk.</td>
+</tr>
+<tr>
+  <td><a href="https://github.com/litlfred/cat-harness-tools/blob/main/schemas/sdlc/harness-state.ts"><code>harness-state</code></a><br><span class="p">cat-harness-tools/schemas/sdlc/harness-state.ts</span></td>
+  <td>One harness's state as <code>harness:state</code> publishes it (<code>folio-harness-state/v1</code>).</td>
 </tr>
 <tr>
   <td><a href="https://github.com/litlfred/cat-harness-tools/blob/main/schemas/sdlc/health-report.ts"><code>health-report</code></a><br><span class="p">cat-harness-tools/schemas/sdlc/health-report.ts</span></td>
@@ -1560,6 +1562,10 @@
 <tr>
   <td><a href="https://github.com/litlfred/cat-harness-tools/blob/main/schemas/sdlc/qa-review.ts"><code>qa-review</code></a><br><span class="p">cat-harness-tools/schemas/sdlc/qa-review.ts</span></td>
   <td>QA review — findings, decisions, and the audit notes that justify them.</td>
+</tr>
+<tr>
+  <td><a href="https://github.com/litlfred/cat-harness-tools/blob/main/schemas/sdlc/read-projections.ts"><code>read-projections</code></a><br><span class="p">cat-harness-tools/schemas/sdlc/read-projections.ts</span></td>
+  <td>Projected reads: a reader that uses only part of a file says so, and a writer's record keeps only that part (owner card Q-SPD-9b A, 2026-11-01).</td>
 </tr>
 <tr>
   <td><a href="https://github.com/litlfred/cat-harness-tools/blob/main/schemas/sdlc/red-flag.ts"><code>red-flag</code></a><br><span class="p">cat-harness-tools/schemas/sdlc/red-flag.ts</span></td>
@@ -1650,6 +1656,10 @@
   <td>The cat-harness instance's Tool nodes — its <code>tools</code> graph.</td>
 </tr>
 <tr>
+  <td><a href="https://github.com/litlfred/cat-harness-tools/blob/main/schemas/tools/store-tool-results.ts"><code>store-tool-results</code></a><br><span class="p">cat-harness-tools/schemas/tools/store-tool-results.ts</span></td>
+  <td>Typed results of the tools that read and write the harness's data stores — the work plan, the activity log and the session record (owner, 2026-11-01, Q-DS-10 A: &quot;store tools first&quot;).</td>
+</tr>
+<tr>
   <td><a href="https://github.com/litlfred/cat-harness-tools/blob/main/schemas/tools/tool-folders.ts"><code>tool-folders</code></a><br><span class="p">cat-harness-tools/schemas/tools/tool-folders.ts</span></td>
   <td>One Tool per folder: <code>&lt;tools dir&gt;/&lt;id&gt;/&lt;id&gt;.ts</code>, and the loader that reads them.</td>
 </tr>
@@ -1684,6 +1694,10 @@
 <tr>
   <td><a href="https://github.com/litlfred/cat-harness-tools/blob/main/schemas/tools/tool.ts"><code>tool</code></a><br><span class="p">cat-harness-tools/schemas/tools/tool.ts</span></td>
   <td>What a Tool is.</td>
+</tr>
+<tr>
+  <td><a href="https://github.com/litlfred/cat-harness-tools/blob/main/schemas/tools/workflow-tool-results.ts"><code>workflow-tool-results</code></a><br><span class="p">cat-harness-tools/schemas/tools/workflow-tool-results.ts</span></td>
+  <td>Typed results of the workflow engine's tools (issue litlfred/cat-harness-tools#1259, group 2 of the tool-output plan, owner card Q-DS-10 A).</td>
 </tr>
 <tr>
   <td><a href="https://github.com/litlfred/cat-harness-tools/blob/main/schemas/types.ts"><code>types</code></a><br><span class="p">cat-harness-tools/schemas/types.ts</span></td>
@@ -1797,6 +1811,24 @@ var SCOPE = "cat-harness-tools-schemas";
   }
   input.addEventListener("input", apply);
   apply();
+})();
+</script>
+<script>
+(function () {
+  var badges = document.querySelectorAll(".da-page [data-da-count]");
+  if (!badges.length) return;
+  function set(counts) {
+    Array.prototype.forEach.call(badges, function (b) {
+      var n = counts ? counts[b.getAttribute("data-da-count")] : undefined;
+      var ok = typeof n === "number" && isFinite(n);
+      b.textContent = ok ? String(n) : "";
+      b.setAttribute("data-da-count-state", ok ? "some" : counts ? "absent" : "error");
+    });
+  }
+  fetch("../../../../../assets/auto-docs/index.json", { cache: "no-cache" })
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (j) { set(j && j.counts && typeof j.counts === "object" ? j.counts : null); })
+    .catch(function () { set(null); });
 })();
 </script>
 

@@ -9,13 +9,7 @@
 
   <link rel="stylesheet" href="../../../assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
 
-  <style id="jtd-nav-activation">
   
-    .site-nav ul li a {
-      background-image: none;
-    }
-
-  </style>
 
   
 
@@ -588,7 +582,7 @@
 -->
 <!-- The harness icon row's own style, which railed pages load without docs-ui.css (beans `lhvt`, `9rq1`). -->
 <link rel="stylesheet" href="../../../assets/css/navbar-row.css?v=7d7d00921e0f">
-<link rel="stylesheet" href="../../../assets/css/docs-ui.css?v=6071ae228cf3">
+<link rel="stylesheet" href="../../../assets/css/docs-ui.css?v=2ed7923cda66">
 <!-- Narrow viewports: wide content scrolls in its own box, never the page
      (bean `2r2n`). The standalone viewers inline the same file through
      `withViewerNav`, so both kinds of page read one set of rules. -->
@@ -646,8 +640,8 @@
 <!-- BEFORE docs-ui.js and work-plan.js: both read window.faRender. -->
 <script src="../../../assets/js/kg-render.js" defer></script>
 <!-- BEFORE docs-ui.js, which calls it: the one drawing of the harness icon row (beans `lhvt`, `9rq1`). -->
-<script src="../../../assets/js/navbar-row.js?v=7dce6a7e2ab0" defer></script>
-<script src="../../../assets/js/docs-ui.js?v=59c1d8d3ff0a" defer></script>
+<script src="../../../assets/js/navbar-row.js?v=6bb19e1d17a5" defer></script>
+<script src="../../../assets/js/docs-ui.js?v=9ffac52f2026" defer></script>
 <!-- The edit, source and feedback links of every page, from the platform's one
   recipe (cat-harness-tools/src/core/edit-links.ts, bean v433): links carry their
   facts and this builds the hrefs. -->
@@ -835,7 +829,7 @@
         <main>
           
             <blockquote class="note">
-  <p>Generated from <code class="language-plaintext highlighter-rouge">cat-harness/processes/kg/slice-sqlite-publish.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a></p>
+  <p>Generated from <code class="language-plaintext highlighter-rouge">cat-harness/processes/kg/slice-sqlite-publish.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a> · <a href="cat-harness/">cat-harness processes</a></p>
 </blockquote>
 
 <h1 id="build-and-publish-a-per-slice-sqlite-file">
@@ -859,21 +853,21 @@
 <div class="pt-diagram" data-panel="slice-sqlite-publish.tasks.json">
 <img src="../../../assets/img/workflows/slice-sqlite-publish.svg" alt="BPMN diagram: Build and publish a per-slice SQLite file" />
 <div class="pt-layer">
-<button type="button" class="pt-mark" data-task="A_Define" style="left:30%;top:5.93%" aria-expanded="false" aria-label="About step: Write the slice definition" title="About: Write the slice definition">i</button>
-<button type="button" class="pt-mark" data-task="A_Measure" style="left:48.97%;top:5.93%" aria-expanded="false" aria-label="About step: Build it locally and measure the file" title="About: Build it locally and measure the file">i</button>
-<button type="button" class="pt-mark" data-task="A_Report" style="left:57.18%;top:22.88%" aria-expanded="false" aria-label="About step: Report the measurement; ship nothing" title="About: Report the measurement; ship nothing">i</button>
-<button type="button" class="pt-mark" data-task="A_Wire" style="left:66.41%;top:5.93%" aria-expanded="false" aria-label="About step: Wire it: gate, deploy line, search, tests" title="About: Wire it: gate, deploy line, search, tests">i</button>
-<button type="button" class="pt-mark" data-task="A_Check" style="left:66.41%;top:46.61%" aria-expanded="false" aria-label="About step: Gate every slice: slice:sqlite:check" title="About: Gate every slice: slice:sqlite:check">i</button>
-<button type="button" class="pt-mark" data-task="A_Deploy" style="left:82.82%;top:46.61%" aria-expanded="false" aria-label="About step: Build each slice into _site at deploy" title="About: Build each slice into _site at deploy">i</button>
-<button type="button" class="pt-mark" data-task="A_Verify" style="left:82.82%;top:5.93%" aria-expanded="false" aria-label="About step: Search the published slice in a browser" title="About: Search the published slice in a browser">i</button>
-<a class="pt-go" href="bean-open.html" style="left:7.95%;top:5.93%;width:6.15%;height:13.56%" aria-label="Open subprocess: Open the bean" title="Open subprocess: Open the bean"></a>
-<button type="button" class="pt-mark" data-task="Call_BeanOpen" style="left:14.1%;top:5.93%" aria-expanded="false" aria-label="About step: Open the bean" title="About: Open the bean">i</button>
-<a class="pt-go" href="bean-close.html" style="left:67.69%;top:63.56%;width:6.15%;height:13.56%" aria-label="Open subprocess: Close the bean" title="Open subprocess: Close the bean"></a>
-<button type="button" class="pt-mark" data-task="Call_BeanClose" style="left:73.85%;top:63.56%" aria-expanded="false" aria-label="About step: Close the bean" title="About: Close the bean">i</button>
-<a class="pt-go" href="bean-close.html" style="left:87.03%;top:5.93%;width:6.15%;height:13.56%" aria-label="Open subprocess: Close the bean" title="Open subprocess: Close the bean"></a>
-<button type="button" class="pt-mark" data-task="Call_BeanClose_2" style="left:93.18%;top:5.93%" aria-expanded="false" aria-label="About step: Close the bean" title="About: Close the bean">i</button>
-<a class="pt-go" href="bean-close.html" style="left:35.74%;top:22.03%;width:6.15%;height:13.56%" aria-label="Open subprocess: Close the bean" title="Open subprocess: Close the bean"></a>
-<button type="button" class="pt-mark" data-task="Call_BeanClose_3" style="left:41.9%;top:22.03%" aria-expanded="false" aria-label="About step: Close the bean" title="About: Close the bean">i</button>
+<button type="button" class="pt-mark" data-task="A_Define" style="left:28.19%;top:5.93%" aria-expanded="false" aria-label="About step: Write the slice definition" title="About: Write the slice definition">i</button>
+<button type="button" class="pt-mark" data-task="A_Measure" style="left:46.02%;top:5.93%" aria-expanded="false" aria-label="About step: Build it locally and measure the file" title="About: Build it locally and measure the file">i</button>
+<button type="button" class="pt-mark" data-task="A_Report" style="left:54.7%;top:22.88%" aria-expanded="false" aria-label="About step: Report the measurement; ship nothing" title="About: Report the measurement; ship nothing">i</button>
+<button type="button" class="pt-mark" data-task="A_Wire" style="left:63.37%;top:5.93%" aria-expanded="false" aria-label="About step: Wire it: gate, deploy line, search, tests" title="About: Wire it: gate, deploy line, search, tests">i</button>
+<button type="button" class="pt-mark" data-task="A_Check" style="left:64.82%;top:46.61%" aria-expanded="false" aria-label="About step: Gate every slice: slice:sqlite:check" title="About: Gate every slice: slice:sqlite:check">i</button>
+<button type="button" class="pt-mark" data-task="A_Deploy" style="left:83.61%;top:46.44%" aria-expanded="false" aria-label="About step: Build each slice into _site at deploy" title="About: Build each slice into _site at deploy">i</button>
+<button type="button" class="pt-mark" data-task="A_Verify" style="left:82.89%;top:5.93%" aria-expanded="false" aria-label="About step: Search the published slice in a browser" title="About: Search the published slice in a browser">i</button>
+<a class="pt-go" href="bean-open.html" style="left:7.47%;top:5.93%;width:5.78%;height:13.56%" aria-label="Open subprocess: Open the bean" title="Open subprocess: Open the bean"></a>
+<button type="button" class="pt-mark" data-task="Call_BeanOpen" style="left:13.25%;top:5.93%" aria-expanded="false" aria-label="About step: Open the bean" title="About: Open the bean">i</button>
+<a class="pt-go" href="bean-close.html" style="left:66.02%;top:63.56%;width:7.71%;height:13.56%" aria-label="Open subprocess: Close the bean" title="Open subprocess: Close the bean"></a>
+<button type="button" class="pt-mark" data-task="Call_BeanClose" style="left:73.73%;top:63.56%" aria-expanded="false" aria-label="About step: Close the bean" title="About: Close the bean">i</button>
+<a class="pt-go" href="bean-close.html" style="left:85.88%;top:5.93%;width:7.71%;height:13.56%" aria-label="Open subprocess: Close the bean" title="Open subprocess: Close the bean"></a>
+<button type="button" class="pt-mark" data-task="Call_BeanClose_2" style="left:93.59%;top:5.93%" aria-expanded="false" aria-label="About step: Close the bean" title="About: Close the bean">i</button>
+<a class="pt-go" href="bean-close.html" style="left:32.63%;top:22.03%;width:7.71%;height:13.56%" aria-label="Open subprocess: Close the bean" title="Open subprocess: Close the bean"></a>
+<button type="button" class="pt-mark" data-task="Call_BeanClose_3" style="left:40.34%;top:22.03%" aria-expanded="false" aria-label="About step: Close the bean" title="About: Close the bean">i</button>
 </div>
 <div class="pt-panel" role="dialog" aria-label="Task details" hidden=""></div>
 </div>
