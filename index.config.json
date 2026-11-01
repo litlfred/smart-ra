@@ -171,7 +171,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/folio-assistant-core",
-          "ref": "162275f68c1cdd9c0d92c62d61ae7a1920f7c752",
+          "ref": "7885df2b651f86efa105da9523db79a26c35e0f4",
           "overrides": {
             "folio-assistant-core": {
               "whole": true
@@ -187,8 +187,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-11-01",
-              "ref": "162275f68c1cdd9c0d92c62d61ae7a1920f7c752",
-              "evidence": "litlfred tapped Q-NAV-3 A 'All five layers to main' 2026-11-01 17:54:45Z (Folio Assistant thread 'Collapse bibliography entries in left navbar', cmsg_017WNUkNK8kdDziPK58Pv6G9N4NDB5vmMC888j9CJa5FKj): move cat-harness, folio-assistant-core, fhir-harness, bootstrap and bootstrap-tools to main with cat-harness-tools 3c2d2ed so the layers do not skew (smart-ra#213)."
+              "ref": "7885df2b651f86efa105da9523db79a26c35e0f4",
+              "evidence": "litlfred tapped Q-NAV-3 A 'All five layers to main' 2026-11-01 17:54:45Z and Q-NAV-2 A 'Merge #1262 and re-pin' 16:47:10Z (Folio Assistant thread 'Collapse bibliography entries in left navbar'); 18:41Z chose B on Q-NAV-4 (merge #213 on green). Moved to main past the lower-layer gate fixes (cat-harness#924, cat-harness-tools#1304/#1306)."
             }
           }
         }
@@ -199,7 +199,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness",
-          "ref": "5e8fe2e838b02b7bfe67562618606bcbc7bea819",
+          "ref": "514f4b49245e10e2edf5d876e30977636d6e930a",
           "overrides": {
             "cat-harness": {
               "whole": true
@@ -215,8 +215,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-11-01",
-              "ref": "5e8fe2e838b02b7bfe67562618606bcbc7bea819",
-              "evidence": "litlfred tapped Q-NAV-3 A 'All five layers to main' 2026-11-01 17:54:45Z (Folio Assistant thread 'Collapse bibliography entries in left navbar', cmsg_017WNUkNK8kdDziPK58Pv6G9N4NDB5vmMC888j9CJa5FKj): move cat-harness, folio-assistant-core, fhir-harness, bootstrap and bootstrap-tools to main with cat-harness-tools 3c2d2ed so the layers do not skew (smart-ra#213)."
+              "ref": "514f4b49245e10e2edf5d876e30977636d6e930a",
+              "evidence": "litlfred tapped Q-NAV-3 A 'All five layers to main' 2026-11-01 17:54:45Z and Q-NAV-2 A 'Merge #1262 and re-pin' 16:47:10Z (Folio Assistant thread 'Collapse bibliography entries in left navbar'); 18:41Z chose B on Q-NAV-4 (merge #213 on green). Moved to main past the lower-layer gate fixes (cat-harness#924, cat-harness-tools#1304/#1306)."
             }
           }
         }
@@ -227,7 +227,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness-tools",
-          "ref": "3c2d2eda3d51590d7bceb320ec605fcd3e42688c",
+          "ref": "f76b1e5ec43a790abb7bc7564aa010defe67f869",
           "overrides": {
             "cat-harness-tools": {
               "whole": true
@@ -240,8 +240,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-11-01",
-              "ref": "3c2d2eda3d51590d7bceb320ec605fcd3e42688c",
-              "evidence": "litlfred tapped Q-NAV-2 A 'Merge #1262 and re-pin' 2026-11-01 16:47:10Z (Folio Assistant thread 'Collapse bibliography entries in left navbar', cmsg_017WNUkNK8kdDziPK58Pv6G9BMVTWXVfr778H2XjS8Bogm), inside the 16:08Z merge+repin window (cmsg_017WNUkNK8kdDziPK58Pv6G9LR1zeenF1AJ9hyV9GdA5TR); main tip 3c2d2ed folds Bibliography: pages in the rail (cat-harness-tools#1262, #1261)"
+              "ref": "f76b1e5ec43a790abb7bc7564aa010defe67f869",
+              "evidence": "litlfred tapped Q-NAV-3 A 'All five layers to main' 2026-11-01 17:54:45Z and Q-NAV-2 A 'Merge #1262 and re-pin' 16:47:10Z (Folio Assistant thread 'Collapse bibliography entries in left navbar'); 18:41Z chose B on Q-NAV-4 (merge #213 on green). Moved to main past the lower-layer gate fixes (cat-harness#924, cat-harness-tools#1304/#1306)."
             }
           }
         }
