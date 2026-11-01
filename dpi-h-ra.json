@@ -131,7 +131,7 @@
     {
       "id": "glossary",
       "path": "glossary/",
-      "description": "This instance's glossary: folio-glossary/v1 SKOS schemes. dpi-h-ra.glossary.json is the RA's own glossary, read verbatim from its glossary table, the shared scheme the Digital Transformation Handbooks link their terms to (#133). full-stac.glossary.json holds the terms of Mehl et al. 2023 (the full-STAC paper, library/mehl-2023-full-stac-oqad018/), which the RA cites and its own scheme links to.",
+      "description": "This instance's glossary: folio-glossary/v1 SKOS schemes. dpi-h-ra.glossary.json is the RA's own glossary, read verbatim from its glossary table, the shared scheme the Digital Transformation Handbooks link their terms to (#133). full-stac.glossary.json holds the terms of Mehl et al. 2023 (the full-STAC paper, library/mehl-2023-full-stac-oqad018/), which the RA cites and its own scheme links to. organizations.glossary.json holds the organizations the handbooks name (WHO, HL7, ISO, GS1, UNICEF, USAID, ...), once, as SKOS concepts with a foaf:focus to a W3C ORG organization (litlfred/folio-assistant-core#411); a handbook lists them under members.",
       "graphTypologies": [
         "glossary"
       ]

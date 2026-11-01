@@ -171,7 +171,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/folio-assistant-core",
-          "ref": "1602a1be5ac16b95fa70b487f142d47d210e652b",
+          "ref": "6cd0644e7d38e46c1876816574562554656db224",
           "overrides": {
             "folio-assistant-core": {
               "whole": true
@@ -187,8 +187,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-10-31",
-              "ref": "1602a1be5ac16b95fa70b487f142d47d210e652b",
-              "evidence": "litlfred, 2026-10-31: card 'A. Merge when green' for core#328 (thread Review sheet Apps Script), merge and repin window to ~09:00Z; re-pin folio-assistant-core to core#328 (1602a1b): review-sheet Code.gs, readable Config, relative sheet-sync URLs"
+              "ref": "6cd0644e7d38e46c1876816574562554656db224",
+              "evidence": "litlfred asked 2026-10-31 13:22Z (Folio Assistant project thread) to add organizations and acronyms with schema support; the change is folio-assistant-core#412, merged"
             }
           }
         }
@@ -227,7 +227,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness-tools",
-          "ref": "45b0894620099663f17abb584f376502d702422a",
+          "ref": "6d02c6a004edeba45bb17880f28fa9067613986b",
           "overrides": {
             "cat-harness-tools": {
               "whole": true
@@ -240,8 +240,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-10-31",
-              "ref": "45b0894620099663f17abb584f376502d702422a",
-              "evidence": "litlfred, 2026-10-31 01:59:58Z (via coordinator): 'merge repin winfow + 3hts' (window to ~05:00Z); main tip 45b0894 (re-pin cat-harness and tools past the archimate fix (cat-harness#831, tools#1070))."
+              "ref": "6d02c6a004edeba45bb17880f28fa9067613986b",
+              "evidence": "litlfred asked 2026-10-31 13:22Z (Folio Assistant project thread) for organizations and acronyms; folio-assistant-core 6cd0644 (#412) needs a cat-harness-tools that loads event subprocesses (core#399), so tools moves to main"
             }
           }
         }
