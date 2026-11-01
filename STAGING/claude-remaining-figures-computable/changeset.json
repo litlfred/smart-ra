@@ -1,0 +1,224 @@
+{
+  "$schema": "folio-changeset/v1",
+  "folio": "folio",
+  "base": {
+    "ref": "origin/main",
+    "commit": "06ce8117c0287c4ea6c0ecb839d0c4fab0cb762d"
+  },
+  "head": {
+    "ref": "worktree",
+    "commit": null
+  },
+  "summary": {
+    "added": 0,
+    "removed": 0,
+    "changed": 10,
+    "unchanged": 923,
+    "renamed": 0,
+    "prose": 10,
+    "manifest": 10,
+    "moved": 0
+  },
+  "changes": [
+    {
+      "change": "changed",
+      "label": "fig:f-1cea81",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/f-f-1cea81.ts",
+        "kind": "figure",
+        "section": "dpi-h-ra/appendix::sec:f",
+        "index": 4
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/f-f-1cea81.ts",
+        "kind": "figure",
+        "section": "dpi-h-ra/appendix::sec:f",
+        "index": 4
+      }
+    },
+    {
+      "change": "changed",
+      "label": "fig:3-1-26093d",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/f-3-1-26093d.ts",
+        "kind": "figure",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-1",
+        "index": 10
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/f-3-1-26093d.ts",
+        "kind": "figure",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-1",
+        "index": 10
+      }
+    },
+    {
+      "change": "changed",
+      "label": "fig:3-3-8f9618",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/f-3-3-8f9618.ts",
+        "kind": "figure",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-3",
+        "index": 0
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/f-3-3-8f9618.ts",
+        "kind": "figure",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-3",
+        "index": 0
+      }
+    },
+    {
+      "change": "changed",
+      "label": "fig:3-3-5aba0f",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/f-3-3-5aba0f.ts",
+        "kind": "figure",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-3",
+        "index": 6
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/f-3-3-5aba0f.ts",
+        "kind": "figure",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-3",
+        "index": 6
+      }
+    },
+    {
+      "change": "changed",
+      "label": "fig:3-3",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/f-3-3.ts",
+        "kind": "figure",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-3",
+        "index": 7
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/f-3-3.ts",
+        "kind": "figure",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-3",
+        "index": 7
+      }
+    },
+    {
+      "change": "changed",
+      "label": "fig:3-3-9fbe49",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/f-3-3-9fbe49.ts",
+        "kind": "figure",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-3",
+        "index": 10
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/f-3-3-9fbe49.ts",
+        "kind": "figure",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-3",
+        "index": 10
+      }
+    },
+    {
+      "change": "changed",
+      "label": "fig:3-4-5-3d078e",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/f-3-4-5-3d078e.ts",
+        "kind": "figure",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-4-5",
+        "index": 10
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/f-3-4-5-3d078e.ts",
+        "kind": "figure",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-4-5",
+        "index": 10
+      }
+    },
+    {
+      "change": "changed",
+      "label": "fig:3-5-3-93e90c",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/f-3-5-3-93e90c.ts",
+        "kind": "figure",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-5-3",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/f-3-5-3-93e90c.ts",
+        "kind": "figure",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-5-3",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "fig:3-7-2-cefa3a",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/f-3-7-2-cefa3a.ts",
+        "kind": "figure",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-7-2",
+        "index": 17
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/f-3-7-2-cefa3a.ts",
+        "kind": "figure",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-7-2",
+        "index": 17
+      }
+    },
+    {
+      "change": "changed",
+      "label": "fig:3-7-2-e2b677",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/f-3-7-2-e2b677.ts",
+        "kind": "figure",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-7-2",
+        "index": 27
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/f-3-7-2-e2b677.ts",
+        "kind": "figure",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-7-2",
+        "index": 27
+      }
+    }
+  ]
+}
