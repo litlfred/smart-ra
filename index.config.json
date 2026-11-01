@@ -227,7 +227,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness-tools",
-          "ref": "f76b1e5ec43a790abb7bc7564aa010defe67f869",
+          "ref": "38158568ab583572769a21121b70500eb752e8b9",
           "overrides": {
             "cat-harness-tools": {
               "whole": true
@@ -240,8 +240,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-11-01",
-              "ref": "f76b1e5ec43a790abb7bc7564aa010defe67f869",
-              "evidence": "litlfred tapped Q-NAV-3 A 'All five layers to main' 2026-11-01 17:54:45Z and Q-NAV-2 A 'Merge #1262 and re-pin' 16:47:10Z (Folio Assistant thread 'Collapse bibliography entries in left navbar'); 18:41Z chose B on Q-NAV-4 (merge #213 on green). Moved to main past the lower-layer gate fixes (cat-harness#924, cat-harness-tools#1304/#1306)."
+              "ref": "38158568ab583572769a21121b70500eb752e8b9",
+              "evidence": "litlfred tapped Q-NAV-7 A 'Merge after #1320, 1 red' 2026-11-01 19:33:25Z (Folio Assistant thread 'Collapse bibliography entries in left navbar', cmsg_017WNUkNK8kdDziPK58Pv6G9MDTWQMPcqcoDsSX9hUyxke): re-pin tools to main past cat-harness-tools#1320 (standalone checks skipped in layer mode)."
             }
           }
         }
