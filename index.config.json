@@ -101,7 +101,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/smart-base",
-          "ref": "a3e89d4fdf7419391d20d4ef6acdf22bb7a27872",
+          "ref": "e11a0473880b7ab3c88c9ddce4f724d3d6b2f89e",
           "overrides": {
             "smart-base": {
               "path": "smart-base",
@@ -136,9 +136,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-30",
-              "ref": "a3e89d4fdf7419391d20d4ef6acdf22bb7a27872",
-              "evidence": "owner card 2026-10-30T20:17Z 'Merge, re-pin, publish' (smart-base#237 one copy of the DPI-H draft in smart-ra; cat-harness#796 example-is-a-mention rule)"
+              "on": "2026-11-01",
+              "ref": "e11a0473880b7ab3c88c9ddce4f724d3d6b2f89e",
+              "evidence": "litlfred tapped Q-NAV-6 A 'smart-base to main too' 2026-11-01 18:44:52Z (Folio Assistant thread 'Collapse bibliography entries in left navbar', cmsg_017WNUkNK8kdDziPK58Pv6G9UinMR4aE4uanDpNJDwqBB7): main has the 7 process SVGs regenerated (smart-ra#213 render gate)."
             }
           }
         }
@@ -149,7 +149,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/fhir-harness",
-          "ref": "3772521c4f6e0a1a88c2a01bfbe361f4ccab3b83",
+          "ref": "4a6e7aff1a30bdd8def7514361f4eb88c9c3f3a9",
           "overrides": {
             "fhir-harness": {
               "whole": true
@@ -158,9 +158,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-30",
-              "ref": "3772521c4f6e0a1a88c2a01bfbe361f4ccab3b83",
-              "evidence": "litlfred, 2026-10-30 16:15:26Z in the 'Drain smart-ra issues and beans' thread: 'fix all issues.' Re-pin every layer to main after fhir-harness#210, smart-base#223, cat-harness-tools#925 merged; merge window extended to ~19:38Z; main tip 3772521 (IG pages #214, CI #217 #221, direction #224, schemas move #215, claim 5 schema link #226). Window: litlfred 2026-10-30 11:13Z 'merge and repin window open for 4 horus', extended 16:37Z 'merge window +3 hrs' (to ~19:38Z), extended 19:21Z 'merge window + 3hrs' (to ~22:38Z)."
+              "on": "2026-11-01",
+              "ref": "4a6e7aff1a30bdd8def7514361f4eb88c9c3f3a9",
+              "evidence": "litlfred tapped Q-NAV-3 A 'All five layers to main' 2026-11-01 17:54:45Z (Folio Assistant thread 'Collapse bibliography entries in left navbar', cmsg_017WNUkNK8kdDziPK58Pv6G9N4NDB5vmMC888j9CJa5FKj): move cat-harness, folio-assistant-core, fhir-harness, bootstrap and bootstrap-tools to main with cat-harness-tools 3c2d2ed so the layers do not skew (smart-ra#213)."
             }
           }
         }
@@ -171,7 +171,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/folio-assistant-core",
-          "ref": "6cd0644e7d38e46c1876816574562554656db224",
+          "ref": "7885df2b651f86efa105da9523db79a26c35e0f4",
           "overrides": {
             "folio-assistant-core": {
               "whole": true
@@ -186,9 +186,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-31",
-              "ref": "6cd0644e7d38e46c1876816574562554656db224",
-              "evidence": "litlfred asked 2026-10-31 13:22Z (Folio Assistant project thread) to add organizations and acronyms with schema support; the change is folio-assistant-core#412, merged"
+              "on": "2026-11-01",
+              "ref": "7885df2b651f86efa105da9523db79a26c35e0f4",
+              "evidence": "litlfred tapped Q-NAV-3 A 'All five layers to main' 2026-11-01 17:54:45Z and Q-NAV-2 A 'Merge #1262 and re-pin' 16:47:10Z (Folio Assistant thread 'Collapse bibliography entries in left navbar'); 18:41Z chose B on Q-NAV-4 (merge #213 on green). Moved to main past the lower-layer gate fixes (cat-harness#924, cat-harness-tools#1304/#1306)."
             }
           }
         }
@@ -199,7 +199,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness",
-          "ref": "b5ffdff01932907c9ae55bb51cf430965add62a4",
+          "ref": "514f4b49245e10e2edf5d876e30977636d6e930a",
           "overrides": {
             "cat-harness": {
               "whole": true
@@ -214,9 +214,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-31",
-              "ref": "b5ffdff01932907c9ae55bb51cf430965add62a4",
-              "evidence": "litlfred, 2026-10-31 01:59:58Z (via coordinator): 'merge repin winfow + 3hts' (window to ~05:00Z); main tip b5ffdff (re-pin cat-harness and tools past the archimate fix (cat-harness#831, tools#1070))."
+              "on": "2026-11-01",
+              "ref": "514f4b49245e10e2edf5d876e30977636d6e930a",
+              "evidence": "litlfred tapped Q-NAV-3 A 'All five layers to main' 2026-11-01 17:54:45Z and Q-NAV-2 A 'Merge #1262 and re-pin' 16:47:10Z (Folio Assistant thread 'Collapse bibliography entries in left navbar'); 18:41Z chose B on Q-NAV-4 (merge #213 on green). Moved to main past the lower-layer gate fixes (cat-harness#924, cat-harness-tools#1304/#1306)."
             }
           }
         }
@@ -227,7 +227,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness-tools",
-          "ref": "6d02c6a004edeba45bb17880f28fa9067613986b",
+          "ref": "38158568ab583572769a21121b70500eb752e8b9",
           "overrides": {
             "cat-harness-tools": {
               "whole": true
@@ -239,9 +239,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-31",
-              "ref": "6d02c6a004edeba45bb17880f28fa9067613986b",
-              "evidence": "litlfred asked 2026-10-31 13:22Z (Folio Assistant project thread) for organizations and acronyms; folio-assistant-core 6cd0644 (#412) needs a cat-harness-tools that loads event subprocesses (core#399), so tools moves to main"
+              "on": "2026-11-01",
+              "ref": "38158568ab583572769a21121b70500eb752e8b9",
+              "evidence": "litlfred tapped Q-NAV-7 A 'Merge after #1320, 1 red' 2026-11-01 19:33:25Z (Folio Assistant thread 'Collapse bibliography entries in left navbar', cmsg_017WNUkNK8kdDziPK58Pv6G9MDTWQMPcqcoDsSX9hUyxke): re-pin tools to main past cat-harness-tools#1320 (standalone checks skipped in layer mode)."
             }
           }
         }
@@ -252,7 +252,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/bootstrap",
-          "ref": "3ce2b5d641779ca78432971abb919e6e3afdc60a",
+          "ref": "0d655b74e9ffd1e246a0bd4df60967e158d665de",
           "overrides": {
             "bootstrap": {
               "whole": true
@@ -261,9 +261,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-30",
-              "ref": "3ce2b5d641779ca78432971abb919e6e3afdc60a",
-              "evidence": "litlfred, 2026-10-30 16:15:26Z in the 'Drain smart-ra issues and beans' thread: 'fix all issues.' Re-pin every layer to main after fhir-harness#210, smart-base#223, cat-harness-tools#925 merged; merge window extended to ~19:38Z"
+              "on": "2026-11-01",
+              "ref": "0d655b74e9ffd1e246a0bd4df60967e158d665de",
+              "evidence": "litlfred tapped Q-NAV-3 A 'All five layers to main' 2026-11-01 17:54:45Z (Folio Assistant thread 'Collapse bibliography entries in left navbar', cmsg_017WNUkNK8kdDziPK58Pv6G9N4NDB5vmMC888j9CJa5FKj): move cat-harness, folio-assistant-core, fhir-harness, bootstrap and bootstrap-tools to main with cat-harness-tools 3c2d2ed so the layers do not skew (smart-ra#213)."
             }
           }
         }
@@ -274,7 +274,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/bootstrap-tools",
-          "ref": "b7fb762ba968a6868bbe5004144ddf78023eb9c7",
+          "ref": "ed547a9ab77e8445f13f52fe2152d6e82776bcaf",
           "overrides": {
             "bootstrap-tools": {
               "whole": true
@@ -286,9 +286,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-30",
-              "ref": "b7fb762ba968a6868bbe5004144ddf78023eb9c7",
-              "evidence": "litlfred, 2026-10-30 16:15:26Z in the 'Drain smart-ra issues and beans' thread: 'fix all issues.' Re-pin every layer to main after fhir-harness#210, smart-base#223, cat-harness-tools#925 merged; merge window extended to ~19:38Z"
+              "on": "2026-11-01",
+              "ref": "ed547a9ab77e8445f13f52fe2152d6e82776bcaf",
+              "evidence": "litlfred tapped Q-NAV-3 A 'All five layers to main' 2026-11-01 17:54:45Z (Folio Assistant thread 'Collapse bibliography entries in left navbar', cmsg_017WNUkNK8kdDziPK58Pv6G9N4NDB5vmMC888j9CJa5FKj): move cat-harness, folio-assistant-core, fhir-harness, bootstrap and bootstrap-tools to main with cat-harness-tools 3c2d2ed so the layers do not skew (smart-ra#213)."
             }
           }
         }
