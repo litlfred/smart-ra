@@ -278,6 +278,120 @@
       "definition": "The benefit or utility a stakeholder gains from using a service, product, or capability.",
       "status": "candidate",
       "scopeNote": "The RA draft's own wording, verbatim. A candidate until the RA editors adopt it through the public review."
+    },
+    {
+      "id": "client-registry",
+      "prefLabel": "Client Registry",
+      "source": "folio/dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-client-registry-95ffd8.md",
+      "definition": "The Client Registry is the national authoritative source of health-specific person identity.",
+      "status": "candidate",
+      "scopeNote": "The RA draft's own wording, verbatim: the first sentence of 'What it is' in Appendix C. A candidate until the RA editors adopt it through the public review."
+    },
+    {
+      "id": "health-facility-registry",
+      "prefLabel": "Health Facility Registry",
+      "source": "folio/dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-health-facility-registry-069302.md",
+      "definition": "The Health Facility Registry is the national authoritative source of identity, location, and classification data for all facilities, locations, and organisations through which health services are delivered or that are of direct relevance to the Ministry of Health’s mandate.",
+      "status": "candidate",
+      "scopeNote": "The RA draft's own wording, verbatim: the first sentence of 'What it is' in Appendix C. A candidate until the RA editors adopt it through the public review."
+    },
+    {
+      "id": "health-workforce-registry",
+      "prefLabel": "Health Workforce Registry",
+      "source": "folio/dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-health-workforce-registry-d1c167.md",
+      "definition": "The Health Workforce Registry is the national authoritative record of identity, credential, and classification data for all health workers recognised as part of the national health workforce — including licensed or certified professionals employed in both public and private sectors and, where nationally defined and registered, community health workers and other cadres operating in informal or semi-formal capacities.",
+      "status": "candidate",
+      "scopeNote": "The RA draft's own wording, verbatim: the first sentence of 'What it is' in Appendix C. A candidate until the RA editors adopt it through the public review."
+    },
+    {
+      "id": "product-registry",
+      "prefLabel": "Product Registry",
+      "source": "folio/dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-product-registry-a3e4b4.md",
+      "definition": "The Product Registry is the national authoritative source of core identity and classification data for health products — medicines, vaccines, medical devices, diagnostics, and health commodities — recognised for use within the national health system.",
+      "status": "candidate",
+      "scopeNote": "The RA draft's own wording, verbatim: the first sentence of 'What it is' in Appendix C. A candidate until the RA editors adopt it through the public review."
+    },
+    {
+      "id": "lifelong-health-record",
+      "prefLabel": "Lifelong Health Record",
+      "altLabel": [
+        "LHR"
+      ],
+      "source": "folio/dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-lifelong-health-record-7c8cd5.md",
+      "definition": "The Lifelong Health Record (LHR) is one or more governed data repositories, whether physically consolidated or virtually federated, that collectively maintain a longitudinal, person-centred record of an individual's health and healthcare-related data in computable, standards-based format.",
+      "status": "candidate",
+      "scopeNote": "The RA draft's own wording, verbatim: the first sentence of 'What it is' in Appendix C. A candidate until the RA editors adopt it through the public review."
+    },
+    {
+      "id": "terminology-service",
+      "prefLabel": "Terminology Service",
+      "altLabel": [
+        "TS"
+      ],
+      "source": "folio/dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-terminology-service-6c5267.md",
+      "definition": "The Terminology Service is a governed, publicly accessible service that manages, publishes, and provides access to the standardised terminologies, code systems, value sets, and concept maps used across the digital health ecosystem.",
+      "status": "candidate",
+      "scopeNote": "The RA draft's own wording, verbatim: the first sentence of 'What it is' in Appendix C. A candidate until the RA editors adopt it through the public review."
+    },
+    {
+      "id": "logical-information-model-repository",
+      "prefLabel": "Logical Information Model Repository",
+      "altLabel": [
+        "LIMR"
+      ],
+      "source": "folio/dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-logical-information-model-reposi-73f642.md",
+      "definition": "The Logical Information Model Repository is a governed, publicly accessible repository and management platform for computable clinical and administrative information models that define the logical structure, semantics, and constraints of health data, independently of any specific technology implementation.",
+      "status": "candidate",
+      "scopeNote": "The RA draft's own wording, verbatim: the first sentence of 'What it is' in Appendix C. A candidate until the RA editors adopt it through the public review."
+    },
+    {
+      "id": "computable-decision-support-engine",
+      "prefLabel": "Computable Decision Support Engine",
+      "altLabel": [
+        "CDSE"
+      ],
+      "source": "folio/dpi-h-ra/appendix/p-c-business-services-components-computable-decision-support-engi-53a0a5.md",
+      "definition": "The Computable Decision Support Engine is a governed, shared application component that delivers context-appropriate, evidence-based guidance at the point of clinical decision-making by applying computable clinical rules, algorithms, and logic to person-specific data drawn from the Lifelong Health Record and other relevant sources.",
+      "status": "candidate",
+      "scopeNote": "The RA draft's own wording, verbatim: the first sentence of 'What it is' in Appendix C. A candidate until the RA editors adopt it through the public review."
+    },
+    {
+      "id": "supplier-registry",
+      "prefLabel": "Supplier Registry",
+      "source": "folio/dpi-h-ra/appendix/p-c-business-services-components-supplier-registry-c1132a.md",
+      "definition": "The Supplier Registry is the authoritative master data source for identity, classification, and regulatory status of suppliers engaged in the health supply chain — including manufacturers, distributors, wholesalers, third-party logistics providers, importers, donor organisations, and NGO supply partners.",
+      "status": "candidate",
+      "scopeNote": "The RA draft's own wording, verbatim: the first sentence of 'What it is' in Appendix C. A candidate until the RA editors adopt it through the public review."
+    },
+    {
+      "id": "benefits-package-registry",
+      "prefLabel": "Benefits Package Registry",
+      "source": "folio/dpi-h-ra/appendix/p-c-business-services-components-benefits-package-registry-d5d162.md",
+      "definition": "The Benefits Package Registry is the national authoritative record of all health benefit packages offered within a country's health financing ecosystem.",
+      "status": "candidate",
+      "scopeNote": "The RA draft's own wording, verbatim: the first sentence of 'What it is' in Appendix C. A candidate until the RA editors adopt it through the public review."
+    },
+    {
+      "id": "health-management-information-system",
+      "prefLabel": "Health Management Information System",
+      "altLabel": [
+        "HMIS"
+      ],
+      "source": "folio/dpi-h-ra/appendix/p-c-business-services-components-health-management-information-sy-9dea8c.md",
+      "definition": "The Health Management Information System is a governed, sharedapplication component responsible for the systematic collection, aggregation, analysis, and dissemination of population-level and facility-level health data to support routine monitoring, programme performance measurement, strategic planning, health services commissioning, and public health decision-making.",
+      "status": "candidate",
+      "scopeNote": "The RA draft's own wording, verbatim: the first sentence of 'What it is' in Appendix C. A candidate until the RA editors adopt it through the public review."
+    },
+    {
+      "id": "public-health-surveillance-platform",
+      "prefLabel": "Public Health Surveillance Platform",
+      "altLabel": [
+        "PHSP"
+      ],
+      "source": "folio/dpi-h-ra/appendix/p-c-business-services-components-public-health-surveillance-platf-fdef8d.md",
+      "definition": "The Public Health Surveillance Platform is a governed, shared application component for the systematic, ongoing collection, analysis, interpretation, and dissemination of health data to detect, monitor, and respond to public health threats at local, national, and international levels.",
+      "status": "candidate",
+      "scopeNote": "The RA draft's own wording, verbatim: the first sentence of 'What it is' in Appendix C. A candidate until the RA editors adopt it through the public review."
     }
   ]
 }
