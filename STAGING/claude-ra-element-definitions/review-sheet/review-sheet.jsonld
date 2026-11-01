@@ -1,0 +1,42 @@
+{
+  "@context": {
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "prov": "http://www.w3.org/ns/prov#",
+    "spdx": "http://spdx.org/rdf/terms#"
+  },
+  "@graph": [
+    {
+      "@id": "Code.gs",
+      "@type": "schema:SoftwareSourceCode",
+      "schema:name": "Review sheet Apps Script (generic)",
+      "schema:programmingLanguage": "Google Apps Script",
+      "schema:codeRepository": "https://github.com/litlfred/folio-assistant-core/tree/main/tools/review-sheet-sync",
+      "schema:version": "ec8b6b1f5f85911f781c975decde0a36a2fd2a0c",
+      "spdx:checksum": {
+        "spdx:algorithm": "SHA-256",
+        "spdx:checksumValue": "2100ad8b9a848b8bed2636c058c712269625d80fc542d711139476659e97f102"
+      },
+      "schema:permissions": [
+        "https://www.googleapis.com/auth/spreadsheets.currentonly",
+        "https://www.googleapis.com/auth/script.scriptapp",
+        "https://www.googleapis.com/auth/script.container.ui"
+      ],
+      "prov:wasGeneratedBy": {
+        "@id": "https://github.com/litlfred/folio-assistant-core/tree/main/tools/review-sheet-sync#review-sheet-sync"
+      }
+    },
+    {
+      "@id": "public-comment.config-rows.json",
+      "@type": "schema:Dataset",
+      "schema:name": "Review sheet settings (public-comment)",
+      "dcterms:source": "review/public-comment/sheet-sync.json",
+      "dcterms:conformsTo": {
+        "@id": "Code.gs"
+      },
+      "prov:wasGeneratedBy": {
+        "@id": "https://github.com/litlfred/folio-assistant-core/tree/main/tools/review-sheet-sync#review-sheet-sync"
+      }
+    }
+  ]
+}

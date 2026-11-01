@@ -1,0 +1,264 @@
+{
+  "$schema": "folio-changeset/v1",
+  "folio": "folio",
+  "base": {
+    "ref": "origin/main",
+    "commit": "ed303d41bb587f46049ad35adb3b86e61462ac94"
+  },
+  "head": {
+    "ref": "worktree",
+    "commit": null
+  },
+  "summary": {
+    "added": 0,
+    "removed": 0,
+    "changed": 12,
+    "unchanged": 921,
+    "renamed": 0,
+    "prose": 12,
+    "manifest": 12,
+    "moved": 0
+  },
+  "changes": [
+    {
+      "change": "changed",
+      "label": "prose:c-business-services-components-benefits-package-registry-d5d162",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-benefits-package-registry-d5d162.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-benefits-package-registry",
+        "index": 3
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-benefits-package-registry-d5d162.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-benefits-package-registry",
+        "index": 3
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-business-services-components-computable-decision-support-engi-53a0a5",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-computable-decision-support-engi-53a0a5.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-computable-decision-support-engi",
+        "index": 3
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-computable-decision-support-engi-53a0a5.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-computable-decision-support-engi",
+        "index": 3
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-business-services-components-health-management-information-sy-9dea8c",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-health-management-information-sy-9dea8c.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-health-management-information-sy",
+        "index": 3
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-health-management-information-sy-9dea8c.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-health-management-information-sy",
+        "index": 3
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-business-services-components-public-health-surveillance-platf-fdef8d",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-public-health-surveillance-platf-fdef8d.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-public-health-surveillance-platf",
+        "index": 3
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-public-health-surveillance-platf-fdef8d.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-public-health-surveillance-platf",
+        "index": 3
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-business-services-components-supplier-registry-c1132a",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-supplier-registry-c1132a.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-supplier-registry",
+        "index": 3
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-supplier-registry-c1132a.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-supplier-registry",
+        "index": 3
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-metadata-registries-and-foundati-client-registry-95ffd8",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-client-registry-95ffd8.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-client-registry",
+        "index": 3
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-client-registry-95ffd8.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-client-registry",
+        "index": 3
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-metadata-registries-and-foundati-health-facility-registry-069302",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-health-facility-registry-069302.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-health-facility-registry",
+        "index": 3
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-health-facility-registry-069302.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-health-facility-registry",
+        "index": 3
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-metadata-registries-and-foundati-health-workforce-registry-d1c167",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-health-workforce-registry-d1c167.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-health-workforce-registry",
+        "index": 3
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-health-workforce-registry-d1c167.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-health-workforce-registry",
+        "index": 3
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-metadata-registries-and-foundati-lifelong-health-record-7c8cd5",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-lifelong-health-record-7c8cd5.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-lifelong-health-record",
+        "index": 3
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-lifelong-health-record-7c8cd5.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-lifelong-health-record",
+        "index": 3
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-metadata-registries-and-foundati-logical-information-model-reposi-73f642",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-logical-information-model-reposi-73f642.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-logical-information-model-reposi",
+        "index": 3
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-logical-information-model-reposi-73f642.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-logical-information-model-reposi",
+        "index": 3
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-metadata-registries-and-foundati-product-registry-a3e4b4",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-product-registry-a3e4b4.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-product-registry",
+        "index": 3
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-product-registry-a3e4b4.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-product-registry",
+        "index": 3
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-metadata-registries-and-foundati-terminology-service-6c5267",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-terminology-service-6c5267.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-terminology-service",
+        "index": 3
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-terminology-service-6c5267.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-terminology-service",
+        "index": 3
+      }
+    }
+  ]
+}
