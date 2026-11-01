@@ -1,6 +1,6 @@
-# TEMPORARY diagnostic (cat-harness-tools#1299 item 3): draw smart-base's
-# processes on a GitHub runner and show how the drawing differs from the
-# committed SVGs. Lives only on the scratch branch claude/render-diag.
+# TEMPORARY diagnostic (cat-harness-tools#1299 item 3): find what makes a
+# GitHub runner draw smart-base's processes with whole-pixel text positions.
+# Lives only on the scratch branch claude/render-diag.
 name: Render diagnostic (scratch)
 on:
   push:
@@ -22,34 +22,21 @@ jobs:
           git init -q "$M" && git -C "$M" fetch -q --depth 1 https://github.com/litlfred/cat-harness-tools.git "$ref" && git -C "$M" checkout -q FETCH_HEAD
           bun run "$M/scripts/mount-from-lock.ts" --root .
       - run: bun install
-      - name: Fonts BEFORE playwright deps
-        run: fc-list | sort | md5sum; fc-match Arial; fc-match sans-serif
-      - name: Render (before playwright --with-deps)
-        run: |
-          node_modules/.bin/playwright install chromium
-          mkdir -p "$RUNNER_TEMP/orig" && cp -r smart-base/. "$RUNNER_TEMP/orig/"
-          bun run smart-base/scripts/render-processes.ts --check || true
       - run: node_modules/.bin/playwright install --with-deps chromium
-      - name: Fonts AFTER playwright deps
-        run: fc-list | sort | md5sum; fc-match Arial; fc-match sans-serif; fc-list | grep -i -E 'arial|liberation|arimo' | head
-      - name: Render (after) and diff
+      - name: Variants
         run: |
-          bun run smart-base/scripts/render-processes.ts --check || true
-          bun run smart-base/scripts/render-processes.ts || true
-          for f in smart-base/processes/content/dak-l3-ig.svg smart-base/processes/content/SGAuthoring.DAKLifecycle.svg; do
-            echo "=== $f"
-            python3 - "$f" "$RUNNER_TEMP/orig/${f#smart-base/}" <<'PY'
-          import sys,difflib,re
-          a=open(sys.argv[2]).read(); b=open(sys.argv[1]).read()
-          print('orig',len(a),'new',len(b))
-          ta=re.split(r'(?=<)',a); tb=re.split(r'(?=<)',b)
-          d=list(difflib.unified_diff(ta,tb,lineterm='',n=1))
-          print('diff lines',len(d))
-          for l in d[:60]: print(l[:300])
-          PY
-          done
-      - name: Versions
-        run: |
-          node -e "console.log(require('./node_modules/bpmn-js/package.json').version)" || true
-          ls node_modules/@fontsource || true
-          ls ~/.cache/ms-playwright || true
+          cp bootstrap-tools/scripts/render-bpmn.ts "$RUNNER_TEMP/rb.ts"
+          try() {
+            cp "$RUNNER_TEMP/rb.ts" bootstrap-tools/scripts/render-bpmn.ts
+            sed -i "s|chromium.launch(executablePath ? { executablePath } : {})|chromium.launch({ ...(executablePath ? { executablePath } : {}), args: [$2] })|" bootstrap-tools/scripts/render-bpmn.ts
+            n=$(env $3 bun run smart-base/scripts/render-processes.ts --check 2>&1 | grep -c '✗' || true)
+            echo "VARIANT $1: stale=$n"
+          }
+          try baseline "" "X=1"
+          try hinting-none "'--font-render-hinting=none'" "X=1"
+          try hinting-medium "'--font-render-hinting=medium'" "X=1"
+          printf '<?xml version="1.0"?><!DOCTYPE fontconfig SYSTEM "fonts.dtd"><fontconfig><dir>/usr/share/fonts</dir><match target="font"><edit name="hinting" mode="assign"><bool>false</bool></edit><edit name="hintstyle" mode="assign"><const>hintnone</const></edit><edit name="antialias" mode="assign"><bool>true</bool></edit><edit name="rgba" mode="assign"><const>none</const></edit></match></fontconfig>' > "$RUNNER_TEMP/fonts.conf"
+          try fontconfig-nohint "" "FONTCONFIG_FILE=$RUNNER_TEMP/fonts.conf"
+          try both "'--font-render-hinting=none'" "FONTCONFIG_FILE=$RUNNER_TEMP/fonts.conf"
+          try headful-chrome "'--font-render-hinting=none'" "CHROMIUM_PATH=$(ls -d ~/.cache/ms-playwright/chromium-*/chrome-linux64/chrome | head -1)"
+          fc-match -v Arial | grep -E 'hint|rgba|antialias|file' || true
