@@ -1,0 +1,55 @@
+# TEMPORARY diagnostic (cat-harness-tools#1299 item 3): draw smart-base's
+# processes on a GitHub runner and show how the drawing differs from the
+# committed SVGs. Lives only on the scratch branch claude/render-diag.
+name: Render diagnostic (scratch)
+on:
+  push:
+    branches: [claude/render-diag]
+permissions:
+  contents: read
+jobs:
+  diag:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6
+        with:
+          bun-version: 1.4.4
+      - name: Mount layers from the lock
+        run: |
+          ref=$(python3 -c "import json;print(next(m['ref'] for m in json.load(open('index.lock.json'))['mounts'] if m['harness']=='cat-harness-tools'))")
+          M=$(mktemp -d)
+          git init -q "$M" && git -C "$M" fetch -q --depth 1 https://github.com/litlfred/cat-harness-tools.git "$ref" && git -C "$M" checkout -q FETCH_HEAD
+          bun run "$M/scripts/mount-from-lock.ts" --root .
+      - run: bun install
+      - name: Fonts BEFORE playwright deps
+        run: fc-list | sort | md5sum; fc-match Arial; fc-match sans-serif
+      - name: Render (before playwright --with-deps)
+        run: |
+          node_modules/.bin/playwright install chromium
+          cp -r smart-base smart-base.orig
+          bun run cat smart-base:processes:render:check || true
+      - run: node_modules/.bin/playwright install --with-deps chromium
+      - name: Fonts AFTER playwright deps
+        run: fc-list | sort | md5sum; fc-match Arial; fc-match sans-serif; fc-list | grep -i -E 'arial|liberation|arimo' | head
+      - name: Render (after) and diff
+        run: |
+          bun run cat smart-base:processes:render:check || true
+          bun run cat smart-base:processes:render || true
+          for f in smart-base/processes/content/dak-l3-ig.svg smart-base/processes/content/SGAuthoring.DAKLifecycle.svg; do
+            echo "=== $f"
+            python3 - "$f" "smart-base.orig/${f#smart-base/}" <<'PY'
+          import sys,difflib,re
+          a=open(sys.argv[2]).read(); b=open(sys.argv[1]).read()
+          print('orig',len(a),'new',len(b))
+          ta=re.split(r'(?=<)',a); tb=re.split(r'(?=<)',b)
+          d=list(difflib.unified_diff(ta,tb,lineterm='',n=1))
+          print('diff lines',len(d))
+          for l in d[:60]: print(l[:300])
+          PY
+          done
+      - name: Versions
+        run: |
+          node -e "console.log(require('./node_modules/bpmn-js/package.json').version)" || true
+          ls node_modules/@fontsource || true
+          ls ~/.cache/ms-playwright || true
