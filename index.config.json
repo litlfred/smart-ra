@@ -227,7 +227,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness-tools",
-          "ref": "6d02c6a004edeba45bb17880f28fa9067613986b",
+          "ref": "07c14d402e36865a87b271fb8252a4ade8d1f9e2",
           "overrides": {
             "cat-harness-tools": {
               "whole": true
@@ -239,9 +239,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-31",
-              "ref": "6d02c6a004edeba45bb17880f28fa9067613986b",
-              "evidence": "litlfred asked 2026-10-31 13:22Z (Folio Assistant project thread) for organizations and acronyms; folio-assistant-core 6cd0644 (#412) needs a cat-harness-tools that loads event subprocesses (core#399), so tools moves to main"
+              "on": "2026-11-01",
+              "ref": "07c14d402e36865a87b271fb8252a4ade8d1f9e2",
+              "evidence": "litlfred, 2026-11-01 19:23:40Z card tap Q-RAFIG-3 A (thread Make remaining DPI-H RA figures computable): after cat-harness-tools#1294 merged, retarget smart-ra#218 to main, re-pin and merge on green. Tools main carries the poster theme, figure controls and key-width fix the generated figures need."
             }
           }
         }
