@@ -21,6 +21,10 @@ A spec (e.g. dth_sc.py) is a Python file defining:
             ("box", key) | ("group", key, cols, [children])
             | ("row", [children]) | ("col", [children])
   VIEW_CONNECTIONS {view name: [(type, sourceKey, targetKey)]}  drawn lines
+  RENAMES   optional {key: new name} for EXISTING elements; the old name is
+            kept as property formerName, and a renamed element is left alone
+  PROPERTIES optional {key: {property: value}} for any element, new or
+            existing; a property the element already has is left alone
 
 Ids are uuid5 of the spec's namespace and the key, so they are stable across
 runs: a later edit of the spec keeps every id it does not change. Shared
@@ -84,6 +88,9 @@ FOLDER_OF = {
                  "Representation Product"),
     "application": ("ApplicationComponent ApplicationCollaboration ApplicationInterface ApplicationFunction "
                     "ApplicationInteraction ApplicationProcess ApplicationEvent ApplicationService DataObject"),
+    "technology": ("Node Device SystemSoftware TechnologyCollaboration TechnologyInterface Path "
+                   "CommunicationNetwork TechnologyFunction TechnologyProcess TechnologyInteraction "
+                   "TechnologyEvent TechnologyService Artifact"),
     "motivation": "Stakeholder Driver Assessment Goal Outcome Principle Requirement Constraint Meaning Value",
     "strategy": "Resource Capability ValueStream CourseOfAction",
     "other": "Location Grouping Junction",
@@ -150,6 +157,19 @@ def place(node, x, y, ids, view, idx, out, depth):
             f"@@SC:{oid}@@{inner}\n{ind}</child>")
 
 
+def add_property(xml, eid, key, value):
+    """Give element eid the property key=value, unless it has that key already."""
+    m = re.search(r'<element [^>]*?id="' + re.escape(eid) + r'"[^>]*?(/?)>', xml)
+    prop = f'\n      <property key="{esc(key)}" value="{esc(value)}"/>'
+    if m.group(1):  # self-closing: give it a body
+        return xml[:m.end() - 2] + ">" + prop + "\n    </element>" + xml[m.end():], True
+    close = xml.index("</element>", m.end())
+    if f'<property key="{esc(key)}"' in xml[m.end():close]:
+        return xml, False
+    # properties come after any documentation, before </element>
+    return xml[:m.end()] + xml[m.end():close].rstrip() + prop + "\n    " + xml[close:], True
+
+
 def main(argv):
     spec_path, src, dst = argv
     s = load(spec_path)
@@ -163,6 +183,14 @@ def main(argv):
         if f'id="{eid}"' not in xml:
             raise SystemExit(f"EXISTING {key} = {eid} is not in the base model")
     added = 0
+    for key, new in getattr(s, "RENAMES", {}).items():
+        eid = s.EXISTING[key]
+        m = re.search(r'(<element [^>]*?)name="([^"]*)"([^>]*?id="' + re.escape(eid) + r'"[^>]*?)(/?)>', xml)
+        if not m or m.group(2) == esc(new):
+            continue
+        xml = xml[:m.start()] + f'{m.group(1)}name="{esc(new)}"{m.group(3)}{m.group(4)}>' + xml[m.end():]
+        xml, _ = add_property(xml, eid, "formerName", m.group(2))
+        added += 1
     for key, (etype, name, doc, props) in s.ELEMENTS.items():
         eid = ids("element", key)
         idx[key] = eid
@@ -175,6 +203,11 @@ def main(argv):
         xml = insert_in_top_folder(xml, folder_for(etype),
                                    f'\n    <element xsi:type="archimate:{etype}" name="{esc(name)}" id="{eid}">{body}\n    </element>')
         added += 1
+
+    for key, props in getattr(s, "PROPERTIES", {}).items():
+        for k, v in props.items():
+            xml, done = add_property(xml, idx[key], k, v)
+            added += done
 
     rel_ids = {}
     for rtype, a, b, *rest in s.RELATIONS:

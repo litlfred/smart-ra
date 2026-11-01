@@ -14,7 +14,10 @@ name: FHIR CI Build
 on:
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   # This workflow contains a single job called "build"
   call_build: 
-    uses: WorldHealthOrganization/smart-base/.github/workflows/fhirbuild.yml@main
+    uses: litlfred/smart-base/.github/workflows/fhirbuild.yml@main
