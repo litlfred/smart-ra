@@ -632,7 +632,7 @@
      `avatars:css:check` fails the build when it is stale. One stylesheet
      rather than 68 assets: the glyph is a mask and the colour is a property,
      so a scheme swap is a custom property and the trash state is a selector. -->
-<link rel="stylesheet" href="../../../../assets/css/avatars.css?v=780d571c53c1">
+<link rel="stylesheet" href="../../../../assets/css/avatars.css?v=a0806788c1f5">
 
 <!--
   The kinds THIS INSTANCE DECLARES, for the avatar fan.
@@ -873,9 +873,9 @@
 
 <p>Candidate terms extracted from every Tool node: <code class="language-plaintext highlighter-rouge">title</code> as the label, <code class="language-plaintext highlighter-rouge">description</code> as the definition, the Tool id as the code. Each is the asset’s own text, verbatim and not curated, and carries the badge “candidate, extracted”. A person promotes one by authoring it. Authored terms are on their owning instance’s page, and those pages, the counts and the sources are linked from the <a href="../../../../en/folio-assistant-core/glossary/">glossary index</a>.</p>
 
-<p>From: cat-harness-tools 1 (<a href="../../../../assets/glossary/cat-harness-tools--kg-tools.skos.jsonld">SKOS</a>) · fhir-harness 33 (<a href="../../../../assets/glossary/fhir-harness--kg-tools.skos.jsonld">SKOS</a>) · folio-assistant-core 16 (<a href="../../../../assets/glossary/folio-assistant-core--kg-tools.skos.jsonld">SKOS</a>) · smart-base 14 (<a href="../../../../assets/glossary/smart-base--kg-tools.skos.jsonld">SKOS</a>) · who-iris 1 (<a href="../../../../assets/glossary/who-iris--kg-tools.skos.jsonld">SKOS</a>).</p>
+<p>From: cat-harness-tools 1 (<a href="../../../../assets/glossary/cat-harness-tools--kg-tools.skos.jsonld">SKOS</a>) · fhir-harness 33 (<a href="../../../../assets/glossary/fhir-harness--kg-tools.skos.jsonld">SKOS</a>) · folio-assistant-core 17 (<a href="../../../../assets/glossary/folio-assistant-core--kg-tools.skos.jsonld">SKOS</a>) · smart-base 14 (<a href="../../../../assets/glossary/smart-base--kg-tools.skos.jsonld">SKOS</a>) · who-iris 1 (<a href="../../../../assets/glossary/who-iris--kg-tools.skos.jsonld">SKOS</a>).</p>
 
-<p><strong>Size:</strong> this page holds 65 terms and is 75 KB before compression, fetched in one request, within its budget of 1.0 MB. There is no search index: the filter below runs over this page, and the A–Z bar jumps within it.</p>
+<p><strong>Size:</strong> this page holds 66 terms and is 77 KB before compression, fetched in one request, within its budget of 1.0 MB. There is no search index: the filter below runs over this page, and the A–Z bar jumps within it.</p>
 
 <div class="table-wrapper"><table class="fa-gloss-mapping">
 <caption>Already somebody else's concept? — <code>check:term-mapping</code>, bean <code>7wou</code></caption>
@@ -886,11 +886,11 @@
 A vocabulary that could not be reached has said nothing, and the column above keeps that 
 apart from a checked miss. The counts are reported and not graded: an unmapped candidate may 
 be a term this corpus is right to coin.</p>
-<p class="fa-gloss-mapping-perterm"><strong>Per term.</strong> Every term on this page is in no single state on <code>fhir</code>, so each entry states its own, and in no single state on <code>skos</code>, so each entry states its own, unless its entry says otherwise. 65 entries say otherwise.</p>
+<p class="fa-gloss-mapping-perterm"><strong>Per term.</strong> Every term on this page is in no single state on <code>fhir</code>, so each entry states its own, and in no single state on <code>skos</code>, so each entry states its own, unless its entry says otherwise. 66 entries say otherwise.</p>
 
 <p><label for="fa-gloss-q">Filter terms</label>
 <input id="fa-gloss-q" type="search" autocomplete="off" style="min-height:44px;width:100%;max-width:32rem" /></p>
-<p aria-live="polite"><span id="fa-gloss-n">65</span> shown</p>
+<p aria-live="polite"><span id="fa-gloss-n">66</span> shown</p>
 
 <nav aria-label="Letters"><a href="#letter-A">A</a> <a href="#letter-B">B</a> <a href="#letter-C">C</a> <a href="#letter-D">D</a> <a href="#letter-E">E</a> <a href="#letter-F">F</a> <a href="#letter-G">G</a> <a href="#letter-I">I</a> <a href="#letter-L">L</a> <a href="#letter-M">M</a> <a href="#letter-P">P</a> <a href="#letter-R">R</a> <a href="#letter-S">S</a> <a href="#letter-V">V</a> <a href="#letter-W">W</a></nav>
 <h2 id="letter-A">
@@ -950,7 +950,7 @@ BPMN workflow engine <span class="fa-gloss-status">candidate, extracted</span>
 <dd>
 <p>Run a declared BPMN process as an instance: <code>workflow_start</code> opens one for a subject, <code>workflow_next</code> reports what is enabled, <code>workflow_complete</code> records a step or answers a decision (a DMN-computed one from <code>facts</code>) and REFUSES a step that is not enabled. State is committed under the work plan, so which edge was taken is a record, not a memory.</p>
 <p class="fa-gloss-meta">Tools of cat-harness-tools · source <a href="https://github.com/litlfred/cat-harness-tools/blob/main/tools/bpmn-engine/bpmn-engine.ts"><code>cat-harness-tools/tools/bpmn-engine/bpmn-engine.ts#bpmn-engine</code></a></p>
-<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> cannot be told from the committed result: no row for scheme <code>kg-tools</code> of <code>cat-harness-tools</code> on <code>fhir</code> · <code>skos</code> cannot be told from the committed result: no row for scheme <code>kg-tools</code> of <code>cat-harness-tools</code> on <code>skos</code></p>
 </dd>
 <dt id="fhir-harness--kg-tools--ig-ast-export" data-fa-state="extracted" data-fa-gloss="">
 Build an IG and write its AST <span class="fa-gloss-status">candidate, extracted</span>
@@ -1102,6 +1102,14 @@ FHIR AST cache <span class="fa-gloss-status">candidate, extracted</span>
 <dd>
 <p>Restore, verify, seed and diagnose the prebuilt AST artefacts for an IG. Always try <code>restore</code> first: a full AST build via AstExportCli is expensive, a restore is fast.</p>
 <p class="fa-gloss-meta">Tools of fhir-harness · source <a href="https://github.com/litlfred/fhir-harness/blob/main/tools/ig-cache/ig-cache.ts"><code>fhir-harness/tools/ig-cache/ig-cache.ts#ig-cache</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="folio-assistant-core--kg-tools--figure-coverage" data-fa-state="extracted" data-fa-gloss="">
+Figure coverage and computability <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>For every figure a source publication declares, report whether the folio built from it has a block and how computable it is: missing, excluded (signed off), picture (a PNG crop), linked (a picture linked to a model view), computable (a diagram, a table or a figure rebuilt by ArchiMate, BPMN, DMN, Mermaid, a class diagram or a generator), or cited (a picture kept on purpose, signed off). Exits non-zero when any declared figure is missing; <code>--require-computable</code> also fails on pictures.</p>
+<p class="fa-gloss-meta">Tools of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/tools/figure-coverage/figure-coverage.ts"><code>folio-assistant-core/tools/figure-coverage/figure-coverage.ts#figure-coverage</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="folio-assistant-core--kg-tools--folio-block-qa-summary" data-fa-state="extracted" data-fa-gloss="">

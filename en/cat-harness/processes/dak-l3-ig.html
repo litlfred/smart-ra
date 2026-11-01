@@ -613,7 +613,7 @@
      `avatars:css:check` fails the build when it is stale. One stylesheet
      rather than 68 assets: the glyph is a mask and the colour is a property,
      so a scheme swap is a custom property and the trash state is a selector. -->
-<link rel="stylesheet" href="../../../assets/css/avatars.css?v=780d571c53c1">
+<link rel="stylesheet" href="../../../assets/css/avatars.css?v=a0806788c1f5">
 
 <!--
   The kinds THIS INSTANCE DECLARES, for the avatar fan.
@@ -848,7 +848,7 @@
 
 <p><code class="language-plaintext highlighter-rouge">Process_DakL3Ig</code> · advisory · 2 step(s)</p>
 
-<p>How a WHO SMART Guidelines L2 Digital Adaptation Kit becomes a published L3 FHIR Implementation Guide: map the DAK’s L2 content to the FHIR artefacts it calls for, then run fhir-harness’s generic L3 pipeline (Process_L3Fhir) with that mapping as its source model. Split out of fhir-harness’s l3-fhir-pipeline.bpmn on 2026-10-09 (owner, bean veiu item 4): that layer may not know about DAKs, so the WHO L2 → L3 ordering lives here and the generic pipeline is CALLED, not copied. folio-assistant — a WHO SMART Guidelines L2 DAK to its published L3 FHIR IG.
+<p>How a WHO SMART Guidelines L2 Digital Adaptation Kit becomes a published L3 FHIR Implementation Guide: map the DAK’s L2 content to the FHIR artefacts it calls for, then run fhir-harness’s generic L3 pipeline (<a href="l3-fhir-pipeline.html">Process_L3Fhir</a>) with that mapping as its source model. Split out of fhir-harness’s l3-fhir-pipeline.bpmn on 2026-10-09 (owner, bean veiu item 4): that layer may not know about DAKs, so the WHO L2 → L3 ordering lives here and the generic pipeline is CALLED, not copied. folio-assistant — a WHO SMART Guidelines L2 DAK to its published L3 FHIR IG.
 Source of truth: this file. Open it in bpmn.io, Camunda Modeler, or any other
 BPMN 2.0 tool. The SVG under docs/assets/img/workflows/ is generated from it
 by <code class="language-plaintext highlighter-rouge">bun run render:bpmn</code> — never hand-edit the SVG.
@@ -893,7 +893,7 @@ work plan in beans/.</cat-harness.processes:bean></bootstrap.processes:skill></p
     <tr>
       <td>FHIR modeller</td>
       <td><code class="language-plaintext highlighter-rouge">fhir-modeller</code></td>
-      <td>One lane, because this diagram adds exactly one step to the generic pipeline: the mapping from the DAK’s L2 content. Every lane after it — build, QC, work plan, publication — belongs to Process_L3Fhir, which CallActivity_L3Fhir runs whole.</td>
+      <td>One lane, because this diagram adds exactly one step to the generic pipeline: the mapping from the DAK’s L2 content. Every lane after it — build, QC, work plan, publication — belongs to <a href="l3-fhir-pipeline.html">Process_L3Fhir</a>, which CallActivity_L3Fhir runs whole.</td>
     </tr>
   </tbody>
 </table></div>

@@ -613,7 +613,7 @@
      `avatars:css:check` fails the build when it is stale. One stylesheet
      rather than 68 assets: the glyph is a mask and the colour is a property,
      so a scheme swap is a custom property and the trash state is a selector. -->
-<link rel="stylesheet" href="../../../assets/css/avatars.css?v=780d571c53c1">
+<link rel="stylesheet" href="../../../assets/css/avatars.css?v=a0806788c1f5">
 
 <!--
   The kinds THIS INSTANCE DECLARES, for the avatar fan.
@@ -854,7 +854,7 @@ triaged, weighed by the review committee, decided by the editor and, if
 the decision changes the document, made on a feature branch whose
 staging preview shows the text before and after. The change set is
 reviewed by the same process as any content change
-(Process_ContentChangeReview); only the intake is new. Skill:
+(<a href="content-change-review.html">Process_ContentChangeReview</a>); only the intake is new. Skill:
 public-comment.</p>
 
 <p><em>No rendered diagram — run <code class="language-plaintext highlighter-rouge">bun run cat render:bpmn</code>.</em></p>
@@ -868,8 +868,9 @@ public-comment.</p>
     
 
 <ul>
-  <li><strong>Called by:</strong> <a href="draft-to-publication.html">Draft, review and publish</a>, <a href="dsa-document-lifecycle.html">Data sharing agreement document life cycle</a></li>
+  <li><strong>Called by:</strong> <a href="dsa-document-lifecycle.html">Data sharing agreement document life cycle</a>, <a href="public-comment-release.html">Release a draft for public comment</a></li>
   <li><strong>Calls:</strong> <a href="content-change-review.html">Content Change and Review</a></li>
+  <li><strong>Names the <code class="language-plaintext highlighter-rouge">public-comment</code> skill without calling this process:</strong> <a href="public-comment-release.html">Release a draft for public comment</a> — <code class="language-plaintext highlighter-rouge">activity-calls-skill-process</code> asks whether each should be a call activity.</li>
   <li><strong>Presented on:</strong> no docs page section shows this diagram</li>
   <li><strong>Running instances:</strong> none recorded</li>
 </ul>

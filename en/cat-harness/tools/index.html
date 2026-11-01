@@ -629,7 +629,7 @@
      `avatars:css:check` fails the build when it is stale. One stylesheet
      rather than 68 assets: the glyph is a mask and the colour is a property,
      so a scheme swap is a custom property and the trash state is a selector. -->
-<link rel="stylesheet" href="../../../assets/css/avatars.css?v=780d571c53c1">
+<link rel="stylesheet" href="../../../assets/css/avatars.css?v=a0806788c1f5">
 
 <!--
   The kinds THIS INSTANCE DECLARES, for the avatar fan.
@@ -908,9 +908,9 @@ is <code class="language-plaintext highlighter-rouge">satisfies</code>, and it r
 to do that</em>, never <em>this skill is a tool</em>.</p>
 
 <div class="tg-grid">
-<a class="tg-stat" href="#every-tool"><b>232</b><span>Tool nodes</span></a>
-<a class="tg-stat" href="#does-every-satisfies-name-a-skill-that-exists"><b>96</b><span>skills satisfied</span></a>
-<a class="tg-stat" href="#how-they-are-invoked-and-installed"><b>206</b><span>invoked as a shell command</span></a>
+<a class="tg-stat" href="#every-tool"><b>233</b><span>Tool nodes</span></a>
+<a class="tg-stat" href="#does-every-satisfies-name-a-skill-that-exists"><b>97</b><span>skills satisfied</span></a>
+<a class="tg-stat" href="#how-they-are-invoked-and-installed"><b>207</b><span>invoked as a shell command</span></a>
 <a class="tg-stat" href="#how-they-are-invoked-and-installed"><b>27</b><span>reachable over MCP</span></a>
 </div>
 
@@ -947,7 +947,7 @@ to do that</em>, never <em>this skill is a tool</em>.</p>
     </tr>
     <tr>
       <td><a href="folio-assistant-core/">folio-assistant-core</a></td>
-      <td>16</td>
+      <td>17</td>
     </tr>
     <tr>
       <td><a href="smart-base/">smart-base</a></td>
@@ -980,7 +980,7 @@ to do that</em>, never <em>this skill is a tool</em>.</p>
   <tbody>
     <tr>
       <td><span class="tg-tag tg-shell">shell</span></td>
-      <td>206</td>
+      <td>207</td>
     </tr>
     <tr>
       <td><span class="tg-tag tg-inproc">inProcess</span></td>
@@ -1007,7 +1007,7 @@ to do that</em>, never <em>this skill is a tool</em>.</p>
   <tbody>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">none</code></td>
-      <td>202</td>
+      <td>203</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">cli</code></td>
@@ -1032,7 +1032,7 @@ to do that</em>, never <em>this skill is a tool</em>.</p>
 </h2>
     
 
-<p>Yes — all <strong>96</strong> skills named across <strong>232</strong> tools resolve to a
+<p>Yes — all <strong>97</strong> skills named across <strong>233</strong> tools resolve to a
 skill document in this checkout. A <code class="language-plaintext highlighter-rouge">satisfies</code> pointing at nothing would be a
 tool advertising a capability the graph cannot locate.</p>
 <h2 id="every-tool">
@@ -1422,6 +1422,14 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">ig-publisher-fork</code></td>
       <td>2 in / 1 out</td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
+    </tr>
+    <tr>
+      <td><a id="figure-coverage"></a><a href="#figure-coverage"><code class="language-plaintext highlighter-rouge">figure-coverage</code></a><br />Figure coverage and computability</td>
+      <td>For every figure a source publication declares, report whether the folio built from it has a block and how computable it is: missing, excluded (signed off), picture (a PNG crop), linked (a picture linked to a model view), computable (a diagram, a table or a figure rebuilt by ArchiMate, BPMN, DMN, Mermaid, a class diagram or a generator), or cited (a picture kept on purpose, signed off). Exits non-zero when any declared figure is missing; <code class="language-plaintext highlighter-rouge">--require-computable</code> also fails on pictures.</td>
+      <td><span class="tg-tag tg-shell">shell</span></td>
+      <td><code class="language-plaintext highlighter-rouge">figure-rebuild</code></td>
+      <td>4 in / 1 out</td>
       <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>

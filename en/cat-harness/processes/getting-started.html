@@ -613,7 +613,7 @@
      `avatars:css:check` fails the build when it is stale. One stylesheet
      rather than 68 assets: the glyph is a mask and the colour is a property,
      so a scheme swap is a custom property and the trash state is a selector. -->
-<link rel="stylesheet" href="../../../assets/css/avatars.css?v=780d571c53c1">
+<link rel="stylesheet" href="../../../assets/css/avatars.css?v=a0806788c1f5">
 
 <!--
   The kinds THIS INSTANCE DECLARES, for the avatar fan.
@@ -1023,13 +1023,13 @@ generated from it by <code class="language-plaintext highlighter-rouge">bun run 
       <td><strong>Open the bean</strong><br /><code class="language-plaintext highlighter-rouge">Call_BeanOpen</code></td>
       <td>Work plan (beans)</td>
       <td>calls <a href="bean-open.html">Open the bean</a><br /><code class="language-plaintext highlighter-rouge">bean-coordination</code></td>
-      <td>Process_BeanOpen: check before you create, find out whose the bean is, and claim it — or leave it alone when it is someone else’s. The one place a claim is drawn (bean m8gz, owner 2026-10-24); the gateway after this reads which end it reached.</td>
+      <td><a href="bean-open.html">Process_BeanOpen</a>: check before you create, find out whose the bean is, and claim it — or leave it alone when it is someone else’s. The one place a claim is drawn (bean m8gz, owner 2026-10-24); the gateway after this reads which end it reached.</td>
     </tr>
     <tr>
       <td><strong>Close the bean</strong><br /><code class="language-plaintext highlighter-rouge">Call_BeanClose</code></td>
       <td>Publish — GitHub Pages</td>
       <td>calls <a href="bean-close.html">Close the bean</a><br /><code class="language-plaintext highlighter-rouge">todo-manager</code></td>
-      <td>Process_BeanClose: end the bean in a state that says why — complete and archive it, scrap it with its reasons and archive it, or record the blocker and hand it back. The one place resolve and archive are drawn (bean m8gz, owner 2026-10-24); placed straight before the end so the engine’s resolve sees nothing left but the archive step.</td>
+      <td><a href="bean-close.html">Process_BeanClose</a>: end the bean in a state that says why — complete and archive it, scrap it with its reasons and archive it, or record the blocker and hand it back. The one place resolve and archive are drawn (bean m8gz, owner 2026-10-24); placed straight before the end so the engine’s resolve sees nothing left but the archive step.</td>
     </tr>
   </tbody>
 </table></div>
@@ -1065,7 +1065,7 @@ generated from it by <code class="language-plaintext highlighter-rouge">bun run 
     </tr>
     <tr>
       <td><strong>Bean claimed?</strong><br /><code class="language-plaintext highlighter-rouge">GW_BeanYours</code></td>
-      <td>Reads which end Process_BeanOpen reached. <code class="language-plaintext highlighter-rouge">claimed</code>: the bean is in progress and this process works it. <code class="language-plaintext highlighter-rouge">not yours</code>: a sibling session or a human holds it, nothing was written to it, and this process stops here rather than work a bean it does not own (bean-coordination).</td>
+      <td>Reads which end <a href="bean-open.html">Process_BeanOpen</a> reached. <code class="language-plaintext highlighter-rouge">claimed</code>: the bean is in progress and this process works it. <code class="language-plaintext highlighter-rouge">not yours</code>: a sibling session or a human holds it, nothing was written to it, and this process stops here rather than work a bean it does not own (bean-coordination).</td>
       <td><strong>claimed</strong> → Seed the work plan<br /><strong>not yours</strong> → Not yours — left alone</td>
     </tr>
   </tbody>

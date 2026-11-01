@@ -613,7 +613,7 @@
      `avatars:css:check` fails the build when it is stale. One stylesheet
      rather than 68 assets: the glyph is a mask and the colour is a property,
      so a scheme swap is a custom property and the trash state is a selector. -->
-<link rel="stylesheet" href="../../../assets/css/avatars.css?v=780d571c53c1">
+<link rel="stylesheet" href="../../../assets/css/avatars.css?v=a0806788c1f5">
 
 <!--
   The kinds THIS INSTANCE DECLARES, for the avatar fan.
@@ -911,7 +911,7 @@ Consent rules (owner, 2026-10-30), which every agreement drawn here keeps. 1. Le
     <tr>
       <td>Public review (commenters, review committee, editor)</td>
       <td><code class="language-plaintext highlighter-rouge">review-coordinator</code></td>
-      <td>Used only when the public part of the agreement (the template) goes out for public comment. Comments are handled in Process_PublicComment, the same as for any document folio.</td>
+      <td>Used only when the public part of the agreement (the template) goes out for public comment. Comments are handled in <a href="public-comment.html">Process_PublicComment</a>, the same as for any document folio.</td>
     </tr>
     <tr>
       <td>Publisher (data provider’s publication manager)</td>
@@ -950,7 +950,7 @@ Consent rules (owner, 2026-10-30), which every agreement drawn here keeps. 1. Le
       <td><strong>Open the bean</strong><br /><code class="language-plaintext highlighter-rouge">Call_BeanOpen</code></td>
       <td>Work plan — beans (shared by humans and agents)</td>
       <td>calls <a href="bean-open.html">Open the bean</a><br /><code class="language-plaintext highlighter-rouge">bean-coordination</code></td>
-      <td>Process_BeanOpen: check before you create, find out whose the bean is, and claim it — or leave it alone when it is someone else’s. The one place a claim is drawn (bean m8gz, owner 2026-10-24); the gateway after this reads which end it reached.</td>
+      <td><a href="bean-open.html">Process_BeanOpen</a>: check before you create, find out whose the bean is, and claim it — or leave it alone when it is someone else’s. The one place a claim is drawn (bean m8gz, owner 2026-10-24); the gateway after this reads which end it reached.</td>
     </tr>
     <tr>
       <td><strong>P1.1 · Agree purpose, datasets, period, duties and trust anchors</strong><br /><code class="language-plaintext highlighter-rouge">Task_AgreeTerms</code></td>
@@ -1064,13 +1064,13 @@ Consent rules (owner, 2026-10-30), which every agreement drawn here keeps. 1. Le
       <td><strong>Close the bean</strong><br /><code class="language-plaintext highlighter-rouge">Call_BeanClosePublished</code></td>
       <td>Work plan — beans (shared by humans and agents)</td>
       <td>calls <a href="bean-close.html">Close the bean</a><br /><code class="language-plaintext highlighter-rouge">todo-manager</code></td>
-      <td>Process_BeanClose: end the bean in a state that says why — complete and archive it, scrap it with its reasons and archive it, or record the blocker and hand it back. The one place resolve and archive are drawn (bean m8gz, owner 2026-10-24); placed straight before the end so the engine’s resolve sees nothing left but the archive step.</td>
+      <td><a href="bean-close.html">Process_BeanClose</a>: end the bean in a state that says why — complete and archive it, scrap it with its reasons and archive it, or record the blocker and hand it back. The one place resolve and archive are drawn (bean m8gz, owner 2026-10-24); placed straight before the end so the engine’s resolve sees nothing left but the archive step.</td>
     </tr>
     <tr>
       <td><strong>Open the bean</strong><br /><code class="language-plaintext highlighter-rouge">Call_BeanOpenChange</code></td>
       <td>Work plan — beans (shared by humans and agents)</td>
       <td>calls <a href="bean-open.html">Open the bean</a><br /><code class="language-plaintext highlighter-rouge">bean-coordination</code></td>
-      <td>Process_BeanOpen: check before you create, find out whose the bean is, and claim it — or leave it alone when it is someone else’s. The one place a claim is drawn (bean m8gz, owner 2026-10-24); the gateway after this reads which end it reached.</td>
+      <td><a href="bean-open.html">Process_BeanOpen</a>: check before you create, find out whose the bean is, and claim it — or leave it alone when it is someone else’s. The one place a claim is drawn (bean m8gz, owner 2026-10-24); the gateway after this reads which end it reached.</td>
     </tr>
     <tr>
       <td><strong>Decide: amend, renew or end</strong><br /><code class="language-plaintext highlighter-rouge">Task_DecideChange</code></td>
@@ -1106,7 +1106,7 @@ Consent rules (owner, 2026-10-30), which every agreement drawn here keeps. 1. Le
       <td><strong>Close the bean</strong><br /><code class="language-plaintext highlighter-rouge">Call_BeanCloseEnded</code></td>
       <td>Work plan — beans (shared by humans and agents)</td>
       <td>calls <a href="bean-close.html">Close the bean</a><br /><code class="language-plaintext highlighter-rouge">todo-manager</code></td>
-      <td>Process_BeanClose: end the bean in a state that says why — complete and archive it, scrap it with its reasons and archive it, or record the blocker and hand it back. The one place resolve and archive are drawn (bean m8gz, owner 2026-10-24); placed straight before the end so the engine’s resolve sees nothing left but the archive step.</td>
+      <td><a href="bean-close.html">Process_BeanClose</a>: end the bean in a state that says why — complete and archive it, scrap it with its reasons and archive it, or record the blocker and hand it back. The one place resolve and archive are drawn (bean m8gz, owner 2026-10-24); placed straight before the end so the engine’s resolve sees nothing left but the archive step.</td>
     </tr>
   </tbody>
 </table></div>
@@ -1132,7 +1132,7 @@ Consent rules (owner, 2026-10-30), which every agreement drawn here keeps. 1. Le
   <tbody>
     <tr>
       <td><strong>Bean claimed?</strong><br /><code class="language-plaintext highlighter-rouge">GW_BeanYours</code></td>
-      <td>Reads which end Process_BeanOpen reached. <code class="language-plaintext highlighter-rouge">claimed</code>: the bean is in progress and this process works it. <code class="language-plaintext highlighter-rouge">not yours</code>: a sibling session or a human holds it, nothing was written to it, and this process stops here rather than work a bean it does not own (bean-coordination).</td>
+      <td>Reads which end <a href="bean-open.html">Process_BeanOpen</a> reached. <code class="language-plaintext highlighter-rouge">claimed</code>: the bean is in progress and this process works it. <code class="language-plaintext highlighter-rouge">not yours</code>: a sibling session or a human holds it, nothing was written to it, and this process stops here rather than work a bean it does not own (bean-coordination).</td>
       <td><strong>not yours</strong> → Not yours — left alone<br /><strong>claimed</strong> → P1.1 · Agree purpose, datasets, period, duties and trust anchors</td>
     </tr>
     <tr>
@@ -1147,7 +1147,7 @@ Consent rules (owner, 2026-10-30), which every agreement drawn here keeps. 1. Le
     </tr>
     <tr>
       <td><strong>Public comment on the public terms?</strong><br /><code class="language-plaintext highlighter-rouge">GW_PublicComment</code></td>
-      <td>Should the public template go out for public comment before signing? <code class="language-plaintext highlighter-rouge">yes</code> runs Process_PublicComment; <code class="language-plaintext highlighter-rouge">no</code> goes straight to the readiness decision. A private agreement between two parties usually answers <code class="language-plaintext highlighter-rouge">no</code>.</td>
+      <td>Should the public template go out for public comment before signing? <code class="language-plaintext highlighter-rouge">yes</code> runs <a href="public-comment.html">Process_PublicComment</a>; <code class="language-plaintext highlighter-rouge">no</code> goes straight to the readiness decision. A private agreement between two parties usually answers <code class="language-plaintext highlighter-rouge">no</code>.</td>
       <td><strong>yes</strong> → Public comment on the template<br /><strong>no</strong> → GW_CommentJoin</td>
     </tr>
     <tr>
@@ -1167,7 +1167,7 @@ Consent rules (owner, 2026-10-30), which every agreement drawn here keeps. 1. Le
     </tr>
     <tr>
       <td><strong>Bean claimed?</strong><br /><code class="language-plaintext highlighter-rouge">GW_BeanYoursChange</code></td>
-      <td>Reads which end Process_BeanOpen reached. <code class="language-plaintext highlighter-rouge">claimed</code>: the bean is in progress and this process works it. <code class="language-plaintext highlighter-rouge">not yours</code>: a sibling session or a human holds it, nothing was written to it, and this process stops here rather than work a bean it does not own (bean-coordination).</td>
+      <td>Reads which end <a href="bean-open.html">Process_BeanOpen</a> reached. <code class="language-plaintext highlighter-rouge">claimed</code>: the bean is in progress and this process works it. <code class="language-plaintext highlighter-rouge">not yours</code>: a sibling session or a human holds it, nothing was written to it, and this process stops here rather than work a bean it does not own (bean-coordination).</td>
       <td><strong>not yours</strong> → Not yours — left alone<br /><strong>claimed</strong> → Decide: amend, renew or end</td>
     </tr>
     <tr>

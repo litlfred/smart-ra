@@ -613,7 +613,7 @@
      `avatars:css:check` fails the build when it is stale. One stylesheet
      rather than 68 assets: the glyph is a mask and the colour is a property,
      so a scheme swap is a custom property and the trash state is a selector. -->
-<link rel="stylesheet" href="../../../assets/css/avatars.css?v=780d571c53c1">
+<link rel="stylesheet" href="../../../assets/css/avatars.css?v=a0806788c1f5">
 
 <!--
   The kinds THIS INSTANCE DECLARES, for the avatar fan.
@@ -846,7 +846,7 @@
 </h1>
     
 
-<p><code class="language-plaintext highlighter-rouge">Process_DocumentAuthoring</code> · advisory · 11 step(s)</p>
+<p><code class="language-plaintext highlighter-rouge">Process_DocumentAuthoring</code> · advisory · 12 step(s)</p>
 
 <p>How a document folio — structured prose and policy guidance, with no Lean and no required TeX — is authored, built and reviewed end to end. folio-assistant — authoring a document end to end (no Lean, no required TeX).
 Source of truth: this file. The SVG under docs/assets/img/workflows/ is generated
@@ -866,7 +866,7 @@ check, which is what keeps a document folio publishable without either toolchain
 
 <ul>
   <li><strong>Called by:</strong> no call activity names this process</li>
-  <li><strong>Calls:</strong> <a href="bean-close.html">Close the bean</a>, <a href="bean-open.html">Open the bean</a></li>
+  <li><strong>Calls:</strong> <a href="bean-close.html">Close the bean</a>, <a href="bean-open.html">Open the bean</a>, <a href="contributor-feedback.html">Contributor feedback on a working draft</a></li>
   <li><strong>Presented on:</strong> no docs page section shows this diagram</li>
   <li><strong>Running instances:</strong> none recorded</li>
 </ul>
@@ -913,6 +913,11 @@ check, which is what keeps a document folio publishable without either toolchain
       <td><code class="language-plaintext highlighter-rouge">reviewer</code></td>
       <td>Owns the one gate that decides publish or iterate, and is deliberately unspecialised: this process relaxes the paper process’s clinical-SME lane into whichever reviewer a given document actually binds, because no single expertise fits every document the way it does a guideline.</td>
     </tr>
+    <tr>
+      <td>Authoring Committee</td>
+      <td><code class="language-plaintext highlighter-rouge">authoring-committee</code></td>
+      <td>The people writing the document with the editor. While it is a working draft they give feedback through the Contributor Feedback sheet, one change set per row, and each row runs <a href="contributor-feedback.html">Process_ContributorFeedback</a>.</td>
+    </tr>
   </tbody>
 </table></div>
 <h2 id="steps">
@@ -924,7 +929,7 @@ check, which is what keeps a document folio publishable without either toolchain
 </h2>
     
 
-<p>Every one of the 11 step(s) is documented.</p>
+<p>Every one of the 12 step(s) is documented.</p>
 
 <div class="table-wrapper"><table>
   <thead>
@@ -946,7 +951,7 @@ check, which is what keeps a document folio publishable without either toolchain
       <td><strong>2 · Seed the work plan</strong><br /><code class="language-plaintext highlighter-rouge">Task_SeedPlan</code></td>
       <td>Work plan — beans (shared by humans and agents)</td>
       <td>shared step <code class="language-plaintext highlighter-rouge">GT_SeedWorkPlan</code><br /><code class="language-plaintext highlighter-rouge">todo-manager</code></td>
-      <td>The plan becomes beans, so a resumed session or a sibling agent can pick it up. The run’s own bean was claimed by the Process_BeanOpen call before this step (bean m8gz), so this step only notes the seeded plan on it; the beans themselves are written with the agent’s own <code class="language-plaintext highlighter-rouge">beans create</code>, which no engine op performs. From here on, beans/ is the shared answer to ‘what is done, what is next’ — for humans and agents alike.</td>
+      <td>The plan becomes beans, so a resumed session or a sibling agent can pick it up. The run’s own bean was claimed by the <a href="bean-open.html">Process_BeanOpen</a> call before this step (bean m8gz), so this step only notes the seeded plan on it; the beans themselves are written with the agent’s own <code class="language-plaintext highlighter-rouge">beans create</code>, which no engine op performs. From here on, beans/ is the shared answer to ‘what is done, what is next’ — for humans and agents alike.</td>
     </tr>
     <tr>
       <td><strong>3 · Scaffold the folio [folio_init]</strong><br /><code class="language-plaintext highlighter-rouge">Task_Scaffold</code></td>
@@ -994,13 +999,19 @@ check, which is what keeps a document folio publishable without either toolchain
       <td><strong>Open the bean</strong><br /><code class="language-plaintext highlighter-rouge">Call_BeanOpen</code></td>
       <td>Work plan — beans (shared by humans and agents)</td>
       <td>calls <a href="bean-open.html">Open the bean</a><br /><code class="language-plaintext highlighter-rouge">bean-coordination</code></td>
-      <td>Process_BeanOpen: check before you create, find out whose the bean is, and claim it — or leave it alone when it is someone else’s. The one place a claim is drawn (bean m8gz, owner 2026-10-24); the gateway after this reads which end it reached.</td>
+      <td><a href="bean-open.html">Process_BeanOpen</a>: check before you create, find out whose the bean is, and claim it — or leave it alone when it is someone else’s. The one place a claim is drawn (bean m8gz, owner 2026-10-24); the gateway after this reads which end it reached.</td>
     </tr>
     <tr>
       <td><strong>Close the bean</strong><br /><code class="language-plaintext highlighter-rouge">Call_BeanClose</code></td>
       <td>Build pipeline — validate · render · publish</td>
       <td>calls <a href="bean-close.html">Close the bean</a><br /><code class="language-plaintext highlighter-rouge">todo-manager</code></td>
-      <td>Process_BeanClose: end the bean in a state that says why — complete and archive it, scrap it with its reasons and archive it, or record the blocker and hand it back. The one place resolve and archive are drawn (bean m8gz, owner 2026-10-24); placed straight before the end so the engine’s resolve sees nothing left but the archive step.</td>
+      <td><a href="bean-close.html">Process_BeanClose</a>: end the bean in a state that says why — complete and archive it, scrap it with its reasons and archive it, or record the blocker and hand it back. The one place resolve and archive are drawn (bean m8gz, owner 2026-10-24); placed straight before the end so the engine’s resolve sees nothing left but the archive step.</td>
+    </tr>
+    <tr>
+      <td><strong>Contributor feedback</strong><br /><code class="language-plaintext highlighter-rouge">Call_ContributorFeedback</code></td>
+      <td>Authoring Committee</td>
+      <td>calls <a href="contributor-feedback.html">Contributor feedback on a working draft</a><br /><code class="language-plaintext highlighter-rouge">review-sheet-script</code></td>
+      <td><a href="contributor-feedback.html">Process_ContributorFeedback</a>: while the document is a working draft, the Authoring Committee gives feedback through the Contributor Feedback sheet, and each change set is edited and merged in its own pull request. When its changes are merged, the document is validated and rendered again (owner, 2026-10-31).</td>
     </tr>
   </tbody>
 </table></div>
@@ -1031,12 +1042,12 @@ check, which is what keeps a document folio publishable without either toolchain
     </tr>
     <tr>
       <td><strong>Ready to publish?</strong><br /><code class="language-plaintext highlighter-rouge">Gateway_ReviewOutcome</code></td>
-      <td>The reviewer’s call after step 8. <code class="language-plaintext highlighter-rouge">iterate</code> returns to authoring with the feedback; <code class="language-plaintext highlighter-rouge">approved</code> goes to publish.</td>
-      <td><strong>iterate</strong> → 4 · Author blocks<br /><strong>approved</strong> → 9 · Publish</td>
+      <td>The reviewer’s call after step 8. <code class="language-plaintext highlighter-rouge">iterate</code> returns to authoring with the feedback; <code class="language-plaintext highlighter-rouge">Authoring Committee feedback</code> sends a working draft to the committee through the Contributor Feedback sheet (<a href="contributor-feedback.html">Process_ContributorFeedback</a>), and comes back to validation once its changes are merged; <code class="language-plaintext highlighter-rouge">approved</code> goes to publish.</td>
+      <td><strong>iterate</strong> → 4 · Author blocks<br /><strong>approved</strong> → 9 · Publish<br /><strong>Authoring Committee feedback</strong> → Contributor feedback</td>
     </tr>
     <tr>
       <td><strong>Bean claimed?</strong><br /><code class="language-plaintext highlighter-rouge">GW_BeanYours</code></td>
-      <td>Reads which end Process_BeanOpen reached. <code class="language-plaintext highlighter-rouge">claimed</code>: the bean is in progress and this process works it. <code class="language-plaintext highlighter-rouge">not yours</code>: a sibling session or a human holds it, nothing was written to it, and this process stops here rather than work a bean it does not own (bean-coordination).</td>
+      <td>Reads which end <a href="bean-open.html">Process_BeanOpen</a> reached. <code class="language-plaintext highlighter-rouge">claimed</code>: the bean is in progress and this process works it. <code class="language-plaintext highlighter-rouge">not yours</code>: a sibling session or a human holds it, nothing was written to it, and this process stops here rather than work a bean it does not own (bean-coordination).</td>
       <td><strong>claimed</strong> → 2 · Seed the work plan<br /><strong>not yours</strong> → Not yours — left alone</td>
     </tr>
   </tbody>

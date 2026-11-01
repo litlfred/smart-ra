@@ -613,7 +613,7 @@
      `avatars:css:check` fails the build when it is stale. One stylesheet
      rather than 68 assets: the glyph is a mask and the colour is a property,
      so a scheme swap is a custom property and the trash state is a selector. -->
-<link rel="stylesheet" href="../../../assets/css/avatars.css?v=780d571c53c1">
+<link rel="stylesheet" href="../../../assets/css/avatars.css?v=a0806788c1f5">
 
 <!--
   The kinds THIS INSTANCE DECLARES, for the avatar fan.
@@ -868,7 +868,7 @@ work plan in beans/.</cat-harness.processes:bean></bootstrap.processes:skill></p
 
 <ul>
   <li><strong>Called by:</strong> <a href="content-lifecycle.html">Content lifecycle</a></li>
-  <li><strong>Calls:</strong> <a href="bean-close.html">Close the bean</a>, <a href="bean-open.html">Open the bean</a>, <a href="editing-hci-validation.html">Editing and HCI validation</a>, <a href="public-comment.html">Public comment on a review draft</a></li>
+  <li><strong>Calls:</strong> <a href="bean-close.html">Close the bean</a>, <a href="bean-open.html">Open the bean</a>, <a href="editing-hci-validation.html">Editing and HCI validation</a>, <a href="public-comment-release.html">Release a draft for public comment</a></li>
   <li><strong>Presented on:</strong> no docs page section shows this diagram</li>
   <li><strong>Running instances:</strong> none recorded</li>
 </ul>
@@ -918,7 +918,7 @@ work plan in beans/.</cat-harness.processes:bean></bootstrap.processes:skill></p
     <tr>
       <td>Public review (commenters, review committee, editor)</td>
       <td><code class="language-plaintext highlighter-rouge">review-coordinator</code></td>
-      <td>Runs in parallel with the review team and the SMEs when a draft goes out for PUBLIC comment: the circulated draft is the frozen, line-numbered review version, and every comment that comes back is placed, triaged, weighed and decided in Process_PublicComment. Like Lane_Sme it feeds the join and does not own the approve/reject gateway; an accepted comment reaches the document through its own change set, not through this gateway.</td>
+      <td>Runs in parallel with the review team and the SMEs when a draft goes out for PUBLIC comment: the circulated draft is the frozen, line-numbered review version, and every comment that comes back is placed, triaged, weighed and decided in <a href="public-comment.html">Process_PublicComment</a>. Like Lane_Sme it feeds the join and does not own the approve/reject gateway; an accepted comment reaches the document through its own change set, not through this gateway.</td>
     </tr>
     <tr>
       <td>Clinical / scientific SMEs</td>
@@ -957,7 +957,7 @@ work plan in beans/.</cat-harness.processes:bean></bootstrap.processes:skill></p
       <td><strong>Open the bean</strong><br /><code class="language-plaintext highlighter-rouge">Task_OpenReleaseBean</code></td>
       <td>Work plan — beans (shared by humans and agents)</td>
       <td>calls <a href="bean-open.html">Open the bean</a><br /><code class="language-plaintext highlighter-rouge">bean-coordination</code></td>
-      <td>Process_BeanOpen: check before you create, find out whose the bean is, and claim it — or leave it alone when it is someone else’s. The one place a claim is drawn (bean m8gz, owner 2026-10-24); the gateway after this reads which end it reached.</td>
+      <td><a href="bean-open.html">Process_BeanOpen</a>: check before you create, find out whose the bean is, and claim it — or leave it alone when it is someone else’s. The one place a claim is drawn (bean m8gz, owner 2026-10-24); the gateway after this reads which end it reached.</td>
     </tr>
     <tr>
       <td><strong>Build the draft publication</strong><br /><code class="language-plaintext highlighter-rouge">Task_BuildDraft</code></td>
@@ -984,10 +984,10 @@ work plan in beans/.</cat-harness.processes:bean></bootstrap.processes:skill></p
       <td>The draft publication is circulated to the review team for formal review.</td>
     </tr>
     <tr>
-      <td><strong>Public comment on the review version</strong><br /><code class="language-plaintext highlighter-rouge">CallActivity_PublicComment</code></td>
+      <td><strong>Release for public comment</strong><br /><code class="language-plaintext highlighter-rouge">CallActivity_PublicComment</code></td>
       <td>Public review (commenters, review committee, editor)</td>
-      <td>calls <a href="public-comment.html">Public comment on a review draft</a><br /><code class="language-plaintext highlighter-rouge">public-comment</code></td>
-      <td>When the draft is released for public comment: comments returned on the frozen, line-numbered review version are placed, triaged, recommended on by the review committee and decided by the editor (public-comment.bpmn). Bean v26p, issue #197.</td>
+      <td>calls <a href="public-comment-release.html">Release a draft for public comment</a><br /><code class="language-plaintext highlighter-rouge">public-comment</code></td>
+      <td>When the draft goes out for public comment: the release date is agreed, the draft is frozen as a line-numbered public comment release, every channel is set up against it and announced, and the comments that come back are placed, triaged, recommended on by the review committee and decided by the editor (<a href="public-comment-release.html">Process_PublicCommentRelease</a>, which calls <a href="public-comment.html">Process_PublicComment</a>). Bean v26p, issue #197.</td>
     </tr>
     <tr>
       <td><strong>Review the draft publication</strong><br /><code class="language-plaintext highlighter-rouge">Task_ReviewDraft</code></td>
@@ -1029,7 +1029,7 @@ work plan in beans/.</cat-harness.processes:bean></bootstrap.processes:skill></p
       <td><strong>Close the bean</strong><br /><code class="language-plaintext highlighter-rouge">Task_ArchiveReleaseBean</code></td>
       <td>Work plan — beans (shared by humans and agents)</td>
       <td>calls <a href="bean-close.html">Close the bean</a><br /><code class="language-plaintext highlighter-rouge">todo-manager</code></td>
-      <td>Process_BeanClose: end the bean in a state that says why — complete and archive it, scrap it with its reasons and archive it, or record the blocker and hand it back. The one place resolve and archive are drawn (bean m8gz, owner 2026-10-24); placed straight before the end so the engine’s resolve sees nothing left but the archive step.</td>
+      <td><a href="bean-close.html">Process_BeanClose</a>: end the bean in a state that says why — complete and archive it, scrap it with its reasons and archive it, or record the blocker and hand it back. The one place resolve and archive are drawn (bean m8gz, owner 2026-10-24); placed straight before the end so the engine’s resolve sees nothing left but the archive step.</td>
     </tr>
   </tbody>
 </table></div>
@@ -1065,7 +1065,7 @@ work plan in beans/.</cat-harness.processes:bean></bootstrap.processes:skill></p
     </tr>
     <tr>
       <td><strong>Bean claimed?</strong><br /><code class="language-plaintext highlighter-rouge">GW_BeanYours</code></td>
-      <td>Reads which end Process_BeanOpen reached. <code class="language-plaintext highlighter-rouge">claimed</code>: the bean is in progress and this process works it. <code class="language-plaintext highlighter-rouge">not yours</code>: a sibling session or a human holds it, nothing was written to it, and this process stops here rather than work a bean it does not own (bean-coordination).</td>
+      <td>Reads which end <a href="bean-open.html">Process_BeanOpen</a> reached. <code class="language-plaintext highlighter-rouge">claimed</code>: the bean is in progress and this process works it. <code class="language-plaintext highlighter-rouge">not yours</code>: a sibling session or a human holds it, nothing was written to it, and this process stops here rather than work a bean it does not own (bean-coordination).</td>
       <td><strong>claimed</strong> → Gateway_BuildMerge<br /><strong>not yours</strong> → Not yours — left alone</td>
     </tr>
   </tbody>

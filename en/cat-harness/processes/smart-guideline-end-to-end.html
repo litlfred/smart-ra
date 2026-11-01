@@ -613,7 +613,7 @@
      `avatars:css:check` fails the build when it is stale. One stylesheet
      rather than 68 assets: the glyph is a mask and the colour is a property,
      so a scheme swap is a custom property and the trash state is a selector. -->
-<link rel="stylesheet" href="../../../assets/css/avatars.css?v=780d571c53c1">
+<link rel="stylesheet" href="../../../assets/css/avatars.css?v=a0806788c1f5">
 
 <!--
   The kinds THIS INSTANCE DECLARES, for the avatar fan.
@@ -897,7 +897,7 @@
     <tr>
       <td>Human adjudicators</td>
       <td><code class="language-plaintext highlighter-rouge">reviewer</code></td>
-      <td>Clinical SME, l1-extraction-reviewer, programme manager, business analyst, FHIR modeller, terminologist: which one signs each stage is in the smart-guideline-end-to-end skill. Each adjudication calls cat-harness’s generic review, Process_Review, on the staged preview (feature-staging, staging-review) and records a qa-review/v1 Decision (approve, request-changes, reject) with the adjudicator’s role id. Each adjudication ends in its own end event, so the instance is complete only when every adjudication is recorded. A rejection files a bean against the stage and marks every downstream asset derived from the rejected item rejected-upstream; it does not stop the agent.</td>
+      <td>Clinical SME, l1-extraction-reviewer, programme manager, business analyst, FHIR modeller, terminologist: which one signs each stage is in the smart-guideline-end-to-end skill. Each adjudication calls cat-harness’s generic review, <a href="review-task.html">Process_Review</a>, on the staged preview (feature-staging, staging-review) and records a qa-review/v1 Decision (approve, request-changes, reject) with the adjudicator’s role id. Each adjudication ends in its own end event, so the instance is complete only when every adjudication is recorded. A rejection files a bean against the stage and marks every downstream asset derived from the rejected item rejected-upstream; it does not stop the agent.</td>
     </tr>
   </tbody>
 </table></div>
@@ -974,7 +974,7 @@
       <td><strong>Review each L2 asset (before / after if adapted)</strong><br /><code class="language-plaintext highlighter-rouge">Task_AdjL2</code></td>
       <td>Human adjudicators</td>
       <td>calls <a href="review-task.html">Review task</a><br /><code class="language-plaintext highlighter-rouge">content-review</code><br /><code class="language-plaintext highlighter-rouge">staging-review</code><br /><code class="language-plaintext highlighter-rouge">visual-diff</code><br /><code class="language-plaintext highlighter-rouge">wireframe-design-review</code></td>
-      <td>One review item per created or changed asset, shown as its reviewer reads it (diagram, table, data-dictionary rows); each form’s wireframe candidates are reviewed blind and one is chosen (Process_Adjudication, Process_OptionsAnalysis); an adapted asset as a diff against its pinned upstream. For each L2 component this is the review that forks inside its own edit-and-review subprocess (l2-component-edit-review.bpmn, called by every l2-dak-authoring.bpmn track), with the renderer, checker and reviewing role that skill tables.</td>
+      <td>One review item per created or changed asset, shown as its reviewer reads it (diagram, table, data-dictionary rows); each form’s wireframe candidates are reviewed blind and one is chosen (<a href="adjudication.html">Process_Adjudication</a>, <a href="options-analysis.html">Process_OptionsAnalysis</a>); an adapted asset as a diff against its pinned upstream. For each L2 component this is the review that forks inside its own edit-and-review subprocess (l2-component-edit-review.bpmn, called by every l2-dak-authoring.bpmn track), with the renderer, checker and reviewing role that skill tables.</td>
     </tr>
     <tr>
       <td><strong>5 · Choose L3 dependencies (WHO / jurisdiction IGs)</strong><br /><code class="language-plaintext highlighter-rouge">Task_DepsL3</code></td>
