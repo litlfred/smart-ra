@@ -12,11 +12,11 @@
   "summary": {
     "added": 0,
     "removed": 0,
-    "changed": 10,
-    "unchanged": 923,
+    "changed": 11,
+    "unchanged": 922,
     "renamed": 0,
-    "prose": 10,
-    "manifest": 10,
+    "prose": 11,
+    "manifest": 11,
     "moved": 0
   },
   "changes": [
@@ -178,6 +178,26 @@
         "kind": "figure",
         "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-4-5",
         "index": 10
+      }
+    },
+    {
+      "change": "changed",
+      "label": "fig:3-6-3-c90f5f",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/f-3-6-3-c90f5f.ts",
+        "kind": "figure",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-6-3",
+        "index": 5
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/f-3-6-3-c90f5f.ts",
+        "kind": "figure",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-6-3",
+        "index": 5
       }
     },
     {
