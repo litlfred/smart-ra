@@ -227,7 +227,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness-tools",
-          "ref": "6d02c6a004edeba45bb17880f28fa9067613986b",
+          "ref": "21d4103382b87530322ed97a48a706b67ff2a590",
           "overrides": {
             "cat-harness-tools": {
               "whole": true
@@ -239,9 +239,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-31",
-              "ref": "6d02c6a004edeba45bb17880f28fa9067613986b",
-              "evidence": "litlfred asked 2026-10-31 13:22Z (Folio Assistant project thread) for organizations and acronyms; folio-assistant-core 6cd0644 (#412) needs a cat-harness-tools that loads event subprocesses (core#399), so tools moves to main"
+              "on": "2026-11-01",
+              "ref": "21d4103382b87530322ed97a48a706b67ff2a590",
+              "evidence": "litlfred, 2026-11-01 16:40:15Z in the Integrated view thread: 'can we apply a similar poster theme to other views? ... can you do a few an show me review staging url w/ so i can see in context'. Preview-only pin of branch claude/poster-theme-views (cat-harness-tools); not for main."
             }
           }
         }
