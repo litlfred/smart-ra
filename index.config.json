@@ -171,7 +171,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/folio-assistant-core",
-          "ref": "adc6e9047fbca421aa06ab9510ecafbd535a28ec",
+          "ref": "a7fc55dc807f4709d55fdc98ec902a3653e0aa54",
           "overrides": {
             "folio-assistant-core": {
               "whole": true
@@ -187,8 +187,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-11-01",
-              "ref": "adc6e9047fbca421aa06ab9510ecafbd535a28ec",
-              "evidence": "litlfred, 2026-11-01 ~18:10Z in the Integrated view thread: rename the landing entry 'dpi-h-ra (933 blocks)' to the document title with '- Working Draft', and drop the odd 'The document' link. Preview-only pin of branch claude/landing-document-titles (folio-assistant-core#510); not for main."
+              "ref": "a7fc55dc807f4709d55fdc98ec902a3653e0aa54",
+              "evidence": "litlfred, 2026-11-01 ~18:10Z in the Integrated view thread: rename the landing entry 'dpi-h-ra (933 blocks)' to the document title with '- Working Draft', and drop the odd 'The document' link. Re-pinned 19:23Z for the owner's 19:22Z ask: the document page itself should say '... - Working Draft'. Preview-only pin of branch claude/landing-document-titles (folio-assistant-core#510); not for main."
             }
           }
         }
