@@ -171,7 +171,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/folio-assistant-core",
-          "ref": "f94cd80325a7cfa098b01dadd490aa238769d4c4",
+          "ref": "8f33ce5213813ef00738c2e966c49635988c3f28",
           "overrides": {
             "folio-assistant-core": {
               "whole": true
@@ -187,8 +187,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-11-01",
-              "ref": "f94cd80325a7cfa098b01dadd490aa238769d4c4",
-              "evidence": "litlfred, 2026-11-01 21:37:23Z card Q-STY-4 A 'Re-pin now' in the 'Make section headers and comments easier to read' thread: re-pin to main after cat-harness#929, cat-harness-tools#1308, folio-assistant-core#508 merged (block panel, headings, comments pane)."
+              "ref": "8f33ce5213813ef00738c2e966c49635988c3f28",
+              "evidence": "owner 2026-11-01 (smart-ra#166 thread): chose the model drawn from the graph (B, A) and a held draft #224; needs folio-assistant-core#568"
             }
           }
         }
