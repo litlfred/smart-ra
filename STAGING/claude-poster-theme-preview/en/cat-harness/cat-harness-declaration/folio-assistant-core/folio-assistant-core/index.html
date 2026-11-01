@@ -509,7 +509,7 @@ window.addEventListener('resize',measure);window.addEventListener('load',measure
       &quot;branch&quot;: &quot;cat/cat-harness/qa-reports&quot;,
       &quot;keyedBy&quot;: &quot;commit&quot;
     },
-    &quot;description&quot;: &quot;What auditing THIS instance produced, committed so a consumer can tell \&quot;never audited\&quot; from \&quot;audited clean\&quot; — a printed verdict cannot, which is why every QA verdict here is a sidecar. TWO kinds live here and the files declare which they are via $schema: kg-qa/v1, one per audited subject, in a tree mirroring the subject’s own path, and ONE kg-qa-manifest/v1 recording the auditor’s identity for all of them. The manifest moved here from skills/ on 2026-09-27: kg-audit.ts writes it unconditionally, so its old home created a skills/ directory holding no skills in every instance that has none. At declaration time that is 7 files across processes (1), scenarios (1), skills (1), tools (4). No qa-results/v1 and no witnesses: this instance runs no document build and no witness-producing computation, and declaring kinds it does not hold would be an over-claim. dependents: reproduce, because a dependent audits its OWN graph — these verdicts are about this instance’s nodes, and inheriting them would attribute one instance’s findings to another. Declared WITH its files in one commit, per bean dh4f: a declared-but-absent directory makes a consumer scan nothing and report a clean run over it.&quot;,
+    &quot;description&quot;: &quot;What auditing THIS instance produced, kept so a consumer can tell \&quot;never audited\&quot; from \&quot;audited clean\&quot;. Stored on the `qa-reports` branch keyed by commit (`storage`), not committed: a local run writes the working copy here and `.gitignore` keeps it out of the checkout (bean 7mwa) — a printed verdict cannot, which is why every QA verdict here is a sidecar. TWO kinds live here and the files declare which they are via $schema: kg-qa/v1, one per audited subject, in a tree mirroring the subject’s own path, and ONE kg-qa-manifest/v1 recording the auditor’s identity for all of them. The manifest moved here from skills/ on 2026-09-27: kg-audit.ts writes it unconditionally, so its old home created a skills/ directory holding no skills in every instance that has none. At declaration time that is 7 files across processes (1), scenarios (1), skills (1), tools (4). No qa-results/v1 and no witnesses: this instance runs no document build and no witness-producing computation, and declaring kinds it does not hold would be an over-claim. dependents: reproduce, because a dependent audits its OWN graph — these verdicts are about this instance’s nodes, and inheriting them would attribute one instance’s findings to another. Declared WITH its files in one commit, per bean dh4f: a declared-but-absent directory makes a consumer scan nothing and report a clean run over it. Since `storage` was added, a reader resolves it from the store rather than the checkout, so its absence on disk reads as `unknown`, not clean.&quot;,
     &quot;graphTypologies&quot;: [
       &quot;qa&quot;
     ]
@@ -672,6 +672,13 @@ window.addEventListener('resize',measure);window.addEventListener('load',measure
     ],
     &quot;outputs&quot;: [],
     &quot;because&quot;: &quot;verifies DSA legal text SHA-256 against DCAT 3 spdx:checksum and ODRL 2.2 dcterms:source (bean folio-assistant-2z1t)&quot;
+  },
+  &quot;check:core-security-gate&quot;: {
+    &quot;inputs&quot;: [
+      &quot;{tracked}&quot;
+    ],
+    &quot;outputs&quot;: [],
+    &quot;because&quot;: &quot;verifies workflow injection, secret leaks, lockfile pinning, bun version pinning, materialized fixity, and action SHA pinning over core (bean folio-core-0dy3)&quot;
   }
 }</pre></dd>
 <dt>contentTranslations</dt><dd><pre>[

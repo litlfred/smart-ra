@@ -724,6 +724,26 @@
       "skos:note": "candidate"
     },
     {
+      "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-skills/public-comment-channels",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-skills"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "public-comment-channels"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "Set up the channels a public-comment release goes out on (an offline Excel sheet, a Google Form, a GitHub issue form, and the review sheet), each limited to the release's fixed references, with the editor's instructions and the announcement, and bring every channel back in through one intake path that ends in agent triage into thematic change-sets. Use when a draft is released for public comment, when a channel is added to a running review, or when returned comments arrive from any channel."
+        }
+      ],
+      "skos:notation": "public-comment-channels",
+      "dcterms:source": "folio-assistant-core/skills/content/folio-document-adapter/public-comment-channels.md",
+      "skos:note": "candidate"
+    },
+    {
       "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-skills/quality-control",
       "@type": "skos:Concept",
       "skos:inScheme": {
@@ -816,6 +836,46 @@
       ],
       "skos:notation": "review-comments",
       "dcterms:source": "folio-assistant-core/skills/content/content-lifecycle-ext/review-comments.md",
+      "skos:note": "candidate"
+    },
+    {
+      "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-skills/review-log-watch",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-skills"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "review-log-watch"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "Poll a drafting review log (a Contributor Feedback sheet) and its folio repository's issues mechanically, with Tool `review-log-watch`, and start agent work only when a cell people set or an open issue changed. Each issue that no row links yet becomes a Contributor Feedback row, and a closed issue's row is hidden with its text struck through. Use on every wake of a review-log watcher, and when setting up a watcher for a new log."
+        }
+      ],
+      "skos:notation": "review-log-watch",
+      "dcterms:source": "folio-assistant-core/skills/content/folio-document-adapter/review-log-watch.md",
+      "skos:note": "candidate"
+    },
+    {
+      "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-skills/review-sheet-agent-columns",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-skills"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "review-sheet-agent-columns"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "Whenever an agent works on a change set of a folio whose review sheet is kept by the Tool `review-sheet-sync`, it writes the Agent tabs' columns for that change set and its comments as it goes: status, step, what it did, the PR, the staging page and its build, what the PR changed and when it finished. Use on every change-set edit, draft, PR, push, merge or close, in a sheet sync or not."
+        }
+      ],
+      "skos:notation": "review-sheet-agent-columns",
+      "dcterms:source": "folio-assistant-core/skills/content/folio-document-adapter/review-sheet-agent-columns.md",
       "skos:note": "candidate"
     },
     {

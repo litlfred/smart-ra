@@ -937,11 +937,11 @@ window.addEventListener('resize',measure);window.addEventListener('load',measure
 
 <p>Candidate terms extracted from every BPMN task and call activity: <code class="language-plaintext highlighter-rouge">name</code> as the label, its own <code class="language-plaintext highlighter-rouge">&lt;documentation&gt;</code> as the definition, the element id as the code. Each is the asset’s own text, verbatim and not curated, and carries the badge “candidate, extracted”. A person promotes one by authoring it. Authored terms are on their owning instance’s page, and those pages, the counts and the sources are linked from the <a href="../../../../../en/folio-assistant-core/glossary/">glossary index</a>.</p>
 
-<p>From: bootstrap 38 (<a href="../../../../../assets/glossary/bootstrap--kg-bpmn-activities.skos.jsonld">SKOS</a>) · bootstrap-tools 7 (<a href="../../../../../assets/glossary/bootstrap-tools--kg-bpmn-activities.skos.jsonld">SKOS</a>) · cat-harness 581 (<a href="../../../../../assets/glossary/cat-harness--kg-bpmn-activities.skos.jsonld">SKOS</a>) · fhir-harness 45 (<a href="../../../../../assets/glossary/fhir-harness--kg-bpmn-activities.skos.jsonld">SKOS</a>) · folio-assistant-core 222 (<a href="../../../../../assets/glossary/folio-assistant-core--kg-bpmn-activities.skos.jsonld">SKOS</a>) · smart-base 117 (<a href="../../../../../assets/glossary/smart-base--kg-bpmn-activities.skos.jsonld">SKOS</a>) · who-iris 34 (<a href="../../../../../assets/glossary/who-iris--kg-bpmn-activities.skos.jsonld">SKOS</a>).</p>
+<p>From: bootstrap 38 (<a href="../../../../../assets/glossary/bootstrap--kg-bpmn-activities.skos.jsonld">SKOS</a>) · bootstrap-tools 7 (<a href="../../../../../assets/glossary/bootstrap-tools--kg-bpmn-activities.skos.jsonld">SKOS</a>) · cat-harness 581 (<a href="../../../../../assets/glossary/cat-harness--kg-bpmn-activities.skos.jsonld">SKOS</a>) · fhir-harness 45 (<a href="../../../../../assets/glossary/fhir-harness--kg-bpmn-activities.skos.jsonld">SKOS</a>) · folio-assistant-core 230 (<a href="../../../../../assets/glossary/folio-assistant-core--kg-bpmn-activities.skos.jsonld">SKOS</a>) · smart-base 117 (<a href="../../../../../assets/glossary/smart-base--kg-bpmn-activities.skos.jsonld">SKOS</a>) · who-iris 34 (<a href="../../../../../assets/glossary/who-iris--kg-bpmn-activities.skos.jsonld">SKOS</a>).</p>
 
 <p>One of 3 pages of this type, split by the first letter of the label: <a href="../../../../../en/folio-assistant-core/glossary/bpmn-activities/">all parts</a>.</p>
 
-<p><strong>Size:</strong> this page holds 362 terms and is 333 KB before compression, fetched in one request, within its budget of 1.0 MB. There is no search index: the filter below runs over this page, and the A–Z bar jumps within it.</p>
+<p><strong>Size:</strong> this page holds 365 terms and is 337 KB before compression, fetched in one request, within its budget of 1.0 MB. There is no search index: the filter below runs over this page, and the A–Z bar jumps within it.</p>
 
 <div class="table-wrapper"><table class="fa-gloss-mapping">
 <caption>Already somebody else's concept? — <code>check:term-mapping</code>, bean <code>7wou</code></caption>
@@ -952,11 +952,11 @@ window.addEventListener('resize',measure);window.addEventListener('load',measure
 A vocabulary that could not be reached has said nothing, and the column above keeps that 
 apart from a checked miss. The counts are reported and not graded: an unmapped candidate may 
 be a term this corpus is right to coin.</p>
-<p class="fa-gloss-mapping-perterm"><strong>Per term.</strong> Every term on this page is in no single state on <code>fhir</code>, so each entry states its own, and in no single state on <code>skos</code>, so each entry states its own, unless its entry says otherwise. 362 entries say otherwise.</p>
+<p class="fa-gloss-mapping-perterm"><strong>Per term.</strong> Every term on this page is in no single state on <code>fhir</code>, so each entry states its own, and in no single state on <code>skos</code>, so each entry states its own, unless its entry says otherwise. 365 entries say otherwise.</p>
 
 <p><label for="fa-gloss-q">Filter terms</label>
 <input id="fa-gloss-q" type="search" autocomplete="off" style="min-height:44px;width:100%;max-width:32rem" /></p>
-<p aria-live="polite"><span id="fa-gloss-n">362</span> shown</p>
+<p aria-live="polite"><span id="fa-gloss-n">365</span> shown</p>
 
 <nav aria-label="Letters"><a href="#letter-0-9">0–9</a> <a href="#letter-A">A</a> <a href="#letter-B">B</a> <a href="#letter-C">C</a> <a href="#letter-D">D</a></nav>
 <h2 id="letter-0-9">
@@ -1378,6 +1378,14 @@ Accept it, and record where it came from <span class="fa-gloss-status">candidate
 <p class="fa-gloss-meta">BPMN activities of cat-harness · source <a href="https://github.com/litlfred/cat-harness/blob/main/processes/library/content-acquisition.bpmn"><code>cat-harness/processes/library/content-acquisition.bpmn#A_Accept</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
+<dt id="folio-assistant-core--kg-bpmn-activities--process_reviewlogwatch.task_accept" data-fa-state="extracted" data-fa-gloss="">
+Accept the new state <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Runs the check again with --accept, so the state file holds what was just handled and the next poll compares against it. A row the pass could not finish stays changed and is picked up on the next poll.</p>
+<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/review-log-watch.bpmn"><code>folio-assistant-core/processes/content/review-log-watch.bpmn#Task_Accept</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
 <dt id="cat-harness--kg-bpmn-activities--process_review.task_editordecides" data-fa-state="extracted" data-fa-gloss="">
 Accept, or send back <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
@@ -1562,6 +1570,14 @@ Adopt, hold or decline <span class="fa-gloss-status">candidate, extracted</span>
 <p class="fa-gloss-meta">BPMN activities of cat-harness · source <a href="https://github.com/litlfred/cat-harness/blob/main/processes/sdlc/upstream-version-adoption.bpmn"><code>cat-harness/processes/sdlc/upstream-version-adoption.bpmn#PM_Decide</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
+<dt id="folio-assistant-core--kg-bpmn-activities--process_reviewlogwatch.task_agentpass" data-fa-state="extracted" data-fa-gloss="">
+Agent pass on the changed rows <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>For each changed row, the agent pass of Contributor feedback on a working draft: a new or edited row gets a proposal, Ready for agent = Yes gets its edit, Ready for merge = Yes its merge, and a Blue answer to a Decision needed question is taken up. The agent records its step on the Agent tab at once, with the real time.</p>
+<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/review-log-watch.bpmn"><code>folio-assistant-core/processes/content/review-log-watch.bpmn#Task_AgentPass</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_editing.task_agentreview" data-fa-state="extracted" data-fa-gloss="">
 Agent review of the change [content-review] <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
@@ -1666,6 +1682,14 @@ Append <code>retained</code>, with why it stays <span class="fa-gloss-status">ca
 <p class="fa-gloss-meta">BPMN activities of cat-harness · source <a href="https://github.com/litlfred/cat-harness/blob/main/processes/sdlc/feature-staging.bpmn"><code>cat-harness/processes/sdlc/feature-staging.bpmn#Task_LogRetained</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
+<dt id="folio-assistant-core--kg-bpmn-activities--process_reviewlogwatch.task_appendrows" data-fa-state="extracted" data-fa-gloss="">
+Append rows for new issues; hide closed ones <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>For each row in the tool's append list (one per issue that no row's Issue cell links yet; owner, Q-WATCH2 B), appends it below the last row of Contributor Feedback: Title is the issue's title, the first Contributor Feedback column @login (#N): the issue's first paragraph, Issue its URL. The script gives each new row its Change-set id. No other writer adds issue rows. Then each row linking a closed issue (the tool's closedRows, and the rows just appended as closed) is hidden and its text struck through (owner, 2026-11-01 10:18Z).</p>
+<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/review-log-watch.bpmn"><code>folio-assistant-core/processes/content/review-log-watch.bpmn#Task_AppendRows</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
 <dt id="cat-harness--kg-bpmn-activities--process_humantranslation.task_appenddisclaimer" data-fa-state="extracted" data-fa-gloss="">
 Append WHO disclaimer (if DAK) <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
@@ -1758,7 +1782,7 @@ Archive the bean (completed or scrapped) <span class="fa-gloss-status">candidate
 Archive the release with the review <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
-<p>When comment closes, the release (PDF, PC/&lt;version&gt; site and the channel exports) is archived with the review record, so every comment's citation can still be followed. Skill: document-publishing.</p>
+<p>When comment closes, the release (PDF, PC/&lt;version&gt; site and the channel exports) is archived with the review record, so every comment's citation can still be followed. Run <code>bun run cat pc:release close</code>, which changes only the release's release.json; the frozen copy is never rewritten. Skill: document-publishing.</p>
 <p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/public-comment-release.bpmn"><code>folio-assistant-core/processes/content/public-comment-release.bpmn#Task_ArchiveRelease</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
@@ -2304,7 +2328,7 @@ Build the L1 library from Component 1 [dak-l1-library] <span class="fa-gloss-sta
 Build the public comment release <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
-<p>Freeze the draft as &quot;Draft for Public Comment Release vX&quot;: a PDF with fixed line numbers and a site copy under a permanent PC/&lt;version&gt;/ path (not STAGING, never deleted on merge). Every channel cites this release's pages, lines and block ids. Skill: document-publishing.</p>
+<p>Freeze the draft as &quot;Draft for Public Comment Release vX&quot;: a PDF with fixed line numbers and a site copy under a permanent PC/&lt;version&gt;/ path (not STAGING, never deleted on merge). Every channel cites this release's pages, lines and block ids. Line numbers run continuously through the document. Run <code>bun run cat pc:pdf</code> for the line-numbered PDF and its line map, then <code>bun run cat pc:release freeze</code> for the write-once copy under PC/&lt;version&gt;/. Skill: document-publishing.</p>
 <p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/public-comment-release.bpmn"><code>folio-assistant-core/processes/content/public-comment-release.bpmn#Task_BuildPcRelease</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
