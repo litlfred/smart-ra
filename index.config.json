@@ -101,7 +101,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/smart-base",
-          "ref": "e11a0473880b7ab3c88c9ddce4f724d3d6b2f89e",
+          "ref": "e899ce10a79766a8194195ddf8f4532b236a508e",
           "overrides": {
             "smart-base": {
               "path": "smart-base",
@@ -136,9 +136,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-11-01",
-              "ref": "e11a0473880b7ab3c88c9ddce4f724d3d6b2f89e",
-              "evidence": "litlfred tapped Q-NAV-6 A 'smart-base to main too' 2026-11-01 18:44:52Z (Folio Assistant thread 'Collapse bibliography entries in left navbar', cmsg_017WNUkNK8kdDziPK58Pv6G9UinMR4aE4uanDpNJDwqBB7): main has the 7 process SVGs regenerated (smart-ra#213 render gate)."
+              "on": "2026-11-02",
+              "ref": "e899ce10a79766a8194195ddf8f4532b236a508e",
+              "evidence": "Owner litlfred, 2026-11-01 (20:41Z, MVP thread): 'i want to get all functional stuff done, the full repin on harnesses done and stablized as MVP goal.' and 21:41Z card Q-PIN-4 'B. All, including smart-ra' (re-pin every smart-* site)."
             }
           }
         }
@@ -149,7 +149,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/fhir-harness",
-          "ref": "4a6e7aff1a30bdd8def7514361f4eb88c9c3f3a9",
+          "ref": "a6e641193a4c4bce450548473d18034eb36e76ca",
           "overrides": {
             "fhir-harness": {
               "whole": true
@@ -158,9 +158,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-11-01",
-              "ref": "4a6e7aff1a30bdd8def7514361f4eb88c9c3f3a9",
-              "evidence": "litlfred tapped Q-NAV-3 A 'All five layers to main' 2026-11-01 17:54:45Z (Folio Assistant thread 'Collapse bibliography entries in left navbar', cmsg_017WNUkNK8kdDziPK58Pv6G9N4NDB5vmMC888j9CJa5FKj): move cat-harness, folio-assistant-core, fhir-harness, bootstrap and bootstrap-tools to main with cat-harness-tools 3c2d2ed so the layers do not skew (smart-ra#213)."
+              "on": "2026-11-02",
+              "ref": "a6e641193a4c4bce450548473d18034eb36e76ca",
+              "evidence": "Owner litlfred, 2026-11-01 (20:41Z, MVP thread): 'i want to get all functional stuff done, the full repin on harnesses done and stablized as MVP goal.' and 21:41Z card Q-PIN-4 'B. All, including smart-ra' (re-pin every smart-* site)."
             }
           }
         }
@@ -171,7 +171,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/folio-assistant-core",
-          "ref": "633d2301086c5c81ff90ba98dde305cb392e53c6",
+          "ref": "d19145a45f89b731d1d7c070875de747ed5459c1",
           "overrides": {
             "folio-assistant-core": {
               "whole": true
@@ -187,8 +187,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-11-02",
-              "ref": "633d2301086c5c81ff90ba98dde305cb392e53c6",
-              "evidence": "litlfred, 2026-11-02 06:18:43Z card Q-TRAIN-12 A 'Yes, PR and merge on green' in the 'Run re-pins as a 2-hour train' thread (cmsg_017WNUkNK8kdDziPK58Pv6G9WrRPfiS3u7zDBm2LXvrZaR): re-pin smart-ra's folio-assistant-core to main, which includes #574 (bibliography page: the site's own references first, dependencies labelled)."
+              "ref": "d19145a45f89b731d1d7c070875de747ed5459c1",
+              "evidence": "Owner litlfred, 2026-11-01 (20:41Z, MVP thread): 'i want to get all functional stuff done, the full repin on harnesses done and stablized as MVP goal.' and 21:41Z card Q-PIN-4 'B. All, including smart-ra' (re-pin every smart-* site)."
             }
           }
         }
@@ -199,7 +199,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness",
-          "ref": "676c507b6a8eb708dbed191e66cf9621fca11ec1",
+          "ref": "520a3124b9e820af767e13a1655f3867066e4227",
           "overrides": {
             "cat-harness": {
               "whole": true
@@ -214,9 +214,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-11-01",
-              "ref": "676c507b6a8eb708dbed191e66cf9621fca11ec1",
-              "evidence": "litlfred, 2026-11-01 21:37:23Z card Q-STY-4 A 'Re-pin now' in the 'Make section headers and comments easier to read' thread: re-pin to main after cat-harness#929, cat-harness-tools#1308, folio-assistant-core#508 merged (block panel, headings, comments pane)."
+              "on": "2026-11-02",
+              "ref": "520a3124b9e820af767e13a1655f3867066e4227",
+              "evidence": "Owner litlfred, 2026-11-01 (20:41Z, MVP thread): 'i want to get all functional stuff done, the full repin on harnesses done and stablized as MVP goal.' and 21:41Z card Q-PIN-4 'B. All, including smart-ra' (re-pin every smart-* site)."
             }
           }
         }
@@ -227,7 +227,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness-tools",
-          "ref": "fd9482751b06d4098b1201cfe84cc4e0b69c8a4b",
+          "ref": "837434cd560e625ba334a6a845046136038b5dd0",
           "overrides": {
             "cat-harness-tools": {
               "whole": true
@@ -239,9 +239,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-11-01",
-              "ref": "fd9482751b06d4098b1201cfe84cc4e0b69c8a4b",
-              "evidence": "litlfred, 2026-11-01 21:37:23Z card Q-STY-4 A 'Re-pin now' in the 'Make section headers and comments easier to read' thread: re-pin to main after cat-harness#929, cat-harness-tools#1308, folio-assistant-core#508 merged (block panel, headings, comments pane)."
+              "on": "2026-11-02",
+              "ref": "837434cd560e625ba334a6a845046136038b5dd0",
+              "evidence": "Owner litlfred, 2026-11-01 (20:41Z, MVP thread): 'i want to get all functional stuff done, the full repin on harnesses done and stablized as MVP goal.' and 21:41Z card Q-PIN-4 'B. All, including smart-ra' (re-pin every smart-* site)."
             }
           }
         }
@@ -252,7 +252,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/bootstrap",
-          "ref": "0d655b74e9ffd1e246a0bd4df60967e158d665de",
+          "ref": "a83ae82db8a7d03c3febdf367a0a62b46c2eb0ed",
           "overrides": {
             "bootstrap": {
               "whole": true
@@ -261,9 +261,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-11-01",
-              "ref": "0d655b74e9ffd1e246a0bd4df60967e158d665de",
-              "evidence": "litlfred tapped Q-NAV-3 A 'All five layers to main' 2026-11-01 17:54:45Z (Folio Assistant thread 'Collapse bibliography entries in left navbar', cmsg_017WNUkNK8kdDziPK58Pv6G9N4NDB5vmMC888j9CJa5FKj): move cat-harness, folio-assistant-core, fhir-harness, bootstrap and bootstrap-tools to main with cat-harness-tools 3c2d2ed so the layers do not skew (smart-ra#213)."
+              "on": "2026-11-02",
+              "ref": "a83ae82db8a7d03c3febdf367a0a62b46c2eb0ed",
+              "evidence": "Owner litlfred, 2026-11-01 (20:41Z, MVP thread): 'i want to get all functional stuff done, the full repin on harnesses done and stablized as MVP goal.' and 21:41Z card Q-PIN-4 'B. All, including smart-ra' (re-pin every smart-* site)."
             }
           }
         }
@@ -274,7 +274,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/bootstrap-tools",
-          "ref": "ed547a9ab77e8445f13f52fe2152d6e82776bcaf",
+          "ref": "f57b9e72a5a4fd3777aa8c1cee33088ce5899188",
           "overrides": {
             "bootstrap-tools": {
               "whole": true
@@ -286,9 +286,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-11-01",
-              "ref": "ed547a9ab77e8445f13f52fe2152d6e82776bcaf",
-              "evidence": "litlfred tapped Q-NAV-3 A 'All five layers to main' 2026-11-01 17:54:45Z (Folio Assistant thread 'Collapse bibliography entries in left navbar', cmsg_017WNUkNK8kdDziPK58Pv6G9N4NDB5vmMC888j9CJa5FKj): move cat-harness, folio-assistant-core, fhir-harness, bootstrap and bootstrap-tools to main with cat-harness-tools 3c2d2ed so the layers do not skew (smart-ra#213)."
+              "on": "2026-11-02",
+              "ref": "f57b9e72a5a4fd3777aa8c1cee33088ce5899188",
+              "evidence": "Owner litlfred, 2026-11-01 (20:41Z, MVP thread): 'i want to get all functional stuff done, the full repin on harnesses done and stablized as MVP goal.' and 21:41Z card Q-PIN-4 'B. All, including smart-ra' (re-pin every smart-* site)."
             }
           }
         }
