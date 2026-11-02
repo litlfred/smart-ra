@@ -15,7 +15,7 @@ permissions:
 
 jobs:
   check:
-    uses: litlfred/folio-assistant-core/.github/workflows/public-comment-check.yml@2a8b67d8aae13fb4f94cc0074d0085b43b10a69d # index.lock.json
+    uses: litlfred/folio-assistant-core/.github/workflows/public-comment-check.yml@04784f38afb8a1e3afb248f2300fd7c3b52500cd # index.lock.json
     with:
       store: review/public-comment
       label: public comment
