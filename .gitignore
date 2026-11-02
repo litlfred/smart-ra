@@ -75,3 +75,6 @@ review/public-comment/raw/
 node_modules/
 __pycache__/
 *.pyc
+
+# Build outputs (CI restores a writer-cone cache here; never commit it) #
+/build/
