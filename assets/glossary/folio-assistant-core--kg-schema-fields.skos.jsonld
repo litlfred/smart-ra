@@ -1280,7 +1280,7 @@
       ],
       "skos:definition": [
         {
-          "@value": "The thing the concept is about, such as an organization ({@link FocusSchema}): `foaf:focus`."
+          "@value": "The thing the concept is about, an organization or an architecture element ({@link FocusSchema}): `foaf:focus`."
         }
       ],
       "dcterms:source": "folio-assistant-core/schemas/glossary.ts#TermSchema.focus",

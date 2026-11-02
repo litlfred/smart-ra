@@ -933,7 +933,7 @@ work plan in beans/.</p>
       <td>Contextual retrieval: a chunk in isolation loses what makes it mean anything, so each section carries the document brief.</td>
     </tr>
     <tr>
-      <td><strong>Write structure.json (TOC, page ranges, metadata)</strong><br /><code class="language-plaintext highlighter-rouge">Task_Structure</code></td>
+      <td><strong>Write structure.json</strong><br /><code class="language-plaintext highlighter-rouge">Task_Structure</code></td>
       <td>Ingestion Engine (agent, runs unattended)</td>
       <td><code class="language-plaintext highlighter-rouge">document-intake</code></td>
       <td>Write structure.json (pdf-structure/v1): doc id, TOC from the PDF outline or inferred from headings, page ranges, metadata, and source{} with the sha256 and a mimetype sniffed from the bytes, never the extension. A structure that could not be determined says so in structure_note rather than being rendered as one. For OCR’d text, source.runContext cites the OCR step’s run context by sha256. A title already known for the document (the catalogue’s dc.title, or one given with –title) is passed through as the raw title, so the sections’ doc_title does not carry a scan’s misreading (bean turh).</td>

@@ -839,7 +839,7 @@
 </h1>
     
 
-<p>The references of <code class="language-plaintext highlighter-rouge">who-iris/catalogue/</code> (who-iris, a <code class="language-plaintext highlighter-rouge">catalogue</code> directory). <a href="../">All references</a>.</p>
+<p>The references of <code class="language-plaintext highlighter-rouge">who-iris/catalogue/</code> (who-iris, a dependency of dpi-h-ra, a <code class="language-plaintext highlighter-rouge">catalogue</code> directory). <a href="../">All references</a>.</p>
 
 <p><strong>Export these 48 references:</strong> <a href="references.bib">BibTeX</a> · <a href="references.csl.json">CSL-JSON</a> · <a href="references.ris">RIS</a> · <a href="references.dc.xml">Dublin Core XML</a> · <a href="references.jsonld">Dublin Core / BIBO JSON-LD</a></p>
 
@@ -1137,6 +1137,9 @@
 function run(){var v=q.value.trim().toLowerCase(),k=0;
 document.querySelectorAll("li[data-fa-bib]").forEach(function(li){var ok=!v||(li.textContent+" "+li.getAttribute("data-fa-bib")).toLowerCase().indexOf(v)>=0;li.hidden=!ok;if(ok)k++;});n.textContent=k;}
 q.addEventListener("input",run);}
+document.querySelectorAll("details.fa-bib-deps").forEach(function(d){if(q)q.addEventListener("input",function(){if(q.value.trim())d.open=true;});});
+function openFor(){var h=location.hash&&document.getElementById(decodeURIComponent(location.hash.slice(1)));var d=h&&h.closest&&h.closest("details.fa-bib-deps");if(d&&!d.open){d.open=true;h.scrollIntoView();}}
+openFor();window.addEventListener("hashchange",openFor);
 var ALLOWED_URL_SCHEMES=["http:","https:","mailto:","tel:"];
 function safeHref(u){if(!u)return undefined;var s=String(u).replace(/[\u0009\u000A\u000D]/g,"").trim();if(!s||s.indexOf("//")===0)return undefined;if(/^[#?./]/.test(s)||!/^[a-zA-Z][a-zA-Z0-9+.-]*:/.test(s))return s;var sc=s.slice(0,s.indexOf(":")+1).toLowerCase();return ALLOWED_URL_SCHEMES.indexOf(sc)>=0?s:undefined;}
 var form=document.getElementById("fa-bib-add-form");if(!form)return;

@@ -3367,6 +3367,14 @@
       "isTest": false
     },
     {
+      "module": "folio-assistant-core/schemas/glossary-archimate-focus.test.ts",
+      "instance": "folio-assistant-core",
+      "name": "glossary-archimate-focus.test",
+      "graphNode": "undeclared",
+      "summary": "A term about an architecture element (owner, 2026-11-01, smart-ra#166:",
+      "isTest": true
+    },
+    {
       "module": "folio-assistant-core/schemas/glossary-focus.test.ts",
       "instance": "folio-assistant-core",
       "name": "glossary-focus.test",
@@ -78544,6 +78552,118 @@
       "exported": false
     },
     {
+      "id": "folio-assistant-core/schemas/glossary.ts#ArchimateFocus",
+      "name": "ArchimateFocus",
+      "module": "folio-assistant-core/schemas/glossary.ts",
+      "kind": "type-alias",
+      "fields": [],
+      "extendsNames": [],
+      "values": [],
+      "refs": [],
+      "unresolved": [],
+      "external": [],
+      "exported": true
+    },
+    {
+      "id": "folio-assistant-core/schemas/glossary.ts#ArchimateFocusSchema",
+      "name": "ArchimateFocusSchema",
+      "module": "folio-assistant-core/schemas/glossary.ts",
+      "kind": "zod-object",
+      "fields": [
+        {
+          "name": "archimate",
+          "type": "z.string().regex(/^[A-Z][A-Za-z]+$/, \"an ArchiMate element type, such as ApplicationComponent\")",
+          "optional": false,
+          "array": false
+        },
+        {
+          "name": "iri",
+          "type": "Iri.optional()",
+          "optional": true,
+          "array": false
+        },
+        {
+          "name": "relationships",
+          "type": "z.array(ArchimateRelationshipSchema).optional()",
+          "optional": true,
+          "array": true
+        }
+      ],
+      "extendsNames": [],
+      "values": [],
+      "refs": [
+        "folio-assistant-core/schemas/glossary.ts#ArchimateRelationshipSchema",
+        "folio-assistant-core/schemas/glossary.ts#Iri"
+      ],
+      "unresolved": [],
+      "external": [
+        "z"
+      ],
+      "exported": true
+    },
+    {
+      "id": "folio-assistant-core/schemas/glossary.ts#ArchimateRelationship",
+      "name": "ArchimateRelationship",
+      "module": "folio-assistant-core/schemas/glossary.ts",
+      "kind": "type-alias",
+      "fields": [],
+      "extendsNames": [],
+      "values": [],
+      "refs": [],
+      "unresolved": [],
+      "external": [],
+      "exported": true
+    },
+    {
+      "id": "folio-assistant-core/schemas/glossary.ts#ArchimateRelationshipSchema",
+      "name": "ArchimateRelationshipSchema",
+      "module": "folio-assistant-core/schemas/glossary.ts",
+      "kind": "zod-object",
+      "doc": "A concept that is an architecture element: the knowledge graph holds the",
+      "fields": [
+        {
+          "name": "type",
+          "type": "z.enum(ARCHIMATE_RELATIONSHIPS)",
+          "optional": false,
+          "array": false
+        },
+        {
+          "name": "target",
+          "type": "z.string().min(1)",
+          "optional": false,
+          "array": false
+        },
+        {
+          "name": "accessType",
+          "type": "z.enum([\"read\", \"write\", \"readwrite\", \"access\"]).optional()",
+          "optional": true,
+          "array": false
+        }
+      ],
+      "extendsNames": [],
+      "values": [],
+      "refs": [],
+      "unresolved": [],
+      "external": [
+        "ARCHIMATE_RELATIONSHIPS",
+        "z"
+      ],
+      "exported": true
+    },
+    {
+      "id": "folio-assistant-core/schemas/glossary.ts#ArchimateRelationshipType",
+      "name": "ArchimateRelationshipType",
+      "module": "folio-assistant-core/schemas/glossary.ts",
+      "kind": "type-alias",
+      "fields": [],
+      "extendsNames": [],
+      "values": [],
+      "refs": [],
+      "unresolved": [],
+      "external": [],
+      "exported": true
+    },
+    {
       "id": "folio-assistant-core/schemas/glossary.ts#AutomatedMatch",
       "name": "AutomatedMatch",
       "module": "folio-assistant-core/schemas/glossary.ts",
@@ -78593,49 +78713,14 @@
       "id": "folio-assistant-core/schemas/glossary.ts#FocusSchema",
       "name": "FocusSchema",
       "module": "folio-assistant-core/schemas/glossary.ts",
-      "kind": "zod-object",
-      "fields": [
-        {
-          "name": "type",
-          "type": "z.enum(ORG_TYPES)",
-          "optional": false,
-          "array": false
-        },
-        {
-          "name": "iri",
-          "type": "Iri.optional()",
-          "optional": true,
-          "array": false
-        },
-        {
-          "name": "homepage",
-          "type": "Iri.optional()",
-          "optional": true,
-          "array": false
-        },
-        {
-          "name": "subOrganizationOf",
-          "type": "z.array(z.string().min(1)).optional()",
-          "optional": true,
-          "array": true
-        },
-        {
-          "name": "sameAs",
-          "type": "z.array(Iri).optional()",
-          "optional": true,
-          "array": true
-        }
-      ],
+      "kind": "zod-union",
+      "doc": "What a term's concept is about: an organization, or an architecture element.",
+      "fields": [],
       "extendsNames": [],
       "values": [],
-      "refs": [
-        "folio-assistant-core/schemas/glossary.ts#Iri"
-      ],
+      "refs": [],
       "unresolved": [],
-      "external": [
-        "ORG_TYPES",
-        "z"
-      ],
+      "external": [],
       "exported": true
     },
     {
@@ -78787,6 +78872,68 @@
       "exported": true
     },
     {
+      "id": "folio-assistant-core/schemas/glossary.ts#OrgFocus",
+      "name": "OrgFocus",
+      "module": "folio-assistant-core/schemas/glossary.ts",
+      "kind": "type-alias",
+      "fields": [],
+      "extendsNames": [],
+      "values": [],
+      "refs": [],
+      "unresolved": [],
+      "external": [],
+      "exported": true
+    },
+    {
+      "id": "folio-assistant-core/schemas/glossary.ts#OrgFocusSchema",
+      "name": "OrgFocusSchema",
+      "module": "folio-assistant-core/schemas/glossary.ts",
+      "kind": "zod-object",
+      "fields": [
+        {
+          "name": "type",
+          "type": "z.enum(ORG_TYPES)",
+          "optional": false,
+          "array": false
+        },
+        {
+          "name": "iri",
+          "type": "Iri.optional()",
+          "optional": true,
+          "array": false
+        },
+        {
+          "name": "homepage",
+          "type": "Iri.optional()",
+          "optional": true,
+          "array": false
+        },
+        {
+          "name": "subOrganizationOf",
+          "type": "z.array(z.string().min(1)).optional()",
+          "optional": true,
+          "array": true
+        },
+        {
+          "name": "sameAs",
+          "type": "z.array(Iri).optional()",
+          "optional": true,
+          "array": true
+        }
+      ],
+      "extendsNames": [],
+      "values": [],
+      "refs": [
+        "folio-assistant-core/schemas/glossary.ts#Iri"
+      ],
+      "unresolved": [],
+      "external": [
+        "ORG_TYPES",
+        "z"
+      ],
+      "exported": true
+    },
+    {
       "id": "folio-assistant-core/schemas/glossary.ts#Term",
       "name": "Term",
       "module": "folio-assistant-core/schemas/glossary.ts",
@@ -78912,7 +79059,7 @@
           "type": "FocusSchema.optional()",
           "optional": true,
           "array": false,
-          "doc": "The thing the concept is about, such as an organization ({@link FocusSchema}): `foaf:focus`."
+          "doc": "The thing the concept is about, an organization or an architecture element ({@link FocusSchema}): `foaf:focus`."
         },
         {
           "name": "source",
@@ -95373,28 +95520,20 @@
       "array": false
     },
     {
-      "from": "folio-assistant-core/schemas/glossary.ts#FocusSchema",
-      "to": "folio-assistant-core/schemas/glossary.ts#Iri",
-      "via": "homepage",
+      "from": "folio-assistant-core/schemas/glossary.ts#ArchimateFocusSchema",
+      "to": "folio-assistant-core/schemas/glossary.ts#ArchimateRelationshipSchema",
+      "via": "relationships",
       "kind": "field",
       "optional": true,
-      "array": false
+      "array": true
     },
     {
-      "from": "folio-assistant-core/schemas/glossary.ts#FocusSchema",
+      "from": "folio-assistant-core/schemas/glossary.ts#ArchimateFocusSchema",
       "to": "folio-assistant-core/schemas/glossary.ts#Iri",
       "via": "iri",
       "kind": "field",
       "optional": true,
       "array": false
-    },
-    {
-      "from": "folio-assistant-core/schemas/glossary.ts#FocusSchema",
-      "to": "folio-assistant-core/schemas/glossary.ts#Iri",
-      "via": "sameAs",
-      "kind": "field",
-      "optional": true,
-      "array": true
     },
     {
       "from": "folio-assistant-core/schemas/glossary.ts#GlossarySchema",
@@ -95408,6 +95547,30 @@
       "from": "folio-assistant-core/schemas/glossary.ts#GlossarySchema",
       "to": "folio-assistant-core/schemas/glossary.ts#TermSchema",
       "via": "terms",
+      "kind": "field",
+      "optional": true,
+      "array": true
+    },
+    {
+      "from": "folio-assistant-core/schemas/glossary.ts#OrgFocusSchema",
+      "to": "folio-assistant-core/schemas/glossary.ts#Iri",
+      "via": "homepage",
+      "kind": "field",
+      "optional": true,
+      "array": false
+    },
+    {
+      "from": "folio-assistant-core/schemas/glossary.ts#OrgFocusSchema",
+      "to": "folio-assistant-core/schemas/glossary.ts#Iri",
+      "via": "iri",
+      "kind": "field",
+      "optional": true,
+      "array": false
+    },
+    {
+      "from": "folio-assistant-core/schemas/glossary.ts#OrgFocusSchema",
+      "to": "folio-assistant-core/schemas/glossary.ts#Iri",
+      "via": "sameAs",
       "kind": "field",
       "optional": true,
       "array": true

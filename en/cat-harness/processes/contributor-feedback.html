@@ -866,7 +866,7 @@ Green for the agent, Orange for the Editor. Skill: review-sheet-script.</p>
     
 
 <ul>
-  <li><strong>Called by:</strong> <a href="authoring-a-document.html">Authoring a document</a>, <a href="review-log-watch.html">Review-log watch</a></li>
+  <li><strong>Called by:</strong> <a href="folio-review-publish.html">Review and publish a folio</a>, <a href="review-log-watch.html">Review-log watch</a></li>
   <li><strong>Calls:</strong> none</li>
   <li><strong>Presented on:</strong> no docs page section shows this diagram</li>
   <li><strong>Running instances:</strong> none recorded</li>
@@ -933,7 +933,7 @@ Green for the agent, Orange for the Editor. Skill: review-sheet-script.</p>
   </thead>
   <tbody>
     <tr>
-      <td><strong>Start a change-set row: title, sections, feedback</strong><br /><code class="language-plaintext highlighter-rouge">Task_StartRow</code></td>
+      <td><strong>Start a change-set row</strong><br /><code class="language-plaintext highlighter-rouge">Task_StartRow</code></td>
       <td>Authoring Committee</td>
       <td><code class="language-plaintext highlighter-rouge">review-sheet-script</code></td>
       <td>A member adds a row on the Contributor Feedback tab: a title, the Selected Sections it is about (a dropdown from the document’s table of contents) and their feedback in their own Blue column. The script gives the row its Change-set id and links each section.</td>
@@ -963,7 +963,7 @@ Green for the agent, Orange for the Editor. Skill: review-sheet-script.</p>
       <td>Members read the preview and answer in their Blue columns, or leave them as they are when the change is right. They record the row’s Disposition (Blue): Pending, Accepted, Partially accepted, Not accepted, Noted, Duplicate or Out of scope.</td>
     </tr>
     <tr>
-      <td><strong>QA gate: review dispositions against the people and the pull request</strong><br /><code class="language-plaintext highlighter-rouge">Task_QaGate</code></td>
+      <td><strong>QA-review the dispositions</strong><br /><code class="language-plaintext highlighter-rouge">Task_QaGate</code></td>
       <td>QA reviewer (independent)</td>
       <td><code class="language-plaintext highlighter-rouge">review-sheet-script</code></td>
       <td>Reads: the change set’s Disposition (change set), the people’s Blue Disposition and feedback, the pull request’s diff at its head commit, and the staging QA report. Checks that every feedback item has one disposition; that each agrees with the people’s Blue Disposition; that each Accepted or Partially accepted item has the change in the diff, and a Not accepted, Noted, Duplicate or Out of scope item has none; that the diff changes nothing no disposition accounts for; and that the QA report for the staged commit has no failing gate. Writes: QA gate (change set) on the Agent tab, first line “Passed &lt;head sha&gt;: …” or “Failed &lt;head sha&gt;: &lt;why&gt;”, and QA report (change set), the report’s link. The sheet shows the gate under Staging review; a pass for an older commit reads as stale (owner, 2026-10-31).</td>
@@ -1005,7 +1005,7 @@ Green for the agent, Orange for the Editor. Skill: review-sheet-script.</p>
     <tr>
       <td><strong>Feedback changed since the proposal?</strong><br /><code class="language-plaintext highlighter-rouge">Gateway_FeedbackChanged</code></td>
       <td>Answered by the script, which compares the row’s Blue cells with the basis the agent wrote. <code class="language-plaintext highlighter-rouge">changed</code>: the proposal is marked stale and Ready for agent goes back to No, so the agent proposes again and an Editor decides again. <code class="language-plaintext highlighter-rouge">agreed</code>: nothing moved, and the row goes to the merge decision.</td>
-      <td><strong>changed</strong> → Propose a direction<br /><strong>agreed</strong> → QA gate: review dispositions against the people and the pull request</td>
+      <td><strong>changed</strong> → Propose a direction<br /><strong>agreed</strong> → QA-review the dispositions</td>
     </tr>
     <tr>
       <td><strong>QA gate passed for the PR’s head?</strong><br /><code class="language-plaintext highlighter-rouge">Gateway_QaPassed</code></td>

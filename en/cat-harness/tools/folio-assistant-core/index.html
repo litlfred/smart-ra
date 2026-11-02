@@ -888,9 +888,9 @@ is <code class="language-plaintext highlighter-rouge">satisfies</code>, and it r
 to do that</em>, never <em>this skill is a tool</em>.</p>
 
 <div class="tg-grid">
-<a class="tg-stat" href="#every-tool"><b>22</b><span>Tool nodes</span></a>
-<a class="tg-stat" href="#does-every-satisfies-name-a-skill-that-exists"><b>19</b><span>skills satisfied</span></a>
-<a class="tg-stat" href="#how-they-are-invoked-and-installed"><b>22</b><span>invoked as a shell command</span></a>
+<a class="tg-stat" href="#every-tool"><b>24</b><span>Tool nodes</span></a>
+<a class="tg-stat" href="#does-every-satisfies-name-a-skill-that-exists"><b>20</b><span>skills satisfied</span></a>
+<a class="tg-stat" href="#how-they-are-invoked-and-installed"><b>24</b><span>invoked as a shell command</span></a>
 <a class="tg-stat" href="#how-they-are-invoked-and-installed"><b>0</b><span>reachable over MCP</span></a>
 </div>
 
@@ -915,7 +915,7 @@ to do that</em>, never <em>this skill is a tool</em>.</p>
   <tbody>
     <tr>
       <td><span class="tg-tag tg-shell">shell</span></td>
-      <td>22</td>
+      <td>24</td>
     </tr>
   </tbody>
 </table></div>
@@ -930,7 +930,7 @@ to do that</em>, never <em>this skill is a tool</em>.</p>
   <tbody>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">none</code></td>
-      <td>21</td>
+      <td>23</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">service</code></td>
@@ -947,7 +947,7 @@ to do that</em>, never <em>this skill is a tool</em>.</p>
 </h2>
     
 
-<p>Yes — all <strong>19</strong> skills named across <strong>22</strong> tools resolve to a
+<p>Yes — all <strong>20</strong> skills named across <strong>24</strong> tools resolve to a
 skill document in this checkout. A <code class="language-plaintext highlighter-rouge">satisfies</code> pointing at nothing would be a
 tool advertising a capability the graph cannot locate.</p>
 <h2 id="every-tool">
@@ -971,6 +971,14 @@ tool advertising a capability the graph cannot locate.</p>
     </tr>
   </thead>
   <tbody>
+    <tr>
+      <td><a id="archimate-from-glossary"></a><a href="#archimate-from-glossary"><code class="language-plaintext highlighter-rouge">archimate-from-glossary</code></a><br />ArchiMate model from the glossary</td>
+      <td>Make an ArchiMate model agree with the instance’s folio-glossary/v1 terms whose <code class="language-plaintext highlighter-rouge">focus</code> is an ArchiMate element: elements matched by their <code class="language-plaintext highlighter-rouge">skosConcept</code> property (never by name) take the term’s prefLabel and definition, a term with no element gets one on no view, and the relationships the terms list are added. A type that disagrees is reported, never changed. A relationship between two linked elements that no term lists is reported, and removed with <code class="language-plaintext highlighter-rouge">--prune</code> along with the lines that draw it. No box or line is moved. Without <code class="language-plaintext highlighter-rouge">--write</code> it only reports; <code class="language-plaintext highlighter-rouge">--check</code> fails when anything would change.</td>
+      <td><span class="tg-tag tg-shell">shell</span></td>
+      <td><code class="language-plaintext highlighter-rouge">graph-rendering</code></td>
+      <td>5 in / 1 out</td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
+    </tr>
     <tr>
       <td><a id="bibliography-page"></a><a href="#bibliography-page"><code class="language-plaintext highlighter-rouge">bibliography-page</code></a><br />Bibliography page</td>
       <td>Render every reference in the checkout (each declared <code class="language-plaintext highlighter-rouge">references</code> directory’s folio-reference/v1 nodes and each <code class="language-plaintext highlighter-rouge">catalogue</code> directory’s Dublin Core records) as the bibliography page and one page per sub-graph, each with its BibTeX, CSL-JSON, RIS and Dublin Core JSON-LD exports and a per-reference export, at the route of the visualiser core declares for it.</td>
@@ -1081,6 +1089,14 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">document-intake</code></td>
       <td>2 in / 1 out</td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
+    </tr>
+    <tr>
+      <td><a id="glossary-from-source"></a><a href="#glossary-from-source"><code class="language-plaintext highlighter-rouge">glossary-from-source</code></a><br />Glossary candidates from a source</td>
+      <td>Read a source’s glossary and abbreviations sections (an L1 entry’s sections/, or a folio block) into <code class="language-plaintext highlighter-rouge">candidate</code> terms of a folio-glossary/v1 scheme, verbatim, each with <code class="language-plaintext highlighter-rouge">source: &lt;file&gt;#L&lt;line&gt;</code>. Acronyms fold into the term they expand as <code class="language-plaintext highlighter-rouge">notation</code>. The scheme is merged: terms a person owns are never changed. <code class="language-plaintext highlighter-rouge">--check</code> writes nothing and fails when the scheme would change.</td>
+      <td><span class="tg-tag tg-shell">shell</span></td>
+      <td><code class="language-plaintext highlighter-rouge">glossary-terms</code></td>
+      <td>7 in / 1 out</td>
       <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>

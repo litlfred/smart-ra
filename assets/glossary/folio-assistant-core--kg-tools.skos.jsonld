@@ -14,6 +14,26 @@
       "dcterms:source": "Tools of folio-assistant-core"
     },
     {
+      "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-tools/archimate-from-glossary",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-tools"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "ArchiMate model from the glossary"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "Make an ArchiMate model agree with the instance's folio-glossary/v1 terms whose `focus` is an ArchiMate element: elements matched by their `skosConcept` property (never by name) take the term's prefLabel and definition, a term with no element gets one on no view, and the relationships the terms list are added. A type that disagrees is reported, never changed. A relationship between two linked elements that no term lists is reported, and removed with `--prune` along with the lines that draw it. No box or line is moved. Without `--write` it only reports; `--check` fails when anything would change."
+        }
+      ],
+      "skos:notation": "archimate-from-glossary",
+      "dcterms:source": "folio-assistant-core/tools/archimate-from-glossary/archimate-from-glossary.ts#archimate-from-glossary",
+      "skos:note": "candidate"
+    },
+    {
       "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-tools/bibliography-page",
       "@type": "skos:Concept",
       "skos:inScheme": {
@@ -291,6 +311,26 @@
       ],
       "skos:notation": "glossary-build",
       "dcterms:source": "folio-assistant-core/tools/glossary-build/glossary-build.ts#glossary-build",
+      "skos:note": "candidate"
+    },
+    {
+      "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-tools/glossary-from-source",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-tools"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "Glossary candidates from a source"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "Read a source's glossary and abbreviations sections (an L1 entry's sections/, or a folio block) into `candidate` terms of a folio-glossary/v1 scheme, verbatim, each with `source: <file>#L<line>`. Acronyms fold into the term they expand as `notation`. The scheme is merged: terms a person owns are never changed. `--check` writes nothing and fails when the scheme would change."
+        }
+      ],
+      "skos:notation": "glossary-from-source",
+      "dcterms:source": "folio-assistant-core/tools/glossary-from-source/glossary-from-source.ts#glossary-from-source",
       "skos:note": "candidate"
     },
     {

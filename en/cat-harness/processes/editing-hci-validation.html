@@ -840,7 +840,7 @@
 </h1>
     
 
-<p><code class="language-plaintext highlighter-rouge">Process_Editing</code> · strict · 18 step(s)</p>
+<p><code class="language-plaintext highlighter-rouge">Process_Editing</code> · strict · 17 step(s)</p>
 
 <p>What happens to one proposed change to one content block: drafted, validated mechanically and by review, shown to the editor, and committed to the corpus only if accepted. folio-assistant — editing a content block and its HCI validation gate.
 Source of truth: this file. Open it in bpmn.io, Camunda Modeler, or any other
@@ -890,11 +890,6 @@ work plan in beans/.</p>
       <td>Every act the requesting party performs personally rather than through the agent lands here: stating the change, retrieving its evidence, and — once every validation path has reported — ruling on it. The gate sits at Task_ReviewFindings rather than earlier because a decision taken before the findings exist would not be a decision about the change that was actually built.</td>
     </tr>
     <tr>
-      <td>Work plan — beans (shared by humans and agents)</td>
-      <td><code class="language-plaintext highlighter-rouge">work-plan</code></td>
-      <td>Claims the edit as a bean before drafting starts, so a re-entry cannot silently duplicate the same request, carries the findings onto it before the editor ever sees them, and closes or reopens it against whether the change actually landed. That record is independent of the audit note Task_RecordDecision writes for the decision itself — one tracks the edit’s course, the other its outcome.</td>
-    </tr>
-    <tr>
       <td>Authoring agent (system)</td>
       <td><code class="language-plaintext highlighter-rouge">authoring-agent</code></td>
       <td>Produces the proposed change and, once findings exist, weighs the options for it — accept, revise, discard — but stops short of choosing: Call_OptionsAnalysis records that the options were weighed, Task_RecordDecision in the editor’s lane records what was chosen, and collapsing the two would let the same party both analyse and decide.</td>
@@ -914,11 +909,6 @@ work plan in beans/.</p>
       <td><code class="language-plaintext highlighter-rouge">reviewer</code></td>
       <td>Supplies the half of validation no checker can perform: whether the change says what the editor meant. Gateway_ReviewerKind escalates from agent review to a human SME specifically when the judgement needed turns clinical or scientific rather than editorial.</td>
     </tr>
-    <tr>
-      <td>Corpus (versioned store)</td>
-      <td><code class="language-plaintext highlighter-rouge">corpus</code></td>
-      <td>Receives the write only after Gateway_EditorDecision resolves to accept. The one activity here is irreversible in a way nothing upstream is, which is why it is subject to the commit-hygiene requirement and reachable from no path except acceptance.</td>
-    </tr>
   </tbody>
 </table></div>
 <h2 id="steps">
@@ -930,7 +920,7 @@ work plan in beans/.</p>
 </h2>
     
 
-<p>Every one of the 18 step(s) is documented.</p>
+<p>Every one of the 17 step(s) is documented.</p>
 
 <div class="table-wrapper"><table>
   <thead>
@@ -950,7 +940,7 @@ work plan in beans/.</p>
     </tr>
     <tr>
       <td><strong>Open the bean</strong><br /><code class="language-plaintext highlighter-rouge">Task_ClaimBean</code></td>
-      <td>Work plan — beans (shared by humans and agents)</td>
+      <td>Authoring agent (system)</td>
       <td>calls <a href="bean-open.html">Open the bean</a><br /><code class="language-plaintext highlighter-rouge">bean-coordination</code></td>
       <td><a href="bean-open.html">Process_BeanOpen</a>: check before you create, find out whose the bean is, and claim it — or leave it alone when it is someone else’s. The one place a claim is drawn (bean m8gz, owner 2026-10-24); the gateway after this reads which end it reached.</td>
     </tr>
@@ -1004,7 +994,7 @@ work plan in beans/.</p>
     </tr>
     <tr>
       <td><strong>Log findings on the bean</strong><br /><code class="language-plaintext highlighter-rouge">Task_LogFindings</code></td>
-      <td>Work plan — beans (shared by humans and agents)</td>
+      <td>Authoring agent (system)</td>
       <td><code class="language-plaintext highlighter-rouge">todo-manager</code></td>
       <td>Findings are appended to the bean, so the next agent or human sees what is outstanding.</td>
     </tr>
@@ -1021,7 +1011,7 @@ work plan in beans/.</p>
       <td>On the edge out of <code class="language-plaintext highlighter-rouge">Task_ReviewFindings</code> and before <code class="language-plaintext highlighter-rouge">Task_RecordDecision</code>: the findings are the evidence, so the options can only be weighed once they exist, and after <code class="language-plaintext highlighter-rouge">Task_RecordDecision</code> the decision is already written down.<br />NOT between <code class="language-plaintext highlighter-rouge">Gateway_EditorDecision</code> and <code class="language-plaintext highlighter-rouge">Task_RecordDecision</code>, which is the pair the work-plan named — in this diagram those run the OTHER WAY ROUND. <code class="language-plaintext highlighter-rouge">Flow_21b</code> goes <code class="language-plaintext highlighter-rouge">Task_RecordDecision</code> -&gt; <code class="language-plaintext highlighter-rouge">Gateway_EditorDecision</code>, so the gateway reads a decision that has already been recorded, and interposing there would analyse options after the choice was made.<br />In the Agent lane, and this diagram makes the reason sharp. <code class="language-plaintext highlighter-rouge">Task_RecordDecision</code> is a <code class="language-plaintext highlighter-rouge">userTask</code> in <code class="language-plaintext highlighter-rouge">Lane_Editor</code> that already names <code class="language-plaintext highlighter-rouge">decision-audit</code>, and <a href="options-analysis.html"><code class="language-plaintext highlighter-rouge">Process_OptionsAnalysis</code></a> ends with its own <code class="language-plaintext highlighter-rouge">decision-audit</code> note. Those are two different acts — the subprocess records that the options were WEIGHED, the editor records WHAT WAS CHOSEN — and putting the analysis in the editor’s lane would collapse them, making the same party both analyse and decide. The subprocess’s own documentation refuses that: it produces options and a recommendation, and the authorisation belongs to the calling step.<br /><code class="language-plaintext highlighter-rouge">CallActivity_Evidence</code> sits in <code class="language-plaintext highlighter-rouge">Lane_Editor</code> instead, and that is not an inconsistency: the author performs the evidence retrieval, whereas here the point is that the analyst is not the decider.<br />On the trigger: <code class="language-plaintext highlighter-rouge">A_Frame</code> opens the subprocess on <code class="language-plaintext highlighter-rouge">opening-brief</code>’s trigger — irreversibility and surprise — and leaving there is a correct outcome. A spelling fix that reached <code class="language-plaintext highlighter-rouge">Task_ReviewFindings</code> with one mechanical finding exits immediately; a revise-or-discard on a block other content depends on does not.</td>
     </tr>
     <tr>
-      <td><strong>Record the decision and its audit note</strong><br /><code class="language-plaintext highlighter-rouge">Task_RecordDecision</code></td>
+      <td><strong>Record the decision and audit note</strong><br /><code class="language-plaintext highlighter-rouge">Task_RecordDecision</code></td>
       <td>Editor / author (person)</td>
       <td><code class="language-plaintext highlighter-rouge">decision-audit</code></td>
       <td>A decision is an act ABOUT the findings, not a finding. Record the outcome, every finding it weighed, every finding it overrules — and an audit note saying why it was made, or why a finding in it was left. Each note cites corpus evidence: a witness, another finding, a QA report, a block, a file range. An overruled mechanical finding stays on the record; a gate whose findings vanish when somebody disagrees with them cannot be audited. An agent may assemble the citations and is recorded as <code class="language-plaintext highlighter-rouge">proposed_by</code>; the author is whoever decided.</td>
@@ -1034,19 +1024,13 @@ work plan in beans/.</p>
     </tr>
     <tr>
       <td><strong>Commit into the corpus</strong><br /><code class="language-plaintext highlighter-rouge">Task_Commit</code></td>
-      <td>Corpus (versioned store)</td>
+      <td>Authoring agent (system)</td>
       <td><code class="language-plaintext highlighter-rouge">corpus-commit-contract</code></td>
       <td>Only now does the change become corpus content, together with its QA sidecars. Subject to the commit-hygiene requirement.</td>
     </tr>
     <tr>
       <td><strong>Close the bean</strong><br /><code class="language-plaintext highlighter-rouge">Task_ResolveBean</code></td>
-      <td>Work plan — beans (shared by humans and agents)</td>
-      <td>calls <a href="bean-close.html">Close the bean</a><br /><code class="language-plaintext highlighter-rouge">todo-manager</code></td>
-      <td><a href="bean-close.html">Process_BeanClose</a>: end the bean in a state that says why — complete and archive it, scrap it with its reasons and archive it, or record the blocker and hand it back. The one place resolve and archive are drawn (bean m8gz, owner 2026-10-24); placed straight before the end so the engine’s resolve sees nothing left but the archive step.</td>
-    </tr>
-    <tr>
-      <td><strong>Close the bean</strong><br /><code class="language-plaintext highlighter-rouge">Call_BeanClose</code></td>
-      <td>Editor / author (person)</td>
+      <td>Authoring agent (system)</td>
       <td>calls <a href="bean-close.html">Close the bean</a><br /><code class="language-plaintext highlighter-rouge">todo-manager</code></td>
       <td><a href="bean-close.html">Process_BeanClose</a>: end the bean in a state that says why — complete and archive it, scrap it with its reasons and archive it, or record the blocker and hand it back. The one place resolve and archive are drawn (bean m8gz, owner 2026-10-24); placed straight before the end so the engine’s resolve sees nothing left but the archive step.</td>
     </tr>
@@ -1061,7 +1045,7 @@ work plan in beans/.</p>
 </h2>
     
 
-<p>Every one of the 3 decision(s) is documented.</p>
+<p>Every one of the 4 decision(s) is documented.</p>
 
 <div class="table-wrapper"><table>
   <thead>
@@ -1081,6 +1065,11 @@ work plan in beans/.</p>
       <td><strong>Accept, revise or discard?</strong><br /><code class="language-plaintext highlighter-rouge">Gateway_EditorDecision</code></td>
       <td>The editor’s recorded decision, with its audit note. <code class="language-plaintext highlighter-rouge">revise</code> reworks the proposed change; <code class="language-plaintext highlighter-rouge">discard</code> ends with the change dropped; <code class="language-plaintext highlighter-rouge">accept</code> commits it into the corpus.</td>
       <td><strong>revise</strong> → Revise the proposed change<br /><strong>discard</strong> → Close the bean<br /><strong>accept</strong> → Commit into the corpus</td>
+    </tr>
+    <tr>
+      <td><strong>How did it end?</strong><br /><code class="language-plaintext highlighter-rouge">GW_BeanClosedHow</code></td>
+      <td>Which outcome the bean was closed with, so each ends at its own named end event. The bean is closed once, on every path (bpmn-authoring: open and close the bean at the top, once).</td>
+      <td><strong>in the corpus</strong> → Change is in the corpus<br /><strong>discarded</strong> → Change discarded</td>
     </tr>
     <tr>
       <td><strong>Bean claimed?</strong><br /><code class="language-plaintext highlighter-rouge">GW_BeanYours</code></td>

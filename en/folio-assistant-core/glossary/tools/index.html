@@ -848,9 +848,9 @@
 
 <p>Candidate terms extracted from every Tool node: <code class="language-plaintext highlighter-rouge">title</code> as the label, <code class="language-plaintext highlighter-rouge">description</code> as the definition, the Tool id as the code. Each is the asset’s own text, verbatim and not curated, and carries the badge “candidate, extracted”. A person promotes one by authoring it. Authored terms are on their owning instance’s page, and those pages, the counts and the sources are linked from the <a href="../../../../en/folio-assistant-core/glossary/">glossary index</a>.</p>
 
-<p>From: cat-harness-tools 1 (<a href="../../../../assets/glossary/cat-harness-tools--kg-tools.skos.jsonld">SKOS</a>) · fhir-harness 33 (<a href="../../../../assets/glossary/fhir-harness--kg-tools.skos.jsonld">SKOS</a>) · folio-assistant-core 22 (<a href="../../../../assets/glossary/folio-assistant-core--kg-tools.skos.jsonld">SKOS</a>) · smart-base 14 (<a href="../../../../assets/glossary/smart-base--kg-tools.skos.jsonld">SKOS</a>) · who-iris 1 (<a href="../../../../assets/glossary/who-iris--kg-tools.skos.jsonld">SKOS</a>).</p>
+<p>From: cat-harness-tools 1 (<a href="../../../../assets/glossary/cat-harness-tools--kg-tools.skos.jsonld">SKOS</a>) · fhir-harness 33 (<a href="../../../../assets/glossary/fhir-harness--kg-tools.skos.jsonld">SKOS</a>) · folio-assistant-core 24 (<a href="../../../../assets/glossary/folio-assistant-core--kg-tools.skos.jsonld">SKOS</a>) · smart-base 14 (<a href="../../../../assets/glossary/smart-base--kg-tools.skos.jsonld">SKOS</a>) · who-iris 1 (<a href="../../../../assets/glossary/who-iris--kg-tools.skos.jsonld">SKOS</a>).</p>
 
-<p><strong>Size:</strong> this page holds 71 terms and is 83 KB before compression, fetched in one request, within its budget of 1.0 MB. There is no search index: the filter below runs over this page, and the A–Z bar jumps within it.</p>
+<p><strong>Size:</strong> this page holds 73 terms and is 85 KB before compression, fetched in one request, within its budget of 1.0 MB. There is no search index: the filter below runs over this page, and the A–Z bar jumps within it.</p>
 
 <div class="table-wrapper"><table class="fa-gloss-mapping">
 <caption>Already somebody else's concept? — <code>check:term-mapping</code>, bean <code>7wou</code></caption>
@@ -861,11 +861,11 @@
 A vocabulary that could not be reached has said nothing, and the column above keeps that 
 apart from a checked miss. The counts are reported and not graded: an unmapped candidate may 
 be a term this corpus is right to coin.</p>
-<p class="fa-gloss-mapping-perterm"><strong>Per term.</strong> Every term on this page is in no single state on <code>fhir</code>, so each entry states its own, and in no single state on <code>skos</code>, so each entry states its own, unless its entry says otherwise. 71 entries say otherwise.</p>
+<p class="fa-gloss-mapping-perterm"><strong>Per term.</strong> Every term on this page is in no single state on <code>fhir</code>, so each entry states its own, and in no single state on <code>skos</code>, so each entry states its own, unless its entry says otherwise. 73 entries say otherwise.</p>
 
 <p><label for="fa-gloss-q">Filter terms</label>
 <input id="fa-gloss-q" type="search" autocomplete="off" style="min-height:44px;width:100%;max-width:32rem" /></p>
-<p aria-live="polite"><span id="fa-gloss-n">71</span> shown</p>
+<p aria-live="polite"><span id="fa-gloss-n">73</span> shown</p>
 
 <nav aria-label="Letters"><a href="#letter-A">A</a> <a href="#letter-B">B</a> <a href="#letter-C">C</a> <a href="#letter-D">D</a> <a href="#letter-E">E</a> <a href="#letter-F">F</a> <a href="#letter-G">G</a> <a href="#letter-I">I</a> <a href="#letter-L">L</a> <a href="#letter-M">M</a> <a href="#letter-P">P</a> <a href="#letter-R">R</a> <a href="#letter-S">S</a> <a href="#letter-V">V</a> <a href="#letter-W">W</a></nav>
 <h2 id="letter-A">
@@ -877,6 +877,14 @@ be a term this corpus is right to coin.</p>
 </h2>
     
 <dl class="fa-gloss">
+<dt id="folio-assistant-core--kg-tools--archimate-from-glossary" data-fa-state="extracted" data-fa-gloss="">
+ArchiMate model from the glossary <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Make an ArchiMate model agree with the instance's folio-glossary/v1 terms whose <code>focus</code> is an ArchiMate element: elements matched by their <code>skosConcept</code> property (never by name) take the term's prefLabel and definition, a term with no element gets one on no view, and the relationships the terms list are added. A type that disagrees is reported, never changed. A relationship between two linked elements that no term lists is reported, and removed with <code>--prune</code> along with the lines that draw it. No box or line is moved. Without <code>--write</code> it only reports; <code>--check</code> fails when anything would change.</p>
+<p class="fa-gloss-meta">Tools of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/tools/archimate-from-glossary/archimate-from-glossary.ts"><code>folio-assistant-core/tools/archimate-from-glossary/archimate-from-glossary.ts#archimate-from-glossary</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
 <dt id="smart-base--kg-tools--l1-transcription-verbatim" data-fa-state="extracted" data-fa-gloss="">
 Authored L1 → verbatim against transcriptions and image narratives <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
@@ -1183,6 +1191,14 @@ Glossary build <span class="fa-gloss-status">candidate, extracted</span>
 <dd>
 <p>Build a paper's glossary index from its manifests and render the LaTeX. <code>--check</code> reports drift instead of writing, comparing everything except the <code>generated</code> timestamp so a re-run is not mistaken for a change.</p>
 <p class="fa-gloss-meta">Tools of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/tools/glossary-build/glossary-build.ts"><code>folio-assistant-core/tools/glossary-build/glossary-build.ts#glossary-build</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="folio-assistant-core--kg-tools--glossary-from-source" data-fa-state="extracted" data-fa-gloss="">
+Glossary candidates from a source <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Read a source's glossary and abbreviations sections (an L1 entry's sections/, or a folio block) into <code>candidate</code> terms of a folio-glossary/v1 scheme, verbatim, each with <code>source: &lt;file&gt;#L&lt;line&gt;</code>. Acronyms fold into the term they expand as <code>notation</code>. The scheme is merged: terms a person owns are never changed. <code>--check</code> writes nothing and fails when the scheme would change.</p>
+<p class="fa-gloss-meta">Tools of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/tools/glossary-from-source/glossary-from-source.ts"><code>folio-assistant-core/tools/glossary-from-source/glossary-from-source.ts#glossary-from-source</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="folio-assistant-core--kg-tools--glossary-page" data-fa-state="extracted" data-fa-gloss="">

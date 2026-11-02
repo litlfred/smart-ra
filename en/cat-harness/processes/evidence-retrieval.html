@@ -893,11 +893,6 @@
       <td><code class="language-plaintext highlighter-rouge">external-registry</code></td>
       <td>Task_VerifyAuthority and its gateway sit here rather than with Lane_Agent because the decision is not this instance’s call — it is a readout of what the external API returns, and the moment that answer is uncertain or absent, Lane_WorkPlan opens a bean rather than this lane inventing a verdict.</td>
     </tr>
-    <tr>
-      <td>Work plan — beans (shared)</td>
-      <td><code class="language-plaintext highlighter-rouge">work-plan</code></td>
-      <td>Catches two different shortfalls at two different severities: an unverified citation is noted but the process continues into grading, while an insufficient body of evidence ends the process at its own event — so only the second is fatal, and both stay visible in the work plan rather than one being silently absorbed into the other.</td>
-    </tr>
   </tbody>
 </table></div>
 <h2 id="steps">
@@ -922,7 +917,7 @@
   </thead>
   <tbody>
     <tr>
-      <td><strong>Review the guidance already in this content</strong><br /><code class="language-plaintext highlighter-rouge">Task_ReviewExisting</code></td>
+      <td><strong>Review the existing guidance</strong><br /><code class="language-plaintext highlighter-rouge">Task_ReviewExisting</code></td>
       <td>Author / guideline developer (person)</td>
       <td><code class="language-plaintext highlighter-rouge">content-review</code></td>
       <td>The author reads what the document, DAK or IG ALREADY says on this question, before looking outward. A recommendation that contradicts a sibling recommendation in the same artefact is a defect no external evidence will reveal.</td>
@@ -934,13 +929,13 @@
       <td>Population, Intervention, Comparator, Outcome. The PICO is what makes the search reproducible and the evidence auditable: without it, ‘we looked for evidence’ is not a claim anyone can check. WHO guideline development states the question this way before any retrieval.</td>
     </tr>
     <tr>
-      <td><strong>Search trusted SOURCES — L1</strong><br /><code class="language-plaintext highlighter-rouge">Task_L1Sources</code></td>
+      <td><strong>Search trusted L1 sources</strong><br /><code class="language-plaintext highlighter-rouge">Task_L1Sources</code></td>
       <td>Evidence agent (system)</td>
       <td><code class="language-plaintext highlighter-rouge">document-intake</code></td>
       <td>Ingested primary literature under library/: the sections/*.md tree and, where a document was scanned, ocr/page-NNN.txt. NOTE the known blind spot — a document OCR’d but never re-run through pdf-structure.py has only a stub in sections/, so a sections-only search misses it.</td>
     </tr>
     <tr>
-      <td><strong>Search trusted CONTENT — L2 DAKs, L3 IGs</strong><br /><code class="language-plaintext highlighter-rouge">Task_L2L3Content</code></td>
+      <td><strong>Search trusted L2 and L3 content</strong><br /><code class="language-plaintext highlighter-rouge">Task_L2L3Content</code></td>
       <td>Evidence agent (system)</td>
       <td><code class="language-plaintext highlighter-rouge">document-intake</code><br /><code class="language-plaintext highlighter-rouge">document-intake</code><br /><code class="language-plaintext highlighter-rouge">document-intake</code></td>
       <td>Already-adjudicated guidance: WHO SMART DAKs at L2 and FHIR Implementation Guides at L3. A recommendation adopted in a published DAK is evidence of a different kind from a primary study – it is a prior decision, with its own provenance, and must be cited as that rather than laundered into primary evidence.<br />NOT YET SKILL-BACKED. This step named <code class="language-plaintext highlighter-rouge">corpus-search</code>, which has never<br />existed. It is not <code class="language-plaintext highlighter-rouge">corpus-grep</code>, whose job is the pre-declaration check<br />that something really is an open gap — searching adjudicated L2/L3 content<br />for evidence is a different task, so pointing the ref there would have been<br />a plausible-looking wrong answer. Left uncovered until the skill is written.</td>
@@ -952,14 +947,14 @@
       <td>Indicator and microdata sources. Distinct from the two above because the unit of evidence is a MEASUREMENT with a population, a period and a method, not a claim in prose.</td>
     </tr>
     <tr>
-      <td><strong>Verify authority against the observatory / registry API</strong><br /><code class="language-plaintext highlighter-rouge">Task_VerifyAuthority</code></td>
+      <td><strong>Verify authority against the registry</strong><br /><code class="language-plaintext highlighter-rouge">Task_VerifyAuthority</code></td>
       <td>Trusted registries and observatories (external)</td>
       <td><code class="language-plaintext highlighter-rouge">registry-authority-contract</code></td>
       <td>Each candidate is resolved against the standard API of the body that publishes it, so that ‘authoritative’ is a RESOLVED FACT rather than an assertion in the citation. What is checked: that the identifier resolves at the publisher; that the retrieved record matches what the citation claims; that the version and date are the ones cited; and that the publisher is one this folio has declared trusted. STRAWPERSON: the concrete registry list and endpoints are not settled here – see the cat-harness.processes:policy note.</td>
     </tr>
     <tr>
       <td><strong>Open a bean for the unverified citation</strong><br /><code class="language-plaintext highlighter-rouge">Task_RecordUnverified</code></td>
-      <td>Work plan — beans (shared)</td>
+      <td>Author / guideline developer (person)</td>
       <td><code class="language-plaintext highlighter-rouge">todo-manager</code></td>
       <td>An unresolvable citation is not dropped and not silently kept. It becomes a tracked item, so the gap is visible in the work plan rather than surviving as a footnote nobody re-checks.</td>
     </tr>
@@ -971,12 +966,12 @@
     </tr>
     <tr>
       <td><strong>Record the evidence gap</strong><br /><code class="language-plaintext highlighter-rouge">Task_RecordGap</code></td>
-      <td>Work plan — beans (shared)</td>
+      <td>Author / guideline developer (person)</td>
       <td><code class="language-plaintext highlighter-rouge">todo-manager</code></td>
       <td>Insufficient evidence is a RESULT. It is recorded as such – an honest gap the guideline can state – rather than being closed by weakening the recommendation until the available evidence supports it.</td>
     </tr>
     <tr>
-      <td><strong>Attach the evidence to the recommendation</strong><br /><code class="language-plaintext highlighter-rouge">Task_AttachEvidence</code></td>
+      <td><strong>Attach the evidence</strong><br /><code class="language-plaintext highlighter-rouge">Task_AttachEvidence</code></td>
       <td>Author / guideline developer (person)</td>
       <td><code class="language-plaintext highlighter-rouge">content-author</code></td>
       <td>The PICO, the graded body of evidence, each verified citation and its resolved authority record are written onto the recommendation block, so a reader can retrace the whole chain from the sentence back to the source.</td>
@@ -1006,7 +1001,7 @@
     <tr>
       <td><strong>Does the change state or alter a recommendation?</strong><br /><code class="language-plaintext highlighter-rouge">Gateway_RecommendationInPlay</code></td>
       <td>The author answers before any search starts. <code class="language-plaintext highlighter-rouge">yes</code>: the change states a recommendation or alters one, and the evidence is gathered as below. <code class="language-plaintext highlighter-rouge">no</code>: the change carries none – a mathematics folio has none, and a figure redrawn from its own source as a computable graphic adds or changes none – so there is nothing to frame as PICO. The <code class="language-plaintext highlighter-rouge">no</code> branch ends at its own event, which records that answer in the instance history; it does not pretend a search was run. The answer is the author’s and the editor still rules on the change at Task_ReviewFindings in <a href="editing-hci-validation.html">Process_Editing</a>, so a wrong <code class="language-plaintext highlighter-rouge">no</code> is caught there.</td>
-      <td><strong>yes</strong> → Review the guidance already in this content<br /><strong>no</strong> → No recommendation in this change</td>
+      <td><strong>yes</strong> → Review the existing guidance<br /><strong>no</strong> → No recommendation in this change</td>
     </tr>
     <tr>
       <td><strong>Authority confirmed?</strong><br /><code class="language-plaintext highlighter-rouge">Gateway_Authoritative</code></td>
@@ -1016,7 +1011,7 @@
     <tr>
       <td><strong>Sufficient for a recommendation?</strong><br /><code class="language-plaintext highlighter-rouge">Gateway_Sufficient</code></td>
       <td>Answered by the appraisal: is the graded evidence enough to support a recommendation? <code class="language-plaintext highlighter-rouge">no</code> records the evidence gap; <code class="language-plaintext highlighter-rouge">yes</code> attaches the evidence to the recommendation.</td>
-      <td><strong>no</strong> → Record the evidence gap<br /><strong>yes</strong> → Attach the evidence to the recommendation</td>
+      <td><strong>no</strong> → Record the evidence gap<br /><strong>yes</strong> → Attach the evidence</td>
     </tr>
   </tbody>
 </table></div>

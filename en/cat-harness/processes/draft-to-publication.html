@@ -887,15 +887,10 @@ work plan in beans/.</p>
     <tr>
       <td>Editors + authoring agents</td>
       <td><code class="language-plaintext highlighter-rouge">editor</code></td>
-      <td>The one call activity both rejection paths loop back to — a red QA gate directly, and a review rejection only once Lane_WorkPlan has turned each finding into a bean — so a fix here never needs to know which failure sent it back.</td>
+      <td>The one call activity both rejection paths loop back to — a red QA gate directly, and a review rejection only once the publication manager has turned each finding into a bean — so a fix here never needs to know which failure sent it back.</td>
     </tr>
     <tr>
-      <td>Work plan — beans (shared by humans and agents)</td>
-      <td><code class="language-plaintext highlighter-rouge">work-plan</code></td>
-      <td>Carries the release’s own state across the cycle: the release bean opened at the start says what is in the draft and who holds it, a rejected review becomes one change bean per finding before the loop back to editing, and only this lane’s close marks a release actually done rather than merely built.</td>
-    </tr>
-    <tr>
-      <td>Corpus + build pipeline (system)</td>
+      <td>Build pipeline (system)</td>
       <td><code class="language-plaintext highlighter-rouge">build-pipeline</code></td>
       <td>Owns the one gate that decides whether the draft is fit to be circulated: Task_BuildDraft turns the corpus into a draft and the DMN-backed Gateway_QaGreen decides whether Task_CirculateDraft ever runs, so a red result here is caught before Lane_ReviewTeam or Lane_Sme spend time on a draft that was never fit to review.</td>
     </tr>
@@ -949,19 +944,19 @@ work plan in beans/.</p>
   <tbody>
     <tr>
       <td><strong>Open the bean</strong><br /><code class="language-plaintext highlighter-rouge">Task_OpenReleaseBean</code></td>
-      <td>Work plan — beans (shared by humans and agents)</td>
+      <td>Build pipeline (system)</td>
       <td>calls <a href="bean-open.html">Open the bean</a><br /><code class="language-plaintext highlighter-rouge">bean-coordination</code></td>
       <td><a href="bean-open.html">Process_BeanOpen</a>: check before you create, find out whose the bean is, and claim it — or leave it alone when it is someone else’s. The one place a claim is drawn (bean m8gz, owner 2026-10-24); the gateway after this reads which end it reached.</td>
     </tr>
     <tr>
       <td><strong>Build the draft publication</strong><br /><code class="language-plaintext highlighter-rouge">Task_BuildDraft</code></td>
-      <td>Corpus + build pipeline (system)</td>
+      <td>Build pipeline (system)</td>
       <td><code class="language-plaintext highlighter-rouge">content-publish</code></td>
       <td>Render the corpus into the draft form of the folio: PDF, HTML site, or FHIR IG.</td>
     </tr>
     <tr>
       <td><strong>Run publication QA gates</strong><br /><code class="language-plaintext highlighter-rouge">Task_PublicationQa</code></td>
-      <td>Corpus + build pipeline (system)</td>
+      <td>Build pipeline (system)</td>
       <td><code class="language-plaintext highlighter-rouge">content-test</code><br /><code class="language-plaintext highlighter-rouge">quality-control</code></td>
       <td>Publication-readiness QA across layers — QC reports, IG Publisher QA, proof status, broken links, build warnings.</td>
     </tr>
@@ -990,14 +985,14 @@ work plan in beans/.</p>
       <td>Content reviewer, QC reviewer and technical officer review the draft as a whole — coherence, phase-gate criteria, breaking vs non-breaking change.</td>
     </tr>
     <tr>
-      <td><strong>Clinical / scientific sign-off</strong><br /><code class="language-plaintext highlighter-rouge">Task_SmeSignoff</code></td>
+      <td><strong>Clinical or scientific sign-off</strong><br /><code class="language-plaintext highlighter-rouge">Task_SmeSignoff</code></td>
       <td>Clinical / scientific SMEs</td>
       <td><code class="language-plaintext highlighter-rouge">content-review</code><br /><code class="language-plaintext highlighter-rouge">staging-review</code></td>
       <td>Domain sign-off: clinical SMEs for a guideline, subject-matter reviewers for a paper.</td>
     </tr>
     <tr>
       <td><strong>Open beans for the change requests</strong><br /><code class="language-plaintext highlighter-rouge">Task_OpenChangeBeans</code></td>
-      <td>Work plan — beans (shared by humans and agents)</td>
+      <td>Publication manager</td>
       <td><code class="language-plaintext highlighter-rouge">todo-manager</code><br /><code class="language-plaintext highlighter-rouge">content-feedback</code></td>
       <td>Each requested change becomes a bean, so the editors and agents picking the work up next see exactly what review asked for and what is still open.</td>
     </tr>
@@ -1015,13 +1010,13 @@ work plan in beans/.</p>
     </tr>
     <tr>
       <td><strong>Close the release beans</strong><br /><code class="language-plaintext highlighter-rouge">Task_CloseReleaseBeans</code></td>
-      <td>Work plan — beans (shared by humans and agents)</td>
+      <td>Publication manager</td>
       <td><code class="language-plaintext highlighter-rouge">todo-manager</code></td>
       <td>What shipped is resolved; what slipped stays open and carries into the next cycle.</td>
     </tr>
     <tr>
       <td><strong>Close the bean</strong><br /><code class="language-plaintext highlighter-rouge">Task_ArchiveReleaseBean</code></td>
-      <td>Work plan — beans (shared by humans and agents)</td>
+      <td>Publication manager</td>
       <td>calls <a href="bean-close.html">Close the bean</a><br /><code class="language-plaintext highlighter-rouge">todo-manager</code></td>
       <td><a href="bean-close.html">Process_BeanClose</a>: end the bean in a state that says why — complete and archive it, scrap it with its reasons and archive it, or record the blocker and hand it back. The one place resolve and archive are drawn (bean m8gz, owner 2026-10-24); placed straight before the end so the engine’s resolve sees nothing left but the archive step.</td>
     </tr>

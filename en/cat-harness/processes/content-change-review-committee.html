@@ -923,7 +923,7 @@
       <td><strong>Ingest tagged review comments</strong><br /><code class="language-plaintext highlighter-rouge">Task_IngestComments</code></td>
       <td>Review Coordinator</td>
       <td><code class="language-plaintext highlighter-rouge">review-comments</code></td>
-      <td>Every PR conversation comment that starts with <code class="language-plaintext highlighter-rouge">block: &lt;label&gt;</code> becomes a <code class="language-plaintext highlighter-rouge">review-comment/1.0.0</code> todo (open), idempotently, and is published with the preview as <code class="language-plaintext highlighter-rouge">review-comments.json</code>. The staging workflow runs this on every push and on every tagged comment; the coordinator owns that it has run before slicing, because the slices are cut around what reviewers have already said. This is the <code class="language-plaintext highlighter-rouge">ingest</code> transition of REVIEW_TRANSITIONS.</td>
+      <td>Every PR conversation comment that starts with <code class="language-plaintext highlighter-rouge">block: &lt;label&gt;</code> becomes a <code class="language-plaintext highlighter-rouge">review-comment/1.0.0</code> todo (open), idempotently, and is published with the preview as <code class="language-plaintext highlighter-rouge">review-comments.json</code>. The staging workflow runs this on every push and on every tagged comment; the coordinator owns that it has run before slicing, because the slices are cut around what reviewers have already said. This is the <code class="language-plaintext highlighter-rouge">ingest</code> transition of REVIEW_TRANSITIONS. Uses <code class="language-plaintext highlighter-rouge">folio-review-comments</code>.</td>
     </tr>
     <tr>
       <td><strong>Slice the change and assign reviewers</strong><br /><code class="language-plaintext highlighter-rouge">Task_SliceAndAssign</code></td>
@@ -998,12 +998,12 @@
     <tr>
       <td><strong>A comment withdrawn?</strong><br /><code class="language-plaintext highlighter-rouge">GW_Withdraw</code></td>
       <td>Asked after the slices are reviewed: did a reviewer withdraw a comment? <code class="language-plaintext highlighter-rouge">Yes</code> records the withdrawal first; either way the flow then asks whether a finding is disputed.</td>
-      <td><strong>Yes</strong> → Withdraw a review comment<br /><strong>No</strong> → A finding disputed?</td>
+      <td><strong>Yes</strong> → Withdraw a review comment<br /><strong>No</strong> → GW_Disputed_Join</td>
     </tr>
     <tr>
       <td><strong>A finding disputed?</strong><br /><code class="language-plaintext highlighter-rouge">GW_Disputed</code></td>
       <td>Is any finding disputed between author and reviewer? <code class="language-plaintext highlighter-rouge">Yes</code> goes to adjudication; <code class="language-plaintext highlighter-rouge">No</code> goes on to check that every changed block was reviewed.</td>
-      <td><strong>Yes</strong> → Adjudicate the disagreement<br /><strong>No</strong> → Every changed block and page reviewed?</td>
+      <td><strong>Yes</strong> → Adjudicate the disagreement<br /><strong>No</strong> → GW_Covered_Join</td>
     </tr>
     <tr>
       <td><strong>Every changed block and page reviewed?</strong><br /><code class="language-plaintext highlighter-rouge">GW_Covered</code></td>

@@ -959,7 +959,7 @@ public-comment.</p>
       <td>A change-set gets its primary GitHub issue the first time somebody engages with it (the Discuss form, a recommendation or decision on one of its comments, a mention, a PR), opened by the folio’s public-comment workflow; any number of other issues may discuss it and are linked. People agree the requirements there, and the committee or editor changes the record with cs-add / cs-remove / cs-title / cs-requirements / cs-committee / cs-merge / cs-split / cs-close / cs-new. The issue’s change-set section is rendered from the record and put back if hand-edited; the nightly reconcile keeps every issue in line. The issue is for requirements; the PR that closes it is for preview, review and approval.</td>
     </tr>
     <tr>
-      <td><strong>Re-route a change-set to another committee, with a reason</strong><br /><code class="language-plaintext highlighter-rouge">Task_RerouteChangeSet</code></td>
+      <td><strong>Re-route to another committee</strong><br /><code class="language-plaintext highlighter-rouge">Task_RerouteChangeSet</code></td>
       <td>Review committee</td>
       <td><code class="language-plaintext highlighter-rouge">public-comment</code></td>
       <td>public-comment-changesets reroute, or cs-committee: &lt;TWG&gt; — &lt;why&gt; on GitHub from a person in the committee or editor lane (bean se3i, issue #197). Moves the change-set to another TWG review committee and records who, when, from, to and why on the change-set record, so re-ingesting comments never resets it. Person-only (userTask): agents cannot re-route a change-set on their own.</td>

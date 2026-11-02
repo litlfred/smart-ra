@@ -853,7 +853,7 @@
 
 <p>One of 3 pages of this type, split by the first letter of the label: <a href="../../../../../en/folio-assistant-core/glossary/bpmn-activities/">all parts</a>.</p>
 
-<p><strong>Size:</strong> this page holds 372 terms and is 346 KB before compression, fetched in one request, within its budget of 1.0 MB. There is no search index: the filter below runs over this page, and the A–Z bar jumps within it.</p>
+<p><strong>Size:</strong> this page holds 379 terms and is 352 KB before compression, fetched in one request, within its budget of 1.0 MB. There is no search index: the filter below runs over this page, and the A–Z bar jumps within it.</p>
 
 <div class="table-wrapper"><table class="fa-gloss-mapping">
 <caption>Already somebody else's concept? — <code>check:term-mapping</code>, bean <code>7wou</code></caption>
@@ -864,11 +864,11 @@
 A vocabulary that could not be reached has said nothing, and the column above keeps that 
 apart from a checked miss. The counts are reported and not graded: an unmapped candidate may 
 be a term this corpus is right to coin.</p>
-<p class="fa-gloss-mapping-perterm"><strong>Per term.</strong> Every term on this page is in no single state on <code>fhir</code>, so each entry states its own, and in no single state on <code>skos</code>, so each entry states its own, unless its entry says otherwise. 372 entries say otherwise.</p>
+<p class="fa-gloss-mapping-perterm"><strong>Per term.</strong> Every term on this page is in no single state on <code>fhir</code>, so each entry states its own, and in no single state on <code>skos</code>, so each entry states its own, unless its entry says otherwise. 379 entries say otherwise.</p>
 
 <p><label for="fa-gloss-q">Filter terms</label>
 <input id="fa-gloss-q" type="search" autocomplete="off" style="min-height:44px;width:100%;max-width:32rem" /></p>
-<p aria-live="polite"><span id="fa-gloss-n">372</span> shown</p>
+<p aria-live="polite"><span id="fa-gloss-n">379</span> shown</p>
 
 <nav aria-label="Letters"><a href="#letter-R">R</a> <a href="#letter-S">S</a> <a href="#letter-T">T</a> <a href="#letter-U">U</a> <a href="#letter-V">V</a> <a href="#letter-W">W</a></nav>
 <h2 id="letter-R">
@@ -984,20 +984,20 @@ Re-render the cone's records (fhir_narrative · skip lists) <span class="fa-glos
 <p class="fa-gloss-meta">BPMN activities of fhir-harness · source <a href="https://github.com/litlfred/fhir-harness/blob/main/processes/content/ig-incremental-build.bpmn"><code>fhir-harness/processes/content/ig-incremental-build.bpmn#Task_Render</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
-<dt id="folio-assistant-core--kg-bpmn-activities--process_publiccomment.task_reroutechangeset" data-fa-state="extracted" data-fa-gloss="">
-Re-route a change-set to another committee, with a reason <span class="fa-gloss-status">candidate, extracted</span>
-</dt>
-<dd>
-<p>public-comment-changesets reroute, or cs-committee: &lt;TWG&gt; — &lt;why&gt; on GitHub from a person in the committee or editor lane (bean se3i, issue #197). Moves the change-set to another TWG review committee and records who, when, from, to and why on the change-set record, so re-ingesting comments never resets it. Person-only (userTask): agents cannot re-route a change-set on their own.</p>
-<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/public-comment.bpmn"><code>folio-assistant-core/processes/content/public-comment.bpmn#Task_RerouteChangeSet</code></a></p>
-<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
-</dd>
 <dt id="cat-harness--kg-bpmn-activities--process_stalledagenttriage.s_reroute" data-fa-state="extracted" data-fa-gloss="">
 Re-route open PRs that lost their driver <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
 <p>Green, up-to-date PRs join the queue; mid-merge branches are re-driven from the PR head, never guessed at; red PRs go back to the new driver.</p>
 <p class="fa-gloss-meta">BPMN activities of cat-harness · source <a href="https://github.com/litlfred/cat-harness/blob/main/processes/sdlc/stalled-agent-triage.bpmn"><code>cat-harness/processes/sdlc/stalled-agent-triage.bpmn#S_Reroute</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="folio-assistant-core--kg-bpmn-activities--process_publiccomment.task_reroutechangeset" data-fa-state="extracted" data-fa-gloss="">
+Re-route to another committee <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>public-comment-changesets reroute, or cs-committee: &lt;TWG&gt; — &lt;why&gt; on GitHub from a person in the committee or editor lane (bean se3i, issue #197). Moves the change-set to another TWG review committee and records who, when, from, to and why on the change-set record, so re-ingesting comments never resets it. Person-only (userTask): agents cannot re-route a change-set on their own.</p>
+<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/public-comment.bpmn"><code>folio-assistant-core/processes/content/public-comment.bpmn#Task_RerouteChangeSet</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="cat-harness--kg-bpmn-activities--process_mergetrain.task_readlive" data-fa-state="extracted" data-fa-gloss="">
@@ -1014,6 +1014,14 @@ Read every PR's state <span class="fa-gloss-status">candidate, extracted</span>
 <dd>
 <p><code>gh pr list --state all</code>: number, state and when it closed, so each <code>pr/&lt;n&gt;/</code> entry can be judged against its close date. A PR missing from the list is <code>unknown</code>, and an unknown is kept.</p>
 <p class="fa-gloss-meta">BPMN activities of cat-harness · source <a href="https://github.com/litlfred/cat-harness/blob/main/processes/sdlc/qa-publish.bpmn"><code>cat-harness/processes/sdlc/qa-publish.bpmn#Task_ReadPrStates</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="folio-assistant-core--kg-bpmn-activities--process_buildl1kg.task_glossary" data-fa-state="extracted" data-fa-gloss="">
+Read glossary and abbreviations into candidate terms <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Owner, 2026-11-01 (folio-assistant-core#498, Q-GLO-1 C): the source's glossary and abbreviations sections become candidate terms of a folio-glossary/v1 scheme with the Tool glossary-from-source, verbatim, each with source file#line, and an acronym as the notation of the term it expands. Terms a person owns are never changed, and only a person moves a term to authored. A source with no such section skips this step with nothing written.</p>
+<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/library/ingest-build-l1-kg.bpmn"><code>folio-assistant-core/processes/library/ingest-build-l1-kg.bpmn#Task_Glossary</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="smart-base--kg-bpmn-activities--process_classifyandcodecontent.task_reviewexclusions" data-fa-state="extracted" data-fa-gloss="">
@@ -1361,7 +1369,7 @@ Record the conflict, decide nothing, and do NOT re-pin <span class="fa-gloss-sta
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_editing.task_recorddecision" data-fa-state="extracted" data-fa-gloss="">
-Record the decision and its audit note [decision-audit] <span class="fa-gloss-status">candidate, extracted</span>
+Record the decision and audit note <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
 <p>A decision is an act ABOUT the findings, not a finding. Record the outcome, every finding it weighed, every finding it overrules — and an audit note saying why it was made, or why a finding in it was left. Each note cites corpus evidence: a witness, another finding, a QA report, a block, a file range. An overruled mechanical finding stays on the record; a gate whose findings vanish when somebody disagrees with them cannot be audited. An agent may assemble the citations and is recorded as <code>proposed_by</code>; the author is whoever decided.</p>
@@ -1385,7 +1393,7 @@ Record the determination <span class="fa-gloss-status">candidate, extracted</spa
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_evidenceretrieval.task_recordgap" data-fa-state="extracted" data-fa-gloss="">
-Record the evidence gap [todo-manager] <span class="fa-gloss-status">candidate, extracted</span>
+Record the evidence gap <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
 <p>Insufficient evidence is a RESULT. It is recorded as such -- an honest gap the guideline can state -- rather than being closed by weakening the recommendation until the available evidence supports it.</p>
@@ -1760,6 +1768,14 @@ Render every card as its avatar <span class="fa-gloss-status">candidate, extract
 <p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/ui/board-open-close.bpmn"><code>folio-assistant-core/processes/ui/board-open-close.bpmn#A_RenderAvatars</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
+<dt id="folio-assistant-core--kg-bpmn-activities--process_documentauthoring.task_render" data-fa-state="extracted" data-fa-gloss="">
+Render MD, HTML and PDF <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Assemble to Markdown, then pandoc. The PDF goes through an HTML engine — never latexmk.</p>
+<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/authoring-a-document.bpmn"><code>folio-assistant-core/processes/content/authoring-a-document.bpmn#Task_Render</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
 <dt id="cat-harness--kg-bpmn-activities--process_methodologyfromsource.a_render" data-fa-state="extracted" data-fa-gloss="">
 Render the method: adopted vs refused <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
@@ -1769,7 +1785,7 @@ Render the method: adopted vs refused <span class="fa-gloss-status">candidate, e
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_dsadocumentlifecycle.task_render" data-fa-state="extracted" data-fa-gloss="">
-Render the text to HTML / PDF [document-publishing] <span class="fa-gloss-status">candidate, extracted</span>
+Render the text to HTML and PDF <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
 <p>Render the agreed text to the form that will be signed (HTML and PDF), without a TeX installation. A consent-based agreement's plain-language summary is rendered with it.</p>
@@ -2089,7 +2105,7 @@ Retire an actor — never delete one <span class="fa-gloss-status">candidate, ex
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_lifecycle.task_retire" data-fa-state="extracted" data-fa-gloss="">
-Retire or archive [content-retire] <span class="fa-gloss-status">candidate, extracted</span>
+Retire or archive <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
 <p>No more content is planned: deprecate the folio. Post a deprecation notice and timeline, update its status metadata, archive it, point references at any successor, and remove it from active publication. The programme manager decides; retirement archives rather than deletes.</p>
@@ -2136,6 +2152,22 @@ Revert to the previous release <span class="fa-gloss-status">candidate, extracte
 <p class="fa-gloss-meta">BPMN activities of who-iris · source <a href="https://github.com/litlfred/who-iris/blob/main/processes/iris-cdn-sign-publish.bpmn"><code>who-iris/processes/iris-cdn-sign-publish.bpmn#Task_Revert</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
+<dt id="folio-assistant-core--kg-bpmn-activities--process_documentauthoring.call_reviewpublish" data-fa-state="extracted" data-fa-gloss="">
+Review and publish <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Core's shared review-and-publish process (Process_FolioReviewPublish): the reviewer reads the rendered folio and approves it, asks for changes, or sends a working draft to the Authoring Committee. Before 2026-11-01 each authoring process drew these steps itself (shared block G6, owner Q-BR-7 A).</p>
+<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/authoring-a-document.bpmn"><code>folio-assistant-core/processes/content/authoring-a-document.bpmn#Call_ReviewPublish</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="folio-assistant-core--kg-bpmn-activities--process_folioreviewpublish.task_review" data-fa-state="extracted" data-fa-gloss="">
+Review and record feedback <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>The reviewer this folio binds. authoring-document relaxes the base SME step precisely because no single lane fits every document. Review the rendered paper, not a description of it, and record the feedback. The outcome is iterate — back to authoring — or approved for the publication path.</p>
+<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/folio-review-publish.bpmn"><code>folio-assistant-core/processes/content/folio-review-publish.bpmn#Task_Review</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
 <dt id="smart-base--kg-bpmn-activities--process_planning.task_preparerelease" data-fa-state="extracted" data-fa-gloss="">
 Review changes and determine version number <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
@@ -2161,7 +2193,7 @@ Review each L3 asset (before / after if adapted) <span class="fa-gloss-status">c
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>smart-base</code> on <code>fhir</code> · <code>skos</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>smart-base</code> on <code>skos</code></p>
 </dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_contentchangereviewcommittee.call_reviewslices" data-fa-state="extracted" data-fa-gloss="">
-Review each slice [review-task] <span class="fa-gloss-status">candidate, extracted</span>
+Review each slice <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
 <p>review-task.bpmn, once per slice, in parallel lanes by role. What kind of thing changed decides which review the slice descends into; the reviewer takes on that inner lane's role for the call only. Each reviewer gives the slice's blocks a verdict, and comments on the pull request with the <code>block:</code> tag where something needs saying.</p>
@@ -2289,7 +2321,7 @@ Review the change set on its staging preview <span class="fa-gloss-status">candi
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_dsadocumentlifecycle.task_review" data-fa-state="extracted" data-fa-gloss="">
-Review the draft agreement [content-review] <span class="fa-gloss-status">candidate, extracted</span>
+Review the draft agreement <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
 <p>Legal and policy review of the whole draft. Reviewers comment on blocks through review-comments; review says which review skill answers which question. For a consent-based agreement the reviewers also check that the plain-language summary says what the text says, since it is what the person consents to (consent rule 3).</p>
@@ -2297,7 +2329,7 @@ Review the draft agreement [content-review] <span class="fa-gloss-status">candid
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_publication.task_reviewdraft" data-fa-state="extracted" data-fa-gloss="">
-Review the draft publication [content-review] <span class="fa-gloss-status">candidate, extracted</span>
+Review the draft publication <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
 <p>Content reviewer, QC reviewer and technical officer review the draft as a whole — coherence, phase-gate criteria, breaking vs non-breaking change.</p>
@@ -2312,20 +2344,20 @@ Review the editorial dependencies <span class="fa-gloss-status">candidate, extra
 <p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/content-change-review-committee.bpmn"><code>folio-assistant-core/processes/content/content-change-review-committee.bpmn#Task_ReviewUses</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
+<dt id="folio-assistant-core--kg-bpmn-activities--process_evidenceretrieval.task_reviewexisting" data-fa-state="extracted" data-fa-gloss="">
+Review the existing guidance <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>The author reads what the document, DAK or IG ALREADY says on this question, before looking outward. A recommendation that contradicts a sibling recommendation in the same artefact is a defect no external evidence will reveal.</p>
+<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/evidence-retrieval.bpmn"><code>folio-assistant-core/processes/content/evidence-retrieval.bpmn#Task_ReviewExisting</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_editing.task_reviewfindings" data-fa-state="extracted" data-fa-gloss="">
 Review the findings <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
 <p>THE GATE: the editor sees every finding BEFORE anything reaches the corpus.</p>
 <p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/editing-hci-validation.bpmn"><code>folio-assistant-core/processes/content/editing-hci-validation.bpmn#Task_ReviewFindings</code></a></p>
-<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
-</dd>
-<dt id="folio-assistant-core--kg-bpmn-activities--process_evidenceretrieval.task_reviewexisting" data-fa-state="extracted" data-fa-gloss="">
-Review the guidance already in this content [content-review] <span class="fa-gloss-status">candidate, extracted</span>
-</dt>
-<dd>
-<p>The author reads what the document, DAK or IG ALREADY says on this question, before looking outward. A recommendation that contradicts a sibling recommendation in the same artefact is a defect no external evidence will reveal.</p>
-<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/evidence-retrieval.bpmn"><code>folio-assistant-core/processes/content/evidence-retrieval.bpmn#Task_ReviewExisting</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_guidelineupdates.task_review" data-fa-state="extracted" data-fa-gloss="">
@@ -2441,7 +2473,7 @@ Revise the adaptations as decided <span class="fa-gloss-status">candidate, extra
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_editing.task_reviseedit" data-fa-state="extracted" data-fa-gloss="">
-Revise the proposed change [content-author] <span class="fa-gloss-status">candidate, extracted</span>
+Revise the proposed change <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
 <p>The editor chose revise: rework the proposed change against the findings the editor reviewed, then send it back through validation as a new proposal. The before/after preview is refreshed with it (skill before-after-preview).</p>
@@ -2553,7 +2585,7 @@ Run placement, and raise a bean for the authoring <span class="fa-gloss-status">
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_publication.task_publicationqa" data-fa-state="extracted" data-fa-gloss="">
-Run publication QA gates [content-test] <span class="fa-gloss-status">candidate, extracted</span>
+Run publication QA gates <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
 <p>Publication-readiness QA across layers — QC reports, IG Publisher QA, proof status, broken links, build warnings.</p>
@@ -2698,6 +2730,14 @@ Say where it will be <span class="fa-gloss-status">candidate, extracted</span>
 <p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/conduct/getting-started.bpmn"><code>folio-assistant-core/processes/conduct/getting-started.bpmn#Task_ReportPending</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
+<dt id="folio-assistant-core--kg-bpmn-activities--process_documentauthoring.task_scaffold" data-fa-state="extracted" data-fa-gloss="">
+Scaffold the folio <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>folio_init writes content/, uploads/, library/, the manifests, the builder shim and AGENTS.md. Skipped when the folio already exists.</p>
+<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/authoring-a-document.bpmn"><code>folio-assistant-core/processes/content/authoring-a-document.bpmn#Task_Scaffold</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_gettingstarted.task_scaffold" data-fa-state="extracted" data-fa-gloss="">
 Scaffold the folio (folio_init) <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
@@ -2739,7 +2779,7 @@ Scan the subject strengths and weaknesses <span class="fa-gloss-status">candidat
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_editing.task_schemavalidate" data-fa-state="extracted" data-fa-gloss="">
-Schema and constraint checks [content-validate] <span class="fa-gloss-status">candidate, extracted</span>
+Schema and constraint checks <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
 <p>Block schema, label prefixes, required fields, constraint rules.</p>
@@ -2826,20 +2866,20 @@ Search the published slice in a browser <span class="fa-gloss-status">candidate,
 <p class="fa-gloss-meta">BPMN activities of cat-harness · source <a href="https://github.com/litlfred/cat-harness/blob/main/processes/kg/slice-sqlite-publish.bpmn"><code>cat-harness/processes/kg/slice-sqlite-publish.bpmn#A_Verify</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
-<dt id="folio-assistant-core--kg-bpmn-activities--process_evidenceretrieval.task_l2l3content" data-fa-state="extracted" data-fa-gloss="">
-Search trusted CONTENT — L2 DAKs, L3 IGs <span class="fa-gloss-status">candidate, extracted</span>
-</dt>
-<dd>
-<p>Already-adjudicated guidance: WHO SMART DAKs at L2 and FHIR Implementation Guides at L3. A recommendation adopted in a published DAK is evidence of a different kind from a primary study -- it is a prior decision, with its own provenance, and must be cited as that rather than laundered into primary evidence. NOT YET SKILL-BACKED. This step named <code>corpus-search</code>, which has never existed. It is not <code>corpus-grep</code>, whose job is the pre-declaration check that something really is an open gap — searching adjudicated L2/L3 content for evidence is a different task, so pointing the ref there would have been a plausible-looking wrong answer. Left uncovered until the skill is written.</p>
-<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/evidence-retrieval.bpmn"><code>folio-assistant-core/processes/content/evidence-retrieval.bpmn#Task_L2L3Content</code></a></p>
-<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
-</dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_evidenceretrieval.task_l1sources" data-fa-state="extracted" data-fa-gloss="">
-Search trusted SOURCES — L1 [document-intake] <span class="fa-gloss-status">candidate, extracted</span>
+Search trusted L1 sources <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
 <p>Ingested primary literature under library/: the sections/*.md tree and, where a document was scanned, ocr/page-NNN.txt. NOTE the known blind spot — a document OCR'd but never re-run through pdf-structure.py has only a stub in sections/, so a sections-only search misses it.</p>
 <p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/evidence-retrieval.bpmn"><code>folio-assistant-core/processes/content/evidence-retrieval.bpmn#Task_L1Sources</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="folio-assistant-core--kg-bpmn-activities--process_evidenceretrieval.task_l2l3content" data-fa-state="extracted" data-fa-gloss="">
+Search trusted L2 and L3 content <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Already-adjudicated guidance: WHO SMART DAKs at L2 and FHIR Implementation Guides at L3. A recommendation adopted in a published DAK is evidence of a different kind from a primary study -- it is a prior decision, with its own provenance, and must be cited as that rather than laundered into primary evidence. NOT YET SKILL-BACKED. This step named <code>corpus-search</code>, which has never existed. It is not <code>corpus-grep</code>, whose job is the pre-declaration check that something really is an open gap — searching adjudicated L2/L3 content for evidence is a different task, so pointing the ref there would have been a plausible-looking wrong answer. Left uncovered until the skill is written.</p>
+<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/evidence-retrieval.bpmn"><code>folio-assistant-core/processes/content/evidence-retrieval.bpmn#Task_L2L3Content</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="cat-harness--kg-bpmn-activities--process_sessionstatemachine.call_securepermissions" data-fa-state="extracted" data-fa-gloss="">
@@ -2866,6 +2906,22 @@ Seed the cache from the green build (ig-cache seed · verify · promote) <span c
 <p class="fa-gloss-meta">BPMN activities of fhir-harness · source <a href="https://github.com/litlfred/fhir-harness/blob/main/processes/content/ig-incremental-build.bpmn"><code>fhir-harness/processes/content/ig-incremental-build.bpmn#Task_Seed</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
+<dt id="folio-assistant-core--kg-bpmn-activities--globaltask.gt_seedworkplan" data-fa-state="extracted" data-fa-gloss="">
+Seed the work plan <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>The plan becomes beans, so a resumed session or a sibling agent can pick it up. The run's own bean was claimed by the Process_BeanOpen call before this step (bean m8gz), so this step only notes the seeded plan on it; the beans themselves are written with the agent's own <code>beans create</code>, which no engine op performs. From here on, beans/ is the shared answer to 'what is done, what is next' — for humans and agents alike.</p>
+<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/global-tasks.bpmn"><code>folio-assistant-core/processes/global-tasks.bpmn#GT_SeedWorkPlan</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="folio-assistant-core--kg-bpmn-activities--process_documentauthoring.task_seedplan" data-fa-state="extracted" data-fa-gloss="">
+Seed the work plan <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>The plan becomes beans, so a resumed session or a sibling agent can pick it up. The run's own bean was claimed by the Process_BeanOpen call before this step (bean m8gz), so this step only notes the seeded plan on it; the beans themselves are written with the agent's own <code>beans create</code>, which no engine op performs. From here on, beans/ is the shared answer to 'what is done, what is next' — for humans and agents alike.</p>
+<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/authoring-a-document.bpmn"><code>folio-assistant-core/processes/content/authoring-a-document.bpmn#Task_SeedPlan</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_gettingstarted.task_seedplan" data-fa-state="extracted" data-fa-gloss="">
 Seed the work plan <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
@@ -2874,16 +2930,8 @@ Seed the work plan <span class="fa-gloss-status">candidate, extracted</span>
 <p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/conduct/getting-started.bpmn"><code>folio-assistant-core/processes/conduct/getting-started.bpmn#Task_SeedPlan</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
-<dt id="folio-assistant-core--kg-bpmn-activities--globaltask.gt_seedworkplan" data-fa-state="extracted" data-fa-gloss="">
-Seed the work plan [todo-manager] <span class="fa-gloss-status">candidate, extracted</span>
-</dt>
-<dd>
-<p>The plan becomes beans, so a resumed session or a sibling agent can pick it up. The run's own bean was claimed by the Process_BeanOpen call before this step (bean m8gz), so this step only notes the seeded plan on it; the beans themselves are written with the agent's own <code>beans create</code>, which no engine op performs. From here on, beans/ is the shared answer to 'what is done, what is next' — for humans and agents alike.</p>
-<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/global-tasks.bpmn"><code>folio-assistant-core/processes/global-tasks.bpmn#GT_SeedWorkPlan</code></a></p>
-<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
-</dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_lifecycle.task_seedbeans" data-fa-state="extracted" data-fa-gloss="">
-Seed the work plan [todo-manager] <span class="fa-gloss-status">candidate, extracted</span>
+Seed the work plan <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
 <p>The plan becomes beans, so a resumed session or a sibling agent can pick it up. The run's own bean was claimed by the Process_BeanOpen call before this step (bean m8gz), so this step only notes the seeded plan on it; the beans themselves are written with the agent's own <code>beans create</code>, which no engine op performs. From here on, beans/ is the shared answer to 'what is done, what is next' — for humans and agents alike.</p>
@@ -3179,7 +3227,7 @@ Stamp KgAsset.source &#123; instance, path, ref } <span class="fa-gloss-status">
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_contributorfeedback.task_startrow" data-fa-state="extracted" data-fa-gloss="">
-Start a change-set row: title, sections, feedback <span class="fa-gloss-status">candidate, extracted</span>
+Start a change-set row <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
 <p>A member adds a row on the Contributor Feedback tab: a title, the Selected Sections it is about (a dropdown from the document's table of contents) and their feedback in their own Blue column. The script gives the row its Change-set id and links each section.</p>
@@ -3315,7 +3363,7 @@ Sweep positions whose note is gone <span class="fa-gloss-status">candidate, extr
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_editing.task_syntaxspell" data-fa-state="extracted" data-fa-gloss="">
-Syntax, spelling and links [content-validate] <span class="fa-gloss-status">candidate, extracted</span>
+Syntax, spelling and links <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
 <p>Syntax, spelling, cross-references, citation and link resolution.</p>
@@ -3453,7 +3501,7 @@ Treat the listing as faulty; escalate <span class="fa-gloss-status">candidate, e
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_lifecycle.task_feedback" data-fa-state="extracted" data-fa-gloss="">
-Triage published feedback [content-feedback] <span class="fa-gloss-status">candidate, extracted</span>
+Triage published feedback <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
 <p>Implementer and reader feedback on the published folio, triaged by severity and scope.</p>
@@ -3528,6 +3576,14 @@ Use the checkout path in place <span class="fa-gloss-status">candidate, extracte
 </h2>
     
 <dl class="fa-gloss">
+<dt id="folio-assistant-core--kg-bpmn-activities--process_documentauthoring.task_validate" data-fa-state="extracted" data-fa-gloss="">
+Validate <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Schema and constraint checks over every block.</p>
+<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/authoring-a-document.bpmn"><code>folio-assistant-core/processes/content/authoring-a-document.bpmn#Task_Validate</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
 <dt id="fhir-harness--kg-bpmn-activities--process_l3fhir.task_validate" data-fa-state="extracted" data-fa-gloss="">
 Validate against profiles [fhir-validation] <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
@@ -3585,7 +3641,7 @@ Verdict reuse: tree already green? (NOT A GATE) <span class="fa-gloss-status">ca
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_evidenceretrieval.task_verifyauthority" data-fa-state="extracted" data-fa-gloss="">
-Verify authority against the observatory / registry API <span class="fa-gloss-status">candidate, extracted</span>
+Verify authority against the registry <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
 <p>Each candidate is resolved against the standard API of the body that publishes it, so that 'authoritative' is a RESOLVED FACT rather than an assertion in the citation. What is checked: that the identifier resolves at the publisher; that the retrieved record matches what the citation claims; that the version and date are the ones cited; and that the publisher is one this folio has declared trusted. STRAWPERSON: the concrete registry list and endpoints are not settled here -- see the cat-harness.processes:policy note.</p>
@@ -3649,7 +3705,7 @@ Verify what arrived against what was signed <span class="fa-gloss-status">candid
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_publication.task_publishrelease" data-fa-state="extracted" data-fa-gloss="">
-Version, tag and publish [content-publish] <span class="fa-gloss-status">candidate, extracted</span>
+Version, tag and publish <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
 <p>Version bump, release notes, tag, build the final artifacts, deploy to the publication platform. The deploy is the general render-kg-to-cdn step with the RELEASE root as its publication root URL — the same step a staging preview takes with a root under it; the target (GitHub Pages, or a folio's own platform) is chosen by its Tool.</p>
@@ -3699,7 +3755,7 @@ Wireframe candidates (web + mobile) <span class="fa-gloss-status">candidate, ext
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_contentchangereviewcommittee.task_withdrawcomment" data-fa-state="extracted" data-fa-gloss="">
-Withdraw a review comment [folio-review-comment-move] <span class="fa-gloss-status">candidate, extracted</span>
+Withdraw a review comment <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
 <p>The reviewer who made a comment takes it back (it was a misreading, or a later slice answered it). Recorded with <code>folio-review-comment-move --to withdrawn</code>, committed to the edit-set's feature branch like every status change. This is the <code>withdraw</code> transition of REVIEW_TRANSITIONS.</p>
@@ -3811,7 +3867,7 @@ Write status.json (unofficial) <span class="fa-gloss-status">candidate, extracte
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_extractstructure.task_structure" data-fa-state="extracted" data-fa-gloss="">
-Write structure.json (TOC, page ranges, metadata) <span class="fa-gloss-status">candidate, extracted</span>
+Write structure.json <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
 <p>Write structure.json (pdf-structure/v1): doc id, TOC from the PDF outline or inferred from headings, page ranges, metadata, and source&#123;} with the sha256 and a mimetype sniffed from the bytes, never the extension. A structure that could not be determined says so in structure_note rather than being rendered as one. For OCR'd text, source.runContext cites the OCR step's run context by sha256. A title already known for the document (the catalogue's dc.title, or one given with --title) is passed through as the raw title, so the sections' doc_title does not carry a scan's misreading (bean turh).</p>

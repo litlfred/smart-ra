@@ -21,7 +21,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Seed the work plan [todo-manager]"
+          "@value": "Seed the work plan"
         }
       ],
       "skos:definition": [
@@ -361,7 +361,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Bind the folder name to the bibliography slug"
+          "@value": "Bind the folder to its bibliography slug"
         }
       ],
       "skos:definition": [
@@ -391,6 +391,26 @@
       ],
       "skos:notation": "Task_Dublin",
       "dcterms:source": "folio-assistant-core/processes/library/ingest-build-l1-kg.bpmn#Task_Dublin",
+      "skos:note": "candidate"
+    },
+    {
+      "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-bpmn-activities/process_buildl1kg.task_glossary",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-bpmn-activities"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "Read glossary and abbreviations into candidate terms"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "Owner, 2026-11-01 (folio-assistant-core#498, Q-GLO-1 C): the source's glossary and abbreviations sections become candidate terms of a folio-glossary/v1 scheme with the Tool glossary-from-source, verbatim, each with source file#line, and an acronym as the notation of the term it expands. Terms a person owns are never changed, and only a person moves a term to authored. A source with no such section skips this step with nothing written."
+        }
+      ],
+      "skos:notation": "Task_Glossary",
+      "dcterms:source": "folio-assistant-core/processes/library/ingest-build-l1-kg.bpmn#Task_Glossary",
       "skos:note": "candidate"
     },
     {
@@ -441,7 +461,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Close the bean [bean-close]"
+          "@value": "Close the bean"
         }
       ],
       "skos:definition": [
@@ -461,7 +481,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Open the bean [bean-open]"
+          "@value": "Open the bean"
         }
       ],
       "skos:definition": [
@@ -661,7 +681,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Adjudicate the disagreement [adjudication]"
+          "@value": "Adjudicate the disagreement"
         }
       ],
       "skos:definition": [
@@ -681,7 +701,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Review each slice [review-task]"
+          "@value": "Review each slice"
         }
       ],
       "skos:definition": [
@@ -741,12 +761,12 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Ingest tagged review comments [folio-review-comments]"
+          "@value": "Ingest tagged review comments"
         }
       ],
       "skos:definition": [
         {
-          "@value": "Every PR conversation comment that starts with `block: <label>` becomes a `review-comment/1.0.0` todo (open), idempotently, and is published with the preview as `review-comments.json`. The staging workflow runs this on every push and on every tagged comment; the coordinator owns that it has run before slicing, because the slices are cut around what reviewers have already said. This is the `ingest` transition of REVIEW_TRANSITIONS."
+          "@value": "Every PR conversation comment that starts with `block: <label>` becomes a `review-comment/1.0.0` todo (open), idempotently, and is published with the preview as `review-comments.json`. The staging workflow runs this on every push and on every tagged comment; the coordinator owns that it has run before slicing, because the slices are cut around what reviewers have already said. This is the `ingest` transition of REVIEW_TRANSITIONS. Uses `folio-review-comments`."
         }
       ],
       "skos:notation": "Task_IngestComments",
@@ -841,7 +861,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Withdraw a review comment [folio-review-comment-move]"
+          "@value": "Withdraw a review comment"
         }
       ],
       "skos:definition": [
@@ -1061,7 +1081,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Note the main-branch watch [watch]"
+          "@value": "Note the main-branch watch"
         }
       ],
       "skos:definition": [
@@ -1141,7 +1161,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Open the branch-watch bean [watch]"
+          "@value": "Open the branch-watch bean"
         }
       ],
       "skos:definition": [
@@ -1241,7 +1261,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "QA gate: review dispositions against the people and the pull request"
+          "@value": "QA-review the dispositions"
         }
       ],
       "skos:definition": [
@@ -1301,7 +1321,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Start a change-set row: title, sections, feedback"
+          "@value": "Start a change-set row"
         }
       ],
       "skos:definition": [
@@ -1521,7 +1541,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Close the bean [bean-close]"
+          "@value": "Close the bean"
         }
       ],
       "skos:definition": [
@@ -1541,7 +1561,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Open the bean [bean-open]"
+          "@value": "Open the bean"
         }
       ],
       "skos:definition": [
@@ -1554,23 +1574,23 @@
       "skos:note": "candidate"
     },
     {
-      "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-bpmn-activities/process_documentauthoring.call_contributorfeedback",
+      "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-bpmn-activities/process_documentauthoring.call_reviewpublish",
       "@type": "skos:Concept",
       "skos:inScheme": {
         "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-bpmn-activities"
       },
       "skos:prefLabel": [
         {
-          "@value": "Contributor feedback [review-sheet-script]"
+          "@value": "Review and publish"
         }
       ],
       "skos:definition": [
         {
-          "@value": "Process_ContributorFeedback: while the document is a working draft, the Authoring Committee gives feedback through the Contributor Feedback sheet, and each change set is edited and merged in its own pull request. When its changes are merged, the document is validated and rendered again (owner, 2026-10-31)."
+          "@value": "Core's shared review-and-publish process (Process_FolioReviewPublish): the reviewer reads the rendered folio and approves it, asks for changes, or sends a working draft to the Authoring Committee. Before 2026-11-01 each authoring process drew these steps itself (shared block G6, owner Q-BR-7 A)."
         }
       ],
-      "skos:notation": "Call_ContributorFeedback",
-      "dcterms:source": "folio-assistant-core/processes/content/authoring-a-document.bpmn#Call_ContributorFeedback",
+      "skos:notation": "Call_ReviewPublish",
+      "dcterms:source": "folio-assistant-core/processes/content/authoring-a-document.bpmn#Call_ReviewPublish",
       "skos:note": "candidate"
     },
     {
@@ -1581,7 +1601,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "4 · Author blocks [document-authoring]"
+          "@value": "Author blocks"
         }
       ],
       "skos:definition": [
@@ -1601,7 +1621,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "1 · Plan the document [content-plan]"
+          "@value": "Plan the document"
         }
       ],
       "skos:definition": [
@@ -1621,7 +1641,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "5 · Check the profile [content-validate]"
+          "@value": "Check the profile"
         }
       ],
       "skos:definition": [
@@ -1634,26 +1654,6 @@
       "skos:note": "candidate"
     },
     {
-      "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-bpmn-activities/process_documentauthoring.task_publish",
-      "@type": "skos:Concept",
-      "skos:inScheme": {
-        "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-bpmn-activities"
-      },
-      "skos:prefLabel": [
-        {
-          "@value": "9 · Publish [content-publish]"
-        }
-      ],
-      "skos:definition": [
-        {
-          "@value": "See draft-to-publication.bpmn for the review and release path this expands into. Release authorisation is not relaxable."
-        }
-      ],
-      "skos:notation": "Task_Publish",
-      "dcterms:source": "folio-assistant-core/processes/content/authoring-a-document.bpmn#Task_Publish",
-      "skos:note": "candidate"
-    },
-    {
       "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-bpmn-activities/process_documentauthoring.task_render",
       "@type": "skos:Concept",
       "skos:inScheme": {
@@ -1661,7 +1661,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "7 · Render MD / HTML / PDF [document-publishing]"
+          "@value": "Render MD, HTML and PDF"
         }
       ],
       "skos:definition": [
@@ -1674,26 +1674,6 @@
       "skos:note": "candidate"
     },
     {
-      "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-bpmn-activities/process_documentauthoring.task_review",
-      "@type": "skos:Concept",
-      "skos:inScheme": {
-        "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-bpmn-activities"
-      },
-      "skos:prefLabel": [
-        {
-          "@value": "8 · Review and feedback [content-review]"
-        }
-      ],
-      "skos:definition": [
-        {
-          "@value": "The reviewer this folio binds. authoring-document relaxes the base SME step precisely because no single lane fits every document."
-        }
-      ],
-      "skos:notation": "Task_Review",
-      "dcterms:source": "folio-assistant-core/processes/content/authoring-a-document.bpmn#Task_Review",
-      "skos:note": "candidate"
-    },
-    {
       "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-bpmn-activities/process_documentauthoring.task_scaffold",
       "@type": "skos:Concept",
       "skos:inScheme": {
@@ -1701,7 +1681,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "3 · Scaffold the folio [folio_init]"
+          "@value": "Scaffold the folio"
         }
       ],
       "skos:definition": [
@@ -1721,7 +1701,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "2 · Seed the work plan [todo-manager]"
+          "@value": "Seed the work plan"
         }
       ],
       "skos:definition": [
@@ -1741,7 +1721,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "6 · Validate [content-validate]"
+          "@value": "Validate"
         }
       ],
       "skos:definition": [
@@ -1761,7 +1741,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Close the bean [bean-close]"
+          "@value": "Close the bean"
         }
       ],
       "skos:definition": [
@@ -1774,26 +1754,6 @@
       "skos:note": "candidate"
     },
     {
-      "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-bpmn-activities/process_dsadocumentlifecycle.call_beanclosepublished",
-      "@type": "skos:Concept",
-      "skos:inScheme": {
-        "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-bpmn-activities"
-      },
-      "skos:prefLabel": [
-        {
-          "@value": "Close the bean [bean-close]"
-        }
-      ],
-      "skos:definition": [
-        {
-          "@value": "Process_BeanClose: end the bean in a state that says why — complete and archive it, scrap it with its reasons and archive it, or record the blocker and hand it back. The one place resolve and archive are drawn (bean m8gz, owner 2026-10-24); placed straight before the end so the engine's resolve sees nothing left but the archive step."
-        }
-      ],
-      "skos:notation": "Call_BeanClosePublished",
-      "dcterms:source": "folio-assistant-core/processes/content/dsa-document-lifecycle.bpmn#Call_BeanClosePublished",
-      "skos:note": "candidate"
-    },
-    {
       "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-bpmn-activities/process_dsadocumentlifecycle.call_beanopen",
       "@type": "skos:Concept",
       "skos:inScheme": {
@@ -1801,7 +1761,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Open the bean [bean-open]"
+          "@value": "Open the bean"
         }
       ],
       "skos:definition": [
@@ -1821,7 +1781,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Open the bean [bean-open]"
+          "@value": "Open the bean"
         }
       ],
       "skos:definition": [
@@ -1841,7 +1801,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Public comment on the template [public-comment]"
+          "@value": "Public comment on the template"
         }
       ],
       "skos:definition": [
@@ -1861,7 +1821,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "P1.1 · Agree purpose, datasets, period, duties and trust anchors"
+          "@value": "P1.1 · Agree the terms"
         }
       ],
       "skos:definition": [
@@ -1881,7 +1841,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "P2.1 · Assign the version and its immutable URL [content-publish]"
+          "@value": "P2.1 · Assign version and fixed URL"
         }
       ],
       "skos:definition": [
@@ -1901,7 +1861,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "P2.4–5 · Write the DCAT 3 record and link versions [dsa-dcat-record]"
+          "@value": "P2.4–5 · Write the DCAT 3 record"
         }
       ],
       "skos:definition": [
@@ -1921,7 +1881,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "P1.4 · Check the ODRL against the text [content-review]"
+          "@value": "P1.4 · Check the ODRL against the text"
         }
       ],
       "skos:definition": [
@@ -1941,7 +1901,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "P2.2b · State the fixed-version URL and hash a Consent cites [content-publish]"
+          "@value": "P2.2b · State the URL and hash to cite"
         }
       ],
       "skos:definition": [
@@ -2041,7 +2001,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "P2.2 · Record the SHA-256 of each file [dsa-checksum]"
+          "@value": "P2.2 · Record each file's SHA-256"
         }
       ],
       "skos:definition": [
@@ -2061,7 +2021,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "P2.2a · Hash the plain-language summary with the agreement [dsa-checksum]"
+          "@value": "P2.2a · Hash the plain summary"
         }
       ],
       "skos:definition": [
@@ -2081,7 +2041,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "P14.3 · Record that new consent is needed"
+          "@value": "P14.3 · New consent needed"
         }
       ],
       "skos:definition": [
@@ -2101,7 +2061,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "P2.3 · Make the ODRL cite the text by URL and hash [dsa-odrl-source]"
+          "@value": "P2.3 · Make the ODRL cite the text"
         }
       ],
       "skos:definition": [
@@ -2121,7 +2081,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "P1.2b · Draft the plain-language summary [document-authoring]"
+          "@value": "P1.2b · Draft the plain summary"
         }
       ],
       "skos:definition": [
@@ -2141,7 +2101,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Publish the version at its URL [content-publish]"
+          "@value": "Publish the version at its URL"
         }
       ],
       "skos:definition": [
@@ -2161,7 +2121,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "P1.2a · Record the legal basis [normative-statements]"
+          "@value": "P1.2a · Record the legal basis"
         }
       ],
       "skos:definition": [
@@ -2181,7 +2141,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Render the text to HTML / PDF [document-publishing]"
+          "@value": "Render the text to HTML and PDF"
         }
       ],
       "skos:definition": [
@@ -2201,7 +2161,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Review the draft agreement [content-review]"
+          "@value": "Review the draft agreement"
         }
       ],
       "skos:definition": [
@@ -2221,7 +2181,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "P14.5 · Set the catalogue status to ended [dsa-catalogue-status]"
+          "@value": "P14.5 · Set the status to ended"
         }
       ],
       "skos:definition": [
@@ -2281,7 +2241,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "P1.2 · Write the legal text [document-authoring]"
+          "@value": "P1.2 · Write the legal text"
         }
       ],
       "skos:definition": [
@@ -2291,26 +2251,6 @@
       ],
       "skos:notation": "Task_WriteText",
       "dcterms:source": "folio-assistant-core/processes/content/dsa-document-lifecycle.bpmn#Task_WriteText",
-      "skos:note": "candidate"
-    },
-    {
-      "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-bpmn-activities/process_editing.call_beanclose",
-      "@type": "skos:Concept",
-      "skos:inScheme": {
-        "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-bpmn-activities"
-      },
-      "skos:prefLabel": [
-        {
-          "@value": "Close the bean [bean-close]"
-        }
-      ],
-      "skos:definition": [
-        {
-          "@value": "Process_BeanClose: end the bean in a state that says why — complete and archive it, scrap it with its reasons and archive it, or record the blocker and hand it back. The one place resolve and archive are drawn (bean m8gz, owner 2026-10-24); placed straight before the end so the engine's resolve sees nothing left but the archive step."
-        }
-      ],
-      "skos:notation": "Call_BeanClose",
-      "dcterms:source": "folio-assistant-core/processes/content/editing-hci-validation.bpmn#Call_BeanClose",
       "skos:note": "candidate"
     },
     {
@@ -2341,7 +2281,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Gather and verify the evidence [evidence-retrieval]"
+          "@value": "Gather and verify the evidence"
         }
       ],
       "skos:definition": [
@@ -2361,7 +2301,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Agent review of the change [content-review]"
+          "@value": "Agent review of the change"
         }
       ],
       "skos:definition": [
@@ -2381,7 +2321,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Build and QA gates [content-test]"
+          "@value": "Build and QA gates"
         }
       ],
       "skos:definition": [
@@ -2401,7 +2341,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Open the bean [bean-open]"
+          "@value": "Open the bean"
         }
       ],
       "skos:definition": [
@@ -2481,7 +2421,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Draft the block edit [content-author]"
+          "@value": "Draft the block edit"
         }
       ],
       "skos:definition": [
@@ -2501,7 +2441,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Log findings on the bean [todo-manager]"
+          "@value": "Log findings on the bean"
         }
       ],
       "skos:definition": [
@@ -2521,7 +2461,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Record the decision and its audit note [decision-audit]"
+          "@value": "Record the decision and audit note"
         }
       ],
       "skos:definition": [
@@ -2541,7 +2481,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Close the bean [bean-close]"
+          "@value": "Close the bean"
         }
       ],
       "skos:definition": [
@@ -2581,7 +2521,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Revise the proposed change [content-author]"
+          "@value": "Revise the proposed change"
         }
       ],
       "skos:definition": [
@@ -2601,7 +2541,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Schema and constraint checks [content-validate]"
+          "@value": "Schema and constraint checks"
         }
       ],
       "skos:definition": [
@@ -2621,7 +2561,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Human / SME review [content-review]"
+          "@value": "Human / SME review"
         }
       ],
       "skos:definition": [
@@ -2641,7 +2581,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Syntax, spelling and links [content-validate]"
+          "@value": "Syntax, spelling and links"
         }
       ],
       "skos:definition": [
@@ -2681,7 +2621,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Attach the evidence to the recommendation [content-author]"
+          "@value": "Attach the evidence"
         }
       ],
       "skos:definition": [
@@ -2721,7 +2661,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Frame the question as PICO [content-author]"
+          "@value": "Frame the question as PICO"
         }
       ],
       "skos:definition": [
@@ -2741,7 +2681,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Search trusted SOURCES — L1 [document-intake]"
+          "@value": "Search trusted L1 sources"
         }
       ],
       "skos:definition": [
@@ -2761,7 +2701,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Search trusted CONTENT — L2 DAKs, L3 IGs"
+          "@value": "Search trusted L2 and L3 content"
         }
       ],
       "skos:definition": [
@@ -2781,7 +2721,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Record the evidence gap [todo-manager]"
+          "@value": "Record the evidence gap"
         }
       ],
       "skos:definition": [
@@ -2801,7 +2741,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Open a bean for the unverified citation [todo-manager]"
+          "@value": "Open a bean for the unverified citation"
         }
       ],
       "skos:definition": [
@@ -2821,7 +2761,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Review the guidance already in this content [content-review]"
+          "@value": "Review the existing guidance"
         }
       ],
       "skos:definition": [
@@ -2841,7 +2781,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Verify authority against the observatory / registry API"
+          "@value": "Verify authority against the registry"
         }
       ],
       "skos:definition": [
@@ -2941,7 +2881,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Write structure.json (TOC, page ranges, metadata)"
+          "@value": "Write structure.json"
         }
       ],
       "skos:definition": [
@@ -2954,6 +2894,66 @@
       "skos:note": "candidate"
     },
     {
+      "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-bpmn-activities/process_folioreviewpublish.call_contributorfeedback",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-bpmn-activities"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "Contributor feedback"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "Process_ContributorFeedback: while the document is a working draft, the Authoring Committee gives feedback through the Contributor Feedback sheet, and each change set is edited and merged in its own pull request. When its changes are merged, the document is validated and rendered again (owner, 2026-10-31)."
+        }
+      ],
+      "skos:notation": "Call_ContributorFeedback",
+      "dcterms:source": "folio-assistant-core/processes/content/folio-review-publish.bpmn#Call_ContributorFeedback",
+      "skos:note": "candidate"
+    },
+    {
+      "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-bpmn-activities/process_folioreviewpublish.task_publish",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-bpmn-activities"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "Publish"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "See draft-to-publication.bpmn for the review and release path this expands into. Release authorisation is not relaxable."
+        }
+      ],
+      "skos:notation": "Task_Publish",
+      "dcterms:source": "folio-assistant-core/processes/content/folio-review-publish.bpmn#Task_Publish",
+      "skos:note": "candidate"
+    },
+    {
+      "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-bpmn-activities/process_folioreviewpublish.task_review",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-bpmn-activities"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "Review and record feedback"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "The reviewer this folio binds. authoring-document relaxes the base SME step precisely because no single lane fits every document. Review the rendered paper, not a description of it, and record the feedback. The outcome is iterate — back to authoring — or approved for the publication path."
+        }
+      ],
+      "skos:notation": "Task_Review",
+      "dcterms:source": "folio-assistant-core/processes/content/folio-review-publish.bpmn#Task_Review",
+      "skos:note": "candidate"
+    },
+    {
       "@id": "https://litlfred.github.io/folio-assistant-core/v0/ns#glossary/kg-bpmn-activities/process_gettingstarted.call_beanclose",
       "@type": "skos:Concept",
       "skos:inScheme": {
@@ -2961,7 +2961,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Close the bean [bean-close]"
+          "@value": "Close the bean"
         }
       ],
       "skos:definition": [
@@ -2981,7 +2981,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Open the bean [bean-open]"
+          "@value": "Open the bean"
         }
       ],
       "skos:definition": [
@@ -3441,7 +3441,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Close the bean [bean-close]"
+          "@value": "Close the bean"
         }
       ],
       "skos:definition": [
@@ -3461,7 +3461,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Open the bean [bean-open]"
+          "@value": "Open the bean"
         }
       ],
       "skos:definition": [
@@ -3501,7 +3501,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Build the L1 knowledge graph [document-intake]"
+          "@value": "Build the L1 knowledge graph"
         }
       ],
       "skos:definition": [
@@ -3521,7 +3521,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Derive content from the assets [document-intake]"
+          "@value": "Derive content from the assets"
         }
       ],
       "skos:definition": [
@@ -3541,7 +3541,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Extract structure [document-intake]"
+          "@value": "Extract structure"
         }
       ],
       "skos:definition": [
@@ -3581,7 +3581,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Ingest the theme [theme-art-intake]"
+          "@value": "Ingest the theme"
         }
       ],
       "skos:definition": [
@@ -3621,7 +3621,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Detect media type and mint a doc id [document-intake]"
+          "@value": "Detect media type, mint a doc id"
         }
       ],
       "skos:definition": [
@@ -3641,7 +3641,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Establish the licence from the upload alone [document-intake]"
+          "@value": "Establish the licence from the upload"
         }
       ],
       "skos:definition": [
@@ -3701,7 +3701,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Prose blocks enter the summary queue [l1-document-ingestion]"
+          "@value": "Queue prose blocks for summary"
         }
       ],
       "skos:definition": [
@@ -3801,7 +3801,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Close the bean [bean-close]"
+          "@value": "Close the bean"
         }
       ],
       "skos:definition": [
@@ -3821,7 +3821,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Open the bean [bean-open]"
+          "@value": "Open the bean"
         }
       ],
       "skos:definition": [
@@ -3841,7 +3841,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Editing and HCI validation [content-author]"
+          "@value": "Editing and HCI validation"
         }
       ],
       "skos:definition": [
@@ -3861,7 +3861,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Draft, review and publish [content-publish]"
+          "@value": "Draft, review and publish"
         }
       ],
       "skos:definition": [
@@ -3881,7 +3881,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Triage published feedback [content-feedback]"
+          "@value": "Triage published feedback"
         }
       ],
       "skos:definition": [
@@ -3901,7 +3901,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "File feedback as beans [todo-manager]"
+          "@value": "File feedback as beans"
         }
       ],
       "skos:definition": [
@@ -3921,7 +3921,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Plan scope, team, artifacts [content-plan]"
+          "@value": "Plan scope, team, artifacts"
         }
       ],
       "skos:definition": [
@@ -3941,7 +3941,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Retire or archive [content-retire]"
+          "@value": "Retire or archive"
         }
       ],
       "skos:definition": [
@@ -3961,7 +3961,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Seed the work plan [todo-manager]"
+          "@value": "Seed the work plan"
         }
       ],
       "skos:definition": [
@@ -3981,7 +3981,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Integration test and QA sweep [content-test]"
+          "@value": "Integration test and QA sweep"
         }
       ],
       "skos:definition": [
@@ -4001,7 +4001,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Editing and HCI validation [content-author]"
+          "@value": "Editing and HCI validation"
         }
       ],
       "skos:definition": [
@@ -4041,7 +4041,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Close the bean [bean-close]"
+          "@value": "Close the bean"
         }
       ],
       "skos:definition": [
@@ -4061,7 +4061,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Authorise the release [content-publish]"
+          "@value": "Authorise the release"
         }
       ],
       "skos:definition": [
@@ -4081,7 +4081,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Build the draft publication [content-publish]"
+          "@value": "Build the draft publication"
         }
       ],
       "skos:definition": [
@@ -4101,7 +4101,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Circulate the draft [content-review]"
+          "@value": "Circulate the draft"
         }
       ],
       "skos:definition": [
@@ -4121,7 +4121,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Close the release beans [todo-manager]"
+          "@value": "Close the release beans"
         }
       ],
       "skos:definition": [
@@ -4141,7 +4141,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Open beans for the change requests [todo-manager]"
+          "@value": "Open beans for the change requests"
         }
       ],
       "skos:definition": [
@@ -4161,7 +4161,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Open the bean [bean-open]"
+          "@value": "Open the bean"
         }
       ],
       "skos:definition": [
@@ -4181,7 +4181,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Run publication QA gates [content-test]"
+          "@value": "Run publication QA gates"
         }
       ],
       "skos:definition": [
@@ -4201,7 +4201,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Version, tag and publish [content-publish]"
+          "@value": "Version, tag and publish"
         }
       ],
       "skos:definition": [
@@ -4221,7 +4221,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Review the draft publication [content-review]"
+          "@value": "Review the draft publication"
         }
       ],
       "skos:definition": [
@@ -4241,7 +4241,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Clinical / scientific sign-off [content-review]"
+          "@value": "Clinical or scientific sign-off"
         }
       ],
       "skos:definition": [
@@ -4401,7 +4401,7 @@
       },
       "skos:prefLabel": [
         {
-          "@value": "Re-route a change-set to another committee, with a reason"
+          "@value": "Re-route to another committee"
         }
       ],
       "skos:definition": [
@@ -4706,7 +4706,7 @@
       ],
       "skos:definition": [
         {
-          "@value": "For each changed row, the agent pass of Contributor feedback on a working draft: a new or edited row gets a proposal, Ready for agent = Yes gets its edit, Ready for merge = Yes its merge, and a Blue answer to a Decision needed question is taken up. The agent records its step on the Agent tab at once, with the real time."
+          "@value": "For each changed row, the agent pass of Contributor feedback on a working draft: Ready for agent = Yes gets its edit, Ready for merge = Yes its merge, and a Blue answer to a Decision needed question is taken up. Every new row (from an issue, a person or a TWG workbook), every row with an empty Feedback (agent) and every row whose Blue cells changed gets feedback in the same wake (owner, 2026-11-01: \"agent should provide feedback whenever blue change or whenever new row added\"), in the fixed layout: the ask first (Decision needed: with lettered options, one recommended, and where to answer), then Proposed direction: and Next:, only the tags bold (Q-FBK-1 A). The work stays inside the row's Selected Sections; a row with none gets a question asking which, and any edit outside them is named on an Outside the selected sections: line (Q-FBK-3 A). PRs are named as repo#n, which the sheet script links, and it adds a Where to review line linking each selected section on the preview. The agent then runs tools/review-log-watch/lint.ts and fixes what it flags: a cell that breaks the layout, or a PR state that GitHub contradicts. The agent records its step on the Agent tab at once, with the real time."
         }
       ],
       "skos:notation": "Task_AgentPass",

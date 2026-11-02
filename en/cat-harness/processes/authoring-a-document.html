@@ -840,13 +840,15 @@
 </h1>
     
 
-<p><code class="language-plaintext highlighter-rouge">Process_DocumentAuthoring</code> · advisory · 12 step(s)</p>
+<p><code class="language-plaintext highlighter-rouge">Process_DocumentAuthoring</code> · advisory · 10 step(s)</p>
 
 <p>How a document folio — structured prose and policy guidance, with no Lean and no required TeX — is authored, built and reviewed end to end. folio-assistant — authoring a document end to end (no Lean, no required TeX).
 Source of truth: this file. The SVG under docs/assets/img/workflows/ is generated
 from it by <code class="language-plaintext highlighter-rouge">bun run cat render:bpmn</code> — never hand-edit the SVG.
 The shape is the paper process minus the Lean lane and plus one step, the profile
 check, which is what keeps a document folio publishable without either toolchain.</p>
+
+<p>Review, publish and committee feedback are core’s shared <a href="folio-review-publish.html">Process_FolioReviewPublish</a>, called after rendering (shared block G6 of the BPMN guidance review, owner Q-BR-7 A, 2026-11-01). Its <code class="language-plaintext highlighter-rouge">no</code> answer, changes asked, comes back to Task_AuthorBlocks.</p>
 
 <p><em>No rendered diagram — run <code class="language-plaintext highlighter-rouge">bun run cat render:bpmn</code>.</em></p>
 <h2 id="how-it-connects">
@@ -860,7 +862,7 @@ check, which is what keeps a document folio publishable without either toolchain
 
 <ul>
   <li><strong>Called by:</strong> no call activity names this process</li>
-  <li><strong>Calls:</strong> <a href="bean-close.html">Close the bean</a>, <a href="bean-open.html">Open the bean</a>, <a href="contributor-feedback.html">Contributor feedback on a working draft</a></li>
+  <li><strong>Calls:</strong> <a href="bean-close.html">Close the bean</a>, <a href="bean-open.html">Open the bean</a>, <a href="folio-review-publish.html">Review and publish a folio</a></li>
   <li><strong>Presented on:</strong> no docs page section shows this diagram</li>
   <li><strong>Running instances:</strong> none recorded</li>
 </ul>
@@ -888,7 +890,7 @@ check, which is what keeps a document folio publishable without either toolchain
       <td>The only place a person acts before the process becomes agent- and pipeline-driven: Task_Plan sets the chapters, the blocks each needs and which statements are normative, once, before Lane_WorkPlan seeds a bean and Lane_Agent takes over every later edit, including every iteration the review and profile-check loops send back.</td>
     </tr>
     <tr>
-      <td>Work plan — beans (shared by humans and agents)</td>
+      <td>Work plan (beans)</td>
       <td><code class="language-plaintext highlighter-rouge">work-plan</code></td>
       <td>Touched exactly once in this process — Task_SeedPlan turns the plan into a bean right after Task_Plan, so a resumed session or a sibling agent can pick the authoring loop up without re-deriving what was decided at the top.</td>
     </tr>
@@ -898,19 +900,9 @@ check, which is what keeps a document folio publishable without either toolchain
       <td>Task_AuthorBlocks is where every loop in this process lands — a profile violation from Lane_Build and an iterate from Lane_Reviewer both come back here — so this lane, not either gate, is what actually turns a rejection into a fixed block; Task_Scaffold runs once, before either loop exists.</td>
     </tr>
     <tr>
-      <td>Build pipeline — validate · render · publish</td>
+      <td>Build pipeline</td>
       <td><code class="language-plaintext highlighter-rouge">build-pipeline</code></td>
       <td>Owns the one gate this process has that the paper process does not — the profile check — so nothing with a math kind, a lean field or a .lean sibling reaches Task_Validate or Task_Render pretending to be document content; everything downstream of Gateway_ProfileClean assumes that profile.</td>
-    </tr>
-    <tr>
-      <td>Reviewer / subject-matter expert</td>
-      <td><code class="language-plaintext highlighter-rouge">reviewer</code></td>
-      <td>Owns the one gate that decides publish or iterate, and is deliberately unspecialised: this process relaxes the paper process’s clinical-SME lane into whichever reviewer a given document actually binds, because no single expertise fits every document the way it does a guideline.</td>
-    </tr>
-    <tr>
-      <td>Authoring Committee</td>
-      <td><code class="language-plaintext highlighter-rouge">authoring-committee</code></td>
-      <td>The people writing the document with the editor. While it is a working draft they give feedback through the Contributor Feedback sheet, one change set per row, and each row runs <a href="contributor-feedback.html">Process_ContributorFeedback</a>.</td>
     </tr>
   </tbody>
 </table></div>
@@ -923,7 +915,7 @@ check, which is what keeps a document folio publishable without either toolchain
 </h2>
     
 
-<p>Every one of the 12 step(s) is documented.</p>
+<p>Every one of the 10 step(s) is documented.</p>
 
 <div class="table-wrapper"><table>
   <thead>
@@ -936,76 +928,64 @@ check, which is what keeps a document folio publishable without either toolchain
   </thead>
   <tbody>
     <tr>
-      <td><strong>1 · Plan the document</strong><br /><code class="language-plaintext highlighter-rouge">Task_Plan</code></td>
+      <td><strong>Plan the document</strong><br /><code class="language-plaintext highlighter-rouge">Task_Plan</code></td>
       <td>Author (person)</td>
       <td><code class="language-plaintext highlighter-rouge">content-plan</code></td>
       <td>Scope it: chapters, the blocks each needs, which statements are normative.</td>
     </tr>
     <tr>
-      <td><strong>2 · Seed the work plan</strong><br /><code class="language-plaintext highlighter-rouge">Task_SeedPlan</code></td>
-      <td>Work plan — beans (shared by humans and agents)</td>
+      <td><strong>Open the bean</strong><br /><code class="language-plaintext highlighter-rouge">Call_BeanOpen</code></td>
+      <td>Work plan (beans)</td>
+      <td>calls <a href="bean-open.html">Open the bean</a><br /><code class="language-plaintext highlighter-rouge">bean-coordination</code></td>
+      <td><a href="bean-open.html">Process_BeanOpen</a>: check before you create, find out whose the bean is, and claim it — or leave it alone when it is someone else’s. The one place a claim is drawn (bean m8gz, owner 2026-10-24); the gateway after this reads which end it reached.</td>
+    </tr>
+    <tr>
+      <td><strong>Seed the work plan</strong><br /><code class="language-plaintext highlighter-rouge">Task_SeedPlan</code></td>
+      <td>Work plan (beans)</td>
       <td>shared step <code class="language-plaintext highlighter-rouge">GT_SeedWorkPlan</code><br /><code class="language-plaintext highlighter-rouge">todo-manager</code></td>
       <td>The plan becomes beans, so a resumed session or a sibling agent can pick it up. The run’s own bean was claimed by the <a href="bean-open.html">Process_BeanOpen</a> call before this step (bean m8gz), so this step only notes the seeded plan on it; the beans themselves are written with the agent’s own <code class="language-plaintext highlighter-rouge">beans create</code>, which no engine op performs. From here on, beans/ is the shared answer to ‘what is done, what is next’ — for humans and agents alike.</td>
     </tr>
     <tr>
-      <td><strong>3 · Scaffold the folio [folio_init]</strong><br /><code class="language-plaintext highlighter-rouge">Task_Scaffold</code></td>
+      <td><strong>Scaffold the folio</strong><br /><code class="language-plaintext highlighter-rouge">Task_Scaffold</code></td>
       <td>Authoring agent (system)</td>
       <td><code class="language-plaintext highlighter-rouge">document-structure</code></td>
       <td>folio_init writes content/, uploads/, library/, the manifests, the builder shim and AGENTS.md. Skipped when the folio already exists.</td>
     </tr>
     <tr>
-      <td><strong>4 · Author blocks</strong><br /><code class="language-plaintext highlighter-rouge">Task_AuthorBlocks</code></td>
+      <td><strong>Author blocks</strong><br /><code class="language-plaintext highlighter-rouge">Task_AuthorBlocks</code></td>
       <td>Authoring agent (system)</td>
       <td><code class="language-plaintext highlighter-rouge">document-authoring</code><br /><code class="language-plaintext highlighter-rouge">normative-statements</code></td>
       <td>Every block edit runs the HCI validation gate — see editing-hci-validation.bpmn. A normative statement is a <code class="language-plaintext highlighter-rouge">recommendation</code> block (bean 55ao), drafted through normative-statements: one statement per block, a folio-chosen label, and its strength as a code in a declared code list, so a reviewer signs off each one individually.</td>
     </tr>
     <tr>
-      <td><strong>5 · Check the profile</strong><br /><code class="language-plaintext highlighter-rouge">Task_ProfileCheck</code></td>
-      <td>Build pipeline — validate · render · publish</td>
+      <td><strong>Check the profile</strong><br /><code class="language-plaintext highlighter-rouge">Task_ProfileCheck</code></td>
+      <td>Build pipeline</td>
       <td><code class="language-plaintext highlighter-rouge">content-validate</code></td>
       <td>content_profile_check: no math kind, no lean field, no .lean sibling. This is the step a paper folio does not have, and the reason a document folio never needs Lean or TeX to publish.</td>
     </tr>
     <tr>
-      <td><strong>6 · Validate</strong><br /><code class="language-plaintext highlighter-rouge">Task_Validate</code></td>
-      <td>Build pipeline — validate · render · publish</td>
+      <td><strong>Validate</strong><br /><code class="language-plaintext highlighter-rouge">Task_Validate</code></td>
+      <td>Build pipeline</td>
       <td><code class="language-plaintext highlighter-rouge">content-validate</code></td>
       <td>Schema and constraint checks over every block.</td>
     </tr>
     <tr>
-      <td><strong>7 · Render MD / HTML / PDF</strong><br /><code class="language-plaintext highlighter-rouge">Task_Render</code></td>
-      <td>Build pipeline — validate · render · publish</td>
+      <td><strong>Render MD, HTML and PDF</strong><br /><code class="language-plaintext highlighter-rouge">Task_Render</code></td>
+      <td>Build pipeline</td>
       <td><code class="language-plaintext highlighter-rouge">document-publishing</code></td>
       <td>Assemble to Markdown, then pandoc. The PDF goes through an HTML engine — never latexmk.</td>
     </tr>
     <tr>
-      <td><strong>8 · Review and feedback</strong><br /><code class="language-plaintext highlighter-rouge">Task_Review</code></td>
-      <td>Reviewer / subject-matter expert</td>
-      <td><code class="language-plaintext highlighter-rouge">content-review</code><br /><code class="language-plaintext highlighter-rouge">staging-review</code></td>
-      <td>The reviewer this folio binds. authoring-document relaxes the base SME step precisely because no single lane fits every document.</td>
-    </tr>
-    <tr>
-      <td><strong>9 · Publish</strong><br /><code class="language-plaintext highlighter-rouge">Task_Publish</code></td>
-      <td>Build pipeline — validate · render · publish</td>
-      <td><code class="language-plaintext highlighter-rouge">content-publish</code></td>
-      <td>See draft-to-publication.bpmn for the review and release path this expands into. Release authorisation is not relaxable.</td>
-    </tr>
-    <tr>
-      <td><strong>Open the bean</strong><br /><code class="language-plaintext highlighter-rouge">Call_BeanOpen</code></td>
-      <td>Work plan — beans (shared by humans and agents)</td>
-      <td>calls <a href="bean-open.html">Open the bean</a><br /><code class="language-plaintext highlighter-rouge">bean-coordination</code></td>
-      <td><a href="bean-open.html">Process_BeanOpen</a>: check before you create, find out whose the bean is, and claim it — or leave it alone when it is someone else’s. The one place a claim is drawn (bean m8gz, owner 2026-10-24); the gateway after this reads which end it reached.</td>
+      <td><strong>Review and publish</strong><br /><code class="language-plaintext highlighter-rouge">Call_ReviewPublish</code></td>
+      <td>Build pipeline</td>
+      <td>calls <a href="folio-review-publish.html">Review and publish a folio</a><br /><code class="language-plaintext highlighter-rouge">content-review</code></td>
+      <td>Core’s shared review-and-publish process (<a href="folio-review-publish.html">Process_FolioReviewPublish</a>): the reviewer reads the rendered folio and approves it, asks for changes, or sends a working draft to the Authoring Committee. Before 2026-11-01 each authoring process drew these steps itself (shared block G6, owner Q-BR-7 A).</td>
     </tr>
     <tr>
       <td><strong>Close the bean</strong><br /><code class="language-plaintext highlighter-rouge">Call_BeanClose</code></td>
-      <td>Build pipeline — validate · render · publish</td>
+      <td>Build pipeline</td>
       <td>calls <a href="bean-close.html">Close the bean</a><br /><code class="language-plaintext highlighter-rouge">todo-manager</code></td>
       <td><a href="bean-close.html">Process_BeanClose</a>: end the bean in a state that says why — complete and archive it, scrap it with its reasons and archive it, or record the blocker and hand it back. The one place resolve and archive are drawn (bean m8gz, owner 2026-10-24); placed straight before the end so the engine’s resolve sees nothing left but the archive step.</td>
-    </tr>
-    <tr>
-      <td><strong>Contributor feedback</strong><br /><code class="language-plaintext highlighter-rouge">Call_ContributorFeedback</code></td>
-      <td>Authoring Committee</td>
-      <td>calls <a href="contributor-feedback.html">Contributor feedback on a working draft</a><br /><code class="language-plaintext highlighter-rouge">review-sheet-script</code></td>
-      <td><a href="contributor-feedback.html">Process_ContributorFeedback</a>: while the document is a working draft, the Authoring Committee gives feedback through the Contributor Feedback sheet, and each change set is edited and merged in its own pull request. When its changes are merged, the document is validated and rendered again (owner, 2026-10-31).</td>
     </tr>
   </tbody>
 </table></div>
@@ -1030,19 +1010,19 @@ check, which is what keeps a document folio publishable without either toolchain
   </thead>
   <tbody>
     <tr>
-      <td><strong>Within the declared profile?</strong><br /><code class="language-plaintext highlighter-rouge">Gateway_ProfileClean</code></td>
-      <td>Answered by the profile check (step 5): does every block stay within the folio’s declared content profile? <code class="language-plaintext highlighter-rouge">violations</code> sends the author back to step 4 to fix the blocks; <code class="language-plaintext highlighter-rouge">clean</code> goes on to validation.</td>
-      <td><strong>violations</strong> → 4 · Author blocks<br /><strong>clean</strong> → 6 · Validate</td>
-    </tr>
-    <tr>
-      <td><strong>Ready to publish?</strong><br /><code class="language-plaintext highlighter-rouge">Gateway_ReviewOutcome</code></td>
-      <td>The reviewer’s call after step 8. <code class="language-plaintext highlighter-rouge">iterate</code> returns to authoring with the feedback; <code class="language-plaintext highlighter-rouge">Authoring Committee feedback</code> sends a working draft to the committee through the Contributor Feedback sheet (<a href="contributor-feedback.html">Process_ContributorFeedback</a>), and comes back to validation once its changes are merged; <code class="language-plaintext highlighter-rouge">approved</code> goes to publish.</td>
-      <td><strong>iterate</strong> → 4 · Author blocks<br /><strong>approved</strong> → 9 · Publish<br /><strong>Authoring Committee feedback</strong> → Contributor feedback</td>
-    </tr>
-    <tr>
       <td><strong>Bean claimed?</strong><br /><code class="language-plaintext highlighter-rouge">GW_BeanYours</code></td>
       <td>Reads which end <a href="bean-open.html">Process_BeanOpen</a> reached. <code class="language-plaintext highlighter-rouge">claimed</code>: the bean is in progress and this process works it. <code class="language-plaintext highlighter-rouge">not yours</code>: a sibling session or a human holds it, nothing was written to it, and this process stops here rather than work a bean it does not own (bean-coordination).</td>
-      <td><strong>claimed</strong> → 2 · Seed the work plan<br /><strong>not yours</strong> → Not yours — left alone</td>
+      <td><strong>claimed</strong> → Seed the work plan<br /><strong>not yours</strong> → Not yours: left alone</td>
+    </tr>
+    <tr>
+      <td><strong>Within the declared profile?</strong><br /><code class="language-plaintext highlighter-rouge">Gateway_ProfileClean</code></td>
+      <td>Answered by the profile check: does every block stay within the folio’s declared content profile? <code class="language-plaintext highlighter-rouge">violations</code> sends the author back to Task_AuthorBlocks to fix the blocks; <code class="language-plaintext highlighter-rouge">clean</code> goes on to validation.</td>
+      <td><strong>violations</strong> → Author blocks<br /><strong>clean</strong> → Validate</td>
+    </tr>
+    <tr>
+      <td><strong>Published?</strong><br /><code class="language-plaintext highlighter-rouge">GW_Published</code></td>
+      <td>Reads which end <a href="folio-review-publish.html">Process_FolioReviewPublish</a> reached. <code class="language-plaintext highlighter-rouge">yes</code>: Published, so the bean is closed. <code class="language-plaintext highlighter-rouge">no</code>: Changes asked, or Feedback in, so the work goes back to Task_AuthorBlocks with the feedback.</td>
+      <td><strong>yes</strong> → Close the bean<br /><strong>no</strong> → Author blocks</td>
     </tr>
   </tbody>
 </table></div>

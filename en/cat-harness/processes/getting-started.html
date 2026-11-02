@@ -897,11 +897,6 @@ generated from it by <code class="language-plaintext highlighter-rouge">bun run 
       <td>Every write in this diagram belongs to this lane, and each sits behind the non-relaxable read-first gate: nothing is created or scaffolded until Gateway_Intent has classified what was actually asked for, which is what stands between this lane and writing over somebody’s existing project.</td>
     </tr>
     <tr>
-      <td>Work plan (beans)</td>
-      <td><code class="language-plaintext highlighter-rouge">work-plan</code></td>
-      <td>Seeds one bean per top-level content object the author named, positioned after scaffolding but before the Pages probe — a work plan exists for a folio whose publication status is not yet known, rather than waiting on that answer.</td>
-    </tr>
-    <tr>
       <td>Publish — GitHub Pages</td>
       <td><code class="language-plaintext highlighter-rouge">publish-target</code></td>
       <td>Provisions the gh-pages branch before Pages is switched on (Task_ProvisionGhPages, #2417), derives the URL, and holds the report that follows it: “unprovisioned” routes back to provisioning, and “live”, “not-yet” and “unknown” are reached by exclusive branches of one DMN-computed gateway, and this lane is what keeps a failed probe from being reported as the softer “not-yet” it would be tempting to default to.</td>
@@ -979,7 +974,7 @@ generated from it by <code class="language-plaintext highlighter-rouge">bun run 
     </tr>
     <tr>
       <td><strong>Seed the work plan</strong><br /><code class="language-plaintext highlighter-rouge">Task_SeedPlan</code></td>
-      <td>Work plan (beans)</td>
+      <td>Onboarding agent (system)</td>
       <td><code class="language-plaintext highlighter-rouge">todo-manager</code></td>
       <td>The first beans: what the author said they want to get started on, one bean per top-level content object they named.</td>
     </tr>
@@ -1015,7 +1010,7 @@ generated from it by <code class="language-plaintext highlighter-rouge">bun run 
     </tr>
     <tr>
       <td><strong>Open the bean</strong><br /><code class="language-plaintext highlighter-rouge">Call_BeanOpen</code></td>
-      <td>Work plan (beans)</td>
+      <td>Onboarding agent (system)</td>
       <td>calls <a href="bean-open.html">Open the bean</a><br /><code class="language-plaintext highlighter-rouge">bean-coordination</code></td>
       <td><a href="bean-open.html">Process_BeanOpen</a>: check before you create, find out whose the bean is, and claim it — or leave it alone when it is someone else’s. The one place a claim is drawn (bean m8gz, owner 2026-10-24); the gateway after this reads which end it reached.</td>
     </tr>

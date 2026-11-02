@@ -853,7 +853,7 @@
 
 <p>One of 3 pages of this type, split by the first letter of the label: <a href="../../../../../en/folio-assistant-core/glossary/bpmn-activities/">all parts</a>.</p>
 
-<p><strong>Size:</strong> this page holds 327 terms and is 313 KB before compression, fetched in one request, within its budget of 1.0 MB. There is no search index: the filter below runs over this page, and the A–Z bar jumps within it.</p>
+<p><strong>Size:</strong> this page holds 329 terms and is 314 KB before compression, fetched in one request, within its budget of 1.0 MB. There is no search index: the filter below runs over this page, and the A–Z bar jumps within it.</p>
 
 <div class="table-wrapper"><table class="fa-gloss-mapping">
 <caption>Already somebody else's concept? — <code>check:term-mapping</code>, bean <code>7wou</code></caption>
@@ -864,11 +864,11 @@
 A vocabulary that could not be reached has said nothing, and the column above keeps that 
 apart from a checked miss. The counts are reported and not graded: an unmapped candidate may 
 be a term this corpus is right to coin.</p>
-<p class="fa-gloss-mapping-perterm"><strong>Per term.</strong> Every term on this page is in no single state on <code>fhir</code>, so each entry states its own, and in no single state on <code>skos</code>, so each entry states its own, unless its entry says otherwise. 327 entries say otherwise.</p>
+<p class="fa-gloss-mapping-perterm"><strong>Per term.</strong> Every term on this page is in no single state on <code>fhir</code>, so each entry states its own, and in no single state on <code>skos</code>, so each entry states its own, unless its entry says otherwise. 329 entries say otherwise.</p>
 
 <p><label for="fa-gloss-q">Filter terms</label>
 <input id="fa-gloss-q" type="search" autocomplete="off" style="min-height:44px;width:100%;max-width:32rem" /></p>
-<p aria-live="polite"><span id="fa-gloss-n">327</span> shown</p>
+<p aria-live="polite"><span id="fa-gloss-n">329</span> shown</p>
 
 <nav aria-label="Letters"><a href="#letter-E">E</a> <a href="#letter-F">F</a> <a href="#letter-G">G</a> <a href="#letter-H">H</a> <a href="#letter-I">I</a> <a href="#letter-J">J</a> <a href="#letter-K">K</a> <a href="#letter-L">L</a> <a href="#letter-M">M</a> <a href="#letter-N">N</a> <a href="#letter-O">O</a> <a href="#letter-P">P</a> <a href="#letter-Q">Q</a></nav>
 <h2 id="letter-E">
@@ -945,7 +945,7 @@ Edit, comment or raise todos on the folio's copy <span class="fa-gloss-status">c
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_lifecycle.callactivity_editing" data-fa-state="extracted" data-fa-gloss="">
-Editing and HCI validation [content-author] <span class="fa-gloss-status">candidate, extracted</span>
+Editing and HCI validation <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
 <p>See editing-hci-validation.bpmn. Runs once per proposed change, not once per cycle.</p>
@@ -953,7 +953,7 @@ Editing and HCI validation [content-author] <span class="fa-gloss-status">candid
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_publication.callactivity_editing" data-fa-state="extracted" data-fa-gloss="">
-Editing and HCI validation [content-author] <span class="fa-gloss-status">candidate, extracted</span>
+Editing and HCI validation <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
 <p>The editing sub-process. Every change to the corpus goes through its HCI validation gate — a red draft is fixed there, never by patching the built artifact.</p>
@@ -1041,7 +1041,7 @@ Establish origin and licence <span class="fa-gloss-status">candidate, extracted<
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_l1documentingestion.task_licence" data-fa-state="extracted" data-fa-gloss="">
-Establish the licence from the upload alone [document-intake] <span class="fa-gloss-status">candidate, extracted</span>
+Establish the licence from the upload <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
 <p>EARLY, by the owner's ruling on bean 7bg9 (2026-09-20): before any derivation, because library/ is holds: content and anything derived first is committed, so refusing it later is a deletion nobody may take unasked. This step sees only the upload itself — the licence recorded in its intake.json (the same stated / unknown record a library manifest carries) and whether a LICENSE file sits beside it. It never infers a licence from extracted text. The verdict is stated, unknown, or UNDETERMINED, and undetermined is never reported as cleared: the pipeline proceeds and says so, because a licence that only extraction can reveal is a later check's to find.</p>
@@ -1129,7 +1129,7 @@ Extract POT (translatable strings) <span class="fa-gloss-status">candidate, extr
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_l1documentingestion.callactivity_extract" data-fa-state="extracted" data-fa-gloss="">
-Extract structure [document-intake] <span class="fa-gloss-status">candidate, extracted</span>
+Extract structure <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
 <p>See ingest-extract-structure.bpmn.</p>
@@ -1219,7 +1219,7 @@ Fetch, and record fixity <span class="fa-gloss-status">candidate, extracted</spa
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_lifecycle.task_feedbackbeans" data-fa-state="extracted" data-fa-gloss="">
-File feedback as beans [todo-manager] <span class="fa-gloss-status">candidate, extracted</span>
+File feedback as beans <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
 <p>Triaged feedback re-enters the work plan as beans, which is how the next cycle knows what it is for.</p>
@@ -1387,7 +1387,7 @@ Frame the decision and check the trigger <span class="fa-gloss-status">candidate
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_evidenceretrieval.task_framepico" data-fa-state="extracted" data-fa-gloss="">
-Frame the question as PICO [content-author] <span class="fa-gloss-status">candidate, extracted</span>
+Frame the question as PICO <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
 <p>Population, Intervention, Comparator, Outcome. The PICO is what makes the search reproducible and the evidence auditable: without it, 'we looked for evidence' is not a claim anyone can check. WHO guideline development states the question this way before any retrieval.</p>
@@ -1421,7 +1421,7 @@ Gate every slice: slice:sqlite:check <span class="fa-gloss-status">candidate, ex
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_editing.callactivity_evidence" data-fa-state="extracted" data-fa-gloss="">
-Gather and verify the evidence [evidence-retrieval] <span class="fa-gloss-status">candidate, extracted</span>
+Gather and verify the evidence <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
 <p>Before anything is drafted: the author reads the guidance ALREADY in this content, frames the question as PICO, retrieves candidates across the three evidence classes, and has each candidate's authority resolved against its publisher's own API. A recommendation reaches the drafting step with its evidence attached, or with the gap recorded. This step has nothing to do for content that carries no recommendations -- a mathematics folio has none, and a figure redrawn from its own source adds none -- and the subprocess's first gateway (Gateway_RecommendationInPlay) ends it there at its own event, recording the answer, rather than satisfying the search vacuously.</p>
@@ -1567,7 +1567,7 @@ Harvest a batch of item records (REST) <span class="fa-gloss-status">candidate, 
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_editing.task_smereview" data-fa-state="extracted" data-fa-gloss="">
-Human / SME review [content-review] <span class="fa-gloss-status">candidate, extracted</span>
+Human / SME review <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
 <p>Escalated to a human reviewer or subject-matter expert when the change turns on clinical or scientific judgement. A rendered change reaches the reviewer with its before/after preview (skill before-after-preview).</p>
@@ -1705,15 +1705,15 @@ Ingest into library/ <span class="fa-gloss-status">candidate, extracted</span>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_contentchangereviewcommittee.task_ingestcomments" data-fa-state="extracted" data-fa-gloss="">
-Ingest tagged review comments [folio-review-comments] <span class="fa-gloss-status">candidate, extracted</span>
+Ingest tagged review comments <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
-<p>Every PR conversation comment that starts with <code>block: &lt;label&gt;</code> becomes a <code>review-comment/1.0.0</code> todo (open), idempotently, and is published with the preview as <code>review-comments.json</code>. The staging workflow runs this on every push and on every tagged comment; the coordinator owns that it has run before slicing, because the slices are cut around what reviewers have already said. This is the <code>ingest</code> transition of REVIEW_TRANSITIONS.</p>
+<p>Every PR conversation comment that starts with <code>block: &lt;label&gt;</code> becomes a <code>review-comment/1.0.0</code> todo (open), idempotently, and is published with the preview as <code>review-comments.json</code>. The staging workflow runs this on every push and on every tagged comment; the coordinator owns that it has run before slicing, because the slices are cut around what reviewers have already said. This is the <code>ingest</code> transition of REVIEW_TRANSITIONS. Uses <code>folio-review-comments</code>.</p>
 <p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/content-change-review-committee.bpmn"><code>folio-assistant-core/processes/content/content-change-review-committee.bpmn#Task_IngestComments</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_l1documentingestion.callactivity_ingesttheme" data-fa-state="extracted" data-fa-gloss="">
-Ingest the theme [theme-art-intake] <span class="fa-gloss-status">candidate, extracted</span>
+Ingest the theme <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
 <p>See ingest-theme.bpmn. The subprocess derives one Theme node with kind sticky|webpage|publication, and refuses a source it cannot complete rather than emitting a partial theme.</p>
@@ -1753,7 +1753,7 @@ Integrate: call existing processes <span class="fa-gloss-status">candidate, extr
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_lifecycle.task_test" data-fa-state="extracted" data-fa-gloss="">
-Integration test and QA sweep [content-test] <span class="fa-gloss-status">candidate, extracted</span>
+Integration test and QA sweep <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
 <p>Corpus-wide checks that a single-block gate cannot make: cross-references, build green, proof status, QA axes across the whole folio.</p>
@@ -2062,20 +2062,20 @@ Log a message or an error <span class="fa-gloss-status">candidate, extracted</sp
 <p class="fa-gloss-meta">BPMN activities of cat-harness · source <a href="https://github.com/litlfred/cat-harness/blob/main/processes/sdlc/activity-log.bpmn"><code>cat-harness/processes/sdlc/activity-log.bpmn#A_LogMessage</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
+<dt id="folio-assistant-core--kg-bpmn-activities--process_editing.task_logfindings" data-fa-state="extracted" data-fa-gloss="">
+Log findings on the bean <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Findings are appended to the bean, so the next agent or human sees what is outstanding.</p>
+<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/editing-hci-validation.bpmn"><code>folio-assistant-core/processes/content/editing-hci-validation.bpmn#Task_LogFindings</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
 <dt id="fhir-harness--kg-bpmn-activities--process_igincremental.task_logfindings" data-fa-state="extracted" data-fa-gloss="">
 Log findings on the bean [todo-manager] <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
 <p>Validation failed: record the findings on the change's bean, so the work plan says what blocks it. Check before creating — beans create is not idempotent.</p>
 <p class="fa-gloss-meta">BPMN activities of fhir-harness · source <a href="https://github.com/litlfred/fhir-harness/blob/main/processes/content/ig-incremental-build.bpmn"><code>fhir-harness/processes/content/ig-incremental-build.bpmn#Task_LogFindings</code></a></p>
-<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
-</dd>
-<dt id="folio-assistant-core--kg-bpmn-activities--process_editing.task_logfindings" data-fa-state="extracted" data-fa-gloss="">
-Log findings on the bean [todo-manager] <span class="fa-gloss-status">candidate, extracted</span>
-</dt>
-<dd>
-<p>Findings are appended to the bean, so the next agent or human sees what is outstanding.</p>
-<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/editing-hci-validation.bpmn"><code>folio-assistant-core/processes/content/editing-hci-validation.bpmn#Task_LogFindings</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="cat-harness--kg-bpmn-activities--process_activitylog.a_logend" data-fa-state="extracted" data-fa-gloss="">
@@ -2523,7 +2523,7 @@ Note the bean, summarise on the issue <span class="fa-gloss-status">candidate, e
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_contentchangereviewpublish.task_watchmainci" data-fa-state="extracted" data-fa-gloss="">
-Note the main-branch watch [watch] <span class="fa-gloss-status">candidate, extracted</span>
+Note the main-branch watch <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
 <p>Second dispatch point: the change was approved and merged, and the root of the site has been rebuilt from main. This is the moment docs-site.yml failed all 30 times over two months (bean xom7) while looking exactly like a green run from inside the repo. <code>note</code> rather than <code>claim</code>, and the difference is not cosmetic. By here the branch-watch bean already exists, and whether the publish SUCCEEDED is a judgement this step cannot make -- the build reports its own exit code, and xom7 is the record of that being believed. AGENTS.md: a bean is not closed on someone else's say-so. So the step records what it observed and leaves the verdict to the watcher.</p>
@@ -2581,7 +2581,7 @@ Onboard new concepts to Commons (governance) <span class="fa-gloss-status">candi
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>smart-base</code> on <code>fhir</code> · <code>skos</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>smart-base</code> on <code>skos</code></p>
 </dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_evidenceretrieval.task_recordunverified" data-fa-state="extracted" data-fa-gloss="">
-Open a bean for the unverified citation [todo-manager] <span class="fa-gloss-status">candidate, extracted</span>
+Open a bean for the unverified citation <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
 <p>An unresolvable citation is not dropped and not silently kept. It becomes a tracked item, so the gap is visible in the work plan rather than surviving as a footnote nobody re-checks.</p>
@@ -2589,7 +2589,7 @@ Open a bean for the unverified citation [todo-manager] <span class="fa-gloss-sta
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_publication.task_openchangebeans" data-fa-state="extracted" data-fa-gloss="">
-Open beans for the change requests [todo-manager] <span class="fa-gloss-status">candidate, extracted</span>
+Open beans for the change requests <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
 <p>Each requested change becomes a bean, so the editors and agents picking the work up next see exactly what review asked for and what is still open.</p>
@@ -2642,6 +2642,78 @@ Open or EDIT the one tracking issue <span class="fa-gloss-status">candidate, ext
 <dd>
 <p>One issue, edited in place. GitHub's own failure mail is the channel that was already ignored thirty times, so this adds none: an edit does not notify, and a pin that stays behind for two months stays one unread item rather than nine.</p>
 <p class="fa-gloss-meta">BPMN activities of cat-harness · source <a href="https://github.com/litlfred/cat-harness/blob/main/processes/sdlc/upstream-pin-watch.bpmn"><code>cat-harness/processes/sdlc/upstream-pin-watch.bpmn#Task_TrackIssue</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="folio-assistant-core--kg-bpmn-activities--process_contentchangereview.call_beanopen" data-fa-state="extracted" data-fa-gloss="">
+Open the bean <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Process_BeanOpen: check before you create, find out whose the bean is, and claim it — or leave it alone when it is someone else's. The one place a claim is drawn (bean m8gz, owner 2026-10-24); the gateway after this reads which end it reached.</p>
+<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/content-change-review.bpmn"><code>folio-assistant-core/processes/content/content-change-review.bpmn#Call_BeanOpen</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="folio-assistant-core--kg-bpmn-activities--process_documentauthoring.call_beanopen" data-fa-state="extracted" data-fa-gloss="">
+Open the bean <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Process_BeanOpen: check before you create, find out whose the bean is, and claim it — or leave it alone when it is someone else's. The one place a claim is drawn (bean m8gz, owner 2026-10-24); the gateway after this reads which end it reached.</p>
+<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/authoring-a-document.bpmn"><code>folio-assistant-core/processes/content/authoring-a-document.bpmn#Call_BeanOpen</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="folio-assistant-core--kg-bpmn-activities--process_dsadocumentlifecycle.call_beanopen" data-fa-state="extracted" data-fa-gloss="">
+Open the bean <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Process_BeanOpen: check before you create, find out whose the bean is, and claim it — or leave it alone when it is someone else's. The one place a claim is drawn (bean m8gz, owner 2026-10-24); the gateway after this reads which end it reached.</p>
+<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/dsa-document-lifecycle.bpmn"><code>folio-assistant-core/processes/content/dsa-document-lifecycle.bpmn#Call_BeanOpen</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="folio-assistant-core--kg-bpmn-activities--process_dsadocumentlifecycle.call_beanopenchange" data-fa-state="extracted" data-fa-gloss="">
+Open the bean <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Process_BeanOpen: check before you create, find out whose the bean is, and claim it — or leave it alone when it is someone else's. The one place a claim is drawn (bean m8gz, owner 2026-10-24); the gateway after this reads which end it reached.</p>
+<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/dsa-document-lifecycle.bpmn"><code>folio-assistant-core/processes/content/dsa-document-lifecycle.bpmn#Call_BeanOpenChange</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="folio-assistant-core--kg-bpmn-activities--process_editing.task_claimbean" data-fa-state="extracted" data-fa-gloss="">
+Open the bean <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Process_BeanOpen: check before you create, find out whose the bean is, and claim it — or leave it alone when it is someone else's. The one place a claim is drawn (bean m8gz, owner 2026-10-24); the gateway after this reads which end it reached.</p>
+<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/editing-hci-validation.bpmn"><code>folio-assistant-core/processes/content/editing-hci-validation.bpmn#Task_ClaimBean</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="folio-assistant-core--kg-bpmn-activities--process_gettingstarted.call_beanopen" data-fa-state="extracted" data-fa-gloss="">
+Open the bean <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Process_BeanOpen: check before you create, find out whose the bean is, and claim it — or leave it alone when it is someone else's. The one place a claim is drawn (bean m8gz, owner 2026-10-24); the gateway after this reads which end it reached.</p>
+<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/conduct/getting-started.bpmn"><code>folio-assistant-core/processes/conduct/getting-started.bpmn#Call_BeanOpen</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="folio-assistant-core--kg-bpmn-activities--process_l1documentingestion.call_beanopen" data-fa-state="extracted" data-fa-gloss="">
+Open the bean <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Process_BeanOpen: check before you create, find out whose the bean is, and claim it — or leave it alone when it is someone else's. The one place a claim is drawn (bean m8gz, owner 2026-10-24); the gateway after this reads which end it reached.</p>
+<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/library/l1-document-ingestion.bpmn"><code>folio-assistant-core/processes/library/l1-document-ingestion.bpmn#Call_BeanOpen</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="folio-assistant-core--kg-bpmn-activities--process_lifecycle.call_beanopen" data-fa-state="extracted" data-fa-gloss="">
+Open the bean <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Process_BeanOpen: check before you create, find out whose the bean is, and claim it — or leave it alone when it is someone else's. The one place a claim is drawn (bean m8gz, owner 2026-10-24); the gateway after this reads which end it reached.</p>
+<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/content-lifecycle.bpmn"><code>folio-assistant-core/processes/content/content-lifecycle.bpmn#Call_BeanOpen</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="folio-assistant-core--kg-bpmn-activities--process_publication.task_openreleasebean" data-fa-state="extracted" data-fa-gloss="">
+Open the bean <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Process_BeanOpen: check before you create, find out whose the bean is, and claim it — or leave it alone when it is someone else's. The one place a claim is drawn (bean m8gz, owner 2026-10-24); the gateway after this reads which end it reached.</p>
+<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/draft-to-publication.bpmn"><code>folio-assistant-core/processes/content/draft-to-publication.bpmn#Task_OpenReleaseBean</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="cat-harness--kg-bpmn-activities--process_beandrain.drain_open" data-fa-state="extracted" data-fa-gloss="">
@@ -2756,78 +2828,6 @@ Open the bean [bean-open] <span class="fa-gloss-status">candidate, extracted</sp
 <p class="fa-gloss-meta">BPMN activities of cat-harness · source <a href="https://github.com/litlfred/cat-harness/blob/main/processes/sdlc/upstream-pin-watch.bpmn"><code>cat-harness/processes/sdlc/upstream-pin-watch.bpmn#Call_BeanOpen</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
-<dt id="folio-assistant-core--kg-bpmn-activities--process_contentchangereview.call_beanopen" data-fa-state="extracted" data-fa-gloss="">
-Open the bean [bean-open] <span class="fa-gloss-status">candidate, extracted</span>
-</dt>
-<dd>
-<p>Process_BeanOpen: check before you create, find out whose the bean is, and claim it — or leave it alone when it is someone else's. The one place a claim is drawn (bean m8gz, owner 2026-10-24); the gateway after this reads which end it reached.</p>
-<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/content-change-review.bpmn"><code>folio-assistant-core/processes/content/content-change-review.bpmn#Call_BeanOpen</code></a></p>
-<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
-</dd>
-<dt id="folio-assistant-core--kg-bpmn-activities--process_documentauthoring.call_beanopen" data-fa-state="extracted" data-fa-gloss="">
-Open the bean [bean-open] <span class="fa-gloss-status">candidate, extracted</span>
-</dt>
-<dd>
-<p>Process_BeanOpen: check before you create, find out whose the bean is, and claim it — or leave it alone when it is someone else's. The one place a claim is drawn (bean m8gz, owner 2026-10-24); the gateway after this reads which end it reached.</p>
-<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/authoring-a-document.bpmn"><code>folio-assistant-core/processes/content/authoring-a-document.bpmn#Call_BeanOpen</code></a></p>
-<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
-</dd>
-<dt id="folio-assistant-core--kg-bpmn-activities--process_dsadocumentlifecycle.call_beanopen" data-fa-state="extracted" data-fa-gloss="">
-Open the bean [bean-open] <span class="fa-gloss-status">candidate, extracted</span>
-</dt>
-<dd>
-<p>Process_BeanOpen: check before you create, find out whose the bean is, and claim it — or leave it alone when it is someone else's. The one place a claim is drawn (bean m8gz, owner 2026-10-24); the gateway after this reads which end it reached.</p>
-<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/dsa-document-lifecycle.bpmn"><code>folio-assistant-core/processes/content/dsa-document-lifecycle.bpmn#Call_BeanOpen</code></a></p>
-<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
-</dd>
-<dt id="folio-assistant-core--kg-bpmn-activities--process_dsadocumentlifecycle.call_beanopenchange" data-fa-state="extracted" data-fa-gloss="">
-Open the bean [bean-open] <span class="fa-gloss-status">candidate, extracted</span>
-</dt>
-<dd>
-<p>Process_BeanOpen: check before you create, find out whose the bean is, and claim it — or leave it alone when it is someone else's. The one place a claim is drawn (bean m8gz, owner 2026-10-24); the gateway after this reads which end it reached.</p>
-<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/dsa-document-lifecycle.bpmn"><code>folio-assistant-core/processes/content/dsa-document-lifecycle.bpmn#Call_BeanOpenChange</code></a></p>
-<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
-</dd>
-<dt id="folio-assistant-core--kg-bpmn-activities--process_editing.task_claimbean" data-fa-state="extracted" data-fa-gloss="">
-Open the bean [bean-open] <span class="fa-gloss-status">candidate, extracted</span>
-</dt>
-<dd>
-<p>Process_BeanOpen: check before you create, find out whose the bean is, and claim it — or leave it alone when it is someone else's. The one place a claim is drawn (bean m8gz, owner 2026-10-24); the gateway after this reads which end it reached.</p>
-<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/editing-hci-validation.bpmn"><code>folio-assistant-core/processes/content/editing-hci-validation.bpmn#Task_ClaimBean</code></a></p>
-<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
-</dd>
-<dt id="folio-assistant-core--kg-bpmn-activities--process_gettingstarted.call_beanopen" data-fa-state="extracted" data-fa-gloss="">
-Open the bean [bean-open] <span class="fa-gloss-status">candidate, extracted</span>
-</dt>
-<dd>
-<p>Process_BeanOpen: check before you create, find out whose the bean is, and claim it — or leave it alone when it is someone else's. The one place a claim is drawn (bean m8gz, owner 2026-10-24); the gateway after this reads which end it reached.</p>
-<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/conduct/getting-started.bpmn"><code>folio-assistant-core/processes/conduct/getting-started.bpmn#Call_BeanOpen</code></a></p>
-<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
-</dd>
-<dt id="folio-assistant-core--kg-bpmn-activities--process_l1documentingestion.call_beanopen" data-fa-state="extracted" data-fa-gloss="">
-Open the bean [bean-open] <span class="fa-gloss-status">candidate, extracted</span>
-</dt>
-<dd>
-<p>Process_BeanOpen: check before you create, find out whose the bean is, and claim it — or leave it alone when it is someone else's. The one place a claim is drawn (bean m8gz, owner 2026-10-24); the gateway after this reads which end it reached.</p>
-<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/library/l1-document-ingestion.bpmn"><code>folio-assistant-core/processes/library/l1-document-ingestion.bpmn#Call_BeanOpen</code></a></p>
-<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
-</dd>
-<dt id="folio-assistant-core--kg-bpmn-activities--process_lifecycle.call_beanopen" data-fa-state="extracted" data-fa-gloss="">
-Open the bean [bean-open] <span class="fa-gloss-status">candidate, extracted</span>
-</dt>
-<dd>
-<p>Process_BeanOpen: check before you create, find out whose the bean is, and claim it — or leave it alone when it is someone else's. The one place a claim is drawn (bean m8gz, owner 2026-10-24); the gateway after this reads which end it reached.</p>
-<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/content-lifecycle.bpmn"><code>folio-assistant-core/processes/content/content-lifecycle.bpmn#Call_BeanOpen</code></a></p>
-<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
-</dd>
-<dt id="folio-assistant-core--kg-bpmn-activities--process_publication.task_openreleasebean" data-fa-state="extracted" data-fa-gloss="">
-Open the bean [bean-open] <span class="fa-gloss-status">candidate, extracted</span>
-</dt>
-<dd>
-<p>Process_BeanOpen: check before you create, find out whose the bean is, and claim it — or leave it alone when it is someone else's. The one place a claim is drawn (bean m8gz, owner 2026-10-24); the gateway after this reads which end it reached.</p>
-<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/draft-to-publication.bpmn"><code>folio-assistant-core/processes/content/draft-to-publication.bpmn#Task_OpenReleaseBean</code></a></p>
-<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
-</dd>
 <dt id="smart-base--kg-bpmn-activities--process_diig.call_beanopen" data-fa-state="extracted" data-fa-gloss="">
 Open the bean [bean-open] <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
@@ -2845,7 +2845,7 @@ Open the bean [bean-open] <span class="fa-gloss-status">candidate, extracted</sp
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>smart-base</code> on <code>fhir</code> · <code>skos</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>smart-base</code> on <code>skos</code></p>
 </dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_contentchangereviewstage.task_watchbranchci" data-fa-state="extracted" data-fa-gloss="">
-Open the branch-watch bean [watch] <span class="fa-gloss-status">candidate, extracted</span>
+Open the branch-watch bean <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
 <p>First dispatch point for a CI watcher: the feature branch has changed and a staging build now exists to watch. The watcher is DISPATCHED BY OPENING A BEAN, not by a workflow_dispatch -- per the owner on bean 29ij, this is a task/workflow initiation. That is the whole reason it is an activity rather than a line of prose. A bean makes the watch durable past the session that opened it: the container is reclaimed, and what survives is the claim. Starting the watcher and recording that it is running are ONE declared step, so the two cannot disagree about whether anything is watching. Claim rather than note: the watch is work in progress, and it is idempotent, so re-entering on a subsequent push does not duplicate it.</p>
@@ -2943,7 +2943,7 @@ Organise entry in docs/requirements/index.md by concern group &amp; status <span
     
 <dl class="fa-gloss">
 <dt id="folio-assistant-core--kg-bpmn-activities--process_dsadocumentlifecycle.task_agreeterms" data-fa-state="extracted" data-fa-gloss="">
-P1.1 · Agree purpose, datasets, period, duties and trust anchors <span class="fa-gloss-status">candidate, extracted</span>
+P1.1 · Agree the terms <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
 <p>The parties agree the purpose, the datasets, the period, the conditions and duties, which trust anchors each side accepts, and the legal basis the sharing rests on (consent, treatment, public-health law or a research waiver). This sets what the text must say; it is a negotiation between people.</p>
@@ -2951,7 +2951,7 @@ P1.1 · Agree purpose, datasets, period, duties and trust anchors <span class="f
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_dsadocumentlifecycle.task_writetext" data-fa-state="extracted" data-fa-gloss="">
-P1.2 · Write the legal text [document-authoring] <span class="fa-gloss-status">candidate, extracted</span>
+P1.2 · Write the legal text <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
 <p>Write the agreement as a document folio: one normative statement per clause the parties must keep, through normative-statements. The text says which governs if it and a machine-readable form disagree (suggested: the text).</p>
@@ -2959,7 +2959,7 @@ P1.2 · Write the legal text [document-authoring] <span class="fa-gloss-status">
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_dsadocumentlifecycle.task_recordlegalbasis" data-fa-state="extracted" data-fa-gloss="">
-P1.2a · Record the legal basis [normative-statements] <span class="fa-gloss-status">candidate, extracted</span>
+P1.2a · Record the legal basis <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
 <p>The text states the legal basis the parties agreed in P1.1 as a normative statement: consent, treatment, public-health law, or a research waiver. Consent rule 1: only an agreement whose legal basis is consent carries the odrl:obtainConsent duty; treatment, public-health law and research waivers do not rest on consent. The gateway that follows, the ODRL and the reviewers all read the basis from this statement.</p>
@@ -2967,7 +2967,7 @@ P1.2a · Record the legal basis [normative-statements] <span class="fa-gloss-sta
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_dsadocumentlifecycle.task_plainsummary" data-fa-state="extracted" data-fa-gloss="">
-P1.2b · Draft the plain-language summary [document-authoring] <span class="fa-gloss-status">candidate, extracted</span>
+P1.2b · Draft the plain summary <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
 <p>Consent-based only. Write a plain-language summary of the agreement in the same document folio: what it lets the recipient do with the person's data, in words the person can read. Consent rule 3: every agreement that needs consent publishes this summary, hashed with the agreement (P2.2a), and the summary is what the person consents to. It is reviewed, rendered and versioned with the text.</p>
@@ -2983,7 +2983,7 @@ P1.3 · Derive the ODRL 2.2 Agreement <span class="fa-gloss-status">candidate, e
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_dsadocumentlifecycle.task_checkodrl" data-fa-state="extracted" data-fa-gloss="">
-P1.4 · Check the ODRL against the text [content-review] <span class="fa-gloss-status">candidate, extracted</span>
+P1.4 · Check the ODRL against the text <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
 <p>Computable only. A person checks that the ODRL says what the text says, and signs it off. A program can check the ODRL is well formed; it cannot check that it matches the text. The check includes the consent duty: present when the legal basis is consent, absent otherwise (consent rule 1).</p>
@@ -3015,7 +3015,7 @@ P14.2 · Decide what happens to existing grants <span class="fa-gloss-status">ca
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_dsadocumentlifecycle.task_newconsentneeded" data-fa-state="extracted" data-fa-gloss="">
-P14.3 · Record that new consent is needed <span class="fa-gloss-status">candidate, extracted</span>
+P14.3 · New consent needed <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
 <p>The amendment widens use, so a Consent citing the old version's URL and hash does not cover the new version (consent rule 2). Record on the bean, and in the new version's text, that new consent is needed; the new version gets its own plain-language summary (P1.2b). Asking each person again is the trust layer's.</p>
@@ -3023,7 +3023,7 @@ P14.3 · Record that new consent is needed <span class="fa-gloss-status">candida
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_dsadocumentlifecycle.task_setstatus" data-fa-state="extracted" data-fa-gloss="">
-P14.5 · Set the catalogue status to ended [dsa-catalogue-status] <span class="fa-gloss-status">candidate, extracted</span>
+P14.5 · Set the status to ended <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
 <p>Set the life-cycle status of the agreement's DCAT 3 record (DCAT 3 §6.4.30). The published versions stay readable at their URLs.</p>
@@ -3031,7 +3031,7 @@ P14.5 · Set the catalogue status to ended [dsa-catalogue-status] <span class="f
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_dsadocumentlifecycle.task_assignversion" data-fa-state="extracted" data-fa-gloss="">
-P2.1 · Assign the version and its immutable URL [content-publish] <span class="fa-gloss-status">candidate, extracted</span>
+P2.1 · Assign version and fixed URL <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
 <p>Each signed version gets its own immutable URL (for example /dsa/42/v3). A 'latest' URL may exist; nothing cites it. A new version never overwrites an old one. This fixed-version URL is the one a Consent cites (consent rule 2), and a computable agreement's ODRL policy uid is set to it (P2.3).</p>
@@ -3039,7 +3039,7 @@ P2.1 · Assign the version and its immutable URL [content-publish] <span class="
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_dsadocumentlifecycle.task_hash" data-fa-state="extracted" data-fa-gloss="">
-P2.2 · Record the SHA-256 of each file [dsa-checksum] <span class="fa-gloss-status">candidate, extracted</span>
+P2.2 · Record each file's SHA-256 <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
 <p>Compute SHA-256 (FIPS 180-4) of the signed text, and of the ODRL file if there is one, recorded as DCAT 3 spdx:checksum and verified by check:dsa-hash.</p>
@@ -3047,7 +3047,7 @@ P2.2 · Record the SHA-256 of each file [dsa-checksum] <span class="fa-gloss-sta
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_dsadocumentlifecycle.task_hashsummary" data-fa-state="extracted" data-fa-gloss="">
-P2.2a · Hash the plain-language summary with the agreement [dsa-checksum] <span class="fa-gloss-status">candidate, extracted</span>
+P2.2a · Hash the plain summary <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
 <p>Consent-based only. Record the SHA-256 of the plain-language summary beside the agreement's, in the same version (consent rule 3). The summary a person consented to can then be checked against the agreement it summarises; a changed summary is a new version.</p>
@@ -3055,7 +3055,7 @@ P2.2a · Hash the plain-language summary with the agreement [dsa-checksum] <span
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_dsadocumentlifecycle.task_consentcitation" data-fa-state="extracted" data-fa-gloss="">
-P2.2b · State the fixed-version URL and hash a Consent cites [content-publish] <span class="fa-gloss-status">candidate, extracted</span>
+P2.2b · State the URL and hash to cite <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
 <p>Consent-based only. The version's publication metadata states the fixed-version URL (P2.1) and the hash (P2.2) that a Consent cites in FHIR R4 Consent.policy.uri (consent rule 2), never the 'latest' URL. For a computable agreement that URL is also the ODRL policy uid (P2.3): a Consent counts only when its Consent.policy.uri equals the agreement's ODRL policy uid, so the two are the same string.</p>
@@ -3063,7 +3063,7 @@ P2.2b · State the fixed-version URL and hash a Consent cites [content-publish] 
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_dsadocumentlifecycle.task_odrlcitestext" data-fa-state="extracted" data-fa-gloss="">
-P2.3 · Make the ODRL cite the text by URL and hash [dsa-odrl-source] <span class="fa-gloss-status">candidate, extracted</span>
+P2.3 · Make the ODRL cite the text <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
 <p>The ODRL policy names the signed text distribution with dcterms:source (DCMI Terms), pointing at the immutable URL whose spdx:checksum was just recorded. Its uid is that same fixed-version URL, the URL a Consent cites in Consent.policy.uri (consent rule 2).</p>
@@ -3071,7 +3071,7 @@ P2.3 · Make the ODRL cite the text by URL and hash [dsa-odrl-source] <span clas
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_dsadocumentlifecycle.task_catalogue" data-fa-state="extracted" data-fa-gloss="">
-P2.4–5 · Write the DCAT 3 record and link versions [dsa-dcat-record] <span class="fa-gloss-status">candidate, extracted</span>
+P2.4–5 · Write the DCAT 3 record <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
 <p>One DCAT 3 record: the agreement as a catalogued resource, each file a dcat:Distribution with dcat:downloadURL and spdx:checksum; datasets it covers carry odrl:hasPolicy. Versions are linked with DCAT 3 versioning (previous version, version, current version).</p>
@@ -3239,7 +3239,7 @@ Plan batches by community and collection <span class="fa-gloss-status">candidate
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_lifecycle.task_plan" data-fa-state="extracted" data-fa-gloss="">
-Plan scope, team, artifacts [content-plan] <span class="fa-gloss-status">candidate, extracted</span>
+Plan scope, team, artifacts <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
 <p>Scope the work, identify artifacts and actors, form the team, set the timeline.</p>
@@ -3253,6 +3253,14 @@ Plan SME consultation schedule and format <span class="fa-gloss-status">candidat
 <p><em>The asset carries no description.</em></p>
 <p class="fa-gloss-meta">BPMN activities of smart-base · source <a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/SGAuthoring.DAKLifecycle.bpmn"><code>smart-base/processes/content/SGAuthoring.DAKLifecycle.bpmn#Task_PlanConsultations</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>smart-base</code> on <code>fhir</code> · <code>skos</code> cannot be told from the committed result: no row for scheme <code>kg-bpmn-activities</code> of <code>smart-base</code> on <code>skos</code></p>
+</dd>
+<dt id="folio-assistant-core--kg-bpmn-activities--process_documentauthoring.task_plan" data-fa-state="extracted" data-fa-gloss="">
+Plan the document <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Scope it: chapters, the blocks each needs, which statements are normative.</p>
+<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/authoring-a-document.bpmn"><code>folio-assistant-core/processes/content/authoring-a-document.bpmn#Task_Plan</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="smart-base--kg-bpmn-activities--process_diig.a_planimplementation" data-fa-state="extracted" data-fa-gloss="">
 Plan the implementation <span class="fa-gloss-status">candidate, extracted</span>
@@ -3438,14 +3446,6 @@ Prose and the code it describes <span class="fa-gloss-status">candidate, extract
 <p class="fa-gloss-meta">BPMN activities of cat-harness · source <a href="https://github.com/litlfred/cat-harness/blob/main/processes/content/review-task.bpmn"><code>cat-harness/processes/content/review-task.bpmn#Call_NarrativeCodeReview</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
-<dt id="folio-assistant-core--kg-bpmn-activities--process_l1documentingestion.task_summaryqueue" data-fa-state="extracted" data-fa-gloss="">
-Prose blocks enter the summary queue [l1-document-ingestion] <span class="fa-gloss-status">candidate, extracted</span>
-</dt>
-<dd>
-<p>Owner, 2026-09-24: &quot;Make as QA sidecar as part of general doc ingestion to slowly drain.&quot; Nothing is written to ENQUEUE a block: the queue is derived (every prose block in every declared library, minus those whose summaries.json record is a current draft or confirmation), so a promoted entry is in it the moment its blocks are. A re-ingested document whose text changed re-enters it on its own, because the record's source_hash no longer matches. What an agent doing ingestion work does here is DRAIN a few: <code>bun run cat summaries:next -- --n K</code> hands it the next K blocks with their text, it writes a short summary of each in its own words, and <code>bun run cat summaries:record</code> writes them into library/&lt;bib-slug&gt;/summaries.json as drafts naming the agent and its model. The block itself stays verbatim and <code>ingested</code>. ADVISORY, never a gate: this step does not hold up Task_Citeable, and check:l1-complete reports the backlog (<code>block-summaries</code>) without failing on it. Confirming or rejecting a draft is a person's act, in <code>bun run cat narratives</code>.</p>
-<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/library/l1-document-ingestion.bpmn"><code>folio-assistant-core/processes/library/l1-document-ingestion.bpmn#Task_SummaryQueue</code></a></p>
-<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
-</dd>
 <dt id="smart-base--kg-bpmn-activities--process_planning.task_providefeedback" data-fa-state="extracted" data-fa-gloss="">
 Provide clinical feedback and identify gaps <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
@@ -3471,11 +3471,19 @@ Public comment on the release <span class="fa-gloss-status">candidate, extracted
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_dsadocumentlifecycle.call_publiccomment" data-fa-state="extracted" data-fa-gloss="">
-Public comment on the template [public-comment] <span class="fa-gloss-status">candidate, extracted</span>
+Public comment on the template <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
 <p>Comments on the frozen, line-numbered review version of the public template are placed, triaged, weighed and decided (public-comment.bpmn). Private annexes are never circulated.</p>
 <p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/dsa-document-lifecycle.bpmn"><code>folio-assistant-core/processes/content/dsa-document-lifecycle.bpmn#Call_PublicComment</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="folio-assistant-core--kg-bpmn-activities--process_folioreviewpublish.task_publish" data-fa-state="extracted" data-fa-gloss="">
+Publish <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>See draft-to-publication.bpmn for the review and release path this expands into. Release authorisation is not relaxable.</p>
+<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/folio-review-publish.bpmn"><code>folio-assistant-core/processes/content/folio-review-publish.bpmn#Task_Publish</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="cat-harness--kg-bpmn-activities--process_nquadsdistribution.a_deploypages" data-fa-state="extracted" data-fa-gloss="">
@@ -3503,7 +3511,7 @@ Publish the IG site [content-publish] <span class="fa-gloss-status">candidate, e
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="folio-assistant-core--kg-bpmn-activities--process_dsadocumentlifecycle.task_publish" data-fa-state="extracted" data-fa-gloss="">
-Publish the version at its URL [content-publish] <span class="fa-gloss-status">candidate, extracted</span>
+Publish the version at its URL <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
 <p>Publish the files at the version's immutable URL. If the parties' names are sensitive, publish only the template and the hash of the signed instance. A consent-based agreement publishes its plain-language summary and its hash with the text (consent rule 3). Check before publishing (consent rule 2): a computable agreement's ODRL policy uid equals this version's fixed-version URL, the URL a Consent cites; if they differ, the version is not published.</p>
@@ -3568,20 +3576,20 @@ QA gate: check dispositions against the people and the pull request <span class=
 <p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/public-comment-change.bpmn"><code>folio-assistant-core/processes/content/public-comment-change.bpmn#Task_QaGate</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
-<dt id="folio-assistant-core--kg-bpmn-activities--process_contributorfeedback.task_qagate" data-fa-state="extracted" data-fa-gloss="">
-QA gate: review dispositions against the people and the pull request <span class="fa-gloss-status">candidate, extracted</span>
-</dt>
-<dd>
-<p>Reads: the change set's Disposition (change set), the people's Blue Disposition and feedback, the pull request's diff at its head commit, and the staging QA report. Checks that every feedback item has one disposition; that each agrees with the people's Blue Disposition; that each Accepted or Partially accepted item has the change in the diff, and a Not accepted, Noted, Duplicate or Out of scope item has none; that the diff changes nothing no disposition accounts for; and that the QA report for the staged commit has no failing gate. Writes: QA gate (change set) on the Agent tab, first line &quot;Passed &lt;head sha&gt;: …&quot; or &quot;Failed &lt;head sha&gt;: &lt;why&gt;&quot;, and QA report (change set), the report's link. The sheet shows the gate under Staging review; a pass for an older commit reads as stale (owner, 2026-10-31).</p>
-<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/contributor-feedback.bpmn"><code>folio-assistant-core/processes/content/contributor-feedback.bpmn#Task_QaGate</code></a></p>
-<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
-</dd>
 <dt id="cat-harness--kg-bpmn-activities--process_codequalitygates.task_qaworkingcopy" data-fa-state="extracted" data-fa-gloss="">
 QA working copy, built once (NOT A GATE) <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
 <p>Bean <code>jtfk</code>, issue #2456. <code>bun run qa:working-copy</code> (bean <code>72a8</code>) — the bootstrap kg-export, then every declared QA writer — used to run INSIDE each job that reads the QA tree, and <code>qa-publish</code> ran the same writers again: nine builds of one tree from one commit, measured at 2,284 of 4,714 runner-seconds (48 %) on run 37659324493. Now the <code>qa-working-copy</code> job builds it once and uploads everything the build changed as an artifact with a sha256 manifest; each reader downloads it, checks the manifest against the hash this job reported and every restored file against the manifest, and only then judges. An artifact rather than a cache, because a cache key built from less than the real inputs serves stale data; an artifact is per run and exact. It judges nothing, so it is not a gate and does not reach GW_Join; a failed build fails every reader at its first step (they run <code>if: !cancelled()</code>), never a skip. Drawn feeding GW_Readers, the four tasks that wait for it; within them <code>typescript-static</code> and <code>gates-standalone</code> read no QA tree and do not wait, and <code>qa-publish</code> waits for it as well as for Task_RepositoryGates.</p>
 <p class="fa-gloss-meta">BPMN activities of cat-harness · source <a href="https://github.com/litlfred/cat-harness/blob/main/processes/sdlc/code-quality-gates.bpmn"><code>cat-harness/processes/sdlc/code-quality-gates.bpmn#Task_QaWorkingCopy</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="folio-assistant-core--kg-bpmn-activities--process_contributorfeedback.task_qagate" data-fa-state="extracted" data-fa-gloss="">
+QA-review the dispositions <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Reads: the change set's Disposition (change set), the people's Blue Disposition and feedback, the pull request's diff at its head commit, and the staging QA report. Checks that every feedback item has one disposition; that each agrees with the people's Blue Disposition; that each Accepted or Partially accepted item has the change in the diff, and a Not accepted, Noted, Duplicate or Out of scope item has none; that the diff changes nothing no disposition accounts for; and that the QA report for the staged commit has no failing gate. Writes: QA gate (change set) on the Agent tab, first line &quot;Passed &lt;head sha&gt;: …&quot; or &quot;Failed &lt;head sha&gt;: &lt;why&gt;&quot;, and QA report (change set), the report's link. The sheet shows the gate under Staging review; a pass for an older commit reads as stale (owner, 2026-10-31).</p>
+<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/contributor-feedback.bpmn"><code>folio-assistant-core/processes/content/contributor-feedback.bpmn#Task_QaGate</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="fhir-harness--kg-bpmn-activities--process_l3fhir.task_qcgates" data-fa-state="extracted" data-fa-gloss="">
@@ -3614,6 +3622,14 @@ Query data repositories and statistical datasets <span class="fa-gloss-status">c
 <dd>
 <p>Indicator and microdata sources. Distinct from the two above because the unit of evidence is a MEASUREMENT with a population, a period and a method, not a claim in prose.</p>
 <p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/content/evidence-retrieval.bpmn"><code>folio-assistant-core/processes/content/evidence-retrieval.bpmn#Task_DataRepos</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="folio-assistant-core--kg-bpmn-activities--process_l1documentingestion.task_summaryqueue" data-fa-state="extracted" data-fa-gloss="">
+Queue prose blocks for summary <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Owner, 2026-09-24: &quot;Make as QA sidecar as part of general doc ingestion to slowly drain.&quot; Nothing is written to ENQUEUE a block: the queue is derived (every prose block in every declared library, minus those whose summaries.json record is a current draft or confirmation), so a promoted entry is in it the moment its blocks are. A re-ingested document whose text changed re-enters it on its own, because the record's source_hash no longer matches. What an agent doing ingestion work does here is DRAIN a few: <code>bun run cat summaries:next -- --n K</code> hands it the next K blocks with their text, it writes a short summary of each in its own words, and <code>bun run cat summaries:record</code> writes them into library/&lt;bib-slug&gt;/summaries.json as drafts naming the agent and its model. The block itself stays verbatim and <code>ingested</code>. ADVISORY, never a gate: this step does not hold up Task_Citeable, and check:l1-complete reports the backlog (<code>block-summaries</code>) without failing on it. Confirming or rejecting a draft is a person's act, in <code>bun run cat narratives</code>.</p>
+<p class="fa-gloss-meta">BPMN activities of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/processes/library/l1-document-ingestion.bpmn"><code>folio-assistant-core/processes/library/l1-document-ingestion.bpmn#Task_SummaryQueue</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 </dl>
