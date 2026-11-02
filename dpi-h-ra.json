@@ -135,6 +135,14 @@
       "graphTypologies": [
         "glossary"
       ]
+    },
+    {
+      "id": "references",
+      "path": "references/",
+      "description": "dpi-h-ra's bibliography: one folio-reference/v1 CSL-JSON entry per cited work, `<key>.json`. The paper cites them by key (`\\cite{key}` in a block's text, and `cites` on its manifest), each citation links to its entry on the KG Bibliography page (`en/folio-assistant-core/bibliography/#ref-<key>`), and the References chapter's list is generated from them by `references:render`. Footnotes are kept only for notes that explain rather than cite.",
+      "graphTypologies": [
+        "references"
+      ]
     }
   ],
   "visualisers": [
