@@ -15,11 +15,6 @@
  },
  "chapters": [
   {
-   "dir": "acronyms",
-   "title": "Acronyms",
-   "label": "chap:acronyms"
-  },
-  {
    "dir": "glossary",
    "title": "Glossary",
    "label": "chap:glossary"
@@ -79,7 +74,7 @@
   {
    "label": "sec:acronyms-lead",
    "title": "Acronyms",
-   "chapter": "acronyms"
+   "chapter": "glossary"
   },
   {
    "label": "sec:glossary-lead",
@@ -1298,7 +1293,7 @@
   {
    "label": "tbl:acronyms-lead-bf4749",
    "kind": "table",
-   "chapter": "acronyms",
+   "chapter": "glossary",
    "root": "t-acronyms-lead-bf4749",
    "sections": [
     "sec:acronyms-lead"
