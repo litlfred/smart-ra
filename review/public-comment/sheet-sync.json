@@ -2,8 +2,8 @@
   "$comment": "Settings for the review sheet's Apps Script. Build it with folio-assistant-core/tools/review-sheet-sync (skill public-comment, \"The review sheet's Apps Script\").",
   "anchors": "folio/dpi-h-ra/review-anchors.json",
   "lineMap": "library/who-dpi-h-reference-architecture-draft-v1/pdf-line-map.json",
-  "draftUrl": "https://litlfred.github.io/smart-ra/draft/#page=",
-  "commentUrl": "https://litlfred.github.io/smart-ra/en/folio-assistant-core/public-comments/folio/dpi-h-ra/index.html#",
+  "draftUrl": "draft/#page=",
+  "commentUrl": "en/folio-assistant-core/public-comments/folio/dpi-h-ra/index.html#",
   "namedSections": {
     "CR": "Client Registry",
     "HFR": "Health Facility Registry",
