@@ -65,5 +65,11 @@
       "@id": "https://litlfred.github.io/smart-ra/archimate/0.2.0-draft.3/elements/id-edcafa087b5e4f8aaa58ee3f9d0dcadd.jsonld"
     }
   ],
+  "schema:subjectOf": [
+    {
+      "schema:name": "Figure 3.3",
+      "schema:url": "https://litlfred.github.io/smart-ra/folio/dpi-h-ra/ch3-the-reference-architecture-for-d/f-3-3.md"
+    }
+  ],
   "dcterms:isPartOf": "https://litlfred.github.io/smart-ra/archimate/0.2.0-draft.3.jsonld"
 }
