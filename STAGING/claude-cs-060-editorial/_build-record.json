@@ -2,7 +2,7 @@
  "version": 1,
  "kind": "preview-build-record",
  "builder": "agent",
- "builtAt": "2026-11-04T11:33:36Z",
+ "builtAt": "2026-11-04T11:43:30Z",
  "slug": "claude-cs-060-editorial",
  "commit": "c7dd006a062b57cfa53a7d45934020e962802d59",
  "tree": "4772f3bf224d18a0bbaf3d581ee14305ff7a83b6",
@@ -17999,7 +17999,7 @@
   "assets/vendor/crepe/chunks/yacas-x92tet9f.js": "b1c32662f7ee48f2be9230a79cfd5410c357b5e087e74476e1f72144dd226a17",
   "assets/vendor/crepe/chunks/z80-4h5k2kw4.js": "2717072954a076208046aadf724ab4d31a728bbc153e919b8d1f992901cb9b0c",
   "assets/vendor/crepe/crepe.css": "ae8e448784175086fc16d5577a14ce173b706cdadccb37daf022652149a447a3",
-  "assets/vendor/crepe/crepe.js": "1a8f3ca23e6d8b3049a0a696985c56299b6063f8d19b577d7d09a966386f1398",
+  "assets/vendor/crepe/crepe.js": "682909e05cb5f6d599c85230b783ae577588866330abe6b7ee6c6fa8a5e42862",
   "assets/vendor/crepe/fonts/KaTeX_AMS-Regular.ttf": "68534840bcfdd2bffb6f0e8deb48684dd01e7f04ea2813267577afb906de1d13",
   "assets/vendor/crepe/fonts/KaTeX_AMS-Regular.woff": "30da91e84c893f875e252689faebdc590b2871145e8adc7f9a9d4dbd8ce0b251",
   "assets/vendor/crepe/fonts/KaTeX_AMS-Regular.woff2": "0cdd387c9590a1a9f9794560022dbb59654a7d86f187aa0c81495ad42d3a7308",
@@ -38326,7 +38326,7 @@
   "en/folio-assistant-core/public-comment/dpi-h-ra/review/public-comment/comments/PC-2743/index.html": "56b50289c3553d52c44db2e2fa49e15b0d7ac698227dcb5294211b862ade4319",
   "en/folio-assistant-core/public-comment/dpi-h-ra/review/public-comment/comments/PC-2744/index.html": "dae63981a62a8d4d1bd0e90a3558e1b29c18a6e19e89b71875980950dfb1e252",
   "en/folio-assistant-core/public-comment/index.html": "eb95c0eb78d9d7d7ac6bc344646f8f2ff33dd6dfc2de4bca5a242ecc58825779",
-  "en/folio-assistant-core/public-comments/folio/dpi-h-ra/index.html": "2418ac337ca470a9dccc7b0a9cd9c433a4124efdf4de23230a8f8212c9206235",
+  "en/folio-assistant-core/public-comments/folio/dpi-h-ra/index.html": "19afc5ad29a93a3ea97f9f2c4da00983541f29042c2e7aa63cdfb36564846f08",
   "en/mapper/SMART-RA-Mapper.html": "ba302de5f39ecefb7c24ca37664fe2ff20bc7add49b2dc53da1664371624fb0d",
   "en/mapper/index.html": "179d2bc2d15112131b2953ca68611d88f7c2923e6947c8ecdf12cf05286fc971",
   "en/review/index.html": "00fe758096c1044633ee4dc6b296d788285a7dedd41cd55d1e7bfb3bf58987dd",
@@ -38594,8 +38594,8 @@
   "mapper/index.html": "d6f05a52426e435cbcfc4cd32f7ff6fb414e13214ba762607662e8bbb92f80f3",
   "outline.json": "ab392e24f8a30132a35eb509006194882baae317241c683f7f3ef6bcc024d256",
   "public-comments/index.html": "d288df833a13bc5c65af07eaa9f2984629b6e2354b3b2f67dc304c910702105b",
-  "review-brief.json": "30817a162159ccf1a609ec010c0edd0bf923ee4987578a1a663d8029d187b711",
-  "review-comments.json": "dc0a887726defd1b95cf23c3ea9ec85bdce9d1a250e17f326a0a92ba4540ec80",
+  "review-brief.json": "3298de73221c46ccdd86e8beed4932881f1a783f383c2ce8a12f53f1ee8bb75e",
+  "review-comments.json": "bfaecd1e95e0aa8320eabfad0cbed2b71f64df51c82713263971119b47860875",
   "review-sheet/Code.gs": "cde92f213fbe05351006f953ee9ea20b978a1a4062177682935003b48dca97df",
   "review-sheet/index.html": "49c746b3b64994108cd202d8c8e31cce6906da2e30db322bb54321f9d45216c0",
   "review-sheet/public-comment.config-rows.json": "f1b5b06571b6a7329a99adeeaea85c7720fcd3ee1e24c8716cee905ab088ad22",
@@ -38723,5 +38723,5 @@
   "who-iris/zh/index.html": "4b8707a1feee803e99b09249c1606b8506dd16f8b0b69feb04745e059cc9849f",
   "zh/folio-assistant-core/glossary/index.html": "1e274bfe83fc15c306bd999033f379d34a36d3ff89a842563979acedf06c2f07"
  },
- "digest": "3b6cb33334a717228cf3f037233fd135901a386703e4802b33170c55d79c9087"
+ "digest": "07f95032748402942dd4def38af00c8ce0e5fc1ea42ca784219736f27b56c7fc"
 }
