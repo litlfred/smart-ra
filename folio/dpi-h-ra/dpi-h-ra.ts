@@ -15,8 +15,6 @@ export default paper({
   authors: ["World Health Organization","International Telecommunication Union"],
   date: "2026-07-08",
   chapters: [
-    chapterRef({ dir: "acronyms" }),
-    chapterRef({ dir: "glossary" }),
     chapterRef({ dir: "executive-summary" }),
     chapterRef({ dir: "how-to-use-this-guidance" }),
     chapterRef({ dir: "ch1-introduction" }),
@@ -24,7 +22,11 @@ export default paper({
     chapterRef({ dir: "ch3-the-reference-architecture-for-d" }),
     chapterRef({ dir: "ch4-implementing-a-national-digital" }),
     chapterRef({ dir: "ch5-future-proofing-the-architecture" }),
-    chapterRef({ dir: "references" }),
+    // Back matter: annexes, then the glossary and its acronyms, then references.
+    // The document opens on the executive summary, not on reference lists.
     chapterRef({ dir: "appendix" }),
+    chapterRef({ dir: "glossary" }),
+    chapterRef({ dir: "acronyms" }),
+    chapterRef({ dir: "references" }),
   ],
 });
