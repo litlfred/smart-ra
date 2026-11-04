@@ -53,6 +53,7 @@ tramp
 # The built site (bun run build:site) and the private intake: returned
 # comment spreadsheets hold reviewers' emails and stay out of the repository.
 _site/
+build/
 review/public-comment/raw/
 # Kept on cat/dpi-h-ra/beans; mounted here by state:mount, never committed to main
 /beans/**
@@ -73,3 +74,5 @@ review/public-comment/raw/
 # END index mounts
 
 node_modules/
+__pycache__/
+*.pyc
