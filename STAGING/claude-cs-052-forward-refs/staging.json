@@ -1,16 +1,19 @@
 {
   "branch": "claude/cs-052-forward-refs",
-  "sha": "8d38655",
-  "built": "2026-10-31T02:40:28Z (built locally by an agent)",
+  "sha": "8df593f",
+  "built": "2026-11-04T11:52:25Z (built locally by an agent)",
   "pr": "158",
   "prUrl": "https://github.com/litlfred/smart-ra/pull/158",
   "branchUrl": "https://github.com/litlfred/smart-ra/tree/claude/cs-052-forward-refs",
   "issue": null,
   "issueUrl": null,
-  "runUrl": "https://github.com/litlfred/smart-ra/commit/8d386551ca72e74b86165a3efa260c707ead6d3d",
+  "runUrl": "https://github.com/litlfred/smart-ra/commit/8df593f5884bf36743d2c478d574176ec4d4dfd8",
   "checksUrl": null,
   "mainSite": "https://litlfred.github.io/smart-ra",
   "beforeRef": "main",
   "mainPagesKnown": true,
-  "newPages": []
+  "newPages": [
+    "en/folio-assistant-core/bibliography/references/index.html",
+    "folio-assistant-core/bibliography/references/index.html"
+  ]
 }

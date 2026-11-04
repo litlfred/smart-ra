@@ -9,13 +9,7 @@
 
   <link rel="stylesheet" href="../../../../../assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
 
-  <style id="jtd-nav-activation">
   
-    .site-nav ul li a {
-      background-image: none;
-    }
-
-  </style>
 
   
 
@@ -415,7 +409,7 @@
   instance's `glassStrip` declaration by `sync-docs-harness.ts`; absent when
   nothing declared one. Replica pages read `assets/harness/glass-strip.json`.
 -->
-<meta name="fa-glass-strip" content="[&quot;glass-todos&quot;,&quot;glass-settings&quot;,&quot;library&quot;]">
+<meta name="fa-glass-strip" content="[&quot;glass-todos&quot;,&quot;glass-settings&quot;]">
 
 <!--
   THE SITE'S BASEURL, for the tiles above.
@@ -588,7 +582,7 @@
 -->
 <!-- The harness icon row's own style, which railed pages load without docs-ui.css (beans `lhvt`, `9rq1`). -->
 <link rel="stylesheet" href="../../../../../assets/css/navbar-row.css?v=7d7d00921e0f">
-<link rel="stylesheet" href="../../../../../assets/css/docs-ui.css?v=6071ae228cf3">
+<link rel="stylesheet" href="../../../../../assets/css/docs-ui.css?v=18eb22b50395">
 <!-- Narrow viewports: wide content scrolls in its own box, never the page
      (bean `2r2n`). The standalone viewers inline the same file through
      `withViewerNav`, so both kinds of page read one set of rules. -->
@@ -613,7 +607,7 @@
      `avatars:css:check` fails the build when it is stale. One stylesheet
      rather than 68 assets: the glyph is a mask and the colour is a property,
      so a scheme swap is a custom property and the trash state is a selector. -->
-<link rel="stylesheet" href="../../../../../assets/css/avatars.css?v=780d571c53c1">
+<link rel="stylesheet" href="../../../../../assets/css/avatars.css?v=a0806788c1f5">
 
 <!--
   The kinds THIS INSTANCE DECLARES, for the avatar fan.
@@ -628,7 +622,7 @@
   all, and a fetch for that would put a spinner in front of a badge.
 -->
 <!-- NOT MOVED: same reason as fa-site-links above. -->
-<script type="application/json" id="fa-declared-kinds">["archimate","beans","folio","fsh-guts","library","public-comments","todo-items","todos","uploads"]</script>
+<script type="application/json" id="fa-declared-kinds">["archimate","beans","folio","fsh-guts","glossary","library","public-comments","references","todo-items","todos","uploads"]</script>
 <!--
   FIRST of the deferred scripts: it fills `#fa-navbar-row` and
   `meta[name=fa-tiles]` before any reader runs (bean `gp2f`).
@@ -646,12 +640,12 @@
 <!-- BEFORE docs-ui.js and work-plan.js: both read window.faRender. -->
 <script src="../../../../../assets/js/kg-render.js" defer></script>
 <!-- BEFORE docs-ui.js, which calls it: the one drawing of the harness icon row (beans `lhvt`, `9rq1`). -->
-<script src="../../../../../assets/js/navbar-row.js?v=7dce6a7e2ab0" defer></script>
-<script src="../../../../../assets/js/docs-ui.js?v=59c1d8d3ff0a" defer></script>
+<script src="../../../../../assets/js/navbar-row.js?v=6bb19e1d17a5" defer></script>
+<script src="../../../../../assets/js/docs-ui.js?v=52e4c68c64c7" defer></script>
 <!-- The edit, source and feedback links of every page, from the platform's one
   recipe (cat-harness-tools/src/core/edit-links.ts, bean v433): links carry their
   facts and this builds the hrefs. -->
-<script src="../../../../../assets/js/edit-links.js?v=81bb303b6bc2" defer></script>
+<script src="../../../../../assets/js/edit-links.js?v=4f82faf45c35" defer></script>
 
 <!--
   The work-plan dashboard. SELF-MOUNTING on any page carrying
@@ -749,6 +743,7 @@ function fill(d,f,r){
   while(d.firstChild)d.removeChild(d.firstChild);
   d.appendChild(document.createTextNode('\u2014 '));
   var b=link(f.branchUrl,'');b.appendChild(chip(f.branch));d.appendChild(b);
+  var rv=el('span',{'data-fa-staging-review':''});d.appendChild(rv);
   d.appendChild(sep());d.appendChild(document.createTextNode('commit '));d.appendChild(chip(f.sha));
   d.appendChild(sep());d.appendChild(document.createTextNode('built '+f.built));
   d.appendChild(sep());d.appendChild(link(f.prUrl,f.pr&&f.pr!=='n/a'?'PR #'+f.pr:'no open PR found'));
@@ -769,6 +764,48 @@ function fill(d,f,r){
   if(f.checksUrl){d.appendChild(sep());d.appendChild(link(f.checksUrl,'CI results'));}
   stamp(f);
   measure();
+  fresh(d,f);
+  review(rv,r,rel);
+}
+// The preview's review page (owner, 2026-11-01, Q-REV-1): reviewers could not
+// find it from a staging page. A folio writes it at <root>/<locale>/review/,
+// an IG at <root>/review/. Asked with HEAD, which the staging worker passes
+// through, so a 404 here is not answered with the live site's page. No review
+// page, no link.
+function review(s,r,rel){
+  if(typeof fetch!=='function')return;
+  var c=[],m=rel.match(/^([a-z]{2,3}(?:-[A-Za-z0-9]+)?)\//);
+  if(m)c.push(r+m[1]+'/review/');
+  c.push(r+'review/');
+  (function next(i){
+    if(i>=c.length)return;
+    fetch(c[i]+'index.html',{method:'HEAD',cache:'no-store'}).then(function(x){
+      if(!x.ok)return next(i+1);
+      s.appendChild(sep());
+      s.appendChild(link(c[i],'\ud83d\udd0d Review changes','font-weight:bold'));
+      measure();
+    }).catch(function(){next(i+1);});
+  })(0);
+}
+// Live staleness (owner, 2026-10-31, option C): ask GitHub for the branch's
+// head now and say so when it has moved past the commit this preview was
+// built from. Unauthenticated, one request per page view; on any failure
+// (rate limit, offline, a deleted branch) it says nothing rather than guess.
+function fresh(d,f){
+  var m=String(f.branchUrl||'').match(/^https:\/\/github\.com\/([^/]+)\/([^/]+)\//);
+  if(!m||!f.branch||!f.sha||typeof fetch!=='function')return;
+  fetch('https://api.github.com/repos/'+m[1]+'/'+m[2]+'/commits/'+encodeURIComponent(f.branch),
+    {headers:{Accept:'application/vnd.github.sha'},cache:'no-store'})
+    .then(function(x){if(!x.ok)throw 0;return x.text();})
+    .then(function(head){
+      head=String(head).trim();
+      if(!/^[0-9a-f]{7,40}$/.test(head)||head.indexOf(f.sha)===0)return;
+      d.appendChild(sep());
+      var w=el('strong',{'data-fa-staging-stale':'',style:'background:#b00020;padding:0 .4em;border-radius:3px'},'\u26a0 stale: the branch is now at ');
+      w.appendChild(chip(head.slice(0,7)));
+      w.appendChild(document.createTextNode(', newer than this preview'));
+      d.appendChild(w);measure();
+    }).catch(function(){});
 }
 function stamp(f){
   var p=document.querySelector('.fa-build-stamp');if(!p)return;
@@ -786,7 +823,23 @@ function go(){
     .then(function(f){fill(d,f,r);})
     .catch(function(){d.textContent='\u2014 build details unavailable';measure();});
 }
-measure();
+// First visit to a preview: the shared stylesheets 404 until the worker is
+// in control, so the page would paint unstyled (a page-wide search icon) for
+// the moment before the reload. Hide it until then, only when a stylesheet
+// in the head actually failed, and show it again if no reload comes.
+function unstyled(){var l=document.querySelectorAll('link[rel="stylesheet"]');for(var i=0;i<l.length;i++){if(l[i].disabled)continue;try{if(!l[i].sheet||!l[i].sheet.cssRules.length)return true;}catch(e){}}return false;}
+function share(){
+  var r=root();if(!r||!('serviceWorker' in navigator))return;
+  var k='fa-share:'+r,s=document.documentElement.style;
+  var hide=!navigator.serviceWorker.controller&&!sessionStorage.getItem(k)&&unstyled();
+  function show(){if(hide){hide=false;s.removeProperty('visibility');}}
+  if(hide){s.setProperty('visibility','hidden');setTimeout(show,4000);}
+  navigator.serviceWorker.register(r+'staging-sw.js',{scope:r}).then(function(){
+    if(navigator.serviceWorker.controller||sessionStorage.getItem(k))return show();
+    return navigator.serviceWorker.ready.then(function(){sessionStorage.setItem(k,'1');location.reload();});
+  }).catch(show);
+}
+measure();share();
 if(document.readyState!=='loading')go();else document.addEventListener('DOMContentLoaded',go);
 window.addEventListener('resize',measure);window.addEventListener('load',measure);
 })();</script><script type="application/json" id="fa-rail" data-fa-root="https://litlfred.github.io/folio-assistant" data-fa-to-root="../../../../..">{"data":"rail-1nr7jo2rxsc","here":"/cat-harness/auto-docs/index/docs/docs-source/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../">Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector</a></nav>
@@ -968,17 +1021,17 @@ window.addEventListener('resize',measure);window.addEventListener('load',measure
 </div>
 
 <ul class="subs">
-<li><a href="../docs/">docs</a> <span class="p">cat-harness/docs</span> <span class="n">248</span></li>
-<li><strong>docs-source</strong> <span class="p">cat-harness/docs/source</span> <span class="n">71</span></li>
-<li><a href="../dpi-h-ra-docs/">dpi-h-ra-docs</a> <span class="p">docs</span> <span class="n">2</span></li>
-<li><a href="../fhir-harness-docs/">fhir-harness-docs</a> <span class="p">fhir-harness/docs</span> <span class="n">4</span></li>
-<li><a href="../fhir-harness-docs-source/">fhir-harness-docs-source</a> <span class="p">fhir-harness/docs/source</span> <span class="n">10</span></li>
-<li><a href="../folio-assistant-core-docs/">folio-assistant-core-docs</a> <span class="p">folio-assistant-core/docs</span> <span class="n">17</span></li>
-<li><a href="../folio-assistant-core-docs-source/">folio-assistant-core-docs-source</a> <span class="p">folio-assistant-core/docs/source</span> <span class="n">60</span></li>
-<li><a href="../site-chrome/">site-chrome</a> <span class="p">cat-harness/site-chrome</span> <span class="n">15</span></li>
-<li><a href="../smart-base-findings/">smart-base-findings</a> <span class="p">smart-base/findings</span> <span class="n">8</span></li>
-<li><a href="../who-iris-docs/">who-iris-docs</a> <span class="p">who-iris/docs</span> <span class="n">11</span></li>
-<li><a href="../who-iris-site/">who-iris-site</a> <span class="p">who-iris/site</span> <span class="n">1</span></li>
+<li><a href="../docs/">docs</a> <span class="p">cat-harness/docs</span> <span class="n" data-da-count="index/docs/docs" data-da-count-state="pending">…</span></li>
+<li><strong>docs-source</strong> <span class="p">cat-harness/docs/source</span> <span class="n" data-da-count="index/docs/docs-source" data-da-count-state="pending">…</span></li>
+<li><a href="../dpi-h-ra-docs/">dpi-h-ra-docs</a> <span class="p">docs</span> <span class="n" data-da-count="index/docs/dpi-h-ra-docs" data-da-count-state="pending">…</span></li>
+<li><a href="../fhir-harness-docs/">fhir-harness-docs</a> <span class="p">fhir-harness/docs</span> <span class="n" data-da-count="index/docs/fhir-harness-docs" data-da-count-state="pending">…</span></li>
+<li><a href="../fhir-harness-docs-source/">fhir-harness-docs-source</a> <span class="p">fhir-harness/docs/source</span> <span class="n" data-da-count="index/docs/fhir-harness-docs-source" data-da-count-state="pending">…</span></li>
+<li><a href="../folio-assistant-core-docs/">folio-assistant-core-docs</a> <span class="p">folio-assistant-core/docs</span> <span class="n" data-da-count="index/docs/folio-assistant-core-docs" data-da-count-state="pending">…</span></li>
+<li><a href="../folio-assistant-core-docs-source/">folio-assistant-core-docs-source</a> <span class="p">folio-assistant-core/docs/source</span> <span class="n" data-da-count="index/docs/folio-assistant-core-docs-source" data-da-count-state="pending">…</span></li>
+<li><a href="../site-chrome/">site-chrome</a> <span class="p">cat-harness/site-chrome</span> <span class="n" data-da-count="index/docs/site-chrome" data-da-count-state="pending">…</span></li>
+<li><a href="../smart-base-findings/">smart-base-findings</a> <span class="p">smart-base/findings</span> <span class="n" data-da-count="index/docs/smart-base-findings" data-da-count-state="pending">…</span></li>
+<li><a href="../who-iris-docs/">who-iris-docs</a> <span class="p">who-iris/docs</span> <span class="n" data-da-count="index/docs/who-iris-docs" data-da-count-state="pending">…</span></li>
+<li><a href="../who-iris-site/">who-iris-site</a> <span class="p">who-iris/site</span> <span class="n" data-da-count="index/docs/who-iris-site" data-da-count-state="pending">…</span></li>
 </ul>
 
 <div class="fa-table-filter">
@@ -1301,6 +1354,24 @@ var SCOPE = "docs-source";
   }
   input.addEventListener("input", apply);
   apply();
+})();
+</script>
+<script>
+(function () {
+  var badges = document.querySelectorAll(".da-page [data-da-count]");
+  if (!badges.length) return;
+  function set(counts) {
+    Array.prototype.forEach.call(badges, function (b) {
+      var n = counts ? counts[b.getAttribute("data-da-count")] : undefined;
+      var ok = typeof n === "number" && isFinite(n);
+      b.textContent = ok ? String(n) : "";
+      b.setAttribute("data-da-count-state", ok ? "some" : counts ? "absent" : "error");
+    });
+  }
+  fetch("../../../../../assets/auto-docs/index.json", { cache: "no-cache" })
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (j) { set(j && j.counts && typeof j.counts === "object" ? j.counts : null); })
+    .catch(function () { set(null); });
 })();
 </script>
 

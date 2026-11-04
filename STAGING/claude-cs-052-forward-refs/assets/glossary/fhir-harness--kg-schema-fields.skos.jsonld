@@ -717,6 +717,101 @@
       "skos:note": "candidate"
     },
     {
+      "@id": "https://litlfred.github.io/fhir-harness/v0/ns#glossary/kg-schema-fields/ig-ast-lock.igastpinschema.branch",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/fhir-harness/v0/ns#glossary/kg-schema-fields"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "IgAstPinSchema.branch"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "The cache branch the commit was read from, for the reader; the commit is what is fetched."
+        }
+      ],
+      "dcterms:source": "fhir-harness/schemas/ig-ast-lock.ts#IgAstPinSchema.branch",
+      "skos:note": "candidate"
+    },
+    {
+      "@id": "https://litlfred.github.io/fhir-harness/v0/ns#glossary/kg-schema-fields/ig-ast-lock.igastpinschema.instance",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/fhir-harness/v0/ns#glossary/kg-schema-fields"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "IgAstPinSchema.instance"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "The IG instance, as `index.lock.json` names it."
+        }
+      ],
+      "dcterms:source": "fhir-harness/schemas/ig-ast-lock.ts#IgAstPinSchema.instance",
+      "skos:note": "candidate"
+    },
+    {
+      "@id": "https://litlfred.github.io/fhir-harness/v0/ns#glossary/kg-schema-fields/ig-ast-lock.igastpinschema.repository",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/fhir-harness/v0/ns#glossary/kg-schema-fields"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "IgAstPinSchema.repository"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "The repository the cache branch lives in: the IG's own."
+        }
+      ],
+      "dcterms:source": "fhir-harness/schemas/ig-ast-lock.ts#IgAstPinSchema.repository",
+      "skos:note": "candidate"
+    },
+    {
+      "@id": "https://litlfred.github.io/fhir-harness/v0/ns#glossary/kg-schema-fields/ig-ast-lock.igastpinschema.sha",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/fhir-harness/v0/ns#glossary/kg-schema-fields"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "IgAstPinSchema.sha"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "The pinned cache commit."
+        }
+      ],
+      "dcterms:source": "fhir-harness/schemas/ig-ast-lock.ts#IgAstPinSchema.sha",
+      "skos:note": "candidate"
+    },
+    {
+      "@id": "https://litlfred.github.io/fhir-harness/v0/ns#glossary/kg-schema-fields/ig-ast-lock.igastpinschema.sourcerevision",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/fhir-harness/v0/ns#glossary/kg-schema-fields"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "IgAstPinSchema.sourceRevision"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "The IG commit the AST says it was compiled from (`manifest.json` `inputs.sourceRevision`), when it says."
+        }
+      ],
+      "dcterms:source": "fhir-harness/schemas/ig-ast-lock.ts#IgAstPinSchema.sourceRevision",
+      "skos:note": "candidate"
+    },
+    {
       "@id": "https://litlfred.github.io/fhir-harness/v0/ns#glossary/kg-schema-fields/ig-ast.astmanifestschema.inputs",
       "@type": "skos:Concept",
       "skos:inScheme": {
@@ -2044,6 +2139,272 @@
         }
       ],
       "dcterms:source": "fhir-harness/schemas/iti-108-consent-client.ts#Iti108Query.timeoutMs",
+      "skos:note": "candidate"
+    },
+    {
+      "@id": "https://litlfred.github.io/fhir-harness/v0/ns#glossary/kg-schema-fields/odrl-to-fhir-r5-permission.droppedodrlterm.disposition",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/fhir-harness/v0/ns#glossary/kg-schema-fields"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "DroppedOdrlTerm.disposition"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "`\"dropped\"` when omitted entirely from the FHIR R5 Permission output; `\"lossy\"` when approximated in a FHIR R5 Permission element that does not preserve full ODRL semantics."
+        }
+      ],
+      "dcterms:source": "fhir-harness/schemas/odrl-to-fhir-r5-permission.ts#DroppedOdrlTerm.disposition",
+      "skos:note": "candidate"
+    },
+    {
+      "@id": "https://litlfred.github.io/fhir-harness/v0/ns#glossary/kg-schema-fields/odrl-to-fhir-r5-permission.droppedodrlterm.path",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/fhir-harness/v0/ns#glossary/kg-schema-fields"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "DroppedOdrlTerm.path"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "JSONPath-style location in the input ODRL Agreement or DCAT record."
+        }
+      ],
+      "dcterms:source": "fhir-harness/schemas/odrl-to-fhir-r5-permission.ts#DroppedOdrlTerm.path",
+      "skos:note": "candidate"
+    },
+    {
+      "@id": "https://litlfred.github.io/fhir-harness/v0/ns#glossary/kg-schema-fields/odrl-to-fhir-r5-permission.droppedodrlterm.reason",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/fhir-harness/v0/ns#glossary/kg-schema-fields"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "DroppedOdrlTerm.reason"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "Why FHIR R5 Permission has no exact home for this term, or how it was approximated."
+        }
+      ],
+      "dcterms:source": "fhir-harness/schemas/odrl-to-fhir-r5-permission.ts#DroppedOdrlTerm.reason",
+      "skos:note": "candidate"
+    },
+    {
+      "@id": "https://litlfred.github.io/fhir-harness/v0/ns#glossary/kg-schema-fields/odrl-to-fhir-r5-permission.droppedodrlterm.term",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/fhir-harness/v0/ns#glossary/kg-schema-fields"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "DroppedOdrlTerm.term"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "The ODRL 2.2 (or DCAT 3 / SPDX) term name that has no exact FHIR R5 Permission home."
+        }
+      ],
+      "dcterms:source": "fhir-harness/schemas/odrl-to-fhir-r5-permission.ts#DroppedOdrlTerm.term",
+      "skos:note": "candidate"
+    },
+    {
+      "@id": "https://litlfred.github.io/fhir-harness/v0/ns#glossary/kg-schema-fields/odrl-to-fhir-r5-permission.droppedodrlterm.value",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/fhir-harness/v0/ns#glossary/kg-schema-fields"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "DroppedOdrlTerm.value"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "The input value that was dropped or only lossily approximated."
+        }
+      ],
+      "dcterms:source": "fhir-harness/schemas/odrl-to-fhir-r5-permission.ts#DroppedOdrlTerm.value",
+      "skos:note": "candidate"
+    },
+    {
+      "@id": "https://litlfred.github.io/fhir-harness/v0/ns#glossary/kg-schema-fields/odrl-to-fhir-r5-permission.odrltofhirr5permissionoptions.agreementdisplay",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/fhir-harness/v0/ns#glossary/kg-schema-fields"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "OdrlToFhirR5PermissionOptions.agreementDisplay"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "Optional display label for the agreement's fixed-version `uid` on `justification.evidence[0].display`."
+        }
+      ],
+      "dcterms:source": "fhir-harness/schemas/odrl-to-fhir-r5-permission.ts#OdrlToFhirR5PermissionOptions.agreementDisplay",
+      "skos:note": "candidate"
+    },
+    {
+      "@id": "https://litlfred.github.io/fhir-harness/v0/ns#glossary/kg-schema-fields/odrl-to-fhir-r5-permission.odrltofhirr5permissionoptions.dcat",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/fhir-harness/v0/ns#glossary/kg-schema-fields"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "OdrlToFhirR5PermissionOptions.dcat"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "Optional DCAT 3 `dcat:Resource` metadata for the agreement version."
+        }
+      ],
+      "dcterms:source": "fhir-harness/schemas/odrl-to-fhir-r5-permission.ts#OdrlToFhirR5PermissionOptions.dcat",
+      "skos:note": "candidate"
+    },
+    {
+      "@id": "https://litlfred.github.io/fhir-harness/v0/ns#glossary/kg-schema-fields/odrl-to-fhir-r5-permission.odrltofhirr5permissionoptions.id",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/fhir-harness/v0/ns#glossary/kg-schema-fields"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "OdrlToFhirR5PermissionOptions.id"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "Optional FHIR resource `id` for the rendered `Permission`."
+        }
+      ],
+      "dcterms:source": "fhir-harness/schemas/odrl-to-fhir-r5-permission.ts#OdrlToFhirR5PermissionOptions.id",
+      "skos:note": "candidate"
+    },
+    {
+      "@id": "https://litlfred.github.io/fhir-harness/v0/ns#glossary/kg-schema-fields/odrl-to-fhir-r5-permission.odrltofhirr5permissionoptions.partyreferences",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/fhir-harness/v0/ns#glossary/kg-schema-fields"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "OdrlToFhirR5PermissionOptions.partyReferences"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "Optional map from party/target IRIs (e.g. `\"https://ministry-m.example.org/\"`) to FHIR `Reference`s (e.g. `{ reference: \"Organization/MinistryM\" }` or display strings)."
+        }
+      ],
+      "dcterms:source": "fhir-harness/schemas/odrl-to-fhir-r5-permission.ts#OdrlToFhirR5PermissionOptions.partyReferences",
+      "skos:note": "candidate"
+    },
+    {
+      "@id": "https://litlfred.github.io/fhir-harness/v0/ns#glossary/kg-schema-fields/odrl-to-fhir-r5-permission.odrltofhirr5permissionoptions.purposedisplays",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/fhir-harness/v0/ns#glossary/kg-schema-fields"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "OdrlToFhirR5PermissionOptions.purposeDisplays"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "Optional human-readable display labels for HL7 `PurposeOfUse` codes."
+        }
+      ],
+      "dcterms:source": "fhir-harness/schemas/odrl-to-fhir-r5-permission.ts#OdrlToFhirR5PermissionOptions.purposeDisplays",
+      "skos:note": "candidate"
+    },
+    {
+      "@id": "https://litlfred.github.io/fhir-harness/v0/ns#glossary/kg-schema-fields/odrl-to-fhir-r5-permission.odrltofhirr5permissionoptions.status",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/fhir-harness/v0/ns#glossary/kg-schema-fields"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "OdrlToFhirR5PermissionOptions.status"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "Explicit `Permission.status` (`active | entered-in-error | draft | rejected`). If omitted, derived from `dcat[\"adms:status\"]` when provided, or defaults to `\"active\"`."
+        }
+      ],
+      "dcterms:source": "fhir-harness/schemas/odrl-to-fhir-r5-permission.ts#OdrlToFhirR5PermissionOptions.status",
+      "skos:note": "candidate"
+    },
+    {
+      "@id": "https://litlfred.github.io/fhir-harness/v0/ns#glossary/kg-schema-fields/odrl-to-fhir-r5-permission.odrltofhirr5permissionoptions.targetdisplays",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/fhir-harness/v0/ns#glossary/kg-schema-fields"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "OdrlToFhirR5PermissionOptions.targetDisplays"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "Optional map from dataset/target IRIs to human-readable display labels on `rule.data.resource.reference.display`."
+        }
+      ],
+      "dcterms:source": "fhir-harness/schemas/odrl-to-fhir-r5-permission.ts#OdrlToFhirR5PermissionOptions.targetDisplays",
+      "skos:note": "candidate"
+    },
+    {
+      "@id": "https://litlfred.github.io/fhir-harness/v0/ns#glossary/kg-schema-fields/odrl-to-fhir-r5-permission.odrltofhirr5permissionresult.dropped",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/fhir-harness/v0/ns#glossary/kg-schema-fields"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "OdrlToFhirR5PermissionResult.dropped"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "Every ODRL 2.2 (or DCAT 3 / SPDX) term from the input that has no exact home in FHIR R5 `Permission` (either omitted or only lossily approximated)."
+        }
+      ],
+      "dcterms:source": "fhir-harness/schemas/odrl-to-fhir-r5-permission.ts#OdrlToFhirR5PermissionResult.dropped",
+      "skos:note": "candidate"
+    },
+    {
+      "@id": "https://litlfred.github.io/fhir-harness/v0/ns#glossary/kg-schema-fields/odrl-to-fhir-r5-permission.odrltofhirr5permissionresult.permission",
+      "@type": "skos:Concept",
+      "skos:inScheme": {
+        "@id": "https://litlfred.github.io/fhir-harness/v0/ns#glossary/kg-schema-fields"
+      },
+      "skos:prefLabel": [
+        {
+          "@value": "OdrlToFhirR5PermissionResult.permission"
+        }
+      ],
+      "skos:definition": [
+        {
+          "@value": "The rendered FHIR R5 `Permission` resource, validated against `FhirR5PermissionSchema`."
+        }
+      ],
+      "dcterms:source": "fhir-harness/schemas/odrl-to-fhir-r5-permission.ts#OdrlToFhirR5PermissionResult.permission",
       "skos:note": "candidate"
     },
     {

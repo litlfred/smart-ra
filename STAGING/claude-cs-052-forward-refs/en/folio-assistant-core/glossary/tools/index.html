@@ -9,32 +9,7 @@
 
   <link rel="stylesheet" href="../../../../assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
 
-  <style id="jtd-nav-activation">
   
-
-    .site-nav > ul.nav-list:first-child > li > a,
-    
-    .site-nav > ul.nav-list:first-child > li > ul > li:not(:nth-child(7)) > a,
-    .site-nav > ul.nav-list:first-child > li > ul > li > ul > li a {
-      background-image: none;
-    }
-
-    .site-nav > ul.nav-list:not(:first-child) a,
-    .site-nav li.external a {
-      background-image: none;
-    }
-
-    .site-nav > ul.nav-list:first-child > li:nth-child(2) > ul > li:nth-child(7) > a {
-      font-weight: 600;
-      text-decoration: none;
-    }.site-nav > ul.nav-list:first-child > li:nth-child(2) > button svg,
-    .site-nav > ul.nav-list:first-child > li:nth-child(2) > ul > li:nth-child(7) > button svg {
-      transform: rotate(-90deg);
-    }.site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(2) > ul.nav-list,
-    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(2) > ul.nav-list > li.nav-list-item:nth-child(7) > ul.nav-list {
-      display: block;
-    }
-  </style>
 
   
 
@@ -434,7 +409,7 @@
   instance's `glassStrip` declaration by `sync-docs-harness.ts`; absent when
   nothing declared one. Replica pages read `assets/harness/glass-strip.json`.
 -->
-<meta name="fa-glass-strip" content="[&quot;glass-todos&quot;,&quot;glass-settings&quot;,&quot;library&quot;]">
+<meta name="fa-glass-strip" content="[&quot;glass-todos&quot;,&quot;glass-settings&quot;]">
 
 <!--
   THE SITE'S BASEURL, for the tiles above.
@@ -607,7 +582,7 @@
 -->
 <!-- The harness icon row's own style, which railed pages load without docs-ui.css (beans `lhvt`, `9rq1`). -->
 <link rel="stylesheet" href="../../../../assets/css/navbar-row.css?v=7d7d00921e0f">
-<link rel="stylesheet" href="../../../../assets/css/docs-ui.css?v=6071ae228cf3">
+<link rel="stylesheet" href="../../../../assets/css/docs-ui.css?v=18eb22b50395">
 <!-- Narrow viewports: wide content scrolls in its own box, never the page
      (bean `2r2n`). The standalone viewers inline the same file through
      `withViewerNav`, so both kinds of page read one set of rules. -->
@@ -632,7 +607,7 @@
      `avatars:css:check` fails the build when it is stale. One stylesheet
      rather than 68 assets: the glyph is a mask and the colour is a property,
      so a scheme swap is a custom property and the trash state is a selector. -->
-<link rel="stylesheet" href="../../../../assets/css/avatars.css?v=780d571c53c1">
+<link rel="stylesheet" href="../../../../assets/css/avatars.css?v=a0806788c1f5">
 
 <!--
   The kinds THIS INSTANCE DECLARES, for the avatar fan.
@@ -647,7 +622,7 @@
   all, and a fetch for that would put a spinner in front of a badge.
 -->
 <!-- NOT MOVED: same reason as fa-site-links above. -->
-<script type="application/json" id="fa-declared-kinds">["archimate","beans","folio","fsh-guts","library","public-comments","todo-items","todos","uploads"]</script>
+<script type="application/json" id="fa-declared-kinds">["archimate","beans","folio","fsh-guts","glossary","library","public-comments","references","todo-items","todos","uploads"]</script>
 <!--
   FIRST of the deferred scripts: it fills `#fa-navbar-row` and
   `meta[name=fa-tiles]` before any reader runs (bean `gp2f`).
@@ -665,12 +640,12 @@
 <!-- BEFORE docs-ui.js and work-plan.js: both read window.faRender. -->
 <script src="../../../../assets/js/kg-render.js" defer></script>
 <!-- BEFORE docs-ui.js, which calls it: the one drawing of the harness icon row (beans `lhvt`, `9rq1`). -->
-<script src="../../../../assets/js/navbar-row.js?v=7dce6a7e2ab0" defer></script>
-<script src="../../../../assets/js/docs-ui.js?v=59c1d8d3ff0a" defer></script>
+<script src="../../../../assets/js/navbar-row.js?v=6bb19e1d17a5" defer></script>
+<script src="../../../../assets/js/docs-ui.js?v=52e4c68c64c7" defer></script>
 <!-- The edit, source and feedback links of every page, from the platform's one
   recipe (cat-harness-tools/src/core/edit-links.ts, bean v433): links carry their
   facts and this builds the hrefs. -->
-<script src="../../../../assets/js/edit-links.js?v=81bb303b6bc2" defer></script>
+<script src="../../../../assets/js/edit-links.js?v=4f82faf45c35" defer></script>
 
 <!--
   The work-plan dashboard. SELF-MOUNTING on any page carrying
@@ -768,6 +743,7 @@ function fill(d,f,r){
   while(d.firstChild)d.removeChild(d.firstChild);
   d.appendChild(document.createTextNode('\u2014 '));
   var b=link(f.branchUrl,'');b.appendChild(chip(f.branch));d.appendChild(b);
+  var rv=el('span',{'data-fa-staging-review':''});d.appendChild(rv);
   d.appendChild(sep());d.appendChild(document.createTextNode('commit '));d.appendChild(chip(f.sha));
   d.appendChild(sep());d.appendChild(document.createTextNode('built '+f.built));
   d.appendChild(sep());d.appendChild(link(f.prUrl,f.pr&&f.pr!=='n/a'?'PR #'+f.pr:'no open PR found'));
@@ -788,6 +764,48 @@ function fill(d,f,r){
   if(f.checksUrl){d.appendChild(sep());d.appendChild(link(f.checksUrl,'CI results'));}
   stamp(f);
   measure();
+  fresh(d,f);
+  review(rv,r,rel);
+}
+// The preview's review page (owner, 2026-11-01, Q-REV-1): reviewers could not
+// find it from a staging page. A folio writes it at <root>/<locale>/review/,
+// an IG at <root>/review/. Asked with HEAD, which the staging worker passes
+// through, so a 404 here is not answered with the live site's page. No review
+// page, no link.
+function review(s,r,rel){
+  if(typeof fetch!=='function')return;
+  var c=[],m=rel.match(/^([a-z]{2,3}(?:-[A-Za-z0-9]+)?)\//);
+  if(m)c.push(r+m[1]+'/review/');
+  c.push(r+'review/');
+  (function next(i){
+    if(i>=c.length)return;
+    fetch(c[i]+'index.html',{method:'HEAD',cache:'no-store'}).then(function(x){
+      if(!x.ok)return next(i+1);
+      s.appendChild(sep());
+      s.appendChild(link(c[i],'\ud83d\udd0d Review changes','font-weight:bold'));
+      measure();
+    }).catch(function(){next(i+1);});
+  })(0);
+}
+// Live staleness (owner, 2026-10-31, option C): ask GitHub for the branch's
+// head now and say so when it has moved past the commit this preview was
+// built from. Unauthenticated, one request per page view; on any failure
+// (rate limit, offline, a deleted branch) it says nothing rather than guess.
+function fresh(d,f){
+  var m=String(f.branchUrl||'').match(/^https:\/\/github\.com\/([^/]+)\/([^/]+)\//);
+  if(!m||!f.branch||!f.sha||typeof fetch!=='function')return;
+  fetch('https://api.github.com/repos/'+m[1]+'/'+m[2]+'/commits/'+encodeURIComponent(f.branch),
+    {headers:{Accept:'application/vnd.github.sha'},cache:'no-store'})
+    .then(function(x){if(!x.ok)throw 0;return x.text();})
+    .then(function(head){
+      head=String(head).trim();
+      if(!/^[0-9a-f]{7,40}$/.test(head)||head.indexOf(f.sha)===0)return;
+      d.appendChild(sep());
+      var w=el('strong',{'data-fa-staging-stale':'',style:'background:#b00020;padding:0 .4em;border-radius:3px'},'\u26a0 stale: the branch is now at ');
+      w.appendChild(chip(head.slice(0,7)));
+      w.appendChild(document.createTextNode(', newer than this preview'));
+      d.appendChild(w);measure();
+    }).catch(function(){});
 }
 function stamp(f){
   var p=document.querySelector('.fa-build-stamp');if(!p)return;
@@ -805,7 +823,23 @@ function go(){
     .then(function(f){fill(d,f,r);})
     .catch(function(){d.textContent='\u2014 build details unavailable';measure();});
 }
-measure();
+// First visit to a preview: the shared stylesheets 404 until the worker is
+// in control, so the page would paint unstyled (a page-wide search icon) for
+// the moment before the reload. Hide it until then, only when a stylesheet
+// in the head actually failed, and show it again if no reload comes.
+function unstyled(){var l=document.querySelectorAll('link[rel="stylesheet"]');for(var i=0;i<l.length;i++){if(l[i].disabled)continue;try{if(!l[i].sheet||!l[i].sheet.cssRules.length)return true;}catch(e){}}return false;}
+function share(){
+  var r=root();if(!r||!('serviceWorker' in navigator))return;
+  var k='fa-share:'+r,s=document.documentElement.style;
+  var hide=!navigator.serviceWorker.controller&&!sessionStorage.getItem(k)&&unstyled();
+  function show(){if(hide){hide=false;s.removeProperty('visibility');}}
+  if(hide){s.setProperty('visibility','hidden');setTimeout(show,4000);}
+  navigator.serviceWorker.register(r+'staging-sw.js',{scope:r}).then(function(){
+    if(navigator.serviceWorker.controller||sessionStorage.getItem(k))return show();
+    return navigator.serviceWorker.ready.then(function(){sessionStorage.setItem(k,'1');location.reload();});
+  }).catch(show);
+}
+measure();share();
 if(document.readyState!=='loading')go();else document.addEventListener('DOMContentLoaded',go);
 window.addEventListener('resize',measure);window.addEventListener('load',measure);
 })();</script><script type="application/json" id="fa-rail" data-fa-root="https://litlfred.github.io/folio-assistant" data-fa-to-root="../../../..">{"data":"rail-1nr7jo2rxsc","here":"/en/folio-assistant-core/glossary/tools/","documentIndex":{"label":"On this page","icon":"§","items":[{"href":"#letter-A","label":"A"},{"href":"#letter-B","label":"B"},{"href":"#letter-C","label":"C"},{"href":"#letter-D","label":"D"},{"href":"#letter-E","label":"E"},{"href":"#letter-F","label":"F"},{"href":"#letter-G","label":"G"},{"href":"#letter-I","label":"I"},{"href":"#letter-L","label":"L"},{"href":"#letter-M","label":"M"},{"href":"#letter-P","label":"P"},{"href":"#letter-R","label":"R"},{"href":"#letter-S","label":"S"},{"href":"#letter-V","label":"V"},{"href":"#letter-W","label":"W"}],"collapsible":true}}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../">Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector</a></nav>
@@ -924,24 +958,24 @@ window.addEventListener('resize',measure);window.addEventListener('load',measure
 
 <p>Candidate terms extracted from every Tool node: <code class="language-plaintext highlighter-rouge">title</code> as the label, <code class="language-plaintext highlighter-rouge">description</code> as the definition, the Tool id as the code. Each is the asset’s own text, verbatim and not curated, and carries the badge “candidate, extracted”. A person promotes one by authoring it. Authored terms are on their owning instance’s page, and those pages, the counts and the sources are linked from the <a href="../../../../en/folio-assistant-core/glossary/">glossary index</a>.</p>
 
-<p>From: cat-harness-tools 1 (<a href="../../../../assets/glossary/cat-harness-tools--kg-tools.skos.jsonld">SKOS</a>) · fhir-harness 33 (<a href="../../../../assets/glossary/fhir-harness--kg-tools.skos.jsonld">SKOS</a>) · folio-assistant-core 15 (<a href="../../../../assets/glossary/folio-assistant-core--kg-tools.skos.jsonld">SKOS</a>) · smart-base 14 (<a href="../../../../assets/glossary/smart-base--kg-tools.skos.jsonld">SKOS</a>) · who-iris 1 (<a href="../../../../assets/glossary/who-iris--kg-tools.skos.jsonld">SKOS</a>).</p>
+<p>From: cat-harness-tools 1 (<a href="../../../../assets/glossary/cat-harness-tools--kg-tools.skos.jsonld">SKOS</a>) · fhir-harness 33 (<a href="../../../../assets/glossary/fhir-harness--kg-tools.skos.jsonld">SKOS</a>) · folio-assistant-core 24 (<a href="../../../../assets/glossary/folio-assistant-core--kg-tools.skos.jsonld">SKOS</a>) · smart-base 14 (<a href="../../../../assets/glossary/smart-base--kg-tools.skos.jsonld">SKOS</a>) · who-iris 1 (<a href="../../../../assets/glossary/who-iris--kg-tools.skos.jsonld">SKOS</a>).</p>
 
-<p><strong>Size:</strong> this page holds 64 terms and is 73 KB before compression, fetched in one request, within its budget of 1.0 MB. There is no search index: the filter below runs over this page, and the A–Z bar jumps within it.</p>
+<p><strong>Size:</strong> this page holds 73 terms and is 85 KB before compression, fetched in one request, within its budget of 1.0 MB. There is no search index: the filter below runs over this page, and the A–Z bar jumps within it.</p>
 
 <div class="table-wrapper"><table class="fa-gloss-mapping">
 <caption>Already somebody else's concept? — <code>check:term-mapping</code>, bean <code>7wou</code></caption>
 <thead><tr><th>target</th><th>mapped</th><th>unmapped</th><th>undetermined</th><th>why undetermined</th></tr></thead>
-<tbody><tr><td><code>fhir</code></td><td>0</td><td>209</td><td>0</td><td>—</td></tr><tr><td><code>skos</code></td><td>0</td><td>209</td><td>0</td><td>—</td></tr></tbody>
+<tbody><tr><td><code>fhir</code></td><td>0</td><td>52</td><td>0</td><td>—</td></tr><tr><td><code>skos</code></td><td>0</td><td>52</td><td>0</td><td>—</td></tr></tbody>
 </table></div>
 <p class="fa-gloss-mapping-note"><strong>Undetermined is never “no match”.</strong> 
 A vocabulary that could not be reached has said nothing, and the column above keeps that 
 apart from a checked miss. The counts are reported and not graded: an unmapped candidate may 
 be a term this corpus is right to coin.</p>
-<p class="fa-gloss-mapping-perterm"><strong>Per term.</strong> Every term on this page is in no single state on <code>fhir</code>, so each entry states its own, and in no single state on <code>skos</code>, so each entry states its own, unless its entry says otherwise. 64 entries say otherwise.</p>
+<p class="fa-gloss-mapping-perterm"><strong>Per term.</strong> Every term on this page is in no single state on <code>fhir</code>, so each entry states its own, and in no single state on <code>skos</code>, so each entry states its own, unless its entry says otherwise. 73 entries say otherwise.</p>
 
 <p><label for="fa-gloss-q">Filter terms</label>
 <input id="fa-gloss-q" type="search" autocomplete="off" style="min-height:44px;width:100%;max-width:32rem" /></p>
-<p aria-live="polite"><span id="fa-gloss-n">64</span> shown</p>
+<p aria-live="polite"><span id="fa-gloss-n">73</span> shown</p>
 
 <nav aria-label="Letters"><a href="#letter-A">A</a> <a href="#letter-B">B</a> <a href="#letter-C">C</a> <a href="#letter-D">D</a> <a href="#letter-E">E</a> <a href="#letter-F">F</a> <a href="#letter-G">G</a> <a href="#letter-I">I</a> <a href="#letter-L">L</a> <a href="#letter-M">M</a> <a href="#letter-P">P</a> <a href="#letter-R">R</a> <a href="#letter-S">S</a> <a href="#letter-V">V</a> <a href="#letter-W">W</a></nav>
 <h2 id="letter-A">
@@ -953,6 +987,14 @@ be a term this corpus is right to coin.</p>
 </h2>
     
 <dl class="fa-gloss">
+<dt id="folio-assistant-core--kg-tools--archimate-from-glossary" data-fa-state="extracted" data-fa-gloss="">
+ArchiMate model from the glossary <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Make an ArchiMate model agree with the instance's folio-glossary/v1 terms whose <code>focus</code> is an ArchiMate element: elements matched by their <code>skosConcept</code> property (never by name) take the term's prefLabel and definition, a term with no element gets one on no view, and the relationships the terms list are added. A type that disagrees is reported, never changed. A relationship between two linked elements that no term lists is reported, and removed with <code>--prune</code> along with the lines that draw it. No box or line is moved. Without <code>--write</code> it only reports; <code>--check</code> fails when anything would change.</p>
+<p class="fa-gloss-meta">Tools of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/tools/archimate-from-glossary/archimate-from-glossary.ts"><code>folio-assistant-core/tools/archimate-from-glossary/archimate-from-glossary.ts#archimate-from-glossary</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
 <dt id="smart-base--kg-tools--l1-transcription-verbatim" data-fa-state="extracted" data-fa-gloss="">
 Authored L1 → verbatim against transcriptions and image narratives <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
@@ -1019,6 +1061,14 @@ Build an IG repository's own site from its cached AST, with no instance declarat
 <p class="fa-gloss-meta">Tools of fhir-harness · source <a href="https://github.com/litlfred/fhir-harness/blob/main/tools/ig-repo-site/ig-repo-site.ts"><code>fhir-harness/tools/ig-repo-site/ig-repo-site.ts#ig-repo-site</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
+<dt id="folio-assistant-core--kg-tools--review-sheet-sync" data-fa-state="extracted" data-fa-gloss="">
+Build the review sheet's Apps Script and a document's Config tab <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Builds <code>Code.gs</code> (one generic script for every document, <code>--script</code>) and one document's Config tab rows (<code>--config</code>): the Google Apps Script that keeps a public-comment review sheet's links and joins current: each comment No. links to its comment page, Sections, Page and Line no(s) link to the page of the frozen review draft, Review Change Sets joins its comments, suggested revisions, feedback and dispositions with each <code>No. n</code> linking to its row, and on both tabs Agentic status lists each pull request of the change-set, linked, with its status and what it changed, from the Agent tab. The script is the same for every review (<code>review-sheet.gs</code>); this Tool fills in one folio's data from its <code>review/public-comment/sheet-sync.json</code>, its review anchors and the draft's <code>pdf-line-map.json</code>. The script reads the document's URLs, tab and column names and data from the sheet's Config tab (visible, locked to the owner), which the agent writes from these rows. A person pastes the script (one file) into the sheet once (Extensions &gt; Apps Script) and runs <code>installTriggers</code>; from then on the sheet rebuilds itself within five minutes of an edit, with no agent. With <code>&quot;mode&quot;: &quot;drafting&quot;</code> in the config it builds the simpler drafting sheet instead: one Contributor Feedback tab where each row is a change set (ids assigned by the script), Sections picked from the document's table of contents and linked to it, and Issue and Agentic status from the Agent tab.</p>
+<p class="fa-gloss-meta">Tools of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/tools/review-sheet-sync/review-sheet-sync.ts"><code>folio-assistant-core/tools/review-sheet-sync/review-sheet-sync.ts#review-sheet-sync</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
 </dl>
 <h2 id="letter-C">
   
@@ -1043,6 +1093,14 @@ Check a Questionnaire field for field against the wireframe it was derived from 
 <dd>
 <p>Compare the <code>data-element</code> fields of a mid-fidelity wireframe (per <code>data-layout</code>, in document order) with the answerable items of a BUILT Questionnaire (depth first, named by <code>definition</code> or <code>code</code>). Reports a field with no item, an item with no field, an item naming no data element, a data element twice in one layout, and the first place the order differs. Fidelity, not design. Moved down from the WHO layer on the owner's ruling of 2026-10-14: nothing in it is WHO's.</p>
 <p class="fa-gloss-meta">Tools of fhir-harness · source <a href="https://github.com/litlfred/fhir-harness/blob/main/tools/check-wireframe-questionnaire/check-wireframe-questionnaire.ts"><code>fhir-harness/tools/check-wireframe-questionnaire/check-wireframe-questionnaire.ts#check-wireframe-questionnaire</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="folio-assistant-core--kg-tools--review-log-watch" data-fa-state="extracted" data-fa-gloss="">
+Check a review log and its repository's issues for changes <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>The mechanical check a review-log watcher runs on every poll (owner, 2026-11-01; Q-WATCH1 B). Given a drafting sheet's Contributor Feedback values and the folio repository, it reads the repository's open and closed issues (pull requests, issues labelled <code>no-sheet</code> and, with <code>--author</code>, issues someone else opened left out) and compares a digest of them and of the cells people set (Title, Selected Sections, Contributor Feedback, Disposition, Ready for agent, Ready for merge, Dispositions confirmed) with the last check's. Unchanged: it prints <code>&#123;&quot;status&quot;:&quot;unchanged&quot;}</code> and exits 0, and the watcher does nothing more. Changed: it lists what changed (issue opened, updated or closed; a cell's old and new text), the Contributor Feedback rows to append, one per issue that no row's Issue cell links yet (Q-WATCH2 B; a closed issue's row marked <code>closed</code>), and <code>closedRows</code>, the rows linking a closed issue, which the watcher hides with their text struck through (owner, 10:18Z): Title is the issue's title, the first Contributor Feedback column <code>@login (#N): first paragraph</code>, Issue the issue's URL. It exits 10. It writes no sheet and no issue: the watcher appends the rows and does the agent pass. With <code>--accept</code> it stores the new state, so the next poll compares against it.</p>
+<p class="fa-gloss-meta">Tools of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/tools/review-log-watch/review-log-watch.ts"><code>folio-assistant-core/tools/review-log-watch/review-log-watch.ts#review-log-watch</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="fhir-harness--kg-tools--sdc-checks" data-fa-state="extracted" data-fa-gloss="">
@@ -1086,6 +1144,14 @@ DAK spreadsheets → DMN, PlanDefinitions, CQL, requirements, logical models <sp
 <p>Run WHO's <code>extract_dak.py</code> in a DAK or IG repository: it reads the DAK template spreadsheets (<code>input/decision-logic/*.xlsx</code> via <code>dt_extractor</code>, <code>input/system-requirements/*.xlsx</code> via <code>req_extractor</code>, <code>input/dictionary/*.xlsx</code> via <code>dd_extractor</code>) and the BPMN, and writes the DMN decision tables, the CPG recommendation PlanDefinitions with their citations, CQL library skeletons, Requirements and logical-model FSH. The authoring path the WHO IG Starter Kit (<code>l3_decisiontables</code>, <code>l3_cql</code>) prescribes: an adapted decision or scheduling table is an edited copy of the upstream DAK's spreadsheet, never a parallel format.</p>
 <p class="fa-gloss-meta">Tools of smart-base · source <a href="https://github.com/litlfred/smart-base/blob/main/smart-base/tools/extract-dak/extract-dak.ts"><code>smart-base/tools/extract-dak/extract-dak.ts#extract-dak</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> cannot be told from the committed result: no row for scheme <code>kg-tools</code> of <code>smart-base</code> on <code>fhir</code> · <code>skos</code> cannot be told from the committed result: no row for scheme <code>kg-tools</code> of <code>smart-base</code> on <code>skos</code></p>
+</dd>
+<dt id="folio-assistant-core--kg-tools--diig-phases-svg" data-fa-state="extracted" data-fa-gloss="">
+DIIG phases, steps and resources chart <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Draw a DIIG &quot;phases, steps and resources&quot; chart as SVG from <code>diig-phases-figure/v1</code> data on a who-iris library entry (DIIG Fig. 1.1.1, or a handbook's republished version such as the product catalogue handbook's Fig. 4), or from a folio's <code>diig-phases-adaptation/v1</code> file that adds its own tiles and marks itself &quot;(this document)&quot;. Every label comes from the data; tiles link to their library entry or glossary concept.</p>
+<p class="fa-gloss-meta">Tools of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/tools/diig-phases-svg/diig-phases-svg.ts"><code>folio-assistant-core/tools/diig-phases-svg/diig-phases-svg.ts#diig-phases-svg</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="smart-base--kg-tools--dmn-to-questionnaire" data-fa-state="extracted" data-fa-gloss="">
 DMN → FHIR Questionnaire <span class="fa-gloss-status">candidate, extracted</span>
@@ -1145,6 +1211,14 @@ FHIR AST cache <span class="fa-gloss-status">candidate, extracted</span>
 <dd>
 <p>Restore, verify, seed and diagnose the prebuilt AST artefacts for an IG. Always try <code>restore</code> first: a full AST build via AstExportCli is expensive, a restore is fast.</p>
 <p class="fa-gloss-meta">Tools of fhir-harness · source <a href="https://github.com/litlfred/fhir-harness/blob/main/tools/ig-cache/ig-cache.ts"><code>fhir-harness/tools/ig-cache/ig-cache.ts#ig-cache</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="folio-assistant-core--kg-tools--figure-coverage" data-fa-state="extracted" data-fa-gloss="">
+Figure coverage and computability <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>For every figure a source publication declares, report whether the folio built from it has a block and how computable it is: missing, excluded (signed off), picture (a PNG crop), linked (a picture linked to a model view), computable (a diagram, a table or a figure rebuilt by ArchiMate, BPMN, DMN, Mermaid, a class diagram or a generator), or cited (a picture kept on purpose, signed off). Exits non-zero when any declared figure is missing; <code>--require-computable</code> also fails on pictures.</p>
+<p class="fa-gloss-meta">Tools of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/tools/figure-coverage/figure-coverage.ts"><code>folio-assistant-core/tools/figure-coverage/figure-coverage.ts#figure-coverage</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="folio-assistant-core--kg-tools--folio-block-qa-summary" data-fa-state="extracted" data-fa-gloss="">
@@ -1213,12 +1287,28 @@ Generate an IG instance's reader-facing pages from its artefact index <span clas
 <p class="fa-gloss-meta">Tools of fhir-harness · source <a href="https://github.com/litlfred/fhir-harness/blob/main/tools/ig-pages/ig-pages.ts"><code>fhir-harness/tools/ig-pages/ig-pages.ts#ig-pages</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
+<dt id="folio-assistant-core--kg-tools--glossary-table" data-fa-state="extracted" data-fa-gloss="">
+Glossary and acronyms tables <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Rewrite the glossary and acronyms tables of a document from its folio-glossary/v1 schemes, as <code>glossary/glossary-tables.json</code> (folio-glossary-tables/v1) lists them: terms with their altLabels, definitions and editorial notes, or acronyms (notation and prefLabel). The block's caption and footnotes are left alone. <code>--check</code> writes nothing and fails when a table is stale.</p>
+<p class="fa-gloss-meta">Tools of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/tools/glossary-table/glossary-table.ts"><code>folio-assistant-core/tools/glossary-table/glossary-table.ts#glossary-table</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
 <dt id="folio-assistant-core--kg-tools--glossary-build" data-fa-state="extracted" data-fa-gloss="">
 Glossary build <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
 <dd>
 <p>Build a paper's glossary index from its manifests and render the LaTeX. <code>--check</code> reports drift instead of writing, comparing everything except the <code>generated</code> timestamp so a re-run is not mistaken for a change.</p>
 <p class="fa-gloss-meta">Tools of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/tools/glossary-build/glossary-build.ts"><code>folio-assistant-core/tools/glossary-build/glossary-build.ts#glossary-build</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="folio-assistant-core--kg-tools--glossary-from-source" data-fa-state="extracted" data-fa-gloss="">
+Glossary candidates from a source <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Read a source's glossary and abbreviations sections (an L1 entry's sections/, or a folio block) into <code>candidate</code> terms of a folio-glossary/v1 scheme, verbatim, each with <code>source: &lt;file&gt;#L&lt;line&gt;</code>. Acronyms fold into the term they expand as <code>notation</code>. The scheme is merged: terms a person owns are never changed. <code>--check</code> writes nothing and fails when the scheme would change.</p>
+<p class="fa-gloss-meta">Tools of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/tools/glossary-from-source/glossary-from-source.ts"><code>folio-assistant-core/tools/glossary-from-source/glossary-from-source.ts#glossary-from-source</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="folio-assistant-core--kg-tools--glossary-page" data-fa-state="extracted" data-fa-gloss="">
@@ -1555,6 +1645,14 @@ ValueSets → JSON Schema <span class="fa-gloss-status">candidate, extracted</sp
 <p class="fa-gloss-meta">Tools of fhir-harness · source <a href="https://github.com/litlfred/fhir-harness/blob/main/tools/valueset-schemas/valueset-schemas.ts"><code>fhir-harness/tools/valueset-schemas/valueset-schemas.ts#valueset-schemas</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
+<dt id="folio-assistant-core--kg-tools--check-dsa-hash" data-fa-state="extracted" data-fa-gloss="">
+Verify Data Sharing Agreement hash, citation, and vocabulary terms <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Verify a Data Sharing Agreement (DSA) directory or single version: checks that every JSON-LD term in <code>agreement.jsonld</code> and <code>dcat.jsonld</code> is defined in the SHA-256-pinned official W3C ODRL 2.2, W3C DCAT 3 (with SPDX 2.2.2 and ADMS), or DCMI Metadata Terms contexts; checks that the ODRL 2.2 Agreement's <code>uid</code> is the version's fixed-version URL and its <code>dcterms:source</code> cites the DCAT 3 <code>dcat:Distribution</code> whose <code>spdx:checksum</code> is checked; verifies that the SHA-256 digest of <code>agreement.md</code> matches <code>spdx:checksumValue</code>; and checks <code>dcat:previousVersion</code> and hash distinctness across versions.</p>
+<p class="fa-gloss-meta">Tools of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/tools/check-dsa-hash/check-dsa-hash.ts"><code>folio-assistant-core/tools/check-dsa-hash/check-dsa-hash.ts#check-dsa-hash</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
 </dl>
 <h2 id="letter-W">
   
@@ -1565,6 +1663,14 @@ ValueSets → JSON Schema <span class="fa-gloss-status">candidate, extracted</sp
 </h2>
     
 <dl class="fa-gloss">
+<dt id="folio-assistant-core--kg-tools--smart-approach-svg" data-fa-state="extracted" data-fa-gloss="">
+WHO SMART Guidelines approach chart <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Draw the WHO SMART Guidelines approach chart (knowledge layers L1–L5 with their products, and their country adaptations, between the research, localisation and impact bands) as SVG from <code>smart-guidelines-approach-figure/v1</code> data on a who-iris library entry, such as the product catalogue handbook's Fig. 5. Every label comes from the data.</p>
+<p class="fa-gloss-meta">Tools of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/tools/smart-approach-svg/smart-approach-svg.ts"><code>folio-assistant-core/tools/smart-approach-svg/smart-approach-svg.ts#smart-approach-svg</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
 <dt id="who-iris--kg-tools--iris-pages" data-fa-state="extracted" data-fa-gloss="">
 who-iris catalogue and docs pages <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
