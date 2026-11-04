@@ -122,6 +122,7 @@ function fill(d,f,r){
   while(d.firstChild)d.removeChild(d.firstChild);
   d.appendChild(document.createTextNode('\u2014 '));
   var b=link(f.branchUrl,'');b.appendChild(chip(f.branch));d.appendChild(b);
+  var rv=el('span',{'data-fa-staging-review':''});d.appendChild(rv);
   d.appendChild(sep());d.appendChild(document.createTextNode('commit '));d.appendChild(chip(f.sha));
   d.appendChild(sep());d.appendChild(document.createTextNode('built '+f.built));
   d.appendChild(sep());d.appendChild(link(f.prUrl,f.pr&&f.pr!=='n/a'?'PR #'+f.pr:'no open PR found'));
@@ -142,6 +143,48 @@ function fill(d,f,r){
   if(f.checksUrl){d.appendChild(sep());d.appendChild(link(f.checksUrl,'CI results'));}
   stamp(f);
   measure();
+  fresh(d,f);
+  review(rv,r,rel);
+}
+// The preview's review page (owner, 2026-11-01, Q-REV-1): reviewers could not
+// find it from a staging page. A folio writes it at <root>/<locale>/review/,
+// an IG at <root>/review/. Asked with HEAD, which the staging worker passes
+// through, so a 404 here is not answered with the live site's page. No review
+// page, no link.
+function review(s,r,rel){
+  if(typeof fetch!=='function')return;
+  var c=[],m=rel.match(/^([a-z]{2,3}(?:-[A-Za-z0-9]+)?)\//);
+  if(m)c.push(r+m[1]+'/review/');
+  c.push(r+'review/');
+  (function next(i){
+    if(i>=c.length)return;
+    fetch(c[i]+'index.html',{method:'HEAD',cache:'no-store'}).then(function(x){
+      if(!x.ok)return next(i+1);
+      s.appendChild(sep());
+      s.appendChild(link(c[i],'\ud83d\udd0d Review changes','font-weight:bold'));
+      measure();
+    }).catch(function(){next(i+1);});
+  })(0);
+}
+// Live staleness (owner, 2026-10-31, option C): ask GitHub for the branch's
+// head now and say so when it has moved past the commit this preview was
+// built from. Unauthenticated, one request per page view; on any failure
+// (rate limit, offline, a deleted branch) it says nothing rather than guess.
+function fresh(d,f){
+  var m=String(f.branchUrl||'').match(/^https:\/\/github\.com\/([^/]+)\/([^/]+)\//);
+  if(!m||!f.branch||!f.sha||typeof fetch!=='function')return;
+  fetch('https://api.github.com/repos/'+m[1]+'/'+m[2]+'/commits/'+encodeURIComponent(f.branch),
+    {headers:{Accept:'application/vnd.github.sha'},cache:'no-store'})
+    .then(function(x){if(!x.ok)throw 0;return x.text();})
+    .then(function(head){
+      head=String(head).trim();
+      if(!/^[0-9a-f]{7,40}$/.test(head)||head.indexOf(f.sha)===0)return;
+      d.appendChild(sep());
+      var w=el('strong',{'data-fa-staging-stale':'',style:'background:#b00020;padding:0 .4em;border-radius:3px'},'\u26a0 stale: the branch is now at ');
+      w.appendChild(chip(head.slice(0,7)));
+      w.appendChild(document.createTextNode(', newer than this preview'));
+      d.appendChild(w);measure();
+    }).catch(function(){});
 }
 function stamp(f){
   var p=document.querySelector('.fa-build-stamp');if(!p)return;
@@ -159,19 +202,35 @@ function go(){
     .then(function(f){fill(d,f,r);})
     .catch(function(){d.textContent='\u2014 build details unavailable';measure();});
 }
-measure();
+// First visit to a preview: the shared stylesheets 404 until the worker is
+// in control, so the page would paint unstyled (a page-wide search icon) for
+// the moment before the reload. Hide it until then, only when a stylesheet
+// in the head actually failed, and show it again if no reload comes.
+function unstyled(){var l=document.querySelectorAll('link[rel="stylesheet"]');for(var i=0;i<l.length;i++){if(l[i].disabled)continue;try{if(!l[i].sheet||!l[i].sheet.cssRules.length)return true;}catch(e){}}return false;}
+function share(){
+  var r=root();if(!r||!('serviceWorker' in navigator))return;
+  var k='fa-share:'+r,s=document.documentElement.style;
+  var hide=!navigator.serviceWorker.controller&&!sessionStorage.getItem(k)&&unstyled();
+  function show(){if(hide){hide=false;s.removeProperty('visibility');}}
+  if(hide){s.setProperty('visibility','hidden');setTimeout(show,4000);}
+  navigator.serviceWorker.register(r+'staging-sw.js',{scope:r}).then(function(){
+    if(navigator.serviceWorker.controller||sessionStorage.getItem(k))return show();
+    return navigator.serviceWorker.ready.then(function(){sessionStorage.setItem(k,'1');location.reload();});
+  }).catch(show);
+}
+measure();share();
 if(document.readyState!=='loading')go();else document.addEventListener('DOMContentLoaded',go);
 window.addEventListener('resize',measure);window.addEventListener('load',measure);
 })();</script><script type="application/json" id="fa-rail" data-fa-root="../../../.." data-fa-to-root="../../../..">{"data":"rail-1l3azgzwiio","here":"/en/cat-harness/software-library/cat-harness-tools/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../">folio-assistant</a></nav>
 <main>
 <h1 id="nk-title">software-library — cat-harness-tools</h1>
-<p class="m">Node kind <code>software-library/1.2.0</code>, declared by <b>cat-harness</b>. 52 node(s).</p>
+<p class="m">Node kind <code>software-library/1.2.0</code>, declared by <b>cat-harness</b>. 53 node(s).</p>
 <p class="m">extends <span>outside-software</span></p>
 <p class="m">Held by <b>cat-harness-tools</b>. <a href="../">Every harness</a></p>
 
 
 <h2 id="nodes">Nodes</h2>
-<p><span class="m"><span id="shown">52</span> of 52 shown</span></p>
+<p><span class="m"><span id="shown">53</span> of 53 shown</span></p>
 <div class="clip"><table>
 <thead><tr><th>Node</th><th>name</th><th>version</th><th>licence</th><th>licenceSource</th><th>range</th></tr></thead>
 <tbody>
@@ -188,11 +247,12 @@ window.addEventListener('resize',measure);window.addEventListener('load',measure
 <tr data-kind="software-library" data-harness="cat-harness-tools"><td class="p"><a href="libraries/held/bootstrap-tools/ajv.library/">libraries/held/bootstrap-tools/ajv.library</a></td><td class="t">ajv</td><td class="t">6.15.0</td><td class="t">MIT</td><td class="t">the installed package&#39;s own package.json (`license`)</td><td class="t">^6.15.0</td></tr>
 <tr data-kind="software-library" data-harness="cat-harness-tools"><td class="p"><a href="libraries/held/bootstrap-tools/bpmn-js.library/">libraries/held/bootstrap-tools/bpmn-js.library</a></td><td class="t">bpmn-js</td><td class="t">18.31.0</td><td class="t">LicenseRef-bpmn-js</td><td class="t">the licence file the installed package&#39;s own package.json names (`LICENSE`)</td><td class="t">18.31.0</td></tr>
 <tr data-kind="software-library" data-harness="cat-harness-tools"><td class="p"><a href="libraries/held/bootstrap-tools/bun-types.library/">libraries/held/bootstrap-tools/bun-types.library</a></td><td class="t">bun-types</td><td class="t">1.4.2</td><td class="t">MIT</td><td class="t">the installed package&#39;s own package.json (`license`)</td><td class="t">latest</td></tr>
+<tr data-kind="software-library" data-harness="cat-harness-tools"><td class="p"><a href="libraries/held/bootstrap-tools/fontsource__arimo.library/">libraries/held/bootstrap-tools/fontsource__arimo.library</a></td><td class="t">@fontsource/arimo</td><td class="t">5.3.0</td><td class="t">OFL-1.1</td><td class="t">the installed package&#39;s own package.json (`license`)</td><td class="t">^5.3.0</td></tr>
 <tr data-kind="software-library" data-harness="cat-harness-tools"><td class="p"><a href="libraries/held/bootstrap-tools/liquidjs.library/">libraries/held/bootstrap-tools/liquidjs.library</a></td><td class="t">liquidjs</td><td class="t">10.29.0</td><td class="t">MIT</td><td class="t">the installed package&#39;s own package.json (`license`)</td><td class="t">^10.29.0</td></tr>
 <tr data-kind="software-library" data-harness="cat-harness-tools"><td class="p"><a href="libraries/held/bootstrap-tools/playwright__test.library/">libraries/held/bootstrap-tools/playwright__test.library</a></td><td class="t">@playwright/test</td><td class="t">1.63.0</td><td class="t">Apache-2.0</td><td class="t">the installed package&#39;s own package.json (`license`)</td><td class="t">1.63.0</td></tr>
 <tr data-kind="software-library" data-harness="cat-harness-tools"><td class="p"><a href="libraries/held/bootstrap-tools/playwright.library/">libraries/held/bootstrap-tools/playwright.library</a></td><td class="t">playwright</td><td class="t">1.63.0</td><td class="t">Apache-2.0</td><td class="t">the installed package&#39;s own package.json (`license`)</td><td class="t">1.63.0</td></tr>
 <tr data-kind="software-library" data-harness="cat-harness-tools"><td class="p"><a href="libraries/held/bootstrap-tools/typescript.library/">libraries/held/bootstrap-tools/typescript.library</a></td><td class="t">typescript</td><td class="t">6.0.3</td><td class="t">Apache-2.0</td><td class="t">the installed package&#39;s own package.json (`license`)</td><td class="t">6.0.3</td></tr>
-<tr data-kind="software-library" data-harness="cat-harness-tools"><td class="p"><a href="libraries/held/bootstrap-tools/zod.library/">libraries/held/bootstrap-tools/zod.library</a></td><td class="t">zod</td><td class="t">4.6.5</td><td class="t">MIT</td><td class="t">the installed package&#39;s own package.json (`license`)</td><td class="t">^4.6.5</td></tr>
+<tr data-kind="software-library" data-harness="cat-harness-tools"><td class="p"><a href="libraries/held/bootstrap-tools/zod.library/">libraries/held/bootstrap-tools/zod.library</a></td><td class="t">zod</td><td class="t">4.6.6</td><td class="t">MIT</td><td class="t">the installed package&#39;s own package.json (`license`)</td><td class="t">^4.6.6</td></tr>
 <tr data-kind="software-library" data-harness="cat-harness-tools"><td class="p"><a href="libraries/hpcc-js__wasm-graphviz.library/">libraries/hpcc-js__wasm-graphviz.library</a></td><td class="t">@hpcc-js/wasm-graphviz</td><td class="t">1.6.1</td><td class="t">Apache-2.0</td><td class="t">the installed package&#39;s own package.json (`license`)</td><td class="t">1.6.1</td></tr>
 <tr data-kind="software-library" data-harness="cat-harness-tools"><td class="p"><a href="libraries/jsonld.library/">libraries/jsonld.library</a></td><td class="t">jsonld</td><td class="t">8.3.3</td><td class="t">BSD-3-Clause</td><td class="t">the installed package&#39;s own package.json (`license`)</td><td class="t">8</td></tr>
 <tr data-kind="software-library" data-harness="cat-harness-tools"><td class="p"><a href="libraries/liquidjs.library/">libraries/liquidjs.library</a></td><td class="t">liquidjs</td><td class="t">10.30.0</td><td class="t">MIT</td><td class="t">the installed package&#39;s own package.json (`license`)</td><td class="t">^10.29.0</td></tr>
@@ -226,7 +286,7 @@ window.addEventListener('resize',measure);window.addEventListener('load',measure
 <tr data-kind="software-library" data-harness="cat-harness-tools"><td class="p"><a href="libraries/unified-latex__unified-latex-util-print-raw.library/">libraries/unified-latex__unified-latex-util-print-raw.library</a></td><td class="t">@unified-latex/unified-latex-util-print-raw</td><td class="t">1.8.4</td><td class="t">MIT</td><td class="t">the installed package&#39;s own package.json (`license`)</td><td class="t">^1.8.4</td></tr>
 <tr data-kind="software-library" data-harness="cat-harness-tools"><td class="p"><a href="libraries/unist-util-visit.library/">libraries/unist-util-visit.library</a></td><td class="t">unist-util-visit</td><td class="t">5.1.0</td><td class="t">MIT</td><td class="t">the installed package&#39;s own package.json (`license`)</td><td class="t">^5.1.0</td></tr>
 <tr data-kind="software-library" data-harness="cat-harness-tools"><td class="p"><a href="libraries/yaml.library/">libraries/yaml.library</a></td><td class="t">yaml</td><td class="t">2.9.1</td><td class="t">ISC</td><td class="t">the installed package&#39;s own package.json (`license`)</td><td class="t">^2.9.1</td></tr>
-<tr data-kind="software-library" data-harness="cat-harness-tools"><td class="p"><a href="libraries/zod.library/">libraries/zod.library</a></td><td class="t">zod</td><td class="t">4.6.5</td><td class="t">MIT</td><td class="t">the installed package&#39;s own package.json (`license`)</td><td class="t">^4.6.5</td></tr>
+<tr data-kind="software-library" data-harness="cat-harness-tools"><td class="p"><a href="libraries/zod.library/">libraries/zod.library</a></td><td class="t">zod</td><td class="t">4.6.6</td><td class="t">MIT</td><td class="t">the installed package&#39;s own package.json (`license`)</td><td class="t">^4.6.6</td></tr>
 </tbody></table></div>
 </main>
 <script>
