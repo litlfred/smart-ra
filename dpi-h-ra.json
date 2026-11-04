@@ -127,6 +127,22 @@
         "keyedBy": "tip"
       },
       "description": "The trashcan that is kept: deprecated and removed content, each node declaring itself folio-fsh-guts/v1 with where it came from. Kept on the tip-keyed state branch cat/dpi-h-ra/fsh-guts, mounted here, never rendered. Holds the snapshots of beans/ and todos/ as main last tracked them before their 2026-10-06 cutover (owner: \"cutover dirs should go to fsh-guts\")."
+    },
+    {
+      "id": "glossary",
+      "path": "glossary/",
+      "description": "This instance's glossary: folio-glossary/v1 SKOS schemes. dpi-h-ra.glossary.json is the RA's own glossary, read verbatim from its glossary table, the shared scheme the Digital Transformation Handbooks link their terms to (#133). full-stac.glossary.json holds the terms of Mehl et al. 2023 (the full-STAC paper, library/mehl-2023-full-stac-oqad018/), which the RA cites and its own scheme links to. dpi-h-ra-acronyms.glossary.json holds the RA's acronyms list, one concept per acronym (notation and expansion), from which the acronyms table is drawn; glossary-tables.json names the document tables drawn from these schemes (Tool glossary-table, #206). organizations.glossary.json holds the organizations the handbooks name (WHO, HL7, ISO, GS1, UNICEF, USAID, ...), once, as SKOS concepts with a foaf:focus to a W3C ORG organization (litlfred/folio-assistant-core#411); a handbook lists them under members.",
+      "graphTypologies": [
+        "glossary"
+      ]
+    },
+    {
+      "id": "references",
+      "path": "references/",
+      "description": "dpi-h-ra's bibliography: one folio-reference/v1 CSL-JSON entry per cited work, `<key>.json`. The paper cites them by key (`\\cite{key}` in a block's text, and `cites` on its manifest), each citation links to its entry on the KG Bibliography page (`en/folio-assistant-core/bibliography/#ref-<key>`), and the References chapter's list is generated from them by `references:render`. Footnotes are kept only for notes that explain rather than cite.",
+      "graphTypologies": [
+        "references"
+      ]
     }
   ],
   "visualisers": [

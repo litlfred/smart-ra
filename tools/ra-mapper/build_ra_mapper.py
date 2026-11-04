@@ -36,6 +36,17 @@ def read_xml(path):
             raw = z.read(name)
     return ET.fromstring(raw.decode('utf-8-sig'))
 
+# Ids and types must have these shapes (the mapper checks the same); anything else is refused.
+ID_RE = re.compile(r'^[A-Za-z0-9_][A-Za-z0-9_.:-]{0,199}$')
+TYPE_RE = re.compile(r'^[A-Z][A-Za-z]{0,63}$')
+
+def check_shapes(path, els, rels):
+    for e in els:
+        if not ID_RE.match(e['i'] or ''): sys.exit(f'{path}: refused: element id {e["i"]!r} has an unexpected shape')
+        if not TYPE_RE.match(e['t']): sys.exit(f'{path}: refused: element type {e["t"]!r} has an unexpected shape')
+    for r in rels:
+        if not TYPE_RE.match(r['t']): sys.exit(f'{path}: refused: relationship type {r["t"]!r} has an unexpected shape')
+
 def strip_ns(tag):
     return tag.split('}')[-1].split(':')[-1]
 
@@ -76,6 +87,7 @@ def parse_model(path):
         for r in root.findall(f'.//{ns}relationships/{ns}relationship'):
             rels.append({'t':(r.get(XSI) or ''),'s':r.get('source'),'g':r.get('target')})
     els=[e for e in els if e['n']]
+    check_shapes(path, els, rels)
     ids={e['i'] for e in els}
     rels=[{'i':f'id-rel-{k}','t':r['t'],'s':r['s'],'g':r['g']} for k,r in enumerate(rels) if r['t'] and r['s'] in ids and r['g'] in ids]
     return {'modelName':name or path,'modelId':'id-built','source':path,'elements':els,'relationships':rels}
