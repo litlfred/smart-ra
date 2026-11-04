@@ -13,10 +13,10 @@
 | Digital Health | The systematic application of information and communications technologies, computer science, and data to support informed decision-making by individuals, the health workforce, and health systems, to strengthen resilience to disease and improve health and wellness. |
 | Digital Infrastructure | Infrastructures in the digital domain are digital resources, such as systems and specifications, built as shared means to achieve many ends |
 | Digital Public Infrastructure (DPI) | A set of shared digital systems that should be secure and interoperable, and can be built on open standards and specifications to deliver and provide equitable access to public and/or private services at societal scale and are governed by applicable legal frameworks and enabling rules to drive development, inclusion, innovation, trust, and competition, while respecting human rights and fundamental freedoms. (G20/UNDP) |
-| Enterprise Architecture | The organising logic for business processes and IT infrastructure reflecting the integration and<br>standardisation requirements of the organisation's operating model. [Under review] |
+| Enterprise Architecture | The organizing logic for business processes and IT infrastructure reflecting the integration and<br>standardization requirements of the organization's operating model. [Under review] |
 | Fast Healthcare Interoperability Resources (FHIR) | FHIR is a standard for healthcare data exchange, published by HL7® |
 | Functional application | Functional applications are application components that deliver a specific operational function within a defined domain. They are context-specific, reflecting the operational requirements of a programme, scheme, or institution that procures them. |
-| Goal | A high-level statement of intent, direction, or desired state for an organisation and its stakeholders. |
+| Goal | A high-level statement of intent, direction, or desired state for an organization and its stakeholders. |
 | Health Digital Public Infrastructure | Health Digital Public Infrastructure (DPI-H) refers to digital resources that are built as a shared means for fulfilling multiple health agency functions. |
 | Health Information Exchange | [To be included before publication] |
 | Health Programme | Health programmes are structured and coordinated interventions and services, delivered to defined populations or patient groups, to prevent disease, promote health, and address specific health needs. |
@@ -31,5 +31,5 @@
 | SNOMED CT | Systematized Nomenclature of Medicine Clinical Terms is a structured clinical terminology standard for use in electronic health records. |
 | SNOMED GPS | Systematized Nomenclature of Medicine – Global Patient Set is a list of basic clinical terms. It is an open and freely accessible subset of SNOMED CT terms that represents the breadth of concepts included in the SNOMED CT International Edition. |
 | Solution Architecture | The design of a specific application component or HDPI expressed through specifications and diagrams [Under review] |
-| Stakeholder | An individual, role, or organisation with an interest in the outcomes of the architecture. |
+| Stakeholder | An individual, role, or organization with an interest in the outcomes of the architecture. |
 | Value | The benefit or utility a stakeholder gains from using a service, product, or capability. |
