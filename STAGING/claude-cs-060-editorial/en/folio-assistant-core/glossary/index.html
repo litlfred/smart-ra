@@ -9,29 +9,7 @@
 
   <link rel="stylesheet" href="../../../assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
 
-  <style id="jtd-nav-activation">
   
-
-    
-    .site-nav > ul.nav-list:first-child > li:not(:nth-child(2)) > a,
-    .site-nav > ul.nav-list:first-child > li > ul > li a {
-      background-image: none;
-    }
-
-    .site-nav > ul.nav-list:not(:first-child) a,
-    .site-nav li.external a {
-      background-image: none;
-    }
-
-    .site-nav > ul.nav-list:first-child > li:nth-child(2) > a {
-      font-weight: 600;
-      text-decoration: none;
-    }.site-nav > ul.nav-list:first-child > li:nth-child(2) > button svg {
-      transform: rotate(-90deg);
-    }.site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(2) > ul.nav-list {
-      display: block;
-    }
-  </style>
 
   
 
@@ -431,7 +409,7 @@
   instance's `glassStrip` declaration by `sync-docs-harness.ts`; absent when
   nothing declared one. Replica pages read `assets/harness/glass-strip.json`.
 -->
-<meta name="fa-glass-strip" content="[&quot;glass-todos&quot;,&quot;glass-settings&quot;,&quot;library&quot;]">
+<meta name="fa-glass-strip" content="[&quot;glass-todos&quot;,&quot;glass-settings&quot;]">
 
 <!--
   THE SITE'S BASEURL, for the tiles above.
@@ -604,7 +582,7 @@
 -->
 <!-- The harness icon row's own style, which railed pages load without docs-ui.css (beans `lhvt`, `9rq1`). -->
 <link rel="stylesheet" href="../../../assets/css/navbar-row.css?v=7d7d00921e0f">
-<link rel="stylesheet" href="../../../assets/css/docs-ui.css?v=6071ae228cf3">
+<link rel="stylesheet" href="../../../assets/css/docs-ui.css?v=18eb22b50395">
 <!-- Narrow viewports: wide content scrolls in its own box, never the page
      (bean `2r2n`). The standalone viewers inline the same file through
      `withViewerNav`, so both kinds of page read one set of rules. -->
@@ -629,7 +607,7 @@
      `avatars:css:check` fails the build when it is stale. One stylesheet
      rather than 68 assets: the glyph is a mask and the colour is a property,
      so a scheme swap is a custom property and the trash state is a selector. -->
-<link rel="stylesheet" href="../../../assets/css/avatars.css?v=780d571c53c1">
+<link rel="stylesheet" href="../../../assets/css/avatars.css?v=a0806788c1f5">
 
 <!--
   The kinds THIS INSTANCE DECLARES, for the avatar fan.
@@ -644,7 +622,7 @@
   all, and a fetch for that would put a spinner in front of a badge.
 -->
 <!-- NOT MOVED: same reason as fa-site-links above. -->
-<script type="application/json" id="fa-declared-kinds">["archimate","beans","folio","fsh-guts","library","public-comments","todo-items","todos","uploads"]</script>
+<script type="application/json" id="fa-declared-kinds">["archimate","beans","folio","fsh-guts","glossary","library","public-comments","references","todo-items","todos","uploads"]</script>
 <!--
   FIRST of the deferred scripts: it fills `#fa-navbar-row` and
   `meta[name=fa-tiles]` before any reader runs (bean `gp2f`).
@@ -662,12 +640,12 @@
 <!-- BEFORE docs-ui.js and work-plan.js: both read window.faRender. -->
 <script src="../../../assets/js/kg-render.js" defer></script>
 <!-- BEFORE docs-ui.js, which calls it: the one drawing of the harness icon row (beans `lhvt`, `9rq1`). -->
-<script src="../../../assets/js/navbar-row.js?v=7dce6a7e2ab0" defer></script>
-<script src="../../../assets/js/docs-ui.js?v=59c1d8d3ff0a" defer></script>
+<script src="../../../assets/js/navbar-row.js?v=6bb19e1d17a5" defer></script>
+<script src="../../../assets/js/docs-ui.js?v=52e4c68c64c7" defer></script>
 <!-- The edit, source and feedback links of every page, from the platform's one
   recipe (cat-harness-tools/src/core/edit-links.ts, bean v433): links carry their
   facts and this builds the hrefs. -->
-<script src="../../../assets/js/edit-links.js?v=81bb303b6bc2" defer></script>
+<script src="../../../assets/js/edit-links.js?v=4f82faf45c35" defer></script>
 
 <!--
   The work-plan dashboard. SELF-MOUNTING on any page carrying
@@ -765,6 +743,7 @@ function fill(d,f,r){
   while(d.firstChild)d.removeChild(d.firstChild);
   d.appendChild(document.createTextNode('\u2014 '));
   var b=link(f.branchUrl,'');b.appendChild(chip(f.branch));d.appendChild(b);
+  var rv=el('span',{'data-fa-staging-review':''});d.appendChild(rv);
   d.appendChild(sep());d.appendChild(document.createTextNode('commit '));d.appendChild(chip(f.sha));
   d.appendChild(sep());d.appendChild(document.createTextNode('built '+f.built));
   d.appendChild(sep());d.appendChild(link(f.prUrl,f.pr&&f.pr!=='n/a'?'PR #'+f.pr:'no open PR found'));
@@ -785,6 +764,48 @@ function fill(d,f,r){
   if(f.checksUrl){d.appendChild(sep());d.appendChild(link(f.checksUrl,'CI results'));}
   stamp(f);
   measure();
+  fresh(d,f);
+  review(rv,r,rel);
+}
+// The preview's review page (owner, 2026-11-01, Q-REV-1): reviewers could not
+// find it from a staging page. A folio writes it at <root>/<locale>/review/,
+// an IG at <root>/review/. Asked with HEAD, which the staging worker passes
+// through, so a 404 here is not answered with the live site's page. No review
+// page, no link.
+function review(s,r,rel){
+  if(typeof fetch!=='function')return;
+  var c=[],m=rel.match(/^([a-z]{2,3}(?:-[A-Za-z0-9]+)?)\//);
+  if(m)c.push(r+m[1]+'/review/');
+  c.push(r+'review/');
+  (function next(i){
+    if(i>=c.length)return;
+    fetch(c[i]+'index.html',{method:'HEAD',cache:'no-store'}).then(function(x){
+      if(!x.ok)return next(i+1);
+      s.appendChild(sep());
+      s.appendChild(link(c[i],'\ud83d\udd0d Review changes','font-weight:bold'));
+      measure();
+    }).catch(function(){next(i+1);});
+  })(0);
+}
+// Live staleness (owner, 2026-10-31, option C): ask GitHub for the branch's
+// head now and say so when it has moved past the commit this preview was
+// built from. Unauthenticated, one request per page view; on any failure
+// (rate limit, offline, a deleted branch) it says nothing rather than guess.
+function fresh(d,f){
+  var m=String(f.branchUrl||'').match(/^https:\/\/github\.com\/([^/]+)\/([^/]+)\//);
+  if(!m||!f.branch||!f.sha||typeof fetch!=='function')return;
+  fetch('https://api.github.com/repos/'+m[1]+'/'+m[2]+'/commits/'+encodeURIComponent(f.branch),
+    {headers:{Accept:'application/vnd.github.sha'},cache:'no-store'})
+    .then(function(x){if(!x.ok)throw 0;return x.text();})
+    .then(function(head){
+      head=String(head).trim();
+      if(!/^[0-9a-f]{7,40}$/.test(head)||head.indexOf(f.sha)===0)return;
+      d.appendChild(sep());
+      var w=el('strong',{'data-fa-staging-stale':'',style:'background:#b00020;padding:0 .4em;border-radius:3px'},'\u26a0 stale: the branch is now at ');
+      w.appendChild(chip(head.slice(0,7)));
+      w.appendChild(document.createTextNode(', newer than this preview'));
+      d.appendChild(w);measure();
+    }).catch(function(){});
 }
 function stamp(f){
   var p=document.querySelector('.fa-build-stamp');if(!p)return;
@@ -802,7 +823,23 @@ function go(){
     .then(function(f){fill(d,f,r);})
     .catch(function(){d.textContent='\u2014 build details unavailable';measure();});
 }
-measure();
+// First visit to a preview: the shared stylesheets 404 until the worker is
+// in control, so the page would paint unstyled (a page-wide search icon) for
+// the moment before the reload. Hide it until then, only when a stylesheet
+// in the head actually failed, and show it again if no reload comes.
+function unstyled(){var l=document.querySelectorAll('link[rel="stylesheet"]');for(var i=0;i<l.length;i++){if(l[i].disabled)continue;try{if(!l[i].sheet||!l[i].sheet.cssRules.length)return true;}catch(e){}}return false;}
+function share(){
+  var r=root();if(!r||!('serviceWorker' in navigator))return;
+  var k='fa-share:'+r,s=document.documentElement.style;
+  var hide=!navigator.serviceWorker.controller&&!sessionStorage.getItem(k)&&unstyled();
+  function show(){if(hide){hide=false;s.removeProperty('visibility');}}
+  if(hide){s.setProperty('visibility','hidden');setTimeout(show,4000);}
+  navigator.serviceWorker.register(r+'staging-sw.js',{scope:r}).then(function(){
+    if(navigator.serviceWorker.controller||sessionStorage.getItem(k))return show();
+    return navigator.serviceWorker.ready.then(function(){sessionStorage.setItem(k,'1');location.reload();});
+  }).catch(show);
+}
+measure();share();
 if(document.readyState!=='loading')go();else document.addEventListener('DOMContentLoaded',go);
 window.addEventListener('resize',measure);window.addEventListener('load',measure);
 })();</script><script type="application/json" id="fa-rail" data-fa-root="https://litlfred.github.io/folio-assistant" data-fa-to-root="../../..">{"data":"rail-1nr7jo2rxsc","here":"/en/folio-assistant-core/glossary/","documentIndex":{"label":"On this page","icon":"§","items":[{"href":"#already-somebody-elses-concept","label":"Already somebody else’s concept?"},{"href":"#pages","label":"Pages"},{"href":"#authored-terms","label":"Authored terms","children":[{"href":"#bootstrap-terms","label":"Bootstrap terms","depth":1},{"href":"#every-other-authored-term-az","label":"Every other authored term, A–Z","depth":1}],"fold":"2 sub-sections"},{"href":"#sources","label":"Sources","children":[{"href":"#authored","label":"Authored","depth":1},{"href":"#extracted-from-knowledge-graph-assets","label":"Extracted from knowledge-graph assets","depth":1}],"fold":"2 sub-sections"}],"collapsible":true}}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../">Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector</a></nav>
@@ -911,14 +948,14 @@ window.addEventListener('resize',measure);window.addEventListener('load',measure
 </h1>
     
 
-<p>Every term the instances in this repository define or carry, as W3C SKOS. Terms link to the external concepts they match rather than copying them. 4093 terms: <strong>41 authored</strong> in 5 glossaries, one page per instance that owns them, and <strong>4052 extracted</strong> from knowledge-graph assets in 26 generated schemes, one page per asset type, plus the sources below.</p>
+<p>Every term the instances in this repository define or carry, as W3C SKOS. Terms link to the external concepts they match rather than copying them. 4315 terms: <strong>41 authored</strong> in 9 glossaries, one page per instance that owns them, and <strong>4196 extracted</strong> from knowledge-graph assets in 26 generated schemes, one page per asset type, plus the sources below.</p>
 
 <div class="table-wrapper"><table>
 <thead><tr><th>state</th><th>what it means</th><th>terms</th></tr></thead>
 <tbody>
 <tr><td>authored</td><td>A person wrote or approved the definition.</td><td>41</td></tr>
-<tr><td>candidate, extracted</td><td>Lifted from a knowledge-graph asset's own title and description, verbatim, and not curated. The definition is the asset's text, the source links to the asset, and an asset with no description gives a term with none. A person promotes one by authoring it.</td><td>4052</td></tr>
-<tr><td>could-not-extract</td><td>The source names a term the extractor could not read, and says why.</td><td>0</td></tr>
+<tr><td>candidate, extracted</td><td>Lifted from a knowledge-graph asset's own title and description, verbatim, and not curated. The definition is the asset's text, the source links to the asset, and an asset with no description gives a term with none. A person promotes one by authoring it.</td><td>4196</td></tr>
+<tr><td>could-not-extract</td><td>The source names a term the extractor could not read, and says why.</td><td>5</td></tr>
 </tbody>
 </table></div>
 <h2 id="already-somebody-elses-concept">
@@ -935,7 +972,7 @@ window.addEventListener('resize',measure);window.addEventListener('load',measure
 <div class="table-wrapper"><table class="fa-gloss-mapping">
 <caption>Already somebody else's concept? — <code>check:term-mapping</code>, bean <code>7wou</code></caption>
 <thead><tr><th>target</th><th>mapped</th><th>unmapped</th><th>undetermined</th><th>why undetermined</th></tr></thead>
-<tbody><tr><td><code>fhir</code></td><td>0</td><td>3950</td><td>0</td><td>—</td></tr><tr><td><code>skos</code></td><td>0</td><td>3950</td><td>0</td><td>—</td></tr></tbody>
+<tbody><tr><td><code>fhir</code></td><td>0</td><td>3979</td><td>0</td><td>—</td></tr><tr><td><code>skos</code></td><td>0</td><td>3979</td><td>0</td><td>—</td></tr></tbody>
 </table></div>
 <p class="fa-gloss-mapping-note"><strong>Undetermined is never “no match”.</strong> 
 A vocabulary that could not be reached has said nothing, and the column above keeps that 
@@ -955,20 +992,21 @@ be a term this corpus is right to coin.</p>
 <div style="overflow-x:auto"><div class="table-wrapper"><table>
 <thead><tr><th>page</th><th>holds</th><th>terms</th><th>size</th></tr></thead>
 <tbody>
-<tr><td>this page</td><td>counts and sources</td><td>—</td><td>12 KB</td></tr>
-<tr><td><a href="../../../en/folio-assistant-core/glossary/instance/bootstrap/">bootstrap</a></td><td>authored terms of bootstrap</td><td>22</td><td>26 KB</td></tr>
-<tr><td><a href="../../../en/folio-assistant-core/glossary/instance/cat-harness/">cat-harness</a></td><td>authored terms of cat-harness</td><td>14</td><td>17 KB</td></tr>
+<tr><td>this page</td><td>counts and sources</td><td>—</td><td>14 KB</td></tr>
+<tr><td><a href="../../../en/folio-assistant-core/glossary/instance/bootstrap/">bootstrap</a></td><td>authored terms of bootstrap</td><td>22</td><td>29 KB</td></tr>
+<tr><td><a href="../../../en/folio-assistant-core/glossary/instance/cat-harness/">cat-harness</a></td><td>authored terms of cat-harness</td><td>14</td><td>19 KB</td></tr>
+<tr><td><a href="../../../en/folio-assistant-core/glossary/instance/dpi-h-ra/">dpi-h-ra</a></td><td>authored terms of dpi-h-ra</td><td>61</td><td>69 KB</td></tr>
 <tr><td><a href="../../../en/folio-assistant-core/glossary/instance/fhir-harness/">fhir-harness</a></td><td>authored terms of fhir-harness</td><td>0</td><td>2 KB</td></tr>
-<tr><td><a href="../../../en/folio-assistant-core/glossary/instance/folio-assistant-core/">folio-assistant-core</a></td><td>authored terms of folio-assistant-core</td><td>4</td><td>8 KB</td></tr>
-<tr><td><a href="../../../en/folio-assistant-core/glossary/instance/who-iris/">who-iris</a></td><td>authored terms of who-iris</td><td>1</td><td>3 KB</td></tr>
-<tr><td><a href="../../../en/folio-assistant-core/glossary/skills/">Skills</a></td><td>candidates, extracted</td><td>353</td><td>313 KB</td></tr>
-<tr><td><a href="../../../en/folio-assistant-core/glossary/tools/">Tools</a></td><td>candidates, extracted</td><td>64</td><td>73 KB</td></tr>
-<tr><td><a href="../../../en/folio-assistant-core/glossary/bpmn-activities/">BPMN activities</a></td><td>candidates, extracted</td><td>1025</td><td>949 KB</td></tr>
+<tr><td><a href="../../../en/folio-assistant-core/glossary/instance/folio-assistant-core/">folio-assistant-core</a></td><td>authored terms of folio-assistant-core</td><td>4</td><td>10 KB</td></tr>
+<tr><td><a href="../../../en/folio-assistant-core/glossary/instance/who-iris/">who-iris</a></td><td>authored terms of who-iris</td><td>18</td><td>20 KB</td></tr>
+<tr><td><a href="../../../en/folio-assistant-core/glossary/skills/">Skills</a></td><td>candidates, extracted</td><td>360</td><td>321 KB</td></tr>
+<tr><td><a href="../../../en/folio-assistant-core/glossary/tools/">Tools</a></td><td>candidates, extracted</td><td>73</td><td>85 KB</td></tr>
+<tr><td><a href="../../../en/folio-assistant-core/glossary/bpmn-activities/">BPMN activities</a></td><td>candidates, extracted</td><td>1069</td><td>1003 KB</td></tr>
 <tr><td><a href="../../../en/folio-assistant-core/glossary/dmn-decisions/">DMN decisions</a></td><td>candidates, extracted</td><td>14</td><td>11 KB</td></tr>
-<tr><td><a href="../../../en/folio-assistant-core/glossary/schema-fields/">Schema fields</a></td><td>candidates, extracted</td><td>2596</td><td>2.3 MB</td></tr>
+<tr><td><a href="../../../en/folio-assistant-core/glossary/schema-fields/">Schema fields</a></td><td>candidates, extracted</td><td>2680</td><td>1.7 MB</td></tr>
 </tbody></table></div></div>
 
-<p><strong>Size:</strong> this page is 12 KB before compression, within its budget of 64 KB; each instance’s and each asset type’s page has a budget of 1.0 MB. There is no search index: the filter on each page runs over that page, and its A–Z bar jumps within it. The SKOS files in the sources are the machine-readable form.</p>
+<p><strong>Size:</strong> this page is 14 KB before compression, within its budget of 64 KB; each instance’s and each asset type’s page has a budget of 1.0 MB. There is no search index: the filter on each page runs over that page, and its A–Z bar jumps within it. The SKOS files in the sources are the machine-readable form.</p>
 <h2 id="authored-terms">
   
   
@@ -999,9 +1037,10 @@ be a term this corpus is right to coin.</p>
 <ul>
 <li><a href="../../../en/folio-assistant-core/glossary/instance/bootstrap/">bootstrap</a>: 22 terms in Bootstrap terms</li>
 <li><a href="../../../en/folio-assistant-core/glossary/instance/cat-harness/">cat-harness</a>: 14 terms in Folio Assistant platform terms (cat-harness)</li>
+<li><a href="../../../en/folio-assistant-core/glossary/instance/dpi-h-ra/">dpi-h-ra</a>: 61 terms in Acronyms used in the DPI-H reference architecture, Glossary of the Reference Architecture and Guidance for DPI-H, Full-STAC: open Standards, Technologies, Architectures and Content</li>
 <li><a href="../../../en/folio-assistant-core/glossary/instance/fhir-harness/">fhir-harness</a>: 0 terms in </li>
 <li><a href="../../../en/folio-assistant-core/glossary/instance/folio-assistant-core/">folio-assistant-core</a>: 4 terms in Folio Assistant platform terms, Guideline domain</li>
-<li><a href="../../../en/folio-assistant-core/glossary/instance/who-iris/">who-iris</a>: 1 terms in WHO house terms</li>
+<li><a href="../../../en/folio-assistant-core/glossary/instance/who-iris/">who-iris</a>: 18 terms in Organizations named in the Digital Transformation Handbooks, WHO house terms</li>
 </ul>
 <h2 id="sources">
   
@@ -1021,12 +1060,16 @@ be a term this corpus is right to coin.</p>
     
 
 <ul>
+<li><strong>Acronyms used in the DPI-H reference architecture</strong> (dpi-h-ra, 18 terms) · <a href="../../../assets/glossary/dpi-h-ra--dpi-h-ra-acronyms.skos.jsonld">SKOS JSON-LD</a> · <code>glossary/dpi-h-ra-acronyms.glossary.json</code></li>
+<li><strong>Glossary of the Reference Architecture and Guidance for DPI-H</strong> (dpi-h-ra, 33 terms) · <a href="../../../assets/glossary/dpi-h-ra--dpi-h-ra.skos.jsonld">SKOS JSON-LD</a> · <code>glossary/dpi-h-ra.glossary.json</code></li>
+<li><strong>Full-STAC: open Standards, Technologies, Architectures and Content</strong> (dpi-h-ra, 10 terms) · <a href="../../../assets/glossary/dpi-h-ra--full-stac.skos.jsonld">SKOS JSON-LD</a> · <code>glossary/full-stac.glossary.json</code></li>
+<li><strong>Organizations named in the Digital Transformation Handbooks</strong> (who-iris, 17 terms) · <a href="../../../assets/glossary/who-iris--organizations.skos.jsonld">SKOS JSON-LD</a> · <code>glossary/organizations.glossary.json</code></li>
 <li><strong>Bootstrap terms</strong> (bootstrap, 22 terms) · <a href="../../../assets/glossary/bootstrap--terms.skos.jsonld">SKOS JSON-LD</a> · <code>bootstrap/schemas/graph.schema.json</code></li>
 <li><strong>Folio Assistant platform terms (cat-harness)</strong> (cat-harness, 14 terms) · <a href="../../../assets/glossary/cat-harness--platform.skos.jsonld">SKOS JSON-LD</a> · <code>folio-assistant-core/glossary/cat-harness.glossary.json</code></li>
 <li><strong>Folio Assistant platform terms</strong> (folio-assistant-core, 1 term) · <a href="../../../assets/glossary/folio-assistant-core--platform.skos.jsonld">SKOS JSON-LD</a> · <code>folio-assistant-core/glossary/folio-assistant-core.glossary.json</code></li>
 <li><strong>Guideline domain</strong> (folio-assistant-core, 3 terms) · <a href="../../../assets/glossary/folio-assistant-core--guideline-domain.skos.jsonld">SKOS JSON-LD</a> · <code>folio-assistant-core/glossary/guideline-domain.glossary.json</code></li>
 <li><strong>WHO house terms</strong> (who-iris, 1 term) · <a href="../../../assets/glossary/who-iris--who-terms.skos.jsonld">SKOS JSON-LD</a> · <code>who-iris/glossary/who-iris.glossary.json</code></li>
-<li><strong>Swimlane roles</strong> (cat-harness, 54 terms) · <a href="../../../cat-harness/auto-docs/glossary/swimlane-glossary/">rendered here</a> · <code>cat-harness/glossary/glossary-ledger.json</code></li>
+<li><strong>Swimlane roles</strong> (cat-harness, 61 terms) · <a href="../../../cat-harness/auto-docs/glossary/swimlane-glossary/">rendered here</a> · <code>cat-harness/glossary/glossary-ledger.json</code></li>
 <li><strong>Swimlane roles</strong> (bootstrap, 7 terms) · <a href="../../../cat-harness/auto-docs/glossary/swimlane-glossary/">rendered here</a> · <code>cat-harness/glossary/bootstrap/glossary-ledger.json</code></li>
 </ul>
 <h3 id="extracted-from-knowledge-graph-assets">
@@ -1038,20 +1081,20 @@ be a term this corpus is right to coin.</p>
 </h3>
     
 
-<p>Generated by <code class="language-plaintext highlighter-rouge">folio-assistant-core/scripts/glossary-extract.ts</code> into <code class="language-plaintext highlighter-rouge">folio-assistant-core/glossary/generated/&lt;instance&gt;/&lt;type&gt;.glossary.json</code>, one scheme per asset type per instance, each term’s IRI in the namespace of the instance that holds the asset. BPMN lanes and roles are not extracted again: the 61 swimlane-role terms above already carry them, with every lane name as an alternative label.</p>
+<p>Generated by <code class="language-plaintext highlighter-rouge">folio-assistant-core/scripts/glossary-extract.ts</code> into <code class="language-plaintext highlighter-rouge">folio-assistant-core/glossary/generated/&lt;instance&gt;/&lt;type&gt;.glossary.json</code>, one scheme per asset type per instance, each term’s IRI in the namespace of the instance that holds the asset. BPMN lanes and roles are not extracted again: the 68 swimlane-role terms above already carry them, with every lane name as an alternative label.</p>
 
 <div style="overflow-x:auto"><div class="table-wrapper"><table>
 <thead><tr><th>instance</th><th><a href="../../../en/folio-assistant-core/glossary/skills/">Skills</a></th><th><a href="../../../en/folio-assistant-core/glossary/tools/">Tools</a></th><th><a href="../../../en/folio-assistant-core/glossary/bpmn-activities/">BPMN activities</a></th><th><a href="../../../en/folio-assistant-core/glossary/dmn-decisions/">DMN decisions</a></th><th><a href="../../../en/folio-assistant-core/glossary/schema-fields/">Schema fields</a></th></tr></thead>
 <tbody>
 <tr><td>bootstrap</td><td>13 · <a href="../../../assets/glossary/bootstrap--kg-skills.skos.jsonld">SKOS</a></td><td>—</td><td>38 · <a href="../../../assets/glossary/bootstrap--kg-bpmn-activities.skos.jsonld">SKOS</a></td><td>—</td><td>—</td></tr>
-<tr><td>bootstrap-tools</td><td>3 · <a href="../../../assets/glossary/bootstrap-tools--kg-skills.skos.jsonld">SKOS</a></td><td>—</td><td>7 · <a href="../../../assets/glossary/bootstrap-tools--kg-bpmn-activities.skos.jsonld">SKOS</a></td><td>—</td><td>44 · <a href="../../../assets/glossary/bootstrap-tools--kg-schema-fields.skos.jsonld">SKOS</a></td></tr>
-<tr><td>cat-harness</td><td>248 · <a href="../../../assets/glossary/cat-harness--kg-skills.skos.jsonld">SKOS</a></td><td>—</td><td>577 · <a href="../../../assets/glossary/cat-harness--kg-bpmn-activities.skos.jsonld">SKOS</a></td><td>10 · <a href="../../../assets/glossary/cat-harness--kg-dmn-decisions.skos.jsonld">SKOS</a></td><td>—</td></tr>
-<tr><td>cat-harness-tools</td><td>—</td><td>1 · <a href="../../../assets/glossary/cat-harness-tools--kg-tools.skos.jsonld">SKOS</a></td><td>—</td><td>—</td><td>2231 · <a href="../../../assets/glossary/cat-harness-tools--kg-schema-fields.skos.jsonld">SKOS</a></td></tr>
-<tr><td>fhir-harness</td><td>18 · <a href="../../../assets/glossary/fhir-harness--kg-skills.skos.jsonld">SKOS</a></td><td>33 · <a href="../../../assets/glossary/fhir-harness--kg-tools.skos.jsonld">SKOS</a></td><td>45 · <a href="../../../assets/glossary/fhir-harness--kg-bpmn-activities.skos.jsonld">SKOS</a></td><td>—</td><td>127 · <a href="../../../assets/glossary/fhir-harness--kg-schema-fields.skos.jsonld">SKOS</a></td></tr>
-<tr><td>folio-assistant-core</td><td>42 · <a href="../../../assets/glossary/folio-assistant-core--kg-skills.skos.jsonld">SKOS</a></td><td>15 · <a href="../../../assets/glossary/folio-assistant-core--kg-tools.skos.jsonld">SKOS</a></td><td>207 · <a href="../../../assets/glossary/folio-assistant-core--kg-bpmn-activities.skos.jsonld">SKOS</a></td><td>4 · <a href="../../../assets/glossary/folio-assistant-core--kg-dmn-decisions.skos.jsonld">SKOS</a></td><td>181 · <a href="../../../assets/glossary/folio-assistant-core--kg-schema-fields.skos.jsonld">SKOS</a></td></tr>
+<tr><td>bootstrap-tools</td><td>3 · <a href="../../../assets/glossary/bootstrap-tools--kg-skills.skos.jsonld">SKOS</a></td><td>—</td><td>7 · <a href="../../../assets/glossary/bootstrap-tools--kg-bpmn-activities.skos.jsonld">SKOS</a></td><td>—</td><td>45 · <a href="../../../assets/glossary/bootstrap-tools--kg-schema-fields.skos.jsonld">SKOS</a></td></tr>
+<tr><td>cat-harness</td><td>250 · <a href="../../../assets/glossary/cat-harness--kg-skills.skos.jsonld">SKOS</a></td><td>—</td><td>590 · <a href="../../../assets/glossary/cat-harness--kg-bpmn-activities.skos.jsonld">SKOS</a></td><td>10 · <a href="../../../assets/glossary/cat-harness--kg-dmn-decisions.skos.jsonld">SKOS</a></td><td>—</td></tr>
+<tr><td>cat-harness-tools</td><td>—</td><td>1 · <a href="../../../assets/glossary/cat-harness-tools--kg-tools.skos.jsonld">SKOS</a></td><td>—</td><td>—</td><td>2293 · <a href="../../../assets/glossary/cat-harness-tools--kg-schema-fields.skos.jsonld">SKOS</a></td></tr>
+<tr><td>fhir-harness</td><td>18 · <a href="../../../assets/glossary/fhir-harness--kg-skills.skos.jsonld">SKOS</a></td><td>33 · <a href="../../../assets/glossary/fhir-harness--kg-tools.skos.jsonld">SKOS</a></td><td>45 · <a href="../../../assets/glossary/fhir-harness--kg-bpmn-activities.skos.jsonld">SKOS</a></td><td>—</td><td>146 · <a href="../../../assets/glossary/fhir-harness--kg-schema-fields.skos.jsonld">SKOS</a></td></tr>
+<tr><td>folio-assistant-core</td><td>47 · <a href="../../../assets/glossary/folio-assistant-core--kg-skills.skos.jsonld">SKOS</a></td><td>24 · <a href="../../../assets/glossary/folio-assistant-core--kg-tools.skos.jsonld">SKOS</a></td><td>238 · <a href="../../../assets/glossary/folio-assistant-core--kg-bpmn-activities.skos.jsonld">SKOS</a></td><td>4 · <a href="../../../assets/glossary/folio-assistant-core--kg-dmn-decisions.skos.jsonld">SKOS</a></td><td>183 · <a href="../../../assets/glossary/folio-assistant-core--kg-schema-fields.skos.jsonld">SKOS</a></td></tr>
 <tr><td>smart-base</td><td>24 · <a href="../../../assets/glossary/smart-base--kg-skills.skos.jsonld">SKOS</a></td><td>14 · <a href="../../../assets/glossary/smart-base--kg-tools.skos.jsonld">SKOS</a></td><td>117 · <a href="../../../assets/glossary/smart-base--kg-bpmn-activities.skos.jsonld">SKOS</a></td><td>—</td><td>13 · <a href="../../../assets/glossary/smart-base--kg-schema-fields.skos.jsonld">SKOS</a></td></tr>
 <tr><td>who-iris</td><td>5 · <a href="../../../assets/glossary/who-iris--kg-skills.skos.jsonld">SKOS</a></td><td>1 · <a href="../../../assets/glossary/who-iris--kg-tools.skos.jsonld">SKOS</a></td><td>34 · <a href="../../../assets/glossary/who-iris--kg-bpmn-activities.skos.jsonld">SKOS</a></td><td>—</td><td>—</td></tr>
-<tr><td><strong>total</strong></td><td><strong>353</strong></td><td><strong>64</strong></td><td><strong>1025</strong></td><td><strong>14</strong></td><td><strong>2596</strong></td></tr>
+<tr><td><strong>total</strong></td><td><strong>360</strong></td><td><strong>73</strong></td><td><strong>1069</strong></td><td><strong>14</strong></td><td><strong>2680</strong></td></tr>
 </tbody></table></div></div>
 
           
@@ -1064,6 +1107,10 @@ be a term this corpus is right to coin.</p>
   
   <li>
     <a href="../../../en/folio-assistant-core/glossary/instance/who-iris/">Glossary: who-iris</a>
+  </li>
+  
+  <li>
+    <a href="../../../en/folio-assistant-core/glossary/instance/dpi-h-ra/">Glossary: dpi-h-ra</a>
   </li>
   
   <li>

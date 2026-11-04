@@ -9,29 +9,7 @@
 
   <link rel="stylesheet" href="../../../../assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
 
-  <style id="jtd-nav-activation">
   
-
-    
-    .site-nav > ul.nav-list:first-child > li:not(:nth-child(85)) > a,
-    .site-nav > ul.nav-list:first-child > li > ul > li a {
-      background-image: none;
-    }
-
-    .site-nav > ul.nav-list:not(:first-child) a,
-    .site-nav li.external a {
-      background-image: none;
-    }
-
-    .site-nav > ul.nav-list:first-child > li:nth-child(85) > a {
-      font-weight: 600;
-      text-decoration: none;
-    }.site-nav > ul.nav-list:first-child > li:nth-child(85) > button svg {
-      transform: rotate(-90deg);
-    }.site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(85) > ul.nav-list {
-      display: block;
-    }
-  </style>
 
   
 
@@ -431,7 +409,7 @@
   instance's `glassStrip` declaration by `sync-docs-harness.ts`; absent when
   nothing declared one. Replica pages read `assets/harness/glass-strip.json`.
 -->
-<meta name="fa-glass-strip" content="[&quot;glass-todos&quot;,&quot;glass-settings&quot;,&quot;library&quot;]">
+<meta name="fa-glass-strip" content="[&quot;glass-todos&quot;,&quot;glass-settings&quot;]">
 
 <!--
   THE SITE'S BASEURL, for the tiles above.
@@ -604,7 +582,7 @@
 -->
 <!-- The harness icon row's own style, which railed pages load without docs-ui.css (beans `lhvt`, `9rq1`). -->
 <link rel="stylesheet" href="../../../../assets/css/navbar-row.css?v=7d7d00921e0f">
-<link rel="stylesheet" href="../../../../assets/css/docs-ui.css?v=6071ae228cf3">
+<link rel="stylesheet" href="../../../../assets/css/docs-ui.css?v=18eb22b50395">
 <!-- Narrow viewports: wide content scrolls in its own box, never the page
      (bean `2r2n`). The standalone viewers inline the same file through
      `withViewerNav`, so both kinds of page read one set of rules. -->
@@ -629,7 +607,7 @@
      `avatars:css:check` fails the build when it is stale. One stylesheet
      rather than 68 assets: the glyph is a mask and the colour is a property,
      so a scheme swap is a custom property and the trash state is a selector. -->
-<link rel="stylesheet" href="../../../../assets/css/avatars.css?v=780d571c53c1">
+<link rel="stylesheet" href="../../../../assets/css/avatars.css?v=a0806788c1f5">
 
 <!--
   The kinds THIS INSTANCE DECLARES, for the avatar fan.
@@ -644,7 +622,7 @@
   all, and a fetch for that would put a spinner in front of a badge.
 -->
 <!-- NOT MOVED: same reason as fa-site-links above. -->
-<script type="application/json" id="fa-declared-kinds">["archimate","beans","folio","fsh-guts","library","public-comments","todo-items","todos","uploads"]</script>
+<script type="application/json" id="fa-declared-kinds">["archimate","beans","folio","fsh-guts","glossary","library","public-comments","references","todo-items","todos","uploads"]</script>
 <!--
   FIRST of the deferred scripts: it fills `#fa-navbar-row` and
   `meta[name=fa-tiles]` before any reader runs (bean `gp2f`).
@@ -662,12 +640,12 @@
 <!-- BEFORE docs-ui.js and work-plan.js: both read window.faRender. -->
 <script src="../../../../assets/js/kg-render.js" defer></script>
 <!-- BEFORE docs-ui.js, which calls it: the one drawing of the harness icon row (beans `lhvt`, `9rq1`). -->
-<script src="../../../../assets/js/navbar-row.js?v=7dce6a7e2ab0" defer></script>
-<script src="../../../../assets/js/docs-ui.js?v=59c1d8d3ff0a" defer></script>
+<script src="../../../../assets/js/navbar-row.js?v=6bb19e1d17a5" defer></script>
+<script src="../../../../assets/js/docs-ui.js?v=52e4c68c64c7" defer></script>
 <!-- The edit, source and feedback links of every page, from the platform's one
   recipe (cat-harness-tools/src/core/edit-links.ts, bean v433): links carry their
   facts and this builds the hrefs. -->
-<script src="../../../../assets/js/edit-links.js?v=81bb303b6bc2" defer></script>
+<script src="../../../../assets/js/edit-links.js?v=4f82faf45c35" defer></script>
 
 <!--
   The work-plan dashboard. SELF-MOUNTING on any page carrying
@@ -765,6 +743,7 @@ function fill(d,f,r){
   while(d.firstChild)d.removeChild(d.firstChild);
   d.appendChild(document.createTextNode('\u2014 '));
   var b=link(f.branchUrl,'');b.appendChild(chip(f.branch));d.appendChild(b);
+  var rv=el('span',{'data-fa-staging-review':''});d.appendChild(rv);
   d.appendChild(sep());d.appendChild(document.createTextNode('commit '));d.appendChild(chip(f.sha));
   d.appendChild(sep());d.appendChild(document.createTextNode('built '+f.built));
   d.appendChild(sep());d.appendChild(link(f.prUrl,f.pr&&f.pr!=='n/a'?'PR #'+f.pr:'no open PR found'));
@@ -785,6 +764,48 @@ function fill(d,f,r){
   if(f.checksUrl){d.appendChild(sep());d.appendChild(link(f.checksUrl,'CI results'));}
   stamp(f);
   measure();
+  fresh(d,f);
+  review(rv,r,rel);
+}
+// The preview's review page (owner, 2026-11-01, Q-REV-1): reviewers could not
+// find it from a staging page. A folio writes it at <root>/<locale>/review/,
+// an IG at <root>/review/. Asked with HEAD, which the staging worker passes
+// through, so a 404 here is not answered with the live site's page. No review
+// page, no link.
+function review(s,r,rel){
+  if(typeof fetch!=='function')return;
+  var c=[],m=rel.match(/^([a-z]{2,3}(?:-[A-Za-z0-9]+)?)\//);
+  if(m)c.push(r+m[1]+'/review/');
+  c.push(r+'review/');
+  (function next(i){
+    if(i>=c.length)return;
+    fetch(c[i]+'index.html',{method:'HEAD',cache:'no-store'}).then(function(x){
+      if(!x.ok)return next(i+1);
+      s.appendChild(sep());
+      s.appendChild(link(c[i],'\ud83d\udd0d Review changes','font-weight:bold'));
+      measure();
+    }).catch(function(){next(i+1);});
+  })(0);
+}
+// Live staleness (owner, 2026-10-31, option C): ask GitHub for the branch's
+// head now and say so when it has moved past the commit this preview was
+// built from. Unauthenticated, one request per page view; on any failure
+// (rate limit, offline, a deleted branch) it says nothing rather than guess.
+function fresh(d,f){
+  var m=String(f.branchUrl||'').match(/^https:\/\/github\.com\/([^/]+)\/([^/]+)\//);
+  if(!m||!f.branch||!f.sha||typeof fetch!=='function')return;
+  fetch('https://api.github.com/repos/'+m[1]+'/'+m[2]+'/commits/'+encodeURIComponent(f.branch),
+    {headers:{Accept:'application/vnd.github.sha'},cache:'no-store'})
+    .then(function(x){if(!x.ok)throw 0;return x.text();})
+    .then(function(head){
+      head=String(head).trim();
+      if(!/^[0-9a-f]{7,40}$/.test(head)||head.indexOf(f.sha)===0)return;
+      d.appendChild(sep());
+      var w=el('strong',{'data-fa-staging-stale':'',style:'background:#b00020;padding:0 .4em;border-radius:3px'},'\u26a0 stale: the branch is now at ');
+      w.appendChild(chip(head.slice(0,7)));
+      w.appendChild(document.createTextNode(', newer than this preview'));
+      d.appendChild(w);measure();
+    }).catch(function(){});
 }
 function stamp(f){
   var p=document.querySelector('.fa-build-stamp');if(!p)return;
@@ -802,7 +823,23 @@ function go(){
     .then(function(f){fill(d,f,r);})
     .catch(function(){d.textContent='\u2014 build details unavailable';measure();});
 }
-measure();
+// First visit to a preview: the shared stylesheets 404 until the worker is
+// in control, so the page would paint unstyled (a page-wide search icon) for
+// the moment before the reload. Hide it until then, only when a stylesheet
+// in the head actually failed, and show it again if no reload comes.
+function unstyled(){var l=document.querySelectorAll('link[rel="stylesheet"]');for(var i=0;i<l.length;i++){if(l[i].disabled)continue;try{if(!l[i].sheet||!l[i].sheet.cssRules.length)return true;}catch(e){}}return false;}
+function share(){
+  var r=root();if(!r||!('serviceWorker' in navigator))return;
+  var k='fa-share:'+r,s=document.documentElement.style;
+  var hide=!navigator.serviceWorker.controller&&!sessionStorage.getItem(k)&&unstyled();
+  function show(){if(hide){hide=false;s.removeProperty('visibility');}}
+  if(hide){s.setProperty('visibility','hidden');setTimeout(show,4000);}
+  navigator.serviceWorker.register(r+'staging-sw.js',{scope:r}).then(function(){
+    if(navigator.serviceWorker.controller||sessionStorage.getItem(k))return show();
+    return navigator.serviceWorker.ready.then(function(){sessionStorage.setItem(k,'1');location.reload();});
+  }).catch(show);
+}
+measure();share();
 if(document.readyState!=='loading')go();else document.addEventListener('DOMContentLoaded',go);
 window.addEventListener('resize',measure);window.addEventListener('load',measure);
 })();</script><script type="application/json" id="fa-rail" data-fa-root="https://litlfred.github.io/folio-assistant" data-fa-to-root="../../../..">{"data":"rail-1nr7jo2rxsc","here":"/en/cat-harness/tools/cat-harness/","documentIndex":{"label":"On this page","icon":"§","items":[{"href":"#how-they-are-invoked-and-installed","label":"How they are invoked, and installed"},{"href":"#does-every-satisfies-name-a-skill-that-exists","label":"Does every satisfies name a skill that exists?"},{"href":"#every-tool","label":"Every tool"}],"collapsible":true}}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../">Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector</a></nav>
@@ -961,9 +998,9 @@ is <code class="language-plaintext highlighter-rouge">satisfies</code>, and it r
 to do that</em>, never <em>this skill is a tool</em>.</p>
 
 <div class="tg-grid">
-<a class="tg-stat" href="#every-tool"><b>164</b><span>Tool nodes</span></a>
+<a class="tg-stat" href="#every-tool"><b>168</b><span>Tool nodes</span></a>
 <a class="tg-stat" href="#does-every-satisfies-name-a-skill-that-exists"><b>68</b><span>skills satisfied</span></a>
-<a class="tg-stat" href="#how-they-are-invoked-and-installed"><b>139</b><span>invoked as a shell command</span></a>
+<a class="tg-stat" href="#how-they-are-invoked-and-installed"><b>143</b><span>invoked as a shell command</span></a>
 <a class="tg-stat" href="#how-they-are-invoked-and-installed"><b>26</b><span>reachable over MCP</span></a>
 </div>
 
@@ -988,7 +1025,7 @@ to do that</em>, never <em>this skill is a tool</em>.</p>
   <tbody>
     <tr>
       <td><span class="tg-tag tg-shell">shell</span></td>
-      <td>139</td>
+      <td>143</td>
     </tr>
     <tr>
       <td><span class="tg-tag tg-inproc">inProcess</span></td>
@@ -1015,7 +1052,7 @@ to do that</em>, never <em>this skill is a tool</em>.</p>
   <tbody>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">none</code></td>
-      <td>141</td>
+      <td>145</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">cli</code></td>
@@ -1036,7 +1073,7 @@ to do that</em>, never <em>this skill is a tool</em>.</p>
 </h2>
     
 
-<p>Yes — all <strong>68</strong> skills named across <strong>164</strong> tools resolve to a
+<p>Yes — all <strong>68</strong> skills named across <strong>168</strong> tools resolve to a
 skill document in this checkout. A <code class="language-plaintext highlighter-rouge">satisfies</code> pointing at nothing would be a
 tool advertising a capability the graph cannot locate.</p>
 <h2 id="every-tool">
@@ -1066,7 +1103,15 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">agent-memory</code></td>
       <td>0 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
+    </tr>
+    <tr>
+      <td><a id="archimate-blocks"></a><a href="#archimate-blocks"><code class="language-plaintext highlighter-rouge">archimate-blocks</code></a><br />Draw a document’s tables and figures from its ArchiMate data, and check the model against the document’s relationship rules</td>
+      <td>For each table an instance’s <code class="language-plaintext highlighter-rouge">cat-archimate.config.json</code> lists under <code class="language-plaintext highlighter-rouge">tables</code>, rewrites the block’s Markdown table from an <code class="language-plaintext highlighter-rouge">archimate-relationship-rules/v1</code> file (<code class="language-plaintext highlighter-rouge">relationship-rules</code>: source, relationship, target, note; <code class="language-plaintext highlighter-rouge">relationship-types</code>: picture, verb, meaning), keeping the caption and footnotes. For each figure under <code class="language-plaintext highlighter-rouge">figures</code> that names an <code class="language-plaintext highlighter-rouge">svg</code>, writes the view as SVG (the same drawing as the view’s page). For a rules table that names a <code class="language-plaintext highlighter-rouge">model</code>, reports the rules the model never uses, the relationships no rule covers, the rules ArchiMate’s relationship table refuses, and the relationship types the rules use without a meaning. The rules are in charge: nothing is rewritten from the model.</td>
+      <td><span class="tg-tag tg-shell">shell</span></td>
+      <td><code class="language-plaintext highlighter-rouge">archimate-models</code></td>
+      <td>3 in / 1 out</td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="archimate-check"></a><a href="#archimate-check"><code class="language-plaintext highlighter-rouge">archimate-check</code></a><br />Check an instance’s ArchiMate models against its config</td>
@@ -1074,7 +1119,31 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">archimate-models</code></td>
       <td>1 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
+    </tr>
+    <tr>
+      <td><a id="archimate-crossings"></a><a href="#archimate-crossings"><code class="language-plaintext highlighter-rouge">archimate-crossings</code></a><br />Count the tangles in ArchiMate views: lines crossing lines, and lines through boxes</td>
+      <td>For each view, as <code class="language-plaintext highlighter-rouge">render-view.ts</code> draws it, count the pairs of lines that cross and the lines that run through a box they do not connect (groups, and boxes that hold one of the line’s ends, excepted). With <code class="language-plaintext highlighter-rouge">--view</code> it lists each tangle by the boxes it joins; with <code class="language-plaintext highlighter-rouge">--max</code> it is a gate.</td>
+      <td><span class="tg-tag tg-shell">shell</span></td>
+      <td><code class="language-plaintext highlighter-rouge">archimate-models</code></td>
+      <td>4 in / 1 out</td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
+    </tr>
+    <tr>
+      <td><a id="archimate-detangle"></a><a href="#archimate-detangle"><code class="language-plaintext highlighter-rouge">archimate-detangle</code></a><br />Lower the tangles in ArchiMate views: re-route lines and swap same-size boxes in a row</td>
+      <td>Searches for a less tangled drawing of each view: a line may be re-routed straight or orthogonally (an L, or a Z through a free lane between boxes), and two same-size boxes in the same parent and row or column may swap places. A change is kept only if it lowers crossings + lines through boxes + lines drawn on top of each other. Without <code class="language-plaintext highlighter-rouge">--apply</code> it reports before and after per view; with it, the model is written back in place, only the moved boxes’ bounds and the re-routed lines’ bendpoints changing.</td>
+      <td><span class="tg-tag tg-shell">shell</span></td>
+      <td><code class="language-plaintext highlighter-rouge">archimate-models</code></td>
+      <td>5 in / 1 out</td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
+    </tr>
+    <tr>
+      <td><a id="archimate-metamodel"></a><a href="#archimate-metamodel"><code class="language-plaintext highlighter-rouge">archimate-metamodel</code></a><br />Derive the metamodel an ArchiMate model uses, and check it against ArchiMate’s relationship table</td>
+      <td>For each model an instance’s <code class="language-plaintext highlighter-rouge">cat-archimate.config.json</code> names: the element types it uses, with counts; every (source type, relationship, target type) pattern its relationships follow, with counts and ids; whether ArchiMate’s relationship table (Appendix B of ArchiMate 3.2, as Archi holds it, committed as <code class="language-plaintext highlighter-rouge">archimate/schemas/archimate-relationships.json</code> in the tools layer) allows each pattern; and the placeholder elements, named after their own type, that a hand-drawn metamodel leaves in a model. Prints a report, JSON, Graphviz DOT or a Mermaid class diagram. <code class="language-plaintext highlighter-rouge">archimate-pages</code> draws the same result on each model’s “Metamodel in use” page, so the metamodel is derived, never drawn.</td>
+      <td><span class="tg-tag tg-shell">shell</span></td>
+      <td><code class="language-plaintext highlighter-rouge">archimate-models</code></td>
+      <td>4 in / 1 out</td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="archimate-pages"></a><a href="#archimate-pages"><code class="language-plaintext highlighter-rouge">archimate-pages</code></a><br />Give every ArchiMate view, element and relationship a page and an IRI, and draw every view</td>
@@ -1082,7 +1151,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">archimate-models</code></td>
       <td>3 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="auto-docs-viewer"></a><a href="#auto-docs-viewer"><code class="language-plaintext highlighter-rouge">auto-docs-viewer</code></a><br />Generated index pages</td>
@@ -1090,7 +1159,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">graph-rendering</code></td>
       <td>2 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="avatars-css"></a><a href="#avatars-css"><code class="language-plaintext highlighter-rouge">avatars-css</code></a><br />Avatar stylesheet</td>
@@ -1098,7 +1167,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">site-presentation-assets</code></td>
       <td>1 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">unknown</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="bean-claim-check"></a><a href="#bean-claim-check"><code class="language-plaintext highlighter-rouge">bean-claim-check</code></a><br />Check a bean is free, then claim it on every copy</td>
@@ -1114,7 +1183,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-inproc">inProcess</span> <span class="tg-tag tg-mcp">mcp</span></td>
       <td><code class="language-plaintext highlighter-rouge">bean-coordination</code><br /><code class="language-plaintext highlighter-rouge">todo-manager</code></td>
       <td>3 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="beans-cli"></a><a href="#beans-cli"><code class="language-plaintext highlighter-rouge">beans-cli</code></a><br />beans CLI</td>
@@ -1122,7 +1191,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">bean-coordination</code><br /><code class="language-plaintext highlighter-rouge">continual-progress</code><br /><code class="language-plaintext highlighter-rouge">idle-backlog</code><br /><code class="language-plaintext highlighter-rouge">pending-show</code><br /><code class="language-plaintext highlighter-rouge">session-intent</code><br /><code class="language-plaintext highlighter-rouge">todo-manager</code></td>
       <td>3 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="beans-manual"></a><a href="#beans-manual"><code class="language-plaintext highlighter-rouge">beans-manual</code></a><br />beans, by hand</td>
@@ -1130,7 +1199,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-manual">manual</span> <span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">bean-coordination</code><br /><code class="language-plaintext highlighter-rouge">continual-progress</code><br /><code class="language-plaintext highlighter-rouge">idle-backlog</code><br /><code class="language-plaintext highlighter-rouge">pending-show</code><br /><code class="language-plaintext highlighter-rouge">session-intent</code><br /><code class="language-plaintext highlighter-rouge">todo-manager</code></td>
       <td>3 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="bpmn-checklist"></a><a href="#bpmn-checklist"><code class="language-plaintext highlighter-rouge">bpmn-checklist</code></a><br />BPMN checklist projection</td>
@@ -1138,7 +1207,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">docs-generation</code></td>
       <td>2 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="bpmn-render"></a><a href="#bpmn-render"><code class="language-plaintext highlighter-rouge">bpmn-render</code></a><br />BPMN diagram rendering</td>
@@ -1146,7 +1215,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">docs-generation</code></td>
       <td>1 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="build-instance-site"></a><a href="#build-instance-site"><code class="language-plaintext highlighter-rouge">build-instance-site</code></a><br />Build, check and (on request) publish an instance’s own site, or a STAGING/<branch> preview</branch></td>
@@ -1154,7 +1223,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">deployment-awareness</code><br /><code class="language-plaintext highlighter-rouge">remote-mount</code></td>
       <td>10 in / 2 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="cat-harness-schema"></a><a href="#cat-harness-schema"><code class="language-plaintext highlighter-rouge">cat-harness-schema</code></a><br />Instance declaration schema</td>
@@ -1162,7 +1231,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">kg-export</code></td>
       <td>1 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">unknown</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="check-tools"></a><a href="#check-tools"><code class="language-plaintext highlighter-rouge">check-tools</code></a><br />Do the Tool nodes agree with their skills?</td>
@@ -1170,7 +1239,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">code-node-review</code></td>
       <td>0 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="ci-health"></a><a href="#ci-health"><code class="language-plaintext highlighter-rouge">ci-health</code></a><br />Is CI passing on the default branch?</td>
@@ -1178,7 +1247,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">ci-health</code></td>
       <td>3 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="compose-docs"></a><a href="#compose-docs"><code class="language-plaintext highlighter-rouge">compose-docs</code></a><br />Compose the site’s documentation tree from its declared docs layers</td>
@@ -1186,7 +1255,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">harness-tiles</code></td>
       <td>4 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="content-context"></a><a href="#content-context"><code class="language-plaintext highlighter-rouge">content-context</code></a><br />Content JSON-LD context</td>
@@ -1194,7 +1263,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">kg-export</code></td>
       <td>1 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">unknown</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="content-graph-analysis"></a><a href="#content-graph-analysis"><code class="language-plaintext highlighter-rouge">content-graph-analysis</code></a><br />Editorial content-graph analysis</td>
@@ -1202,7 +1271,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">content-graph</code></td>
       <td>6 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="content-graph-build"></a><a href="#content-graph-build"><code class="language-plaintext highlighter-rouge">content-graph-build</code></a><br />Content graph</td>
@@ -1210,7 +1279,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">content-validate</code></td>
       <td>2 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="content-graph-uml"></a><a href="#content-graph-uml"><code class="language-plaintext highlighter-rouge">content-graph-uml</code></a><br />A paper’s block graph as UML</td>
@@ -1218,7 +1287,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">content-graph</code><br /><code class="language-plaintext highlighter-rouge">graph-rendering</code></td>
       <td>4 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="context-prefixes"></a><a href="#context-prefixes"><code class="language-plaintext highlighter-rouge">context-prefixes</code></a><br />JSON-LD content-key check</td>
@@ -1226,7 +1295,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">kg-export</code></td>
       <td>1 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="corpus-search"></a><a href="#corpus-search"><code class="language-plaintext highlighter-rouge">corpus-search</code></a><br />Search the corpus and follow the graph</td>
@@ -1234,7 +1303,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-inproc">inProcess</span> <span class="tg-tag tg-mcp">mcp</span></td>
       <td><code class="language-plaintext highlighter-rouge">corpus-grep</code></td>
       <td>6 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="declaration-resolution"></a><a href="#declaration-resolution"><code class="language-plaintext highlighter-rouge">declaration-resolution</code></a><br />Every path a declaration names resolves — directories, assets, visualisers, needs</td>
@@ -1242,7 +1311,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">kg-affordances</code><br /><code class="language-plaintext highlighter-rouge">kg-separation</code></td>
       <td>2 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="discuss"></a><a href="#discuss"><code class="language-plaintext highlighter-rouge">discuss</code></a><br />discussion</td>
@@ -1250,7 +1319,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-manual">manual</span></td>
       <td><code class="language-plaintext highlighter-rouge">discussion</code></td>
       <td>2 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="document-kinds-viewer"></a><a href="#document-kinds-viewer"><code class="language-plaintext highlighter-rouge">document-kinds-viewer</code></a><br />Document kinds viewer</td>
@@ -1258,7 +1327,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">graph-rendering</code></td>
       <td>2 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="drain-queue"></a><a href="#drain-queue"><code class="language-plaintext highlighter-rouge">drain-queue</code></a><br />Build a bean drain queue</td>
@@ -1274,7 +1343,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">graph-rendering</code></td>
       <td>2 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="feature-staging"></a><a href="#feature-staging"><code class="language-plaintext highlighter-rouge">feature-staging</code></a><br />Stage a branch’s preview</td>
@@ -1282,7 +1351,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">feature-staging</code></td>
       <td>3 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="folio-init"></a><a href="#folio-init"><code class="language-plaintext highlighter-rouge">folio-init</code></a><br />Scaffold a folio</td>
@@ -1290,7 +1359,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-inproc">inProcess</span> <span class="tg-tag tg-mcp">mcp</span> <span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">folio-init</code><br /><code class="language-plaintext highlighter-rouge">getting-started</code><br /><code class="language-plaintext highlighter-rouge">repo-conversion</code></td>
       <td>9 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="folio-viewer"></a><a href="#folio-viewer"><code class="language-plaintext highlighter-rouge">folio-viewer</code></a><br />Folio viewer</td>
@@ -1298,7 +1367,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">graph-rendering</code></td>
       <td>2 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="gates"></a><a href="#gates"><code class="language-plaintext highlighter-rouge">gates</code></a><br />The platform’s quality gates</td>
@@ -1306,7 +1375,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">continual-progress</code><br /><code class="language-plaintext highlighter-rouge">platform-gates</code><br /><code class="language-plaintext highlighter-rouge">prepare-merge</code></td>
       <td>2 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="gates-merged"></a><a href="#gates-merged"><code class="language-plaintext highlighter-rouge">gates-merged</code></a><br />Gates on the merged tree</td>
@@ -1314,7 +1383,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">prepare-merge</code></td>
       <td>1 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="get-graph-stats"></a><a href="#get-graph-stats"><code class="language-plaintext highlighter-rouge">get-graph-stats</code></a><br />Content graph counts</td>
@@ -1322,7 +1391,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-inproc">inProcess</span> <span class="tg-tag tg-mcp">mcp</span></td>
       <td><code class="language-plaintext highlighter-rouge">corpus-grep</code></td>
       <td>1 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="get-neighbors"></a><a href="#get-neighbors"><code class="language-plaintext highlighter-rouge">get-neighbors</code></a><br />Walk the content graph from one node</td>
@@ -1330,7 +1399,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-inproc">inProcess</span> <span class="tg-tag tg-mcp">mcp</span></td>
       <td><code class="language-plaintext highlighter-rouge">corpus-grep</code></td>
       <td>4 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="gh-pages"></a><a href="#gh-pages"><code class="language-plaintext highlighter-rouge">gh-pages</code></a><br />GitHub Pages (gh-pages)</td>
@@ -1338,7 +1407,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-manual">manual</span></td>
       <td><code class="language-plaintext highlighter-rouge">render-kg-to-cdn</code></td>
       <td>4 in / 2 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="github-branches"></a><a href="#github-branches"><code class="language-plaintext highlighter-rouge">github-branches</code></a><br />List branches (GitHub)</td>
@@ -1346,7 +1415,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">coordinate</code></td>
       <td>0 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="github-pr-checks"></a><a href="#github-pr-checks"><code class="language-plaintext highlighter-rouge">github-pr-checks</code></a><br />Read a pull request’s checks (GitHub)</td>
@@ -1354,7 +1423,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">prepare-merge-auto</code><br /><code class="language-plaintext highlighter-rouge">watch</code></td>
       <td>1 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="github-pr-comment"></a><a href="#github-pr-comment"><code class="language-plaintext highlighter-rouge">github-pr-comment</code></a><br />Comment on a pull request (GitHub)</td>
@@ -1362,7 +1431,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">coordinate</code><br /><code class="language-plaintext highlighter-rouge">prepare-merge-auto</code></td>
       <td>2 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="github-pr-files"></a><a href="#github-pr-files"><code class="language-plaintext highlighter-rouge">github-pr-files</code></a><br />List a pull request’s changed files (GitHub)</td>
@@ -1370,7 +1439,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">coordinate</code></td>
       <td>1 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="github-pr-list"></a><a href="#github-pr-list"><code class="language-plaintext highlighter-rouge">github-pr-list</code></a><br />List pull requests (GitHub)</td>
@@ -1378,7 +1447,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">coordinate</code><br /><code class="language-plaintext highlighter-rouge">pickup</code><br /><code class="language-plaintext highlighter-rouge">prepare-merge-auto</code></td>
       <td>1 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="github-pr-request-review"></a><a href="#github-pr-request-review"><code class="language-plaintext highlighter-rouge">github-pr-request-review</code></a><br />Request review on a pull request (GitHub)</td>
@@ -1386,7 +1455,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">pickup</code><br /><code class="language-plaintext highlighter-rouge">prepare-merge-auto</code></td>
       <td>2 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="github-pr-resolve-thread"></a><a href="#github-pr-resolve-thread"><code class="language-plaintext highlighter-rouge">github-pr-resolve-thread</code></a><br />Resolve a review thread on a pull request (GitHub)</td>
@@ -1402,7 +1471,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">coordinate</code><br /><code class="language-plaintext highlighter-rouge">pickup</code><br /><code class="language-plaintext highlighter-rouge">prepare-merge-auto</code><br /><code class="language-plaintext highlighter-rouge">watch</code></td>
       <td>1 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="gitlab-branches"></a><a href="#gitlab-branches"><code class="language-plaintext highlighter-rouge">gitlab-branches</code></a><br />List branches (GitLab)</td>
@@ -1410,7 +1479,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">coordinate</code></td>
       <td>0 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="gitlab-mr-comment"></a><a href="#gitlab-mr-comment"><code class="language-plaintext highlighter-rouge">gitlab-mr-comment</code></a><br />Comment on a merge request (GitLab)</td>
@@ -1418,7 +1487,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">coordinate</code><br /><code class="language-plaintext highlighter-rouge">prepare-merge-auto</code></td>
       <td>2 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="gitlab-mr-files"></a><a href="#gitlab-mr-files"><code class="language-plaintext highlighter-rouge">gitlab-mr-files</code></a><br />List a merge request’s changed files (GitLab)</td>
@@ -1434,7 +1503,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">coordinate</code><br /><code class="language-plaintext highlighter-rouge">pickup</code><br /><code class="language-plaintext highlighter-rouge">prepare-merge-auto</code></td>
       <td>1 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="gitlab-mr-request-review"></a><a href="#gitlab-mr-request-review"><code class="language-plaintext highlighter-rouge">gitlab-mr-request-review</code></a><br />Request review on a merge request (GitLab)</td>
@@ -1450,7 +1519,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">coordinate</code></td>
       <td>2 in / 0 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="gitlab-mr-view"></a><a href="#gitlab-mr-view"><code class="language-plaintext highlighter-rouge">gitlab-mr-view</code></a><br />Read a merge request (GitLab)</td>
@@ -1458,7 +1527,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">coordinate</code><br /><code class="language-plaintext highlighter-rouge">pickup</code><br /><code class="language-plaintext highlighter-rouge">prepare-merge-auto</code><br /><code class="language-plaintext highlighter-rouge">watch</code></td>
       <td>1 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="handover-screen"></a><a href="#handover-screen"><code class="language-plaintext highlighter-rouge">handover-screen</code></a><br />Screen a hand-over for injected instructions, field by field</td>
@@ -1466,7 +1535,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">security</code></td>
       <td>3 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="harness-state"></a><a href="#harness-state"><code class="language-plaintext highlighter-rouge">harness-state</code></a><br />Per-harness setup position and health</td>
@@ -1474,7 +1543,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">initialization-steps</code></td>
       <td>2 in / 2 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="ig-folio-site-workflow"></a><a href="#ig-folio-site-workflow"><code class="language-plaintext highlighter-rouge">ig-folio-site-workflow</code></a><br />Build and publish an IG repository’s own site with its folio-site.yml workflow</td>
@@ -1482,7 +1551,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">feature-staging</code><br /><code class="language-plaintext highlighter-rouge">harness-tiles</code></td>
       <td>2 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="index-config-migrate"></a><a href="#index-config-migrate"><code class="language-plaintext highlighter-rouge">index-config-migrate</code></a><br />Convert a checkout to a root index.config.json</td>
@@ -1490,7 +1559,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">index-config</code><br /><code class="language-plaintext highlighter-rouge">remote-mount</code></td>
       <td>3 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="ingest-extended"></a><a href="#ingest-extended"><code class="language-plaintext highlighter-rouge">ingest-extended</code></a><br />Ingest, with PDF and image extensions</td>
@@ -1498,7 +1567,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">library-ingestion</code></td>
       <td>3 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="ingest-stdlib"></a><a href="#ingest-stdlib"><code class="language-plaintext highlighter-rouge">ingest-stdlib</code></a><br />Ingest, standard library only</td>
@@ -1506,7 +1575,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">library-ingestion</code></td>
       <td>3 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="judge-tree"></a><a href="#judge-tree"><code class="language-plaintext highlighter-rouge">judge-tree</code></a><br />Judge a tree and record the verdict by digest</td>
@@ -1514,7 +1583,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">platform-gates</code><br /><code class="language-plaintext highlighter-rouge">prepare-merge</code></td>
       <td>10 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="kg-audit"></a><a href="#kg-audit"><code class="language-plaintext highlighter-rouge">kg-audit</code></a><br />Knowledge-graph audit</td>
@@ -1522,7 +1591,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">code-node-review</code></td>
       <td>2 in / 2 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="kg-graph-export"></a><a href="#kg-graph-export"><code class="language-plaintext highlighter-rouge">kg-graph-export</code></a><br />Knowledge-graph export</td>
@@ -1530,7 +1599,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">bootstrap-graph-emission</code><br /><code class="language-plaintext highlighter-rouge">bootstrap-graph-publication</code><br /><code class="language-plaintext highlighter-rouge">kg-export</code></td>
       <td>2 in / 2 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="kg-retrieve-npm"></a><a href="#kg-retrieve-npm"><code class="language-plaintext highlighter-rouge">kg-retrieve-npm</code></a><br />Retrieve a remote Knowledge Graph via npm package or tarball</td>
@@ -1538,7 +1607,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">npm-kg-distribution</code><br /><code class="language-plaintext highlighter-rouge">remote-mount</code></td>
       <td>4 in / 2 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="kg-validate"></a><a href="#kg-validate"><code class="language-plaintext highlighter-rouge">kg-validate</code></a><br />Validate a node in the graph</td>
@@ -1546,7 +1615,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">kg-navigation</code></td>
       <td>2 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="kg-viewer"></a><a href="#kg-viewer"><code class="language-plaintext highlighter-rouge">kg-viewer</code></a><br />Knowledge graph viewer</td>
@@ -1554,7 +1623,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">graph-rendering</code></td>
       <td>2 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="l1-complete-check"></a><a href="#l1-complete-check"><code class="language-plaintext highlighter-rouge">l1-complete-check</code></a><br />L1 source completeness</td>
@@ -1562,7 +1631,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">library-ingestion</code></td>
       <td>1 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="library-viewer"></a><a href="#library-viewer"><code class="language-plaintext highlighter-rouge">library-viewer</code></a><br />Library viewer</td>
@@ -1570,7 +1639,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">graph-rendering</code></td>
       <td>2 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="log-message"></a><a href="#log-message"><code class="language-plaintext highlighter-rouge">log-message</code></a><br />Log a message to the discussion</td>
@@ -1578,7 +1647,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-manual">manual</span></td>
       <td><code class="language-plaintext highlighter-rouge">log-message</code></td>
       <td>6 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="lsi-index"></a><a href="#lsi-index"><code class="language-plaintext highlighter-rouge">lsi-index</code></a><br />Build the Latent Semantic Indexing index of a prose graph</td>
@@ -1586,7 +1655,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">lsi-indexing</code></td>
       <td>2 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">fail</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="lsi-query"></a><a href="#lsi-query"><code class="language-plaintext highlighter-rouge">lsi-query</code></a><br />Latent Semantic Indexing over a prose graph</td>
@@ -1594,7 +1663,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-inproc">inProcess</span> <span class="tg-tag tg-mcp">mcp</span> <span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">lsi-indexing</code></td>
       <td>3 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="lsi-viewer"></a><a href="#lsi-viewer"><code class="language-plaintext highlighter-rouge">lsi-viewer</code></a><br />Latent semantic index viewer</td>
@@ -1602,7 +1671,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">graph-rendering</code></td>
       <td>2 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="mcp-capture"></a><a href="#mcp-capture"><code class="language-plaintext highlighter-rouge">mcp-capture</code></a><br />What this instance’s MCP server serves</td>
@@ -1610,7 +1679,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">mcp-contract</code></td>
       <td>1 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="mcp-server-image"></a><a href="#mcp-server-image"><code class="language-plaintext highlighter-rouge">mcp-server-image</code></a><br />folio MCP server, as a container</td>
@@ -1618,7 +1687,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-manual">manual</span></td>
       <td><code class="language-plaintext highlighter-rouge">deployment-auth</code></td>
       <td>0 in / 0 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="merge-leftover"></a><a href="#merge-leftover"><code class="language-plaintext highlighter-rouge">merge-leftover</code></a><br />Merge leftover (has a PR’s intent landed?)</td>
@@ -1626,7 +1695,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">merge-conflict-patterns</code></td>
       <td>2 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="merge-overlap"></a><a href="#merge-overlap"><code class="language-plaintext highlighter-rouge">merge-overlap</code></a><br />Merge overlap (conflict prediction)</td>
@@ -1634,7 +1703,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">coordinate</code><br /><code class="language-plaintext highlighter-rouge">merge-conflict-patterns</code></td>
       <td>2 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="merge-train"></a><a href="#merge-train"><code class="language-plaintext highlighter-rouge">merge-train</code></a><br />Merge train</td>
@@ -1642,7 +1711,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">merge-conflict-patterns</code><br /><code class="language-plaintext highlighter-rouge">prepare-merge</code></td>
       <td>5 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="methodologies-viewer"></a><a href="#methodologies-viewer"><code class="language-plaintext highlighter-rouge">methodologies-viewer</code></a><br />Methodologies viewer</td>
@@ -1650,7 +1719,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">graph-rendering</code></td>
       <td>2 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="mount-from-lock"></a><a href="#mount-from-lock"><code class="language-plaintext highlighter-rouge">mount-from-lock</code></a><br />Replay a committed mount lock with nothing but Node</td>
@@ -1658,7 +1727,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">kg-separation</code><br /><code class="language-plaintext highlighter-rouge">remote-mount</code></td>
       <td>2 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="narrative-queue"></a><a href="#narrative-queue"><code class="language-plaintext highlighter-rouge">narrative-queue</code></a><br />What narratives are waiting on a person</td>
@@ -1666,7 +1735,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">library-ingestion</code></td>
       <td>0 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="navbar-include"></a><a href="#navbar-include"><code class="language-plaintext highlighter-rouge">navbar-include</code></a><br />Write the site sidebar’s harness navbar include</td>
@@ -1674,7 +1743,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">harness-tiles</code></td>
       <td>5 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="node-kind-pages"></a><a href="#node-kind-pages"><code class="language-plaintext highlighter-rouge">node-kind-pages</code></a><br />Node kind pages</td>
@@ -1682,7 +1751,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">graph-rendering</code></td>
       <td>2 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="npm"></a><a href="#npm"><code class="language-plaintext highlighter-rouge">npm</code></a><br />Package manager and registry client for npm and GitHub Packages</td>
@@ -1690,7 +1759,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">npm-kg-distribution</code><br /><code class="language-plaintext highlighter-rouge">package-release</code><br /><code class="language-plaintext highlighter-rouge">remote-mount</code></td>
       <td>1 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="ns-vocabulary"></a><a href="#ns-vocabulary"><code class="language-plaintext highlighter-rouge">ns-vocabulary</code></a><br />Namespace vocabulary</td>
@@ -1698,7 +1767,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">kg-export</code></td>
       <td>2 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">unknown</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="open-work-lookup"></a><a href="#open-work-lookup"><code class="language-plaintext highlighter-rouge">open-work-lookup</code></a><br />Does a path or bean exist on main or any open PR</td>
@@ -1714,7 +1783,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">library-ingestion</code></td>
       <td>2 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="openapi-ingest-source"></a><a href="#openapi-ingest-source"><code class="language-plaintext highlighter-rouge">openapi-ingest-source</code></a><br />OpenAPI ingest from source</td>
@@ -1722,7 +1791,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">library-ingestion</code></td>
       <td>3 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="openapi-pages"></a><a href="#openapi-pages"><code class="language-plaintext highlighter-rouge">openapi-pages</code></a><br />OpenAPI viewer</td>
@@ -1738,7 +1807,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">npm-kg-distribution</code><br /><code class="language-plaintext highlighter-rouge">package-release</code></td>
       <td>6 in / 2 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="package-exports"></a><a href="#package-exports"><code class="language-plaintext highlighter-rouge">package-exports</code></a><br />A package’s exports are its declared, shipped code directories</td>
@@ -1746,7 +1815,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">kg-separation</code></td>
       <td>2 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="package-release-manual"></a><a href="#package-release-manual"><code class="language-plaintext highlighter-rouge">package-release-manual</code></a><br />Package release by hand</td>
@@ -1754,7 +1823,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-manual">manual</span></td>
       <td><code class="language-plaintext highlighter-rouge">package-release</code></td>
       <td>2 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="package-release-workflow"></a><a href="#package-release-workflow"><code class="language-plaintext highlighter-rouge">package-release-workflow</code></a><br />Release package via GitHub Actions release workflow</td>
@@ -1762,7 +1831,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">npm-kg-distribution</code><br /><code class="language-plaintext highlighter-rouge">package-release</code></td>
       <td>4 in / 2 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="pages-index"></a><a href="#pages-index"><code class="language-plaintext highlighter-rouge">pages-index</code></a><br />Published-paper index page</td>
@@ -1770,7 +1839,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">docs-generation</code></td>
       <td>8 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="pages-publish"></a><a href="#pages-publish"><code class="language-plaintext highlighter-rouge">pages-publish</code></a><br />GitHub Pages publish</td>
@@ -1778,7 +1847,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">docs-generation</code><br /><code class="language-plaintext highlighter-rouge">kg-export</code></td>
       <td>2 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="pdf-cover"></a><a href="#pdf-cover"><code class="language-plaintext highlighter-rouge">pdf-cover</code></a><br />PDF page raster</td>
@@ -1786,7 +1855,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">asset-extraction</code></td>
       <td>5 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="pdf-viewer-embed"></a><a href="#pdf-viewer-embed"><code class="language-plaintext highlighter-rouge">pdf-viewer-embed</code></a><br />Embed a PDF inline in a page</td>
@@ -1794,7 +1863,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">pdf-inline-viewer</code></td>
       <td>1 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="pdf-viewer-install"></a><a href="#pdf-viewer-install"><code class="language-plaintext highlighter-rouge">pdf-viewer-install</code></a><br />Install the inline PDF viewer into a built site</td>
@@ -1802,7 +1871,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">pdf-inline-viewer</code></td>
       <td>3 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="pin-actions"></a><a href="#pin-actions"><code class="language-plaintext highlighter-rouge">pin-actions</code></a><br />Pin third-party GitHub Actions to full commit SHAs</td>
@@ -1810,7 +1879,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">security</code></td>
       <td>1 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="pin-spdx-license-list"></a><a href="#pin-spdx-license-list"><code class="language-plaintext highlighter-rouge">pin-spdx-license-list</code></a><br />Snapshot the SPDX License List at its pinned version</td>
@@ -1818,7 +1887,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">vocabulary-authority</code></td>
       <td>1 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="processes-viewer"></a><a href="#processes-viewer"><code class="language-plaintext highlighter-rouge">processes-viewer</code></a><br />Processes viewer</td>
@@ -1826,7 +1895,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">graph-rendering</code></td>
       <td>2 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="qa-sweep"></a><a href="#qa-sweep"><code class="language-plaintext highlighter-rouge">qa-sweep</code></a><br />QA sweep</td>
@@ -1834,7 +1903,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">content-test</code></td>
       <td>4 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="rail-standalone-pages"></a><a href="#rail-standalone-pages"><code class="language-plaintext highlighter-rouge">rail-standalone-pages</code></a><br />Give every page Jekyll did not lay out the folio-assistant navbar</td>
@@ -1842,7 +1911,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">harness-tiles</code></td>
       <td>4 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="readme-audit"></a><a href="#readme-audit"><code class="language-plaintext highlighter-rouge">readme-audit</code></a><br />Audit README links</td>
@@ -1850,7 +1919,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-inproc">inProcess</span> <span class="tg-tag tg-mcp">mcp</span> <span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">docs-generation</code></td>
       <td>3 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="readme-sync"></a><a href="#readme-sync"><code class="language-plaintext highlighter-rouge">readme-sync</code></a><br />Sync generated README sections</td>
@@ -1858,7 +1927,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-inproc">inProcess</span> <span class="tg-tag tg-mcp">mcp</span> <span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">docs-generation</code></td>
       <td>5 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="release-please"></a><a href="#release-please"><code class="language-plaintext highlighter-rouge">release-please</code></a><br />release-please (declared, not configured here)</td>
@@ -1866,7 +1935,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">package-release</code></td>
       <td>2 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="remote-mount"></a><a href="#remote-mount"><code class="language-plaintext highlighter-rouge">remote-mount</code></a><br />Mount remote harnesses at a pinned commit, only when trusted</td>
@@ -1874,7 +1943,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">agent-memory</code><br /><code class="language-plaintext highlighter-rouge">security</code></td>
       <td>12 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="render-log"></a><a href="#render-log"><code class="language-plaintext highlighter-rouge">render-log</code></a><br />Record what the publish branch served</td>
@@ -1882,7 +1951,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">render-logging</code></td>
       <td>9 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="render-order"></a><a href="#render-order"><code class="language-plaintext highlighter-rouge">render-order</code></a><br />The render pipeline, in dependency order</td>
@@ -1890,7 +1959,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-inproc">inProcess</span> <span class="tg-tag tg-mcp">mcp</span> <span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">docs-generation</code></td>
       <td>1 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="rewrite-moved-paths"></a><a href="#rewrite-moved-paths"><code class="language-plaintext highlighter-rouge">rewrite-moved-paths</code></a><br />Rewrite paths that still name a moved file’s old layer — never in a record</td>
@@ -1898,7 +1967,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">kg-separation</code></td>
       <td>8 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="schema-docs"></a><a href="#schema-docs"><code class="language-plaintext highlighter-rouge">schema-docs</code></a><br />Skill contract reference</td>
@@ -1906,7 +1975,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">docs-generation</code></td>
       <td>1 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="schemas-viewer"></a><a href="#schemas-viewer"><code class="language-plaintext highlighter-rouge">schemas-viewer</code></a><br />Schemas viewer</td>
@@ -1914,7 +1983,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">graph-rendering</code></td>
       <td>2 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="search-graph"></a><a href="#search-graph"><code class="language-plaintext highlighter-rouge">search-graph</code></a><br />Lexical search over the content graph</td>
@@ -1922,7 +1991,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-inproc">inProcess</span> <span class="tg-tag tg-mcp">mcp</span></td>
       <td><code class="language-plaintext highlighter-rouge">corpus-grep</code></td>
       <td>4 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="secrets-check"></a><a href="#secrets-check"><code class="language-plaintext highlighter-rouge">secrets-check</code></a><br />Check declared credential needs against workflow use and expiry, by name</td>
@@ -1930,7 +1999,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">security</code></td>
       <td>2 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="security-gate"></a><a href="#security-gate"><code class="language-plaintext highlighter-rouge">security-gate</code></a><br />Run every existing security check as one named release step</td>
@@ -1938,7 +2007,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">security</code></td>
       <td>1 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="separation-cutover-check"></a><a href="#separation-cutover-check"><code class="language-plaintext highlighter-rouge">separation-cutover-check</code></a><br />Is this repository’s cutover from the monorepo complete? Measured, condition by condition</td>
@@ -1946,7 +2015,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">kg-separation</code></td>
       <td>5 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="serve-rendering"></a><a href="#serve-rendering"><code class="language-plaintext highlighter-rouge">serve-rendering</code></a><br />Local rendering server</td>
@@ -1954,7 +2023,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">serving-renderings</code></td>
       <td>2 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="serve-rendering-py"></a><a href="#serve-rendering-py"><code class="language-plaintext highlighter-rouge">serve-rendering-py</code></a><br />Local rendering server (Python)</td>
@@ -1962,7 +2031,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">serving-renderings</code></td>
       <td>2 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="sibling-sessions"></a><a href="#sibling-sessions"><code class="language-plaintext highlighter-rouge">sibling-sessions</code></a><br />Sibling sessions in a window</td>
@@ -1970,7 +2039,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-inproc">inProcess</span> <span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">bean-coordination</code></td>
       <td>2 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="site-build-local"></a><a href="#site-build-local"><code class="language-plaintext highlighter-rouge">site-build-local</code></a><br />Build the docs site locally</td>
@@ -1978,7 +2047,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">docs-generation</code></td>
       <td>1 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="site-search-index"></a><a href="#site-search-index"><code class="language-plaintext highlighter-rouge">site-search-index</code></a><br />Site search index</td>
@@ -1986,7 +2055,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">docs-generation</code></td>
       <td>0 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">unknown</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="site-search-scopes"></a><a href="#site-search-scopes"><code class="language-plaintext highlighter-rouge">site-search-scopes</code></a><br />Site search scopes</td>
@@ -1994,7 +2063,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">docs-generation</code></td>
       <td>1 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">unknown</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="site-viewer"></a><a href="#site-viewer"><code class="language-plaintext highlighter-rouge">site-viewer</code></a><br />Published site viewer</td>
@@ -2002,7 +2071,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">graph-rendering</code></td>
       <td>2 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="skill-docs"></a><a href="#skill-docs"><code class="language-plaintext highlighter-rouge">skill-docs</code></a><br />Skill instruction reference</td>
@@ -2010,7 +2079,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">docs-generation</code></td>
       <td>1 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="skill-fetch"></a><a href="#skill-fetch"><code class="language-plaintext highlighter-rouge">skill-fetch</code></a><br />Fetch a skill</td>
@@ -2018,7 +2087,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-inproc">inProcess</span> <span class="tg-tag tg-mcp">mcp</span></td>
       <td><code class="language-plaintext highlighter-rouge">skills-and-tools</code></td>
       <td>2 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="skill-list"></a><a href="#skill-list"><code class="language-plaintext highlighter-rouge">skill-list</code></a><br />List skills</td>
@@ -2026,7 +2095,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-inproc">inProcess</span> <span class="tg-tag tg-mcp">mcp</span></td>
       <td><code class="language-plaintext highlighter-rouge">skills-and-tools</code></td>
       <td>0 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="skill-update"></a><a href="#skill-update"><code class="language-plaintext highlighter-rouge">skill-update</code></a><br />Edit a skill</td>
@@ -2034,7 +2103,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-inproc">inProcess</span> <span class="tg-tag tg-mcp">mcp</span></td>
       <td><code class="language-plaintext highlighter-rouge">skills-and-tools</code></td>
       <td>9 in / 2 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="slice-sqlite"></a><a href="#slice-sqlite"><code class="language-plaintext highlighter-rouge">slice-sqlite</code></a><br />Per-slice SQLite builder</td>
@@ -2042,7 +2111,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">kg-export</code></td>
       <td>4 in / 2 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="stage-local"></a><a href="#stage-local"><code class="language-plaintext highlighter-rouge">stage-local</code></a><br />Publish a folio’s or an IG’s site from the agent’s own checkout — the one agent publish path</td>
@@ -2050,7 +2119,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">feature-staging</code><br /><code class="language-plaintext highlighter-rouge">harness-tiles</code></td>
       <td>10 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="staging-graph-viewer"></a><a href="#staging-graph-viewer"><code class="language-plaintext highlighter-rouge">staging-graph-viewer</code></a><br />Staging-only graph viewer</td>
@@ -2058,7 +2127,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">graph-rendering</code></td>
       <td>2 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="stakeholder-map"></a><a href="#stakeholder-map"><code class="language-plaintext highlighter-rouge">stakeholder-map</code></a><br />Stakeholder map</td>
@@ -2066,7 +2135,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-inproc">inProcess</span> <span class="tg-tag tg-mcp">mcp</span> <span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">coordinate</code><br /><code class="language-plaintext highlighter-rouge">role-model</code></td>
       <td>1 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="state-viewer"></a><a href="#state-viewer"><code class="language-plaintext highlighter-rouge">state-viewer</code></a><br />State graph viewer</td>
@@ -2074,7 +2143,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">graph-rendering</code></td>
       <td>2 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="sub-kg-verify-clone"></a><a href="#sub-kg-verify-clone"><code class="language-plaintext highlighter-rouge">sub-kg-verify-clone</code></a><br />Verify a separated repository from a fresh clone</td>
@@ -2082,7 +2151,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">sub-kg-lifecycle</code></td>
       <td>5 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="subgraph-index-package"></a><a href="#subgraph-index-package"><code class="language-plaintext highlighter-rouge">subgraph-index-package</code></a><br />Package one pin’s subgraph index files for a hydrated mount</td>
@@ -2098,7 +2167,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">docs-generation</code><br /><code class="language-plaintext highlighter-rouge">upload-routes</code></td>
       <td>1 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="subgraph-resolve"></a><a href="#subgraph-resolve"><code class="language-plaintext highlighter-rouge">subgraph-resolve</code></a><br />Resolve a declared subgraph’s content source</td>
@@ -2106,7 +2175,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">directory-conventions</code></td>
       <td>3 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="theme-viewer"></a><a href="#theme-viewer"><code class="language-plaintext highlighter-rouge">theme-viewer</code></a><br />Themes viewer</td>
@@ -2122,7 +2191,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">site-presentation-assets</code></td>
       <td>1 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">unknown</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="tool-coverage"></a><a href="#tool-coverage"><code class="language-plaintext highlighter-rouge">tool-coverage</code></a><br />Which uncovered skills warrant a Tool?</td>
@@ -2130,7 +2199,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">code-node-review</code></td>
       <td>0 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="tool-schema"></a><a href="#tool-schema"><code class="language-plaintext highlighter-rouge">tool-schema</code></a><br />Tool node schema</td>
@@ -2138,7 +2207,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">kg-export</code></td>
       <td>1 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">unknown</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="tool-types-schema"></a><a href="#tool-types-schema"><code class="language-plaintext highlighter-rouge">tool-types-schema</code></a><br />Tool I/O type vocabulary</td>
@@ -2146,7 +2215,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">kg-export</code></td>
       <td>1 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">unknown</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="tools-viewer"></a><a href="#tools-viewer"><code class="language-plaintext highlighter-rouge">tools-viewer</code></a><br />Tools viewer</td>
@@ -2154,7 +2223,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">graph-rendering</code></td>
       <td>2 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="transcribe-faster-whisper"></a><a href="#transcribe-faster-whisper"><code class="language-plaintext highlighter-rouge">transcribe-faster-whisper</code></a><br />Transcribe audio — faster-whisper (option, not installed)</td>
@@ -2162,7 +2231,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">library-ingestion</code></td>
       <td>2 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="transcribe-vosk"></a><a href="#transcribe-vosk"><code class="language-plaintext highlighter-rouge">transcribe-vosk</code></a><br />Transcribe audio — vosk (option, not installed)</td>
@@ -2170,7 +2239,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">library-ingestion</code></td>
       <td>2 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="transcribe-whisper-cpp"></a><a href="#transcribe-whisper-cpp"><code class="language-plaintext highlighter-rouge">transcribe-whisper-cpp</code></a><br />Transcribe audio — whisper.cpp (option, not installed)</td>
@@ -2178,7 +2247,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">library-ingestion</code></td>
       <td>2 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="translation-extract"></a><a href="#translation-extract"><code class="language-plaintext highlighter-rouge">translation-extract</code></a><br />Extract translatable strings</td>
@@ -2186,7 +2255,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-inproc">inProcess</span> <span class="tg-tag tg-mcp">mcp</span></td>
       <td><code class="language-plaintext highlighter-rouge">translation-manager</code></td>
       <td>3 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="translation-inject"></a><a href="#translation-inject"><code class="language-plaintext highlighter-rouge">translation-inject</code></a><br />Inject translations</td>
@@ -2194,7 +2263,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-inproc">inProcess</span> <span class="tg-tag tg-mcp">mcp</span></td>
       <td><code class="language-plaintext highlighter-rouge">translation-manager</code></td>
       <td>3 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="translation-roundtrip-record"></a><a href="#translation-roundtrip-record"><code class="language-plaintext highlighter-rouge">translation-roundtrip-record</code></a><br />Record a round-trip translation verdict</td>
@@ -2202,7 +2271,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">translation-manager</code></td>
       <td>1 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="translation-signoff"></a><a href="#translation-signoff"><code class="language-plaintext highlighter-rouge">translation-signoff</code></a><br />Sign off a translation</td>
@@ -2210,7 +2279,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-inproc">inProcess</span> <span class="tg-tag tg-mcp">mcp</span></td>
       <td><code class="language-plaintext highlighter-rouge">decision-audit</code><br /><code class="language-plaintext highlighter-rouge">translation-manager</code></td>
       <td>4 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="translation-status"></a><a href="#translation-status"><code class="language-plaintext highlighter-rouge">translation-status</code></a><br />Translation coverage</td>
@@ -2218,7 +2287,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-inproc">inProcess</span> <span class="tg-tag tg-mcp">mcp</span></td>
       <td><code class="language-plaintext highlighter-rouge">translation-manager</code></td>
       <td>1 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="translation-status-viewer"></a><a href="#translation-status-viewer"><code class="language-plaintext highlighter-rouge">translation-status-viewer</code></a><br />Translation status viewer</td>
@@ -2226,7 +2295,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">graph-rendering</code></td>
       <td>2 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="translation-validate"></a><a href="#translation-validate"><code class="language-plaintext highlighter-rouge">translation-validate</code></a><br />Validate a translation</td>
@@ -2234,7 +2303,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-inproc">inProcess</span> <span class="tg-tag tg-mcp">mcp</span></td>
       <td><code class="language-plaintext highlighter-rouge">translation-manager</code></td>
       <td>3 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="uml-object-model"></a><a href="#uml-object-model"><code class="language-plaintext highlighter-rouge">uml-object-model</code></a><br />Harness object model as PlantUML</td>
@@ -2242,7 +2311,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">uml-overview</code></td>
       <td>1 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="uml-overview"></a><a href="#uml-overview"><code class="language-plaintext highlighter-rouge">uml-overview</code></a><br />UML overview per named sub-graph</td>
@@ -2250,7 +2319,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">kg-subgraph-layout</code><br /><code class="language-plaintext highlighter-rouge">uml-overview</code></td>
       <td>1 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="upload-step-docs"></a><a href="#upload-step-docs"><code class="language-plaintext highlighter-rouge">upload-step-docs</code></a><br />The upload step, from its Tools</td>
@@ -2258,7 +2327,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">docs-generation</code></td>
       <td>1 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="upload-url"></a><a href="#upload-url"><code class="language-plaintext highlighter-rouge">upload-url</code></a><br />Where to drop a file — the queue’s upload URL</td>
@@ -2266,7 +2335,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">content-acquisition</code><br /><code class="language-plaintext highlighter-rouge">upload-routes</code></td>
       <td>1 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="uploads-viewer"></a><a href="#uploads-viewer"><code class="language-plaintext highlighter-rouge">uploads-viewer</code></a><br />Uploads viewer</td>
@@ -2274,7 +2343,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">graph-rendering</code></td>
       <td>2 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="user-auth"></a><a href="#user-auth"><code class="language-plaintext highlighter-rouge">user-auth</code></a><br />Who is asking, and what may they do</td>
@@ -2282,7 +2351,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-inproc">inProcess</span> <span class="tg-tag tg-mcp">mcp</span></td>
       <td><code class="language-plaintext highlighter-rouge">deployment-auth</code><br /><code class="language-plaintext highlighter-rouge">task-authorization</code></td>
       <td>6 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="vocab-map"></a><a href="#vocab-map"><code class="language-plaintext highlighter-rouge">vocab-map</code></a><br />Apply a vocabulary mapping table</td>
@@ -2290,7 +2359,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-inproc">inProcess</span></td>
       <td><code class="language-plaintext highlighter-rouge">vocabulary-authority</code></td>
       <td>2 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="voices-viewer"></a><a href="#voices-viewer"><code class="language-plaintext highlighter-rouge">voices-viewer</code></a><br />Voices viewer</td>
@@ -2298,7 +2367,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">graph-rendering</code></td>
       <td>2 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="wireframe-check"></a><a href="#wireframe-check"><code class="language-plaintext highlighter-rouge">wireframe-check</code></a><br />Wireframe check at web and mobile viewports</td>
@@ -2306,7 +2375,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">wireframe-viewport-check</code></td>
       <td>5 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="witness-conformance"></a><a href="#witness-conformance"><code class="language-plaintext highlighter-rouge">witness-conformance</code></a><br />Witness conformance report</td>
@@ -2314,7 +2383,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">directory-conventions</code></td>
       <td>3 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="witness-parity"></a><a href="#witness-parity"><code class="language-plaintext highlighter-rouge">witness-parity</code></a><br />Witness reproduction check</td>
@@ -2322,7 +2391,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">directory-conventions</code></td>
       <td>4 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="work-plan-prime"></a><a href="#work-plan-prime"><code class="language-plaintext highlighter-rouge">work-plan-prime</code></a><br />Prime the work plan</td>
@@ -2330,7 +2399,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-inproc">inProcess</span> <span class="tg-tag tg-mcp">mcp</span> <span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">bean-coordination</code><br /><code class="language-plaintext highlighter-rouge">pending-show</code><br /><code class="language-plaintext highlighter-rouge">session-intent</code><br /><code class="language-plaintext highlighter-rouge">todo-manager</code></td>
       <td>0 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="workflow-complete"></a><a href="#workflow-complete"><code class="language-plaintext highlighter-rouge">workflow-complete</code></a><br />Complete a step</td>
@@ -2338,7 +2407,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-inproc">inProcess</span> <span class="tg-tag tg-mcp">mcp</span></td>
       <td><code class="language-plaintext highlighter-rouge">bean-coordination</code><br /><code class="language-plaintext highlighter-rouge">process-state</code></td>
       <td>8 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="workflow-gate"></a><a href="#workflow-gate"><code class="language-plaintext highlighter-rouge">workflow-gate</code></a><br />May this step be performed?</td>
@@ -2346,7 +2415,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-inproc">inProcess</span> <span class="tg-tag tg-mcp">mcp</span></td>
       <td><code class="language-plaintext highlighter-rouge">process-state</code></td>
       <td>4 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="workflow-list"></a><a href="#workflow-list"><code class="language-plaintext highlighter-rouge">workflow-list</code></a><br />List processes</td>
@@ -2354,7 +2423,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-inproc">inProcess</span> <span class="tg-tag tg-mcp">mcp</span></td>
       <td><code class="language-plaintext highlighter-rouge">process-state</code></td>
       <td>0 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="workflow-next"></a><a href="#workflow-next"><code class="language-plaintext highlighter-rouge">workflow-next</code></a><br />What is enabled now</td>
@@ -2362,7 +2431,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-inproc">inProcess</span> <span class="tg-tag tg-mcp">mcp</span></td>
       <td><code class="language-plaintext highlighter-rouge">process-state</code></td>
       <td>1 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
       <td><a id="workflow-start"></a><a href="#workflow-start"><code class="language-plaintext highlighter-rouge">workflow-start</code></a><br />Start a process instance</td>
@@ -2370,7 +2439,7 @@ tool advertising a capability the graph cannot locate.</p>
       <td><span class="tg-tag tg-inproc">inProcess</span> <span class="tg-tag tg-mcp">mcp</span></td>
       <td><code class="language-plaintext highlighter-rouge">bean-coordination</code><br /><code class="language-plaintext highlighter-rouge">process-state</code></td>
       <td>3 in / 1 out</td>
-      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">pass</code></a></td>
+      <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
   </tbody>
 </table></div>
