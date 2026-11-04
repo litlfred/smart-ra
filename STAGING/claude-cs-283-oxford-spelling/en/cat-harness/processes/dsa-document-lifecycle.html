@@ -9,13 +9,7 @@
 
   <link rel="stylesheet" href="../../../assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
 
-  <style id="jtd-nav-activation">
   
-    .site-nav ul li a {
-      background-image: none;
-    }
-
-  </style>
 
   
 
@@ -415,7 +409,7 @@
   instance's `glassStrip` declaration by `sync-docs-harness.ts`; absent when
   nothing declared one. Replica pages read `assets/harness/glass-strip.json`.
 -->
-<meta name="fa-glass-strip" content="[&quot;glass-todos&quot;,&quot;glass-settings&quot;,&quot;library&quot;]">
+<meta name="fa-glass-strip" content="[&quot;glass-todos&quot;,&quot;glass-settings&quot;]">
 
 <!--
   THE SITE'S BASEURL, for the tiles above.
@@ -588,7 +582,7 @@
 -->
 <!-- The harness icon row's own style, which railed pages load without docs-ui.css (beans `lhvt`, `9rq1`). -->
 <link rel="stylesheet" href="../../../assets/css/navbar-row.css?v=7d7d00921e0f">
-<link rel="stylesheet" href="../../../assets/css/docs-ui.css?v=6071ae228cf3">
+<link rel="stylesheet" href="../../../assets/css/docs-ui.css?v=18eb22b50395">
 <!-- Narrow viewports: wide content scrolls in its own box, never the page
      (bean `2r2n`). The standalone viewers inline the same file through
      `withViewerNav`, so both kinds of page read one set of rules. -->
@@ -613,7 +607,7 @@
      `avatars:css:check` fails the build when it is stale. One stylesheet
      rather than 68 assets: the glyph is a mask and the colour is a property,
      so a scheme swap is a custom property and the trash state is a selector. -->
-<link rel="stylesheet" href="../../../assets/css/avatars.css?v=780d571c53c1">
+<link rel="stylesheet" href="../../../assets/css/avatars.css?v=a0806788c1f5">
 
 <!--
   The kinds THIS INSTANCE DECLARES, for the avatar fan.
@@ -628,7 +622,7 @@
   all, and a fetch for that would put a spinner in front of a badge.
 -->
 <!-- NOT MOVED: same reason as fa-site-links above. -->
-<script type="application/json" id="fa-declared-kinds">["archimate","beans","folio","fsh-guts","library","public-comments","todo-items","todos","uploads"]</script>
+<script type="application/json" id="fa-declared-kinds">["archimate","beans","folio","fsh-guts","glossary","library","public-comments","references","todo-items","todos","uploads"]</script>
 <!--
   FIRST of the deferred scripts: it fills `#fa-navbar-row` and
   `meta[name=fa-tiles]` before any reader runs (bean `gp2f`).
@@ -646,12 +640,12 @@
 <!-- BEFORE docs-ui.js and work-plan.js: both read window.faRender. -->
 <script src="../../../assets/js/kg-render.js" defer></script>
 <!-- BEFORE docs-ui.js, which calls it: the one drawing of the harness icon row (beans `lhvt`, `9rq1`). -->
-<script src="../../../assets/js/navbar-row.js?v=7dce6a7e2ab0" defer></script>
-<script src="../../../assets/js/docs-ui.js?v=59c1d8d3ff0a" defer></script>
+<script src="../../../assets/js/navbar-row.js?v=6bb19e1d17a5" defer></script>
+<script src="../../../assets/js/docs-ui.js?v=52e4c68c64c7" defer></script>
 <!-- The edit, source and feedback links of every page, from the platform's one
   recipe (cat-harness-tools/src/core/edit-links.ts, bean v433): links carry their
   facts and this builds the hrefs. -->
-<script src="../../../assets/js/edit-links.js?v=81bb303b6bc2" defer></script>
+<script src="../../../assets/js/edit-links.js?v=4f82faf45c35" defer></script>
 
 <!--
   The work-plan dashboard. SELF-MOUNTING on any page carrying
@@ -749,6 +743,7 @@ function fill(d,f,r){
   while(d.firstChild)d.removeChild(d.firstChild);
   d.appendChild(document.createTextNode('\u2014 '));
   var b=link(f.branchUrl,'');b.appendChild(chip(f.branch));d.appendChild(b);
+  var rv=el('span',{'data-fa-staging-review':''});d.appendChild(rv);
   d.appendChild(sep());d.appendChild(document.createTextNode('commit '));d.appendChild(chip(f.sha));
   d.appendChild(sep());d.appendChild(document.createTextNode('built '+f.built));
   d.appendChild(sep());d.appendChild(link(f.prUrl,f.pr&&f.pr!=='n/a'?'PR #'+f.pr:'no open PR found'));
@@ -769,6 +764,48 @@ function fill(d,f,r){
   if(f.checksUrl){d.appendChild(sep());d.appendChild(link(f.checksUrl,'CI results'));}
   stamp(f);
   measure();
+  fresh(d,f);
+  review(rv,r,rel);
+}
+// The preview's review page (owner, 2026-11-01, Q-REV-1): reviewers could not
+// find it from a staging page. A folio writes it at <root>/<locale>/review/,
+// an IG at <root>/review/. Asked with HEAD, which the staging worker passes
+// through, so a 404 here is not answered with the live site's page. No review
+// page, no link.
+function review(s,r,rel){
+  if(typeof fetch!=='function')return;
+  var c=[],m=rel.match(/^([a-z]{2,3}(?:-[A-Za-z0-9]+)?)\//);
+  if(m)c.push(r+m[1]+'/review/');
+  c.push(r+'review/');
+  (function next(i){
+    if(i>=c.length)return;
+    fetch(c[i]+'index.html',{method:'HEAD',cache:'no-store'}).then(function(x){
+      if(!x.ok)return next(i+1);
+      s.appendChild(sep());
+      s.appendChild(link(c[i],'\ud83d\udd0d Review changes','font-weight:bold'));
+      measure();
+    }).catch(function(){next(i+1);});
+  })(0);
+}
+// Live staleness (owner, 2026-10-31, option C): ask GitHub for the branch's
+// head now and say so when it has moved past the commit this preview was
+// built from. Unauthenticated, one request per page view; on any failure
+// (rate limit, offline, a deleted branch) it says nothing rather than guess.
+function fresh(d,f){
+  var m=String(f.branchUrl||'').match(/^https:\/\/github\.com\/([^/]+)\/([^/]+)\//);
+  if(!m||!f.branch||!f.sha||typeof fetch!=='function')return;
+  fetch('https://api.github.com/repos/'+m[1]+'/'+m[2]+'/commits/'+encodeURIComponent(f.branch),
+    {headers:{Accept:'application/vnd.github.sha'},cache:'no-store'})
+    .then(function(x){if(!x.ok)throw 0;return x.text();})
+    .then(function(head){
+      head=String(head).trim();
+      if(!/^[0-9a-f]{7,40}$/.test(head)||head.indexOf(f.sha)===0)return;
+      d.appendChild(sep());
+      var w=el('strong',{'data-fa-staging-stale':'',style:'background:#b00020;padding:0 .4em;border-radius:3px'},'\u26a0 stale: the branch is now at ');
+      w.appendChild(chip(head.slice(0,7)));
+      w.appendChild(document.createTextNode(', newer than this preview'));
+      d.appendChild(w);measure();
+    }).catch(function(){});
 }
 function stamp(f){
   var p=document.querySelector('.fa-build-stamp');if(!p)return;
@@ -786,7 +823,23 @@ function go(){
     .then(function(f){fill(d,f,r);})
     .catch(function(){d.textContent='\u2014 build details unavailable';measure();});
 }
-measure();
+// First visit to a preview: the shared stylesheets 404 until the worker is
+// in control, so the page would paint unstyled (a page-wide search icon) for
+// the moment before the reload. Hide it until then, only when a stylesheet
+// in the head actually failed, and show it again if no reload comes.
+function unstyled(){var l=document.querySelectorAll('link[rel="stylesheet"]');for(var i=0;i<l.length;i++){if(l[i].disabled)continue;try{if(!l[i].sheet||!l[i].sheet.cssRules.length)return true;}catch(e){}}return false;}
+function share(){
+  var r=root();if(!r||!('serviceWorker' in navigator))return;
+  var k='fa-share:'+r,s=document.documentElement.style;
+  var hide=!navigator.serviceWorker.controller&&!sessionStorage.getItem(k)&&unstyled();
+  function show(){if(hide){hide=false;s.removeProperty('visibility');}}
+  if(hide){s.setProperty('visibility','hidden');setTimeout(show,4000);}
+  navigator.serviceWorker.register(r+'staging-sw.js',{scope:r}).then(function(){
+    if(navigator.serviceWorker.controller||sessionStorage.getItem(k))return show();
+    return navigator.serviceWorker.ready.then(function(){sessionStorage.setItem(k,'1');location.reload();});
+  }).catch(show);
+}
+measure();share();
 if(document.readyState!=='loading')go();else document.addEventListener('DOMContentLoaded',go);
 window.addEventListener('resize',measure);window.addEventListener('load',measure);
 })();</script><script type="application/json" id="fa-rail" data-fa-root="https://litlfred.github.io/folio-assistant" data-fa-to-root="../../..">{"data":"rail-1nr7jo2rxsc","here":"/en/cat-harness/processes/dsa-document-lifecycle.html","documentIndex":{"label":"On this page","icon":"§","items":[{"href":"#how-it-connects","label":"How it connects"},{"href":"#lanes--who-acts","label":"Lanes — who acts"},{"href":"#steps","label":"Steps"},{"href":"#decisions","label":"Decisions"}],"collapsible":true}}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../">Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector</a></nav>
@@ -886,7 +939,7 @@ window.addEventListener('resize',measure);window.addEventListener('load',measure
         <main>
           
             <blockquote class="note">
-  <p>Generated from <code class="language-plaintext highlighter-rouge">folio-assistant-core/processes/content/dsa-document-lifecycle.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a></p>
+  <p>Generated from <code class="language-plaintext highlighter-rouge">folio-assistant-core/processes/content/dsa-document-lifecycle.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a> · <a href="folio-assistant-core/">folio-assistant-core processes</a></p>
 </blockquote>
 <h1 id="data-sharing-agreement-document-life-cycle">
   
@@ -897,7 +950,7 @@ window.addEventListener('resize',measure);window.addEventListener('load',measure
 </h1>
     
 
-<p><code class="language-plaintext highlighter-rouge">Process_DsaDocumentLifecycle</code> · advisory · 27 step(s)</p>
+<p><code class="language-plaintext highlighter-rouge">Process_DsaDocumentLifecycle</code> · advisory · 26 step(s)</p>
 
 <p>How a data sharing agreement is drafted, negotiated, signed, published with a version, a hash and a catalogue record, and later amended, renewed or ended. It covers the agreement as a document folio only: processes P1, P2 and P14 of the DSA process catalogue.
 Two entry points: a request for an agreement (P1, then P2), and a change to one in force (P14). An amendment or a renewal with a new end date runs P1 and P2 again and publishes a new version linked to the old one; the old version stays readable.
@@ -945,11 +998,6 @@ Consent rules (owner, 2026-10-30), which every agreement drawn here keeps. 1. Le
       <td>The data provider and the data recipient (ODRL 2.2 assigner and assignee) and the people who sign for them. Their role is judgement only: they agree the terms, sign, and decide whether to amend, renew or end the agreement. No skill can make those choices for them, so no activity in this lane names one.</td>
     </tr>
     <tr>
-      <td>Work plan — beans (shared by humans and agents)</td>
-      <td><code class="language-plaintext highlighter-rouge">work-plan</code></td>
-      <td>Opens a bean when an agreement is requested or changed, and closes it when a version is published or the agreement has ended. A resumed session can then pick up a half-negotiated agreement without starting again.</td>
-    </tr>
-    <tr>
       <td>Author and policy author</td>
       <td><code class="language-plaintext highlighter-rouge">author</code></td>
       <td>Writes the legal text and, for a computable agreement, derives the ODRL 2.2 Agreement from it. Every loop comes back here: a review that asks for changes, an amendment, and a renewal that needs a new version.</td>
@@ -962,7 +1010,7 @@ Consent rules (owner, 2026-10-30), which every agreement drawn here keeps. 1. Le
     <tr>
       <td>Public review (commenters, review committee, editor)</td>
       <td><code class="language-plaintext highlighter-rouge">review-coordinator</code></td>
-      <td>Used only when the public part of the agreement (the template) goes out for public comment. Comments are handled in Process_PublicComment, the same as for any document folio.</td>
+      <td>Used only when the public part of the agreement (the template) goes out for public comment. Comments are handled in <a href="public-comment.html">Process_PublicComment</a>, the same as for any document folio.</td>
     </tr>
     <tr>
       <td>Publisher (data provider’s publication manager)</td>
@@ -985,7 +1033,7 @@ Consent rules (owner, 2026-10-30), which every agreement drawn here keeps. 1. Le
 </h2>
     
 
-<p>Every one of the 27 step(s) is documented.</p>
+<p>Every one of the 26 step(s) is documented.</p>
 
 <div class="table-wrapper"><table>
   <thead>
@@ -999,12 +1047,12 @@ Consent rules (owner, 2026-10-30), which every agreement drawn here keeps. 1. Le
   <tbody>
     <tr>
       <td><strong>Open the bean</strong><br /><code class="language-plaintext highlighter-rouge">Call_BeanOpen</code></td>
-      <td>Work plan — beans (shared by humans and agents)</td>
+      <td>Author and policy author</td>
       <td>calls <a href="bean-open.html">Open the bean</a><br /><code class="language-plaintext highlighter-rouge">bean-coordination</code></td>
-      <td>Process_BeanOpen: check before you create, find out whose the bean is, and claim it — or leave it alone when it is someone else’s. The one place a claim is drawn (bean m8gz, owner 2026-10-24); the gateway after this reads which end it reached.</td>
+      <td><a href="bean-open.html">Process_BeanOpen</a>: check before you create, find out whose the bean is, and claim it — or leave it alone when it is someone else’s. The one place a claim is drawn (bean m8gz, owner 2026-10-24); the gateway after this reads which end it reached.</td>
     </tr>
     <tr>
-      <td><strong>P1.1 · Agree purpose, datasets, period, duties and trust anchors</strong><br /><code class="language-plaintext highlighter-rouge">Task_AgreeTerms</code></td>
+      <td><strong>P1.1 · Agree the terms</strong><br /><code class="language-plaintext highlighter-rouge">Task_AgreeTerms</code></td>
       <td>Parties and signatories (provider, recipient)</td>
       <td>—</td>
       <td>The parties agree the purpose, the datasets, the period, the conditions and duties, which trust anchors each side accepts, and the legal basis the sharing rests on (consent, treatment, public-health law or a research waiver). This sets what the text must say; it is a negotiation between people.</td>
@@ -1022,7 +1070,7 @@ Consent rules (owner, 2026-10-30), which every agreement drawn here keeps. 1. Le
       <td>The text states the legal basis the parties agreed in P1.1 as a normative statement: consent, treatment, public-health law, or a research waiver. Consent rule 1: only an agreement whose legal basis is consent carries the odrl:obtainConsent duty; treatment, public-health law and research waivers do not rest on consent. The gateway that follows, the ODRL and the reviewers all read the basis from this statement.</td>
     </tr>
     <tr>
-      <td><strong>P1.2b · Draft the plain-language summary</strong><br /><code class="language-plaintext highlighter-rouge">Task_PlainSummary</code></td>
+      <td><strong>P1.2b · Draft the plain summary</strong><br /><code class="language-plaintext highlighter-rouge">Task_PlainSummary</code></td>
       <td>Author and policy author</td>
       <td><code class="language-plaintext highlighter-rouge">document-authoring</code></td>
       <td>Consent-based only. Write a plain-language summary of the agreement in the same document folio: what it lets the recipient do with the person’s data, in words the person can read. Consent rule 3: every agreement that needs consent publishes this summary, hashed with the agreement (P2.2a), and the summary is what the person consents to. It is reviewed, rendered and versioned with the text.</td>
@@ -1058,7 +1106,7 @@ Consent rules (owner, 2026-10-30), which every agreement drawn here keeps. 1. Le
       <td>Comments on the frozen, line-numbered review version of the public template are placed, triaged, weighed and decided (public-comment.bpmn). Private annexes are never circulated.</td>
     </tr>
     <tr>
-      <td><strong>Render the text to HTML / PDF</strong><br /><code class="language-plaintext highlighter-rouge">Task_Render</code></td>
+      <td><strong>Render the text to HTML and PDF</strong><br /><code class="language-plaintext highlighter-rouge">Task_Render</code></td>
       <td>Build pipeline (system)</td>
       <td><code class="language-plaintext highlighter-rouge">document-publishing</code></td>
       <td>Render the agreed text to the form that will be signed (HTML and PDF), without a TeX installation. A consent-based agreement’s plain-language summary is rendered with it.</td>
@@ -1070,31 +1118,31 @@ Consent rules (owner, 2026-10-30), which every agreement drawn here keeps. 1. Le
       <td>The signatories sign: wet ink, or an electronic signature under national law. Technically a detached JWS (RFC 7515) or CMS (RFC 5652); PAdES for a signed PDF needs the owner’s approval.</td>
     </tr>
     <tr>
-      <td><strong>P2.1 · Assign the version and its immutable URL</strong><br /><code class="language-plaintext highlighter-rouge">Task_AssignVersion</code></td>
+      <td><strong>P2.1 · Assign version and fixed URL</strong><br /><code class="language-plaintext highlighter-rouge">Task_AssignVersion</code></td>
       <td>Publisher (data provider’s publication manager)</td>
       <td><code class="language-plaintext highlighter-rouge">content-publish</code><br /><code class="language-plaintext highlighter-rouge">package-release</code></td>
       <td>Each signed version gets its own immutable URL (for example /dsa/42/v3). A ‘latest’ URL may exist; nothing cites it. A new version never overwrites an old one. This fixed-version URL is the one a Consent cites (consent rule 2), and a computable agreement’s ODRL policy uid is set to it (P2.3).</td>
     </tr>
     <tr>
-      <td><strong>P2.2 · Record the SHA-256 of each file</strong><br /><code class="language-plaintext highlighter-rouge">Task_Hash</code></td>
+      <td><strong>P2.2 · Record each file’s SHA-256</strong><br /><code class="language-plaintext highlighter-rouge">Task_Hash</code></td>
       <td>Publisher (data provider’s publication manager)</td>
       <td><code class="language-plaintext highlighter-rouge">dsa-checksum</code></td>
       <td>Compute SHA-256 (FIPS 180-4) of the signed text, and of the ODRL file if there is one, recorded as DCAT 3 spdx:checksum and verified by check:dsa-hash.</td>
     </tr>
     <tr>
-      <td><strong>P2.2a · Hash the plain-language summary with the agreement</strong><br /><code class="language-plaintext highlighter-rouge">Task_HashSummary</code></td>
+      <td><strong>P2.2a · Hash the plain summary</strong><br /><code class="language-plaintext highlighter-rouge">Task_HashSummary</code></td>
       <td>Publisher (data provider’s publication manager)</td>
       <td><code class="language-plaintext highlighter-rouge">dsa-checksum</code></td>
       <td>Consent-based only. Record the SHA-256 of the plain-language summary beside the agreement’s, in the same version (consent rule 3). The summary a person consented to can then be checked against the agreement it summarises; a changed summary is a new version.</td>
     </tr>
     <tr>
-      <td><strong>P2.2b · State the fixed-version URL and hash a Consent cites</strong><br /><code class="language-plaintext highlighter-rouge">Task_ConsentCitation</code></td>
+      <td><strong>P2.2b · State the URL and hash to cite</strong><br /><code class="language-plaintext highlighter-rouge">Task_ConsentCitation</code></td>
       <td>Publisher (data provider’s publication manager)</td>
       <td><code class="language-plaintext highlighter-rouge">content-publish</code></td>
       <td>Consent-based only. The version’s publication metadata states the fixed-version URL (P2.1) and the hash (P2.2) that a Consent cites in FHIR R4 Consent.policy.uri (consent rule 2), never the ‘latest’ URL. For a computable agreement that URL is also the ODRL policy uid (P2.3): a Consent counts only when its Consent.policy.uri equals the agreement’s ODRL policy uid, so the two are the same string.</td>
     </tr>
     <tr>
-      <td><strong>P2.3 · Make the ODRL cite the text by URL and hash</strong><br /><code class="language-plaintext highlighter-rouge">Task_OdrlCitesText</code></td>
+      <td><strong>P2.3 · Make the ODRL cite the text</strong><br /><code class="language-plaintext highlighter-rouge">Task_OdrlCitesText</code></td>
       <td>Author and policy author</td>
       <td><code class="language-plaintext highlighter-rouge">dsa-odrl-source</code></td>
       <td>The ODRL policy names the signed text distribution with dcterms:source (DCMI Terms), pointing at the immutable URL whose spdx:checksum was just recorded. Its uid is that same fixed-version URL, the URL a Consent cites in Consent.policy.uri (consent rule 2).</td>
@@ -1106,22 +1154,16 @@ Consent rules (owner, 2026-10-30), which every agreement drawn here keeps. 1. Le
       <td>Publish the files at the version’s immutable URL. If the parties’ names are sensitive, publish only the template and the hash of the signed instance. A consent-based agreement publishes its plain-language summary and its hash with the text (consent rule 3). Check before publishing (consent rule 2): a computable agreement’s ODRL policy uid equals this version’s fixed-version URL, the URL a Consent cites; if they differ, the version is not published.</td>
     </tr>
     <tr>
-      <td><strong>P2.4–5 · Write the DCAT 3 record and link versions</strong><br /><code class="language-plaintext highlighter-rouge">Task_Catalogue</code></td>
+      <td><strong>P2.4–5 · Write the DCAT 3 record</strong><br /><code class="language-plaintext highlighter-rouge">Task_Catalogue</code></td>
       <td>Publisher (data provider’s publication manager)</td>
       <td><code class="language-plaintext highlighter-rouge">dsa-dcat-record</code></td>
       <td>One DCAT 3 record: the agreement as a catalogued resource, each file a dcat:Distribution with dcat:downloadURL and spdx:checksum; datasets it covers carry odrl:hasPolicy. Versions are linked with DCAT 3 versioning (previous version, version, current version).</td>
     </tr>
     <tr>
-      <td><strong>Close the bean</strong><br /><code class="language-plaintext highlighter-rouge">Call_BeanClosePublished</code></td>
-      <td>Work plan — beans (shared by humans and agents)</td>
-      <td>calls <a href="bean-close.html">Close the bean</a><br /><code class="language-plaintext highlighter-rouge">todo-manager</code></td>
-      <td>Process_BeanClose: end the bean in a state that says why — complete and archive it, scrap it with its reasons and archive it, or record the blocker and hand it back. The one place resolve and archive are drawn (bean m8gz, owner 2026-10-24); placed straight before the end so the engine’s resolve sees nothing left but the archive step.</td>
-    </tr>
-    <tr>
       <td><strong>Open the bean</strong><br /><code class="language-plaintext highlighter-rouge">Call_BeanOpenChange</code></td>
-      <td>Work plan — beans (shared by humans and agents)</td>
+      <td>Author and policy author</td>
       <td>calls <a href="bean-open.html">Open the bean</a><br /><code class="language-plaintext highlighter-rouge">bean-coordination</code></td>
-      <td>Process_BeanOpen: check before you create, find out whose the bean is, and claim it — or leave it alone when it is someone else’s. The one place a claim is drawn (bean m8gz, owner 2026-10-24); the gateway after this reads which end it reached.</td>
+      <td><a href="bean-open.html">Process_BeanOpen</a>: check before you create, find out whose the bean is, and claim it — or leave it alone when it is someone else’s. The one place a claim is drawn (bean m8gz, owner 2026-10-24); the gateway after this reads which end it reached.</td>
     </tr>
     <tr>
       <td><strong>Decide: amend, renew or end</strong><br /><code class="language-plaintext highlighter-rouge">Task_DecideChange</code></td>
@@ -1136,13 +1178,13 @@ Consent rules (owner, 2026-10-30), which every agreement drawn here keeps. 1. Le
       <td>Existing grants keep citing the old hash. The parties decide, per agreement: they stay valid until expiry, or they are revoked and reissued against the new version (in smart-trust). The old version stays readable.</td>
     </tr>
     <tr>
-      <td><strong>P14.3 · Record that new consent is needed</strong><br /><code class="language-plaintext highlighter-rouge">Task_NewConsentNeeded</code></td>
+      <td><strong>P14.3 · New consent needed</strong><br /><code class="language-plaintext highlighter-rouge">Task_NewConsentNeeded</code></td>
       <td>Parties and signatories (provider, recipient)</td>
       <td>—</td>
       <td>The amendment widens use, so a Consent citing the old version’s URL and hash does not cover the new version (consent rule 2). Record on the bean, and in the new version’s text, that new consent is needed; the new version gets its own plain-language summary (P1.2b). Asking each person again is the trust layer’s.</td>
     </tr>
     <tr>
-      <td><strong>P14.5 · Set the catalogue status to ended</strong><br /><code class="language-plaintext highlighter-rouge">Task_SetStatus</code></td>
+      <td><strong>P14.5 · Set the status to ended</strong><br /><code class="language-plaintext highlighter-rouge">Task_SetStatus</code></td>
       <td>Publisher (data provider’s publication manager)</td>
       <td><code class="language-plaintext highlighter-rouge">dsa-catalogue-status</code></td>
       <td>Set the life-cycle status of the agreement’s DCAT 3 record (DCAT 3 §6.4.30). The published versions stay readable at their URLs.</td>
@@ -1155,9 +1197,9 @@ Consent rules (owner, 2026-10-30), which every agreement drawn here keeps. 1. Le
     </tr>
     <tr>
       <td><strong>Close the bean</strong><br /><code class="language-plaintext highlighter-rouge">Call_BeanCloseEnded</code></td>
-      <td>Work plan — beans (shared by humans and agents)</td>
+      <td>Author and policy author</td>
       <td>calls <a href="bean-close.html">Close the bean</a><br /><code class="language-plaintext highlighter-rouge">todo-manager</code></td>
-      <td>Process_BeanClose: end the bean in a state that says why — complete and archive it, scrap it with its reasons and archive it, or record the blocker and hand it back. The one place resolve and archive are drawn (bean m8gz, owner 2026-10-24); placed straight before the end so the engine’s resolve sees nothing left but the archive step.</td>
+      <td><a href="bean-close.html">Process_BeanClose</a>: end the bean in a state that says why — complete and archive it, scrap it with its reasons and archive it, or record the blocker and hand it back. The one place resolve and archive are drawn (bean m8gz, owner 2026-10-24); placed straight before the end so the engine’s resolve sees nothing left but the archive step.</td>
     </tr>
   </tbody>
 </table></div>
@@ -1170,7 +1212,7 @@ Consent rules (owner, 2026-10-30), which every agreement drawn here keeps. 1. Le
 </h2>
     
 
-<p>Every one of the 10 decision(s) is documented.</p>
+<p>Every one of the 11 decision(s) is documented.</p>
 
 <div class="table-wrapper"><table>
   <thead>
@@ -1183,13 +1225,13 @@ Consent rules (owner, 2026-10-30), which every agreement drawn here keeps. 1. Le
   <tbody>
     <tr>
       <td><strong>Bean claimed?</strong><br /><code class="language-plaintext highlighter-rouge">GW_BeanYours</code></td>
-      <td>Reads which end Process_BeanOpen reached. <code class="language-plaintext highlighter-rouge">claimed</code>: the bean is in progress and this process works it. <code class="language-plaintext highlighter-rouge">not yours</code>: a sibling session or a human holds it, nothing was written to it, and this process stops here rather than work a bean it does not own (bean-coordination).</td>
-      <td><strong>not yours</strong> → Not yours — left alone<br /><strong>claimed</strong> → P1.1 · Agree purpose, datasets, period, duties and trust anchors</td>
+      <td>Reads which end <a href="bean-open.html">Process_BeanOpen</a> reached. <code class="language-plaintext highlighter-rouge">claimed</code>: the bean is in progress and this process works it. <code class="language-plaintext highlighter-rouge">not yours</code>: a sibling session or a human holds it, nothing was written to it, and this process stops here rather than work a bean it does not own (bean-coordination).</td>
+      <td><strong>not yours</strong> → Not yours — left alone<br /><strong>claimed</strong> → P1.1 · Agree the terms</td>
     </tr>
     <tr>
       <td><strong>Consent the legal basis?</strong><br /><code class="language-plaintext highlighter-rouge">GW_ConsentBasis</code></td>
       <td>Reads the legal basis recorded in P1.2a. <code class="language-plaintext highlighter-rouge">consent</code>: the agreement needs a plain-language summary (consent rule 3) and, if it is computable, the odrl:obtainConsent duty (consent rule 1). <code class="language-plaintext highlighter-rouge">treatment, law or waiver</code>: no summary for consent and no consent duty.</td>
-      <td><strong>consent</strong> → P1.2b · Draft the plain-language summary<br /><strong>treatment, law or waiver</strong> → GW_ConsentBasisJoin</td>
+      <td><strong>consent</strong> → P1.2b · Draft the plain summary<br /><strong>treatment, law or waiver</strong> → GW_ConsentBasisJoin</td>
     </tr>
     <tr>
       <td><strong>Computable agreement?</strong><br /><code class="language-plaintext highlighter-rouge">GW_Computable</code></td>
@@ -1198,38 +1240,43 @@ Consent rules (owner, 2026-10-30), which every agreement drawn here keeps. 1. Le
     </tr>
     <tr>
       <td><strong>Public comment on the public terms?</strong><br /><code class="language-plaintext highlighter-rouge">GW_PublicComment</code></td>
-      <td>Should the public template go out for public comment before signing? <code class="language-plaintext highlighter-rouge">yes</code> runs Process_PublicComment; <code class="language-plaintext highlighter-rouge">no</code> goes straight to the readiness decision. A private agreement between two parties usually answers <code class="language-plaintext highlighter-rouge">no</code>.</td>
+      <td>Should the public template go out for public comment before signing? <code class="language-plaintext highlighter-rouge">yes</code> runs <a href="public-comment.html">Process_PublicComment</a>; <code class="language-plaintext highlighter-rouge">no</code> goes straight to the readiness decision. A private agreement between two parties usually answers <code class="language-plaintext highlighter-rouge">no</code>.</td>
       <td><strong>yes</strong> → Public comment on the template<br /><strong>no</strong> → GW_CommentJoin</td>
     </tr>
     <tr>
       <td><strong>Ready to sign?</strong><br /><code class="language-plaintext highlighter-rouge">GW_ReadyToSign</code></td>
       <td>The reviewers’ call. <code class="language-plaintext highlighter-rouge">changes needed</code> sends the draft back to the author; <code class="language-plaintext highlighter-rouge">ready</code> renders it for signing.</td>
-      <td><strong>changes needed</strong> → GW_DraftMerge<br /><strong>ready</strong> → Render the text to HTML / PDF</td>
+      <td><strong>changes needed</strong> → GW_DraftMerge<br /><strong>ready</strong> → Render the text to HTML and PDF</td>
     </tr>
     <tr>
       <td><strong>Consent-based agreement?</strong><br /><code class="language-plaintext highlighter-rouge">GW_ConsentPublish</code></td>
       <td>The legal basis recorded in P1.2a. <code class="language-plaintext highlighter-rouge">consent</code>: hash the plain-language summary with the agreement, and state the fixed-version URL and hash a Consent cites. <code class="language-plaintext highlighter-rouge">not consent-based</code>: go straight on.</td>
-      <td><strong>consent</strong> → P2.2a · Hash the plain-language summary with the agreement<br /><strong>not consent-based</strong> → GW_ConsentPublishJoin</td>
+      <td><strong>consent</strong> → P2.2a · Hash the plain summary<br /><strong>not consent-based</strong> → GW_ConsentPublishJoin</td>
     </tr>
     <tr>
       <td><strong>ODRL to update?</strong><br /><code class="language-plaintext highlighter-rouge">GW_CiteComputable</code></td>
       <td>Is there an ODRL Agreement for this version? <code class="language-plaintext highlighter-rouge">yes</code>: it must cite the text by URL and hash. <code class="language-plaintext highlighter-rouge">document only</code>: go straight to publishing.</td>
-      <td><strong>yes</strong> → P2.3 · Make the ODRL cite the text by URL and hash<br /><strong>document only</strong> → GW_CiteJoin</td>
+      <td><strong>yes</strong> → P2.3 · Make the ODRL cite the text<br /><strong>document only</strong> → GW_CiteJoin</td>
     </tr>
     <tr>
       <td><strong>Bean claimed?</strong><br /><code class="language-plaintext highlighter-rouge">GW_BeanYoursChange</code></td>
-      <td>Reads which end Process_BeanOpen reached. <code class="language-plaintext highlighter-rouge">claimed</code>: the bean is in progress and this process works it. <code class="language-plaintext highlighter-rouge">not yours</code>: a sibling session or a human holds it, nothing was written to it, and this process stops here rather than work a bean it does not own (bean-coordination).</td>
+      <td>Reads which end <a href="bean-open.html">Process_BeanOpen</a> reached. <code class="language-plaintext highlighter-rouge">claimed</code>: the bean is in progress and this process works it. <code class="language-plaintext highlighter-rouge">not yours</code>: a sibling session or a human holds it, nothing was written to it, and this process stops here rather than work a bean it does not own (bean-coordination).</td>
       <td><strong>not yours</strong> → Not yours — left alone<br /><strong>claimed</strong> → Decide: amend, renew or end</td>
     </tr>
     <tr>
       <td><strong>Amend, renew or end?</strong><br /><code class="language-plaintext highlighter-rouge">GW_ChangeKind</code></td>
       <td>The parties’ decision. <code class="language-plaintext highlighter-rouge">new version</code> (amend, or renew with a new end date) runs P1 again and publishes a new version linked to the old one. <code class="language-plaintext highlighter-rouge">renew by grant</code> (the version has no end date): nothing in the document changes. <code class="language-plaintext highlighter-rouge">end</code> (expiry or termination) closes the agreement.</td>
-      <td><strong>new version</strong> → P14.2 · Decide what happens to existing grants<br /><strong>renew by grant</strong> → Renewed by a new grant<br /><strong>end</strong> → P14.5 · Set the catalogue status to ended</td>
+      <td><strong>new version</strong> → P14.2 · Decide what happens to existing grants<br /><strong>renew by grant</strong> → Renewed by a new grant<br /><strong>end</strong> → P14.5 · Set the status to ended</td>
     </tr>
     <tr>
       <td><strong>Consent-based: does the amendment widen use?</strong><br /><code class="language-plaintext highlighter-rouge">GW_WidensUse</code></td>
       <td>Consent rule 2, for a new version only. <code class="language-plaintext highlighter-rouge">widens use</code> (for example more data, more purposes, more recipients or a longer period): the Consents that cite the old version do not cover the new one, so new consent is needed. <code class="language-plaintext highlighter-rouge">narrows use</code>: no new consent is needed. <code class="language-plaintext highlighter-rouge">not consent-based</code>: there is no consent to renew.</td>
-      <td><strong>widens use</strong> → P14.3 · Record that new consent is needed<br /><strong>narrows use</strong> → GW_WidensJoin<br /><strong>not consent-based</strong> → GW_WidensJoin</td>
+      <td><strong>widens use</strong> → P14.3 · New consent needed<br /><strong>narrows use</strong> → GW_WidensJoin<br /><strong>not consent-based</strong> → GW_WidensJoin</td>
+    </tr>
+    <tr>
+      <td><strong>How did it end?</strong><br /><code class="language-plaintext highlighter-rouge">GW_BeanClosedHow</code></td>
+      <td>Which outcome the bean was closed with, so each ends at its own named end event. The bean is closed once, on every path (bpmn-authoring: open and close the bean at the top, once).</td>
+      <td><strong>published</strong> → Version published — agreement in force<br /><strong>ended</strong> → Agreement ended</td>
     </tr>
   </tbody>
 </table></div>

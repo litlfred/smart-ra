@@ -9,35 +9,7 @@
 
   <link rel="stylesheet" href="../../../../../assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
 
-  <style id="jtd-nav-activation">
   
-
-    .site-nav > ul.nav-list:first-child > li > a,
-    .site-nav > ul.nav-list:first-child > li > ul > li > a,
-    
-    .site-nav > ul.nav-list:first-child > li > ul > li > ul > li:not(:nth-child(3)) > a,
-    .site-nav > ul.nav-list:first-child > li > ul > li > ul > li > ul > li a {
-      background-image: none;
-    }
-
-    .site-nav > ul.nav-list:not(:first-child) a,
-    .site-nav li.external a {
-      background-image: none;
-    }
-
-    .site-nav > ul.nav-list:first-child > li:nth-child(2) > ul > li:nth-child(10) > ul > li:nth-child(3) > a {
-      font-weight: 600;
-      text-decoration: none;
-    }.site-nav > ul.nav-list:first-child > li:nth-child(2) > button svg,
-    .site-nav > ul.nav-list:first-child > li:nth-child(2) > ul > li:nth-child(10) > button svg,
-    .site-nav > ul.nav-list:first-child > li:nth-child(2) > ul > li:nth-child(10) > ul > li:nth-child(3) > button svg {
-      transform: rotate(-90deg);
-    }.site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(2) > ul.nav-list,
-    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(2) > ul.nav-list > li.nav-list-item:nth-child(10) > ul.nav-list,
-    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(2) > ul.nav-list > li.nav-list-item:nth-child(10) > ul.nav-list > li.nav-list-item:nth-child(3) > ul.nav-list {
-      display: block;
-    }
-  </style>
 
   
 
@@ -437,7 +409,7 @@
   instance's `glassStrip` declaration by `sync-docs-harness.ts`; absent when
   nothing declared one. Replica pages read `assets/harness/glass-strip.json`.
 -->
-<meta name="fa-glass-strip" content="[&quot;glass-todos&quot;,&quot;glass-settings&quot;,&quot;library&quot;]">
+<meta name="fa-glass-strip" content="[&quot;glass-todos&quot;,&quot;glass-settings&quot;]">
 
 <!--
   THE SITE'S BASEURL, for the tiles above.
@@ -610,7 +582,7 @@
 -->
 <!-- The harness icon row's own style, which railed pages load without docs-ui.css (beans `lhvt`, `9rq1`). -->
 <link rel="stylesheet" href="../../../../../assets/css/navbar-row.css?v=7d7d00921e0f">
-<link rel="stylesheet" href="../../../../../assets/css/docs-ui.css?v=6071ae228cf3">
+<link rel="stylesheet" href="../../../../../assets/css/docs-ui.css?v=18eb22b50395">
 <!-- Narrow viewports: wide content scrolls in its own box, never the page
      (bean `2r2n`). The standalone viewers inline the same file through
      `withViewerNav`, so both kinds of page read one set of rules. -->
@@ -635,7 +607,7 @@
      `avatars:css:check` fails the build when it is stale. One stylesheet
      rather than 68 assets: the glyph is a mask and the colour is a property,
      so a scheme swap is a custom property and the trash state is a selector. -->
-<link rel="stylesheet" href="../../../../../assets/css/avatars.css?v=780d571c53c1">
+<link rel="stylesheet" href="../../../../../assets/css/avatars.css?v=a0806788c1f5">
 
 <!--
   The kinds THIS INSTANCE DECLARES, for the avatar fan.
@@ -650,7 +622,7 @@
   all, and a fetch for that would put a spinner in front of a badge.
 -->
 <!-- NOT MOVED: same reason as fa-site-links above. -->
-<script type="application/json" id="fa-declared-kinds">["archimate","beans","folio","fsh-guts","library","public-comments","todo-items","todos","uploads"]</script>
+<script type="application/json" id="fa-declared-kinds">["archimate","beans","folio","fsh-guts","glossary","library","public-comments","references","todo-items","todos","uploads"]</script>
 <!--
   FIRST of the deferred scripts: it fills `#fa-navbar-row` and
   `meta[name=fa-tiles]` before any reader runs (bean `gp2f`).
@@ -668,12 +640,12 @@
 <!-- BEFORE docs-ui.js and work-plan.js: both read window.faRender. -->
 <script src="../../../../../assets/js/kg-render.js" defer></script>
 <!-- BEFORE docs-ui.js, which calls it: the one drawing of the harness icon row (beans `lhvt`, `9rq1`). -->
-<script src="../../../../../assets/js/navbar-row.js?v=7dce6a7e2ab0" defer></script>
-<script src="../../../../../assets/js/docs-ui.js?v=59c1d8d3ff0a" defer></script>
+<script src="../../../../../assets/js/navbar-row.js?v=6bb19e1d17a5" defer></script>
+<script src="../../../../../assets/js/docs-ui.js?v=52e4c68c64c7" defer></script>
 <!-- The edit, source and feedback links of every page, from the platform's one
   recipe (cat-harness-tools/src/core/edit-links.ts, bean v433): links carry their
   facts and this builds the hrefs. -->
-<script src="../../../../../assets/js/edit-links.js?v=81bb303b6bc2" defer></script>
+<script src="../../../../../assets/js/edit-links.js?v=4f82faf45c35" defer></script>
 
 <!--
   The work-plan dashboard. SELF-MOUNTING on any page carrying
@@ -771,6 +743,7 @@ function fill(d,f,r){
   while(d.firstChild)d.removeChild(d.firstChild);
   d.appendChild(document.createTextNode('\u2014 '));
   var b=link(f.branchUrl,'');b.appendChild(chip(f.branch));d.appendChild(b);
+  var rv=el('span',{'data-fa-staging-review':''});d.appendChild(rv);
   d.appendChild(sep());d.appendChild(document.createTextNode('commit '));d.appendChild(chip(f.sha));
   d.appendChild(sep());d.appendChild(document.createTextNode('built '+f.built));
   d.appendChild(sep());d.appendChild(link(f.prUrl,f.pr&&f.pr!=='n/a'?'PR #'+f.pr:'no open PR found'));
@@ -791,6 +764,48 @@ function fill(d,f,r){
   if(f.checksUrl){d.appendChild(sep());d.appendChild(link(f.checksUrl,'CI results'));}
   stamp(f);
   measure();
+  fresh(d,f);
+  review(rv,r,rel);
+}
+// The preview's review page (owner, 2026-11-01, Q-REV-1): reviewers could not
+// find it from a staging page. A folio writes it at <root>/<locale>/review/,
+// an IG at <root>/review/. Asked with HEAD, which the staging worker passes
+// through, so a 404 here is not answered with the live site's page. No review
+// page, no link.
+function review(s,r,rel){
+  if(typeof fetch!=='function')return;
+  var c=[],m=rel.match(/^([a-z]{2,3}(?:-[A-Za-z0-9]+)?)\//);
+  if(m)c.push(r+m[1]+'/review/');
+  c.push(r+'review/');
+  (function next(i){
+    if(i>=c.length)return;
+    fetch(c[i]+'index.html',{method:'HEAD',cache:'no-store'}).then(function(x){
+      if(!x.ok)return next(i+1);
+      s.appendChild(sep());
+      s.appendChild(link(c[i],'\ud83d\udd0d Review changes','font-weight:bold'));
+      measure();
+    }).catch(function(){next(i+1);});
+  })(0);
+}
+// Live staleness (owner, 2026-10-31, option C): ask GitHub for the branch's
+// head now and say so when it has moved past the commit this preview was
+// built from. Unauthenticated, one request per page view; on any failure
+// (rate limit, offline, a deleted branch) it says nothing rather than guess.
+function fresh(d,f){
+  var m=String(f.branchUrl||'').match(/^https:\/\/github\.com\/([^/]+)\/([^/]+)\//);
+  if(!m||!f.branch||!f.sha||typeof fetch!=='function')return;
+  fetch('https://api.github.com/repos/'+m[1]+'/'+m[2]+'/commits/'+encodeURIComponent(f.branch),
+    {headers:{Accept:'application/vnd.github.sha'},cache:'no-store'})
+    .then(function(x){if(!x.ok)throw 0;return x.text();})
+    .then(function(head){
+      head=String(head).trim();
+      if(!/^[0-9a-f]{7,40}$/.test(head)||head.indexOf(f.sha)===0)return;
+      d.appendChild(sep());
+      var w=el('strong',{'data-fa-staging-stale':'',style:'background:#b00020;padding:0 .4em;border-radius:3px'},'\u26a0 stale: the branch is now at ');
+      w.appendChild(chip(head.slice(0,7)));
+      w.appendChild(document.createTextNode(', newer than this preview'));
+      d.appendChild(w);measure();
+    }).catch(function(){});
 }
 function stamp(f){
   var p=document.querySelector('.fa-build-stamp');if(!p)return;
@@ -808,7 +823,23 @@ function go(){
     .then(function(f){fill(d,f,r);})
     .catch(function(){d.textContent='\u2014 build details unavailable';measure();});
 }
-measure();
+// First visit to a preview: the shared stylesheets 404 until the worker is
+// in control, so the page would paint unstyled (a page-wide search icon) for
+// the moment before the reload. Hide it until then, only when a stylesheet
+// in the head actually failed, and show it again if no reload comes.
+function unstyled(){var l=document.querySelectorAll('link[rel="stylesheet"]');for(var i=0;i<l.length;i++){if(l[i].disabled)continue;try{if(!l[i].sheet||!l[i].sheet.cssRules.length)return true;}catch(e){}}return false;}
+function share(){
+  var r=root();if(!r||!('serviceWorker' in navigator))return;
+  var k='fa-share:'+r,s=document.documentElement.style;
+  var hide=!navigator.serviceWorker.controller&&!sessionStorage.getItem(k)&&unstyled();
+  function show(){if(hide){hide=false;s.removeProperty('visibility');}}
+  if(hide){s.setProperty('visibility','hidden');setTimeout(show,4000);}
+  navigator.serviceWorker.register(r+'staging-sw.js',{scope:r}).then(function(){
+    if(navigator.serviceWorker.controller||sessionStorage.getItem(k))return show();
+    return navigator.serviceWorker.ready.then(function(){sessionStorage.setItem(k,'1');location.reload();});
+  }).catch(show);
+}
+measure();share();
 if(document.readyState!=='loading')go();else document.addEventListener('DOMContentLoaded',go);
 window.addEventListener('resize',measure);window.addEventListener('load',measure);
 })();</script><script type="application/json" id="fa-rail" data-fa-root="https://litlfred.github.io/folio-assistant" data-fa-to-root="../../../../..">{"data":"rail-1nr7jo2rxsc","here":"/en/folio-assistant-core/glossary/schema-fields/f-l/","documentIndex":{"label":"On this page","icon":"§","items":[{"href":"#letter-F","label":"F"},{"href":"#letter-G","label":"G"},{"href":"#letter-H","label":"H"},{"href":"#letter-I","label":"I"},{"href":"#letter-J","label":"J"},{"href":"#letter-K","label":"K"},{"href":"#letter-L","label":"L"}],"collapsible":true}}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../">Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector</a></nav>
@@ -928,26 +959,26 @@ window.addEventListener('resize',measure);window.addEventListener('load',measure
 
 <p>Candidate terms extracted from every schema field with a doc comment: <code class="language-plaintext highlighter-rouge">&lt;Declaration&gt;.&lt;field&gt;</code> as the label, the comment’s first paragraph as the definition. Each is the asset’s own text, verbatim and not curated, and carries the badge “candidate, extracted”. A person promotes one by authoring it. Authored terms are on their owning instance’s page, and those pages, the counts and the sources are linked from the <a href="../../../../../en/folio-assistant-core/glossary/">glossary index</a>.</p>
 
-<p>From: bootstrap-tools 44 (<a href="../../../../../assets/glossary/bootstrap-tools--kg-schema-fields.skos.jsonld">SKOS</a>) · cat-harness-tools 2233 (<a href="../../../../../assets/glossary/cat-harness-tools--kg-schema-fields.skos.jsonld">SKOS</a>) · fhir-harness 127 (<a href="../../../../../assets/glossary/fhir-harness--kg-schema-fields.skos.jsonld">SKOS</a>) · folio-assistant-core 181 (<a href="../../../../../assets/glossary/folio-assistant-core--kg-schema-fields.skos.jsonld">SKOS</a>) · smart-base 13 (<a href="../../../../../assets/glossary/smart-base--kg-schema-fields.skos.jsonld">SKOS</a>).</p>
+<p>From: bootstrap-tools 45 (<a href="../../../../../assets/glossary/bootstrap-tools--kg-schema-fields.skos.jsonld">SKOS</a>) · cat-harness-tools 2293 (<a href="../../../../../assets/glossary/cat-harness-tools--kg-schema-fields.skos.jsonld">SKOS</a>) · fhir-harness 146 (<a href="../../../../../assets/glossary/fhir-harness--kg-schema-fields.skos.jsonld">SKOS</a>) · folio-assistant-core 183 (<a href="../../../../../assets/glossary/folio-assistant-core--kg-schema-fields.skos.jsonld">SKOS</a>) · smart-base 13 (<a href="../../../../../assets/glossary/smart-base--kg-schema-fields.skos.jsonld">SKOS</a>).</p>
 
 <p>One of 7 pages of this type, split by the first letter of the label: <a href="../../../../../en/folio-assistant-core/glossary/schema-fields/">all parts</a>.</p>
 
-<p><strong>Size:</strong> this page holds 522 terms and is 356 KB before compression, fetched in one request, within its budget of 1.0 MB. There is no search index: the filter below runs over this page, and the A–Z bar jumps within it.</p>
+<p><strong>Size:</strong> this page holds 535 terms and is 364 KB before compression, fetched in one request, within its budget of 1.0 MB. There is no search index: the filter below runs over this page, and the A–Z bar jumps within it.</p>
 
 <div class="table-wrapper"><table class="fa-gloss-mapping">
 <caption>Already somebody else's concept? — <code>check:term-mapping</code>, bean <code>7wou</code></caption>
 <thead><tr><th>target</th><th>mapped</th><th>unmapped</th><th>undetermined</th><th>why undetermined</th></tr></thead>
-<tbody><tr><td><code>fhir</code></td><td>0</td><td>2539</td><td>0</td><td>—</td></tr><tr><td><code>skos</code></td><td>0</td><td>2539</td><td>0</td><td>—</td></tr></tbody>
+<tbody><tr><td><code>fhir</code></td><td>0</td><td>2597</td><td>0</td><td>—</td></tr><tr><td><code>skos</code></td><td>0</td><td>2597</td><td>0</td><td>—</td></tr></tbody>
 </table></div>
 <p class="fa-gloss-mapping-note"><strong>Undetermined is never “no match”.</strong> 
 A vocabulary that could not be reached has said nothing, and the column above keeps that 
 apart from a checked miss. The counts are reported and not graded: an unmapped candidate may 
 be a term this corpus is right to coin.</p>
-<p class="fa-gloss-mapping-perterm"><strong>Per term.</strong> Every term on this page is in no single state on <code>fhir</code>, so each entry states its own, and in no single state on <code>skos</code>, so each entry states its own, unless its entry says otherwise. 522 entries say otherwise.</p>
+<p class="fa-gloss-mapping-perterm"><strong>Per term.</strong> Every term on this page is in no single state on <code>fhir</code>, so each entry states its own, and in no single state on <code>skos</code>, so each entry states its own, unless its entry says otherwise. 535 entries say otherwise.</p>
 
 <p><label for="fa-gloss-q">Filter terms</label>
 <input id="fa-gloss-q" type="search" autocomplete="off" style="min-height:44px;width:100%;max-width:32rem" /></p>
-<p aria-live="polite"><span id="fa-gloss-n">522</span> shown</p>
+<p aria-live="polite"><span id="fa-gloss-n">535</span> shown</p>
 
 <nav aria-label="Letters"><a href="#letter-F">F</a> <a href="#letter-G">G</a> <a href="#letter-H">H</a> <a href="#letter-I">I</a> <a href="#letter-J">J</a> <a href="#letter-K">K</a> <a href="#letter-L">L</a></nav>
 <h2 id="letter-F">
@@ -1537,6 +1568,62 @@ GateSchema.decidedAt <span class="fa-gloss-status">candidate, extracted</span>
 <p class="fa-gloss-meta">Schema fields of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/schemas/materialization.ts"><code>folio-assistant-core/schemas/materialization.ts#GateSchema.decidedAt</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
+<dt id="cat-harness-tools--kg-schema-fields--gates-report.gatesreportschema.gates" data-fa-state="extracted" data-fa-gloss="">
+GatesReportSchema.gates <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>How many gates the set holds, and how many declared writers ran after them.</p>
+<p class="fa-gloss-meta">Schema fields of cat-harness-tools · source <a href="https://github.com/litlfred/cat-harness-tools/blob/main/schemas/sdlc/gates-report.ts"><code>cat-harness-tools/schemas/sdlc/gates-report.ts#GatesReportSchema.gates</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="cat-harness-tools--kg-schema-fields--gates-report.gatesreportschema.mutatedby" data-fa-state="extracted" data-fa-gloss="">
+GatesReportSchema.mutatedBy <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Gates that changed the tree while it was being judged.</p>
+<p class="fa-gloss-meta">Schema fields of cat-harness-tools · source <a href="https://github.com/litlfred/cat-harness-tools/blob/main/schemas/sdlc/gates-report.ts"><code>cat-harness-tools/schemas/sdlc/gates-report.ts#GatesReportSchema.mutatedBy</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="cat-harness-tools--kg-schema-fields--gates-report.gatesreportschema.set" data-fa-state="extracted" data-fa-gloss="">
+GatesReportSchema.set <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p><code>fast</code> (no browser jobs) or <code>whole</code> (<code>--all</code>).</p>
+<p class="fa-gloss-meta">Schema fields of cat-harness-tools · source <a href="https://github.com/litlfred/cat-harness-tools/blob/main/schemas/sdlc/gates-report.ts"><code>cat-harness-tools/schemas/sdlc/gates-report.ts#GatesReportSchema.set</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="cat-harness-tools--kg-schema-fields--gates-report.gatesreportschema.skipped" data-fa-state="extracted" data-fa-gloss="">
+GatesReportSchema.skipped <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Not asked: inputs unchanged since each last passed. Never counted as a pass.</p>
+<p class="fa-gloss-meta">Schema fields of cat-harness-tools · source <a href="https://github.com/litlfred/cat-harness-tools/blob/main/schemas/sdlc/gates-report.ts"><code>cat-harness-tools/schemas/sdlc/gates-report.ts#GatesReportSchema.skipped</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="cat-harness-tools--kg-schema-fields--gates-report.gatesreportschema.unclassified" data-fa-state="extracted" data-fa-gloss="">
+GatesReportSchema.unclassified <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Steps CI runs that the local set does not.</p>
+<p class="fa-gloss-meta">Schema fields of cat-harness-tools · source <a href="https://github.com/litlfred/cat-harness-tools/blob/main/schemas/sdlc/gates-report.ts"><code>cat-harness-tools/schemas/sdlc/gates-report.ts#GatesReportSchema.unclassified</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="cat-harness-tools--kg-schema-fields--gates-report.gatesreportschema.undetermined" data-fa-state="extracted" data-fa-gloss="">
+GatesReportSchema.undetermined <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Lines saying what could not be read, when anything could not.</p>
+<p class="fa-gloss-meta">Schema fields of cat-harness-tools · source <a href="https://github.com/litlfred/cat-harness-tools/blob/main/schemas/sdlc/gates-report.ts"><code>cat-harness-tools/schemas/sdlc/gates-report.ts#GatesReportSchema.undetermined</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="cat-harness-tools--kg-schema-fields--gates-report.gatesreportschema.unrun" data-fa-state="extracted" data-fa-gloss="">
+GatesReportSchema.unrun <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Check scripts no workflow runs.</p>
+<p class="fa-gloss-meta">Schema fields of cat-harness-tools · source <a href="https://github.com/litlfred/cat-harness-tools/blob/main/schemas/sdlc/gates-report.ts"><code>cat-harness-tools/schemas/sdlc/gates-report.ts#GatesReportSchema.unrun</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
 <dt id="cat-harness-tools--kg-schema-fields--test-plan.generatedtestdataschema.generator" data-fa-state="extracted" data-fa-gloss="">
 GeneratedTestDataSchema.generator <span class="fa-gloss-status">candidate, extracted</span>
 </dt>
@@ -1767,6 +1854,14 @@ GlossarySchema.source <span class="fa-gloss-status">candidate, extracted</span>
 <dd>
 <p>dcterms:source: what the terms were drawn from.</p>
 <p class="fa-gloss-meta">Schema fields of folio-assistant-core · source <a href="https://github.com/litlfred/folio-assistant-core/blob/main/schemas/glossary.ts"><code>folio-assistant-core/schemas/glossary.ts#GlossarySchema.source</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="bootstrap-tools--kg-schema-fields--graph-export.graphexportschema.at-graph" data-fa-state="extracted" data-fa-gloss="">
+GraphExportSchema.@graph <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>Subjects, and for one release a tombstone per pre-path <code>#fragment</code> (https://github.com/litlfred/cat-harness-tools/issues/958).</p>
+<p class="fa-gloss-meta">Schema fields of bootstrap-tools · source <a href="https://github.com/litlfred/bootstrap-tools/blob/main/schemas/graph-export.ts"><code>bootstrap-tools/schemas/graph-export.ts#GraphExportSchema.@graph</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="bootstrap-tools--kg-schema-fields--graph-export.graphexportschema.comment" data-fa-state="extracted" data-fa-gloss="">
@@ -2491,6 +2586,46 @@ IgArtifactEncodingSchema.dcterms:source <span class="fa-gloss-status">candidate,
 <dd>
 <p><code>local</code>: a copy this site serves; <code>upstream</code>: the file where the IG publishes it.</p>
 <p class="fa-gloss-meta">Schema fields of fhir-harness · source <a href="https://github.com/litlfred/fhir-harness/blob/main/schemas/ig-artifact-jsonld.ts"><code>fhir-harness/schemas/ig-artifact-jsonld.ts#IgArtifactEncodingSchema.dcterms:source</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="fhir-harness--kg-schema-fields--ig-ast-lock.igastpinschema.branch" data-fa-state="extracted" data-fa-gloss="">
+IgAstPinSchema.branch <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>The cache branch the commit was read from, for the reader; the commit is what is fetched.</p>
+<p class="fa-gloss-meta">Schema fields of fhir-harness · source <a href="https://github.com/litlfred/fhir-harness/blob/main/schemas/ig-ast-lock.ts"><code>fhir-harness/schemas/ig-ast-lock.ts#IgAstPinSchema.branch</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="fhir-harness--kg-schema-fields--ig-ast-lock.igastpinschema.instance" data-fa-state="extracted" data-fa-gloss="">
+IgAstPinSchema.instance <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>The IG instance, as <code>index.lock.json</code> names it.</p>
+<p class="fa-gloss-meta">Schema fields of fhir-harness · source <a href="https://github.com/litlfred/fhir-harness/blob/main/schemas/ig-ast-lock.ts"><code>fhir-harness/schemas/ig-ast-lock.ts#IgAstPinSchema.instance</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="fhir-harness--kg-schema-fields--ig-ast-lock.igastpinschema.repository" data-fa-state="extracted" data-fa-gloss="">
+IgAstPinSchema.repository <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>The repository the cache branch lives in: the IG's own.</p>
+<p class="fa-gloss-meta">Schema fields of fhir-harness · source <a href="https://github.com/litlfred/fhir-harness/blob/main/schemas/ig-ast-lock.ts"><code>fhir-harness/schemas/ig-ast-lock.ts#IgAstPinSchema.repository</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="fhir-harness--kg-schema-fields--ig-ast-lock.igastpinschema.sha" data-fa-state="extracted" data-fa-gloss="">
+IgAstPinSchema.sha <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>The pinned cache commit.</p>
+<p class="fa-gloss-meta">Schema fields of fhir-harness · source <a href="https://github.com/litlfred/fhir-harness/blob/main/schemas/ig-ast-lock.ts"><code>fhir-harness/schemas/ig-ast-lock.ts#IgAstPinSchema.sha</code></a></p>
+<p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
+</dd>
+<dt id="fhir-harness--kg-schema-fields--ig-ast-lock.igastpinschema.sourcerevision" data-fa-state="extracted" data-fa-gloss="">
+IgAstPinSchema.sourceRevision <span class="fa-gloss-status">candidate, extracted</span>
+</dt>
+<dd>
+<p>The IG commit the AST says it was compiled from (<code>manifest.json</code> <code>inputs.sourceRevision</code>), when it says.</p>
+<p class="fa-gloss-meta">Schema fields of fhir-harness · source <a href="https://github.com/litlfred/fhir-harness/blob/main/schemas/ig-ast-lock.ts"><code>fhir-harness/schemas/ig-ast-lock.ts#IgAstPinSchema.sourceRevision</code></a></p>
 <p class="fa-gloss-mapstate">Mapping: <code>fhir</code> unmapped · <code>skos</code> unmapped</p>
 </dd>
 <dt id="fhir-harness--kg-schema-fields--ig-chrome.igchromeconflictschema.kind" data-fa-state="extracted" data-fa-gloss="">

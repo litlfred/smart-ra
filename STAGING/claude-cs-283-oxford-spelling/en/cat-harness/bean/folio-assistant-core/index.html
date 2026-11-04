@@ -122,6 +122,7 @@ function fill(d,f,r){
   while(d.firstChild)d.removeChild(d.firstChild);
   d.appendChild(document.createTextNode('\u2014 '));
   var b=link(f.branchUrl,'');b.appendChild(chip(f.branch));d.appendChild(b);
+  var rv=el('span',{'data-fa-staging-review':''});d.appendChild(rv);
   d.appendChild(sep());d.appendChild(document.createTextNode('commit '));d.appendChild(chip(f.sha));
   d.appendChild(sep());d.appendChild(document.createTextNode('built '+f.built));
   d.appendChild(sep());d.appendChild(link(f.prUrl,f.pr&&f.pr!=='n/a'?'PR #'+f.pr:'no open PR found'));
@@ -142,6 +143,48 @@ function fill(d,f,r){
   if(f.checksUrl){d.appendChild(sep());d.appendChild(link(f.checksUrl,'CI results'));}
   stamp(f);
   measure();
+  fresh(d,f);
+  review(rv,r,rel);
+}
+// The preview's review page (owner, 2026-11-01, Q-REV-1): reviewers could not
+// find it from a staging page. A folio writes it at <root>/<locale>/review/,
+// an IG at <root>/review/. Asked with HEAD, which the staging worker passes
+// through, so a 404 here is not answered with the live site's page. No review
+// page, no link.
+function review(s,r,rel){
+  if(typeof fetch!=='function')return;
+  var c=[],m=rel.match(/^([a-z]{2,3}(?:-[A-Za-z0-9]+)?)\//);
+  if(m)c.push(r+m[1]+'/review/');
+  c.push(r+'review/');
+  (function next(i){
+    if(i>=c.length)return;
+    fetch(c[i]+'index.html',{method:'HEAD',cache:'no-store'}).then(function(x){
+      if(!x.ok)return next(i+1);
+      s.appendChild(sep());
+      s.appendChild(link(c[i],'\ud83d\udd0d Review changes','font-weight:bold'));
+      measure();
+    }).catch(function(){next(i+1);});
+  })(0);
+}
+// Live staleness (owner, 2026-10-31, option C): ask GitHub for the branch's
+// head now and say so when it has moved past the commit this preview was
+// built from. Unauthenticated, one request per page view; on any failure
+// (rate limit, offline, a deleted branch) it says nothing rather than guess.
+function fresh(d,f){
+  var m=String(f.branchUrl||'').match(/^https:\/\/github\.com\/([^/]+)\/([^/]+)\//);
+  if(!m||!f.branch||!f.sha||typeof fetch!=='function')return;
+  fetch('https://api.github.com/repos/'+m[1]+'/'+m[2]+'/commits/'+encodeURIComponent(f.branch),
+    {headers:{Accept:'application/vnd.github.sha'},cache:'no-store'})
+    .then(function(x){if(!x.ok)throw 0;return x.text();})
+    .then(function(head){
+      head=String(head).trim();
+      if(!/^[0-9a-f]{7,40}$/.test(head)||head.indexOf(f.sha)===0)return;
+      d.appendChild(sep());
+      var w=el('strong',{'data-fa-staging-stale':'',style:'background:#b00020;padding:0 .4em;border-radius:3px'},'\u26a0 stale: the branch is now at ');
+      w.appendChild(chip(head.slice(0,7)));
+      w.appendChild(document.createTextNode(', newer than this preview'));
+      d.appendChild(w);measure();
+    }).catch(function(){});
 }
 function stamp(f){
   var p=document.querySelector('.fa-build-stamp');if(!p)return;
@@ -159,19 +202,35 @@ function go(){
     .then(function(f){fill(d,f,r);})
     .catch(function(){d.textContent='\u2014 build details unavailable';measure();});
 }
-measure();
+// First visit to a preview: the shared stylesheets 404 until the worker is
+// in control, so the page would paint unstyled (a page-wide search icon) for
+// the moment before the reload. Hide it until then, only when a stylesheet
+// in the head actually failed, and show it again if no reload comes.
+function unstyled(){var l=document.querySelectorAll('link[rel="stylesheet"]');for(var i=0;i<l.length;i++){if(l[i].disabled)continue;try{if(!l[i].sheet||!l[i].sheet.cssRules.length)return true;}catch(e){}}return false;}
+function share(){
+  var r=root();if(!r||!('serviceWorker' in navigator))return;
+  var k='fa-share:'+r,s=document.documentElement.style;
+  var hide=!navigator.serviceWorker.controller&&!sessionStorage.getItem(k)&&unstyled();
+  function show(){if(hide){hide=false;s.removeProperty('visibility');}}
+  if(hide){s.setProperty('visibility','hidden');setTimeout(show,4000);}
+  navigator.serviceWorker.register(r+'staging-sw.js',{scope:r}).then(function(){
+    if(navigator.serviceWorker.controller||sessionStorage.getItem(k))return show();
+    return navigator.serviceWorker.ready.then(function(){sessionStorage.setItem(k,'1');location.reload();});
+  }).catch(show);
+}
+measure();share();
 if(document.readyState!=='loading')go();else document.addEventListener('DOMContentLoaded',go);
 window.addEventListener('resize',measure);window.addEventListener('load',measure);
 })();</script><script type="application/json" id="fa-rail" data-fa-root="../../../.." data-fa-to-root="../../../..">{"data":"rail-itgswfbrfz","here":"/en/cat-harness/bean/folio-assistant-core/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../">folio-assistant</a></nav>
 <main>
 <h1 id="nk-title">bean — folio-assistant-core</h1>
-<p class="m">Node kind <code>bean/1.0.0</code>, declared by <b>cat-harness</b>. 193 node(s).</p>
+<p class="m">Node kind <code>bean/1.0.0</code>, declared by <b>cat-harness</b>. 202 node(s).</p>
 
 <p class="m">Held by <b>folio-assistant-core</b>. <a href="../">Every harness</a></p>
 
 
 <h2 id="nodes">Nodes</h2>
-<p><span class="m"><span id="shown">193</span> of 193 shown</span></p>
+<p><span class="m"><span id="shown">202</span> of 202 shown</span></p>
 <div class="clip"><table>
 <thead><tr><th>Node</th><th>id</th><th>title</th><th>status</th><th>priority</th><th>type</th></tr></thead>
 <tbody>
@@ -181,7 +240,7 @@ window.addEventListener('resize',measure);window.addEventListener('load',measure
 <tr data-kind="bean" data-harness="folio-assistant-core"><td class="p"><a href="beans/defs/folio-assistant-0g7s--processes-visualiser-7-wireframe-findings/">beans/defs/folio-assistant-0g7s--processes-visualiser-7-wireframe-findings</a></td><td class="s"></td><td class="t">processes visualiser: 7 wireframe findings</td><td class="s">completed</td><td class="s">normal</td><td class="t">task</td></tr>
 <tr data-kind="bean" data-harness="folio-assistant-core"><td class="p"><a href="beans/defs/folio-assistant-0js9--ingest-methodology-five-subject-indexing-papers-se/">beans/defs/folio-assistant-0js9--ingest-methodology-five-subject-indexing-papers-se</a></td><td class="s"></td><td class="t">INGEST + METHODOLOGY: five subject-indexing papers (SemEval-2025 Task 5 x3, LCSH agentic pipeline, LCSHBench)</td><td class="s">completed</td><td class="s">normal</td><td class="t">task</td></tr>
 <tr data-kind="bean" data-harness="folio-assistant-core"><td class="p"><a href="beans/defs/folio-assistant-0jtl--skills-a-review-package-in-folio-assistant-core-la/">beans/defs/folio-assistant-0jtl--skills-a-review-package-in-folio-assistant-core-la</a></td><td class="s"></td><td class="t">SKILLS: a review package in folio-assistant-core — large-document-review, review-heatmap, review-navigation, learned from WHO SOPs and insp…</td><td class="s">completed</td><td class="s">normal</td><td class="t">task</td></tr>
-<tr data-kind="bean" data-harness="folio-assistant-core"><td class="p"><a href="beans/defs/folio-assistant-0lmb--content-model-block-kinds-adapters-and-the-authori/">beans/defs/folio-assistant-0lmb--content-model-block-kinds-adapters-and-the-authori</a></td><td class="s"></td><td class="t">CONTENT MODEL: block kinds, adapters and the authoring surface</td><td class="s">in-progress</td><td class="s">normal</td><td class="t">epic</td></tr>
+<tr data-kind="bean" data-harness="folio-assistant-core"><td class="p"><a href="beans/defs/folio-assistant-0lmb--content-model-block-kinds-adapters-and-the-authori/">beans/defs/folio-assistant-0lmb--content-model-block-kinds-adapters-and-the-authori</a></td><td class="s"></td><td class="t">CONTENT MODEL: block kinds, adapters and the authoring surface</td><td class="s">completed</td><td class="s">normal</td><td class="t">epic</td></tr>
 <tr data-kind="bean" data-harness="folio-assistant-core"><td class="p"><a href="beans/defs/folio-assistant-1q4b--re-draw-the-navbar-wireframe-after-ob3ms-12-findin/">beans/defs/folio-assistant-1q4b--re-draw-the-navbar-wireframe-after-ob3ms-12-findin</a></td><td class="s"></td><td class="t">Re-draw the navbar wireframe after ob3m&#39;s 12 findings landed</td><td class="s">completed</td><td class="s"></td><td class="t">task</td></tr>
 <tr data-kind="bean" data-harness="folio-assistant-core"><td class="p"><a href="beans/defs/folio-assistant-1r0p--ingest-audio-transcription-and-translation/">beans/defs/folio-assistant-1r0p--ingest-audio-transcription-and-translation</a></td><td class="s"></td><td class="t">INGEST: audio — transcription and translation</td><td class="s">completed</td><td class="s">normal</td><td class="t">task</td></tr>
 <tr data-kind="bean" data-harness="folio-assistant-core"><td class="p"><a href="beans/defs/folio-assistant-269z--folio-handle-covers-the-who-iris-replicas-ingested/">beans/defs/folio-assistant-269z--folio-handle-covers-the-who-iris-replicas-ingested</a></td><td class="s"></td><td class="t">Folio handle covers the who-iris replica&#39;s INGESTED COPY banner — conflicts with jpjt &#39;replica unchanged&#39;</td><td class="s">completed</td><td class="s"></td><td class="t">task</td></tr>
@@ -290,7 +349,7 @@ window.addEventListener('resize',measure);window.addEventListener('load',measure
 <tr data-kind="bean" data-harness="folio-assistant-core"><td class="p"><a href="beans/defs/folio-assistant-n5be--glossary-visualiser-6-wireframe-findings/">beans/defs/folio-assistant-n5be--glossary-visualiser-6-wireframe-findings</a></td><td class="s"></td><td class="t">glossary visualiser: 6 wireframe findings</td><td class="s">completed</td><td class="s">normal</td><td class="t">task</td></tr>
 <tr data-kind="bean" data-harness="folio-assistant-core"><td class="p"><a href="beans/defs/folio-assistant-nafz--glossary-export-walks-one-instances-diagrams-while/">beans/defs/folio-assistant-nafz--glossary-export-walks-one-instances-diagrams-while</a></td><td class="s"></td><td class="t">glossary-export walks ONE instance&#39;s diagrams while translate-bpmn walks the dependents&#39; too</td><td class="s">completed</td><td class="s">normal</td><td class="t">bug</td></tr>
 <tr data-kind="bean" data-harness="folio-assistant-core"><td class="p"><a href="beans/defs/folio-assistant-nnpk--schemas-visualiser-5-wireframe-findings/">beans/defs/folio-assistant-nnpk--schemas-visualiser-5-wireframe-findings</a></td><td class="s"></td><td class="t">schemas visualiser: 5 wireframe findings</td><td class="s">completed</td><td class="s">normal</td><td class="t">task</td></tr>
-<tr data-kind="bean" data-harness="folio-assistant-core"><td class="p"><a href="beans/defs/folio-assistant-npuo--goal-5-content-the-content-model-and-the-ingest-pi/">beans/defs/folio-assistant-npuo--goal-5-content-the-content-model-and-the-ingest-pi</a></td><td class="s"></td><td class="t">GOAL 5 / CONTENT: the content model and the ingest pipeline that feeds it</td><td class="s">in-progress</td><td class="s">normal</td><td class="t">milestone</td></tr>
+<tr data-kind="bean" data-harness="folio-assistant-core"><td class="p"><a href="beans/defs/folio-assistant-npuo--goal-5-content-the-content-model-and-the-ingest-pi/">beans/defs/folio-assistant-npuo--goal-5-content-the-content-model-and-the-ingest-pi</a></td><td class="s"></td><td class="t">GOAL 5 / CONTENT: the content model and the ingest pipeline that feeds it</td><td class="s">completed</td><td class="s">normal</td><td class="t">milestone</td></tr>
 <tr data-kind="bean" data-harness="folio-assistant-core"><td class="p"><a href="beans/defs/folio-assistant-nvbr--phase-i-4-lhs-navbar-section-per-node-in-the-folio-ins/">beans/defs/folio-assistant-nvbr--phase-i-4-lhs-navbar-section-per-node-in-the-folio-ins</a></td><td class="s"></td><td class="t">Phase I.4 — LHS navbar section per node in the folio instance (#223)</td><td class="s">completed</td><td class="s">normal</td><td class="t">task</td></tr>
 <tr data-kind="bean" data-harness="folio-assistant-core"><td class="p"><a href="beans/defs/folio-assistant-o7eq--url-space-rendered-assets-mirror-the-instantiation/">beans/defs/folio-assistant-o7eq--url-space-rendered-assets-mirror-the-instantiation</a></td><td class="s"></td><td class="t">URL SPACE: rendered assets mirror the instantiation structure — &lt;baseurl&gt;/ for the root, &lt;baseurl&gt;/&lt;instance&gt;/&lt;path&gt; for every enabled harn…</td><td class="s">completed</td><td class="s">normal</td><td class="t">feature</td></tr>
 <tr data-kind="bean" data-harness="folio-assistant-core"><td class="p"><a href="beans/defs/folio-assistant-ob3m--navbar-visualiser-12-wireframe-findings/">beans/defs/folio-assistant-ob3m--navbar-visualiser-12-wireframe-findings</a></td><td class="s"></td><td class="t">navbar visualiser: 12 wireframe findings</td><td class="s">completed</td><td class="s">normal</td><td class="t">task</td></tr>
@@ -300,6 +359,7 @@ window.addEventListener('resize',measure);window.addEventListener('load',measure
 <tr data-kind="bean" data-harness="folio-assistant-core"><td class="p"><a href="beans/defs/folio-assistant-ozwb--mount-pass-claims-smart-trust-for-openapi-and-rail/">beans/defs/folio-assistant-ozwb--mount-pass-claims-smart-trust-for-openapi-and-rail</a></td><td class="s"></td><td class="t">Mount pass claims /smart-trust/ for openapi and rails the IG site (#2401)</td><td class="s">completed</td><td class="s">normal</td><td class="t">bug</td></tr>
 <tr data-kind="bean" data-harness="folio-assistant-core"><td class="p"><a href="beans/defs/folio-assistant-p67i--ingest-csv-and-spreadsheet-sheet-names-headers-sha/">beans/defs/folio-assistant-p67i--ingest-csv-and-spreadsheet-sheet-names-headers-sha</a></td><td class="s"></td><td class="t">INGEST: CSV and spreadsheet — sheet names, headers, shape, narrative</td><td class="s">completed</td><td class="s">normal</td><td class="t">task</td></tr>
 <tr data-kind="bean" data-harness="folio-assistant-core"><td class="p"><a href="beans/defs/folio-assistant-pqdv--schema-field-notes-render-literal-backticks/">beans/defs/folio-assistant-pqdv--schema-field-notes-render-literal-backticks</a></td><td class="s"></td><td class="t">Schema field notes render literal backticks</td><td class="s">completed</td><td class="s">normal</td><td class="t">bug</td></tr>
+<tr data-kind="bean" data-harness="folio-assistant-core"><td class="p"><a href="beans/defs/folio-assistant-pvq4--review-the-agent-drafted-block-summaries-confirm/">beans/defs/folio-assistant-pvq4--review-the-agent-drafted-block-summaries-confirm</a></td><td class="s"></td><td class="t">REVIEW: a person confirms or rejects the agent-drafted block summaries</td><td class="s">todo</td><td class="s">normal</td><td class="t">task</td></tr>
 <tr data-kind="bean" data-harness="folio-assistant-core"><td class="p"><a href="beans/defs/folio-assistant-q2wm--render-safety-declared-xss-hints-on-tools-and-skil/">beans/defs/folio-assistant-q2wm--render-safety-declared-xss-hints-on-tools-and-skil</a></td><td class="s"></td><td class="t">RENDER SAFETY: declared XSS hints on tools and skills, lazy loading, and dynamic render from the graph</td><td class="s">completed</td><td class="s">high</td><td class="t">task</td></tr>
 <tr data-kind="bean" data-harness="folio-assistant-core"><td class="p"><a href="beans/defs/folio-assistant-q4cm--edit-set-one-feature-branch-per-set-of-document-ed/">beans/defs/folio-assistant-q4cm--edit-set-one-feature-branch-per-set-of-document-ed</a></td><td class="s"></td><td class="t">EDIT SET: one feature branch per set of document edits, reviewed in review/ — and a tool where accept is a GitHub PR approval that gates pu…</td><td class="s">completed</td><td class="s">normal</td><td class="t">task</td></tr>
 <tr data-kind="bean" data-harness="folio-assistant-core"><td class="p"><a href="beans/defs/folio-assistant-qbfi--review-heat-maps-section-by-metric-matrix-of-chang/">beans/defs/folio-assistant-qbfi--review-heat-maps-section-by-metric-matrix-of-chang</a></td><td class="s"></td><td class="t">REVIEW HEAT MAPS: section-by-metric matrix of change, coverage, findings, QA and staleness — published, never colour alone</td><td class="s">completed</td><td class="s">normal</td><td class="t">task</td></tr>
@@ -317,8 +377,8 @@ window.addEventListener('resize',measure);window.addEventListener('load',measure
 <tr data-kind="bean" data-harness="folio-assistant-core"><td class="p"><a href="beans/defs/folio-assistant-s43p--schemas-viewer-cat-harnessschemasbootstrap-is-a-40/">beans/defs/folio-assistant-s43p--schemas-viewer-cat-harnessschemasbootstrap-is-a-40</a></td><td class="s"></td><td class="t">SCHEMAS VIEWER: /cat-harness/schemas/bootstrap is a 404 — dependency instances&#39; schemas are excluded, and node kinds are not searchable</td><td class="s">completed</td><td class="s">normal</td><td class="t">bug</td></tr>
 <tr data-kind="bean" data-harness="folio-assistant-core"><td class="p"><a href="beans/defs/folio-assistant-scfh--ingest-slides-pptxodp-rung-a11y-probe-kgfolio-asst/">beans/defs/folio-assistant-scfh--ingest-slides-pptxodp-rung-a11y-probe-kgfolio-asst</a></td><td class="s"></td><td class="t">INGEST SLIDES: pptx+odp rung, a11y probe, KG/folio-asst deck into library, methodology gaps, docs (#1614)</td><td class="s">completed</td><td class="s">normal</td><td class="t">feature</td></tr>
 <tr data-kind="bean" data-harness="folio-assistant-core"><td class="p"><a href="beans/defs/folio-assistant-sjic--one-navbar-for-every-folio-combine-the-folio-assis/">beans/defs/folio-assistant-sjic--one-navbar-for-every-folio-combine-the-folio-assis</a></td><td class="s"></td><td class="t">ONE NAVBAR FOR EVERY FOLIO: combine the folio-assistant sidebar and the who-iris rail into a single component — fixed top, scrollable KG st…</td><td class="s">completed</td><td class="s">normal</td><td class="t">task</td></tr>
-<tr data-kind="bean" data-harness="folio-assistant-core"><td class="p"><a href="beans/defs/folio-assistant-slw1--ingest-one-pipeline-from-uploads-to-a-complete-l1/">beans/defs/folio-assistant-slw1--ingest-one-pipeline-from-uploads-to-a-complete-l1</a></td><td class="s"></td><td class="t">INGEST: one pipeline from uploads/ to a complete L1 library</td><td class="s">todo</td><td class="s">normal</td><td class="t">epic</td></tr>
-<tr data-kind="bean" data-harness="folio-assistant-core"><td class="p"><a href="beans/defs/folio-assistant-supn--harness-cards-become-todos-outstanding-work-a-next/">beans/defs/folio-assistant-supn--harness-cards-become-todos-outstanding-work-a-next</a></td><td class="s"></td><td class="t">HARNESS CARDS BECOME TODOS: outstanding work, a next-action recommendation from initialisation state, and health badges</td><td class="s">in-progress</td><td class="s">normal</td><td class="t">task</td></tr>
+<tr data-kind="bean" data-harness="folio-assistant-core"><td class="p"><a href="beans/defs/folio-assistant-slw1--ingest-one-pipeline-from-uploads-to-a-complete-l1/">beans/defs/folio-assistant-slw1--ingest-one-pipeline-from-uploads-to-a-complete-l1</a></td><td class="s"></td><td class="t">INGEST: one pipeline from uploads/ to a complete L1 library</td><td class="s">completed</td><td class="s">normal</td><td class="t">epic</td></tr>
+<tr data-kind="bean" data-harness="folio-assistant-core"><td class="p"><a href="beans/defs/folio-assistant-supn--harness-cards-become-todos-outstanding-work-a-next/">beans/defs/folio-assistant-supn--harness-cards-become-todos-outstanding-work-a-next</a></td><td class="s"></td><td class="t">HARNESS CARDS BECOME TODOS: outstanding work, a next-action recommendation from initialisation state, and health badges</td><td class="s">todo</td><td class="s">normal</td><td class="t">task</td></tr>
 <tr data-kind="bean" data-harness="folio-assistant-core"><td class="p"><a href="beans/defs/folio-assistant-t3n8--harness-display-names-every-instance-declares-a-hu/">beans/defs/folio-assistant-t3n8--harness-display-names-every-instance-declares-a-hu</a></td><td class="s"></td><td class="t">HARNESS DISPLAY NAMES: every instance declares a human title, and the schema should say so</td><td class="s">completed</td><td class="s">normal</td><td class="t">bug</td></tr>
 <tr data-kind="bean" data-harness="folio-assistant-core"><td class="p"><a href="beans/defs/folio-assistant-t5g9--rail-contents-on-document-and-library-pages-lhs-na/">beans/defs/folio-assistant-t5g9--rail-contents-on-document-and-library-pages-lhs-na</a></td><td class="s"></td><td class="t">Rail contents on document and library pages (LHS navbar page TOCs)</td><td class="s">completed</td><td class="s"></td><td class="t">task</td></tr>
 <tr data-kind="bean" data-harness="folio-assistant-core"><td class="p"><a href="beans/defs/folio-assistant-t6ht--stickies-board-remove-the-visualisations-tile-stri/">beans/defs/folio-assistant-t6ht--stickies-board-remove-the-visualisations-tile-stri</a></td><td class="s"></td><td class="t">STICKIES BOARD: remove the Visualisations tile strip (owner 2026-10-02, reverses v0jv) — issue #1905</td><td class="s">completed</td><td class="s">normal</td><td class="t">bug</td></tr>
@@ -345,7 +405,7 @@ window.addEventListener('resize',measure);window.addEventListener('load',measure
 <tr data-kind="bean" data-harness="folio-assistant-core"><td class="p"><a href="beans/defs/folio-assistant-wjfu--smart-trust-pages-674-ingested-artefacts-had-no-re/">beans/defs/folio-assistant-wjfu--smart-trust-pages-674-ingested-artefacts-had-no-re</a></td><td class="s"></td><td class="t">SMART-TRUST PAGES: 674 ingested artefacts had no reader-facing surface — a docs graph, generated from index.json</td><td class="s">completed</td><td class="s">high</td><td class="t">feature</td></tr>
 <tr data-kind="bean" data-harness="folio-assistant-core"><td class="p"><a href="beans/defs/folio-assistant-wwi6--initiation-uploads-and-library-are-created-at-init/">beans/defs/folio-assistant-wwi6--initiation-uploads-and-library-are-created-at-init</a></td><td class="s"></td><td class="t">INITIATION: uploads/ and library/ are created at initiation, one as state and one not</td><td class="s">completed</td><td class="s">normal</td><td class="t">feature</td></tr>
 <tr data-kind="bean" data-harness="folio-assistant-core"><td class="p"><a href="beans/defs/folio-assistant-x5o1--glossary-seed-the-who-style-guide-glossary-from-th/">beans/defs/folio-assistant-x5o1--glossary-seed-the-who-style-guide-glossary-from-th</a></td><td class="s"></td><td class="t">GLOSSARY: seed the who-style-guide glossary from the WHO Editorial Style Manual Annex 1 (preferred spellings)</td><td class="s">completed</td><td class="s">normal</td><td class="t">task</td></tr>
-<tr data-kind="bean" data-harness="folio-assistant-core"><td class="p"><a href="beans/defs/folio-assistant-x80s--ingest-agent-summaries-of-prose-blocks-a-qa-sideca/">beans/defs/folio-assistant-x80s--ingest-agent-summaries-of-prose-blocks-a-qa-sideca</a></td><td class="s"></td><td class="t">INGEST: agent summaries of prose blocks, a QA sidecar drained slowly during ingestion</td><td class="s">todo</td><td class="s">normal</td><td class="t">task</td></tr>
+<tr data-kind="bean" data-harness="folio-assistant-core"><td class="p"><a href="beans/defs/folio-assistant-x80s--ingest-agent-summaries-of-prose-blocks-a-qa-sideca/">beans/defs/folio-assistant-x80s--ingest-agent-summaries-of-prose-blocks-a-qa-sideca</a></td><td class="s"></td><td class="t">INGEST: agent summaries of prose blocks, a QA sidecar drained slowly during ingestion</td><td class="s">completed</td><td class="s">normal</td><td class="t">task</td></tr>
 <tr data-kind="bean" data-harness="folio-assistant-core"><td class="p"><a href="beans/defs/folio-assistant-xb4p--skills-index-visualiser-7-wireframe-findings/">beans/defs/folio-assistant-xb4p--skills-index-visualiser-7-wireframe-findings</a></td><td class="s"></td><td class="t">skills-index visualiser: 7 wireframe findings</td><td class="s">completed</td><td class="s">normal</td><td class="t">task</td></tr>
 <tr data-kind="bean" data-harness="folio-assistant-core"><td class="p"><a href="beans/defs/folio-assistant-xffc--tools-theme-the-second-theme-from-0301fbd2-becomes/">beans/defs/folio-assistant-xffc--tools-theme-the-second-theme-from-0301fbd2-becomes</a></td><td class="s"></td><td class="t">TOOLS THEME: the second theme from 0301fbd2 becomes a KG node, and tools in the KG use it</td><td class="s">scrapped</td><td class="s">normal</td><td class="t">feature</td></tr>
 <tr data-kind="bean" data-harness="folio-assistant-core"><td class="p"><a href="beans/defs/folio-assistant-xgd8--schema-visualiser-schemas-is-a-content-kind-with-n/">beans/defs/folio-assistant-xgd8--schema-visualiser-schemas-is-a-content-kind-with-n</a></td><td class="s"></td><td class="t">SCHEMA VISUALISER: schemas/ is a content kind with no renderer — options, and three generators that were never wired</td><td class="s">completed</td><td class="s">normal</td><td class="t">task</td></tr>
@@ -364,10 +424,18 @@ window.addEventListener('resize',measure);window.addEventListener('load',measure
 <tr data-kind="bean" data-harness="folio-assistant-core"><td class="p"><a href="beans/defs/folio-assistant-zcak--library-viewer-shared-editfeedback-links-and-the-d/">beans/defs/folio-assistant-zcak--library-viewer-shared-editfeedback-links-and-the-d</a></td><td class="s"></td><td class="t">Library viewer: shared edit/feedback links, and the Document view for a folio&#39;s library (smart-ra review version)</td><td class="s">completed</td><td class="s">normal</td><td class="t">feature</td></tr>
 <tr data-kind="bean" data-harness="folio-assistant-core"><td class="p"><a href="beans/defs/folio-assistant-zdfa--init-sibling-link-stagingyml-gets-platform-dir-pla/">beans/defs/folio-assistant-zdfa--init-sibling-link-stagingyml-gets-platform-dir-pla</a></td><td class="s"></td><td class="t">INIT SIBLING LINK: staging.yml gets platform_dir ../platform, outside the Actions checkout; a subfolder folio&#39;s workflow lands where GitHub…</td><td class="s">completed</td><td class="s">normal</td><td class="t">bug</td></tr>
 <tr data-kind="bean" data-harness="folio-assistant-core"><td class="p"><a href="beans/defs/folio-assistant-zpso--glass-settings-panel-opens-under-the-tile-dock-nav/">beans/defs/folio-assistant-zpso--glass-settings-panel-opens-under-the-tile-dock-nav</a></td><td class="s"></td><td class="t">Glass settings panel opens under the tile dock (navbar wireframe, seen on the build)</td><td class="s">completed</td><td class="s">normal</td><td class="t">bug</td></tr>
+<tr data-kind="bean" data-harness="folio-assistant-core"><td class="p"><a href="beans/defs/folio-core-0b88--core-dependency-advisories-undici-5-29-via-jsonld/">beans/defs/folio-core-0b88--core-dependency-advisories-undici-5-29-via-jsonld</a></td><td class="s"></td><td class="t">Core dependency advisories: undici 5.29 via jsonld 8</td><td class="s">completed</td><td class="s">normal</td><td class="t">bug</td></tr>
+<tr data-kind="bean" data-harness="folio-assistant-core"><td class="p"><a href="beans/defs/folio-core-0dy3--folio-assistant-core-cannot-run-the-security-gate/">beans/defs/folio-core-0dy3--folio-assistant-core-cannot-run-the-security-gate</a></td><td class="s"></td><td class="t">folio-assistant-core cannot run the security gate</td><td class="s">completed</td><td class="s">normal</td><td class="t">bug</td></tr>
 <tr data-kind="bean" data-harness="folio-assistant-core"><td class="p"><a href="beans/defs/folio-core-2mb0--adjudicate-the-68-round-trip-findings-on-who-iriss/">beans/defs/folio-core-2mb0--adjudicate-the-68-round-trip-findings-on-who-iriss</a></td><td class="s"></td><td class="t">Adjudicate the 68 round-trip findings on who-iris&#39;s catalogues (66 warn, 2 fail)</td><td class="s">completed</td><td class="s"></td><td class="t">task</td></tr>
+<tr data-kind="bean" data-harness="folio-assistant-core"><td class="p"><a href="beans/defs/folio-core-4kq2--public-comment-dashboard-inserted-some-values-as-h/">beans/defs/folio-core-4kq2--public-comment-dashboard-inserted-some-values-as-h</a></td><td class="s"></td><td class="t">Public-comment dashboard inserted some values as HTML and allowed any link scheme</td><td class="s">completed</td><td class="s">normal</td><td class="t">bug</td></tr>
+<tr data-kind="bean" data-harness="folio-assistant-core"><td class="p"><a href="beans/defs/folio-core-82hl--public-comment-record-pr-links-and-issue-edits-wer/">beans/defs/folio-core-82hl--public-comment-record-pr-links-and-issue-edits-wer</a></td><td class="s"></td><td class="t">Public-comment record: PR links and issue edits were not role-checked</td><td class="s">completed</td><td class="s">high</td><td class="t">bug</td></tr>
 <tr data-kind="bean" data-harness="folio-assistant-core"><td class="p"><a href="beans/defs/folio-core-efv4--folio-assistant-core-has-no-tsconfig-its-scriptsts/">beans/defs/folio-core-efv4--folio-assistant-core-has-no-tsconfig-its-scriptsts</a></td><td class="s"></td><td class="t">folio-assistant-core has no tsconfig: its scripts/*.ts are typechecked by nobody</td><td class="s">completed</td><td class="s">normal</td><td class="t">bug</td></tr>
+<tr data-kind="bean" data-harness="folio-assistant-core"><td class="p"><a href="beans/defs/folio-core-ho43--mcp-document-tools-take-file-paths-from-tool-argum/">beans/defs/folio-core-ho43--mcp-document-tools-take-file-paths-from-tool-argum</a></td><td class="s"></td><td class="t">MCP document tools take file paths from tool arguments without containment</td><td class="s">completed</td><td class="s">normal</td><td class="t">bug</td></tr>
+<tr data-kind="bean" data-harness="folio-assistant-core"><td class="p"><a href="beans/defs/folio-core-l8ny--core-workflows-run-third-party-and-main-actions-wi/">beans/defs/folio-core-l8ny--core-workflows-run-third-party-and-main-actions-wi</a></td><td class="s"></td><td class="t">Core workflows run third-party and @main actions with write tokens</td><td class="s">completed</td><td class="s">high</td><td class="t">bug</td></tr>
+<tr data-kind="bean" data-harness="folio-assistant-core"><td class="p"><a href="beans/defs/folio-core-q7x7--stage-folio-local-trusts-slug-for-a-gh-pages-delet/">beans/defs/folio-core-q7x7--stage-folio-local-trusts-slug-for-a-gh-pages-delet</a></td><td class="s"></td><td class="t">stage-folio-local trusts --slug for a gh-pages deletion and serves files by unchecked path</td><td class="s">completed</td><td class="s">high</td><td class="t">bug</td></tr>
 <tr data-kind="bean" data-harness="folio-assistant-core"><td class="p"><a href="beans/defs/folio-core-scn4--dak-decision-tables-read-as-headerless-a-reader-fo/">beans/defs/folio-core-scn4--dak-decision-tables-read-as-headerless-a-reader-fo</a></td><td class="s"></td><td class="t">DAK decision tables read as headerless: a reader for the preamble + two-row header shape</td><td class="s">completed</td><td class="s"></td><td class="t">task</td></tr>
 <tr data-kind="bean" data-harness="folio-assistant-core"><td class="p"><a href="beans/defs/folio-core-shsz--translation-info-drawer-on-every-translation-warni/">beans/defs/folio-core-shsz--translation-info-drawer-on-every-translation-warni</a></td><td class="s"></td><td class="t">Translation info drawer on every translation warning (pointer → cat-tools-bbnd)</td><td class="s">completed</td><td class="s"></td><td class="t">feature</td></tr>
+<tr data-kind="bean" data-harness="folio-assistant-core"><td class="p"><a href="beans/defs/folio-core-xpsq--fetch-scripts-follow-server-supplied-links-without/">beans/defs/folio-core-xpsq--fetch-scripts-follow-server-supplied-links-without</a></td><td class="s"></td><td class="t">Fetch scripts follow server-supplied links without a destination check</td><td class="s">completed</td><td class="s">low</td><td class="t">bug</td></tr>
 </tbody></table></div>
 </main>
 <script>
