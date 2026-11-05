@@ -64,7 +64,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/who-iris",
-          "ref": "1e5c01c9737a025905ba4e82e968695cf6c2f411",
+          "ref": "90bb3f558f1f23a4d4b58c8e070e5bbc86e72695",
           "overrides": {
             "who-iris": {
               "whole": true
@@ -89,8 +89,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-11-05",
-              "ref": "1e5c01c9737a025905ba4e82e968695cf6c2f411",
-              "evidence": "owner litlfred, 2026-11-05, Claude Code session_01EucfRnoHtuJSuGugBxAUks: 'Merge' approving the plan 'merge #233, then update and re-pin #228' to current layer mains (merge/re-pin window)"
+              "ref": "90bb3f558f1f23a4d4b58c8e070e5bbc86e72695",
+              "evidence": "Owner litlfred, 2026-11-05: card '1. Freeze one set' — re-pin all site PRs to one fixed set of layer commits; 'merge when green' (bean folio-assistant-rpc6)."
             }
           }
         }
@@ -101,7 +101,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/smart-base",
-          "ref": "f1c6eb0c6992191c94ef5cf99b5f0cf8f4008d1a",
+          "ref": "1e111a661b6fe2ada620b4e7480f085cedde36a0",
           "overrides": {
             "smart-base": {
               "path": "smart-base",
@@ -137,8 +137,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-11-05",
-              "ref": "f1c6eb0c6992191c94ef5cf99b5f0cf8f4008d1a",
-              "evidence": "owner litlfred, 2026-11-05, Claude Code session_01EucfRnoHtuJSuGugBxAUks: 'Merge' approving the plan 'merge #233, then update and re-pin #228' to current layer mains (merge/re-pin window)"
+              "ref": "1e111a661b6fe2ada620b4e7480f085cedde36a0",
+              "evidence": "Owner litlfred, 2026-11-05: card '1. Freeze one set' — re-pin all site PRs to one fixed set of layer commits; 'merge when green' (bean folio-assistant-rpc6)."
             }
           }
         }
@@ -149,7 +149,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/fhir-harness",
-          "ref": "2b29c8c6dfc557d32b67e96886748df3ed2fe4be",
+          "ref": "299de78ec2aa5ede11acb7db6327a83301ae49ed",
           "overrides": {
             "fhir-harness": {
               "whole": true
@@ -159,8 +159,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-11-05",
-              "ref": "2b29c8c6dfc557d32b67e96886748df3ed2fe4be",
-              "evidence": "owner litlfred, 2026-11-05, Claude Code session_01EucfRnoHtuJSuGugBxAUks: 'Merge' approving the plan 'merge #233, then update and re-pin #228' to current layer mains (merge/re-pin window)"
+              "ref": "299de78ec2aa5ede11acb7db6327a83301ae49ed",
+              "evidence": "Owner litlfred, 2026-11-05: card '1. Freeze one set' — re-pin all site PRs to one fixed set of layer commits; 'merge when green' (bean folio-assistant-rpc6)."
             }
           }
         }
@@ -171,7 +171,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/folio-assistant-core",
-          "ref": "3822d573233a7bd99d1cd596a0e16bce27633a0a",
+          "ref": "4f18e66ede3404816a99c63c2a6865a2f32541a5",
           "overrides": {
             "folio-assistant-core": {
               "whole": true
@@ -187,8 +187,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-11-05",
-              "ref": "3822d573233a7bd99d1cd596a0e16bce27633a0a",
-              "evidence": "Owner litlfred, 2026-11-05: 'Merge' (approving 'merge #233, then update and re-pin #228'); ~13:0xZ card '1. Attach repos' to re-pin the site PRs (stalled-pickup D, bean rpc6)."
+              "ref": "4f18e66ede3404816a99c63c2a6865a2f32541a5",
+              "evidence": "Owner litlfred, 2026-11-05: card '1. Freeze one set' — re-pin all site PRs to one fixed set of layer commits; 'merge when green' (bean folio-assistant-rpc6)."
             }
           }
         }
@@ -199,7 +199,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness",
-          "ref": "6e0dc310bde8a5e3b4e754340d9d3124c9dd9969",
+          "ref": "a2da2ed27956d5b2bba1f9f648279cf05bd86c03",
           "overrides": {
             "cat-harness": {
               "whole": true
@@ -215,8 +215,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-11-05",
-              "ref": "6e0dc310bde8a5e3b4e754340d9d3124c9dd9969",
-              "evidence": "Owner litlfred, 2026-11-05: 'Merge' (approving 'merge #233, then update and re-pin #228'); ~13:0xZ card '1. Attach repos' to re-pin the site PRs (stalled-pickup D, bean rpc6)."
+              "ref": "a2da2ed27956d5b2bba1f9f648279cf05bd86c03",
+              "evidence": "Owner litlfred, 2026-11-05: card '1. Freeze one set' — re-pin all site PRs to one fixed set of layer commits; 'merge when green' (bean folio-assistant-rpc6)."
             }
           }
         }
@@ -227,7 +227,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness-tools",
-          "ref": "c1c1d539c42e92fc865ec32d28e9d9ba9dc82278",
+          "ref": "78a982e36e10ad7f9248b4aba6725ac6cf529259",
           "overrides": {
             "cat-harness-tools": {
               "whole": true
@@ -240,8 +240,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-11-05",
-              "ref": "c1c1d539c42e92fc865ec32d28e9d9ba9dc82278",
-              "evidence": "Owner litlfred, 2026-11-05: 'Merge' (approving 'merge #233, then update and re-pin #228'); ~13:0xZ card '1. Attach repos' to re-pin the site PRs (stalled-pickup D, bean rpc6)."
+              "ref": "78a982e36e10ad7f9248b4aba6725ac6cf529259",
+              "evidence": "Owner litlfred, 2026-11-05: card '1. Freeze one set' — re-pin all site PRs to one fixed set of layer commits; 'merge when green' (bean folio-assistant-rpc6)."
             }
           }
         }
@@ -252,7 +252,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/bootstrap",
-          "ref": "12fa6d57dfad06ae73e234f116145dfc8d77ad50",
+          "ref": "c90ef456067a874fd7017a370232908ba62e9fcd",
           "overrides": {
             "bootstrap": {
               "whole": true
@@ -262,8 +262,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-11-05",
-              "ref": "12fa6d57dfad06ae73e234f116145dfc8d77ad50",
-              "evidence": "owner litlfred, 2026-11-05, Claude Code session_01EucfRnoHtuJSuGugBxAUks: 'Merge' approving the plan 'merge #233, then update and re-pin #228' to current layer mains (merge/re-pin window)"
+              "ref": "c90ef456067a874fd7017a370232908ba62e9fcd",
+              "evidence": "Owner litlfred, 2026-11-05: card '1. Freeze one set' — re-pin all site PRs to one fixed set of layer commits; 'merge when green' (bean folio-assistant-rpc6)."
             }
           }
         }
@@ -274,7 +274,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/bootstrap-tools",
-          "ref": "f22b2490ff8b6930c55d1b6fe9605fc5f9f9a743",
+          "ref": "9f478d4d9fcd87842e9a4f5b886232ec806e657e",
           "overrides": {
             "bootstrap-tools": {
               "whole": true
@@ -287,8 +287,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-11-05",
-              "ref": "f22b2490ff8b6930c55d1b6fe9605fc5f9f9a743",
-              "evidence": "owner litlfred, 2026-11-05, Claude Code session_01EucfRnoHtuJSuGugBxAUks: 'Merge' approving the plan 'merge #233, then update and re-pin #228' to current layer mains (merge/re-pin window)"
+              "ref": "9f478d4d9fcd87842e9a4f5b886232ec806e657e",
+              "evidence": "Owner litlfred, 2026-11-05: card '1. Freeze one set' — re-pin all site PRs to one fixed set of layer commits; 'merge when green' (bean folio-assistant-rpc6)."
             }
           }
         }
