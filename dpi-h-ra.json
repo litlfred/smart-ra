@@ -3,6 +3,22 @@
   "title": "Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector",
   "version": "0.1.0",
   "iriBase": "https://litlfred.github.io/smart-ra/",
+  "assets": [
+    {
+      "id": "agent-instructions",
+      "src": "AGENTS.md",
+      "role": "agent-instructions",
+      "title": "AGENTS.md — dpi-h-ra",
+      "description": "Cold-start instructions for agents working in the DPI-H Reference Architecture folio: the document content type, layout, site build and public-comment workflow."
+    },
+    {
+      "id": "instance-readme",
+      "src": "README.md",
+      "role": "instance-readme",
+      "title": "WHO SMART Guidelines — Reference Architecture",
+      "description": "Overview of the DPI-H Reference Architecture public-review folio, published document, ArchiMate models and public-comment workflow."
+    }
+  ],
   "directories": [
     {
       "id": "folio",
