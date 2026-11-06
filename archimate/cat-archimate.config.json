@@ -57,14 +57,31 @@
       "label": "Figure 3.7.1",
       "model": "0.2.0",
       "view": "id-d7e3215f6d3d4e5e8b39ee521f8248c2",
-      "basis": "by-eye"
+      "basis": "by-eye",
+      "svg": "folio/dpi-h-ra/media/fig-3-7-1.svg"
     },
     {
       "block": "folio/dpi-h-ra/ch3-the-reference-architecture-for-d/f-3-7-2-e2b677.md",
       "label": "Figure 3.7.2",
       "model": "0.2.0",
       "view": "id-ba6aa15d5d84416dab9fbd8a9f9fea14",
-      "basis": "by-eye"
+      "basis": "by-eye",
+      "svg": "folio/dpi-h-ra/media/fig-3-7-2.svg"
+    }
+  ],
+  "tables": [
+    {
+      "block": "folio/dpi-h-ra/ch3-the-reference-architecture-for-d/t-3-2.md",
+      "label": "Table 3.2",
+      "kind": "relationship-types",
+      "rules": "relationship-rules.json"
+    },
+    {
+      "block": "folio/dpi-h-ra/ch3-the-reference-architecture-for-d/t-3-3.md",
+      "label": "Table 3.3",
+      "kind": "relationship-rules",
+      "rules": "relationship-rules.json",
+      "model": "0.3.0-draft.1"
     }
   ]
 }
