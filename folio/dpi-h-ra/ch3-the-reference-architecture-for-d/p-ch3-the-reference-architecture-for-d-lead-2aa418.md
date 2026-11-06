@@ -3,4 +3,5 @@
 - Section 3.3 illustrates the approach through worked examples for some health goals.
 - Section 3.4 sets out the governance arrangements that surround the architecture.
 - Section 3.5 introduces the DPI-H application components, whose full descriptions are provided in appendix C.
-- Section 3.6 describes the interoperability architecture within DPI-H, through which these components work together as a coherent ecosystem
+- Section 3.6 describes the interoperability architecture within DPI-H, through which these components work together as a coherent ecosystem.
+- Section 3.7 sets out conformance and testing across the architecture and its components.
