@@ -47,17 +47,15 @@
             "site:review-sheet",
             "site:archimate",
             "site:mapper",
-            "site:redirects"
+            "site:redirects",
+            "site:context"
           ],
           "siteSteps": [
             "site:node-kinds"
-          ],
-          "keep": [
-            "ns"
           ]
         }
       },
-      "_site_comment": "`site.build.keep`: `ns`, the JSON-LD context at ns/context/v1.jsonld that publish-instance-context writes onto gh-pages; the root publish keeps it."
+      "_site_comment": "`site:context` builds the JSON-LD context the KG nodes name (ns/context/v1.jsonld under iriBase) into the site, so it is published with it (cat-harness-tools#1052); nothing else writes it, so nothing is kept."
     },
     {
       "name": "who-iris",
