@@ -335,7 +335,7 @@
 
   `relative_url` for the same reason every other path here uses it: the site is
   served from `/folio-assistant` on the canonical deploy and from
-  `/folio-assistant/STAGING/<branch>` on a preview, and an absolute literal
+  `/folio-assistant/branches/<branch>` on a preview, and an absolute literal
   404s on every deploy but one.
 
   A URL rather than inline JSON, unlike `fa-site-links` above, because the
@@ -409,14 +409,14 @@
   instance's `glassStrip` declaration by `sync-docs-harness.ts`; absent when
   nothing declared one. Replica pages read `assets/harness/glass-strip.json`.
 -->
-<meta name="fa-glass-strip" content="[&quot;glass-todos&quot;,&quot;glass-settings&quot;]">
+<meta name="fa-glass-strip" content="[&quot;glass-todos&quot;,&quot;glass-settings&quot;,&quot;library&quot;]">
 
 <!--
   THE SITE'S BASEURL, for the tiles above.
 
   Every other site-root path on this page is composed by Liquid: `relative_url`
   prepends `site.baseurl`, which is `/folio-assistant` on the canonical deploy
-  and `/folio-assistant/STAGING/<branch>` on a preview. The tiles cannot use
+  and `/folio-assistant/branches/<branch>` on a preview. The tiles cannot use
   it, because they reach the client as JSON and are composed in `docs-ui.js`
   after Liquid has finished — so the base has to travel with them.
 
@@ -447,7 +447,7 @@
 
   `feature-staging.yml` writes `staging_slug` into `_data/build.yml`;
   `docs-site.yml` writes the same file WITHOUT it. So a non-empty value here
-  means "a STAGING/<slug>/ preview", an empty one means the canonical deploy
+  means "a branches/<slug>/ preview", an empty one means the canonical deploy
   or a local build.
 
   It exists so a tile can vanish with its page. `compose-docs.ts` withholds a
@@ -563,7 +563,7 @@
 
   These five are served from stable paths with no hash in the name, so a
   browser that has the page cached keeps the old CSS and JS until its
-  `max-age` runs out. On the live site that is invisible. On a STAGING
+  `max-age` runs out. On the live site that is invisible. On a branches/
   preview it is the whole point of the deployment: the reviewer opens the URL
   they opened an hour ago, gets yesterday's stylesheet, and reports "i dont
   see changes" — which is indistinguishable from a deploy that never
@@ -582,7 +582,7 @@
 -->
 <!-- The harness icon row's own style, which railed pages load without docs-ui.css (beans `lhvt`, `9rq1`). -->
 <link rel="stylesheet" href="../../../assets/css/navbar-row.css?v=7d7d00921e0f">
-<link rel="stylesheet" href="../../../assets/css/docs-ui.css?v=18eb22b50395">
+<link rel="stylesheet" href="../../../assets/css/docs-ui.css?v=34ea92e5aa62">
 <!-- Narrow viewports: wide content scrolls in its own box, never the page
      (bean `2r2n`). The standalone viewers inline the same file through
      `withViewerNav`, so both kinds of page read one set of rules. -->
@@ -593,7 +593,7 @@
   `state-visualizer.ts` can inline exactly these bytes into the generated
   `<base>/<stub>/state-visualizer/` pages. One rule, two surfaces.
 -->
-<link rel="stylesheet" href="../../../assets/css/work-plan.css?v=ed3e33f033fe">
+<link rel="stylesheet" href="../../../assets/css/work-plan.css?v=bd8c73337b01">
 <!-- Sticky themes. GENERATED from the theme nodes in `schemas/ui/themes.ts` by
      `bun run cat themes:css`; `themes:css:check` fails the build when it is stale.
      Loaded AFTER docs-ui.css deliberately: it supplies the `--fa-sticky-*`
@@ -607,7 +607,7 @@
      `avatars:css:check` fails the build when it is stale. One stylesheet
      rather than 68 assets: the glyph is a mask and the colour is a property,
      so a scheme swap is a custom property and the trash state is a selector. -->
-<link rel="stylesheet" href="../../../assets/css/avatars.css?v=a0806788c1f5">
+<link rel="stylesheet" href="../../../assets/css/avatars.css?v=05433996459b">
 
 <!--
   The kinds THIS INSTANCE DECLARES, for the avatar fan.
@@ -622,7 +622,7 @@
   all, and a fetch for that would put a spinner in front of a badge.
 -->
 <!-- NOT MOVED: same reason as fa-site-links above. -->
-<script type="application/json" id="fa-declared-kinds">["archimate","beans","folio","fsh-guts","glossary","library","public-comments","todo-items","todos","uploads"]</script>
+<script type="application/json" id="fa-declared-kinds">["archimate","beans","folio","fsh-guts","glossary","library","public-comments","references","todo-items","todos","uploads"]</script>
 <!--
   FIRST of the deferred scripts: it fills `#fa-navbar-row` and
   `meta[name=fa-tiles]` before any reader runs (bean `gp2f`).
@@ -641,11 +641,11 @@
 <script src="../../../assets/js/kg-render.js" defer></script>
 <!-- BEFORE docs-ui.js, which calls it: the one drawing of the harness icon row (beans `lhvt`, `9rq1`). -->
 <script src="../../../assets/js/navbar-row.js?v=6bb19e1d17a5" defer></script>
-<script src="../../../assets/js/docs-ui.js?v=52e4c68c64c7" defer></script>
+<script src="../../../assets/js/docs-ui.js?v=2cbe44e3bd42" defer></script>
 <!-- The edit, source and feedback links of every page, from the platform's one
   recipe (cat-harness-tools/src/core/edit-links.ts, bean v433): links carry their
   facts and this builds the hrefs. -->
-<script src="../../../assets/js/edit-links.js?v=4f82faf45c35" defer></script>
+<script src="../../../assets/js/edit-links.js?v=333851d0e55e" defer></script>
 
 <!--
   The work-plan dashboard. SELF-MOUNTING on any page carrying
@@ -728,7 +728,71 @@
   the left-hand nav among them, and leaves just-the-docs' compiled chrome
   alone. Stated here because the alternative is a reader concluding the theme
   is broken when it is doing exactly what it can.
--->
+--><!--
+  THE PAGE GROUND: a harness's theme art behind every one of its docs pages.
+
+  Bean `yj32`, owner card Q-DEP-2 A (2026-11-01): the avatar is "the default
+  display background for their corresponding docs/ (ghpages) rendering".
+
+  WHICH HARNESS. Each tile in `_data/harness.json` carries `pageGround`
+  (cat-harness-tools `harness-tiles.ts`): the URL segments that make a page
+  that instance's, and its three crops. The FIRST tile whose scope the URL
+  contains wins; tiles come dependents first, so the content instance a page
+  is about beats the platform that renders it. The site owner is the fallback
+  (`siteDefault`), never a `/` scope, because `/` is in every URL. A tile with
+  no `art` gets no ground: a palette-only theme is a choice, not a gap.
+
+  A CSS BACKGROUND HERE, where the stickies use `<picture>`. A sticky places
+  words inside a measured quiet region of one crop, so the crop must be the
+  file. The page ground places nothing on the art, so a media query choosing
+  the crop is exact, and no markup is added to any page.
+
+  TWO SCRIMS, both the page's own background colour (not the theme's sticky
+  scrim, because the ink they protect is the page's ink). The page gets 85%,
+  so the art shows in the margins and under the header. The text column,
+  `.main-content`, gets a second layer at 96%, so the words sit on 99.4% page
+  colour. The art runs the full range (measured: every crop of the three
+  grounds has pixels at luminance 0.000 and 1.000), so the bound is the worst
+  pixel: text and links stay within 0.1:1 of the plain page in both schemes
+  (light links 4.94:1 against 5.03:1, dark links 4.09:1 against 4.14:1, dark body text 11.5:1 against 11.7:1).
+  A single 92% layer was measured first and dropped: it took dark-scheme
+  links from 4.14:1 to 3.35:1.
+--><style id="fa-page-ground" data-instance="cat-harness">
+  /* Grumpy cyborg agents, the theme of cat-harness. */
+  :root { --fa-page-scrim: rgba(39, 38, 43, 0.85); --fa-text-scrim: rgba(39, 38, 43, 0.96); }
+  :root[data-fa-scheme="light"] { --fa-page-scrim: rgba(255, 255, 255, 0.85); --fa-text-scrim: rgba(255, 255, 255, 0.96); }
+  /* The root carries the art, so it covers the whole viewport however short
+     the page; the body is made see-through so the art is not painted over. */
+  html:root body { background-color: transparent; }
+  html body .main-content { background-color: var(--fa-text-scrim); border-radius: 6px; }
+  html:root {
+    background-image:
+      linear-gradient(var(--fa-page-scrim), var(--fa-page-scrim)),
+      url("../../../assets/img/harness/landing-grumpy-cyborg-agents-laptop.webp");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  @media (max-width: 48rem) {
+    html:root {
+      background-image:
+        linear-gradient(var(--fa-page-scrim), var(--fa-page-scrim)),
+        url("../../../assets/img/harness/landing-grumpy-cyborg-agents-card.webp");
+    }
+  }
+  @media (max-width: 30rem) {
+    html:root {
+      background-image:
+        linear-gradient(var(--fa-page-scrim), var(--fa-page-scrim)),
+        url("../../../assets/img/harness/landing-grumpy-cyborg-agents-mobile.webp");
+    }
+  }
+  /* Print and forced colours get the plain page: art is decoration. */
+  @media print, (forced-colors: active) {
+    html:root { background-image: none; }
+  }
+</style>
 
 <link rel="stylesheet" href="../../../assets/css/navbar.css"><script src="../../../assets/navbar/rail-1nr7jo2rxsc.js" defer></script><script src="../../../assets/js/navbar.js" defer></script><link rel="stylesheet" href="../../../assets/page-layout.css" data-fa-page-layout><script src="../../../assets/page-layout.js" defer data-fa-page-layout></script><meta name="fa-pinned-data" content="../../.."></head>
 
@@ -847,19 +911,19 @@
 
 <p>You are in this process when prose changed. <code class="language-plaintext highlighter-rouge">review-code</code> is its sibling for code nodes and <code class="language-plaintext highlighter-rouge">review-task</code> is what dispatches to either, so arriving here means somebody has already decided the change is narrative.</p>
 
-<p>Everything this lane produces is ADVICE. The reviewer records findings; accepting or refusing the change belongs to the editor’s lane in <code class="language-plaintext highlighter-rouge">review-task</code>. The separation is why a review can be thorough without being a veto.</p>
-<style>.pt-diagram{position:relative;width:100%}.pt-diagram>img{display:block;width:100%;height:auto}.pt-mark{position:absolute;transform:translate(-50%,-50%);width:1.35em;height:1.35em;padding:0;border-radius:50%;border:1px solid #1f6feb;background:#fff;color:#1f6feb;font:bold 0.8em/1 sans-serif;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 2px rgba(0,0,0,.25)}.pt-layer{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:2}.pt-layer>*{pointer-events:auto}.pt-go{position:absolute;display:block;border-radius:8px;cursor:pointer}.pt-go:hover,.pt-go:focus-visible{outline:2px solid #1f6feb;outline-offset:1px;background:rgba(31,111,235,.07)}.pt-mark{z-index:1}.pt-mark:hover,.pt-mark[aria-expanded=true]{background:#1f6feb;color:#fff}.pt-mark:focus-visible{outline:2px solid #1f6feb;outline-offset:2px}.pt-panel{position:absolute;z-index:5;margin:0.9em 0 0 -0.6em;max-width:min(26em,90vw);min-width:14em;padding:0.6em 0.7em;background:#fff;color:#1b1f24;border:1px solid #8c959f;border-radius:6px;box-shadow:0 4px 14px rgba(0,0,0,.18);font-size:0.85em;line-height:1.35}.pt-close{position:absolute;top:0.2em;right:0.35em;border:0;background:none;font-size:1.2em;cursor:pointer;color:inherit}.pt-obj{border:1px solid #57606a;border-radius:3px;margin:0.15em 0}.pt-head{border-bottom:1px solid #57606a;padding:0.15em 0.45em;background:#f6f8fa;text-decoration:underline}.pt-head .pt-st{text-decoration:none;display:inline-block;margin-right:0.35em}.pt-attr{padding:0.1em 0.45em}.pt-st,.pt-via{color:#57606a;font-size:0.9em}.pt-edge{color:#57606a;font-size:0.85em;padding-left:1em}.pt-role .pt-head{background:#fff8c5}.pt-skill .pt-head{background:#ddf4ff}.pt-task .pt-head{background:#f6f8fa}.pt-none{color:#57606a;font-style:italic;margin-top:0.3em}</style>
+<p>Everything this lane produces is ADVICE. The reviewer records findings; accepting or refusing the change belongs to the editor’s lane in <code class="language-plaintext highlighter-rouge">review-task</code>, so a review can be thorough without being a veto.</p>
+<style>.pt-diagram{position:relative;width:100%}.pt-diagram>img{display:block;width:100%;height:auto}.pt-mark{position:absolute;transform:translate(-50%,-50%);width:1.35em;height:1.35em;padding:0;border-radius:50%;border:1px solid #1f6feb;background:#fff;color:#1f6feb;font:bold 0.8em/1 sans-serif;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 2px rgba(0,0,0,.25)}.pt-layer{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:2}.pt-layer>*{pointer-events:auto}.pt-go{position:absolute;display:block;border-radius:3px;cursor:pointer}.pt-go:hover,.pt-go:focus-visible{outline:2px solid #1f6feb;outline-offset:1px;background:rgba(31,111,235,.07)}.pt-mark{z-index:1}.pt-mark:hover,.pt-mark[aria-expanded=true]{background:#1f6feb;color:#fff}.pt-mark:focus-visible{outline:2px solid #1f6feb;outline-offset:2px}.pt-panel{position:absolute;z-index:5;text-align:left;margin:0.9em 0 0 -0.6em;max-width:min(26em,90vw);min-width:14em;padding:0.6em 0.7em;background:#fff;color:#1b1f24;border:1px solid #8c959f;border-radius:6px;box-shadow:0 4px 14px rgba(0,0,0,.18);font-size:0.85em;line-height:1.35}.pt-close{position:absolute;top:0.2em;right:0.35em;border:0;background:none;font-size:1.2em;cursor:pointer;color:inherit}.pt-obj{border:1px solid #57606a;border-radius:3px;margin:0.15em 0}.pt-head{border-bottom:1px solid #57606a;padding:0.15em 0.45em;background:#f6f8fa;text-decoration:underline}.pt-head .pt-st{text-decoration:none;display:inline-block;margin-right:0.35em}.pt-attr{padding:0.1em 0.45em}.pt-st,.pt-via{color:#57606a;font-size:0.9em}.pt-edge{color:#57606a;font-size:0.85em;padding-left:1em}.pt-role .pt-head{background:#fff8c5}.pt-skill .pt-head{background:#ddf4ff}.pt-task .pt-head{background:#f6f8fa}.pt-none{color:#57606a;font-style:italic;margin-top:0.3em}.pt-diagram [data-pt-hl]>[class$="djs-visual"]>:first-child{stroke:#d97706!important;stroke-width:4px!important;fill:#fff3d6!important}.pt-diagram [data-pt-hl]>[class$="djs-visual"]>path:first-child{fill:none!important}.pt-has-hl [class*="djs-shape"]:not([data-pt-hl])>[class$="djs-visual"]>:first-child{opacity:.75}</style>
 
 <div class="pt-diagram" data-panel="review-narrative.tasks.json">
 <img src="../../../assets/img/workflows/review-narrative.svg" alt="BPMN diagram: Narrative review" />
 <div class="pt-layer">
-<button type="button" class="pt-mark" data-task="Task_ReadFindings" style="left:17.74%;top:35.19%" aria-expanded="false" aria-label="About step: Read the sidecar findings" title="About: Read the sidecar findings">i</button>
-<a class="pt-go" href="criterion-adjudication.html" style="left:20.32%;top:35.19%;width:10.32%;height:29.63%" aria-label="Open subprocess: Adjudicate the voice findings" title="Open subprocess: Adjudicate the voice findings"></a>
-<button type="button" class="pt-mark" data-task="Task_AdjudicateVoice" style="left:30.65%;top:35.19%" aria-expanded="false" aria-label="About step: Adjudicate the voice findings" title="About: Adjudicate the voice findings">i</button>
-<a class="pt-go" href="voice-review.html" style="left:33.23%;top:35.19%;width:10.97%;height:29.63%" aria-label="Open subprocess: Voice overlay review" title="Open subprocess: Voice overlay review"></a>
-<button type="button" class="pt-mark" data-task="Call_VoiceOverlay" style="left:44.19%;top:35.19%" aria-expanded="false" aria-label="About step: Voice overlay review" title="About: Voice overlay review">i</button>
+<button type="button" class="pt-mark" data-task="Task_ReadFindings" style="left:16.77%;top:27.78%" aria-expanded="false" aria-label="About step: Read the sidecar findings" title="About: Read the sidecar findings">i</button>
+<a class="pt-go" href="criterion-adjudication.html" style="left:24.68%;top:62.96%;width:1.55%;height:8.89%" aria-label="Open subprocess: Adjudicate the voice findings" title="Open subprocess: Adjudicate the voice findings"></a>
+<button type="button" class="pt-mark" data-task="Task_AdjudicateVoice" style="left:29.35%;top:27.78%" aria-expanded="false" aria-label="About step: Adjudicate the voice findings" title="About: Adjudicate the voice findings">i</button>
+<a class="pt-go" href="voice-review.html" style="left:37.9%;top:62.96%;width:1.55%;height:8.89%" aria-label="Open subprocess: Voice overlay review" title="Open subprocess: Voice overlay review"></a>
+<button type="button" class="pt-mark" data-task="Call_VoiceOverlay" style="left:42.58%;top:27.78%" aria-expanded="false" aria-label="About step: Voice overlay review" title="About: Voice overlay review">i</button>
 <button type="button" class="pt-mark" data-task="Task_ReviewTranslation" style="left:75.81%;top:9.26%" aria-expanded="false" aria-label="About step: Review the translation" title="About: Review the translation">i</button>
-<button type="button" class="pt-mark" data-task="Task_RecordFindings" style="left:94.52%;top:35.19%" aria-expanded="false" aria-label="About step: Record findings as advice" title="About: Record findings as advice">i</button>
+<button type="button" class="pt-mark" data-task="Task_RecordFindings" style="left:93.55%;top:27.78%" aria-expanded="false" aria-label="About step: Record findings as advice" title="About: Record findings as advice">i</button>
 </div>
 <div class="pt-panel" role="dialog" aria-label="Task details" hidden=""></div>
 </div>
@@ -867,6 +931,21 @@
   Array.prototype.forEach.call(document.querySelectorAll(".pt-diagram:not([data-pt-ready])"), init);
   function init(root) {
   root.setAttribute("data-pt-ready", "");
+  // Every href in the sidecar is relative to the sidecar (it sits beside the
+  // process page), so a page elsewhere on the site that shows the same
+  // drawing resolves them to the same targets.
+  // A drawing with no sidecar (a page that only highlights steps, where no
+  // processes viewer is published) gets the highlight and nothing else.
+  var sidecar = root.getAttribute("data-panel");
+  var base = new URL(sidecar || "", location.href);
+  function abs(h) { try { return new URL(h, base).href; } catch (e) { return h; } }
+  // A page with no server-drawn markers gets them from the sidecar.
+  var drawn = !!root.querySelector(".pt-layer");
+  if (!drawn) {
+    var ly = document.createElement("div"); ly.className = "pt-layer"; root.appendChild(ly);
+    var pn = document.createElement("div"); pn.className = "pt-panel"; pn.setAttribute("role", "dialog");
+    pn.setAttribute("aria-label", "Task details"); pn.hidden = true; root.appendChild(pn);
+  }
   var panel = root.querySelector(".pt-panel"), data = null, pending = null, open = null;
   function load() {
     if (data) return Promise.resolve(data);
@@ -879,7 +958,7 @@
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
   function link(l, cls) {
     var e = el(l.href ? "a" : "code", cls, l.name);
-    if (l.href) e.href = l.href; else e.title = "no page for this one";
+    if (l.href) e.href = abs(l.href); else e.title = "no page for this one";
     return e;
   }
   function obj(stereo, name, kind) {
@@ -894,8 +973,14 @@
     panel.textContent = "";
     var close = el("button", "pt-close", "\u00d7"); close.type = "button"; close.setAttribute("aria-label", "Close");
     close.onclick = function () { hide(); }; panel.appendChild(close);
-    var task = obj(t.type.replace(/^bpmn:/, ""), link({ name: t.name, href: t.href }), "task");
-    task.appendChild(el("div", "pt-attr", "id = " + t.id));
+    // The title opens the step's description below the drawing; the step's
+    // own page, where it has one, is its id.
+    var title = link({ name: t.name, href: t.stepHref || t.href });
+    if (t.stepHref) title.onclick = function () { hide(); };
+    var task = obj(t.type.replace(/^bpmn:/, ""), title, "task");
+    var idl = el("div", "pt-attr", "id = ");
+    if (t.stepHref && t.href) idl.appendChild(link({ name: t.id, href: t.href })); else idl.appendChild(document.createTextNode(t.id));
+    task.appendChild(idl);
     if (t.lane) {
       var ln = el("div", "pt-attr", "lane = "); ln.appendChild(link({ name: t.lane, href: t.laneHref }));
       // The lane is a partition; the Role it names is who acts (owner,
@@ -918,7 +1003,8 @@
       Object.keys(t.shared.inputs || {}).forEach(function (k) { gt.appendChild(el("div", "pt-attr", k + " = " + t.shared.inputs[k])); });
       panel.appendChild(gt);
     }
-    t.skills.forEach(function (s) {
+    var sk_on = !(data && data.skills === false);
+    (sk_on ? t.skills : []).forEach(function (s) {
       panel.appendChild(edge("requires"));
       var sk = obj("Skill", link(s), "skill");
       (s.methodologies || []).forEach(function (m) {
@@ -927,19 +1013,22 @@
       });
       panel.appendChild(sk);
     });
-    if (!t.skills.length && !t.calls) panel.appendChild(el("div", "pt-none", "This task names no skill."));
+    if (sk_on && !t.skills.length && !t.calls) panel.appendChild(el("div", "pt-none", "This task names no skill."));
     if (t.role) {
       panel.appendChild(edge("lane names"));
       var role = obj("Role", link(t.role), "role");
       if (t.role.title) role.appendChild(el("div", "pt-attr", "title = " + t.role.title));
-      var list = el("div", "pt-attr"); list.appendChild(el("span", "pt-st", "hasSkill: "));
-      if (!t.role.skills.length) list.appendChild(el("i", null, "none listed"));
-      t.role.skills.forEach(function (s, i) {
-        if (i) list.appendChild(document.createTextNode(", "));
-        list.appendChild(link(s));
-        if (s.via) list.appendChild(el("span", "pt-via", " (via " + s.via + ")"));
-      });
-      role.appendChild(list); panel.appendChild(role);
+      if (sk_on) {
+        var list = el("div", "pt-attr"); list.appendChild(el("span", "pt-st", "hasSkill: "));
+        if (!t.role.skills.length) list.appendChild(el("i", null, "none listed"));
+        t.role.skills.forEach(function (s, i) {
+          if (i) list.appendChild(document.createTextNode(", "));
+          list.appendChild(link(s));
+          if (s.via) list.appendChild(el("span", "pt-via", " (via " + s.via + ")"));
+        });
+        role.appendChild(list);
+      }
+      panel.appendChild(role);
     } else if (t.binding) {
       panel.appendChild(el("div", "pt-none", "Lane role: " + t.binding + "."));
     }
@@ -961,14 +1050,27 @@
     }
     return null;
   }
+  // A page may name steps to pick out (a journey's step shows the tasks it
+  // realises): `data-pt-highlight="Task_A Task_B"`. Marked once the drawing
+  // is inline, which is when its shapes exist to mark.
+  var hl = (root.getAttribute("data-pt-highlight") || "").split(/\s+/).filter(Boolean);
+  if (hl.length) root.classList.add("pt-has-hl");
+  function mark(a) {
+    if (!hl.length || a.tagName.toLowerCase() !== "svg" || a.hasAttribute("data-pt-marked")) return;
+    a.setAttribute("data-pt-marked", "");
+    Array.prototype.forEach.call(a.querySelectorAll("[data-element-id]"), function (g) {
+      if (hl.indexOf(g.getAttribute("data-element-id")) >= 0) g.setAttribute("data-pt-hl", "");
+    });
+  }
   function place() {
     queued = false;
     var a = art();
+    if (a) mark(a);
     if (!layer || !a) return;
     var r = root.getBoundingClientRect(), b = a.getBoundingClientRect();
     var x = b.left - r.left, y = b.top - r.top, w = b.width, h = b.height, vw = 0, vh = 0;
     if (a.tagName.toLowerCase() === "img") { vw = a.naturalWidth; vh = a.naturalHeight; }
-    else { var vb = (a.getAttribute("viewBox") || "").trim().split(/[s,]+/).map(Number); vw = vb[2]; vh = vb[3]; }
+    else { var vb = (a.getAttribute("viewBox") || "").trim().split(/[\s,]+/).map(Number); vw = vb[2]; vh = vb[3]; }
     // An SVG keeps its aspect inside a box of another shape (xMidYMid meet).
     if (vw > 0 && vh > 0 && w > 0 && h > 0) {
       var k = vw / vh;
@@ -994,6 +1096,20 @@
   root.addEventListener("load", schedule, true);
   window.addEventListener("resize", schedule);
   schedule();
+  if (!drawn && sidecar) load().then(function (j) {
+    (j.markers || []).forEach(function (m) {
+      var t = j.tasks[m.id], to = t && t.calls ? (t.calls.diagram || t.calls.href) : null;
+      if (to && m.box) {
+        var g = el("a", "pt-go"); g.href = abs(to);
+        g.style.left = m.box.left + "%"; g.style.top = m.box.top + "%"; g.style.width = m.box.width + "%"; g.style.height = m.box.height + "%";
+        g.setAttribute("aria-label", "Open subprocess: " + m.name); g.title = "Open subprocess: " + m.name; layer.appendChild(g);
+      }
+      var b = el("button", "pt-mark", "i"); b.type = "button"; b.setAttribute("data-task", m.id);
+      b.style.left = m.left + "%"; b.style.top = m.top + "%"; b.setAttribute("aria-expanded", "false");
+      b.setAttribute("aria-label", "About step: " + m.name); b.title = "About: " + m.name; layer.appendChild(b);
+    });
+    schedule();
+  }).catch(function (e) { console.warn("task panel: could not load " + base.href + " (" + e.message + ")"); });
   function at(b) {
     var r = root.getBoundingClientRect(), m = b.getBoundingClientRect();
     panel.style.left = (m.left + m.width / 2 - r.left) + "px"; panel.style.top = (m.top + m.height / 2 - r.top) + "px";
@@ -1050,7 +1166,7 @@
   </thead>
   <tbody>
     <tr>
-      <td>Narrative reviewer</td>
+      <td><a id="lane-Lane_NarrativeReviewer"></a>Narrative reviewer</td>
       <td><code class="language-plaintext highlighter-rouge">narrative-reviewer</code></td>
       <td>Turns mechanical matches into verdicts, not the other way round: <code class="language-plaintext highlighter-rouge">qa-checkers-voice.ts</code>, <code class="language-plaintext highlighter-rouge">qa-checkers-uses.ts</code> and <code class="language-plaintext highlighter-rouge">translation-block-qa.ts</code> produce candidates, and this lane is the only place a phrase-list hit becomes a wrong-register finding, an out-of-genre criterion, a stated exception, or nothing at all. House voice is adjudicated before any activated overlay is even reached, because an overlay adds to the house judgement rather than replacing it.</td>
     </tr>
@@ -1078,33 +1194,33 @@
   </thead>
   <tbody>
     <tr>
-      <td><strong>Read the sidecar findings</strong><br /><code class="language-plaintext highlighter-rouge">Task_ReadFindings</code></td>
+      <td><a id="step-Task_ReadFindings"></a><strong>Read the sidecar findings</strong><br /><code class="language-plaintext highlighter-rouge">Task_ReadFindings</code></td>
       <td>Narrative reviewer</td>
-      <td><code class="language-plaintext highlighter-rouge">content-review</code></td>
+      <td><a href="../../../en/cat-harness/processes/skills/content-review.html"><code class="language-plaintext highlighter-rouge">content-review</code></a></td>
       <td>Open the block’s <code class="language-plaintext highlighter-rouge">.qa.json</code>, not just the evidence line: register is a<br />property of the passage, and the sidecar quotes one line of it.</td>
     </tr>
     <tr>
-      <td><strong>Adjudicate the voice findings</strong><br /><code class="language-plaintext highlighter-rouge">Task_AdjudicateVoice</code></td>
+      <td><a id="step-Task_AdjudicateVoice"></a><strong>Adjudicate the voice findings</strong><br /><code class="language-plaintext highlighter-rouge">Task_AdjudicateVoice</code></td>
       <td>Narrative reviewer</td>
-      <td>calls <a href="criterion-adjudication.html">Criterion adjudication</a><br /><code class="language-plaintext highlighter-rouge">voice-editorial-review</code><br /><code class="language-plaintext highlighter-rouge">adjudication</code></td>
+      <td>calls <a href="criterion-adjudication.html">Criterion adjudication</a><br /><a href="../../../en/cat-harness/processes/skills/voice-editorial-review.html"><code class="language-plaintext highlighter-rouge">voice-editorial-review</code></a><br /><a href="../../../en/cat-harness/processes/skills/adjudication.html"><code class="language-plaintext highlighter-rouge">adjudication</code></a></td>
       <td>Three outcomes, all legitimate: the register is wrong for this genre;<br />the criterion does not belong in this genre and should carry <code class="language-plaintext highlighter-rouge">profiles</code>;<br />or the block is a stated exception and a reviewer entry records why.</td>
     </tr>
     <tr>
-      <td><strong>Voice overlay review</strong><br /><code class="language-plaintext highlighter-rouge">Call_VoiceOverlay</code></td>
+      <td><a id="step-Call_VoiceOverlay"></a><strong>Voice overlay review</strong><br /><code class="language-plaintext highlighter-rouge">Call_VoiceOverlay</code></td>
       <td>Narrative reviewer</td>
-      <td>calls <a href="voice-review.html">Voice overlay review</a><br /><code class="language-plaintext highlighter-rouge">voice-overlay-review</code></td>
+      <td>calls <a href="voice-review.html">Voice overlay review</a><br /><a href="../../../en/cat-harness/processes/skills/voice-overlay-review.html"><code class="language-plaintext highlighter-rouge">voice-overlay-review</code></a></td>
       <td>Descend into <a href="voice-review.html">Process_VoiceReview</a> for whichever named voices the folio has ACTIVATED — the WHO editorial style, the guideline-development register, the publication design conventions, the Milnor exposition standard. No new role is taken on: register is what this lane already judges, and a voice is a register.<br />Placed after the base voice adjudication because a voice OVERLAYS the house voice rather than replacing it, so the house finding has to be settled first. Its own first gateway leaves immediately when no voice is active, which is this instance’s case and the default everywhere.</td>
     </tr>
     <tr>
-      <td><strong>Review the translation</strong><br /><code class="language-plaintext highlighter-rouge">Task_ReviewTranslation</code></td>
+      <td><a id="step-Task_ReviewTranslation"></a><strong>Review the translation</strong><br /><code class="language-plaintext highlighter-rouge">Task_ReviewTranslation</code></td>
       <td>Narrative reviewer</td>
-      <td><code class="language-plaintext highlighter-rouge">translation-manager</code></td>
+      <td><a href="../../../en/cat-harness/processes/skills/translation-manager.html"><code class="language-plaintext highlighter-rouge">translation-manager</code></a></td>
       <td>Coverage, preserved terms and echoes are mechanical. A semantic round<br />trip needs a back-translator that has not seen the original; where none<br />has run, the criterion carries no verdict and that is the honest state.</td>
     </tr>
     <tr>
-      <td><strong>Record findings as advice</strong><br /><code class="language-plaintext highlighter-rouge">Task_RecordFindings</code></td>
+      <td><a id="step-Task_RecordFindings"></a><strong>Record findings as advice</strong><br /><code class="language-plaintext highlighter-rouge">Task_RecordFindings</code></td>
       <td>Narrative reviewer</td>
-      <td><code class="language-plaintext highlighter-rouge">content-feedback</code></td>
+      <td><a href="../../../en/cat-harness/processes/skills/content-feedback.html"><code class="language-plaintext highlighter-rouge">content-feedback</code></a></td>
       <td>A reviewer cannot accept a change — that is the editor’s lane — so the<br />output is findings on the sidecar, not a commit.</td>
     </tr>
   </tbody>

@@ -335,7 +335,7 @@
 
   `relative_url` for the same reason every other path here uses it: the site is
   served from `/folio-assistant` on the canonical deploy and from
-  `/folio-assistant/STAGING/<branch>` on a preview, and an absolute literal
+  `/folio-assistant/branches/<branch>` on a preview, and an absolute literal
   404s on every deploy but one.
 
   A URL rather than inline JSON, unlike `fa-site-links` above, because the
@@ -409,14 +409,14 @@
   instance's `glassStrip` declaration by `sync-docs-harness.ts`; absent when
   nothing declared one. Replica pages read `assets/harness/glass-strip.json`.
 -->
-<meta name="fa-glass-strip" content="[&quot;glass-todos&quot;,&quot;glass-settings&quot;]">
+<meta name="fa-glass-strip" content="[&quot;glass-todos&quot;,&quot;glass-settings&quot;,&quot;library&quot;]">
 
 <!--
   THE SITE'S BASEURL, for the tiles above.
 
   Every other site-root path on this page is composed by Liquid: `relative_url`
   prepends `site.baseurl`, which is `/folio-assistant` on the canonical deploy
-  and `/folio-assistant/STAGING/<branch>` on a preview. The tiles cannot use
+  and `/folio-assistant/branches/<branch>` on a preview. The tiles cannot use
   it, because they reach the client as JSON and are composed in `docs-ui.js`
   after Liquid has finished — so the base has to travel with them.
 
@@ -447,7 +447,7 @@
 
   `feature-staging.yml` writes `staging_slug` into `_data/build.yml`;
   `docs-site.yml` writes the same file WITHOUT it. So a non-empty value here
-  means "a STAGING/<slug>/ preview", an empty one means the canonical deploy
+  means "a branches/<slug>/ preview", an empty one means the canonical deploy
   or a local build.
 
   It exists so a tile can vanish with its page. `compose-docs.ts` withholds a
@@ -563,7 +563,7 @@
 
   These five are served from stable paths with no hash in the name, so a
   browser that has the page cached keeps the old CSS and JS until its
-  `max-age` runs out. On the live site that is invisible. On a STAGING
+  `max-age` runs out. On the live site that is invisible. On a branches/
   preview it is the whole point of the deployment: the reviewer opens the URL
   they opened an hour ago, gets yesterday's stylesheet, and reports "i dont
   see changes" — which is indistinguishable from a deploy that never
@@ -582,7 +582,7 @@
 -->
 <!-- The harness icon row's own style, which railed pages load without docs-ui.css (beans `lhvt`, `9rq1`). -->
 <link rel="stylesheet" href="../../../../../assets/css/navbar-row.css?v=7d7d00921e0f">
-<link rel="stylesheet" href="../../../../../assets/css/docs-ui.css?v=18eb22b50395">
+<link rel="stylesheet" href="../../../../../assets/css/docs-ui.css?v=34ea92e5aa62">
 <!-- Narrow viewports: wide content scrolls in its own box, never the page
      (bean `2r2n`). The standalone viewers inline the same file through
      `withViewerNav`, so both kinds of page read one set of rules. -->
@@ -593,7 +593,7 @@
   `state-visualizer.ts` can inline exactly these bytes into the generated
   `<base>/<stub>/state-visualizer/` pages. One rule, two surfaces.
 -->
-<link rel="stylesheet" href="../../../../../assets/css/work-plan.css?v=ed3e33f033fe">
+<link rel="stylesheet" href="../../../../../assets/css/work-plan.css?v=bd8c73337b01">
 <!-- Sticky themes. GENERATED from the theme nodes in `schemas/ui/themes.ts` by
      `bun run cat themes:css`; `themes:css:check` fails the build when it is stale.
      Loaded AFTER docs-ui.css deliberately: it supplies the `--fa-sticky-*`
@@ -607,7 +607,7 @@
      `avatars:css:check` fails the build when it is stale. One stylesheet
      rather than 68 assets: the glyph is a mask and the colour is a property,
      so a scheme swap is a custom property and the trash state is a selector. -->
-<link rel="stylesheet" href="../../../../../assets/css/avatars.css?v=a0806788c1f5">
+<link rel="stylesheet" href="../../../../../assets/css/avatars.css?v=05433996459b">
 
 <!--
   The kinds THIS INSTANCE DECLARES, for the avatar fan.
@@ -622,7 +622,7 @@
   all, and a fetch for that would put a spinner in front of a badge.
 -->
 <!-- NOT MOVED: same reason as fa-site-links above. -->
-<script type="application/json" id="fa-declared-kinds">["archimate","beans","folio","fsh-guts","glossary","library","public-comments","todo-items","todos","uploads"]</script>
+<script type="application/json" id="fa-declared-kinds">["archimate","beans","folio","fsh-guts","glossary","library","public-comments","references","todo-items","todos","uploads"]</script>
 <!--
   FIRST of the deferred scripts: it fills `#fa-navbar-row` and
   `meta[name=fa-tiles]` before any reader runs (bean `gp2f`).
@@ -641,11 +641,11 @@
 <script src="../../../../../assets/js/kg-render.js" defer></script>
 <!-- BEFORE docs-ui.js, which calls it: the one drawing of the harness icon row (beans `lhvt`, `9rq1`). -->
 <script src="../../../../../assets/js/navbar-row.js?v=6bb19e1d17a5" defer></script>
-<script src="../../../../../assets/js/docs-ui.js?v=52e4c68c64c7" defer></script>
+<script src="../../../../../assets/js/docs-ui.js?v=2cbe44e3bd42" defer></script>
 <!-- The edit, source and feedback links of every page, from the platform's one
   recipe (cat-harness-tools/src/core/edit-links.ts, bean v433): links carry their
   facts and this builds the hrefs. -->
-<script src="../../../../../assets/js/edit-links.js?v=4f82faf45c35" defer></script>
+<script src="../../../../../assets/js/edit-links.js?v=333851d0e55e" defer></script>
 
 <!--
   The work-plan dashboard. SELF-MOUNTING on any page carrying
@@ -728,7 +728,71 @@
   the left-hand nav among them, and leaves just-the-docs' compiled chrome
   alone. Stated here because the alternative is a reader concluding the theme
   is broken when it is doing exactly what it can.
--->
+--><!--
+  THE PAGE GROUND: a harness's theme art behind every one of its docs pages.
+
+  Bean `yj32`, owner card Q-DEP-2 A (2026-11-01): the avatar is "the default
+  display background for their corresponding docs/ (ghpages) rendering".
+
+  WHICH HARNESS. Each tile in `_data/harness.json` carries `pageGround`
+  (cat-harness-tools `harness-tiles.ts`): the URL segments that make a page
+  that instance's, and its three crops. The FIRST tile whose scope the URL
+  contains wins; tiles come dependents first, so the content instance a page
+  is about beats the platform that renders it. The site owner is the fallback
+  (`siteDefault`), never a `/` scope, because `/` is in every URL. A tile with
+  no `art` gets no ground: a palette-only theme is a choice, not a gap.
+
+  A CSS BACKGROUND HERE, where the stickies use `<picture>`. A sticky places
+  words inside a measured quiet region of one crop, so the crop must be the
+  file. The page ground places nothing on the art, so a media query choosing
+  the crop is exact, and no markup is added to any page.
+
+  TWO SCRIMS, both the page's own background colour (not the theme's sticky
+  scrim, because the ink they protect is the page's ink). The page gets 85%,
+  so the art shows in the margins and under the header. The text column,
+  `.main-content`, gets a second layer at 96%, so the words sit on 99.4% page
+  colour. The art runs the full range (measured: every crop of the three
+  grounds has pixels at luminance 0.000 and 1.000), so the bound is the worst
+  pixel: text and links stay within 0.1:1 of the plain page in both schemes
+  (light links 4.94:1 against 5.03:1, dark links 4.09:1 against 4.14:1, dark body text 11.5:1 against 11.7:1).
+  A single 92% layer was measured first and dropped: it took dark-scheme
+  links from 4.14:1 to 3.35:1.
+--><style id="fa-page-ground" data-instance="folio-assistant-core">
+  /* Grumpy cat, the theme of folio-assistant-core. */
+  :root { --fa-page-scrim: rgba(39, 38, 43, 0.85); --fa-text-scrim: rgba(39, 38, 43, 0.96); }
+  :root[data-fa-scheme="light"] { --fa-page-scrim: rgba(255, 255, 255, 0.85); --fa-text-scrim: rgba(255, 255, 255, 0.96); }
+  /* The root carries the art, so it covers the whole viewport however short
+     the page; the body is made see-through so the art is not painted over. */
+  html:root body { background-color: transparent; }
+  html body .main-content { background-color: var(--fa-text-scrim); border-radius: 6px; }
+  html:root {
+    background-image:
+      linear-gradient(var(--fa-page-scrim), var(--fa-page-scrim)),
+      url("../../../../../assets/img/harness/landing-laptop.webp");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  @media (max-width: 48rem) {
+    html:root {
+      background-image:
+        linear-gradient(var(--fa-page-scrim), var(--fa-page-scrim)),
+        url("../../../../../assets/img/harness/landing-card.webp");
+    }
+  }
+  @media (max-width: 30rem) {
+    html:root {
+      background-image:
+        linear-gradient(var(--fa-page-scrim), var(--fa-page-scrim)),
+        url("../../../../../assets/img/harness/landing-mobile.webp");
+    }
+  }
+  /* Print and forced colours get the plain page: art is decoration. */
+  @media print, (forced-colors: active) {
+    html:root { background-image: none; }
+  }
+</style>
 
 <link rel="stylesheet" href="../../../../../assets/css/navbar.css"><script src="../../../../../assets/navbar/rail-1nr7jo2rxsc.js" defer></script><script src="../../../../../assets/js/navbar.js" defer></script><link rel="stylesheet" href="../../../../../assets/page-layout.css" data-fa-page-layout><script src="../../../../../assets/page-layout.js" defer data-fa-page-layout></script><meta name="fa-pinned-data" content="../../../../.."></head>
 
@@ -839,7 +903,7 @@
 </h1>
     
 
-<p>The reference for <code class="language-plaintext highlighter-rouge">cat-harness/library/arxiv-2405.14766v2</code> (cat-harness, a dependency of dpi-h-ra) and any references extracted from it. <a href="../">cat-harness-library</a> · <a href="../../">All references</a>.</p>
+<p>The reference for <code class="language-plaintext highlighter-rouge">cat-harness/library/content/arxiv-2405.14766v2</code> (cat-harness, a dependency of dpi-h-ra) and any references extracted from it. <a href="../">cat-harness-library</a> · <a href="../../">All references</a>.</p>
 
 <p><strong>Export these 1 reference:</strong> <a href="references.bib">BibTeX</a> · <a href="references.csl.json">CSL-JSON</a> · <a href="references.ris">RIS</a> · <a href="references.dc.xml">Dublin Core XML</a> · <a href="references.jsonld">Dublin Core / BIBO JSON-LD</a></p>
 
@@ -893,8 +957,8 @@
 <ol class="fa-bib">
 <li id="ref-arxiv-2405-14766v2" data-fa-bib="arxiv-2405.14766v2 Evaluating Large Language Models for Public Health Classification and Extraction Tasks Harris1, Joshua † Laurence1, Timothy Loman1, Leo Grayson1, Fan Nonnenmacher1, Toby Harry ">
   Harris1, Joshua; †; Laurence1, Timothy; et al.. <cite>Evaluating Large Language Models for Public Health Classification and Extraction Tasks</cite>.<br />
-  <small><a href="#ref-arxiv-2405-14766v2"><code>arxiv-2405.14766v2</code></a> · library · <a href="https://arxiv.org/abs/2405.14766">link</a> · source: <code>cat-harness/library/arxiv-2405.14766v2/manifest.jsonld</code> · held: <code>cat-harness/library/arxiv-2405.14766v2</code><br />
-  export: <a download="arxiv-2405.14766v2.bib" href="data:application/x-bibtex;charset=utf-8,%40article%7Barxiv-2405.14766v2%2C%0A%20%20author%20%3D%20%7BHarris1%2C%20Joshua%20and%20%E2%80%A0%20and%20Laurence1%2C%20Timothy%20and%20Loman1%2C%20Leo%20and%20Grayson1%2C%20Fan%20and%20Nonnenmacher1%2C%20Toby%20and%20Harry%7D%2C%0A%20%20title%20%20%3D%20%7B%7BEvaluating%20Large%20Language%20Models%20for%20Public%20Health%20Classification%20and%20Extraction%20Tasks%7D%7D%2C%0A%20%20year%20%20%20%3D%20%7B2025%7D%2C%0A%20%20url%20%20%20%20%3D%20%7Bhttps%3A%2F%2Farxiv.org%2Fabs%2F2405.14766%7D%2C%0A%20%20note%20%20%20%3D%20%7BarXiv%3A2405.14766%7D%2C%0A%7D%0A">BibTeX</a> · <a download="arxiv-2405.14766v2.ris" href="data:application/x-research-info-systems;charset=utf-8,TY%20%20-%20JOUR%0D%0AID%20%20-%20arxiv-2405.14766v2%0D%0AAU%20%20-%20Harris1%2C%20Joshua%0D%0AAU%20%20-%20%E2%80%A0%0D%0AAU%20%20-%20Laurence1%2C%20Timothy%0D%0AAU%20%20-%20Loman1%2C%20Leo%0D%0AAU%20%20-%20Grayson1%2C%20Fan%0D%0AAU%20%20-%20Nonnenmacher1%2C%20Toby%0D%0AAU%20%20-%20Harry%0D%0ATI%20%20-%20Evaluating%20Large%20Language%20Models%20for%20Public%20Health%20Classification%20and%20Extraction%20Tasks%0D%0ADA%20%20-%20D%3A20250220%0D%0AUR%20%20-%20https%3A%2F%2Farxiv.org%2Fabs%2F2405.14766%0D%0AAB%20%20-%20Advances%20in%20Large%20Language%20Models%20(LLMs)%20have%20led%20to%20significant%20interest%20in%20their%20potential%20to%20support%20human%20experts%20across%20a%20range%20of%20domains%2C%20including%20public%20health.%20In%20this%20work%20we%20present%20automated%20evaluations%20of%20LLMs%20for%20public%20health%20tasks%20involving%20the%20classification%20and%20extraction%20of%20free%20text.%20We%20combine%20six%20externally%20annotated%20datasets%20with%20seven%20new%20internally%20annotated%20datasets%20to%20evaluate%20LLMs%20for%20processing%20text%20related%20to%3A%20health%20burden%2C%20epidemiological%20risk%20factors%2C%20and%20public%20health%20interventions.%20We%20evaluate%20eleven%20open-weight%20LLMs%20(7-123%20billion%20parameters)%20across%20all%20tasks%20using%20zero-shot%20in-context%20learning.%20We%20find%20that%20Llama-3.3-70B-Instruct%20is%20the%20highest%20performing%20model%2C%20achieving%20the%20best%20results%20on%208%2F16%20tasks%20(using%20micro-F1%20scores).%20We%20see%20significant%20variation%20across%20tasks%20with%20all%20open-weight%20LLMs%20scoring%20below%2060%25%20micro-F1%20on%20some%20challenging%20tasks%2C%20such%20as%20Contact%20Classification%2C%20while%20all%20LLMs%20achieve%20greater%20than%2080%25%20micro-F1%20on%20others%2C%20such%20as%20GI%20Illness%20Classification.%20For%20a%20subset%20of%2011%20tasks%2C%20we%20also%20evaluate%20three%20GPT-4%20and%20GPT-4o%20series%20models%20and%20find%20comparable%20results%20to%20Llama-3.3-70B-Instruct.%20Overall%2C%20based%20on%20these%20initial%20results%20we%20find%20promising%20signs%20that%20LLMs%20may%20be%20useful%20tools%20for%20public%20health%20experts%20to%20extract%20information%20from%20a%20wide%20variety%20of%20free%20text%20sources%2C%20and%20support%20public%20health%20surveillance%2C%20research%2C%20and%20interventions.%20Figure%201%3A%20Public%20Health%20Large%20Language%20Model%20(LLM)%20Evaluation%20Areas%20%5BNumber%20of%20Evalua-%20tions%5D%20and%20Task%20Evaluation%20Micro-F1%20Scores%20by%20Model.%20(Left)%20We%20divide%20public%20health%20free%20text%20processing%20into%20three%20sub-domains%3A%20(1)%20burden%2C%20such%20as%20reports%20of%20disease%20symptoms%2C%20cases%2C%20morbidity%2C%20or%20mortality%3B%20(2)%20risk%20factors%2C%20such%20as%20environmental%2C%20behavioural%2C%20or%20biological%20contributors%3B%20(3)%20interventions%2C%20pharmaceutical%20and%20non-pharmaceutical.%20(Right)%20Evaluation%20results%20(micro-F1%20scores)%20for%20seven%20open-weight%20LLM%20architectures%20(highest%20performing%20model%20evaluated%20from%20each)%20across%20the%2016%20task%0D%0AER%20%20-%20%0D%0A">RIS</a> · <a download="arxiv-2405.14766v2.csl.json" href="data:application/vnd.citationstyles.csl+json;charset=utf-8,%5B%0A%20%20%7B%0A%20%20%20%20%22id%22%3A%20%22arxiv-2405.14766v2%22%2C%0A%20%20%20%20%22type%22%3A%20%22article-journal%22%2C%0A%20%20%20%20%22title%22%3A%20%22Evaluating%20Large%20Language%20Models%20for%20Public%20Health%20Classification%20and%20Extraction%20Tasks%22%2C%0A%20%20%20%20%22author%22%3A%20%5B%0A%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%22family%22%3A%20%22Harris1%22%2C%0A%20%20%20%20%20%20%20%20%22given%22%3A%20%22Joshua%22%0A%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%22family%22%3A%20%22%E2%80%A0%22%0A%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%22family%22%3A%20%22Laurence1%22%2C%0A%20%20%20%20%20%20%20%20%22given%22%3A%20%22Timothy%22%0A%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%22family%22%3A%20%22Loman1%22%2C%0A%20%20%20%20%20%20%20%20%22given%22%3A%20%22Leo%22%0A%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%22family%22%3A%20%22Grayson1%22%2C%0A%20%20%20%20%20%20%20%20%22given%22%3A%20%22Fan%22%0A%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%22family%22%3A%20%22Nonnenmacher1%22%2C%0A%20%20%20%20%20%20%20%20%22given%22%3A%20%22Toby%22%0A%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%22family%22%3A%20%22Harry%22%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%5D%2C%0A%20%20%20%20%22issued%22%3A%20%7B%0A%20%20%20%20%20%20%22raw%22%3A%20%22D%3A20250220%22%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22URL%22%3A%20%22https%3A%2F%2Farxiv.org%2Fabs%2F2405.14766%22%2C%0A%20%20%20%20%22abstract%22%3A%20%22Advances%20in%20Large%20Language%20Models%20(LLMs)%20have%20led%20to%20significant%20interest%20in%20their%20potential%20to%20support%20human%20experts%20across%20a%20range%20of%20domains%2C%20including%20public%20health.%20In%20this%20work%20we%20present%20automated%20evaluations%20of%20LLMs%20for%20public%20health%20tasks%20involving%20the%20classification%20and%20extraction%20of%20free%20text.%20We%20combine%20six%20externally%20annotated%20datasets%20with%20seven%20new%20internally%20annotated%20datasets%20to%20evaluate%20LLMs%20for%20processing%20text%20related%20to%3A%20health%20burden%2C%20epidemiological%20risk%20factors%2C%20and%20public%20health%20interventions.%20We%20evaluate%20eleven%20open-weight%20LLMs%20(7-123%20billion%20parameters)%20across%20all%20tasks%20using%20zero-shot%20in-context%20learning.%20We%20find%20that%20Llama-3.3-70B-Instruct%20is%20the%20highest%20performing%20model%2C%20achieving%20the%20best%20results%20on%208%2F16%20tasks%20(using%20micro-F1%20scores).%20We%20see%20significant%20variation%20across%20tasks%20with%20all%20open-weight%20LLMs%20scoring%20below%2060%25%20micro-F1%20on%20some%20challenging%20tasks%2C%20such%20as%20Contact%20Classification%2C%20while%20all%20LLMs%20achieve%20greater%20than%2080%25%20micro-F1%20on%20others%2C%20such%20as%20GI%20Illness%20Classification.%20For%20a%20subset%20of%2011%20tasks%2C%20we%20also%20evaluate%20three%20GPT-4%20and%20GPT-4o%20series%20models%20and%20find%20comparable%20results%20to%20Llama-3.3-70B-Instruct.%20Overall%2C%20based%20on%20these%20initial%20results%20we%20find%20promising%20signs%20that%20LLMs%20may%20be%20useful%20tools%20for%20public%20health%20experts%20to%20extract%20information%20from%20a%20wide%20variety%20of%20free%20text%20sources%2C%20and%20support%20public%20health%20surveillance%2C%20research%2C%20and%20interventions.%20Figure%201%3A%20Public%20Health%20Large%20Language%20Model%20(LLM)%20Evaluation%20Areas%20%5BNumber%20of%20Evalua-%20tions%5D%20and%20Task%20Evaluation%20Micro-F1%20Scores%20by%20Model.%20(Left)%20We%20divide%20public%20health%20free%20text%20processing%20into%20three%20sub-domains%3A%20(1)%20burden%2C%20such%20as%20reports%20of%20disease%20symptoms%2C%20cases%2C%20morbidity%2C%20or%20mortality%3B%20(2)%20risk%20factors%2C%20such%20as%20environmental%2C%20behavioural%2C%20or%20biological%20contributors%3B%20(3)%20interventions%2C%20pharmaceutical%20and%20non-pharmaceutical.%20(Right)%20Evaluation%20results%20(micro-F1%20scores)%20for%20seven%20open-weight%20LLM%20architectures%20(highest%20performing%20model%20evaluated%20from%20each)%20across%20the%2016%20task%22%2C%0A%20%20%20%20%22note%22%3A%20%22arXiv%3A2405.14766%22%0A%20%20%7D%0A%5D%0A">CSL-JSON</a> · <a download="arxiv-2405.14766v2.dc.xml" href="data:application/xml;charset=utf-8,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3C!--%20Dublin%20Core%20rendering%20of%20arxiv-2405.14766v2%2C%20generated%20by%20folio-assistant-core%2Fscripts%2Fdc-render.ts.%20Do%20not%20edit.%20--%3E%0A%3Cmetadata%20xmlns%3D%22https%3A%2F%2Flitlfred.github.io%2Ffolio-assistant-core%2Fv0%2Fns%2Fdspace%23%22%0A%20%20%20%20xmlns%3Adc%3D%22http%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%22%0A%20%20%20%20xmlns%3Adcterms%3D%22http%3A%2F%2Fpurl.org%2Fdc%2Fterms%2F%22%0A%20%20%20%20xmlns%3Axsi%3D%22http%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema-instance%22%3E%0A%20%20%3Cdcterms%3Atitle%3EEvaluating%20Large%20Language%20Models%20for%20Public%20Health%20Classification%20and%20Extraction%20Tasks%3C%2Fdcterms%3Atitle%3E%0A%20%20%3Cdcterms%3Acreator%3EHarris1%2C%20Joshua%3C%2Fdcterms%3Acreator%3E%0A%20%20%3Cdcterms%3Acreator%3E%E2%80%A0%3C%2Fdcterms%3Acreator%3E%0A%20%20%3Cdcterms%3Acreator%3ELaurence1%2C%20Timothy%3C%2Fdcterms%3Acreator%3E%0A%20%20%3Cdcterms%3Acreator%3ELoman1%2C%20Leo%3C%2Fdcterms%3Acreator%3E%0A%20%20%3Cdcterms%3Acreator%3EGrayson1%2C%20Fan%3C%2Fdcterms%3Acreator%3E%0A%20%20%3Cdcterms%3Acreator%3ENonnenmacher1%2C%20Toby%3C%2Fdcterms%3Acreator%3E%0A%20%20%3Cdcterms%3Acreator%3EHarry%3C%2Fdcterms%3Acreator%3E%0A%20%20%3Cdcterms%3Aissued%3ED%3A20250220%3C%2Fdcterms%3Aissued%3E%0A%20%20%3Cdcterms%3Aidentifier%20xsi%3Atype%3D%22dcterms%3AURI%22%3Ehttps%3A%2F%2Farxiv.org%2Fabs%2F2405.14766%3C%2Fdcterms%3Aidentifier%3E%0A%20%20%3Cdcterms%3Aabstract%3EAdvances%20in%20Large%20Language%20Models%20(LLMs)%20have%20led%20to%20significant%20interest%20in%20their%20potential%20to%20support%20human%20experts%20across%20a%20range%20of%20domains%2C%20including%20public%20health.%20In%20this%20work%20we%20present%20automated%20evaluations%20of%20LLMs%20for%20public%20health%20tasks%20involving%20the%20classification%20and%20extraction%20of%20free%20text.%20We%20combine%20six%20externally%20annotated%20datasets%20with%20seven%20new%20internally%20annotated%20datasets%20to%20evaluate%20LLMs%20for%20processing%20text%20related%20to%3A%20health%20burden%2C%20epidemiological%20risk%20factors%2C%20and%20public%20health%20interventions.%20We%20evaluate%20eleven%20open-weight%20LLMs%20(7-123%20billion%20parameters)%20across%20all%20tasks%20using%20zero-shot%20in-context%20learning.%20We%20find%20that%20Llama-3.3-70B-Instruct%20is%20the%20highest%20performing%20model%2C%20achieving%20the%20best%20results%20on%208%2F16%20tasks%20(using%20micro-F1%20scores).%20We%20see%20significant%20variation%20across%20tasks%20with%20all%20open-weight%20LLMs%20scoring%20below%2060%25%20micro-F1%20on%20some%20challenging%20tasks%2C%20such%20as%20Contact%20Classification%2C%20while%20all%20LLMs%20achieve%20greater%20than%2080%25%20micro-F1%20on%20others%2C%20such%20as%20GI%20Illness%20Classification.%20For%20a%20subset%20of%2011%20tasks%2C%20we%20also%20evaluate%20three%20GPT-4%20and%20GPT-4o%20series%20models%20and%20find%20comparable%20results%20to%20Llama-3.3-70B-Instruct.%20Overall%2C%20based%20on%20these%20initial%20results%20we%20find%20promising%20signs%20that%20LLMs%20may%20be%20useful%20tools%20for%20public%20health%20experts%20to%20extract%20information%20from%20a%20wide%20variety%20of%20free%20text%20sources%2C%20and%20support%20public%20health%20surveillance%2C%20research%2C%20and%20interventions.%20Figure%201%3A%20Public%20Health%20Large%20Language%20Model%20(LLM)%20Evaluation%20Areas%20%5BNumber%20of%20Evalua-%20tions%5D%20and%20Task%20Evaluation%20Micro-F1%20Scores%20by%20Model.%20(Left)%20We%20divide%20public%20health%20free%20text%20processing%20into%20three%20sub-domains%3A%20(1)%20burden%2C%20such%20as%20reports%20of%20disease%20symptoms%2C%20cases%2C%20morbidity%2C%20or%20mortality%3B%20(2)%20risk%20factors%2C%20such%20as%20environmental%2C%20behavioural%2C%20or%20biological%20contributors%3B%20(3)%20interventions%2C%20pharmaceutical%20and%20non-pharmaceutical.%20(Right)%20Evaluation%20results%20(micro-F1%20scores)%20for%20seven%20open-weight%20LLM%20architectures%20(highest%20performing%20model%20evaluated%20from%20each)%20across%20the%2016%20task%3C%2Fdcterms%3Aabstract%3E%0A%20%20%3Cdcterms%3Atype%3Earticle-journal%3C%2Fdcterms%3Atype%3E%0A%3C%2Fmetadata%3E%0A">DC XML</a></small>
+  <small><a href="#ref-arxiv-2405-14766v2"><code>arxiv-2405.14766v2</code></a> · library · <a href="https://arxiv.org/abs/2405.14766">link</a> · source: <code>cat-harness/library/content/arxiv-2405.14766v2/manifest.jsonld</code> · held: <code>cat-harness/library/content/arxiv-2405.14766v2</code><br />
+  export: <a download="arxiv-2405.14766v2.bib" href="data:application/x-bibtex;charset=utf-8,%40article%7Barxiv-2405.14766v2%2C%0A%20%20author%20%3D%20%7BHarris1%2C%20Joshua%20and%20%E2%80%A0%20and%20Laurence1%2C%20Timothy%20and%20Loman1%2C%20Leo%20and%20Grayson1%2C%20Fan%20and%20Nonnenmacher1%2C%20Toby%20and%20Harry%7D%2C%0A%20%20title%20%20%3D%20%7B%7BEvaluating%20Large%20Language%20Models%20for%20Public%20Health%20Classification%20and%20Extraction%20Tasks%7D%7D%2C%0A%20%20year%20%20%20%3D%20%7B2025%7D%2C%0A%20%20url%20%20%20%20%3D%20%7Bhttps%3A%2F%2Farxiv.org%2Fabs%2F2405.14766%7D%2C%0A%20%20note%20%20%20%3D%20%7BarXiv%3A2405.14766%7D%2C%0A%7D%0A">BibTeX</a> · <a download="arxiv-2405.14766v2.ris" href="data:application/x-research-info-systems;charset=utf-8,TY%20%20-%20JOUR%0D%0AID%20%20-%20arxiv-2405.14766v2%0D%0AAU%20%20-%20Harris1%2C%20Joshua%0D%0AAU%20%20-%20%E2%80%A0%0D%0AAU%20%20-%20Laurence1%2C%20Timothy%0D%0AAU%20%20-%20Loman1%2C%20Leo%0D%0AAU%20%20-%20Grayson1%2C%20Fan%0D%0AAU%20%20-%20Nonnenmacher1%2C%20Toby%0D%0AAU%20%20-%20Harry%0D%0ATI%20%20-%20Evaluating%20Large%20Language%20Models%20for%20Public%20Health%20Classification%20and%20Extraction%20Tasks%0D%0ADA%20%20-%20D%3A20250220%0D%0AUR%20%20-%20https%3A%2F%2Farxiv.org%2Fabs%2F2405.14766%0D%0AAB%20%20-%20Advances%20in%20Large%20Language%20Models%20(LLMs)%20have%20led%20to%20significant%20interest%20in%20their%20potential%20to%20support%20human%20experts%20across%20a%20range%20of%20domains%2C%20including%20public%20health.%20In%20this%20work%20we%20present%20automated%20evaluations%20of%20LLMs%20for%20public%20health%20tasks%20involving%20the%20classification%20and%20extraction%20of%20free%20text.%20We%20combine%20six%20externally%20annotated%20datasets%20with%20seven%20new%20internally%20annotated%20datasets%20to%20evaluate%20LLMs%20for%20processing%20text%20related%20to%3A%20health%20burden%2C%20epidemiological%20risk%20factors%2C%20and%20public%20health%20interventions.%20We%20evaluate%20eleven%20open-weight%20LLMs%20(7-123%20billion%20parameters)%20across%20all%20tasks%20using%20zero-shot%20in-context%20learning.%20We%20find%20that%20Llama-3.3-70B-Instruct%20is%20the%20highest%20performing%20model%2C%20achieving%20the%20best%20results%20on%208%2F16%20tasks%20(using%20micro-F1%20scores).%20We%20see%20significant%20variation%20across%20tasks%20with%20all%20open-weight%20LLMs%20scoring%20below%2060%25%20micro-F1%20on%20some%20challenging%20tasks%2C%20such%20as%20Contact%20Classification%2C%20while%20all%20LLMs%20achieve%20greater%20than%2080%25%20micro-F1%20on%20others%2C%20such%20as%20GI%20Illness%20Classification.%20For%20a%20subset%20of%2011%20tasks%2C%20we%20also%20evaluate%20three%20GPT-4%20and%20GPT-4o%20series%20models%20and%20find%20comparable%20results%20to%20Llama-3.3-70B-Instruct.%20Overall%2C%20based%20on%20these%20initial%20results%20we%20find%20promising%20signs%20that%20LLMs%20may%20be%20useful%20tools%20for%20public%20health%20experts%20to%20extract%20information%20from%20a%20wide%20variety%20of%20free%20text%20sources%2C%20and%20support%20public%20health%20surveillance%2C%20research%2C%20and%20interventions.%20Figure%201%3A%20Public%20Health%20Large%20Language%20Model%20(LLM)%20Evaluation%20Areas%20%5BNumber%20of%20Evalua-%20tions%5D%20and%20Task%20Evaluation%20Micro-F1%20Scores%20by%20Model.%20(Left)%20We%20divide%20public%20health%20free%20text%20processing%20into%20three%20sub-domains%3A%20(1)%20burden%2C%20such%20as%20reports%20of%20disease%20symptoms%2C%20cases%2C%20morbidity%2C%20or%20mortality%3B%20(2)%20risk%20factors%2C%20such%20as%20environmental%2C%20behavioural%2C%20or%20biological%20contributors%3B%20(3)%20interventions%2C%20pharmaceutical%20and%20non-pharmaceutical.%20(Right)%20Evaluation%20results%20(micro-F1%20scores)%20for%20seven%20open-weight%20LLM%20architectures%20(highest%20performing%20model%20evaluated%20from%20each)%20across%20the%2016%20task%0D%0AER%20%20-%20%0D%0A">RIS</a> · <a download="arxiv-2405.14766v2.csl.json" href="data:application/vnd.citationstyles.csl+json;charset=utf-8,%5B%0A%20%20%7B%0A%20%20%20%20%22id%22%3A%20%22arxiv-2405.14766v2%22%2C%0A%20%20%20%20%22type%22%3A%20%22article-journal%22%2C%0A%20%20%20%20%22title%22%3A%20%22Evaluating%20Large%20Language%20Models%20for%20Public%20Health%20Classification%20and%20Extraction%20Tasks%22%2C%0A%20%20%20%20%22author%22%3A%20%5B%0A%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%22family%22%3A%20%22Harris1%22%2C%0A%20%20%20%20%20%20%20%20%22given%22%3A%20%22Joshua%22%0A%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%22family%22%3A%20%22%E2%80%A0%22%0A%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%22family%22%3A%20%22Laurence1%22%2C%0A%20%20%20%20%20%20%20%20%22given%22%3A%20%22Timothy%22%0A%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%22family%22%3A%20%22Loman1%22%2C%0A%20%20%20%20%20%20%20%20%22given%22%3A%20%22Leo%22%0A%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%22family%22%3A%20%22Grayson1%22%2C%0A%20%20%20%20%20%20%20%20%22given%22%3A%20%22Fan%22%0A%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%22family%22%3A%20%22Nonnenmacher1%22%2C%0A%20%20%20%20%20%20%20%20%22given%22%3A%20%22Toby%22%0A%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%22family%22%3A%20%22Harry%22%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%5D%2C%0A%20%20%20%20%22issued%22%3A%20%7B%0A%20%20%20%20%20%20%22raw%22%3A%20%22D%3A20250220%22%0A%20%20%20%20%7D%2C%0A%20%20%20%20%22URL%22%3A%20%22https%3A%2F%2Farxiv.org%2Fabs%2F2405.14766%22%2C%0A%20%20%20%20%22abstract%22%3A%20%22Advances%20in%20Large%20Language%20Models%20(LLMs)%20have%20led%20to%20significant%20interest%20in%20their%20potential%20to%20support%20human%20experts%20across%20a%20range%20of%20domains%2C%20including%20public%20health.%20In%20this%20work%20we%20present%20automated%20evaluations%20of%20LLMs%20for%20public%20health%20tasks%20involving%20the%20classification%20and%20extraction%20of%20free%20text.%20We%20combine%20six%20externally%20annotated%20datasets%20with%20seven%20new%20internally%20annotated%20datasets%20to%20evaluate%20LLMs%20for%20processing%20text%20related%20to%3A%20health%20burden%2C%20epidemiological%20risk%20factors%2C%20and%20public%20health%20interventions.%20We%20evaluate%20eleven%20open-weight%20LLMs%20(7-123%20billion%20parameters)%20across%20all%20tasks%20using%20zero-shot%20in-context%20learning.%20We%20find%20that%20Llama-3.3-70B-Instruct%20is%20the%20highest%20performing%20model%2C%20achieving%20the%20best%20results%20on%208%2F16%20tasks%20(using%20micro-F1%20scores).%20We%20see%20significant%20variation%20across%20tasks%20with%20all%20open-weight%20LLMs%20scoring%20below%2060%25%20micro-F1%20on%20some%20challenging%20tasks%2C%20such%20as%20Contact%20Classification%2C%20while%20all%20LLMs%20achieve%20greater%20than%2080%25%20micro-F1%20on%20others%2C%20such%20as%20GI%20Illness%20Classification.%20For%20a%20subset%20of%2011%20tasks%2C%20we%20also%20evaluate%20three%20GPT-4%20and%20GPT-4o%20series%20models%20and%20find%20comparable%20results%20to%20Llama-3.3-70B-Instruct.%20Overall%2C%20based%20on%20these%20initial%20results%20we%20find%20promising%20signs%20that%20LLMs%20may%20be%20useful%20tools%20for%20public%20health%20experts%20to%20extract%20information%20from%20a%20wide%20variety%20of%20free%20text%20sources%2C%20and%20support%20public%20health%20surveillance%2C%20research%2C%20and%20interventions.%20Figure%201%3A%20Public%20Health%20Large%20Language%20Model%20(LLM)%20Evaluation%20Areas%20%5BNumber%20of%20Evalua-%20tions%5D%20and%20Task%20Evaluation%20Micro-F1%20Scores%20by%20Model.%20(Left)%20We%20divide%20public%20health%20free%20text%20processing%20into%20three%20sub-domains%3A%20(1)%20burden%2C%20such%20as%20reports%20of%20disease%20symptoms%2C%20cases%2C%20morbidity%2C%20or%20mortality%3B%20(2)%20risk%20factors%2C%20such%20as%20environmental%2C%20behavioural%2C%20or%20biological%20contributors%3B%20(3)%20interventions%2C%20pharmaceutical%20and%20non-pharmaceutical.%20(Right)%20Evaluation%20results%20(micro-F1%20scores)%20for%20seven%20open-weight%20LLM%20architectures%20(highest%20performing%20model%20evaluated%20from%20each)%20across%20the%2016%20task%22%2C%0A%20%20%20%20%22note%22%3A%20%22arXiv%3A2405.14766%22%0A%20%20%7D%0A%5D%0A">CSL-JSON</a> · <a download="arxiv-2405.14766v2.dc.xml" href="data:application/xml;charset=utf-8,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3C!--%20Dublin%20Core%20rendering%20of%20arxiv-2405.14766v2%2C%20generated%20by%20folio-assistant-core%2Fscripts%2Fdc-render.ts.%20Do%20not%20edit.%20--%3E%0A%3Cmetadata%20xmlns%3D%22https%3A%2F%2Flitlfred.github.io%2Ffolio-assistant-core%2Fv0%2Fns%2Fdspace%2F%22%0A%20%20%20%20xmlns%3Adc%3D%22http%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%22%0A%20%20%20%20xmlns%3Adcterms%3D%22http%3A%2F%2Fpurl.org%2Fdc%2Fterms%2F%22%0A%20%20%20%20xmlns%3Axsi%3D%22http%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema-instance%22%3E%0A%20%20%3Cdcterms%3Atitle%3EEvaluating%20Large%20Language%20Models%20for%20Public%20Health%20Classification%20and%20Extraction%20Tasks%3C%2Fdcterms%3Atitle%3E%0A%20%20%3Cdcterms%3Acreator%3EHarris1%2C%20Joshua%3C%2Fdcterms%3Acreator%3E%0A%20%20%3Cdcterms%3Acreator%3E%E2%80%A0%3C%2Fdcterms%3Acreator%3E%0A%20%20%3Cdcterms%3Acreator%3ELaurence1%2C%20Timothy%3C%2Fdcterms%3Acreator%3E%0A%20%20%3Cdcterms%3Acreator%3ELoman1%2C%20Leo%3C%2Fdcterms%3Acreator%3E%0A%20%20%3Cdcterms%3Acreator%3EGrayson1%2C%20Fan%3C%2Fdcterms%3Acreator%3E%0A%20%20%3Cdcterms%3Acreator%3ENonnenmacher1%2C%20Toby%3C%2Fdcterms%3Acreator%3E%0A%20%20%3Cdcterms%3Acreator%3EHarry%3C%2Fdcterms%3Acreator%3E%0A%20%20%3Cdcterms%3Aissued%3ED%3A20250220%3C%2Fdcterms%3Aissued%3E%0A%20%20%3Cdcterms%3Aidentifier%20xsi%3Atype%3D%22dcterms%3AURI%22%3Ehttps%3A%2F%2Farxiv.org%2Fabs%2F2405.14766%3C%2Fdcterms%3Aidentifier%3E%0A%20%20%3Cdcterms%3Aabstract%3EAdvances%20in%20Large%20Language%20Models%20(LLMs)%20have%20led%20to%20significant%20interest%20in%20their%20potential%20to%20support%20human%20experts%20across%20a%20range%20of%20domains%2C%20including%20public%20health.%20In%20this%20work%20we%20present%20automated%20evaluations%20of%20LLMs%20for%20public%20health%20tasks%20involving%20the%20classification%20and%20extraction%20of%20free%20text.%20We%20combine%20six%20externally%20annotated%20datasets%20with%20seven%20new%20internally%20annotated%20datasets%20to%20evaluate%20LLMs%20for%20processing%20text%20related%20to%3A%20health%20burden%2C%20epidemiological%20risk%20factors%2C%20and%20public%20health%20interventions.%20We%20evaluate%20eleven%20open-weight%20LLMs%20(7-123%20billion%20parameters)%20across%20all%20tasks%20using%20zero-shot%20in-context%20learning.%20We%20find%20that%20Llama-3.3-70B-Instruct%20is%20the%20highest%20performing%20model%2C%20achieving%20the%20best%20results%20on%208%2F16%20tasks%20(using%20micro-F1%20scores).%20We%20see%20significant%20variation%20across%20tasks%20with%20all%20open-weight%20LLMs%20scoring%20below%2060%25%20micro-F1%20on%20some%20challenging%20tasks%2C%20such%20as%20Contact%20Classification%2C%20while%20all%20LLMs%20achieve%20greater%20than%2080%25%20micro-F1%20on%20others%2C%20such%20as%20GI%20Illness%20Classification.%20For%20a%20subset%20of%2011%20tasks%2C%20we%20also%20evaluate%20three%20GPT-4%20and%20GPT-4o%20series%20models%20and%20find%20comparable%20results%20to%20Llama-3.3-70B-Instruct.%20Overall%2C%20based%20on%20these%20initial%20results%20we%20find%20promising%20signs%20that%20LLMs%20may%20be%20useful%20tools%20for%20public%20health%20experts%20to%20extract%20information%20from%20a%20wide%20variety%20of%20free%20text%20sources%2C%20and%20support%20public%20health%20surveillance%2C%20research%2C%20and%20interventions.%20Figure%201%3A%20Public%20Health%20Large%20Language%20Model%20(LLM)%20Evaluation%20Areas%20%5BNumber%20of%20Evalua-%20tions%5D%20and%20Task%20Evaluation%20Micro-F1%20Scores%20by%20Model.%20(Left)%20We%20divide%20public%20health%20free%20text%20processing%20into%20three%20sub-domains%3A%20(1)%20burden%2C%20such%20as%20reports%20of%20disease%20symptoms%2C%20cases%2C%20morbidity%2C%20or%20mortality%3B%20(2)%20risk%20factors%2C%20such%20as%20environmental%2C%20behavioural%2C%20or%20biological%20contributors%3B%20(3)%20interventions%2C%20pharmaceutical%20and%20non-pharmaceutical.%20(Right)%20Evaluation%20results%20(micro-F1%20scores)%20for%20seven%20open-weight%20LLM%20architectures%20(highest%20performing%20model%20evaluated%20from%20each)%20across%20the%2016%20task%3C%2Fdcterms%3Aabstract%3E%0A%20%20%3Cdcterms%3Atype%3Earticle-journal%3C%2Fdcterms%3Atype%3E%0A%3C%2Fmetadata%3E%0A">DC XML</a></small>
 </li>
 </ol>
 <script>

@@ -64,7 +64,20 @@
       "labelEnd": "1",
       "words": 72,
       "summary": null,
-      "keywords": [],
+      "keywords": [
+        {
+          "term": "oxford",
+          "heading": false
+        },
+        {
+          "term": "creative",
+          "heading": false
+        },
+        {
+          "term": "accepted",
+          "heading": false
+        }
+      ],
       "extract": "Received: August 8, 2023. Revised: October 2, 2023. Accepted: November 7, 2023 © The Author(s) 2023. Published by Oxford University Press. This is an Open Access article distributed under the terms of the Creative Commons Attribution License (https://creativecommons.org/licenses/by/4.0/), which permits unrestricted reuse, distribution, and reproduction in any medium, provided the original work is properly cited.",
       "extractCut": true
     },
@@ -79,7 +92,40 @@
       "labelEnd": "4",
       "words": 2554,
       "summary": null,
-      "keywords": [],
+      "keywords": [
+        {
+          "term": "open technologies",
+          "heading": true
+        },
+        {
+          "term": "full-stac remedy",
+          "heading": true
+        },
+        {
+          "term": "open content",
+          "heading": true
+        },
+        {
+          "term": "open architectures",
+          "heading": true
+        },
+        {
+          "term": "open standards",
+          "heading": true
+        },
+        {
+          "term": "full-stac approach",
+          "heading": false
+        },
+        {
+          "term": "software developers",
+          "heading": false
+        },
+        {
+          "term": "global strategy",
+          "heading": false
+        }
+      ],
       "extract": "transformation: open standards, technologies, architectures and content Garrett L Mehl 1, *,†, Martin G Seneviratne2,†, Matt L Berg3, Suhel Bidani4, Rebecca L Distler5, Marelize Gorgens6, Karin E Kallander7, Alain B Labrique1, Mark S Landry8, Carl Leitner1, Peter B Lubell-Doughtie3, Alvin B Marcelo 9, Yossi Matias10, Jennifer Nelson11, Von Nguyen12, Jean Philbert Nsengimana13, Maeghan Orton14, Daniel R Otzoy",
       "extractCut": true
     },
@@ -94,7 +140,20 @@
       "labelEnd": "4",
       "words": 55,
       "summary": null,
-      "keywords": [],
+      "keywords": [
+        {
+          "term": "authors",
+          "heading": false
+        },
+        {
+          "term": "views",
+          "heading": false
+        },
+        {
+          "term": "interest",
+          "heading": true
+        }
+      ],
       "extract": "The authors declare that they have no conflicts of interest regard- ing the research, authorship and/or publication of this article. Authors are participating in their personal capacity and the views expressed in this publication are those of the authors and do not necessarily represent the views of the funding agencies, the companies, or institutions mentioned.",
       "extractCut": false
     },
@@ -109,7 +168,20 @@
       "labelEnd": "4",
       "words": 65,
       "summary": null,
-      "keywords": [],
+      "keywords": [
+        {
+          "term": "contributed",
+          "heading": false
+        },
+        {
+          "term": "review",
+          "heading": false
+        },
+        {
+          "term": "original",
+          "heading": false
+        }
+      ],
       "extract": "G.M., M.S., F.H. and C.L. wrote the original draft and contributed to the conceptualization, review and editing of the manuscript. M.B., K.K., M.L., J.P.N., M.S., D.S., N.R. contributed to the conceptualiza- tion,review and editing of the manuscript. S.B.,R.D.,A.M.,Y.M.,J.N., V.N., M.O., D.R.O.G., D.R.O., S.R., J.T., B.T., S.W., A.L., M.G. contributed to the review and editing of the manuscript. P.L. contributed to",
       "extractCut": true
     },
@@ -124,7 +196,40 @@
       "labelEnd": "5",
       "words": 1234,
       "summary": null,
-      "keywords": [],
+      "keywords": [
+        {
+          "term": "united nations",
+          "heading": false
+        },
+        {
+          "term": "keyword google",
+          "heading": false
+        },
+        {
+          "term": "world bank",
+          "heading": false
+        },
+        {
+          "term": "strategy overview",
+          "heading": false
+        },
+        {
+          "term": "smart guidelines",
+          "heading": false
+        },
+        {
+          "term": "african union",
+          "heading": false
+        },
+        {
+          "term": "fhir api",
+          "heading": false
+        },
+        {
+          "term": "pdf",
+          "heading": false
+        }
+      ],
       "extract": "No new data were generated or analyzed in support of this research. REFERENCES 1. African Union. African Union Health Information Exchange Guidelines and Standards. Addis Ababa: African Union, 2023. https://africacdc.org/download/african-union-health- information-exchange-guidelines-and-standards/. 2. Argentina Ministry of Health . “Argentina FHIR Core profile.” 2021.",
       "extractCut": true
     }
@@ -137,6 +242,56 @@
     }
   },
   "withheld": false,
+  "keywords": [
+    {
+      "term": "oxford open",
+      "heading": false
+    },
+    {
+      "term": "world bank",
+      "heading": false
+    },
+    {
+      "term": "keyword google",
+      "heading": false
+    },
+    {
+      "term": "open technologies",
+      "heading": true
+    },
+    {
+      "term": "oxford university",
+      "heading": false
+    },
+    {
+      "term": "open standards",
+      "heading": true
+    },
+    {
+      "term": "open content",
+      "heading": true
+    },
+    {
+      "term": "global strategy",
+      "heading": false
+    },
+    {
+      "term": "open architectures",
+      "heading": true
+    },
+    {
+      "term": "open access",
+      "heading": false
+    },
+    {
+      "term": "smart guidelines",
+      "heading": false
+    },
+    {
+      "term": "open source",
+      "heading": false
+    }
+  ],
   "pageLabels": [
     {
       "physical": 1,

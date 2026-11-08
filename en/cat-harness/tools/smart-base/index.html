@@ -335,7 +335,7 @@
 
   `relative_url` for the same reason every other path here uses it: the site is
   served from `/folio-assistant` on the canonical deploy and from
-  `/folio-assistant/STAGING/<branch>` on a preview, and an absolute literal
+  `/folio-assistant/branches/<branch>` on a preview, and an absolute literal
   404s on every deploy but one.
 
   A URL rather than inline JSON, unlike `fa-site-links` above, because the
@@ -409,14 +409,14 @@
   instance's `glassStrip` declaration by `sync-docs-harness.ts`; absent when
   nothing declared one. Replica pages read `assets/harness/glass-strip.json`.
 -->
-<meta name="fa-glass-strip" content="[&quot;glass-todos&quot;,&quot;glass-settings&quot;]">
+<meta name="fa-glass-strip" content="[&quot;glass-todos&quot;,&quot;glass-settings&quot;,&quot;library&quot;]">
 
 <!--
   THE SITE'S BASEURL, for the tiles above.
 
   Every other site-root path on this page is composed by Liquid: `relative_url`
   prepends `site.baseurl`, which is `/folio-assistant` on the canonical deploy
-  and `/folio-assistant/STAGING/<branch>` on a preview. The tiles cannot use
+  and `/folio-assistant/branches/<branch>` on a preview. The tiles cannot use
   it, because they reach the client as JSON and are composed in `docs-ui.js`
   after Liquid has finished — so the base has to travel with them.
 
@@ -447,7 +447,7 @@
 
   `feature-staging.yml` writes `staging_slug` into `_data/build.yml`;
   `docs-site.yml` writes the same file WITHOUT it. So a non-empty value here
-  means "a STAGING/<slug>/ preview", an empty one means the canonical deploy
+  means "a branches/<slug>/ preview", an empty one means the canonical deploy
   or a local build.
 
   It exists so a tile can vanish with its page. `compose-docs.ts` withholds a
@@ -563,7 +563,7 @@
 
   These five are served from stable paths with no hash in the name, so a
   browser that has the page cached keeps the old CSS and JS until its
-  `max-age` runs out. On the live site that is invisible. On a STAGING
+  `max-age` runs out. On the live site that is invisible. On a branches/
   preview it is the whole point of the deployment: the reviewer opens the URL
   they opened an hour ago, gets yesterday's stylesheet, and reports "i dont
   see changes" — which is indistinguishable from a deploy that never
@@ -582,7 +582,7 @@
 -->
 <!-- The harness icon row's own style, which railed pages load without docs-ui.css (beans `lhvt`, `9rq1`). -->
 <link rel="stylesheet" href="../../../../assets/css/navbar-row.css?v=7d7d00921e0f">
-<link rel="stylesheet" href="../../../../assets/css/docs-ui.css?v=18eb22b50395">
+<link rel="stylesheet" href="../../../../assets/css/docs-ui.css?v=34ea92e5aa62">
 <!-- Narrow viewports: wide content scrolls in its own box, never the page
      (bean `2r2n`). The standalone viewers inline the same file through
      `withViewerNav`, so both kinds of page read one set of rules. -->
@@ -593,7 +593,7 @@
   `state-visualizer.ts` can inline exactly these bytes into the generated
   `<base>/<stub>/state-visualizer/` pages. One rule, two surfaces.
 -->
-<link rel="stylesheet" href="../../../../assets/css/work-plan.css?v=ed3e33f033fe">
+<link rel="stylesheet" href="../../../../assets/css/work-plan.css?v=bd8c73337b01">
 <!-- Sticky themes. GENERATED from the theme nodes in `schemas/ui/themes.ts` by
      `bun run cat themes:css`; `themes:css:check` fails the build when it is stale.
      Loaded AFTER docs-ui.css deliberately: it supplies the `--fa-sticky-*`
@@ -607,7 +607,7 @@
      `avatars:css:check` fails the build when it is stale. One stylesheet
      rather than 68 assets: the glyph is a mask and the colour is a property,
      so a scheme swap is a custom property and the trash state is a selector. -->
-<link rel="stylesheet" href="../../../../assets/css/avatars.css?v=a0806788c1f5">
+<link rel="stylesheet" href="../../../../assets/css/avatars.css?v=05433996459b">
 
 <!--
   The kinds THIS INSTANCE DECLARES, for the avatar fan.
@@ -622,7 +622,7 @@
   all, and a fetch for that would put a spinner in front of a badge.
 -->
 <!-- NOT MOVED: same reason as fa-site-links above. -->
-<script type="application/json" id="fa-declared-kinds">["archimate","beans","folio","fsh-guts","glossary","library","public-comments","todo-items","todos","uploads"]</script>
+<script type="application/json" id="fa-declared-kinds">["archimate","beans","folio","fsh-guts","glossary","library","public-comments","references","todo-items","todos","uploads"]</script>
 <!--
   FIRST of the deferred scripts: it fills `#fa-navbar-row` and
   `meta[name=fa-tiles]` before any reader runs (bean `gp2f`).
@@ -641,11 +641,11 @@
 <script src="../../../../assets/js/kg-render.js" defer></script>
 <!-- BEFORE docs-ui.js, which calls it: the one drawing of the harness icon row (beans `lhvt`, `9rq1`). -->
 <script src="../../../../assets/js/navbar-row.js?v=6bb19e1d17a5" defer></script>
-<script src="../../../../assets/js/docs-ui.js?v=52e4c68c64c7" defer></script>
+<script src="../../../../assets/js/docs-ui.js?v=2cbe44e3bd42" defer></script>
 <!-- The edit, source and feedback links of every page, from the platform's one
   recipe (cat-harness-tools/src/core/edit-links.ts, bean v433): links carry their
   facts and this builds the hrefs. -->
-<script src="../../../../assets/js/edit-links.js?v=4f82faf45c35" defer></script>
+<script src="../../../../assets/js/edit-links.js?v=333851d0e55e" defer></script>
 
 <!--
   The work-plan dashboard. SELF-MOUNTING on any page carrying
@@ -735,7 +735,36 @@
   --link-color: #00477d;
   --border-color: #eeeeee;
   }
-</style>
+</style><!--
+  THE PAGE GROUND: a harness's theme art behind every one of its docs pages.
+
+  Bean `yj32`, owner card Q-DEP-2 A (2026-11-01): the avatar is "the default
+  display background for their corresponding docs/ (ghpages) rendering".
+
+  WHICH HARNESS. Each tile in `_data/harness.json` carries `pageGround`
+  (cat-harness-tools `harness-tiles.ts`): the URL segments that make a page
+  that instance's, and its three crops. The FIRST tile whose scope the URL
+  contains wins; tiles come dependents first, so the content instance a page
+  is about beats the platform that renders it. The site owner is the fallback
+  (`siteDefault`), never a `/` scope, because `/` is in every URL. A tile with
+  no `art` gets no ground: a palette-only theme is a choice, not a gap.
+
+  A CSS BACKGROUND HERE, where the stickies use `<picture>`. A sticky places
+  words inside a measured quiet region of one crop, so the crop must be the
+  file. The page ground places nothing on the art, so a media query choosing
+  the crop is exact, and no markup is added to any page.
+
+  TWO SCRIMS, both the page's own background colour (not the theme's sticky
+  scrim, because the ink they protect is the page's ink). The page gets 85%,
+  so the art shows in the margins and under the header. The text column,
+  `.main-content`, gets a second layer at 96%, so the words sit on 99.4% page
+  colour. The art runs the full range (measured: every crop of the three
+  grounds has pixels at luminance 0.000 and 1.000), so the bound is the worst
+  pixel: text and links stay within 0.1:1 of the plain page in both schemes
+  (light links 4.94:1 against 5.03:1, dark links 4.09:1 against 4.14:1, dark body text 11.5:1 against 11.7:1).
+  A single 92% layer was measured first and dropped: it took dark-scheme
+  links from 4.14:1 to 3.35:1.
+-->
 
 <link rel="stylesheet" href="../../../../assets/css/navbar.css"><script src="../../../../assets/navbar/rail-1nr7jo2rxsc.js" defer></script><script src="../../../../assets/js/navbar.js" defer></script><link rel="stylesheet" href="../../../../assets/page-layout.css" data-fa-page-layout><script src="../../../../assets/page-layout.js" defer data-fa-page-layout></script><meta name="fa-pinned-data" content="../../../.."></head>
 
@@ -980,7 +1009,7 @@ tool advertising a capability the graph cannot locate.</p>
   <tbody>
     <tr>
       <td><a id="bpmn-to-fsh"></a><a href="#bpmn-to-fsh"><code class="language-plaintext highlighter-rouge">bpmn-to-fsh</code></a><br />BPMN → FHIR Shorthand</td>
-      <td>Derive FSH from a DAK’s BPMN business processes — the render direction, of which the extractors are the inverse.</td>
+      <td>Derive FSH from a DAK’s BPMN business processes (the inverse of the extractors).</td>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">smart-base-tools</code></td>
       <td>1 in / 1 out</td>
@@ -988,7 +1017,7 @@ tool advertising a capability the graph cannot locate.</p>
     </tr>
     <tr>
       <td><a id="dak-api-hub"></a><a href="#dak-api-hub"><code class="language-plaintext highlighter-rouge">dak-api-hub</code></a><br />DAK API hub</td>
-      <td>Generate <code class="language-plaintext highlighter-rouge">dak-api.html</code> and the per-artefact <code class="language-plaintext highlighter-rouge">.openapi.json</code> / <code class="language-plaintext highlighter-rouge">.displays.json</code> sidecars — the hub a reader enters the DAK API through.</td>
+      <td>Generate <code class="language-plaintext highlighter-rouge">dak-api.html</code>, the DAK API’s entry page, and the per-artefact <code class="language-plaintext highlighter-rouge">.openapi.json</code> / <code class="language-plaintext highlighter-rouge">.displays.json</code> sidecars.</td>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">dak-postprocessing</code><br /><code class="language-plaintext highlighter-rouge">ig-artifact-ingestion</code></td>
       <td>1 in / 2 out</td>
@@ -1004,7 +1033,7 @@ tool advertising a capability the graph cannot locate.</p>
     </tr>
     <tr>
       <td><a id="dmn-to-html"></a><a href="#dmn-to-html"><code class="language-plaintext highlighter-rouge">dmn-to-html</code></a><br />DMN → HTML</td>
-      <td>Render each DMN decision table to HTML for inclusion in a page, via <code class="language-plaintext highlighter-rouge">dmn2html.xslt</code> and <code class="language-plaintext highlighter-rouge">dmn.css</code>. The only human-readable rendering of a decision table an IG has.</td>
+      <td>Render each DMN decision table to an HTML fragment for a page, via <code class="language-plaintext highlighter-rouge">dmn2html.xslt</code> and <code class="language-plaintext highlighter-rouge">dmn.css</code>.</td>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">dak-preprocessing</code></td>
       <td>1 in / 1 out</td>
@@ -1012,7 +1041,7 @@ tool advertising a capability the graph cannot locate.</p>
     </tr>
     <tr>
       <td><a id="dmn-to-questionnaire"></a><a href="#dmn-to-questionnaire"><code class="language-plaintext highlighter-rouge">dmn-to-questionnaire</code></a><br />DMN → FHIR Questionnaire</td>
-      <td>Generate FHIR <code class="language-plaintext highlighter-rouge">Questionnaire</code> resources from a DAK’s DMN decision tables. Authoring, not rendering: its output is validated and indexed by the IG Publisher like any other resource.</td>
+      <td>Generate FHIR <code class="language-plaintext highlighter-rouge">Questionnaire</code> resources from a DAK’s DMN decision tables. Authoring, not rendering: the IG Publisher validates and indexes them like any other resource.</td>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">dak-preprocessing</code></td>
       <td>1 in / 2 out</td>
@@ -1020,23 +1049,23 @@ tool advertising a capability the graph cannot locate.</p>
     </tr>
     <tr>
       <td><a id="extract-dak"></a><a href="#extract-dak"><code class="language-plaintext highlighter-rouge">extract-dak</code></a><br />DAK spreadsheets → DMN, PlanDefinitions, CQL, requirements, logical models</td>
-      <td>Run WHO’s <code class="language-plaintext highlighter-rouge">extract_dak.py</code> in a DAK or IG repository: it reads the DAK template spreadsheets (<code class="language-plaintext highlighter-rouge">input/decision-logic/*.xlsx</code> via <code class="language-plaintext highlighter-rouge">dt_extractor</code>, <code class="language-plaintext highlighter-rouge">input/system-requirements/*.xlsx</code> via <code class="language-plaintext highlighter-rouge">req_extractor</code>, <code class="language-plaintext highlighter-rouge">input/dictionary/*.xlsx</code> via <code class="language-plaintext highlighter-rouge">dd_extractor</code>) and the BPMN, and writes the DMN decision tables, the CPG recommendation PlanDefinitions with their citations, CQL library skeletons, Requirements and logical-model FSH. The authoring path the WHO IG Starter Kit (<code class="language-plaintext highlighter-rouge">l3_decisiontables</code>, <code class="language-plaintext highlighter-rouge">l3_cql</code>) prescribes: an adapted decision or scheduling table is an edited copy of the upstream DAK’s spreadsheet, never a parallel format.</td>
+      <td>Run WHO’s <code class="language-plaintext highlighter-rouge">extract_dak.py</code> in a DAK or IG repository. It reads the DAK template spreadsheets (<code class="language-plaintext highlighter-rouge">input/decision-logic/*.xlsx</code> via <code class="language-plaintext highlighter-rouge">dt_extractor</code>, <code class="language-plaintext highlighter-rouge">input/system-requirements/*.xlsx</code> via <code class="language-plaintext highlighter-rouge">req_extractor</code>, <code class="language-plaintext highlighter-rouge">input/dictionary/*.xlsx</code> via <code class="language-plaintext highlighter-rouge">dd_extractor</code>) and the BPMN, and writes DMN decision tables, CPG recommendation PlanDefinitions with citations, CQL library skeletons, Requirements and logical-model FSH. Per the WHO IG Starter Kit (<code class="language-plaintext highlighter-rouge">l3_decisiontables</code>, <code class="language-plaintext highlighter-rouge">l3_cql</code>), an adapted decision or scheduling table is an edited copy of the upstream DAK’s spreadsheet, never a parallel format.</td>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">smart-base-tools</code></td>
       <td>1 in / 3 out</td>
       <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
-      <td><a id="immz-schedule-app-local"></a><a href="#immz-schedule-app-local"><code class="language-plaintext highlighter-rouge">immz-schedule-app-local</code></a><br />Run the immunization schedule-check app locally, on a WHO or country adaptation IG</td>
-      <td>Start the schedule-check web form from litlfred/awho-mcp on this machine: a HAPI FHIR server in Docker on 127.0.0.1, the WHO SMART Immunizations IG loaded, then a country adaptation IG after it (its decision-logic tables replace WHO’s, and its country profile is generated from its <code class="language-plaintext highlighter-rouge">input/l2/dependencies.yaml</code>), the CQL cache warmed, and the form served on 127.0.0.1. Unbuilt IGs are built with SUSHI first, and each Library’s CQL is embedded from <code class="language-plaintext highlighter-rouge">input/cql/</code> as the IG Publisher would. Re-running reuses a server already loaded from the same commits; <code class="language-plaintext highlighter-rouge">--down</code> stops both.</td>
+      <td><a id="immz-schedule-app-local"></a><a href="#immz-schedule-app-local"><code class="language-plaintext highlighter-rouge">immz-schedule-app-local</code></a><br />Run the immunization schedule-check app locally on a WHO or country IG</td>
+      <td>Start litlfred/awho-mcp’s schedule-check web form on this machine: a HAPI FHIR server in Docker, the WHO SMART Immunizations IG loaded, then optionally a country adaptation IG (its decision-logic tables replace WHO’s; its country profile is generated from its <code class="language-plaintext highlighter-rouge">input/l2/dependencies.yaml</code>), the CQL cache warmed, and the form served. Both listen on 127.0.0.1. Unbuilt IGs are built with SUSHI first, and each Library’s CQL is embedded from <code class="language-plaintext highlighter-rouge">input/cql/</code> as the IG Publisher would. A re-run reuses a server loaded from the same commits; <code class="language-plaintext highlighter-rouge">--down</code> stops both.</td>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">l4-application-run-local</code></td>
       <td>5 in / 1 out</td>
       <td><a href="https://github.com/litlfred/smart-ra/blob/cat/cat-harness/qa-reports/index.json"><code class="language-plaintext highlighter-rouge">qa-reports</code></a></td>
     </tr>
     <tr>
-      <td><a id="l1-extraction-pages"></a><a href="#l1-extraction-pages"><code class="language-plaintext highlighter-rouge">l1-extraction-pages</code></a><br />Write the L1 extraction viewer: a page per instance holding <code class="language-plaintext highlighter-rouge">l1-extraction</code> directories, and a hub</td>
-      <td>For every visualiser an instance declares <code class="language-plaintext highlighter-rouge">renderedBy: l1-extraction-pages</code>, write the hub at <code class="language-plaintext highlighter-rouge">&lt;locale&gt;/&lt;harness&gt;/&lt;id&gt;/</code> and, with <code class="language-plaintext highlighter-rouge">subgraphs: "instance"</code>, one page per instance that declares an <code class="language-plaintext highlighter-rouge">l1-extraction</code> directory. Each shows what was extracted, read from the files by what they declare: the L1 statements (graph nodes carrying a <code class="language-plaintext highlighter-rouge">statement</code>, and an authored L1 source’s <code class="language-plaintext highlighter-rouge">recommendations</code>), the candidate work list’s counts, coverage and decisions, each graph document’s nodes by type and edges by predicate (the L2 scenario candidates among them), the curation, mapping, vocabulary, exclusions and run context counted, and every file linked to its published copy (cat-harness’s <code class="language-plaintext highlighter-rouge">library:viz</code>) when the site holds it and to its source at the pinned commit. A declared directory not on disk is reported UNKNOWN, never as zero.</td>
+      <td><a id="l1-extraction-pages"></a><a href="#l1-extraction-pages"><code class="language-plaintext highlighter-rouge">l1-extraction-pages</code></a><br />L1 extraction viewer: a hub and a page per instance with <code class="language-plaintext highlighter-rouge">l1-extraction</code> directories</td>
+      <td>For every visualiser an instance declares with <code class="language-plaintext highlighter-rouge">renderedBy: l1-extraction-pages</code>, write the hub at <code class="language-plaintext highlighter-rouge">&lt;locale&gt;/&lt;harness&gt;/&lt;id&gt;/</code> and, with <code class="language-plaintext highlighter-rouge">subgraphs: "instance"</code>, one page per instance that declares an <code class="language-plaintext highlighter-rouge">l1-extraction</code> directory. Each page shows, from what the files declare: the L1 statements (graph nodes with a <code class="language-plaintext highlighter-rouge">statement</code>, and an authored L1 source’s <code class="language-plaintext highlighter-rouge">recommendations</code>); the candidate work list’s counts, coverage and decisions; each graph document’s nodes by type and edges by predicate (L2 scenario candidates included); counts of curation, mapping, vocabulary, exclusions and run context; and a link from every file to its published copy (cat-harness’s <code class="language-plaintext highlighter-rouge">library:viz</code>), when the site has it, and to its source at the pinned commit. A declared directory not on disk is reported UNKNOWN, never zero.</td>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">graph-rendering</code></td>
       <td>3 in / 1 out</td>
@@ -1044,7 +1073,7 @@ tool advertising a capability the graph cannot locate.</p>
     </tr>
     <tr>
       <td><a id="l1-recommendation-candidates"></a><a href="#l1-recommendation-candidates"><code class="language-plaintext highlighter-rouge">l1-recommendation-candidates</code></a><br />L1 guideline → recommendation candidates (L1 3.0)</td>
-      <td>Find every normative sentence of an ingested <code class="language-plaintext highlighter-rouge">library/</code> entry (folio-assistant-core’s <code class="language-plaintext highlighter-rouge">l1-coverage</code> markers), hint where a reading is uncertain, and propose the publication’s identity. Given an agent’s <code class="language-plaintext highlighter-rouge">l1-recommendation-curation/v1</code>, refuse a non-verbatim statement or an unknown location, and write the recommendations and remarks as an L1 3.0 graph, checked with <code class="language-plaintext highlighter-rouge">kg/src/validate.ts</code>, with coverage and the proposed (unsigned) exclusions.</td>
+      <td>Find every normative sentence of an ingested <code class="language-plaintext highlighter-rouge">library/</code> entry (folio-assistant-core’s <code class="language-plaintext highlighter-rouge">l1-coverage</code> markers), flag uncertain readings, and propose the publication’s identity. Given an agent’s <code class="language-plaintext highlighter-rouge">l1-recommendation-curation/v1</code>, refuse a non-verbatim statement or an unknown location, and write the recommendations and remarks as an L1 3.0 graph (checked with <code class="language-plaintext highlighter-rouge">kg/src/validate.ts</code>) with coverage and proposed, unsigned exclusions.</td>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">recommendation-candidates</code></td>
       <td>2 in / 5 out</td>
@@ -1052,7 +1081,7 @@ tool advertising a capability the graph cannot locate.</p>
     </tr>
     <tr>
       <td><a id="l1-recommendation-scenarios"></a><a href="#l1-recommendation-scenarios"><code class="language-plaintext highlighter-rouge">l1-recommendation-scenarios</code></a><br />L1 recommendations → L2 user-scenario candidates</td>
-      <td>One smart-kg L2 <code class="language-plaintext highlighter-rouge">user-scenario</code> candidate per L1 recommendation, joined to a <code class="language-plaintext highlighter-rouge">persona</code> and a <code class="language-plaintext highlighter-rouge">business-process</code> by the edges smart-kg L2 already licenses, from an agent’s <code class="language-plaintext highlighter-rouge">l1-scenario-mapping/v1</code>. Reuses the guide’s own personas and processes, then smart-base’s generic <code class="language-plaintext highlighter-rouge">DAK.Persona.*</code>; otherwise a glossary candidate or <code class="language-plaintext highlighter-rouge">could-not-determine</code>, each with a WARNING. Never invents a process.</td>
+      <td>From an agent’s <code class="language-plaintext highlighter-rouge">l1-scenario-mapping/v1</code>, write one smart-kg L2 <code class="language-plaintext highlighter-rouge">user-scenario</code> candidate per L1 recommendation, joined to a <code class="language-plaintext highlighter-rouge">persona</code> and a <code class="language-plaintext highlighter-rouge">business-process</code> by smart-kg L2’s existing edges. Reuses the guide’s own personas and processes, then smart-base’s generic <code class="language-plaintext highlighter-rouge">DAK.Persona.*</code>; otherwise a glossary candidate or <code class="language-plaintext highlighter-rouge">could-not-determine</code>, each with a WARNING. Never invents a process.</td>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">recommendation-scenarios</code></td>
       <td>4 in / 3 out</td>
@@ -1060,7 +1089,7 @@ tool advertising a capability the graph cannot locate.</p>
     </tr>
     <tr>
       <td><a id="l1-transcription-verbatim"></a><a href="#l1-transcription-verbatim"><code class="language-plaintext highlighter-rouge">l1-transcription-verbatim</code></a><br />Authored L1 → verbatim against transcriptions and image narratives</td>
-      <td>Check authored L1 (<code class="language-plaintext highlighter-rouge">*.l1.yaml</code>, the measles pattern) for a source with no usable text layer: each statement must be verbatim in the image narrative (<code class="language-plaintext highlighter-rouge">images.json</code>) or the <code class="language-plaintext highlighter-rouge">transcription</code> block it names, every transcription word (digits aside) must be corroborated by the entry’s text layer unless listed under <code class="language-plaintext highlighter-rouge">inspectionOnly</code>, and keys must be unique.</td>
+      <td>Check authored L1 (<code class="language-plaintext highlighter-rouge">*.l1.yaml</code>, the measles pattern) for a source with no usable text layer: each statement must be verbatim in the image narrative (<code class="language-plaintext highlighter-rouge">images.json</code>) or the <code class="language-plaintext highlighter-rouge">transcription</code> block it names; every transcription word (digits aside) must be corroborated by the entry’s text layer unless listed under <code class="language-plaintext highlighter-rouge">inspectionOnly</code>; keys must be unique.</td>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">transcription-verbatim</code></td>
       <td>1 in / 1 out</td>
@@ -1068,7 +1097,7 @@ tool advertising a capability the graph cannot locate.</p>
     </tr>
     <tr>
       <td><a id="smart-fhir-cache-seed"></a><a href="#smart-fhir-cache-seed"><code class="language-plaintext highlighter-rouge">smart-fhir-cache-seed</code></a><br />Seed the FHIR package cache, with WHO’s published site as a source</td>
-      <td>Run fhir-harness’s <code class="language-plaintext highlighter-rouge">fhir-cache-seed-npm</code> with smart-base’s publisher-site rules (<code class="language-plaintext highlighter-rouge">SMART_PUBLISHER_SITE_REPOS</code>): <code class="language-plaintext highlighter-rouge">smart.who.int.*</code> packages are also read from WHO’s published-site repository, each fetch verified against the tarball’s own package.json. Every other source and check is the seeder’s own.</td>
+      <td>Run fhir-harness’s <code class="language-plaintext highlighter-rouge">fhir-cache-seed-npm</code> with smart-base’s publisher-site rules (<code class="language-plaintext highlighter-rouge">SMART_PUBLISHER_SITE_REPOS</code>), so <code class="language-plaintext highlighter-rouge">smart.who.int.*</code> packages can also be read from WHO’s published-site repository, each fetch verified against the tarball’s own package.json. All other sources and checks are the seeder’s.</td>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">ig-publisher-fork</code></td>
       <td>2 in / 2 out</td>
@@ -1084,7 +1113,7 @@ tool advertising a capability the graph cannot locate.</p>
     </tr>
     <tr>
       <td><a id="terminology-lookup"></a><a href="#terminology-lookup"><code class="language-plaintext highlighter-rouge">terminology-lookup</code></a><br />Reuse-first terminology and code-list lookup</td>
-      <td>Look up a concept or code token for a semantic slot (<code class="language-plaintext highlighter-rouge">condition</code>, <code class="language-plaintext highlighter-rouge">intervention</code>, <code class="language-plaintext highlighter-rouge">persona</code>, <code class="language-plaintext highlighter-rouge">medicine</code>, <code class="language-plaintext highlighter-rouge">domain</code>, <code class="language-plaintext highlighter-rouge">business-process</code>, <code class="language-plaintext highlighter-rouge">recommendation-strength</code>, <code class="language-plaintext highlighter-rouge">recommendation-direction</code>, <code class="language-plaintext highlighter-rouge">evidence-certainty</code>) across the four reuse-first precedence rungs of the <code class="language-plaintext highlighter-rouge">terminology-coding</code> methodology: (1) target guide’s <code class="language-plaintext highlighter-rouge">l1-scenario-vocabulary/v1</code>, (2) <code class="language-plaintext highlighter-rouge">smart-base</code> generic personas (<code class="language-plaintext highlighter-rouge">DAK.Persona.*</code>), GRADE <code class="language-plaintext highlighter-rouge">code-lists/*.json</code> and <code class="language-plaintext highlighter-rouge">guideline-domain</code> SKOS glossary, (3) local WHO/ILO FSH CodeSystems (<code class="language-plaintext highlighter-rouge">ISCO08</code>, <code class="language-plaintext highlighter-rouge">CDHIv2</code>, <code class="language-plaintext highlighter-rouge">CDHIv1</code>, <code class="language-plaintext highlighter-rouge">CDSCv2</code>, <code class="language-plaintext highlighter-rouge">KGTerminologySystem</code>), and (4) a proposed <code class="language-plaintext highlighter-rouge">glossary-terms</code> candidate (<code class="language-plaintext highlighter-rouge">status: "candidate"</code>) or <code class="language-plaintext highlighter-rouge">could-not-determine</code> for <code class="language-plaintext highlighter-rouge">business-process</code>.</td>
+      <td>Look up a concept or code token for a semantic slot across the four reuse-first rungs of the <code class="language-plaintext highlighter-rouge">terminology-coding</code> methodology: (1) the target guide’s <code class="language-plaintext highlighter-rouge">l1-scenario-vocabulary/v1</code>; (2) smart-base’s generic personas (<code class="language-plaintext highlighter-rouge">DAK.Persona.*</code>), GRADE <code class="language-plaintext highlighter-rouge">code-lists/*.json</code> and the <code class="language-plaintext highlighter-rouge">guideline-domain</code> SKOS glossary; (3) local WHO/ILO FSH CodeSystems (<code class="language-plaintext highlighter-rouge">ISCO08</code>, <code class="language-plaintext highlighter-rouge">CDHIv2</code>, <code class="language-plaintext highlighter-rouge">CDHIv1</code>, <code class="language-plaintext highlighter-rouge">CDSCv2</code>, <code class="language-plaintext highlighter-rouge">KGTerminologySystem</code>); (4) a proposed <code class="language-plaintext highlighter-rouge">glossary-terms</code> candidate (<code class="language-plaintext highlighter-rouge">status: "candidate"</code>), or <code class="language-plaintext highlighter-rouge">could-not-determine</code> for <code class="language-plaintext highlighter-rouge">business-process</code>.</td>
       <td><span class="tg-tag tg-shell">shell</span></td>
       <td><code class="language-plaintext highlighter-rouge">classify-and-code-content</code></td>
       <td>6 in / 1 out</td>

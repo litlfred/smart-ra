@@ -1,4 +1,11 @@
 TY  - GEN
+ID  - phii-2023-crdm
+AU  - (CRDM), DEVELOPMENT METHODOLOGY
+TI  - Collaborative Requirements Development Methodology (CRDM): A Collaborative Approach to Public Health Systems
+DA  - D:20261031
+ER  - 
+
+TY  - GEN
 ID  - omg-2024-spdx-3-0
 AU  - (SPDX), System Package Data Exchange
 TI  - System Package Data Exchange (SPDX)
@@ -62,13 +69,6 @@ TI  - Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words
 DA  - D:20260921
 ER  - 
 
-TY  - GEN
-ID  - genon-2010-bpmn2-cognitive-effectiveness
-TI  - Analysing the Cognitive Effectiveness of the BPMN 2.0 Visual Notation
-PY  - 2010
-DA  - 2010
-ER  - 
-
 TY  - JOUR
 ID  - arxiv-2607.20636v1
 AU  - and, Sequential Decision-Making
@@ -106,14 +106,6 @@ PY  - 2026
 DA  - 2026
 ER  - 
 
-TY  - JOUR
-ID  - arxiv-2505.11701v2
-AU  - Behavior, LLM
-TI  - DMN-Guided Prompting: A Framework for Controlling LLM Behavior
-UR  - https://arxiv.org/abs/2505.11701
-AB  - Large Language Models (LLMs) have shown considerable potential in automating decision logic within knowledge-intensive processes. However, their effectiveness largely depends on the strategy and quality of prompting. Since decision logic is typically embedded in prompts, it becomes challenging for end users to modify or refine it. Decision Model and Notation (DMN) offers a standardized graphical approach for defining decision logic in a structured, user- friendly manner. This paper introduces a DMN-guided prompting framework that breaks down complex decision logic into smaller, manageable components, guid- ing LLMs through structured decision pathways. We implemented the framework in a graduate-level course where students submitted assignments. The assign- ments and DMN models representing feedback instructions served as inputs to our framework. The instructor evaluated the generated feedback and labeled it for performance assessment. Our approach demonstrated promising results, out- performing chain-of-thought (CoT) prompting in our case study. Students also responded positively to the generated feedback, reporting high levels of perceived usefulness in a survey based on the Technology Acceptance Model.
-ER  - 
-
 TY  - GEN
 ID  - best-practices---google-antigravity-docs
 TI  - Best practices for Antigravity CLI
@@ -137,6 +129,18 @@ ID  - omg-2013-bpmn-2-0-2
 TI  - Business Process Model and Notation (BPMN)
 PY  - 2013
 DA  - 2013
+ER  - 
+
+TY  - GEN
+ID  - path-2012-common-requirements-mhis-crdm
+AU  - C, Taylor
+AU  - A, Luchitsky
+AU  - D, Lubinski
+AU  - L, Peloso
+AU  - K, Wilson
+AU  - PATH
+TI  - Common Requirements for Maternal Health Information Systems
+DA  - D:20130314
 ER  - 
 
 TY  - JOUR
@@ -168,40 +172,6 @@ UR  - https://arxiv.org/abs/2605.03537
 AB  - This paper presents a modular AI agentic skill pipeline for au- tomating subject indexing with Library of Congress Subject Headings (LCSH). Subject indexing—the process of analyzing a work’s aboutness, selecting controlled vocabulary terms, and encoding them as MARC 21 subject access fields—is one of the most time-consuming components of library cataloging. The system decomposes this process into four discrete, sequentially executed agent skills: conceptual analysis, quantitative filtering, authority validation, and MARC field synthesis. Each skill encodes domain knowledge drawn directly from Library of Congress Subject Headings Manual (SHM) instruction sheets and subject analysis theory. The pipeline was evaluated against a corpus of ten titles whose existing subject headings were captured from the Harvard Library bibliographic dataset (a snapshot of their Alma ILS). Results demonstrate strong con- ceptual alignment with professional subject indexing practice, with notable differences in specificity, subdivision practice, and the agent’s adherence to the 2026 LC policy discontinuing form subdivisions ($v) in favor of LCGFT 655 fields.
 ER  - 
 
-TY  - JOUR
-ID  - moeller-winter-reichert-2025-cognitive-factors-slr
-AU  - Citation: Möller, M.
-AU  - Winter, M.
-TI  - Cognitive Factors in Process Model Comprehension—A Systematic Literature Review
-DA  - D:20250516
-DO  - 10.3390/brainsci15050505
-UR  - https://doi.org/10.3390/brainsci15050505
-AB  - Process models constitute essential tools in business process management and software engineering for representing and managing real-world business processes. Hence, the proper comprehension of these models is crucial for enabling an effective and efficient communication among stakeholders. While several studies have examined factors affecting process model comprehension, such as the used modeling notation or process complexity, there is a lack of in-depth research on the cognitive processes important to comprehend process models deeper. This systematic literature review explores the cognitive mech- anisms underlying process model comprehension by integrating insights from relevant disciplines such as cognitive neuroscience and psychology. Key areas of cognition include perception, attention, memory, language, problem solving, emotion, and metacognition. This review was conducted following the well-established Kitchenham methodology and included an extensive search in the following digital libraries: Web of Science, IEEE Xplore, ScienceDirect, ACM Digital Library, PubMed, and SpringerLink. By analyzing 47 studies, this literature review identifies gaps in current research, emphasizing the need for further investigation into these cognitive processes to improve model comprehensibility.
-ER  - 
-
-TY  - JOUR
-ID  - arxiv-1511-04055v1
-AU  - Claes1, Jan
-AU  - 2
-AU  - Vanderfeesten2, Irene
-AU  - Pinggera3, Jakob
-AU  - Reijers2, Hajo A.
-AU  - Weber3, Barbara
-AU  - Poels1, Geert
-TI  - A Visual Analysis of the Process of Process Modeling
-DA  - D:20151111
-DO  - 10.1007/s10257-014-0245-4
-UR  - https://doi.org/10.1007/s10257-014-0245-4
-AB  - The construction of business process models has become an important requisite in the analysis and optimization of processes. The success of the analysis and optimization efforts heavily depends on the quality of the models. Therefore, a research domain emerged that studies the process of process modeling. This paper contributes to this research by presenting a way of visualizing the different steps a modeler undertakes to construct a process model, in a so-called PPMChart. The graphical representation lowers the cognitive efforts to discover properties of the modeling process, which facilitates the research and the development of theory, training and tool support for improving model quality. The paper contains an extensive overview of applications of the tool that demonstrate its usefulness for research and practice and discusses the observations from the visualization in relation to other work. The visualization was evaluated through a qualitative study that confirmed its usefulness and added value compared to the Dotted Chart on which the visualization was inspired.
-ER  - 
-
-TY  - GEN
-ID  - zimoch-2017-cognitive-insights-preliminary
-TI  - Cognitive Insights into Business Process Model Comprehension: Preliminary Results for Experienced and Inexperienced Individuals
-PY  - 2017
-DA  - 2017
-ER  - 
-
 TY  - GEN
 ID  - hasic-2019-complexity-metrics-dmn
 TI  - Complexity metrics for DMN decision models
@@ -228,22 +198,20 @@ PY  - 2024
 DA  - 2024
 ER  - 
 
+TY  - GEN
+ID  - phii-2021-defining-and-validating-requirements-guide
+AU  - Defining
+AU  - System, Validating
+TI  - Defining and Validating System Requirements Guide
+DA  - D:20150929
+ER  - 
+
 TY  - JOUR
 ID  - arxiv-2607.25032v1
 AU  - Destefanis, Giuseppe
 TI  - Authoring Agent Skills: A Software-Engineering Approach
 UR  - https://arxiv.org/abs/2607.25032
 AB  - Agent Skills are an emerging way to extend large language model agents with reusable procedural knowledge that the agent loads on demand. Anthropic introduced Agent Skills and published the format as an open specification supported across several agent tools. This note argues that a skill is a software artefact and that its construction should follow software-engineering principles, with qualifications: single responsibility, separation of interface from implementation, low coupling, and economy in a shared token budget, together with behavioural evaluation in place of deterministic testing. Using Claude Code as the reference implementation, it describes how a skill is structured, how its contents are loaded in stages, and how to write the description on which selection depends. It places skills against the other mechanisms a developer can use to shape agent behaviour, like project memory files, slash commands, subagents, external tool connections, and hooks, and gives a rule for choosing between them based on who decides that a mechanism runs and what guarantee it provides. It then sets out an evaluation-driven authoring process, a set of patterns and faults commonly encountered in authoring, and the trust question raised by using skills from third parties. We illustrate the comparison drawn in UML class style, the loading model, the anatomy of a skill, the relative position of each mechanism, and the points at which skills and hooks act during a session. Note on sources This note draws on Anthropic’s official documentation1 for Agent Skills, Claude Code skills, hooks, and skill authoring best practices, together with the open Agent Skills specification.
-ER  - 
-
-TY  - JOUR
-ID  - arxiv-2005.09998v1
-AU  - DMN, A Tight Integration of
-AU  - Constraint
-TI  - Tackling the DMN Challenges with cDMN: A Tight Integration of DMN and Constraint Reasoning
-DA  - D:20200521
-UR  - https://arxiv.org/abs/2005.09998
-AB  - This paper describes an extension to the DMN standard, called cDMN. It aims to enlarge the expressivity of DMN in order to solve more complex problems, while retaining DMN’s goal of being readable by domain experts. We test cDMN by solving the most complex challenges posted on the DM Community website. We compare our own cDMN solutions to the solutions that have been submitted to the website and ﬁnd that our approach is competitive, both in readability and compactness. Moreover, cDMN is able to solve more challenges than any other approach.
 ER  - 
 
 TY  - JOUR
@@ -258,24 +226,6 @@ TY  - GEN
 ID  - equipping-agents-for-the-real-world-with-agent-skills-anthro
 TI  - Equipping agents for the real world with Agent Skills
 DA  - D:20260920
-ER  - 
-
-TY  - GEN
-ID  - zimoch-2017-eye-tracking-lessons-learned
-TI  - Eye Tracking Experiments on Process Model Comprehension: Lessons Learned
-PY  - 2017
-DA  - 2017
-ER  - 
-
-TY  - GEN
-ID  - figl-2018-what-we-know-dmn-emisa
-AU  - Figl2, Kathrin
-AU  - Mendling3, Jan
-AU  - Tokdemir4, Gul
-AU  - Vanthienen5, Jan
-TI  - What we know and what we do not know about DMN (Extended Abstract)
-DA  - D:20210719
-AB  - )1 Kathrin Figl2, Jan Mendling3, Gul Tokdemir4, Jan Vanthienen5 Abstract: The recent Decision Model and Notation (DMN) establishes business decisions as first- class citizens of executable business processes. This research note has two objectives: first, to describe DMN’s technical and theoretical foundations; second, to identify research directions for investigating DMN’s potential benefits on a technological, individual and organizational level. To this end, we integrate perspectives from management science, cognitive theory and information systems research.
 ER  - 
 
 TY  - GEN
@@ -480,13 +430,6 @@ AB  - We introduce a benchmark that is fully self-contained, needs no ground tru
 ER  - 
 
 TY  - GEN
-ID  - hasic-2019-measuring-complexity-dmn
-TI  - Measuring the Complexity of DMN Decision Models
-PY  - 2019
-DA  - 2019
-ER  - 
-
-TY  - GEN
 ID  - mcp-2026-specification-2026-07-28
 TI  - Model Context Protocol Specification, version 2026-07-28
 PY  - 2026
@@ -507,13 +450,6 @@ AU  - Multi-Agent Collaboration
 TI  - TCAndon-Router: Adaptive Reasoning Router for Multi-Agent Collaboration
 UR  - https://arxiv.org/abs/2601.04544
 AB  - Multi-Agent Systems(MAS) have become a powerful paradigm for building high performance intelli- gent applications. Within these systems, the router responsible for determining which expert agents should handle a given query plays a crucial role in overall performance. Existing routing strategies generally fall into two categories: performance routing, which balances latency and cost across mod- els of different sizes, and task routing, which assigns queries to domain-specific experts to improve accuracy. In real-world enterprise applications, task routing is more suitable; however, most existing approaches rely on static single-label decisions, which introduce two major limitations: (i) diﬀiculty in seamlessly integrating new agents as business domains expand, and (ii) routing conflicts caused by overlapping agent capabilities, ultimately degrading accuracy and robustness.To address these challenges, we propose TCAndon-Router(TCAR): an adaptive reasoning router for multi-agent col- laboration. Unlike traditional routers, TCAR supports dynamic agent onboarding and first generates a natural-language reasoning chain before predicting a set of candidate agents capable of handling the query. In addition, we design a collaborative execution pipeline in which selected agents indepen- dently produce responses, which are then aggregated and refined into a single high-quality response by a dedicated Refining Agent.Experiments on public datasets and real enterprise data demonstrate that TCAR significantly improves routing accuracy, reduces routing conflicts, and remains robust in am- biguous scenarios. We have released TCAR at https://huggingface.co/tencent/TCAndon-Router to support future research on explainable and collaborative multi-agent routing.
-ER  - 
-
-TY  - GEN
-ID  - figl-strembeck-2014-flow-direction-importance
-TI  - On the Importance of Flow Direction in Business Process Models
-PY  - 2014
-DA  - 2014
 ER  - 
 
 TY  - GEN
@@ -645,13 +581,6 @@ TI  - Homa at SemEval-2025 Task 5: Aligning Librarian Records with OntoAligner f
 DA  - D:20250501
 UR  - https://arxiv.org/abs/2504.21474
 AB  - This paper presents our system, Homa, for SemEval-2025 Task 5: Subject Tagging, which focuses on automatically assigning subject la- bels to technical records from TIBKAT us- ing the Gemeinsame Normdatei (GND) tax- onomy. We leverage OntoAligner, a modu- lar ontology alignment toolkit, to address this task by integrating retrieval-augmented genera- tion (RAG) techniques. Our approach formu- lates the subject tagging problem as an align- ment task, where records are matched to GND categories based on semantic similarity. We evaluate OntoAligner’s adaptability for sub- ject indexing and analyze its effectiveness in handling multilingual records. Experimental results demonstrate the strengths and limita- tions of this method, highlighting the potential of alignment techniques for improving subject tagging in digital libraries.
-ER  - 
-
-TY  - GEN
-ID  - moody-2009-physics-of-notations
-TI  - The 'Physics' of Notations: Toward a Scientific Basis for Constructing Visual Notations in Software Engineering
-PY  - 2009
-DA  - 2009
 ER  - 
 
 TY  - GEN

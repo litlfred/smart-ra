@@ -7,7 +7,7 @@
   "_generated": "folio-assistant-core/scripts/glossary-page.ts — do not hand-edit; run `bun run cat glossary:page`",
   "@graph": [
     {
-      "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra",
+      "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra",
       "@type": "skos:ConceptScheme",
       "skos:prefLabel": "Glossary of the Reference Architecture and Guidance for DPI-H",
       "skos:definition": "The DPI-H Reference Architecture draft's own glossary as a SKOS scheme, one concept per term, read mechanically from the glossary table (folio/dpi-h-ra/glossary/, from the review draft who-dpi-h-reference-architecture-draft-v1). Definitions are verbatim; nothing is paraphrased or chosen. This is the shared scheme the Digital Transformation Handbooks (dth-hrh, dth-phc, dth-sc, dth-pc, dth-sfp) link their terms to (smart-ra#133, task S1). Where a DTH defines a term differently, its wording is added later as a cited alternative; none is chosen.",
@@ -16,10 +16,10 @@
       "dcterms:source": "library/who-dpi-h-reference-architecture-draft-v1/"
     },
     {
-      "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra/application-component",
+      "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra/application-component",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra"
+        "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra"
       },
       "skos:prefLabel": [
         {
@@ -36,10 +36,10 @@
       "skos:note": "candidate"
     },
     {
-      "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra/application-service",
+      "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra/application-service",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra"
+        "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra"
       },
       "skos:prefLabel": [
         {
@@ -56,10 +56,10 @@
       "skos:note": "candidate"
     },
     {
-      "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra/capability",
+      "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra/capability",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra"
+        "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra"
       },
       "skos:prefLabel": [
         {
@@ -76,10 +76,10 @@
       "skos:note": "candidate"
     },
     {
-      "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra/business-domain",
+      "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra/business-domain",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra"
+        "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra"
       },
       "skos:prefLabel": [
         {
@@ -97,10 +97,10 @@
       "skos:note": "candidate"
     },
     {
-      "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra/outcome",
+      "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra/outcome",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra"
+        "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra"
       },
       "skos:prefLabel": [
         {
@@ -117,10 +117,10 @@
       "skos:note": "candidate"
     },
     {
-      "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra/product",
+      "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra/product",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra"
+        "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra"
       },
       "skos:prefLabel": [
         {
@@ -137,10 +137,10 @@
       "skos:note": "candidate"
     },
     {
-      "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra/business-services-layer",
+      "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra/business-services-layer",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra"
+        "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra"
       },
       "skos:prefLabel": [
         {
@@ -157,10 +157,10 @@
       "skos:note": "candidate"
     },
     {
-      "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra/client",
+      "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra/client",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra"
+        "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra"
       },
       "skos:prefLabel": [
         {
@@ -177,10 +177,10 @@
       "skos:note": "candidate"
     },
     {
-      "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra/data-governance",
+      "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra/data-governance",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra"
+        "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra"
       },
       "skos:prefLabel": [
         {
@@ -197,10 +197,10 @@
       "skos:note": "candidate"
     },
     {
-      "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra/data-object",
+      "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra/data-object",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra"
+        "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra"
       },
       "skos:prefLabel": [
         {
@@ -217,10 +217,10 @@
       "skos:note": "candidate"
     },
     {
-      "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra/digital-health",
+      "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra/digital-health",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra"
+        "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra"
       },
       "skos:prefLabel": [
         {
@@ -237,10 +237,10 @@
       "skos:note": "candidate"
     },
     {
-      "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra/digital-infrastructure",
+      "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra/digital-infrastructure",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra"
+        "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra"
       },
       "skos:prefLabel": [
         {
@@ -257,10 +257,10 @@
       "skos:note": "candidate"
     },
     {
-      "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra/digital-public-infrastructure",
+      "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra/digital-public-infrastructure",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra"
+        "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra"
       },
       "skos:prefLabel": [
         {
@@ -280,10 +280,10 @@
       "skos:note": "candidate"
     },
     {
-      "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra/enterprise-architecture",
+      "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra/enterprise-architecture",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra"
+        "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra"
       },
       "skos:prefLabel": [
         {
@@ -301,10 +301,10 @@
       "skos:note": "candidate"
     },
     {
-      "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra/fast-healthcare-interoperability-resources",
+      "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra/fast-healthcare-interoperability-resources",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra"
+        "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra"
       },
       "skos:prefLabel": [
         {
@@ -324,10 +324,10 @@
       "skos:note": "candidate"
     },
     {
-      "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra/functional-application",
+      "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra/functional-application",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra"
+        "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra"
       },
       "skos:prefLabel": [
         {
@@ -344,10 +344,10 @@
       "skos:note": "candidate"
     },
     {
-      "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra/goal",
+      "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra/goal",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra"
+        "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra"
       },
       "skos:prefLabel": [
         {
@@ -364,10 +364,10 @@
       "skos:note": "candidate"
     },
     {
-      "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra/health-digital-public-infrastructure",
+      "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra/health-digital-public-infrastructure",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra"
+        "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra"
       },
       "skos:prefLabel": [
         {
@@ -384,10 +384,10 @@
       "skos:note": "candidate"
     },
     {
-      "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra/health-information-exchange",
+      "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra/health-information-exchange",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra"
+        "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra"
       },
       "skos:prefLabel": [
         {
@@ -400,10 +400,10 @@
       "skos:note": "could-not-extract: The draft lists the term with no definition."
     },
     {
-      "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra/health-programme",
+      "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra/health-programme",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra"
+        "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra"
       },
       "skos:prefLabel": [
         {
@@ -420,10 +420,10 @@
       "skos:note": "candidate"
     },
     {
-      "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra/integration",
+      "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra/integration",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra"
+        "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra"
       },
       "skos:prefLabel": [
         {
@@ -441,10 +441,10 @@
       "skos:note": "candidate"
     },
     {
-      "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra/interoperability",
+      "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra/interoperability",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra"
+        "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra"
       },
       "skos:prefLabel": [
         {
@@ -461,10 +461,10 @@
       "skos:note": "candidate"
     },
     {
-      "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra/logical-observation-identifiers-names-and-codes",
+      "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra/logical-observation-identifiers-names-and-codes",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra"
+        "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra"
       },
       "skos:prefLabel": [
         {
@@ -484,10 +484,10 @@
       "skos:note": "candidate"
     },
     {
-      "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra/point-of-service-applications",
+      "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra/point-of-service-applications",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra"
+        "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra"
       },
       "skos:prefLabel": [
         {
@@ -505,10 +505,10 @@
       "skos:note": "candidate"
     },
     {
-      "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra/reference-architecture",
+      "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra/reference-architecture",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra"
+        "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra"
       },
       "skos:prefLabel": [
         {
@@ -525,10 +525,10 @@
       "skos:note": "candidate"
     },
     {
-      "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra/registry",
+      "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra/registry",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra"
+        "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra"
       },
       "skos:prefLabel": [
         {
@@ -546,10 +546,10 @@
       "skos:note": "candidate"
     },
     {
-      "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra/repository",
+      "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra/repository",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra"
+        "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra"
       },
       "skos:prefLabel": [
         {
@@ -560,10 +560,10 @@
       "skos:note": "could-not-extract: The draft lists the term with no definition."
     },
     {
-      "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra/smart-guidelines",
+      "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra/smart-guidelines",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra"
+        "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra"
       },
       "skos:prefLabel": [
         {
@@ -580,10 +580,10 @@
       "skos:note": "candidate"
     },
     {
-      "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra/snomed-ct",
+      "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra/snomed-ct",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra"
+        "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra"
       },
       "skos:prefLabel": [
         {
@@ -600,10 +600,10 @@
       "skos:note": "candidate"
     },
     {
-      "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra/snomed-gps",
+      "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra/snomed-gps",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra"
+        "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra"
       },
       "skos:prefLabel": [
         {
@@ -620,10 +620,10 @@
       "skos:note": "candidate"
     },
     {
-      "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra/solution-architecture",
+      "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra/solution-architecture",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra"
+        "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra"
       },
       "skos:prefLabel": [
         {
@@ -641,10 +641,10 @@
       "skos:note": "candidate"
     },
     {
-      "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra/stakeholder",
+      "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra/stakeholder",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra"
+        "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra"
       },
       "skos:prefLabel": [
         {
@@ -661,10 +661,10 @@
       "skos:note": "candidate"
     },
     {
-      "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra/value",
+      "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra/value",
       "@type": "skos:Concept",
       "skos:inScheme": {
-        "@id": "https://litlfred.github.io/smart-ra/v0/ns#glossary/dpi-h-ra"
+        "@id": "https://litlfred.github.io/smart-ra/v0/ns/glossary/dpi-h-ra"
       },
       "skos:prefLabel": [
         {

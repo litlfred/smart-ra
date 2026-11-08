@@ -335,7 +335,7 @@
 
   `relative_url` for the same reason every other path here uses it: the site is
   served from `/folio-assistant` on the canonical deploy and from
-  `/folio-assistant/STAGING/<branch>` on a preview, and an absolute literal
+  `/folio-assistant/branches/<branch>` on a preview, and an absolute literal
   404s on every deploy but one.
 
   A URL rather than inline JSON, unlike `fa-site-links` above, because the
@@ -409,14 +409,14 @@
   instance's `glassStrip` declaration by `sync-docs-harness.ts`; absent when
   nothing declared one. Replica pages read `assets/harness/glass-strip.json`.
 -->
-<meta name="fa-glass-strip" content="[&quot;glass-todos&quot;,&quot;glass-settings&quot;]">
+<meta name="fa-glass-strip" content="[&quot;glass-todos&quot;,&quot;glass-settings&quot;,&quot;library&quot;]">
 
 <!--
   THE SITE'S BASEURL, for the tiles above.
 
   Every other site-root path on this page is composed by Liquid: `relative_url`
   prepends `site.baseurl`, which is `/folio-assistant` on the canonical deploy
-  and `/folio-assistant/STAGING/<branch>` on a preview. The tiles cannot use
+  and `/folio-assistant/branches/<branch>` on a preview. The tiles cannot use
   it, because they reach the client as JSON and are composed in `docs-ui.js`
   after Liquid has finished — so the base has to travel with them.
 
@@ -447,7 +447,7 @@
 
   `feature-staging.yml` writes `staging_slug` into `_data/build.yml`;
   `docs-site.yml` writes the same file WITHOUT it. So a non-empty value here
-  means "a STAGING/<slug>/ preview", an empty one means the canonical deploy
+  means "a branches/<slug>/ preview", an empty one means the canonical deploy
   or a local build.
 
   It exists so a tile can vanish with its page. `compose-docs.ts` withholds a
@@ -563,7 +563,7 @@
 
   These five are served from stable paths with no hash in the name, so a
   browser that has the page cached keeps the old CSS and JS until its
-  `max-age` runs out. On the live site that is invisible. On a STAGING
+  `max-age` runs out. On the live site that is invisible. On a branches/
   preview it is the whole point of the deployment: the reviewer opens the URL
   they opened an hour ago, gets yesterday's stylesheet, and reports "i dont
   see changes" — which is indistinguishable from a deploy that never
@@ -582,7 +582,7 @@
 -->
 <!-- The harness icon row's own style, which railed pages load without docs-ui.css (beans `lhvt`, `9rq1`). -->
 <link rel="stylesheet" href="../../../../../assets/css/navbar-row.css?v=7d7d00921e0f">
-<link rel="stylesheet" href="../../../../../assets/css/docs-ui.css?v=18eb22b50395">
+<link rel="stylesheet" href="../../../../../assets/css/docs-ui.css?v=34ea92e5aa62">
 <!-- Narrow viewports: wide content scrolls in its own box, never the page
      (bean `2r2n`). The standalone viewers inline the same file through
      `withViewerNav`, so both kinds of page read one set of rules. -->
@@ -593,7 +593,7 @@
   `state-visualizer.ts` can inline exactly these bytes into the generated
   `<base>/<stub>/state-visualizer/` pages. One rule, two surfaces.
 -->
-<link rel="stylesheet" href="../../../../../assets/css/work-plan.css?v=ed3e33f033fe">
+<link rel="stylesheet" href="../../../../../assets/css/work-plan.css?v=bd8c73337b01">
 <!-- Sticky themes. GENERATED from the theme nodes in `schemas/ui/themes.ts` by
      `bun run cat themes:css`; `themes:css:check` fails the build when it is stale.
      Loaded AFTER docs-ui.css deliberately: it supplies the `--fa-sticky-*`
@@ -607,7 +607,7 @@
      `avatars:css:check` fails the build when it is stale. One stylesheet
      rather than 68 assets: the glyph is a mask and the colour is a property,
      so a scheme swap is a custom property and the trash state is a selector. -->
-<link rel="stylesheet" href="../../../../../assets/css/avatars.css?v=a0806788c1f5">
+<link rel="stylesheet" href="../../../../../assets/css/avatars.css?v=05433996459b">
 
 <!--
   The kinds THIS INSTANCE DECLARES, for the avatar fan.
@@ -622,7 +622,7 @@
   all, and a fetch for that would put a spinner in front of a badge.
 -->
 <!-- NOT MOVED: same reason as fa-site-links above. -->
-<script type="application/json" id="fa-declared-kinds">["archimate","beans","folio","fsh-guts","glossary","library","public-comments","todo-items","todos","uploads"]</script>
+<script type="application/json" id="fa-declared-kinds">["archimate","beans","folio","fsh-guts","glossary","library","public-comments","references","todo-items","todos","uploads"]</script>
 <!--
   FIRST of the deferred scripts: it fills `#fa-navbar-row` and
   `meta[name=fa-tiles]` before any reader runs (bean `gp2f`).
@@ -641,11 +641,11 @@
 <script src="../../../../../assets/js/kg-render.js" defer></script>
 <!-- BEFORE docs-ui.js, which calls it: the one drawing of the harness icon row (beans `lhvt`, `9rq1`). -->
 <script src="../../../../../assets/js/navbar-row.js?v=6bb19e1d17a5" defer></script>
-<script src="../../../../../assets/js/docs-ui.js?v=52e4c68c64c7" defer></script>
+<script src="../../../../../assets/js/docs-ui.js?v=2cbe44e3bd42" defer></script>
 <!-- The edit, source and feedback links of every page, from the platform's one
   recipe (cat-harness-tools/src/core/edit-links.ts, bean v433): links carry their
   facts and this builds the hrefs. -->
-<script src="../../../../../assets/js/edit-links.js?v=4f82faf45c35" defer></script>
+<script src="../../../../../assets/js/edit-links.js?v=333851d0e55e" defer></script>
 
 <!--
   The work-plan dashboard. SELF-MOUNTING on any page carrying
@@ -728,7 +728,71 @@
   the left-hand nav among them, and leaves just-the-docs' compiled chrome
   alone. Stated here because the alternative is a reader concluding the theme
   is broken when it is doing exactly what it can.
--->
+--><!--
+  THE PAGE GROUND: a harness's theme art behind every one of its docs pages.
+
+  Bean `yj32`, owner card Q-DEP-2 A (2026-11-01): the avatar is "the default
+  display background for their corresponding docs/ (ghpages) rendering".
+
+  WHICH HARNESS. Each tile in `_data/harness.json` carries `pageGround`
+  (cat-harness-tools `harness-tiles.ts`): the URL segments that make a page
+  that instance's, and its three crops. The FIRST tile whose scope the URL
+  contains wins; tiles come dependents first, so the content instance a page
+  is about beats the platform that renders it. The site owner is the fallback
+  (`siteDefault`), never a `/` scope, because `/` is in every URL. A tile with
+  no `art` gets no ground: a palette-only theme is a choice, not a gap.
+
+  A CSS BACKGROUND HERE, where the stickies use `<picture>`. A sticky places
+  words inside a measured quiet region of one crop, so the crop must be the
+  file. The page ground places nothing on the art, so a media query choosing
+  the crop is exact, and no markup is added to any page.
+
+  TWO SCRIMS, both the page's own background colour (not the theme's sticky
+  scrim, because the ink they protect is the page's ink). The page gets 85%,
+  so the art shows in the margins and under the header. The text column,
+  `.main-content`, gets a second layer at 96%, so the words sit on 99.4% page
+  colour. The art runs the full range (measured: every crop of the three
+  grounds has pixels at luminance 0.000 and 1.000), so the bound is the worst
+  pixel: text and links stay within 0.1:1 of the plain page in both schemes
+  (light links 4.94:1 against 5.03:1, dark links 4.09:1 against 4.14:1, dark body text 11.5:1 against 11.7:1).
+  A single 92% layer was measured first and dropped: it took dark-scheme
+  links from 4.14:1 to 3.35:1.
+--><style id="fa-page-ground" data-instance="cat-harness">
+  /* Grumpy cyborg agents, the theme of cat-harness. */
+  :root { --fa-page-scrim: rgba(39, 38, 43, 0.85); --fa-text-scrim: rgba(39, 38, 43, 0.96); }
+  :root[data-fa-scheme="light"] { --fa-page-scrim: rgba(255, 255, 255, 0.85); --fa-text-scrim: rgba(255, 255, 255, 0.96); }
+  /* The root carries the art, so it covers the whole viewport however short
+     the page; the body is made see-through so the art is not painted over. */
+  html:root body { background-color: transparent; }
+  html body .main-content { background-color: var(--fa-text-scrim); border-radius: 6px; }
+  html:root {
+    background-image:
+      linear-gradient(var(--fa-page-scrim), var(--fa-page-scrim)),
+      url("../../../../../assets/img/harness/landing-grumpy-cyborg-agents-laptop.webp");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  @media (max-width: 48rem) {
+    html:root {
+      background-image:
+        linear-gradient(var(--fa-page-scrim), var(--fa-page-scrim)),
+        url("../../../../../assets/img/harness/landing-grumpy-cyborg-agents-card.webp");
+    }
+  }
+  @media (max-width: 30rem) {
+    html:root {
+      background-image:
+        linear-gradient(var(--fa-page-scrim), var(--fa-page-scrim)),
+        url("../../../../../assets/img/harness/landing-grumpy-cyborg-agents-mobile.webp");
+    }
+  }
+  /* Print and forced colours get the plain page: art is decoration. */
+  @media print, (forced-colors: active) {
+    html:root { background-image: none; }
+  }
+</style>
 
 <link rel="stylesheet" href="../../../../../assets/css/navbar.css"><script src="../../../../../assets/navbar/rail-1nr7jo2rxsc.js" defer></script><script src="../../../../../assets/js/navbar.js" defer></script><link rel="stylesheet" href="../../../../../assets/page-layout.css" data-fa-page-layout><script src="../../../../../assets/page-layout.js" defer data-fa-page-layout></script><meta name="fa-pinned-data" content="../../../../.."></head>
 
@@ -914,6 +978,7 @@
 <li><a href="../core-processes/">core-processes</a> <span class="p">folio-assistant-core/processes</span> <span class="n" data-da-count="index/tasks/core-processes" data-da-count-state="pending">…</span></li>
 <li><a href="../fhir-harness-processes/">fhir-harness-processes</a> <span class="p">fhir-harness/processes</span> <span class="n" data-da-count="index/tasks/fhir-harness-processes" data-da-count-state="pending">…</span></li>
 <li><a href="../processes/">processes</a> <span class="p">cat-harness/processes</span> <span class="n" data-da-count="index/tasks/processes" data-da-count-state="pending">…</span></li>
+<li><a href="../sdlc-processes/">sdlc-processes</a> <span class="p">cat-harness/sdlc/processes</span> <span class="n" data-da-count="index/tasks/sdlc-processes" data-da-count-state="pending">…</span></li>
 <li><strong>smart-base-house-processes</strong> <span class="p">smart-base/processes</span> <span class="n" data-da-count="index/tasks/smart-base-house-processes" data-da-count-state="pending">…</span></li>
 <li><a href="../smart-base-processes/">smart-base-processes</a> <span class="p">smart-base/methodologies/processes</span> <span class="n" data-da-count="index/tasks/smart-base-processes" data-da-count-state="pending">…</span></li>
 <li><a href="../who-iris-processes/">who-iris-processes</a> <span class="p">who-iris/processes</span> <span class="n" data-da-count="index/tasks/who-iris-processes" data-da-count-state="pending">…</span></li>
@@ -927,108 +992,252 @@
 <div class="table-wrapper"><table id="da-index" data-fa-filtered="true">
 <thead><tr><th>Artefact</th><th>What it declares about itself</th></tr></thead>
 <tbody>
-<tr id="a-smart-base-processes-content-classify-and-code-content-bpmn-Adjudicate-slot-codings-and-glossary-candidates-10-classify-and-code-content-ontologist-glossary-terms-terminology-management-content-review-">
-  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/classify-and-code-content.bpmn#Adjudicate slot codings and glossary candidates&amp;#10;[classify-and-code-content · ontologist · glossary-terms · terminology-management · content-review]"><code>Adjudicate slot codings and glossary candidates&amp;#10;[classify-and-code-content · ontologist · glossary-terms · terminology-management · content-review]</code></a><br><span class="p">smart-base/processes/content/classify-and-code-content.bpmn#Adjudicate slot codings and glossary candidates&amp;#10;[classify-and-code-content · ontologist · glossary-terms · terminology-management · content-review]</span></td>
+<tr id="a-smart-base-processes-content-classify-and-code-content-bpmn-Adjudicate-slot-codings-and-glossary-candidates">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/classify-and-code-content.bpmn#Adjudicate slot codings and glossary candidates"><code>Adjudicate slot codings and glossary candidates</code></a><br><span class="p">smart-base/processes/content/classify-and-code-content.bpmn#Adjudicate slot codings and glossary candidates</span></td>
   <td>userTask in classify-and-code-content</td>
 </tr>
-<tr id="a-smart-base-processes-content-classify-and-code-content-bpmn-Identify-slots-and-proposed-exclusions-10-classify-and-code-content-recommendation-extraction-">
-  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/classify-and-code-content.bpmn#Identify slots and proposed exclusions&amp;#10;[classify-and-code-content · recommendation-extraction]"><code>Identify slots and proposed exclusions&amp;#10;[classify-and-code-content · recommendation-extraction]</code></a><br><span class="p">smart-base/processes/content/classify-and-code-content.bpmn#Identify slots and proposed exclusions&amp;#10;[classify-and-code-content · recommendation-extraction]</span></td>
-  <td>task in classify-and-code-content</td>
-</tr>
-<tr id="a-smart-base-processes-content-classify-and-code-content-bpmn-Read-proposed-exclusions-against-page-and-sign-10-classify-and-code-content-recommendation-extraction-content-review-">
-  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/classify-and-code-content.bpmn#Read proposed exclusions against page and sign&amp;#10;[classify-and-code-content · recommendation-extraction · content-review]"><code>Read proposed exclusions against page and sign&amp;#10;[classify-and-code-content · recommendation-extraction · content-review]</code></a><br><span class="p">smart-base/processes/content/classify-and-code-content.bpmn#Read proposed exclusions against page and sign&amp;#10;[classify-and-code-content · recommendation-extraction · content-review]</span></td>
+<tr id="a-smart-base-processes-content-classify-and-code-content-bpmn-Check-exclusions-against-page-and-sign">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/classify-and-code-content.bpmn#Check exclusions against page and sign"><code>Check exclusions against page and sign</code></a><br><span class="p">smart-base/processes/content/classify-and-code-content.bpmn#Check exclusions against page and sign</span></td>
   <td>userTask in classify-and-code-content</td>
 </tr>
-<tr id="a-smart-base-processes-content-classify-and-code-content-bpmn-Run-reuse-first-lookup-and-record-candidates-10-classify-and-code-content-recommendation-scenarios-glossary-terms-">
-  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/classify-and-code-content.bpmn#Run reuse-first lookup and record candidates&amp;#10;[classify-and-code-content · recommendation-scenarios · glossary-terms]"><code>Run reuse-first lookup and record candidates&amp;#10;[classify-and-code-content · recommendation-scenarios · glossary-terms]</code></a><br><span class="p">smart-base/processes/content/classify-and-code-content.bpmn#Run reuse-first lookup and record candidates&amp;#10;[classify-and-code-content · recommendation-scenarios · glossary-terms]</span></td>
+<tr id="a-smart-base-processes-content-classify-and-code-content-bpmn-Identify-slots-and-proposed-exclusions">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/classify-and-code-content.bpmn#Identify slots and proposed exclusions"><code>Identify slots and proposed exclusions</code></a><br><span class="p">smart-base/processes/content/classify-and-code-content.bpmn#Identify slots and proposed exclusions</span></td>
   <td>task in classify-and-code-content</td>
 </tr>
-<tr id="a-smart-base-processes-content-classify-and-code-content-bpmn-Stage-codings-warnings-and-exclusions-for-review-10-staging-review-interaction-modality-">
-  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/classify-and-code-content.bpmn#Stage codings, warnings and exclusions for review&amp;#10;[staging-review · interaction-modality]"><code>Stage codings, warnings and exclusions for review&amp;#10;[staging-review · interaction-modality]</code></a><br><span class="p">smart-base/processes/content/classify-and-code-content.bpmn#Stage codings, warnings and exclusions for review&amp;#10;[staging-review · interaction-modality]</span></td>
+<tr id="a-smart-base-processes-content-classify-and-code-content-bpmn-Run-reuse-first-lookup-and-record-candidates">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/classify-and-code-content.bpmn#Run reuse-first lookup and record candidates"><code>Run reuse-first lookup and record candidates</code></a><br><span class="p">smart-base/processes/content/classify-and-code-content.bpmn#Run reuse-first lookup and record candidates</span></td>
+  <td>task in classify-and-code-content</td>
+</tr>
+<tr id="a-smart-base-processes-content-classify-and-code-content-bpmn-Stage-codings-warnings-and-exclusions-for-review">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/classify-and-code-content.bpmn#Stage codings, warnings and exclusions for review"><code>Stage codings, warnings and exclusions for review</code></a><br><span class="p">smart-base/processes/content/classify-and-code-content.bpmn#Stage codings, warnings and exclusions for review</span></td>
   <td>task in classify-and-code-content</td>
 </tr>
 <tr id="a-smart-base-processes-content-dak-l3-ig-bpmn-L3-FHIR-IG-pipeline-10-fhir-harness-">
   <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/dak-l3-ig.bpmn#L3 FHIR IG pipeline&amp;#10;(fhir-harness)"><code>L3 FHIR IG pipeline&amp;#10;(fhir-harness)</code></a><br><span class="p">smart-base/processes/content/dak-l3-ig.bpmn#L3 FHIR IG pipeline&amp;#10;(fhir-harness)</span></td>
   <td>callActivity in dak-l3-ig</td>
 </tr>
-<tr id="a-smart-base-processes-content-dak-l3-ig-bpmn-Map-L2-L3-10-l3-fhir-authoring-">
-  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/dak-l3-ig.bpmn#Map L2 → L3&amp;#10;[l3-fhir-authoring]"><code>Map L2 → L3&amp;#10;[l3-fhir-authoring]</code></a><br><span class="p">smart-base/processes/content/dak-l3-ig.bpmn#Map L2 → L3&amp;#10;[l3-fhir-authoring]</span></td>
+<tr id="a-smart-base-processes-content-dak-l3-ig-bpmn-Map-L2-L3">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/dak-l3-ig.bpmn#Map L2 → L3"><code>Map L2 → L3</code></a><br><span class="p">smart-base/processes/content/dak-l3-ig.bpmn#Map L2 → L3</span></td>
   <td>userTask in dak-l3-ig</td>
 </tr>
-<tr id="a-smart-base-processes-content-l2-component-edit-review-bpmn-Ask-for-review-with-staging-deep-links-10-staging-review-">
-  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/l2-component-edit-review.bpmn#Ask for review with staging deep links&amp;#10;[staging-review]"><code>Ask for review with staging deep links&amp;#10;[staging-review]</code></a><br><span class="p">smart-base/processes/content/l2-component-edit-review.bpmn#Ask for review with staging deep links&amp;#10;[staging-review]</span></td>
+<tr id="a-smart-base-processes-content-dth-authoring-bpmn-0-Scope-the-DTH-and-place-it-in-the-DIIG-10-content-plan-">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/dth-authoring.bpmn#0 · Scope the DTH and place it in the DIIG&amp;#10;[content-plan]"><code>0 · Scope the DTH and place it in the DIIG&amp;#10;[content-plan]</code></a><br><span class="p">smart-base/processes/content/dth-authoring.bpmn#0 · Scope the DTH and place it in the DIIG&amp;#10;[content-plan]</span></td>
+  <td>userTask in dth-authoring</td>
+</tr>
+<tr id="a-smart-base-processes-content-dth-authoring-bpmn-1-Ingest-sources-into-library-10-library-ingestion-">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/dth-authoring.bpmn#1 · Ingest sources into library/&amp;#10;[library-ingestion]"><code>1 · Ingest sources into library/&amp;#10;[library-ingestion]</code></a><br><span class="p">smart-base/processes/content/dth-authoring.bpmn#1 · Ingest sources into library/&amp;#10;[library-ingestion]</span></td>
+  <td>task in dth-authoring</td>
+</tr>
+<tr id="a-smart-base-processes-content-dth-authoring-bpmn-2-Outline-chapters-against-the-dth-kind-10-document-structure-">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/dth-authoring.bpmn#2 · Outline chapters against the dth kind&amp;#10;[document-structure]"><code>2 · Outline chapters against the dth kind&amp;#10;[document-structure]</code></a><br><span class="p">smart-base/processes/content/dth-authoring.bpmn#2 · Outline chapters against the dth kind&amp;#10;[document-structure]</span></td>
+  <td>task in dth-authoring</td>
+</tr>
+<tr id="a-smart-base-processes-content-dth-authoring-bpmn-4-Comment-via-contributor-log-sheet-or-GitHub-pc-10-content-feedback-">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/dth-authoring.bpmn#4 · Comment via contributor log sheet or GitHub pc:&amp;#10;[content-feedback]"><code>4 · Comment via contributor log sheet or GitHub pc:&amp;#10;[content-feedback]</code></a><br><span class="p">smart-base/processes/content/dth-authoring.bpmn#4 · Comment via contributor log sheet or GitHub pc:&amp;#10;[content-feedback]</span></td>
+  <td>userTask in dth-authoring</td>
+</tr>
+<tr id="a-smart-base-processes-content-dth-authoring-bpmn-5-Open-public-comment-10-public-comment-">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/dth-authoring.bpmn#5 · Open public comment&amp;#10;[public-comment]"><code>5 · Open public comment&amp;#10;[public-comment]</code></a><br><span class="p">smart-base/processes/content/dth-authoring.bpmn#5 · Open public comment&amp;#10;[public-comment]</span></td>
+  <td>task in dth-authoring</td>
+</tr>
+<tr id="a-smart-base-processes-content-dth-authoring-bpmn-6-Editorial-voice-and-translation-QA-10-quality-control-">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/dth-authoring.bpmn#6 · Editorial, voice and translation QA&amp;#10;[quality-control]"><code>6 · Editorial, voice and translation QA&amp;#10;[quality-control]</code></a><br><span class="p">smart-base/processes/content/dth-authoring.bpmn#6 · Editorial, voice and translation QA&amp;#10;[quality-control]</span></td>
+  <td>task in dth-authoring</td>
+</tr>
+<tr id="a-smart-base-processes-content-dth-authoring-bpmn-Account-for-every-normative-sentence-10-l1-coverage-">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/dth-authoring.bpmn#Account for every normative sentence&amp;#10;[l1-coverage]"><code>Account for every normative sentence&amp;#10;[l1-coverage]</code></a><br><span class="p">smart-base/processes/content/dth-authoring.bpmn#Account for every normative sentence&amp;#10;[l1-coverage]</span></td>
+  <td>task in dth-authoring</td>
+</tr>
+<tr id="a-smart-base-processes-content-dth-authoring-bpmn-Architect-group-and-handbook-owners-review-10-content-review-">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/dth-authoring.bpmn#Architect group and handbook owners review&amp;#10;[content-review]"><code>Architect group and handbook owners review&amp;#10;[content-review]</code></a><br><span class="p">smart-base/processes/content/dth-authoring.bpmn#Architect group and handbook owners review&amp;#10;[content-review]</span></td>
+  <td>userTask in dth-authoring</td>
+</tr>
+<tr id="a-smart-base-processes-content-dth-authoring-bpmn-Build-glossary-candidates-from-the-TWG-workbook-10-terminology-management-">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/dth-authoring.bpmn#Build glossary candidates from the TWG workbook&amp;#10;[terminology-management]"><code>Build glossary candidates from the TWG workbook&amp;#10;[terminology-management]</code></a><br><span class="p">smart-base/processes/content/dth-authoring.bpmn#Build glossary candidates from the TWG workbook&amp;#10;[terminology-management]</span></td>
+  <td>task in dth-authoring</td>
+</tr>
+<tr id="a-smart-base-processes-content-dth-authoring-bpmn-Business-processes-BPMN-10-bpmn-authoring-">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/dth-authoring.bpmn#Business processes · BPMN&amp;#10;[bpmn-authoring]"><code>Business processes · BPMN&amp;#10;[bpmn-authoring]</code></a><br><span class="p">smart-base/processes/content/dth-authoring.bpmn#Business processes · BPMN&amp;#10;[bpmn-authoring]</span></td>
+  <td>callActivity in dth-authoring</td>
+</tr>
+<tr id="a-smart-base-processes-content-dth-authoring-bpmn-Create-the-DTH-repository-from-the-DTH-layout-10-document-structure-">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/dth-authoring.bpmn#Create the DTH repository from the DTH layout&amp;#10;[document-structure]"><code>Create the DTH repository from the DTH layout&amp;#10;[document-structure]</code></a><br><span class="p">smart-base/processes/content/dth-authoring.bpmn#Create the DTH repository from the DTH layout&amp;#10;[document-structure]</span></td>
+  <td>task in dth-authoring</td>
+</tr>
+<tr id="a-smart-base-processes-content-dth-authoring-bpmn-Data-elements-indicators-requirements-10-l2-dak-authoring-">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/dth-authoring.bpmn#Data elements, indicators, requirements&amp;#10;[l2-dak-authoring]"><code>Data elements, indicators, requirements&amp;#10;[l2-dak-authoring]</code></a><br><span class="p">smart-base/processes/content/dth-authoring.bpmn#Data elements, indicators, requirements&amp;#10;[l2-dak-authoring]</span></td>
+  <td>callActivity in dth-authoring</td>
+</tr>
+<tr id="a-smart-base-processes-content-dth-authoring-bpmn-Decision-tables-DMN-10-dmn-authoring-">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/dth-authoring.bpmn#Decision tables · DMN&amp;#10;[dmn-authoring]"><code>Decision tables · DMN&amp;#10;[dmn-authoring]</code></a><br><span class="p">smart-base/processes/content/dth-authoring.bpmn#Decision tables · DMN&amp;#10;[dmn-authoring]</span></td>
+  <td>callActivity in dth-authoring</td>
+</tr>
+<tr id="a-smart-base-processes-content-dth-authoring-bpmn-Disposition-comments-and-apply-change-sets-10-public-comment-">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/dth-authoring.bpmn#Disposition comments and apply change sets&amp;#10;[public-comment]"><code>Disposition comments and apply change sets&amp;#10;[public-comment]</code></a><br><span class="p">smart-base/processes/content/dth-authoring.bpmn#Disposition comments and apply change sets&amp;#10;[public-comment]</span></td>
+  <td>task in dth-authoring</td>
+</tr>
+<tr id="a-smart-base-processes-content-dth-authoring-bpmn-Draft-introduction-audience-and-DIIG-alignment-10-document-authoring-">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/dth-authoring.bpmn#Draft introduction, audience and DIIG alignment&amp;#10;[document-authoring]"><code>Draft introduction, audience and DIIG alignment&amp;#10;[document-authoring]</code></a><br><span class="p">smart-base/processes/content/dth-authoring.bpmn#Draft introduction, audience and DIIG alignment&amp;#10;[document-authoring]</span></td>
+  <td>task in dth-authoring</td>
+</tr>
+<tr id="a-smart-base-processes-content-dth-authoring-bpmn-Extract-L1-from-WHO-publications-10-l1-document-ingestion-">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/dth-authoring.bpmn#Extract L1 from WHO publications&amp;#10;[l1-document-ingestion]"><code>Extract L1 from WHO publications&amp;#10;[l1-document-ingestion]</code></a><br><span class="p">smart-base/processes/content/dth-authoring.bpmn#Extract L1 from WHO publications&amp;#10;[l1-document-ingestion]</span></td>
+  <td>task in dth-authoring</td>
+</tr>
+<tr id="a-smart-base-processes-content-dth-authoring-bpmn-Form-the-TWG-record-roles-and-RACI-10-content-plan-">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/dth-authoring.bpmn#Form the TWG; record roles and RACI&amp;#10;[content-plan]"><code>Form the TWG; record roles and RACI&amp;#10;[content-plan]</code></a><br><span class="p">smart-base/processes/content/dth-authoring.bpmn#Form the TWG; record roles and RACI&amp;#10;[content-plan]</span></td>
+  <td>userTask in dth-authoring</td>
+</tr>
+<tr id="a-smart-base-processes-content-dth-authoring-bpmn-Import-into-review-wg-comment-and-form-change-sets-10-public-comment-">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/dth-authoring.bpmn#Import into review/wg-comment and form change sets&amp;#10;[public-comment]"><code>Import into review/wg-comment and form change sets&amp;#10;[public-comment]</code></a><br><span class="p">smart-base/processes/content/dth-authoring.bpmn#Import into review/wg-comment and form change sets&amp;#10;[public-comment]</span></td>
+  <td>task in dth-authoring</td>
+</tr>
+<tr id="a-smart-base-processes-content-dth-authoring-bpmn-Link-glossary-to-smart-ra-SKOS-10-terminology-management-">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/dth-authoring.bpmn#Link glossary to smart-ra SKOS&amp;#10;[terminology-management]"><code>Link glossary to smart-ra SKOS&amp;#10;[terminology-management]</code></a><br><span class="p">smart-base/processes/content/dth-authoring.bpmn#Link glossary to smart-ra SKOS&amp;#10;[terminology-management]</span></td>
+  <td>callActivity in dth-authoring</td>
+</tr>
+<tr id="a-smart-base-processes-content-dth-authoring-bpmn-Link-to-smart-ra-ArchiMate-10-archimate-models-">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/dth-authoring.bpmn#Link to smart-ra ArchiMate&amp;#10;[archimate-models]"><code>Link to smart-ra ArchiMate&amp;#10;[archimate-models]</code></a><br><span class="p">smart-base/processes/content/dth-authoring.bpmn#Link to smart-ra ArchiMate&amp;#10;[archimate-models]</span></td>
+  <td>callActivity in dth-authoring</td>
+</tr>
+<tr id="a-smart-base-processes-content-dth-authoring-bpmn-List-processes-roles-decisions-and-indicators-to-model-10-content-plan-">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/dth-authoring.bpmn#List processes, roles, decisions and indicators to model&amp;#10;[content-plan]"><code>List processes, roles, decisions and indicators to model&amp;#10;[content-plan]</code></a><br><span class="p">smart-base/processes/content/dth-authoring.bpmn#List processes, roles, decisions and indicators to model&amp;#10;[content-plan]</span></td>
+  <td>task in dth-authoring</td>
+</tr>
+<tr id="a-smart-base-processes-content-dth-authoring-bpmn-Personas-and-roles-10-l2-dak-authoring-">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/dth-authoring.bpmn#Personas and roles&amp;#10;[l2-dak-authoring]"><code>Personas and roles&amp;#10;[l2-dak-authoring]</code></a><br><span class="p">smart-base/processes/content/dth-authoring.bpmn#Personas and roles&amp;#10;[l2-dak-authoring]</span></td>
+  <td>callActivity in dth-authoring</td>
+</tr>
+<tr id="a-smart-base-processes-content-dth-authoring-bpmn-Planning-steps-per-chapter-10-document-authoring-">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/dth-authoring.bpmn#Planning steps per chapter&amp;#10;[document-authoring]"><code>Planning steps per chapter&amp;#10;[document-authoring]</code></a><br><span class="p">smart-base/processes/content/dth-authoring.bpmn#Planning steps per chapter&amp;#10;[document-authoring]</span></td>
+  <td>callActivity in dth-authoring</td>
+</tr>
+<tr id="a-smart-base-processes-content-dth-authoring-bpmn-Public-comments-10-content-feedback-">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/dth-authoring.bpmn#Public comments&amp;#10;[content-feedback]"><code>Public comments&amp;#10;[content-feedback]</code></a><br><span class="p">smart-base/processes/content/dth-authoring.bpmn#Public comments&amp;#10;[content-feedback]</span></td>
+  <td>userTask in dth-authoring</td>
+</tr>
+<tr id="a-smart-base-processes-content-dth-authoring-bpmn-Publish-the-handbook-10-document-publishing-">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/dth-authoring.bpmn#Publish the handbook&amp;#10;[document-publishing]"><code>Publish the handbook&amp;#10;[document-publishing]</code></a><br><span class="p">smart-base/processes/content/dth-authoring.bpmn#Publish the handbook&amp;#10;[document-publishing]</span></td>
+  <td>task in dth-authoring</td>
+</tr>
+<tr id="a-smart-base-processes-content-dth-authoring-bpmn-Record-milestone-10-M0-Charter-recorded-10-todo-manager-">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/dth-authoring.bpmn#Record milestone&amp;#10;M0 · Charter recorded&amp;#10;[todo-manager]"><code>Record milestone&amp;#10;M0 · Charter recorded&amp;#10;[todo-manager]</code></a><br><span class="p">smart-base/processes/content/dth-authoring.bpmn#Record milestone&amp;#10;M0 · Charter recorded&amp;#10;[todo-manager]</span></td>
+  <td>task in dth-authoring</td>
+</tr>
+<tr id="a-smart-base-processes-content-dth-authoring-bpmn-Record-milestone-10-M1-Library-frozen-10-todo-manager-">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/dth-authoring.bpmn#Record milestone&amp;#10;M1 · Library frozen&amp;#10;[todo-manager]"><code>Record milestone&amp;#10;M1 · Library frozen&amp;#10;[todo-manager]</code></a><br><span class="p">smart-base/processes/content/dth-authoring.bpmn#Record milestone&amp;#10;M1 · Library frozen&amp;#10;[todo-manager]</span></td>
+  <td>task in dth-authoring</td>
+</tr>
+<tr id="a-smart-base-processes-content-dth-authoring-bpmn-Record-milestone-10-M2-Outline-agreed-10-todo-manager-">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/dth-authoring.bpmn#Record milestone&amp;#10;M2 · Outline agreed&amp;#10;[todo-manager]"><code>Record milestone&amp;#10;M2 · Outline agreed&amp;#10;[todo-manager]</code></a><br><span class="p">smart-base/processes/content/dth-authoring.bpmn#Record milestone&amp;#10;M2 · Outline agreed&amp;#10;[todo-manager]</span></td>
+  <td>task in dth-authoring</td>
+</tr>
+<tr id="a-smart-base-processes-content-dth-authoring-bpmn-Record-milestone-10-M3-Zero-draft-10-todo-manager-">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/dth-authoring.bpmn#Record milestone&amp;#10;M3 · Zero draft&amp;#10;[todo-manager]"><code>Record milestone&amp;#10;M3 · Zero draft&amp;#10;[todo-manager]</code></a><br><span class="p">smart-base/processes/content/dth-authoring.bpmn#Record milestone&amp;#10;M3 · Zero draft&amp;#10;[todo-manager]</span></td>
+  <td>task in dth-authoring</td>
+</tr>
+<tr id="a-smart-base-processes-content-dth-authoring-bpmn-Record-milestone-10-M4-Working-group-draft-10-todo-manager-">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/dth-authoring.bpmn#Record milestone&amp;#10;M4 · Working-group draft&amp;#10;[todo-manager]"><code>Record milestone&amp;#10;M4 · Working-group draft&amp;#10;[todo-manager]</code></a><br><span class="p">smart-base/processes/content/dth-authoring.bpmn#Record milestone&amp;#10;M4 · Working-group draft&amp;#10;[todo-manager]</span></td>
+  <td>task in dth-authoring</td>
+</tr>
+<tr id="a-smart-base-processes-content-dth-authoring-bpmn-Record-milestone-10-M5-Public-draft-released-10-todo-manager-">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/dth-authoring.bpmn#Record milestone&amp;#10;M5 · Public draft released&amp;#10;[todo-manager]"><code>Record milestone&amp;#10;M5 · Public draft released&amp;#10;[todo-manager]</code></a><br><span class="p">smart-base/processes/content/dth-authoring.bpmn#Record milestone&amp;#10;M5 · Public draft released&amp;#10;[todo-manager]</span></td>
+  <td>task in dth-authoring</td>
+</tr>
+<tr id="a-smart-base-processes-content-dth-authoring-bpmn-Record-milestone-10-M6-Comments-dispositioned-10-todo-manager-">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/dth-authoring.bpmn#Record milestone&amp;#10;M6 · Comments dispositioned&amp;#10;[todo-manager]"><code>Record milestone&amp;#10;M6 · Comments dispositioned&amp;#10;[todo-manager]</code></a><br><span class="p">smart-base/processes/content/dth-authoring.bpmn#Record milestone&amp;#10;M6 · Comments dispositioned&amp;#10;[todo-manager]</span></td>
+  <td>task in dth-authoring</td>
+</tr>
+<tr id="a-smart-base-processes-content-dth-authoring-bpmn-Seed-the-work-plan-10-todo-manager-">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/dth-authoring.bpmn#Seed the work plan&amp;#10;[todo-manager]"><code>Seed the work plan&amp;#10;[todo-manager]</code></a><br><span class="p">smart-base/processes/content/dth-authoring.bpmn#Seed the work plan&amp;#10;[todo-manager]</span></td>
+  <td>task in dth-authoring</td>
+</tr>
+<tr id="a-smart-base-processes-content-dth-authoring-bpmn-TWG-reviews-the-outline-10-content-feedback-">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/dth-authoring.bpmn#TWG reviews the outline&amp;#10;[content-feedback]"><code>TWG reviews the outline&amp;#10;[content-feedback]</code></a><br><span class="p">smart-base/processes/content/dth-authoring.bpmn#TWG reviews the outline&amp;#10;[content-feedback]</span></td>
+  <td>userTask in dth-authoring</td>
+</tr>
+<tr id="a-smart-base-processes-content-dth-authoring-bpmn-User-scenarios-10-l2-dak-authoring-">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/dth-authoring.bpmn#User scenarios&amp;#10;[l2-dak-authoring]"><code>User scenarios&amp;#10;[l2-dak-authoring]</code></a><br><span class="p">smart-base/processes/content/dth-authoring.bpmn#User scenarios&amp;#10;[l2-dak-authoring]</span></td>
+  <td>callActivity in dth-authoring</td>
+</tr>
+<tr id="a-smart-base-processes-content-dth-authoring-bpmn-Validate-the-draft-10-content-validate-">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/dth-authoring.bpmn#Validate the draft&amp;#10;[content-validate]"><code>Validate the draft&amp;#10;[content-validate]</code></a><br><span class="p">smart-base/processes/content/dth-authoring.bpmn#Validate the draft&amp;#10;[content-validate]</span></td>
+  <td>task in dth-authoring</td>
+</tr>
+<tr id="a-smart-base-processes-content-l2-component-edit-review-bpmn-Ask-for-review-with-staging-deep-links">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/l2-component-edit-review.bpmn#Ask for review with staging deep links"><code>Ask for review with staging deep links</code></a><br><span class="p">smart-base/processes/content/l2-component-edit-review.bpmn#Ask for review with staging deep links</span></td>
   <td>task in l2-component-edit-review</td>
 </tr>
-<tr id="a-smart-base-processes-content-l2-component-edit-review-bpmn-Edit-the-component-10-l2-component-edit-review-">
-  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/l2-component-edit-review.bpmn#Edit the component&amp;#10;[l2-component-edit-review]"><code>Edit the component&amp;#10;[l2-component-edit-review]</code></a><br><span class="p">smart-base/processes/content/l2-component-edit-review.bpmn#Edit the component&amp;#10;[l2-component-edit-review]</span></td>
+<tr id="a-smart-base-processes-content-l2-component-edit-review-bpmn-Edit-the-component">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/l2-component-edit-review.bpmn#Edit the component"><code>Edit the component</code></a><br><span class="p">smart-base/processes/content/l2-component-edit-review.bpmn#Edit the component</span></td>
   <td>task in l2-component-edit-review</td>
 </tr>
-<tr id="a-smart-base-processes-content-l2-component-edit-review-bpmn-Render-stage-before-after-10-before-after-preview-feature-staging-">
-  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/l2-component-edit-review.bpmn#Render, stage, before/after&amp;#10;[before-after-preview · feature-staging]"><code>Render, stage, before/after&amp;#10;[before-after-preview · feature-staging]</code></a><br><span class="p">smart-base/processes/content/l2-component-edit-review.bpmn#Render, stage, before/after&amp;#10;[before-after-preview · feature-staging]</span></td>
+<tr id="a-smart-base-processes-content-l2-component-edit-review-bpmn-Render-stage-before-after">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/l2-component-edit-review.bpmn#Render, stage, before/after"><code>Render, stage, before/after</code></a><br><span class="p">smart-base/processes/content/l2-component-edit-review.bpmn#Render, stage, before/after</span></td>
   <td>task in l2-component-edit-review</td>
 </tr>
-<tr id="a-smart-base-processes-content-l2-component-edit-review-bpmn-Reopen-upstream-flag-derived-assets-10-todo-manager-">
-  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/l2-component-edit-review.bpmn#Reopen upstream, flag derived assets&amp;#10;[todo-manager]"><code>Reopen upstream, flag derived assets&amp;#10;[todo-manager]</code></a><br><span class="p">smart-base/processes/content/l2-component-edit-review.bpmn#Reopen upstream, flag derived assets&amp;#10;[todo-manager]</span></td>
+<tr id="a-smart-base-processes-content-l2-component-edit-review-bpmn-Reopen-upstream-flag-derived-assets">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/l2-component-edit-review.bpmn#Reopen upstream, flag derived assets"><code>Reopen upstream, flag derived assets</code></a><br><span class="p">smart-base/processes/content/l2-component-edit-review.bpmn#Reopen upstream, flag derived assets</span></td>
   <td>task in l2-component-edit-review</td>
 </tr>
-<tr id="a-smart-base-processes-content-l2-component-edit-review-bpmn-Review-the-staged-component-10-content-review-">
-  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/l2-component-edit-review.bpmn#Review the staged component&amp;#10;[content-review]"><code>Review the staged component&amp;#10;[content-review]</code></a><br><span class="p">smart-base/processes/content/l2-component-edit-review.bpmn#Review the staged component&amp;#10;[content-review]</span></td>
+<tr id="a-smart-base-processes-content-l2-component-edit-review-bpmn-Review-the-staged-component">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/l2-component-edit-review.bpmn#Review the staged component"><code>Review the staged component</code></a><br><span class="p">smart-base/processes/content/l2-component-edit-review.bpmn#Review the staged component</span></td>
   <td>callActivity in l2-component-edit-review</td>
 </tr>
-<tr id="a-smart-base-processes-content-l2-component-edit-review-bpmn-Run-the-component-s-checker-10-content-validate-content-test-">
-  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/l2-component-edit-review.bpmn#Run the component's checker&amp;#10;[content-validate · content-test]"><code>Run the component's checker&amp;#10;[content-validate · content-test]</code></a><br><span class="p">smart-base/processes/content/l2-component-edit-review.bpmn#Run the component's checker&amp;#10;[content-validate · content-test]</span></td>
+<tr id="a-smart-base-processes-content-l2-component-edit-review-bpmn-Run-the-component-s-checker">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/l2-component-edit-review.bpmn#Run the component's checker"><code>Run the component's checker</code></a><br><span class="p">smart-base/processes/content/l2-component-edit-review.bpmn#Run the component's checker</span></td>
   <td>task in l2-component-edit-review</td>
 </tr>
-<tr id="a-smart-base-processes-content-l2-dak-authoring-bpmn-Assemble-and-validate-the-DAK-10-content-validate-">
-  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/l2-dak-authoring.bpmn#Assemble and validate the DAK&amp;#10;[content-validate]"><code>Assemble and validate the DAK&amp;#10;[content-validate]</code></a><br><span class="p">smart-base/processes/content/l2-dak-authoring.bpmn#Assemble and validate the DAK&amp;#10;[content-validate]</span></td>
+<tr id="a-smart-base-processes-content-l2-dak-authoring-bpmn-Assemble-and-validate-the-DAK">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/l2-dak-authoring.bpmn#Assemble and validate the DAK"><code>Assemble and validate the DAK</code></a><br><span class="p">smart-base/processes/content/l2-dak-authoring.bpmn#Assemble and validate the DAK</span></td>
   <td>userTask in l2-dak-authoring</td>
 </tr>
-<tr id="a-smart-base-processes-content-l2-dak-authoring-bpmn-Build-the-L1-library-from-Component-1-10-dak-l1-library-">
-  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/l2-dak-authoring.bpmn#Build the L1 library from Component 1&amp;#10;[dak-l1-library]"><code>Build the L1 library from Component 1&amp;#10;[dak-l1-library]</code></a><br><span class="p">smart-base/processes/content/l2-dak-authoring.bpmn#Build the L1 library from Component 1&amp;#10;[dak-l1-library]</span></td>
+<tr id="a-smart-base-processes-content-l2-dak-authoring-bpmn-Build-the-L1-library-from-Component-1">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/l2-dak-authoring.bpmn#Build the L1 library from Component 1"><code>Build the L1 library from Component 1</code></a><br><span class="p">smart-base/processes/content/l2-dak-authoring.bpmn#Build the L1 library from Component 1</span></td>
   <td>userTask in l2-dak-authoring</td>
 </tr>
-<tr id="a-smart-base-processes-content-l2-dak-authoring-bpmn-Business-processes-BPMN-2-0-10-bpmn-authoring-">
-  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/l2-dak-authoring.bpmn#Business processes · BPMN 2.0&amp;#10;[bpmn-authoring]"><code>Business processes · BPMN 2.0&amp;#10;[bpmn-authoring]</code></a><br><span class="p">smart-base/processes/content/l2-dak-authoring.bpmn#Business processes · BPMN 2.0&amp;#10;[bpmn-authoring]</span></td>
+<tr id="a-smart-base-processes-content-l2-dak-authoring-bpmn-Business-processes-BPMN-2-0">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/l2-dak-authoring.bpmn#Business processes · BPMN 2.0"><code>Business processes · BPMN 2.0</code></a><br><span class="p">smart-base/processes/content/l2-dak-authoring.bpmn#Business processes · BPMN 2.0</span></td>
   <td>callActivity in l2-dak-authoring</td>
 </tr>
-<tr id="a-smart-base-processes-content-l2-dak-authoring-bpmn-Clinical-validation-10-content-review-">
-  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/l2-dak-authoring.bpmn#Clinical validation&amp;#10;[content-review]"><code>Clinical validation&amp;#10;[content-review]</code></a><br><span class="p">smart-base/processes/content/l2-dak-authoring.bpmn#Clinical validation&amp;#10;[content-review]</span></td>
+<tr id="a-smart-base-processes-content-l2-dak-authoring-bpmn-Clinical-validation">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/l2-dak-authoring.bpmn#Clinical validation"><code>Clinical validation</code></a><br><span class="p">smart-base/processes/content/l2-dak-authoring.bpmn#Clinical validation</span></td>
   <td>userTask in l2-dak-authoring</td>
 </tr>
-<tr id="a-smart-base-processes-content-l2-dak-authoring-bpmn-Close-the-bean-10-bean-close-">
-  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/l2-dak-authoring.bpmn#Close the bean&amp;#10;[bean-close]"><code>Close the bean&amp;#10;[bean-close]</code></a><br><span class="p">smart-base/processes/content/l2-dak-authoring.bpmn#Close the bean&amp;#10;[bean-close]</span></td>
+<tr id="a-smart-base-processes-content-l2-dak-authoring-bpmn-Close-the-bean">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/l2-dak-authoring.bpmn#Close the bean"><code>Close the bean</code></a><br><span class="p">smart-base/processes/content/l2-dak-authoring.bpmn#Close the bean</span></td>
   <td>callActivity in l2-dak-authoring</td>
 </tr>
-<tr id="a-smart-base-processes-content-l2-dak-authoring-bpmn-Data-dictionary-and-core-data-elements-10-l2-dak-authoring-">
-  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/l2-dak-authoring.bpmn#Data dictionary and core data elements&amp;#10;[l2-dak-authoring]"><code>Data dictionary and core data elements&amp;#10;[l2-dak-authoring]</code></a><br><span class="p">smart-base/processes/content/l2-dak-authoring.bpmn#Data dictionary and core data elements&amp;#10;[l2-dak-authoring]</span></td>
+<tr id="a-smart-base-processes-content-l2-dak-authoring-bpmn-Data-dictionary-and-core-data-elements">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/l2-dak-authoring.bpmn#Data dictionary and core data elements"><code>Data dictionary and core data elements</code></a><br><span class="p">smart-base/processes/content/l2-dak-authoring.bpmn#Data dictionary and core data elements</span></td>
   <td>callActivity in l2-dak-authoring</td>
 </tr>
-<tr id="a-smart-base-processes-content-l2-dak-authoring-bpmn-Decision-logic-DMN-tables-10-dmn-authoring-">
-  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/l2-dak-authoring.bpmn#Decision logic · DMN tables&amp;#10;[dmn-authoring]"><code>Decision logic · DMN tables&amp;#10;[dmn-authoring]</code></a><br><span class="p">smart-base/processes/content/l2-dak-authoring.bpmn#Decision logic · DMN tables&amp;#10;[dmn-authoring]</span></td>
+<tr id="a-smart-base-processes-content-l2-dak-authoring-bpmn-Decision-logic-DMN-tables">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/l2-dak-authoring.bpmn#Decision logic · DMN tables"><code>Decision logic · DMN tables</code></a><br><span class="p">smart-base/processes/content/l2-dak-authoring.bpmn#Decision logic · DMN tables</span></td>
   <td>callActivity in l2-dak-authoring</td>
 </tr>
-<tr id="a-smart-base-processes-content-l2-dak-authoring-bpmn-Indicators-and-requirements-10-l2-dak-authoring-">
-  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/l2-dak-authoring.bpmn#Indicators and requirements&amp;#10;[l2-dak-authoring]"><code>Indicators and requirements&amp;#10;[l2-dak-authoring]</code></a><br><span class="p">smart-base/processes/content/l2-dak-authoring.bpmn#Indicators and requirements&amp;#10;[l2-dak-authoring]</span></td>
+<tr id="a-smart-base-processes-content-l2-dak-authoring-bpmn-Indicators-and-requirements">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/l2-dak-authoring.bpmn#Indicators and requirements"><code>Indicators and requirements</code></a><br><span class="p">smart-base/processes/content/l2-dak-authoring.bpmn#Indicators and requirements</span></td>
   <td>callActivity in l2-dak-authoring</td>
 </tr>
-<tr id="a-smart-base-processes-content-l2-dak-authoring-bpmn-Open-the-bean-10-bean-open-">
-  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/l2-dak-authoring.bpmn#Open the bean&amp;#10;[bean-open]"><code>Open the bean&amp;#10;[bean-open]</code></a><br><span class="p">smart-base/processes/content/l2-dak-authoring.bpmn#Open the bean&amp;#10;[bean-open]</span></td>
+<tr id="a-smart-base-processes-content-l2-dak-authoring-bpmn-Open-the-bean">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/l2-dak-authoring.bpmn#Open the bean"><code>Open the bean</code></a><br><span class="p">smart-base/processes/content/l2-dak-authoring.bpmn#Open the bean</span></td>
   <td>callActivity in l2-dak-authoring</td>
 </tr>
-<tr id="a-smart-base-processes-content-l2-dak-authoring-bpmn-Personas-and-scenarios-10-l2-dak-authoring-">
-  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/l2-dak-authoring.bpmn#Personas and scenarios&amp;#10;[l2-dak-authoring]"><code>Personas and scenarios&amp;#10;[l2-dak-authoring]</code></a><br><span class="p">smart-base/processes/content/l2-dak-authoring.bpmn#Personas and scenarios&amp;#10;[l2-dak-authoring]</span></td>
+<tr id="a-smart-base-processes-content-l2-dak-authoring-bpmn-Personas-and-scenarios">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/l2-dak-authoring.bpmn#Personas and scenarios"><code>Personas and scenarios</code></a><br><span class="p">smart-base/processes/content/l2-dak-authoring.bpmn#Personas and scenarios</span></td>
   <td>callActivity in l2-dak-authoring</td>
 </tr>
-<tr id="a-smart-base-processes-content-l2-dak-authoring-bpmn-Scope-the-DAK-10-content-plan-">
-  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/l2-dak-authoring.bpmn#Scope the DAK&amp;#10;[content-plan]"><code>Scope the DAK&amp;#10;[content-plan]</code></a><br><span class="p">smart-base/processes/content/l2-dak-authoring.bpmn#Scope the DAK&amp;#10;[content-plan]</span></td>
+<tr id="a-smart-base-processes-content-l2-dak-authoring-bpmn-Scope-the-DAK">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/l2-dak-authoring.bpmn#Scope the DAK"><code>Scope the DAK</code></a><br><span class="p">smart-base/processes/content/l2-dak-authoring.bpmn#Scope the DAK</span></td>
   <td>userTask in l2-dak-authoring</td>
 </tr>
-<tr id="a-smart-base-processes-content-l2-dak-authoring-bpmn-Seed-the-work-plan-10-todo-manager-">
-  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/l2-dak-authoring.bpmn#Seed the work plan&amp;#10;[todo-manager]"><code>Seed the work plan&amp;#10;[todo-manager]</code></a><br><span class="p">smart-base/processes/content/l2-dak-authoring.bpmn#Seed the work plan&amp;#10;[todo-manager]</span></td>
+<tr id="a-smart-base-processes-content-l2-dak-authoring-bpmn-Seed-the-work-plan">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/l2-dak-authoring.bpmn#Seed the work plan"><code>Seed the work plan</code></a><br><span class="p">smart-base/processes/content/l2-dak-authoring.bpmn#Seed the work plan</span></td>
   <td>task in l2-dak-authoring</td>
 </tr>
-<tr id="a-smart-base-processes-content-l2-dak-authoring-bpmn-Terminology-bindings-10-terminology-management-">
-  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/l2-dak-authoring.bpmn#Terminology bindings&amp;#10;[terminology-management]"><code>Terminology bindings&amp;#10;[terminology-management]</code></a><br><span class="p">smart-base/processes/content/l2-dak-authoring.bpmn#Terminology bindings&amp;#10;[terminology-management]</span></td>
+<tr id="a-smart-base-processes-content-l2-dak-authoring-bpmn-Terminology-bindings">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/l2-dak-authoring.bpmn#Terminology bindings"><code>Terminology bindings</code></a><br><span class="p">smart-base/processes/content/l2-dak-authoring.bpmn#Terminology bindings</span></td>
   <td>callActivity in l2-dak-authoring</td>
 </tr>
 <tr id="a-smart-base-processes-content-SGAuthoring-DAKLifecycle-bpmn-Approve-IG-for-publication">
@@ -1147,8 +1356,8 @@
   <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/SGAuthoring.DAKLifecycle.bpmn#Ground-truth with field practice (country visits/interviews)"><code>Ground-truth with field practice (country visits/interviews)</code></a><br><span class="p">smart-base/processes/content/SGAuthoring.DAKLifecycle.bpmn#Ground-truth with field practice (country visits/interviews)</span></td>
   <td>task in SGAuthoring.DAKLifecycle</td>
 </tr>
-<tr id="a-smart-base-processes-content-SGAuthoring-DAKLifecycle-bpmn-Identify-health-interventions-and-recommendations-Component-1-">
-  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/SGAuthoring.DAKLifecycle.bpmn#Identify health interventions and recommendations (Component 1)"><code>Identify health interventions and recommendations (Component 1)</code></a><br><span class="p">smart-base/processes/content/SGAuthoring.DAKLifecycle.bpmn#Identify health interventions and recommendations (Component 1)</span></td>
+<tr id="a-smart-base-processes-content-SGAuthoring-DAKLifecycle-bpmn-Identify-interventions-and-recommendations-Component-1-">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/SGAuthoring.DAKLifecycle.bpmn#Identify interventions and recommendations (Component 1)"><code>Identify interventions and recommendations (Component 1)</code></a><br><span class="p">smart-base/processes/content/SGAuthoring.DAKLifecycle.bpmn#Identify interventions and recommendations (Component 1)</span></td>
   <td>task in SGAuthoring.DAKLifecycle</td>
 </tr>
 <tr id="a-smart-base-processes-content-SGAuthoring-DAKLifecycle-bpmn-Incorporate-SME-feedback-into-DAK-components">
@@ -1275,44 +1484,44 @@
   <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/SGAuthoring.DAKLifecycle.bpmn#Verify L2 input availability and consistency"><code>Verify L2 input availability and consistency</code></a><br><span class="p">smart-base/processes/content/SGAuthoring.DAKLifecycle.bpmn#Verify L2 input availability and consistency</span></td>
   <td>task in SGAuthoring.DAKLifecycle</td>
 </tr>
-<tr id="a-smart-base-processes-content-smart-guideline-end-to-end-bpmn-0-Describe-the-use-case-10-guideline-use-case-">
-  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/smart-guideline-end-to-end.bpmn#0 · Describe the use case&amp;#10;[guideline-use-case]"><code>0 · Describe the use case&amp;#10;[guideline-use-case]</code></a><br><span class="p">smart-base/processes/content/smart-guideline-end-to-end.bpmn#0 · Describe the use case&amp;#10;[guideline-use-case]</span></td>
+<tr id="a-smart-base-processes-content-smart-guideline-end-to-end-bpmn-0-Describe-the-use-case">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/smart-guideline-end-to-end.bpmn#0 · Describe the use case"><code>0 · Describe the use case</code></a><br><span class="p">smart-base/processes/content/smart-guideline-end-to-end.bpmn#0 · Describe the use case</span></td>
   <td>userTask in smart-guideline-end-to-end</td>
 </tr>
-<tr id="a-smart-base-processes-content-smart-guideline-end-to-end-bpmn-1-Identify-L1-guidelines-and-recommendations-10-dak-l1-library-">
-  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/smart-guideline-end-to-end.bpmn#1 · Identify L1 guidelines and recommendations&amp;#10;[dak-l1-library]"><code>1 · Identify L1 guidelines and recommendations&amp;#10;[dak-l1-library]</code></a><br><span class="p">smart-base/processes/content/smart-guideline-end-to-end.bpmn#1 · Identify L1 guidelines and recommendations&amp;#10;[dak-l1-library]</span></td>
+<tr id="a-smart-base-processes-content-smart-guideline-end-to-end-bpmn-1-Identify-L1-guidelines-and-recommendations">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/smart-guideline-end-to-end.bpmn#1 · Identify L1 guidelines and recommendations"><code>1 · Identify L1 guidelines and recommendations</code></a><br><span class="p">smart-base/processes/content/smart-guideline-end-to-end.bpmn#1 · Identify L1 guidelines and recommendations</span></td>
   <td>task in smart-guideline-end-to-end</td>
 </tr>
-<tr id="a-smart-base-processes-content-smart-guideline-end-to-end-bpmn-2-Ingest-into-the-L1-KG-10-recommendation-extraction-">
-  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/smart-guideline-end-to-end.bpmn#2 · Ingest into the L1 KG&amp;#10;[recommendation-extraction]"><code>2 · Ingest into the L1 KG&amp;#10;[recommendation-extraction]</code></a><br><span class="p">smart-base/processes/content/smart-guideline-end-to-end.bpmn#2 · Ingest into the L1 KG&amp;#10;[recommendation-extraction]</span></td>
+<tr id="a-smart-base-processes-content-smart-guideline-end-to-end-bpmn-2-Ingest-into-the-L1-KG">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/smart-guideline-end-to-end.bpmn#2 · Ingest into the L1 KG"><code>2 · Ingest into the L1 KG</code></a><br><span class="p">smart-base/processes/content/smart-guideline-end-to-end.bpmn#2 · Ingest into the L1 KG</span></td>
   <td>task in smart-guideline-end-to-end</td>
 </tr>
-<tr id="a-smart-base-processes-content-smart-guideline-end-to-end-bpmn-3-Choose-L2-dependencies-10-WHO-jurisdiction-DAKs-10-l2-dependency-choice-">
-  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/smart-guideline-end-to-end.bpmn#3 · Choose L2 dependencies&amp;#10;(WHO / jurisdiction DAKs)&amp;#10;[l2-dependency-choice]"><code>3 · Choose L2 dependencies&amp;#10;(WHO / jurisdiction DAKs)&amp;#10;[l2-dependency-choice]</code></a><br><span class="p">smart-base/processes/content/smart-guideline-end-to-end.bpmn#3 · Choose L2 dependencies&amp;#10;(WHO / jurisdiction DAKs)&amp;#10;[l2-dependency-choice]</span></td>
+<tr id="a-smart-base-processes-content-smart-guideline-end-to-end-bpmn-3-Choose-L2-dependencies-10-WHO-jurisdiction-DAKs-">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/smart-guideline-end-to-end.bpmn#3 · Choose L2 dependencies&amp;#10;(WHO / jurisdiction DAKs)"><code>3 · Choose L2 dependencies&amp;#10;(WHO / jurisdiction DAKs)</code></a><br><span class="p">smart-base/processes/content/smart-guideline-end-to-end.bpmn#3 · Choose L2 dependencies&amp;#10;(WHO / jurisdiction DAKs)</span></td>
   <td>task in smart-guideline-end-to-end</td>
 </tr>
-<tr id="a-smart-base-processes-content-smart-guideline-end-to-end-bpmn-4-Create-adapt-L2-DAK-assets-10-l2-dak-authoring-">
-  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/smart-guideline-end-to-end.bpmn#4 · Create / adapt L2 DAK assets&amp;#10;[l2-dak-authoring]"><code>4 · Create / adapt L2 DAK assets&amp;#10;[l2-dak-authoring]</code></a><br><span class="p">smart-base/processes/content/smart-guideline-end-to-end.bpmn#4 · Create / adapt L2 DAK assets&amp;#10;[l2-dak-authoring]</span></td>
+<tr id="a-smart-base-processes-content-smart-guideline-end-to-end-bpmn-4-Create-adapt-L2-DAK-assets">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/smart-guideline-end-to-end.bpmn#4 · Create / adapt L2 DAK assets"><code>4 · Create / adapt L2 DAK assets</code></a><br><span class="p">smart-base/processes/content/smart-guideline-end-to-end.bpmn#4 · Create / adapt L2 DAK assets</span></td>
   <td>task in smart-guideline-end-to-end</td>
 </tr>
-<tr id="a-smart-base-processes-content-smart-guideline-end-to-end-bpmn-5-Choose-L3-dependencies-10-WHO-jurisdiction-IGs-10-l3-dependency-choice-">
-  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/smart-guideline-end-to-end.bpmn#5 · Choose L3 dependencies&amp;#10;(WHO / jurisdiction IGs)&amp;#10;[l3-dependency-choice]"><code>5 · Choose L3 dependencies&amp;#10;(WHO / jurisdiction IGs)&amp;#10;[l3-dependency-choice]</code></a><br><span class="p">smart-base/processes/content/smart-guideline-end-to-end.bpmn#5 · Choose L3 dependencies&amp;#10;(WHO / jurisdiction IGs)&amp;#10;[l3-dependency-choice]</span></td>
+<tr id="a-smart-base-processes-content-smart-guideline-end-to-end-bpmn-5-Choose-L3-dependencies-10-WHO-jurisdiction-IGs-">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/smart-guideline-end-to-end.bpmn#5 · Choose L3 dependencies&amp;#10;(WHO / jurisdiction IGs)"><code>5 · Choose L3 dependencies&amp;#10;(WHO / jurisdiction IGs)</code></a><br><span class="p">smart-base/processes/content/smart-guideline-end-to-end.bpmn#5 · Choose L3 dependencies&amp;#10;(WHO / jurisdiction IGs)</span></td>
   <td>task in smart-guideline-end-to-end</td>
 </tr>
-<tr id="a-smart-base-processes-content-smart-guideline-end-to-end-bpmn-6-Produce-L3-assets-10-l3-fhir-authoring-">
-  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/smart-guideline-end-to-end.bpmn#6 · Produce L3 assets&amp;#10;[l3-fhir-authoring]"><code>6 · Produce L3 assets&amp;#10;[l3-fhir-authoring]</code></a><br><span class="p">smart-base/processes/content/smart-guideline-end-to-end.bpmn#6 · Produce L3 assets&amp;#10;[l3-fhir-authoring]</span></td>
+<tr id="a-smart-base-processes-content-smart-guideline-end-to-end-bpmn-6-Produce-L3-assets">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/smart-guideline-end-to-end.bpmn#6 · Produce L3 assets"><code>6 · Produce L3 assets</code></a><br><span class="p">smart-base/processes/content/smart-guideline-end-to-end.bpmn#6 · Produce L3 assets</span></td>
   <td>task in smart-guideline-end-to-end</td>
 </tr>
-<tr id="a-smart-base-processes-content-smart-guideline-end-to-end-bpmn-7-L4-describe-the-consuming-application-10-l4-application-brief-">
-  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/smart-guideline-end-to-end.bpmn#7 · L4: describe the consuming application&amp;#10;[l4-application-brief]"><code>7 · L4: describe the consuming application&amp;#10;[l4-application-brief]</code></a><br><span class="p">smart-base/processes/content/smart-guideline-end-to-end.bpmn#7 · L4: describe the consuming application&amp;#10;[l4-application-brief]</span></td>
+<tr id="a-smart-base-processes-content-smart-guideline-end-to-end-bpmn-7-L4-describe-the-consuming-application">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/smart-guideline-end-to-end.bpmn#7 · L4: describe the consuming application"><code>7 · L4: describe the consuming application</code></a><br><span class="p">smart-base/processes/content/smart-guideline-end-to-end.bpmn#7 · L4: describe the consuming application</span></td>
   <td>userTask in smart-guideline-end-to-end</td>
 </tr>
-<tr id="a-smart-base-processes-content-smart-guideline-end-to-end-bpmn-8a-L4-wireframe-the-application-10-wireframe-design-review-">
-  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/smart-guideline-end-to-end.bpmn#8a · L4: wireframe the application&amp;#10;[wireframe-design-review]"><code>8a · L4: wireframe the application&amp;#10;[wireframe-design-review]</code></a><br><span class="p">smart-base/processes/content/smart-guideline-end-to-end.bpmn#8a · L4: wireframe the application&amp;#10;[wireframe-design-review]</span></td>
+<tr id="a-smart-base-processes-content-smart-guideline-end-to-end-bpmn-8a-L4-wireframe-the-application">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/smart-guideline-end-to-end.bpmn#8a · L4: wireframe the application"><code>8a · L4: wireframe the application</code></a><br><span class="p">smart-base/processes/content/smart-guideline-end-to-end.bpmn#8a · L4: wireframe the application</span></td>
   <td>task in smart-guideline-end-to-end</td>
 </tr>
-<tr id="a-smart-base-processes-content-smart-guideline-end-to-end-bpmn-8b-L4-build-the-consuming-application-10-l4-application-build-">
-  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/smart-guideline-end-to-end.bpmn#8b · L4: build the consuming application&amp;#10;[l4-application-build]"><code>8b · L4: build the consuming application&amp;#10;[l4-application-build]</code></a><br><span class="p">smart-base/processes/content/smart-guideline-end-to-end.bpmn#8b · L4: build the consuming application&amp;#10;[l4-application-build]</span></td>
+<tr id="a-smart-base-processes-content-smart-guideline-end-to-end-bpmn-8b-L4-build-the-consuming-application">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/smart-guideline-end-to-end.bpmn#8b · L4: build the consuming application"><code>8b · L4: build the consuming application</code></a><br><span class="p">smart-base/processes/content/smart-guideline-end-to-end.bpmn#8b · L4: build the consuming application</span></td>
   <td>task in smart-guideline-end-to-end</td>
 </tr>
 <tr id="a-smart-base-processes-content-smart-guideline-end-to-end-bpmn-Adjudicate-L2-dependencies">
@@ -1335,8 +1544,8 @@
   <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/smart-guideline-end-to-end.bpmn#Adjudicate the L4 wireframes and application"><code>Adjudicate the L4 wireframes and application</code></a><br><span class="p">smart-base/processes/content/smart-guideline-end-to-end.bpmn#Adjudicate the L4 wireframes and application</span></td>
   <td>callActivity in smart-guideline-end-to-end</td>
 </tr>
-<tr id="a-smart-base-processes-content-smart-guideline-end-to-end-bpmn-Check-L3-readiness-10-l3-readiness-">
-  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/smart-guideline-end-to-end.bpmn#Check L3 readiness&amp;#10;[l3-readiness]"><code>Check L3 readiness&amp;#10;[l3-readiness]</code></a><br><span class="p">smart-base/processes/content/smart-guideline-end-to-end.bpmn#Check L3 readiness&amp;#10;[l3-readiness]</span></td>
+<tr id="a-smart-base-processes-content-smart-guideline-end-to-end-bpmn-Check-L3-readiness">
+  <td><a href="https://github.com/litlfred/smart-base/blob/main/smart-base/processes/content/smart-guideline-end-to-end.bpmn#Check L3 readiness"><code>Check L3 readiness</code></a><br><span class="p">smart-base/processes/content/smart-guideline-end-to-end.bpmn#Check L3 readiness</span></td>
   <td>task in smart-guideline-end-to-end</td>
 </tr>
 <tr id="a-smart-base-processes-content-smart-guideline-end-to-end-bpmn-Review-each-L2-asset-10-before-after-if-adapted-">

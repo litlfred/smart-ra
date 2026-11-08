@@ -28,7 +28,7 @@
  * so a pasted copy can be checked (skill review-sheet-script, "Trusting the
  * script").
  */
-// folio-assistant-core tools/review-sheet-sync at 28a64881849f2bedf78c5b2b6e11088248c8fc2b.
+// folio-assistant-core tools/review-sheet-sync at 7a3df32635d07b1ec95c4cd3730d938386a6a000.
 
 /**
  * Run this one, once, from the editor (or Folio Assistant, then Install automatic
@@ -75,7 +75,7 @@ const CONFIG_TAB = 'Config';
 // Which build this is, and where the latest is published (owner, 2026-10-31:
 // "sheets likely to drift anyways ... they need to know where to see latest
 // published"). The build stamps SCRIPT_VERSION; the script never fetches.
-const SCRIPT_VERSION = '28a64881849f2bedf78c5b2b6e11088248c8fc2b';
+const SCRIPT_VERSION = '7a3df32635d07b1ec95c4cd3730d938386a6a000';
 const LIBRARY_URL = 'https://script.google.com/home/projects/1us7_ApIq_XvDG-V1XtqdcyHucF0hSlST0qracv1Tw9KTb4-lAFvK1bMQ/edit';
 const COPY_PAGE_URL = 'https://claude.ai/artifact/MXNQcLMzLYqq5us5x6phGd';
 // The menu's name and the page it points to for more (owner, 2026-11-01:
@@ -439,6 +439,10 @@ function markDirty(e) {
     return refreshIfDirty();
   }
   props.setProperty('dirty', '1');
+  // The watch hash is written at once, before any rebuild, so a review-log
+  // watcher sees the edit even while a slow sheet waits for the timer
+  // (owner, 2026-11-05: "make the hash update on edit, not just refresh").
+  writeWatchHash(SpreadsheetApp.getActive());
   // Public-comment mode rebuilds the whole sheet, since a comment's row feeds
   // its change sets' rows. It does so at once while that is quick; once a
   // rebuild takes longer than FAST_MS (an 800-row log takes about 20 s),
@@ -527,7 +531,12 @@ function refreshIfDirty() {
       return a ? a.getRange(1, 1, Math.max(a.getLastRow(), 1), Math.max(a.getLastColumn(), 1)).getDisplayValues() : [];
     }).concat([agentColumnText()])));
     const moved = seen !== (props.getProperty('agentHash') || '');
-    if (props.getProperty('dirty') !== '1' && !moved) return;
+    if (props.getProperty('dirty') !== '1' && !moved) {
+      // Nothing to rebuild: still rewrite the watch hash, so Checked (UTC) is
+      // a heartbeat and an edit no trigger saw still changes the hash.
+      writeWatchHash(SpreadsheetApp.getActive());
+      return;
+    }
     // Cleared before the run, so an edit made during it marks it dirty
     // again; put back when the run could not start or failed, so the edit is
     // not lost but retried on the next tick.
@@ -598,6 +607,10 @@ function refreshLocked() {
     const rpc = readSheet(ss.getSheetByName(CFG.RPC));
     const agent = readSheet(ss.getSheetByName(CFG.AGENT));
     const agentCs = CFG.AGENT_CS ? readSheet(ss.getSheetByName(CFG.AGENT_CS)) : agent;
+    // People own Title and the change sets themselves (Q-CS-1 C): done
+    // before Review Change Sets is read, so this run sees the new rows.
+    try { peopleColumns(ss); } catch (err) { /* the refresh still runs */ }
+    try { ownChangeSets(ss, agentCs); } catch (err) { /* the refresh still runs */ }
     const rcs = readSheet(ss.getSheetByName(CFG.RCS));
     const pcOf = {}, csOf = {}, csOfNo = {}, stOf = {}, prOf = {};
     const aNo = col(agent, COLS.agent.no), aPc = col(agent, COLS.agent.pc), aCs = col(agent, COLS.agent.cs);
@@ -641,6 +654,18 @@ function refreshLocked() {
           .filter(x => x.url);
       }
     });
+    // A person's Change Set (human) wins over the agent's (like TWG (human)):
+    // the comment moves at once here, and the watcher then records the move
+    // on Agent - Comments.
+    const hCs = col(rpc, CS_HUMAN), hNo0 = col(rpc, COLS.rpc.no), csKnown = {};
+    rcs.rows.forEach(r => { const id = String(r[col(rcs, 'Change-set')]).trim(); if (id) csKnown[id] = 1; });
+    if (hCs >= 0 && hNo0 >= 0) rpc.rows.forEach(r => {
+      const n = String(r[hNo0]).trim(), h = n ? humanCs(r[hCs], csKnown) : null;
+      if (!h || (!h.ids.length && !/^new/.test(h.note))) return;
+      (csOfNo[n] || []).forEach(cs => { csOf[cs] = (csOf[cs] || []).filter(x => x !== n); });
+      csOfNo[n] = h.ids.slice();
+      h.ids.forEach(cs => (csOf[cs] = csOf[cs] || []).push(n));
+    });
     refreshRpc(rpc, pcOf, csOfNo, stOf, prOf);
     const csCol = col(rcs, 'Change-set'), all = () => true;
     const humanDisp = {}, hNo = col(rpc, COLS.rpc.no), hD = col(rpc, COLS.rpc.disposition || 'Disposition');
@@ -681,6 +706,7 @@ function refreshLocked() {
       const id = String(r[rCs]).trim();
       if (stagingOf[id] || awaitsPreview(prOf[id])) rcs.sh.getRange(k + rcs.top, rSt + 1, 1, 1).setRichTextValues([[stagingCell(stagingOf[id], builtOf[id], prOf[id], readyAt[id], dispBlock[id])]]);
     });
+     writeWatchHash(ss);
   }
 }
 // ---------- sheet helpers ----------
@@ -724,7 +750,8 @@ const HEADER_NOTES = {
   'Line no(s) / Table / Figure': 'The lines, table or figure of the review draft the comment cites. From the submission.',
   'Comment / issue': 'The comment, as the submitter wrote it. Never edited.',
   'Suggested revision': 'The change the submitter proposed, as written. Never edited.',
-  'Change Set': 'The change set this comment is grouped into, linked to its row on Review Change Sets. Set by the agent.',
+  'Change Set': 'The change set this comment is in, linked to its row on Review Change Sets: the agent\'s suggestion, or the one you set in Change Set (human). Kept by the script.',
+  'Change Set (human)': 'Move this comment: type the id of another change set (CS-004), several ids, or "new" for a change set of its own. Wins over the agent\'s suggestion. You fill this in.',
   'TWG (agent)': 'The technical working group the agent suggests for this comment.',
   'TWG (human)': 'The technical working group you assign. Wins over the agent\'s suggestion. You fill this in.',
   'Comment type': 'The kind of comment, e.g. editorial or technical. You fill this in.',
@@ -735,7 +762,7 @@ const HEADER_NOTES = {
   'rpc|Staging review': 'Opens the preview of this comment\'s change set, with a warning when it is stale or still building. Kept by the script.',
   // Review Change Sets
   'Change-set': 'The change set id (CS-001, ...). A change set groups related comments into one pull request. Kept by the script.',
-  'rcs|Title': 'A short name for the change set. Set by the agent.',
+  'rcs|Title': 'A short name for the change set. You fill this in. To make a change set, type a Title on an empty row: the script gives it the next id. To split one, add rows and move its comments with Change Set (human) on Review Public Comments.',
   'rcs|Sections': 'The sections of the document the change set touches, linked to the draft. Kept by the script.',
   'Pages': 'The review-draft pages its comments cite. Kept by the script.',
   'Public Comments': 'The public comments in this change set, each linked to its row on Review Public Comments. Kept by the script.',
@@ -1114,28 +1141,59 @@ function asText(v) {
  * review-log-watch watches the same ones (watch.ts watchedHeader).
  */
 function watchedHeader_(h) {
-  return h === 'Title' || h === 'Selected Sections' || h === 'Disposition' ||
+  return h === 'Title' || h === 'Selected Sections' || h === 'Disposition' || h === CS_HUMAN ||
     h === 'Ready for agent' || h === 'Ready for merge' || h === 'Dispositions confirmed' ||
     (h.indexOf('Contributor Feedback') === 0 && h !== 'Contributor Feedback (agent)');
 }
 
 /**
- * Write a hash of every non-empty person-set cell of Contributor Feedback to
- * the hidden Watch tab, F1 "Cells hash" and G1 the hash, H1 "Checked (UTC)"
- * and I1 when. A review-log watcher reads Watch!F1:I1 and the Issue column
- * on each poll, instead of the whole log, and passes the hash to Tool
- * review-log-watch (`--sheet-hash`); a different hash means a person changed
- * something (owner, 2026-11-01, Q-WATCH4 A). Columns A to D are left to any
- * other Watch writer. Never stops the refresh.
+ * Public comment's person-set cells, one line each (owner, 2026-11-04): on
+ * Review Change Sets Title, TWG (CS), every Committee Feedback column, Ready
+ * for agent, Dispositions confirmed, Ready for merge and Change Set (human);
+ * on Review Public Comments every Committee Feedback column, Disposition,
+ * Change Set (human) and TWG (human). A line is keyed by its row's
+ * Change-set id or comment No., and the lines are sorted, so a row someone
+ * inserts changes nothing; a row with neither is keyed by its place.
+ */
+function pcWatchLines_(ss) {
+  const lines = [];
+  [[CFG.RCS, 'Change-set', ['Title', 'TWG (CS)', 'Ready for agent', CONFIRMED, 'Ready for merge', CS_HUMAN]],
+    [CFG.RPC, COLS.rpc.no, [COLS.rpc.disposition || 'Disposition', CS_HUMAN, 'TWG (human)']]].forEach(([name, key, heads]) => {
+    const s = readSheet(ss.getSheetByName(name));
+    const kc = col(s, key);
+    const cs = heads.map(h => col(s, h)).concat(colsLike(s, 'Committee Feedback')).filter((c, i, a) => c >= 0 && a.indexOf(c) === i);
+    s.rows.forEach((r, k) => {
+      const id = kc >= 0 ? String(r[kc]).trim() : '';
+      cs.forEach(c => {
+        const v = String(r[c] == null ? '' : r[c]).trim();
+        if (v) lines.push(name + '|' + (id || '#' + k) + ':' + s.header[c] + '=' + v);
+      });
+    });
+  });
+  return lines.sort();
+}
+
+/**
+ * Write a hash of every non-empty person-set cell to the hidden Watch tab, F1
+ * "Cells hash" and G1 the hash, H1 "Checked (UTC)" and I1 when: Contributor
+ * Feedback's on a drafting sheet, Review Change Sets' and Review Public
+ * Comments' on a public-comment one (pcWatchLines_). A review-log watcher
+ * reads Watch!F1:I1 and the Issue column on each poll, instead of the whole
+ * log, and passes the hash to Tool review-log-watch (`--sheet-hash`); a
+ * different hash means a person changed something (owner, 2026-11-01,
+ * Q-WATCH4 A). Columns A to D are left to any other Watch writer. Never stops
+ * the refresh.
  */
 function writeWatchHash(ss) {
   try {
-    const s = readSheet(ss.getSheetByName(CFG.FEEDBACK));
-    const lines = [];
-    s.rows.forEach((r, k) => s.header.forEach((h, c) => {
-      const v = String(r[c] == null ? '' : r[c]).trim();
-      if (v && watchedHeader_(String(h).trim())) lines.push(k + ':' + String(h).trim() + '=' + v);
-    }));
+    const lines = DRAFTING ? [] : pcWatchLines_(ss);
+    if (DRAFTING) {
+      const s = readSheet(ss.getSheetByName(CFG.FEEDBACK));
+      s.rows.forEach((r, k) => s.header.forEach((h, c) => {
+        const v = String(r[c] == null ? '' : r[c]).trim();
+        if (v && watchedHeader_(String(h).trim())) lines.push(k + ':' + String(h).trim() + '=' + v);
+      }));
+    }
     let sh = ss.getSheetByName('Watch');
     if (!sh) { sh = ss.insertSheet('Watch'); sh.hideSheet(); }
     const now = new Date().toISOString().slice(0, 16).replace('T', ' ') + 'Z';
@@ -1687,6 +1745,17 @@ function whereLine(picked, tocUrl, staging) {
   });
   return { text: text, links: links };
 }
+/**
+ * The Where to review line for a row, or null. A finished row (closed,
+ * merged, reverted, withdrawn) with no section picked gets none: nothing is
+ * left to review there, and the warning was noise on the DTH-HRH log's
+ * closed re-pin rows (owner, 2026-11-02: after pasting the new Code.gs).
+ */
+function whereFor(picked, tocUrl, staging, status) {
+  const finished = /closed|merged|reverted|withdrawn/i.test(String(status || ''));
+  if (finished && !picked.some(n => tocUrl[n])) return null;
+  return whereLine(picked, tocUrl, staging);
+}
 function withWhere(line, where) {
   const l = line && typeof line === 'object' ? line : { text: String(line || ''), links: [] };
   if (!l.text) return where;
@@ -2119,6 +2188,149 @@ function refreshRpc(s, pcOf, csOfNo, stOf, prOf) {
 
 // ---------- Review Change Sets ----------
 
+/**
+ * People make change sets (owner, 2026-11-02 07:07Z: "the making of CS is
+ * human controlled. keep process similar to how Author/Contributors can make
+ * new issues"; Q-CS-1 C, a sheet row or an issue form). How a change set came
+ * about does not matter: people adjudicate it.
+ *
+ * - Title on Review Change Sets is people's (Blue). The agent's title is
+ *   only the first value of a row it adds.
+ * - A row a person starts with only a Title is a new change set: it gets the
+ *   next id, never reused, from both tabs.
+ * - A change set the agent records on Agent - Change Sets (from an issue
+ *   form, a split an Editor agreed, or triage of a new comment) that is not
+ *   yet on Review Change Sets is added at the end, with the agent's title.
+ *
+ * `rows` and `agent` are [id, title] pairs, in sheet order. Returns the ids
+ * to give (row index -> id) and the rows to append.
+ */
+const CS_HUMAN = 'Change Set (human)';
+function csRowsPlan(rows, agent) {
+  const num = id => { const m = /^CS-(\d+)$/.exec(String(id).trim()); return m ? +m[1] : 0; };
+  let next = 1 + Math.max(0, ...rows.map(r => num(r[0])), ...agent.map(r => num(r[0])));
+  const have = {};
+  rows.forEach(r => { if (String(r[0]).trim()) have[String(r[0]).trim()] = 1; });
+  const give = {};
+  rows.forEach((r, k) => {
+    if (!String(r[0]).trim() && String(r[1] || '').trim()) give[k] = 'CS-' + String(next++).padStart(3, '0');
+  });
+  const append = agent.filter(r => { const id = String(r[0]).trim(); return id && !have[id] && (have[id] = 1); })
+    .map(r => [String(r[0]).trim(), String(r[1] || '').trim()]);
+  return { give, append };
+}
+
+/**
+ * A comment's change sets: what a person typed in Change Set (human), else
+ * the agent's. A person may type an id, several ids, or "new" (the agent
+ * then makes a change set for it and fills in the id). Returns the ids, and
+ * a note for anything that is not an id of a change set on the sheet.
+ */
+function humanCs(value, known) {
+  const v = String(value || '').trim();
+  if (!v) return null;
+  if (/^new\b/i.test(v)) return { ids: [], note: 'new: the agent makes a change set for this comment' };
+  const ids = (v.toUpperCase().match(/CS-\d+/g) || []).map(x => 'CS-' + x.slice(3).padStart(3, '0'));
+  const unknown = ids.filter(x => !known[x]);
+  return { ids: ids.filter(x => known[x]), note: unknown.length ? unknown.join(', ') + ' is not a change set on ' + CFG.RCS : '' };
+}
+
+/**
+ * Review Change Sets' Change-set and Title were a spill of
+ * FILTER('Agent - Change Sets'!A3:B ...), so nobody could type a Title or a
+ * row. The spill becomes plain values once, in place, and from then on the
+ * script keeps the ids and adds the agent's new change sets (csRowsPlan).
+ */
+function ownChangeSets(ss, agentCs) {
+  const sh = ss.getSheetByName(CFG.RCS);
+  if (!sh) return;
+  let s = readSheet(sh);
+  const cId = col(s, 'Change-set'), cT = col(s, 'Title');
+  if (cId < 0 || cT < 0) return;
+  try {
+    const f = sh.getRange(s.top, cId + 1, 1, 1).getFormula ? String(sh.getRange(s.top, cId + 1, 1, 1).getFormula()) : '';
+    if (/^=\s*FILTER\(/i.test(f) && s.rows.length) {
+      const vals = s.rows.map(r => [asText(String(r[cId]).trim()), asText(String(r[cT]).trim())]);
+      sh.getRange(s.top, cId + 1, 1, 1).setValue('');
+      sh.getRange(s.top, cId + 1, vals.length, 1).setValues(vals.map(v => [v[0]]));
+      sh.getRange(s.top, cT + 1, vals.length, 1).setValues(vals.map(v => [v[1]]));
+      s = readSheet(sh);
+    }
+  } catch (err) { /* left as it is: the next run tries again */ }
+  const aId = col(agentCs, COLS.agent.csId), aT = col(agentCs, 'Title');
+  const agent = aId < 0 ? [] : agentCs.rows.map(r => [r[aId], aT >= 0 ? r[aT] : '']);
+  const plan = csRowsPlan(s.rows.map(r => [r[cId], r[cT]]), agent);
+  Object.keys(plan.give).forEach(k => sh.getRange(+k + s.top, cId + 1, 1, 1).setValues([[plan.give[k]]]));
+  if (plan.append.length) {
+    let last = s.rows.length;
+    while (last > 0 && !String(s.rows[last - 1][cId]).trim() && !String(s.rows[last - 1][cT]).trim()) last--;
+    const at = last + Object.keys(plan.give).filter(k => +k >= last).length;
+    sh.getRange(at + s.top, cId + 1, plan.append.length, 1).setValues(plan.append.map(r => [r[0]]));
+    sh.getRange(at + s.top, cT + 1, plan.append.length, 1).setValues(plan.append.map(r => [asText(r[1])]));
+  }
+}
+
+/**
+ * Columns people now own (Title on Review Change Sets, Change Set (human) on
+ * Review Public Comments): add the column when missing, give its head and
+ * cells the tab's Blue fill, and take it out of the script-era locks on
+ * the agent's columns, so an editor can type in it. Done once per column.
+ */
+function peopleColumns(ss) {
+  const props = docProps_();
+  const want = [[CFG.RCS, 'Title', null], [CFG.RPC, CS_HUMAN, 'Change Set']];
+  want.forEach(([tab, head, after]) => {
+    const key = 'people:' + tab + '|' + head;
+    if (props.getProperty(key)) return;
+    const sh = ss.getSheetByName(tab);
+    if (!sh) return;
+    try {
+      let s = readSheet(sh);
+      let c = s.header.indexOf(head);
+      if (c < 0 && after) {
+        const a = s.header.indexOf(after);
+        if (a < 0) return;
+        sh.insertColumnAfter(a + 1);
+        sh.getRange(s.top - 1, a + 2).setValue(head);
+        sh.setColumnWidth(a + 2, 110);
+        s = readSheet(sh);
+        c = a + 1;
+      }
+      if (c < 0) return;
+      const rows = sh.getMaxRows() - s.top + 1;
+      const heads = sh.getRange(s.top - 1, 1, 1, s.header.length).getBackgrounds()[0];
+      const blue = heads.findIndex((x, i) => i !== c && fillGroup(x) === 'blue');
+      if (blue >= 0) {
+        sh.getRange(s.top - 1, c + 1).setBackground(heads[blue]);
+        sh.getRange(s.top, c + 1, rows, 1).setBackground(sh.getRange(s.top, blue + 1).getBackground());
+      }
+      unlockColumn(sh, c);
+      props.setProperty(key, '1');
+    } catch (err) { /* tried again on the next run */ }
+  });
+}
+
+/**
+ * Take column c (0-based) out of every range lock on the tab except the
+ * Ready columns' own: a lock that spans it is replaced by the parts left and
+ * right of it, with the same description and editors.
+ */
+function unlockColumn(sh, c) {
+  sh.getProtections(SpreadsheetApp.ProtectionType.RANGE).forEach(p => {
+    if (p.getDescription() === READY_DESC) return;
+    const r = p.getRange(), c0 = r.getColumn() - 1, c1 = c0 + r.getNumColumns() - 1;
+    if (c < c0 || c > c1) return;
+    const desc = p.getDescription(), eds = p.getEditors(), row = r.getRow(), n = r.getNumRows();
+    p.remove();
+    [[c0, c - 1], [c + 1, c1]].forEach(([a, z]) => {
+      if (a > z) return;
+      const q2 = sh.getRange(row, a + 1, n, z - a + 1).protect().setDescription(desc);
+      q2.removeEditors(q2.getEditors());
+      if (eds.length) q2.addEditors(eds);
+    });
+  });
+}
+
 function refreshRcs(s, rpc, csOf, stOf, prOf, readyAt, builtOf) {
   const c = {};
   Object.entries(COLS.rcs).forEach(([k, h]) => (c[k] = col(s, h)));
@@ -2401,7 +2613,8 @@ function refreshDraft(rows) {
     if (!cs) return;
     const base = c.agentic < 0 ? statusBlock(line, stOf[cs] || '', prOf[cs] || []) : line;
     const picked = c.sections >= 0 ? String(r[c.sections]).split(',').map(bareName).filter(Boolean) : null;
-    lineOf[cs] = picked ? withWhere(base, whereLine(picked, tocUrl, stagingOf[cs])) : base;
+    const where = picked ? whereFor(picked, tocUrl, stagingOf[cs], stOf[cs] || '') : null;
+    lineOf[cs] = where ? withWhere(base, where) : base;
   });
   markStale(fb, c.cs, basisOfCs, [COLS.draft.title, COLS.draft.sections], COLS.draft.feedback, COLS.draft.agentFeedback || 'Feedback (agent)', lineOf, want);
   completeReady(fb, c.cs, prOf, stagingOf, builtOf, readyAt);

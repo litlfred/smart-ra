@@ -335,7 +335,7 @@
 
   `relative_url` for the same reason every other path here uses it: the site is
   served from `/folio-assistant` on the canonical deploy and from
-  `/folio-assistant/STAGING/<branch>` on a preview, and an absolute literal
+  `/folio-assistant/branches/<branch>` on a preview, and an absolute literal
   404s on every deploy but one.
 
   A URL rather than inline JSON, unlike `fa-site-links` above, because the
@@ -409,14 +409,14 @@
   instance's `glassStrip` declaration by `sync-docs-harness.ts`; absent when
   nothing declared one. Replica pages read `assets/harness/glass-strip.json`.
 -->
-<meta name="fa-glass-strip" content="[&quot;glass-todos&quot;,&quot;glass-settings&quot;]">
+<meta name="fa-glass-strip" content="[&quot;glass-todos&quot;,&quot;glass-settings&quot;,&quot;library&quot;]">
 
 <!--
   THE SITE'S BASEURL, for the tiles above.
 
   Every other site-root path on this page is composed by Liquid: `relative_url`
   prepends `site.baseurl`, which is `/folio-assistant` on the canonical deploy
-  and `/folio-assistant/STAGING/<branch>` on a preview. The tiles cannot use
+  and `/folio-assistant/branches/<branch>` on a preview. The tiles cannot use
   it, because they reach the client as JSON and are composed in `docs-ui.js`
   after Liquid has finished — so the base has to travel with them.
 
@@ -447,7 +447,7 @@
 
   `feature-staging.yml` writes `staging_slug` into `_data/build.yml`;
   `docs-site.yml` writes the same file WITHOUT it. So a non-empty value here
-  means "a STAGING/<slug>/ preview", an empty one means the canonical deploy
+  means "a branches/<slug>/ preview", an empty one means the canonical deploy
   or a local build.
 
   It exists so a tile can vanish with its page. `compose-docs.ts` withholds a
@@ -563,7 +563,7 @@
 
   These five are served from stable paths with no hash in the name, so a
   browser that has the page cached keeps the old CSS and JS until its
-  `max-age` runs out. On the live site that is invisible. On a STAGING
+  `max-age` runs out. On the live site that is invisible. On a branches/
   preview it is the whole point of the deployment: the reviewer opens the URL
   they opened an hour ago, gets yesterday's stylesheet, and reports "i dont
   see changes" — which is indistinguishable from a deploy that never
@@ -582,7 +582,7 @@
 -->
 <!-- The harness icon row's own style, which railed pages load without docs-ui.css (beans `lhvt`, `9rq1`). -->
 <link rel="stylesheet" href="../../../assets/css/navbar-row.css?v=7d7d00921e0f">
-<link rel="stylesheet" href="../../../assets/css/docs-ui.css?v=18eb22b50395">
+<link rel="stylesheet" href="../../../assets/css/docs-ui.css?v=34ea92e5aa62">
 <!-- Narrow viewports: wide content scrolls in its own box, never the page
      (bean `2r2n`). The standalone viewers inline the same file through
      `withViewerNav`, so both kinds of page read one set of rules. -->
@@ -593,7 +593,7 @@
   `state-visualizer.ts` can inline exactly these bytes into the generated
   `<base>/<stub>/state-visualizer/` pages. One rule, two surfaces.
 -->
-<link rel="stylesheet" href="../../../assets/css/work-plan.css?v=ed3e33f033fe">
+<link rel="stylesheet" href="../../../assets/css/work-plan.css?v=bd8c73337b01">
 <!-- Sticky themes. GENERATED from the theme nodes in `schemas/ui/themes.ts` by
      `bun run cat themes:css`; `themes:css:check` fails the build when it is stale.
      Loaded AFTER docs-ui.css deliberately: it supplies the `--fa-sticky-*`
@@ -607,7 +607,7 @@
      `avatars:css:check` fails the build when it is stale. One stylesheet
      rather than 68 assets: the glyph is a mask and the colour is a property,
      so a scheme swap is a custom property and the trash state is a selector. -->
-<link rel="stylesheet" href="../../../assets/css/avatars.css?v=a0806788c1f5">
+<link rel="stylesheet" href="../../../assets/css/avatars.css?v=05433996459b">
 
 <!--
   The kinds THIS INSTANCE DECLARES, for the avatar fan.
@@ -622,7 +622,7 @@
   all, and a fetch for that would put a spinner in front of a badge.
 -->
 <!-- NOT MOVED: same reason as fa-site-links above. -->
-<script type="application/json" id="fa-declared-kinds">["archimate","beans","folio","fsh-guts","glossary","library","public-comments","todo-items","todos","uploads"]</script>
+<script type="application/json" id="fa-declared-kinds">["archimate","beans","folio","fsh-guts","glossary","library","public-comments","references","todo-items","todos","uploads"]</script>
 <!--
   FIRST of the deferred scripts: it fills `#fa-navbar-row` and
   `meta[name=fa-tiles]` before any reader runs (bean `gp2f`).
@@ -641,11 +641,11 @@
 <script src="../../../assets/js/kg-render.js" defer></script>
 <!-- BEFORE docs-ui.js, which calls it: the one drawing of the harness icon row (beans `lhvt`, `9rq1`). -->
 <script src="../../../assets/js/navbar-row.js?v=6bb19e1d17a5" defer></script>
-<script src="../../../assets/js/docs-ui.js?v=52e4c68c64c7" defer></script>
+<script src="../../../assets/js/docs-ui.js?v=2cbe44e3bd42" defer></script>
 <!-- The edit, source and feedback links of every page, from the platform's one
   recipe (cat-harness-tools/src/core/edit-links.ts, bean v433): links carry their
   facts and this builds the hrefs. -->
-<script src="../../../assets/js/edit-links.js?v=4f82faf45c35" defer></script>
+<script src="../../../assets/js/edit-links.js?v=333851d0e55e" defer></script>
 
 <!--
   The work-plan dashboard. SELF-MOUNTING on any page carrying
@@ -728,7 +728,71 @@
   the left-hand nav among them, and leaves just-the-docs' compiled chrome
   alone. Stated here because the alternative is a reader concluding the theme
   is broken when it is doing exactly what it can.
--->
+--><!--
+  THE PAGE GROUND: a harness's theme art behind every one of its docs pages.
+
+  Bean `yj32`, owner card Q-DEP-2 A (2026-11-01): the avatar is "the default
+  display background for their corresponding docs/ (ghpages) rendering".
+
+  WHICH HARNESS. Each tile in `_data/harness.json` carries `pageGround`
+  (cat-harness-tools `harness-tiles.ts`): the URL segments that make a page
+  that instance's, and its three crops. The FIRST tile whose scope the URL
+  contains wins; tiles come dependents first, so the content instance a page
+  is about beats the platform that renders it. The site owner is the fallback
+  (`siteDefault`), never a `/` scope, because `/` is in every URL. A tile with
+  no `art` gets no ground: a palette-only theme is a choice, not a gap.
+
+  A CSS BACKGROUND HERE, where the stickies use `<picture>`. A sticky places
+  words inside a measured quiet region of one crop, so the crop must be the
+  file. The page ground places nothing on the art, so a media query choosing
+  the crop is exact, and no markup is added to any page.
+
+  TWO SCRIMS, both the page's own background colour (not the theme's sticky
+  scrim, because the ink they protect is the page's ink). The page gets 85%,
+  so the art shows in the margins and under the header. The text column,
+  `.main-content`, gets a second layer at 96%, so the words sit on 99.4% page
+  colour. The art runs the full range (measured: every crop of the three
+  grounds has pixels at luminance 0.000 and 1.000), so the bound is the worst
+  pixel: text and links stay within 0.1:1 of the plain page in both schemes
+  (light links 4.94:1 against 5.03:1, dark links 4.09:1 against 4.14:1, dark body text 11.5:1 against 11.7:1).
+  A single 92% layer was measured first and dropped: it took dark-scheme
+  links from 4.14:1 to 3.35:1.
+--><style id="fa-page-ground" data-instance="cat-harness">
+  /* Grumpy cyborg agents, the theme of cat-harness. */
+  :root { --fa-page-scrim: rgba(39, 38, 43, 0.85); --fa-text-scrim: rgba(39, 38, 43, 0.96); }
+  :root[data-fa-scheme="light"] { --fa-page-scrim: rgba(255, 255, 255, 0.85); --fa-text-scrim: rgba(255, 255, 255, 0.96); }
+  /* The root carries the art, so it covers the whole viewport however short
+     the page; the body is made see-through so the art is not painted over. */
+  html:root body { background-color: transparent; }
+  html body .main-content { background-color: var(--fa-text-scrim); border-radius: 6px; }
+  html:root {
+    background-image:
+      linear-gradient(var(--fa-page-scrim), var(--fa-page-scrim)),
+      url("../../../assets/img/harness/landing-grumpy-cyborg-agents-laptop.webp");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  @media (max-width: 48rem) {
+    html:root {
+      background-image:
+        linear-gradient(var(--fa-page-scrim), var(--fa-page-scrim)),
+        url("../../../assets/img/harness/landing-grumpy-cyborg-agents-card.webp");
+    }
+  }
+  @media (max-width: 30rem) {
+    html:root {
+      background-image:
+        linear-gradient(var(--fa-page-scrim), var(--fa-page-scrim)),
+        url("../../../assets/img/harness/landing-grumpy-cyborg-agents-mobile.webp");
+    }
+  }
+  /* Print and forced colours get the plain page: art is decoration. */
+  @media print, (forced-colors: active) {
+    html:root { background-image: none; }
+  }
+</style>
 
 <link rel="stylesheet" href="../../../assets/css/navbar.css"><script src="../../../assets/navbar/rail-1nr7jo2rxsc.js" defer></script><script src="../../../assets/js/navbar.js" defer></script><link rel="stylesheet" href="../../../assets/page-layout.css" data-fa-page-layout><script src="../../../assets/page-layout.js" defer data-fa-page-layout></script><meta name="fa-pinned-data" content="../../.."></head>
 
@@ -831,6 +895,7 @@
             <blockquote class="note">
   <p>Generated from <code class="language-plaintext highlighter-rouge">fhir-harness/processes/content/ig-ast-cache.bpmn</code> by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> — do not edit here. <a href="index.html">All processes</a> · <a href="fhir-harness/">fhir-harness processes</a></p>
 </blockquote>
+
 <h1 id="an-ig-site-built-from-the-ast-on-its-cache-branch">
   
   
@@ -842,15 +907,231 @@
 
 <p><code class="language-plaintext highlighter-rouge">Process_IgAstCache</code> · advisory · 5 step(s)</p>
 
-<p>How an IG repository’s own site is published, and how the AST it is built from is kept current (skill <code class="language-plaintext highlighter-rouge">ig-build-pipeline</code> §”The AST cache lifecycle”). Owner, 2026-10-14: “i want AST to be used. it should be in cache branch”, and “that should be in fhir-harness then smart-* all use that”.</p>
+<p>How an IG repository’s own site is published, and how the AST it is built from is kept current (skill <a href="../../../en/cat-harness/processes/skills/ig-build-pipeline.html"><code class="language-plaintext highlighter-rouge">ig-build-pipeline</code></a> §”The AST cache lifecycle”).</p>
 
 <p>THE RULE. An IG site is built from the IG Publisher AST read from the IG repository’s cache branch <code class="language-plaintext highlighter-rouge">cat/fhir-harness/fhir-ast/&lt;package id&gt;</code>, never from Publisher HTML. The publish refuses an AST that is not valid for the commit it publishes (<code class="language-plaintext highlighter-rouge">ig-cache.sh restore</code> then <code class="language-plaintext highlighter-rouge">verify</code>). A later commit that changes no IG input (<code class="language-plaintext highlighter-rouge">sushi-config.yaml</code>, <code class="language-plaintext highlighter-rouge">ig.ini</code>, <code class="language-plaintext highlighter-rouge">input/</code>) does not make the AST stale.</p>
 
-<p>THE REFRESH. The cache is written by ONE thing: fhir-harness’s reusable workflow <code class="language-plaintext highlighter-rouge">.github/workflows/ig-ast-refresh.yml</code>, which an IG repository’s Site publish calls as its first job (<code class="language-plaintext highlighter-rouge">ast</code>; template <code class="language-plaintext highlighter-rouge">templates/ig-repo-site/site-publish.yml</code>). It runs the Publisher through the AST exporter on a GitHub runner (Java, a 10 GB heap, tx.fhir.org), because an agent’s container cannot. It seeds the branch only from a commit on the default branch whose inputs equal the tip’s.</p>
+<p>THE REFRESH. The cache is written by ONE thing: fhir-harness’s reusable workflow <code class="language-plaintext highlighter-rouge">.github/workflows/ig-ast-refresh.yml</code>, which an IG repository’s Site publish calls as its first job (<code class="language-plaintext highlighter-rouge">ast</code>; template <code class="language-plaintext highlighter-rouge">templates/ig-repo-site/site-publish.yml</code>). It runs the Publisher through the AST exporter on a GitHub runner (Java, 10 GB heap, tx.fhir.org). It seeds the branch only from a commit on the default branch whose inputs equal the tip’s.</p>
 
-<p>WHAT IT DOES NOT CLAIM. A valid AST is a cache built from these inputs; it is not a release. Every page drawn from it carries the provisional mark (<code class="language-plaintext highlighter-rouge">ig-ast-delta</code>).</p>
+<p>A valid AST is a cache, not a release: every page drawn from it carries the provisional mark (<a href="../../../en/cat-harness/processes/skills/ig-ast-delta.html"><code class="language-plaintext highlighter-rouge">ig-ast-delta</code></a>).</p>
+<style>.pt-diagram{position:relative;width:100%}.pt-diagram>img{display:block;width:100%;height:auto}.pt-mark{position:absolute;transform:translate(-50%,-50%);width:1.35em;height:1.35em;padding:0;border-radius:50%;border:1px solid #1f6feb;background:#fff;color:#1f6feb;font:bold 0.8em/1 sans-serif;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 2px rgba(0,0,0,.25)}.pt-layer{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:2}.pt-layer>*{pointer-events:auto}.pt-go{position:absolute;display:block;border-radius:3px;cursor:pointer}.pt-go:hover,.pt-go:focus-visible{outline:2px solid #1f6feb;outline-offset:1px;background:rgba(31,111,235,.07)}.pt-mark{z-index:1}.pt-mark:hover,.pt-mark[aria-expanded=true]{background:#1f6feb;color:#fff}.pt-mark:focus-visible{outline:2px solid #1f6feb;outline-offset:2px}.pt-panel{position:absolute;z-index:5;text-align:left;margin:0.9em 0 0 -0.6em;max-width:min(26em,90vw);min-width:14em;padding:0.6em 0.7em;background:#fff;color:#1b1f24;border:1px solid #8c959f;border-radius:6px;box-shadow:0 4px 14px rgba(0,0,0,.18);font-size:0.85em;line-height:1.35}.pt-close{position:absolute;top:0.2em;right:0.35em;border:0;background:none;font-size:1.2em;cursor:pointer;color:inherit}.pt-obj{border:1px solid #57606a;border-radius:3px;margin:0.15em 0}.pt-head{border-bottom:1px solid #57606a;padding:0.15em 0.45em;background:#f6f8fa;text-decoration:underline}.pt-head .pt-st{text-decoration:none;display:inline-block;margin-right:0.35em}.pt-attr{padding:0.1em 0.45em}.pt-st,.pt-via{color:#57606a;font-size:0.9em}.pt-edge{color:#57606a;font-size:0.85em;padding-left:1em}.pt-role .pt-head{background:#fff8c5}.pt-skill .pt-head{background:#ddf4ff}.pt-task .pt-head{background:#f6f8fa}.pt-none{color:#57606a;font-style:italic;margin-top:0.3em}.pt-diagram [data-pt-hl]>[class$="djs-visual"]>:first-child{stroke:#d97706!important;stroke-width:4px!important;fill:#fff3d6!important}.pt-diagram [data-pt-hl]>[class$="djs-visual"]>path:first-child{fill:none!important}.pt-has-hl [class*="djs-shape"]:not([data-pt-hl])>[class$="djs-visual"]>:first-child{opacity:.75}</style>
 
-<p><em>No rendered diagram — run <code class="language-plaintext highlighter-rouge">bun run cat render:bpmn</code>.</em></p>
+<div class="pt-diagram" data-panel="ig-ast-cache.tasks.json">
+<img src="../../../assets/img/workflows/ig-ast-cache.svg" alt="BPMN diagram: An IG site, built from the AST on its cache branch" />
+<div class="pt-layer">
+<button type="button" class="pt-mark" data-task="Task_Restore" style="left:25.65%;top:34.24%" aria-expanded="false" aria-label="About step: Restore and judge the cached AST" title="About: Restore and judge the cached AST">i</button>
+<button type="button" class="pt-mark" data-task="Task_BuildSite" style="left:56.09%;top:34.24%" aria-expanded="false" aria-label="About step: Build and publish the site from the AST" title="About: Build and publish the site from the AST">i</button>
+<button type="button" class="pt-mark" data-task="Task_Dispatch" style="left:41.74%;top:8.76%" aria-expanded="false" aria-label="About step: Dispatch AST refresh" title="About: Dispatch AST refresh">i</button>
+<button type="button" class="pt-mark" data-task="Task_Export" style="left:25.65%;top:62.9%" aria-expanded="false" aria-label="About step: Build the IG with the AST exporter" title="About: Build the IG with the AST exporter">i</button>
+<button type="button" class="pt-mark" data-task="Task_Seed" style="left:57.83%;top:66.08%" aria-expanded="false" aria-label="About step: Seed the cache branch" title="About: Seed the cache branch">i</button>
+</div>
+<div class="pt-panel" role="dialog" aria-label="Task details" hidden=""></div>
+</div>
+<script>(function () {
+  Array.prototype.forEach.call(document.querySelectorAll(".pt-diagram:not([data-pt-ready])"), init);
+  function init(root) {
+  root.setAttribute("data-pt-ready", "");
+  // Every href in the sidecar is relative to the sidecar (it sits beside the
+  // process page), so a page elsewhere on the site that shows the same
+  // drawing resolves them to the same targets.
+  // A drawing with no sidecar (a page that only highlights steps, where no
+  // processes viewer is published) gets the highlight and nothing else.
+  var sidecar = root.getAttribute("data-panel");
+  var base = new URL(sidecar || "", location.href);
+  function abs(h) { try { return new URL(h, base).href; } catch (e) { return h; } }
+  // A page with no server-drawn markers gets them from the sidecar.
+  var drawn = !!root.querySelector(".pt-layer");
+  if (!drawn) {
+    var ly = document.createElement("div"); ly.className = "pt-layer"; root.appendChild(ly);
+    var pn = document.createElement("div"); pn.className = "pt-panel"; pn.setAttribute("role", "dialog");
+    pn.setAttribute("aria-label", "Task details"); pn.hidden = true; root.appendChild(pn);
+  }
+  var panel = root.querySelector(".pt-panel"), data = null, pending = null, open = null;
+  function load() {
+    if (data) return Promise.resolve(data);
+    if (!pending) pending = fetch(root.getAttribute("data-panel")).then(function (r) {
+      if (!r.ok) throw new Error(r.status + " " + r.statusText);
+      return r.json();
+    }).then(function (j) { data = j; return j; });
+    return pending;
+  }
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+  function link(l, cls) {
+    var e = el(l.href ? "a" : "code", cls, l.name);
+    if (l.href) e.href = abs(l.href); else e.title = "no page for this one";
+    return e;
+  }
+  function obj(stereo, name, kind) {
+    var box = el("div", "pt-obj pt-" + kind), head = el("div", "pt-head");
+    head.appendChild(el("span", "pt-st", "\u00ab" + stereo + "\u00bb"));
+    head.appendChild(typeof name === "string" ? el("b", null, name) : name);
+    box.appendChild(head);
+    return box;
+  }
+  function edge(label) { return el("div", "pt-edge", "\u2502 " + label + " \u25bc"); }
+  function render(t) {
+    panel.textContent = "";
+    var close = el("button", "pt-close", "\u00d7"); close.type = "button"; close.setAttribute("aria-label", "Close");
+    close.onclick = function () { hide(); }; panel.appendChild(close);
+    // The title opens the step's description below the drawing; the step's
+    // own page, where it has one, is its id.
+    var title = link({ name: t.name, href: t.stepHref || t.href });
+    if (t.stepHref) title.onclick = function () { hide(); };
+    var task = obj(t.type.replace(/^bpmn:/, ""), title, "task");
+    var idl = el("div", "pt-attr", "id = ");
+    if (t.stepHref && t.href) idl.appendChild(link({ name: t.id, href: t.href })); else idl.appendChild(document.createTextNode(t.id));
+    task.appendChild(idl);
+    if (t.lane) {
+      var ln = el("div", "pt-attr", "lane = "); ln.appendChild(link({ name: t.lane, href: t.laneHref }));
+      // The lane is a partition; the Role it names is who acts (owner,
+      // 2026-10-31: "i thought there was a Role/person or actor that should be
+      // linked"). Shown here too, not only in the Role box further down.
+      if (t.role) { ln.appendChild(el("span", "pt-st", " → role ")); ln.appendChild(link(t.role)); }
+      task.appendChild(ln);
+    }
+    if (data && data.processHref) { var pr = el("div", "pt-attr", "process = "); pr.appendChild(link({ name: data.process, href: data.processHref })); task.appendChild(pr); }
+    panel.appendChild(task);
+    if (t.calls) {
+      panel.appendChild(edge("calls"));
+      var cp = obj("Process", link(t.calls), "proc");
+      if (t.calls.diagram && t.calls.diagram !== t.calls.href) { var dg = el("div", "pt-attr"); dg.appendChild(link({ name: "diagram", href: t.calls.diagram })); cp.appendChild(dg); }
+      panel.appendChild(cp);
+    }
+    if (t.shared) {
+      panel.appendChild(edge("calls"));
+      var gt = obj(t.shared.type.replace(/^bpmn:/, ""), t.shared.id, "proc");
+      Object.keys(t.shared.inputs || {}).forEach(function (k) { gt.appendChild(el("div", "pt-attr", k + " = " + t.shared.inputs[k])); });
+      panel.appendChild(gt);
+    }
+    var sk_on = !(data && data.skills === false);
+    (sk_on ? t.skills : []).forEach(function (s) {
+      panel.appendChild(edge("requires"));
+      var sk = obj("Skill", link(s), "skill");
+      (s.methodologies || []).forEach(function (m) {
+        var row = el("div", "pt-attr"); row.appendChild(el("span", "pt-st", "uses-methodology \u2192 "));
+        row.appendChild(link(m)); sk.appendChild(row);
+      });
+      panel.appendChild(sk);
+    });
+    if (sk_on && !t.skills.length && !t.calls) panel.appendChild(el("div", "pt-none", "This task names no skill."));
+    if (t.role) {
+      panel.appendChild(edge("lane names"));
+      var role = obj("Role", link(t.role), "role");
+      if (t.role.title) role.appendChild(el("div", "pt-attr", "title = " + t.role.title));
+      if (sk_on) {
+        var list = el("div", "pt-attr"); list.appendChild(el("span", "pt-st", "hasSkill: "));
+        if (!t.role.skills.length) list.appendChild(el("i", null, "none listed"));
+        t.role.skills.forEach(function (s, i) {
+          if (i) list.appendChild(document.createTextNode(", "));
+          list.appendChild(link(s));
+          if (s.via) list.appendChild(el("span", "pt-via", " (via " + s.via + ")"));
+        });
+        role.appendChild(list);
+      }
+      panel.appendChild(role);
+    } else if (t.binding) {
+      panel.appendChild(el("div", "pt-none", "Lane role: " + t.binding + "."));
+    }
+  }
+  // THE MARKERS FOLLOW THE DRAWING, not the box around it. The site's figure
+  // viewer (docs-ui.js) swaps the <img> for an inlined <svg>, puts a toolbar
+  // above it, and zooms and pans it inside a scroll box. Positioned against
+  // this block, every marker and link drifted off its shape (owner,
+  // 2026-10-31: "misaligned"). So the layer is laid over wherever the drawing
+  // is actually drawn, and re-laid whenever that can change.
+  var layer = root.querySelector(".pt-layer"), queued = false;
+  function art() {
+    var c = root.querySelectorAll("img, svg");
+    for (var i = 0; i < c.length; i++) {
+      var e = c[i];
+      if (e.closest(".pt-layer, .pt-panel, .fa-figure-tools")) continue;
+      if (e.parentElement && e.parentElement.closest("svg")) continue;
+      return e;
+    }
+    return null;
+  }
+  // A page may name steps to pick out (a journey's step shows the tasks it
+  // realises): `data-pt-highlight="Task_A Task_B"`. Marked once the drawing
+  // is inline, which is when its shapes exist to mark.
+  var hl = (root.getAttribute("data-pt-highlight") || "").split(/\s+/).filter(Boolean);
+  if (hl.length) root.classList.add("pt-has-hl");
+  function mark(a) {
+    if (!hl.length || a.tagName.toLowerCase() !== "svg" || a.hasAttribute("data-pt-marked")) return;
+    a.setAttribute("data-pt-marked", "");
+    Array.prototype.forEach.call(a.querySelectorAll("[data-element-id]"), function (g) {
+      if (hl.indexOf(g.getAttribute("data-element-id")) >= 0) g.setAttribute("data-pt-hl", "");
+    });
+  }
+  function place() {
+    queued = false;
+    var a = art();
+    if (a) mark(a);
+    if (!layer || !a) return;
+    var r = root.getBoundingClientRect(), b = a.getBoundingClientRect();
+    var x = b.left - r.left, y = b.top - r.top, w = b.width, h = b.height, vw = 0, vh = 0;
+    if (a.tagName.toLowerCase() === "img") { vw = a.naturalWidth; vh = a.naturalHeight; }
+    else { var vb = (a.getAttribute("viewBox") || "").trim().split(/[\s,]+/).map(Number); vw = vb[2]; vh = vb[3]; }
+    // An SVG keeps its aspect inside a box of another shape (xMidYMid meet).
+    if (vw > 0 && vh > 0 && w > 0 && h > 0) {
+      var k = vw / vh;
+      if (w / h > k) { var nw = h * k; x += (w - nw) / 2; w = nw; } else { var nh = w / k; y += (h - nh) / 2; h = nh; }
+    }
+    layer.style.left = x + "px"; layer.style.top = y + "px"; layer.style.width = w + "px"; layer.style.height = h + "px";
+    // Zoomed in, the drawing scrolls inside its box: markers past the edge are hidden with it.
+    var sc = a.parentElement;
+    while (sc && sc !== root && !(sc.scrollWidth > sc.clientWidth + 1 || sc.scrollHeight > sc.clientHeight + 1)) sc = sc.parentElement;
+    if (sc && sc !== root) {
+      var s = sc.getBoundingClientRect(), L = r.left + x, T = r.top + y;
+      layer.style.clipPath = "inset(" + Math.max(0, s.top - T) + "px " + Math.max(0, L + w - s.right) + "px " +
+        Math.max(0, T + h - s.bottom) + "px " + Math.max(0, s.left - L) + "px)";
+    } else layer.style.clipPath = "";
+    if (open) at(open);
+  }
+  function schedule() { if (!queued) { queued = true; requestAnimationFrame(place); } }
+  if (window.ResizeObserver) new ResizeObserver(schedule).observe(root);
+  if (window.MutationObserver) new MutationObserver(function (ms) {
+    for (var i = 0; i < ms.length; i++) if (!layer || !layer.contains(ms[i].target)) { schedule(); return; }
+  }).observe(root, { childList: true, subtree: true, attributes: true, attributeFilter: ["style", "class", "viewBox"] });
+  root.addEventListener("scroll", schedule, true);
+  root.addEventListener("load", schedule, true);
+  window.addEventListener("resize", schedule);
+  schedule();
+  if (!drawn && sidecar) load().then(function (j) {
+    (j.markers || []).forEach(function (m) {
+      var t = j.tasks[m.id], to = t && t.calls ? (t.calls.diagram || t.calls.href) : null;
+      if (to && m.box) {
+        var g = el("a", "pt-go"); g.href = abs(to);
+        g.style.left = m.box.left + "%"; g.style.top = m.box.top + "%"; g.style.width = m.box.width + "%"; g.style.height = m.box.height + "%";
+        g.setAttribute("aria-label", "Open subprocess: " + m.name); g.title = "Open subprocess: " + m.name; layer.appendChild(g);
+      }
+      var b = el("button", "pt-mark", "i"); b.type = "button"; b.setAttribute("data-task", m.id);
+      b.style.left = m.left + "%"; b.style.top = m.top + "%"; b.setAttribute("aria-expanded", "false");
+      b.setAttribute("aria-label", "About step: " + m.name); b.title = "About: " + m.name; layer.appendChild(b);
+    });
+    schedule();
+  }).catch(function (e) { console.warn("task panel: could not load " + base.href + " (" + e.message + ")"); });
+  function at(b) {
+    var r = root.getBoundingClientRect(), m = b.getBoundingClientRect();
+    panel.style.left = (m.left + m.width / 2 - r.left) + "px"; panel.style.top = (m.top + m.height / 2 - r.top) + "px";
+  }
+  function hide() { panel.hidden = true; if (open) open.setAttribute("aria-expanded", "false"); open = null; }
+  root.addEventListener("click", function (ev) {
+    var b = ev.target.closest && ev.target.closest(".pt-mark");
+    if (!b) return;
+    if (open === b) { hide(); return; }
+    if (open) open.setAttribute("aria-expanded", "false");
+    open = b; b.setAttribute("aria-expanded", "true");
+    at(b);
+    panel.hidden = false; panel.textContent = "Loading\u2026";
+    load().then(function (j) {
+      var t = j.tasks[b.getAttribute("data-task")];
+      if (open === b) { if (t) render(t); else panel.textContent = "No details for this task."; }
+    }).catch(function (e) { if (open === b) panel.textContent = "Could not load task details: " + e.message; });
+  });
+  document.addEventListener("keydown", function (ev) { if (ev.key === "Escape" && open) hide(); });
+  }
+})();</script>
+
 <h2 id="how-it-connects">
   
   
@@ -885,17 +1166,17 @@
   </thead>
   <tbody>
     <tr>
-      <td>Publication manager (owner, or the agent the owner delegates to)</td>
+      <td><a id="lane-Lane_PubMgr"></a>Publication manager (owner, or the agent the owner delegates to)</td>
       <td><code class="language-plaintext highlighter-rouge">publication-manager</code></td>
-      <td>Wants the IG’s site published, and is the only one who starts a runner: dispatching <code class="language-plaintext highlighter-rouge">ig-ast-refresh.yml</code> spends Actions minutes and writes a shared branch, so an agent never dispatches it on its own (<code class="language-plaintext highlighter-rouge">feature-staging</code> §”Agent-run repositories”). Accountable for asking for the refresh when the publish refuses a stale AST, rather than for publishing around it.</td>
+      <td>Starts the AST refresh; an agent never dispatches it on its own (<a href="../../../en/cat-harness/processes/skills/feature-staging.html"><code class="language-plaintext highlighter-rouge">feature-staging</code></a> §”Agent-run repositories”). When the publish refuses, asks for the refresh rather than publishing around it.</td>
     </tr>
     <tr>
-      <td>Site build (agent, stage-local)</td>
+      <td><a id="lane-Lane_Site"></a>Site build (agent, stage-local)</td>
       <td><code class="language-plaintext highlighter-rouge">build-pipeline</code></td>
-      <td>Restores the AST, judges it for the commit being published, and builds and publishes the site from it. Mechanical: it decides nothing a person must own, and it refuses rather than guesses — a stale or cannot-tell AST ends the publish.</td>
+      <td>Restores and judges the AST, then builds and publishes the site. A stale, cannot-tell or missing AST ends the publish.</td>
     </tr>
     <tr>
-      <td>AST refresh (GitHub runner: IG Publisher with the AST exporter)</td>
+      <td><a id="lane-Lane_Runner"></a>AST refresh (GitHub runner: IG Publisher with the AST exporter)</td>
       <td><code class="language-plaintext highlighter-rouge">ig-publisher-service</code></td>
       <td>fhir-harness’s <code class="language-plaintext highlighter-rouge">ig-ast-refresh.yml</code>, run in the IG repository through its caller. Builds the IG once with the Publisher AST exporter and writes the cache branch. Builds no site, publishes nothing, dispatches nothing.</td>
     </tr>
@@ -923,33 +1204,33 @@
   </thead>
   <tbody>
     <tr>
-      <td><strong>Restore the AST from its cache branch and judge it</strong><br /><code class="language-plaintext highlighter-rouge">Task_Restore</code></td>
+      <td><a id="step-Task_Restore"></a><strong>Restore and judge the cached AST</strong><br /><code class="language-plaintext highlighter-rouge">Task_Restore</code></td>
       <td>Site build (agent, stage-local)</td>
-      <td><code class="language-plaintext highlighter-rouge">ig-ast-delta</code><br /><code class="language-plaintext highlighter-rouge">ig-build-pipeline</code></td>
+      <td><a href="../../../en/cat-harness/processes/skills/ig-ast-delta.html"><code class="language-plaintext highlighter-rouge">ig-ast-delta</code></a><br /><a href="../../../en/cat-harness/processes/skills/ig-build-pipeline.html"><code class="language-plaintext highlighter-rouge">ig-build-pipeline</code></a></td>
       <td><code class="language-plaintext highlighter-rouge">ig-cache.sh restore --ig-root .</code> fetches <code class="language-plaintext highlighter-rouge">cat/fhir-harness/fhir-ast/&lt;package id&gt;</code> into <code class="language-plaintext highlighter-rouge">output-ast/</code> (with the Publisher’s <code class="language-plaintext highlighter-rouge">txcache/</code>), then <code class="language-plaintext highlighter-rouge">ig-cache.sh verify</code> runs <code class="language-plaintext highlighter-rouge">ig-ast.ts validity</code>: exit 0 valid, 1 stale-inputs (naming which input), 2 cannot-tell. A restore that finds no branch is a miss, judged as not valid. In an IG repository’s site route this is the first <code class="language-plaintext highlighter-rouge">pre</code> step, <code class="language-plaintext highlighter-rouge">ig-site:ast</code> (<code class="language-plaintext highlighter-rouge">ig-repo-site.ts ast</code>).</td>
     </tr>
     <tr>
-      <td><strong>Build and publish the site from the AST</strong><br /><code class="language-plaintext highlighter-rouge">Task_BuildSite</code></td>
+      <td><a id="step-Task_BuildSite"></a><strong>Build and publish the site from the AST</strong><br /><code class="language-plaintext highlighter-rouge">Task_BuildSite</code></td>
       <td>Site build (agent, stage-local)</td>
-      <td><code class="language-plaintext highlighter-rouge">ig-render-jekyll</code><br /><code class="language-plaintext highlighter-rouge">ig-build-pipeline</code></td>
-      <td>The site route’s steps, provided by the mounted layers and run by <code class="language-plaintext highlighter-rouge">stage-local.ts</code> → <code class="language-plaintext highlighter-rouge">build-instance-site.ts</code>: the landing layer’s IG API sidecars when it has the step (<code class="language-plaintext highlighter-rouge">ig-site:sidecars</code>), the artefact index from the AST and the thin pages with the IG composed at the root (<code class="language-plaintext highlighter-rouge">ig-site:compose</code>: <code class="language-plaintext highlighter-rouge">ast-to-artifact-index.ts</code>, <code class="language-plaintext highlighter-rouge">gen-ig-pages.ts --compiled-data ast-data</code>), the OpenAPI pages when the IG holds them (<code class="language-plaintext highlighter-rouge">ig-site:openapi</code>), the AST’s resources served as <code class="language-plaintext highlighter-rouge">ast-data/</code> and the build stamp (<code class="language-plaintext highlighter-rouge">ig-site:publisher-pages</code>). Published at the root from the default branch, as a preview otherwise.</td>
+      <td><a href="../../../en/cat-harness/processes/skills/ig-render-jekyll.html"><code class="language-plaintext highlighter-rouge">ig-render-jekyll</code></a><br /><a href="../../../en/cat-harness/processes/skills/ig-build-pipeline.html"><code class="language-plaintext highlighter-rouge">ig-build-pipeline</code></a></td>
+      <td>Runs the site route’s steps via <code class="language-plaintext highlighter-rouge">stage-local.ts</code> → <code class="language-plaintext highlighter-rouge">build-instance-site.ts</code>: <code class="language-plaintext highlighter-rouge">ig-site:sidecars</code> (IG API sidecars, if the landing layer has the step), <code class="language-plaintext highlighter-rouge">ig-site:compose</code> (artefact index and thin pages from the AST, the IG composed at the root), <code class="language-plaintext highlighter-rouge">ig-site:openapi</code> (if the IG holds OpenAPI pages), <code class="language-plaintext highlighter-rouge">ig-site:publisher-pages</code> (the AST’s resources as <code class="language-plaintext highlighter-rouge">ast-data/</code>, the build stamp), and last <code class="language-plaintext highlighter-rouge">ig-site:bar</code> (the IG’s slim bar on pages written after <code class="language-plaintext highlighter-rouge">publisher-pages</code>). Published at the root from the default branch, as a preview otherwise.</td>
     </tr>
     <tr>
-      <td><strong>Dispatch the IG’s ig-ast-refresh.yml</strong><br /><code class="language-plaintext highlighter-rouge">Task_Dispatch</code></td>
+      <td><a id="step-Task_Dispatch"></a><strong>Dispatch AST refresh</strong><br /><code class="language-plaintext highlighter-rouge">Task_Dispatch</code></td>
       <td>Publication manager (owner, or the agent the owner delegates to)</td>
-      <td><code class="language-plaintext highlighter-rouge">ig-build-pipeline</code></td>
-      <td>Actions → “IG AST refresh (by hand)” → Run workflow on the default branch, inputs <code class="language-plaintext highlighter-rouge">ref</code> = the default branch, <code class="language-plaintext highlighter-rouge">force</code> = false. The publish refused, so the verdict already says the cache is not valid; <code class="language-plaintext highlighter-rouge">force</code> is for a cache that is valid but suspected wrong.</td>
+      <td><a href="../../../en/cat-harness/processes/skills/ig-build-pipeline.html"><code class="language-plaintext highlighter-rouge">ig-build-pipeline</code></a></td>
+      <td>Actions → “IG AST refresh (by hand)” → Run workflow on the default branch, inputs <code class="language-plaintext highlighter-rouge">ref</code> = the default branch, <code class="language-plaintext highlighter-rouge">force</code> = false. Set <code class="language-plaintext highlighter-rouge">force</code> = true only to rebuild a cache that is valid but suspected wrong.</td>
     </tr>
     <tr>
-      <td><strong>Build the IG with the Publisher AST exporter</strong><br /><code class="language-plaintext highlighter-rouge">Task_Export</code></td>
+      <td><a id="step-Task_Export"></a><strong>Build the IG with the AST exporter</strong><br /><code class="language-plaintext highlighter-rouge">Task_Export</code></td>
       <td>AST refresh (GitHub runner: IG Publisher with the AST exporter)</td>
-      <td><code class="language-plaintext highlighter-rouge">ig-publisher-fork</code></td>
-      <td>The runner mounts the layers the IG repository’s <code class="language-plaintext highlighter-rouge">index.lock.json</code> pins, restores and judges the cache itself, and, when it is not valid, runs the caller’s optional <code class="language-plaintext highlighter-rouge">pre-export</code> overlay command, then <code class="language-plaintext highlighter-rouge">AstExportCli</code> (Tool <code class="language-plaintext highlighter-rouge">ig-ast-export</code>, <code class="language-plaintext highlighter-rouge">litlfred/fhir-ig-publisher</code> at the pinned <code class="language-plaintext highlighter-rouge">claude/ast-export</code> commit) with <code class="language-plaintext highlighter-rouge">-tx</code>. The inputs <code class="language-plaintext highlighter-rouge">pre-export</code> changed are put back and the AST is recorded against the clean commit’s input digest (<code class="language-plaintext highlighter-rouge">ig-ast.ts source-inputs</code>). The AST just built must itself be <code class="language-plaintext highlighter-rouge">valid</code> for the commit, or the run fails.</td>
+      <td><a href="../../../en/cat-harness/processes/skills/ig-publisher-fork.html"><code class="language-plaintext highlighter-rouge">ig-publisher-fork</code></a></td>
+      <td>The runner mounts the layers the IG repository’s <code class="language-plaintext highlighter-rouge">index.lock.json</code> pins, then restores and judges the cache itself. When it is not valid (or <code class="language-plaintext highlighter-rouge">force</code> is set) it rebuilds with the Publisher fork (Tool <code class="language-plaintext highlighter-rouge">ig-ast-export</code>, <code class="language-plaintext highlighter-rouge">litlfred/fhir-ig-publisher</code> at the pinned <code class="language-plaintext highlighter-rouge">claude/ast-export</code> commit). A stale cache is first rebuilt incrementally (<code class="language-plaintext highlighter-rouge">IncrementalBuildCli</code>), falling back to a full <code class="language-plaintext highlighter-rouge">AstExportCli</code> build with <code class="language-plaintext highlighter-rouge">-tx</code>; a <code class="language-plaintext highlighter-rouge">force</code> run, a <code class="language-plaintext highlighter-rouge">pre-export</code> caller, or a missing or cannot-tell cache always builds in full, and a release needs a full build. The caller’s optional <code class="language-plaintext highlighter-rouge">pre-export</code> overlay command runs before a full build; the inputs it changed are put back and the AST is recorded against the clean commit’s input digest (<code class="language-plaintext highlighter-rouge">ig-ast.ts source-inputs</code>). The AST just built must itself be <code class="language-plaintext highlighter-rouge">valid</code> for the commit, or the run fails.</td>
     </tr>
     <tr>
-      <td><strong>Seed the cache branch (ig-cache seed –push)</strong><br /><code class="language-plaintext highlighter-rouge">Task_Seed</code></td>
+      <td><a id="step-Task_Seed"></a><strong>Seed the cache branch</strong><br /><code class="language-plaintext highlighter-rouge">Task_Seed</code></td>
       <td>AST refresh (GitHub runner: IG Publisher with the AST exporter)</td>
-      <td><code class="language-plaintext highlighter-rouge">compiled-artefact-cache</code></td>
+      <td><a href="../../../en/cat-harness/processes/skills/compiled-artefact-cache.html"><code class="language-plaintext highlighter-rouge">compiled-artefact-cache</code></a></td>
       <td><code class="language-plaintext highlighter-rouge">ig-cache.sh seed --ig-root . --push</code>: one commit holding the AST, the Publisher’s expansions and <code class="language-plaintext highlighter-rouge">txcache/</code>, its subject recording the package, counts, Publisher version and source commit. Refused when the candidate is under 90% of the incumbent’s resources or edges (the no-shrink gate).</td>
     </tr>
   </tbody>
@@ -977,12 +1258,12 @@
     <tr>
       <td><strong>AST valid for this commit?</strong><br /><code class="language-plaintext highlighter-rouge">GW_Valid</code></td>
       <td>Answered by Task_Restore’s verdict. <code class="language-plaintext highlighter-rouge">valid</code> takes yes. <code class="language-plaintext highlighter-rouge">stale-inputs</code>, <code class="language-plaintext highlighter-rouge">cannot-tell</code> and a miss take no: the publish is refused, never drawn from Publisher HTML or from an AST of other inputs. The override (<code class="language-plaintext highlighter-rouge">SITE_ACCEPT_STALE_AST=1</code>, read by <code class="language-plaintext highlighter-rouge">ig-site:ast</code>) is for a preview only: on the root it still refuses.</td>
-      <td><strong>yes</strong> → Build and publish the site from the AST<br /><strong>no — refused: stale, cannot tell, miss</strong> → Dispatch the IG’s ig-ast-refresh.yml</td>
+      <td><strong>yes</strong> → Build and publish the site from the AST<br /><strong>no — refused: stale, cannot tell, miss</strong> → Dispatch AST refresh</td>
     </tr>
     <tr>
       <td><strong>On the default branch, with its inputs?</strong><br /><code class="language-plaintext highlighter-rouge">GW_Seedable</code></td>
-      <td>Yes when the built commit is an ancestor of the default branch’s tip AND <code class="language-plaintext highlighter-rouge">sushi-config.yaml</code>, <code class="language-plaintext highlighter-rouge">ig.ini</code> and <code class="language-plaintext highlighter-rouge">input/</code> are the same at both. The cache is shared by every build of the IG, so an AST of other inputs never overwrites it.</td>
-      <td><strong>yes</strong> → Seed the cache branch (ig-cache seed –push)<br /><strong>no</strong> → AST kept as a run artifact; cache unchanged</td>
+      <td>Yes when the built commit is an ancestor of the default branch’s tip AND <code class="language-plaintext highlighter-rouge">sushi-config.yaml</code>, <code class="language-plaintext highlighter-rouge">ig.ini</code> and <code class="language-plaintext highlighter-rouge">input/</code> are the same at both. An AST of other inputs never overwrites the shared cache.</td>
+      <td><strong>yes</strong> → Seed the cache branch<br /><strong>no</strong> → AST kept as a run artifact; cache unchanged</td>
     </tr>
   </tbody>
 </table></div>

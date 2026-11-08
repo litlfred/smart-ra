@@ -1,5 +1,19 @@
 [
   {
+    "id": "phii-2023-crdm",
+    "type": "document",
+    "title": "Collaborative Requirements Development Methodology (CRDM): A Collaborative Approach to Public Health Systems",
+    "author": [
+      {
+        "family": "(CRDM)",
+        "given": "DEVELOPMENT METHODOLOGY"
+      }
+    ],
+    "issued": {
+      "raw": "D:20261031"
+    }
+  },
+  {
     "id": "omg-2024-spdx-3-0",
     "type": "document",
     "title": "System Package Data Exchange (SPDX)",
@@ -61,6 +75,21 @@
     "abstract": "The global digital health ecosystem is project-centric: point solutions are developed for vertical health programs and financed through vertical funding allocations. This results in data fragmentation and technology lock-in, compromising health care delivery. A convergence of trends enabled by interoperability and digital governance makes possible a shift towards person-focused health. Together, open Standards, open Technologies, open Architectures and open Content represent a next-generation ‘full-STAC’ remedy for digital health transformation. Local developers and implementers can avoid reinventing the wheel, and instead build digital tools suited to local needs—where data travels with an individual over time, evidence-based practice is easily integrated, and insights are gleaned from harmonized data. This is the culmination of the vision endorsed by 194 WHO Member States in the Global Strategy on Digital Health 2020 to 2025."
   },
   {
+    "id": "full-stac-2023",
+    "type": "article-journal",
+    "title": "A full-STAC remedy for global digital health transformation: open standards, technologies, architectures and content",
+    "issued": {
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
+    },
+    "container-title": "Oxford Open Digital Health",
+    "DOI": "10.1093/oodh/oqad018",
+    "URL": "https://doi.org/10.1093/oodh/oqad018"
+  },
+  {
     "id": "avila-2021-process-modeling-guidelines-slr",
     "type": "document",
     "title": "A systematic literature review of process modeling guidelines and their empirical support",
@@ -83,6 +112,17 @@
         ]
       ]
     }
+  },
+  {
+    "id": "ahrq-electronic-medical-record-systems",
+    "type": "webpage",
+    "title": "Electronic medical record systems",
+    "author": [
+      {
+        "literal": "Agency for Healthcare Research and Quality"
+      }
+    ],
+    "URL": "https://digital.ahrq.gov/electronic-medical-record-systems"
   },
   {
     "id": "agent-skill-best-practices---gemini-cli",
@@ -120,18 +160,6 @@
     "title": "Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words",
     "issued": {
       "raw": "D:20260921"
-    }
-  },
-  {
-    "id": "genon-2010-bpmn2-cognitive-effectiveness",
-    "type": "document",
-    "title": "Analysing the Cognitive Effectiveness of the BPMN 2.0 Visual Notation",
-    "issued": {
-      "date-parts": [
-        [
-          2010
-        ]
-      ]
     }
   },
   {
@@ -207,6 +235,23 @@
     }
   },
   {
+    "id": "au-my-health-record",
+    "type": "webpage",
+    "title": "My Health Record",
+    "author": [
+      {
+        "literal": "Australian Digital Health Agency"
+      }
+    ],
+    "URL": "https://www.myhealthrecord.gov.au/"
+  },
+  {
+    "id": "bahmni",
+    "type": "webpage",
+    "title": "Bahmni",
+    "URL": "https://www.bahmni.org/"
+  },
+  {
     "id": "hmans-2026-beans-readme",
     "type": "document",
     "title": "beans",
@@ -217,20 +262,6 @@
         ]
       ]
     }
-  },
-  {
-    "id": "arxiv-2505.11701v2",
-    "type": "article-journal",
-    "title": "DMN-Guided Prompting: A Framework for Controlling LLM Behavior",
-    "author": [
-      {
-        "family": "Behavior",
-        "given": "LLM"
-      }
-    ],
-    "URL": "https://arxiv.org/abs/2505.11701",
-    "abstract": "Large Language Models (LLMs) have shown considerable potential in automating decision logic within knowledge-intensive processes. However, their effectiveness largely depends on the strategy and quality of prompting. Since decision logic is typically embedded in prompts, it becomes challenging for end users to modify or refine it. Decision Model and Notation (DMN) offers a standardized graphical approach for defining decision logic in a structured, user- friendly manner. This paper introduces a DMN-guided prompting framework that breaks down complex decision logic into smaller, manageable components, guid- ing LLMs through structured decision pathways. We implemented the framework in a graduate-level course where students submitted assignments. The assign- ments and DMN models representing feedback instructions served as inputs to our framework. The instructor evaluated the generated feedback and labeled it for performance assessment. Our approach demonstrated promising results, out- performing chain-of-thought (CoT) prompting in our case study. Students also responded positively to the generated feedback, reporting high levels of perceived usefulness in a survey based on the Technology Acceptance Model.",
-    "note": "arXiv:2505.11701"
   },
   {
     "id": "best-practices---google-antigravity-docs",
@@ -288,6 +319,39 @@
     }
   },
   {
+    "id": "path-2012-common-requirements-mhis-crdm",
+    "type": "document",
+    "title": "Common Requirements for Maternal Health Information Systems",
+    "author": [
+      {
+        "family": "C",
+        "given": "Taylor"
+      },
+      {
+        "family": "A",
+        "given": "Luchitsky"
+      },
+      {
+        "family": "D",
+        "given": "Lubinski"
+      },
+      {
+        "family": "L",
+        "given": "Peloso"
+      },
+      {
+        "family": "K",
+        "given": "Wilson"
+      },
+      {
+        "family": "PATH"
+      }
+    ],
+    "issued": {
+      "raw": "D:20130314"
+    }
+  },
+  {
     "id": "arxiv-1603.07466v1",
     "type": "article-journal",
     "title": "Semantics and Analysis of DMN Decision Tables",
@@ -311,6 +375,61 @@
     "URL": "https://arxiv.org/abs/1603.07466",
     "abstract": "The Decision Model and Notation (DMN) is a standard no- tation to capture decision logic in business applications in general and business processes in particular. A central construct in DMN is that of a decision table. The increasing use of DMN decision tables to capture critical business knowledge raises the need to support analysis tasks on these tables such as correctness and completeness checking. This paper provides a formal semantics for DMN tables, a formal deﬁnition of key analysis tasks and scalable algorithms to tackle two such tasks, i.e., de- tection of overlapping rules and of missing rules. The algorithms are based on a geometric interpretation of decision tables that can be used to support other analysis tasks by tapping into geometric algorithms. The algorithms have been implemented in an open-source DMN editor and tested on large decision tables derived from a credit lending dataset.",
     "note": "arXiv:1603.07466"
+  },
+  {
+    "id": "cgdev-supply-chain-traceability",
+    "type": "report",
+    "title": "Improving global health supply chains through traceability",
+    "author": [
+      {
+        "literal": "Center for Global Development"
+      }
+    ],
+    "URL": "https://www.cgdev.org/sites/default/files/improving-global-health-supply-chains-through-traceability.pdf"
+  },
+  {
+    "id": "cdc-cdsi",
+    "type": "webpage",
+    "title": "Clinical Decision Support for Immunization (CDSi)",
+    "author": [
+      {
+        "literal": "Centers for Disease Control and Prevention"
+      }
+    ],
+    "URL": "https://www.cdc.gov/vaccines/programs/iis/cdsi.html"
+  },
+  {
+    "id": "cdc-epi-info",
+    "type": "webpage",
+    "title": "Epi Info",
+    "author": [
+      {
+        "literal": "Centers for Disease Control and Prevention"
+      }
+    ],
+    "URL": "https://www.cdc.gov/epiinfo/"
+  },
+  {
+    "id": "cdc-nssp",
+    "type": "webpage",
+    "title": "National Syndromic Surveillance Program (NSSP)",
+    "author": [
+      {
+        "literal": "Centers for Disease Control and Prevention"
+      }
+    ],
+    "URL": "https://www.cdc.gov/nssp/"
+  },
+  {
+    "id": "cms-ehealth-records",
+    "type": "webpage",
+    "title": "E-health records",
+    "author": [
+      {
+        "literal": "Centers for Medicare & Medicaid Services"
+      }
+    ],
+    "URL": "https://www.cms.gov/priorities/key-initiatives/e-health/records"
   },
   {
     "id": "arxiv-2507.07974v2",
@@ -345,77 +464,32 @@
     "note": "arXiv:2605.03537"
   },
   {
-    "id": "moeller-winter-reichert-2025-cognitive-factors-slr",
-    "type": "article-journal",
-    "title": "Cognitive Factors in Process Model Comprehension—A Systematic Literature Review",
+    "id": "clark-2025-dpi-and-development",
+    "type": "report",
+    "title": "Digital Public Infrastructure and Development",
     "author": [
       {
-        "family": "Citation: Möller",
-        "given": "M."
+        "family": "Clark",
+        "given": "J"
       },
       {
-        "family": "Winter",
-        "given": "M."
+        "family": "Marin",
+        "given": "G"
+      },
+      {
+        "family": "Ardic Alper",
+        "given": "OP"
+      },
+      {
+        "family": "Galicia Rabadan",
+        "given": "GA"
       }
     ],
-    "issued": {
-      "raw": "D:20250516"
-    },
-    "DOI": "10.3390/brainsci15050505",
-    "URL": "https://doi.org/10.3390/brainsci15050505",
-    "abstract": "Process models constitute essential tools in business process management and software engineering for representing and managing real-world business processes. Hence, the proper comprehension of these models is crucial for enabling an effective and efficient communication among stakeholders. While several studies have examined factors affecting process model comprehension, such as the used modeling notation or process complexity, there is a lack of in-depth research on the cognitive processes important to comprehend process models deeper. This systematic literature review explores the cognitive mech- anisms underlying process model comprehension by integrating insights from relevant disciplines such as cognitive neuroscience and psychology. Key areas of cognition include perception, attention, memory, language, problem solving, emotion, and metacognition. This review was conducted following the well-established Kitchenham methodology and included an extensive search in the following digital libraries: Web of Science, IEEE Xplore, ScienceDirect, ACM Digital Library, PubMed, and SpringerLink. By analyzing 47 studies, this literature review identifies gaps in current research, emphasizing the need for further investigation into these cognitive processes to improve model comprehensibility."
-  },
-  {
-    "id": "arxiv-1511-04055v1",
-    "type": "article-journal",
-    "title": "A Visual Analysis of the Process of Process Modeling",
-    "author": [
-      {
-        "family": "Claes1",
-        "given": "Jan"
-      },
-      {
-        "family": "2"
-      },
-      {
-        "family": "Vanderfeesten2",
-        "given": "Irene"
-      },
-      {
-        "family": "Pinggera3",
-        "given": "Jakob"
-      },
-      {
-        "family": "Reijers2",
-        "given": "Hajo A."
-      },
-      {
-        "family": "Weber3",
-        "given": "Barbara"
-      },
-      {
-        "family": "Poels1",
-        "given": "Geert"
-      }
-    ],
-    "issued": {
-      "raw": "D:20151111"
-    },
-    "DOI": "10.1007/s10257-014-0245-4",
-    "URL": "https://doi.org/10.1007/s10257-014-0245-4",
-    "abstract": "The construction of business process models has become an important requisite in the analysis and optimization of processes. The success of the analysis and optimization efforts heavily depends on the quality of the models. Therefore, a research domain emerged that studies the process of process modeling. This paper contributes to this research by presenting a way of visualizing the different steps a modeler undertakes to construct a process model, in a so-called PPMChart. The graphical representation lowers the cognitive efforts to discover properties of the modeling process, which facilitates the research and the development of theory, training and tool support for improving model quality. The paper contains an extensive overview of applications of the tool that demonstrate its usefulness for research and practice and discusses the observations from the visualization in relation to other work. The visualization was evaluated through a qualitative study that confirmed its usefulness and added value compared to the Dotted Chart on which the visualization was inspired."
-  },
-  {
-    "id": "zimoch-2017-cognitive-insights-preliminary",
-    "type": "document",
-    "title": "Cognitive Insights into Business Process Model Comprehension: Preliminary Results for Experienced and Inexperienced Individuals",
-    "issued": {
-      "date-parts": [
-        [
-          2017
-        ]
-      ]
-    }
+    "publisher": "World Bank",
+    "volume": "1",
+    "URL": "https://documents1.worldbank.org/curated/en/099031025172027713/pdf/P505739-84c5073b-9d40-4b83-a211-98b2263e87dd.pdf",
+    "collection-title": "Digital Transformation White Paper",
+    "publisher-place": "Washington, DC"
   },
   {
     "id": "hasic-2019-complexity-metrics-dmn",
@@ -440,6 +514,38 @@
         ]
       ]
     }
+  },
+  {
+    "id": "coe-cets-225-ai-convention",
+    "type": "treaty",
+    "title": "Council of Europe Framework Convention on Artificial Intelligence and Human Rights, Democracy and the Rule of Law (CETS No. 225)",
+    "author": [
+      {
+        "literal": "Council of Europe"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2024,
+          9,
+          5
+        ]
+      ]
+    },
+    "URL": "https://www.coe.int/en/web/artificial-intelligence/the-framework-convention-on-artificial-intelligence",
+    "publisher-place": "Vilnius"
+  },
+  {
+    "id": "ontoserver",
+    "type": "webpage",
+    "title": "Ontoserver",
+    "author": [
+      {
+        "literal": "CSIRO"
+      }
+    ],
+    "URL": "https://ontoserver.csiro.au/"
   },
   {
     "id": "arxiv-2503.18813v2",
@@ -486,6 +592,23 @@
     }
   },
   {
+    "id": "phii-2021-defining-and-validating-requirements-guide",
+    "type": "document",
+    "title": "Defining and Validating System Requirements Guide",
+    "author": [
+      {
+        "family": "Defining"
+      },
+      {
+        "family": "System",
+        "given": "Validating"
+      }
+    ],
+    "issued": {
+      "raw": "D:20150929"
+    }
+  },
+  {
     "id": "arxiv-2607.25032v1",
     "type": "article-journal",
     "title": "Authoring Agent Skills: A Software-Engineering Approach",
@@ -500,24 +623,10 @@
     "note": "arXiv:2607.25032"
   },
   {
-    "id": "arxiv-2005.09998v1",
-    "type": "article-journal",
-    "title": "Tackling the DMN Challenges with cDMN: A Tight Integration of DMN and Constraint Reasoning",
-    "author": [
-      {
-        "family": "DMN",
-        "given": "A Tight Integration of"
-      },
-      {
-        "family": "Constraint"
-      }
-    ],
-    "issued": {
-      "raw": "D:20200521"
-    },
-    "URL": "https://arxiv.org/abs/2005.09998",
-    "abstract": "This paper describes an extension to the DMN standard, called cDMN. It aims to enlarge the expressivity of DMN in order to solve more complex problems, while retaining DMN’s goal of being readable by domain experts. We test cDMN by solving the most complex challenges posted on the DM Community website. We compare our own cDMN solutions to the solutions that have been submitted to the website and ﬁnd that our approach is competitive, both in readability and compactness. Moreover, cDMN is able to solve more challenges than any other approach.",
-    "note": "arXiv:2005.09998"
+    "id": "dhis2",
+    "type": "webpage",
+    "title": "DHIS2",
+    "URL": "https://dhis2.org/"
   },
   {
     "id": "arxiv-2510.21603v1",
@@ -584,6 +693,34 @@
     "note": "arXiv:2608.18294"
   },
   {
+    "id": "ehn-guidelines-eprescriptions",
+    "type": "document",
+    "title": "eHealth Network guidelines on ePrescriptions",
+    "author": [
+      {
+        "literal": "eHealth Network"
+      }
+    ],
+    "URL": "https://health.ec.europa.eu/document/download/b744f30b-a05e-4b9c-9630-ad96ebd0b2f0_en?filename=ehn_guidelines_eprescriptions_en.pdf"
+  },
+  {
+    "id": "ehn-guidelines-patient-summary",
+    "type": "document",
+    "title": "eHealth Network guidelines on the Patient Summary",
+    "author": [
+      {
+        "literal": "eHealth Network"
+      }
+    ],
+    "URL": "https://health.ec.europa.eu/document/download/e020f311-c35b-45ae-ba3d-03212b57fa65_en?filename=ehn_guidelines_patientsummary_en.pdf"
+  },
+  {
+    "id": "ehrbase",
+    "type": "webpage",
+    "title": "EHRbase",
+    "URL": "https://ehrbase.org/"
+  },
+  {
     "id": "equipping-agents-for-the-real-world-with-agent-skills-anthro",
     "type": "document",
     "title": "Equipping agents for the real world with Agent Skills",
@@ -592,13 +729,132 @@
     }
   },
   {
-    "id": "zimoch-2017-eye-tracking-lessons-learned",
-    "type": "document",
-    "title": "Eye Tracking Experiments on Process Model Comprehension: Lessons Learned",
+    "id": "ecdc",
+    "type": "webpage",
+    "title": "European Centre for Disease Prevention and Control",
+    "URL": "https://www.ecdc.europa.eu/"
+  },
+  {
+    "id": "ec-cross-border-health-services",
+    "type": "webpage",
+    "title": "Electronic cross-border health services",
+    "author": [
+      {
+        "literal": "European Commission"
+      }
+    ],
+    "URL": "https://health.ec.europa.eu/ehealth-digital-health-and-care/digital-health-and-care/electronic-cross-border-health-services_en"
+  },
+  {
+    "id": "ec-interoperability-test-bed",
+    "type": "webpage",
+    "title": "Interoperability Test Bed",
+    "author": [
+      {
+        "literal": "European Commission, Interoperable Europe"
+      }
+    ],
+    "URL": "https://interoperable-europe.ec.europa.eu/collection/interoperability-test-bed-repository/solution/interoperability-test-bed"
+  },
+  {
+    "id": "eu-2024-1689-ai-act",
+    "type": "legislation",
+    "title": "Regulation (EU) 2024/1689 of the European Parliament and of the Council of 13 June 2024 laying down harmonised rules on artificial intelligence (Artificial Intelligence Act)",
+    "author": [
+      {
+        "literal": "European Parliament and Council of the European Union"
+      }
+    ],
     "issued": {
       "date-parts": [
         [
-          2017
+          2024,
+          7,
+          12
+        ]
+      ]
+    },
+    "container-title": "Official Journal of the European Union, L series",
+    "URL": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
+  },
+  {
+    "id": "eu-2025-327-ehds",
+    "type": "legislation",
+    "title": "Regulation (EU) 2025/327 of the European Parliament and of the Council of 11 February 2025 on the European Health Data Space and amending Directive 2011/24/EU and Regulation (EU) 2024/2847",
+    "author": [
+      {
+        "literal": "European Parliament and Council of the European Union"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025,
+          3,
+          5
+        ]
+      ]
+    },
+    "container-title": "Official Journal of the European Union",
+    "URL": "https://eur-lex.europa.eu/eli/reg/2025/327/oj/eng",
+    "note": "Applies, with a phased timeline, from 26 March 2027 onward."
+  },
+  {
+    "id": "exemplars-cowin-india",
+    "type": "webpage",
+    "title": "CoWIN in India",
+    "author": [
+      {
+        "literal": "Exemplars in Global Health"
+      }
+    ],
+    "publisher": "Gates Ventures / Exemplars in Global Health",
+    "URL": "https://www.exemplars.health/emerging-topics/epidemic-preparedness-and-response/digital-health-tools/cowin-in-india",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          5
+        ]
+      ]
+    }
+  },
+  {
+    "id": "fetter-2025-state-of-dpi",
+    "type": "report",
+    "title": "2025 State of Digital Public Infrastructure Report",
+    "author": [
+      {
+        "family": "Fetter",
+        "given": "J"
+      },
+      {
+        "family": "Rao",
+        "given": "K"
+      },
+      {
+        "family": "Eaves",
+        "given": "D"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    },
+    "publisher": "UCL Institute for Innovation and Public Purpose",
+    "URL": "https://www.ucl.ac.uk/bartlett/publications/2025/nov/2025-state-digital-public-infrastructure-report",
+    "collection-title": "IIPP Policy Report",
+    "number": "2025/06",
+    "accessed": {
+      "date-parts": [
+        [
+          2025,
+          11,
+          4
         ]
       ]
     }
@@ -614,33 +870,6 @@
         ]
       ]
     }
-  },
-  {
-    "id": "figl-2018-what-we-know-dmn-emisa",
-    "type": "document",
-    "title": "What we know and what we do not know about DMN (Extended Abstract)",
-    "author": [
-      {
-        "family": "Figl2",
-        "given": "Kathrin"
-      },
-      {
-        "family": "Mendling3",
-        "given": "Jan"
-      },
-      {
-        "family": "Tokdemir4",
-        "given": "Gul"
-      },
-      {
-        "family": "Vanthienen5",
-        "given": "Jan"
-      }
-    ],
-    "issued": {
-      "raw": "D:20210719"
-    },
-    "abstract": ")1 Kathrin Figl2, Jan Mendling3, Gul Tokdemir4, Jan Vanthienen5 Abstract: The recent Decision Model and Notation (DMN) establishes business decisions as first- class citizens of executable business processes. This research note has two objectives: first, to describe DMN’s technical and theoretical foundations; second, to identify research directions for investigating DMN’s potential benefits on a technological, individual and organizational level. To this end, we integrate perspectives from management science, cognitive theory and information systems research."
   },
   {
     "id": "arxiv-0909.4061v2",
@@ -663,6 +892,50 @@
     }
   },
   {
+    "id": "firely",
+    "type": "webpage",
+    "title": "Firely",
+    "URL": "https://fire.ly/"
+  },
+  {
+    "id": "g20-2023-digital-economy-ministers",
+    "type": "report",
+    "title": "G20 Digital Economy Ministers' Meeting Outcome Document and Chair's Summary, Bengaluru, India, 19 August 2023",
+    "author": [
+      {
+        "literal": "G20 Digital Economy Working Group, India Presidency"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
+    },
+    "URL": "https://g7g20-documents.org/database/document/2023-g20-india-sherpa-track-digital-economy-ministers-ministers-language-g20-digital-economy-ministers-meeting-outcome-document-and-chair-summary",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          5
+        ]
+      ]
+    }
+  },
+  {
+    "id": "salut-publica-catalunya",
+    "type": "webpage",
+    "title": "Salut Pública",
+    "author": [
+      {
+        "literal": "Generalitat de Catalunya"
+      }
+    ],
+    "URL": "https://salutpublica.gencat.cat/"
+  },
+  {
     "id": "cucumber-2024-gherkin-reference",
     "type": "document",
     "title": "Gherkin Reference",
@@ -673,6 +946,53 @@
         ]
       ]
     }
+  },
+  {
+    "id": "es-ministerio-sanidad",
+    "type": "webpage",
+    "title": "Ministerio de Sanidad",
+    "author": [
+      {
+        "literal": "Government of Spain, Ministerio de Sanidad"
+      }
+    ],
+    "URL": "https://www.sanidad.gob.es/"
+  },
+  {
+    "id": "greenhalgh-2017-beyond-adoption",
+    "type": "article-journal",
+    "title": "Beyond Adoption: A New Framework for Theorizing and Evaluating Nonadoption, Abandonment, and Challenges to the Scale-Up, Spread, and Sustainability of Health and Care Technologies",
+    "author": [
+      {
+        "family": "Greenhalgh",
+        "given": "T"
+      },
+      {
+        "literal": "et al."
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2017
+        ]
+      ]
+    },
+    "container-title": "Journal of Medical Internet Research",
+    "volume": "19",
+    "issue": "11",
+    "page": "e367"
+  },
+  {
+    "id": "gs1-traceability-medicines",
+    "type": "document",
+    "title": "Implementation of GS1 standards for traceability of medicines in the healthcare supply chain",
+    "author": [
+      {
+        "literal": "GS1 Belgium & Luxembourg"
+      }
+    ],
+    "URL": "https://www.gs1belu.org/sites/gs1belu/files/2020-07/20191029_implementation_gs1_standards_traceability_medicines_hc_supply_chain_v20_0.pdf"
   },
   {
     "id": "arxiv-2202.02427v1",
@@ -705,6 +1025,34 @@
     "URL": "https://arxiv.org/abs/2202.02427",
     "abstract": "Most work in graph-based recommender systems considers a static setting where all information about test nodes (i.e., users and items) is available upfront at training time. However, this static setting makes little sense for many real world applications where data comes in continuously as a stream of new edges and nodes, and one has to update model predictions incrementally to reflect the latest state. To fully capitalize on the newly available data in the stream, recent graph-based recommendation models would need to be repeatedly retrained, which is infeasible in practice. In this pa- per, we study the graph-based streaming recommendation setting and propose a compositional recommendation model—Lightweight Compositional Embedding (LCE)—that supports incremental up- dates under low computational cost. Instead of learning explicit embeddings for the full set of nodes, LCE learns explicit embed- dings for only a subset of nodes and represents the other nodes implicitly, through a composition function based on their interac- tions in the graph. This provides an effective, yet efficient, means to leverage streaming graph data when one node type (e.g., items) is more amenable to static representation. We conduct an extensive empirical study to compare LCE to a set of competitive baselines on three large-scale user-item recommendation datasets with inter- actions under a streaming setting. The results demonstrate the su- perior performance of LCE, showing that it achieves nearly skyline performance with significantly fewer parameters than alternative graph-based models.",
     "note": "arXiv:2202.02427"
+  },
+  {
+    "id": "hapi-fhir",
+    "type": "webpage",
+    "title": "HAPI FHIR",
+    "URL": "https://hapifhir.io/"
+  },
+  {
+    "id": "hardin-1968-tragedy-commons",
+    "type": "article-journal",
+    "title": "The Tragedy of the Commons",
+    "author": [
+      {
+        "family": "Hardin",
+        "given": "G"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          1968
+        ]
+      ]
+    },
+    "container-title": "Science",
+    "volume": "162",
+    "issue": "3859",
+    "page": "1243–1248"
   },
   {
     "id": "arxiv-2405.14766v2",
@@ -746,6 +1094,69 @@
     "note": "arXiv:2405.14766"
   },
   {
+    "id": "healthgeolab-common-geo-registry",
+    "type": "document",
+    "title": "Guidance on the Common Geo-registry",
+    "author": [
+      {
+        "literal": "Health GeoLab"
+      }
+    ],
+    "URL": "https://healthgeolab.net/DOCUMENTS/Guidance_Common_Geo-registry_Ve2.pdf"
+  },
+  {
+    "id": "cds-hooks",
+    "type": "webpage",
+    "title": "CDS Hooks",
+    "author": [
+      {
+        "literal": "HL7 International"
+      }
+    ],
+    "URL": "https://cds-hooks.org/"
+  },
+  {
+    "id": "hl7-cql",
+    "type": "webpage",
+    "title": "Clinical Quality Language (CQL)",
+    "author": [
+      {
+        "literal": "HL7 International"
+      }
+    ],
+    "URL": "https://cql.hl7.org/"
+  },
+  {
+    "id": "tx-fhir-org",
+    "type": "webpage",
+    "title": "tx.fhir.org",
+    "author": [
+      {
+        "literal": "HL7 International"
+      }
+    ],
+    "URL": "https://tx.fhir.org/"
+  },
+  {
+    "id": "hl7-fhir-r5",
+    "type": "standard",
+    "title": "HL7 FHIR Release 5",
+    "author": [
+      {
+        "literal": "HL7 International"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
+    },
+    "publisher": "Health Level Seven International",
+    "URL": "https://hl7.org/fhir/"
+  },
+  {
     "id": "zur-muehlen-recker-2008-how-much-language",
     "type": "document",
     "title": "How Much Language Is Enough? Theoretical and Practical Use of the Business Process Modeling Notation",
@@ -756,6 +1167,35 @@
         ]
       ]
     }
+  },
+  {
+    "id": "huang-2017-beyond-pilotitis",
+    "type": "article-journal",
+    "title": "Beyond pilotitis: taking digital health interventions to the national level in China and Uganda",
+    "author": [
+      {
+        "family": "Huang",
+        "given": "F"
+      },
+      {
+        "family": "Blaschke",
+        "given": "S"
+      },
+      {
+        "family": "Lucas",
+        "given": "H"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2017
+        ]
+      ]
+    },
+    "container-title": "Globalization and Health",
+    "volume": "13",
+    "page": "49"
   },
   {
     "id": "w3c-2018-odrl-model-2-2",
@@ -779,6 +1219,17 @@
     "abstract": "The Open Digital Rights Language (ODRL) is a policy expression language that provides a flexible and interoperable information model, vocabulary, and encoding mechanisms for representing statements about the usage of content and services. The ODRL Information Model describes the underlying concepts, entities, and relationships that form the foundational basis for the semantics of the ODRL policies. Policies are used to represent permitted and prohibited actions over a certain asset, as well as the obligations required to be meet by stakeholders. In addition, policies may be limited by constraints (e.g., temporal or spatial constraints) and duties (e.g. payments) may be imposed on permissions. Status of This Document This section describes the status of this document at the time of its publication. Other documents may supersede this document. A list of current W3C publications and the latest revision of this technical report can be found in the W3C technical reports index at https://www.w3.org/TR/. This document was published by the Permissions & Obligations Expression Working Group as a Recommendation. Comments regarding this document are welcome. Please send them to public-poe-comments@w3.org (subscribe, archives). Please see the Working Group's implementation report. This document has been reviewed by W3C Members, by software developers, and by other W3C groups and interested parties, and is endorsed by the Director as a W3C Recommendation. It is a stable document and may be used as reference material or cited from another document. W3C's role in making the Recommendation is to draw attention to the specification and to promote its widespread deployment. This enhances the functionality and interoperability of the Web. This document was produced by a group operating under the W3C Patent Policy. W3C maintains a public list of any patent disclosures made in connection with the deliverables of the group; that page also includes instructions for disclosing a patent. An"
   },
   {
+    "id": "ibm-interoperability-healthcare",
+    "type": "webpage",
+    "title": "What is interoperability in healthcare?",
+    "author": [
+      {
+        "literal": "IBM"
+      }
+    ],
+    "URL": "https://www.ibm.com/think/topics/interoperability-in-healthcare"
+  },
+  {
     "id": "qi-hessen-vanderheijden-2023-ca-vs-lsa",
     "type": "article-journal",
     "title": "Improving information retrieval through correspondence analysis instead of latent semantic analysis",
@@ -798,6 +1249,45 @@
     }
   },
   {
+    "id": "inglis-humphrey-2022-nhs-digital-academy",
+    "type": "paper-conference",
+    "title": "The NHS Digital Academy Digital Health Leadership Programme",
+    "author": [
+      {
+        "family": "Inglis Humphrey",
+        "given": "W"
+      },
+      {
+        "family": "Smithies",
+        "given": "A"
+      },
+      {
+        "family": "Prestt",
+        "given": "J"
+      },
+      {
+        "family": "Fletcher",
+        "given": "M"
+      },
+      {
+        "family": "Cresswell",
+        "given": "K"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2022
+        ]
+      ]
+    },
+    "container-title": "Digital Professionalism in Health and Care: Developing the Workforce, Building the Future — Proceedings of the EFMI Special Topic Conference 2022 (Studies in Health Technology and Informatics, vol. 298)",
+    "publisher": "IOS Press",
+    "page": "24–28",
+    "DOI": "10.3233/SHTI220901",
+    "URL": "https://journals.sagepub.com/doi/epdf/10.3233/SHTI220901"
+  },
+  {
     "id": "arxiv-2508.05192v2",
     "type": "article-journal",
     "title": "AI-assisted JSON Schema Creation and Mapping",
@@ -813,6 +1303,12 @@
     "URL": "https://arxiv.org/abs/2508.05192",
     "abstract": "Model-Driven Engineering (MDE) places models at the core of system and data engineering processes. In the context of research data, these models are typically expressed as schemas that define the structure and semantics of datasets. However, many domains still lack standardized models, and creating them remains a significant barrier, especially for non- experts. We present a hybrid approach that combines large language models (LLMs) with deterministic techniques to enable JSON Schema creation, modification, and schema mapping based on natural language inputs by the user. These capabilities are integrated into the open-source tool MetaConfigurator, which already provides visual model editing, validation, code gener- ation, and form generation from models. For data integration, we generate schema mappings from heterogeneous JSON, CSV, XML, and YAML data using LLMs, while ensuring scalability and reliability through deterministic execution of generated mapping rules. The applicability of our work is demonstrated in an application example in the field of chemistry. By combining natural language interaction with deterministic safeguards, this work significantly lowers the barrier to structured data modeling and data integration for non-experts. Index Terms—rdm, research data management, mde, model driven engineering, json, yaml, configuration, schema, data, model, editor, gui, tool, ai, llm, mapping, matching I. INTRODUCTION Model-Driven Engineering (MDE) emphasizes the central role of models in the design, development, and operation of systems [1]. In the context of research data management [2]– [4], models are typically expressed as schemas, which define the structure and semantics of datasets. These models enable key functionalities such as instance validation, transformation, code generation, and visualization, and are essential for ensur- ing data quality, interoperability, and reusability. Despite their importance, many scientific domains still lack standardized da",
     "note": "arXiv:2508.05192"
+  },
+  {
+    "id": "ihip",
+    "type": "webpage",
+    "title": "Integrated Health Information Platform",
+    "URL": "https://ihip.nhp.gov.in/"
   },
   {
     "id": "isaitb-2026-interoperability-test-bed-readme",
@@ -859,6 +1355,56 @@
     "note": "arXiv:2504.07199"
   },
   {
+    "id": "jmir-2024-e58933",
+    "type": "article-journal",
+    "issued": {
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
+    },
+    "container-title": "Journal of Medical Internet Research",
+    "page": "e58933",
+    "URL": "https://www.jmir.org/2024/1/e58933"
+  },
+  {
+    "id": "karippacheril-2024-social-protection-playbook",
+    "type": "book",
+    "title": "Playbook on Digital Social Protection Delivery Systems: Towards Dynamic Inclusion and Interoperability",
+    "author": [
+      {
+        "family": "Karippacheril",
+        "given": "Tina George"
+      },
+      {
+        "family": "Alberro Encinas",
+        "given": "Luis Iñaki"
+      },
+      {
+        "family": "Cardenas Martinez",
+        "given": "Ana Lucia"
+      },
+      {
+        "family": "Daly",
+        "given": "Conrad"
+      },
+      {
+        "family": "Suri",
+        "given": "Satyajit"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
+    },
+    "publisher": "World Bank",
+    "URL": "http://hdl.handle.net/10986/41527"
+  },
+  {
     "id": "rfc2119-key-words-requirement-levels",
     "type": "document",
     "title": "Key words for use in RFCs to Indicate Requirement Levels",
@@ -879,6 +1425,30 @@
     "URL": "https://arxiv.org/abs/2505.06046",
     "abstract": "As Large Language Models (LLMs) become widely accessible, a detailed un- derstanding of their knowledge within specific domains becomes necessary for successful real world use. This is particularly critical in the domains of medicine and public health, where failure to retrieve relevant, accurate, and current infor- mation could significantly impact UK residents. However, while there are a num- ber of LLM benchmarks in the medical domain, currently little is known about LLM knowledge within the field of public health. To address this issue, this pa- per introduces a new benchmark, PubHealthBench, with over 8000 questions for evaluating LLMs’ Multiple Choice Question Answering (MCQA) and free form responses to public health queries. To create PubHealthBench we extract free text from 687 current UK government guidance documents and implement an automated pipeline for generating MCQA samples. Assessing 24 LLMs on Pub- HealthBench we find the latest proprietary LLMs (GPT-4.5, GPT-4.1 and o1) have a high degree of knowledge, achieving over 90% accuracy in the MCQA setup, and outperform humans with cursory search engine use. However, in the free form setup we see lower performance with no model scoring over 75%. There- fore, while there are promising signs that state of the art (SOTA) LLMs are an increasingly accurate source of public health information, additional safeguards or tools may still be needed when providing free form responses. Figure 1: (left) PubHealthBench Full and Reviewed model accuracy, (right) PubHealthBench- FreeForm model accuracy. 95% Wilson CI. *LLM used to generate benchmark, **Judge LLM.",
     "note": "arXiv:2505.06046"
+  },
+  {
+    "id": "labrique-2018-best-practices-scaling",
+    "type": "article-journal",
+    "title": "Best practices in scaling digital health in low and middle income countries",
+    "author": [
+      {
+        "family": "Labrique",
+        "given": "AB"
+      },
+      {
+        "literal": "et al."
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2018
+        ]
+      ]
+    },
+    "container-title": "Globalization and Health",
+    "volume": "14",
+    "page": "103"
   },
   {
     "id": "landauer-foltz-laham-1998-intro-lsa",
@@ -905,6 +1475,31 @@
         ]
       ]
     }
+  },
+  {
+    "id": "lefevre-2021-road-to-nowhere",
+    "type": "article-journal",
+    "title": "Avoiding the road to nowhere: policy insights on scaling up and sustaining digital health",
+    "author": [
+      {
+        "family": "LeFevre",
+        "given": "AE"
+      },
+      {
+        "literal": "et al."
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2021
+        ]
+      ]
+    },
+    "container-title": "Global Policy",
+    "volume": "12",
+    "issue": "S6",
+    "page": "110–114"
   },
   {
     "id": "arxiv-2507.23348v1",
@@ -1048,6 +1643,63 @@
     "note": "arXiv:2203.02010"
   },
   {
+    "id": "nist-sp-500-292",
+    "type": "report",
+    "title": "NIST Cloud Computing Reference Architecture",
+    "author": [
+      {
+        "family": "Liu",
+        "given": "F"
+      },
+      {
+        "family": "Tong",
+        "given": "J"
+      },
+      {
+        "family": "Mao",
+        "given": "J"
+      },
+      {
+        "family": "Bohn",
+        "given": "R"
+      },
+      {
+        "family": "Messina",
+        "given": "J"
+      },
+      {
+        "family": "Badger",
+        "given": "M"
+      },
+      {
+        "family": "Leaf",
+        "given": "D"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2011
+        ]
+      ]
+    },
+    "publisher": "National Institute of Standards and Technology",
+    "DOI": "10.6028/NIST.SP.500-292",
+    "URL": "https://doi.org/10.6028/NIST.SP.500-292",
+    "publisher-place": "Gaithersburg, MD",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          5
+        ]
+      ]
+    },
+    "collection-title": "NIST Special Publication",
+    "number": "500-292"
+  },
+  {
     "id": "arxiv-260327124v1",
     "type": "document",
     "title": "arxiv-260327124v1",
@@ -1060,6 +1712,62 @@
     "issued": {
       "raw": "D:20260327"
     }
+  },
+  {
+    "id": "magoba-2025-sierra-leone-surveillance",
+    "type": "article-journal",
+    "title": "Digitalizing disease surveillance: experience from Sierra Leone",
+    "author": [
+      {
+        "family": "Magoba",
+        "given": "Bridget"
+      },
+      {
+        "family": "Gebru",
+        "given": "Gebrekrstos Negash"
+      },
+      {
+        "family": "Odongo",
+        "given": "George S"
+      },
+      {
+        "family": "Hedberg",
+        "given": "Calle"
+      },
+      {
+        "family": "Elduma",
+        "given": "Adel Hussein"
+      },
+      {
+        "family": "Kanu",
+        "given": "Joseph Sam"
+      },
+      {
+        "family": "Bangura",
+        "given": "James"
+      },
+      {
+        "family": "Squire",
+        "given": "James Sylvester"
+      },
+      {
+        "family": "Foster",
+        "given": "Monique A"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025,
+          1
+        ]
+      ]
+    },
+    "container-title": "Health Policy and Planning",
+    "volume": "40",
+    "issue": "1",
+    "page": "85–96",
+    "DOI": "10.1093/heapol/czae039"
   },
   {
     "id": "arxiv-2606.21008v3",
@@ -1076,13 +1784,43 @@
     "note": "arXiv:2606.21008"
   },
   {
-    "id": "hasic-2019-measuring-complexity-dmn",
-    "type": "document",
-    "title": "Measuring the Complexity of DMN Decision Models",
+    "id": "metsallik-2018-estonia-ehealth",
+    "type": "paper-conference",
+    "title": "Ten Years of the e-Health System in Estonia",
+    "author": [
+      {
+        "family": "Metsallik",
+        "given": "J"
+      },
+      {
+        "family": "Ross",
+        "given": "P"
+      },
+      {
+        "family": "Draheim",
+        "given": "D"
+      },
+      {
+        "family": "Piho",
+        "given": "G"
+      }
+    ],
     "issued": {
       "date-parts": [
         [
-          2019
+          2018
+        ]
+      ]
+    },
+    "container-title": "CEUR Workshop Proceedings",
+    "volume": "2336",
+    "URL": "https://ceur-ws.org/Vol-2336/MMHS2018_invited.pdf",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          5
         ]
       ]
     }
@@ -1116,6 +1854,80 @@
     "note": "arXiv:2312.07755"
   },
   {
+    "id": "mugasha-2025-uganda-eidsr",
+    "type": "article-journal",
+    "title": "Scaling Up and Enhancing the Functionality of the Electronic Integrated Diseases Surveillance and Response System in Uganda, 2020-2022: Description of the Journey, Challenges, and Lessons Learned",
+    "author": [
+      {
+        "family": "Mugasha",
+        "given": "R"
+      },
+      {
+        "family": "Kwiringira",
+        "given": "A"
+      },
+      {
+        "family": "Ntono",
+        "given": "V"
+      },
+      {
+        "family": "Nakiire",
+        "given": "L"
+      },
+      {
+        "family": "Ayebazibwe",
+        "given": "I"
+      },
+      {
+        "family": "Kyozira",
+        "given": "C"
+      },
+      {
+        "family": "Muruta",
+        "given": "AN"
+      },
+      {
+        "family": "Kasule",
+        "given": "JN"
+      },
+      {
+        "family": "Byonanebye",
+        "given": "DM"
+      },
+      {
+        "family": "Nanyondo",
+        "given": "J"
+      },
+      {
+        "family": "Walwema",
+        "given": "R"
+      },
+      {
+        "family": "Kakooza",
+        "given": "F"
+      },
+      {
+        "family": "Lamorde",
+        "given": "M"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025,
+          4,
+          14
+        ]
+      ]
+    },
+    "container-title": "JMIR Public Health and Surveillance",
+    "volume": "11",
+    "page": "e59783",
+    "DOI": "10.2196/59783",
+    "PMID": "40228314",
+    "PMCID": "PMC12011313"
+  },
+  {
     "id": "arxiv-2601.04544v1",
     "type": "article-journal",
     "title": "TCAndon-Router: Adaptive Reasoning Router for Multi-Agent Collaboration",
@@ -1129,16 +1941,15 @@
     "note": "arXiv:2601.04544"
   },
   {
-    "id": "figl-strembeck-2014-flow-direction-importance",
-    "type": "document",
-    "title": "On the Importance of Flow Direction in Business Process Models",
-    "issued": {
-      "date-parts": [
-        [
-          2014
-        ]
-      ]
-    }
+    "id": "abdm",
+    "type": "webpage",
+    "title": "Ayushman Bharat Digital Mission",
+    "author": [
+      {
+        "literal": "National Health Authority, India"
+      }
+    ],
+    "URL": "https://abdm.gov.in/"
   },
   {
     "id": "mehl-2021-who-smart-guidelines",
@@ -1153,6 +1964,143 @@
     "issued": {
       "raw": "D:20210311"
     }
+  },
+  {
+    "id": "opencr",
+    "type": "webpage",
+    "title": "Open Client Registry (OpenCR)",
+    "URL": "https://www.openclientregistry.org/"
+  },
+  {
+    "id": "ocl-2024-nhdd-framework",
+    "type": "webpage",
+    "title": "NHDD conceptual framework and NHDD use cases",
+    "author": [
+      {
+        "literal": "Open Concept Lab"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2024,
+          8,
+          1
+        ]
+      ]
+    },
+    "URL": "https://openconceptlab.org/2024/08/01/nhdd-conceptual-framework-nhdd-use-cases/"
+  },
+  {
+    "id": "opencds",
+    "type": "webpage",
+    "title": "OpenCDS",
+    "URL": "https://www.opencds.org/"
+  },
+  {
+    "id": "openehr",
+    "type": "webpage",
+    "title": "openEHR",
+    "author": [
+      {
+        "literal": "openEHR Foundation"
+      }
+    ],
+    "URL": "https://www.openehr.org/"
+  },
+  {
+    "id": "openehr-ckm",
+    "type": "webpage",
+    "title": "openEHR Clinical Knowledge Manager",
+    "author": [
+      {
+        "literal": "openEHR Foundation"
+      }
+    ],
+    "URL": "https://ckm.openehr.org/ckm/"
+  },
+  {
+    "id": "openelis-global",
+    "type": "webpage",
+    "title": "OpenELIS Global",
+    "URL": "https://openelis-global.org/"
+  },
+  {
+    "id": "openhie-architecture-specification",
+    "type": "webpage",
+    "title": "Open Health Information Exchange (OpenHIE) Specification and Architecture",
+    "author": [
+      {
+        "literal": "OpenHIE"
+      }
+    ],
+    "URL": "https://guides.ohie.org/arch-spec/architecture-specification/overview-of-the-architecture"
+  },
+  {
+    "id": "openhie-fis",
+    "type": "webpage",
+    "title": "OpenHIE Finance and Insurance Service (FIS) component specification",
+    "author": [
+      {
+        "literal": "OpenHIE"
+      }
+    ],
+    "URL": "https://guides.ohie.org/arch-spec/openhie-component-specifications-1/openhie-finance-and-insurance-service"
+  },
+  {
+    "id": "openhie-iol",
+    "type": "webpage",
+    "title": "OpenHIE Interoperability Layer (IOL) component specification",
+    "author": [
+      {
+        "literal": "OpenHIE"
+      }
+    ],
+    "URL": "https://guides.ohie.org/arch-spec/openhie-component-specifications-1/openhie-interoperability-layer-iol"
+  },
+  {
+    "id": "openhie-terminology-maturity-model-2018",
+    "type": "document",
+    "title": "OpenHIE terminology management maturity model",
+    "author": [
+      {
+        "literal": "OpenHIE"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2018
+        ]
+      ]
+    },
+    "URL": "https://wiki.ohie.org/download/attachments/9437189/Terminology_Services_%20Maturity%20Model-2018.pptx?version=1&modificationDate=1550671780655&api=v2"
+  },
+  {
+    "id": "openmrs",
+    "type": "webpage",
+    "title": "OpenMRS",
+    "URL": "https://openmrs.org/"
+  },
+  {
+    "id": "ostrom-1990-governing-commons",
+    "type": "book",
+    "title": "Governing the Commons: The Evolution of Institutions for Collective Action",
+    "author": [
+      {
+        "family": "Ostrom",
+        "given": "E"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          1990
+        ]
+      ]
+    },
+    "publisher": "Cambridge University Press",
+    "publisher-place": "Cambridge"
   },
   {
     "id": "gurel-tat-2017-swot-analysis",
@@ -1210,6 +2158,56 @@
     "URL": "https://arxiv.org/abs/2505.10399",
     "abstract": "There can be many competing and contradictory explanations for a single model prediction, making it difficult to select which one to use. Current explanation evaluation frameworks measure qual- ity by comparing against ideal “ground-truth” explanations, or by verifying model sensitivity to important inputs. We outline the limitations of these approaches, and propose three desirable princi- ples to ground the future development of explanation evaluation strategies for local feature importance explanations. We propose a ground-truth Agnostic eXplanation Evaluation framework (AXE) for evaluating and comparing model explanations that satis- fies these principles. Unlike prior approaches, AXE does not require access to ideal ground-truth explanations for comparison, or rely on model sensitivity – providing an independent measure of expla- nation quality. We verify AXE by comparing with baselines, and show how it can be used to detect explanation fairwashing. Our code is available at https://github.com/KaiRawal/Evaluating-Model- Explanations-without-Ground-Truth. CCS Concepts • Computing methodologies →Artificial intelligence; Ma- chine learning.",
     "note": "arXiv:2505.10399"
+  },
+  {
+    "id": "korea-2025-ai-basic-act",
+    "type": "legislation",
+    "title": "Act on the Development of Artificial Intelligence and Establishment of Trust (AI Basic Act), Act No. 20676",
+    "author": [
+      {
+        "literal": "Republic of Korea"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025,
+          1,
+          21
+        ]
+      ]
+    },
+    "URL": "https://www.law.go.kr",
+    "note": "Entered into force 22 January 2026. Official statute (Korean), National Law Information Center. English-language summary: US Library of Congress, Global Legal Monitor, 20 February 2026, https://www.loc.gov/item/global-legal-monitor/2026-02-20/south-korea-comprehensive-ai-legal-framework-takes-effect/"
+  },
+  {
+    "id": "peru-2023-ley-31814",
+    "type": "legislation",
+    "title": "Ley N.º 31814, Ley que promueve el uso de la inteligencia artificial en favor del desarrollo económico y social del país",
+    "author": [
+      {
+        "literal": "Republic of Peru"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2023,
+          7,
+          5
+        ]
+      ]
+    },
+    "container-title": "Diario Oficial El Peruano",
+    "URL": "https://leyes.congreso.gob.pe/Documentos/2021_2026/ADLP/Texto_Consolidado/31814-TXM.pdf",
+    "language": "es",
+    "note": "Implementing regulation approved by Supreme Decree, 2025. Consolidated text, Congreso de la República."
+  },
+  {
+    "id": "rhie",
+    "type": "webpage",
+    "title": "Rwanda Health Information Exchange",
+    "URL": "https://www.rhie.rw/"
   },
   {
     "id": "strauch-carbno-2025-spdx-3-1-supply-chain",
@@ -1270,6 +2268,23 @@
     "title": "Skills in OpenAI API"
   },
   {
+    "id": "snowstorm",
+    "type": "webpage",
+    "title": "Snowstorm",
+    "author": [
+      {
+        "literal": "SNOMED International"
+      }
+    ],
+    "URL": "https://github.com/IHTSDO/snowstorm"
+  },
+  {
+    "id": "somsns",
+    "type": "webpage",
+    "title": "SOMSNS",
+    "URL": "https://www.somsns.es/som/"
+  },
+  {
     "id": "arxiv-2607.00053v1",
     "type": "article-journal",
     "title": "SWE-Router: Routing in Multi-turn Agentic Software Engineering Tasks",
@@ -1302,6 +2317,12 @@
     "URL": "https://arxiv.org/abs/2607.00053",
     "abstract": "Large language models (LLMs) embedded in multi-turn agentic harnesses are reshaping soft- ware engineering (SWE), but routing every task to a frontier model is wasteful when many issues admit cheap fixes. Existing LLM routers operate on the task description alone, which inherits an information-theoretic Bayes-error floor in agentic settings: a similar issue can hide either a localized typo or a multi-module refactor, and the prompt does not separate the two. We introduce SWE- Router, a value-based temporal approach that lets a cheap model run for a few exploratory turns and reads the resulting partial trajectory before de- ciding whether to continue cheaply or to escalate to an expensive model. We provide a Bayes- optimality theorem showing that conditioning on the partial trajectory never harms routing and is strictly better whenever exploration is informative. Across the LLM pairs of weak and strong models spanning the contemporary cost–capability frontier, we show that SWE-Router greatly improves the cost efficiency of SWE tasks, while maintaining the majority of the performances of the stronger model. We additionally release a multi-LLM trajectory dataset which allows reproduction of our trajectory-level routing.",
     "note": "arXiv:2607.00053"
+  },
+  {
+    "id": "sormas",
+    "type": "webpage",
+    "title": "SORMAS",
+    "URL": "https://sormas.org/"
   },
   {
     "id": "arxiv-2504.19675v2",
@@ -1397,6 +2418,12 @@
     "note": "arXiv:2402.02172"
   },
   {
+    "id": "tehik",
+    "type": "webpage",
+    "title": "TEHIK — Health and Welfare Information Systems Centre",
+    "URL": "https://www.tehik.ee/"
+  },
+  {
     "id": "arxiv-2504.21474v1",
     "type": "article-journal",
     "title": "Homa at SemEval-2025 Task 5: Aligning Librarian Records with OntoAligner for Subject Tagging",
@@ -1422,16 +2449,69 @@
     "note": "arXiv:2504.21474"
   },
   {
-    "id": "moody-2009-physics-of-notations",
-    "type": "document",
-    "title": "The 'Physics' of Notations: Toward a Scientific Basis for Constructing Visual Notations in Software Engineering",
+    "id": "togaf-9-2",
+    "type": "standard",
+    "title": "The TOGAF® Standard, Version 9.2",
+    "author": [
+      {
+        "literal": "The Open Group"
+      }
+    ],
     "issued": {
       "date-parts": [
         [
-          2009
+          2018
+        ]
+      ]
+    },
+    "publisher": "The Open Group",
+    "URL": "https://pubs.opengroup.org/architecture/togaf9-doc/arch/",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          5
         ]
       ]
     }
+  },
+  {
+    "id": "archimate-3-2",
+    "type": "standard",
+    "title": "ArchiMate® 3.2 Specification",
+    "author": [
+      {
+        "literal": "The Open Group"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2022
+        ]
+      ]
+    },
+    "publisher": "The Open Group"
+  },
+  {
+    "id": "togaf-10",
+    "type": "standard",
+    "title": "The TOGAF® Standard, 10th Edition",
+    "author": [
+      {
+        "literal": "The Open Group"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2022
+        ]
+      ]
+    },
+    "publisher": "The Open Group",
+    "URL": "https://www.opengroup.org/togaf"
   },
   {
     "id": "w3c-2024-prov-jsonld",
@@ -1470,6 +2550,24 @@
       "raw": "D:20261001"
     },
     "abstract": "The PROV Ontology (PROV-O) expresses the PROV Data Model [PROV-DM] using the OWL2 Web Ontology Language (OWL2) [OWL2- OVERVIEW]. It provides a set of classes, properties, and restrictions that can be used to represent and interchange provenance information generated in different systems and under different contexts. It can also be specialized to create new classes and properties to model provenance information for different applications and domains. The PROV Document Overview describes the overall state of PROV, and should be read before other PROV documents. The namespace for all PROV-O terms is http://www.w3.org/ns/prov#. The OWL encoding of the PROV Ontology is available here. Status of This Document This section describes the status of this document at the time of its publication. Other documents may supersede this document. A list of current W3C publications and the latest revision of this technical report can be found in the W3C technical reports index at http://www.w3.org/TR/. PROV Family of Documents This document is part of the PROV family of documents, a set of documents defining various aspects that are necessary to achieve the vision of inter-operable interchange of provenance information in heterogeneous environments such as the Web. These documents are listed below. Please consult the [PROV-OVERVIEW] for a guide to reading these documents. PROV-OVERVIEW (Note), an overview of the PROV family of documents [PROV-OVERVIEW]; PROV-PRIMER (Note), a primer for the PROV data model [PROV-PRIMER]; PROV-O (Recommendation), the PROV ontology, an OWL2 ontology allowing the mapping of the PROV data model to RDF (this document); PROV-DM (Recommendation), the PROV data model for provenance [PROV-DM]; PROV-N (Recommendation), a notation for provenance aimed at human consumption [PROV-N]; PROV-CONSTRAINTS (Recommendation), a set of constraints applying to the PROV data model [PROV-CONSTRAINTS]; PROV-XML (Note), an XML schema for the PROV data model [PROV-XML]; PROV-AQ ("
+  },
+  {
+    "id": "usaid-2020-ghsc-psm-pmdm",
+    "type": "report",
+    "title": "Product Master Data Management Reference Guide",
+    "author": [
+      {
+        "literal": "USAID Global Health Supply Chain Program – Procurement and Supply Management (GHSC-PSM)"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2020
+        ]
+      ]
+    },
+    "URL": "https://www.ghsupplychain.org/sites/default/files/2021-11/2021_GHSC-PSM%20PMDM%20Reference%20Guide_Final.pdf"
   },
   {
     "id": "arxiv-2510.19207v2",
@@ -1530,9 +2628,43 @@
     }
   },
   {
+    "id": "who-smart-guidelines-lancet-2021",
+    "type": "article-journal",
+    "title": "WHO SMART guidelines: optimising country-level use of guideline recommendations in the digital age",
+    "issued": {
+      "date-parts": [
+        [
+          2021
+        ]
+      ]
+    },
+    "container-title": "The Lancet Digital Health"
+  },
+  {
     "id": "smart-trust",
     "type": "document",
     "title": "WHO SMART Trust"
+  },
+  {
+    "id": "wilton-park-2026-dpi-health",
+    "type": "report",
+    "title": "Leveraging digital public infrastructure for sustainable health system transformation",
+    "author": [
+      {
+        "literal": "Wilton Park"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026,
+          2
+        ]
+      ]
+    },
+    "publisher": "Wilton Park",
+    "URL": "https://www.wiltonpark.org.uk/app/uploads/2026/03/WP3673-Report-web.pdf",
+    "note": "Report of the dialogue held 23–25 February 2026, in association with the Foreign, Commonwealth and Development Office, the World Health Organization, and Co-Develop."
   },
   {
     "id": "arxiv-2106.12880v1",
@@ -1562,6 +2694,142 @@
     "URL": "https://arxiv.org/abs/2106.12880",
     "abstract": "Process models constitute crucial artifacts in modern information systems and, hence, the proper comprehension of these models is of utmost importance in the utilization of such systems. Generally, process models are considered from two different perspectives: process modelers and readers. Both perspectives share similarities and differences in the comprehension of process models (e.g., diverse experiences when working with process models). The literature proposed many rules and guidelines to ensure a proper comprehension of process models for both perspectives. As a novel contribution in this context, this paper introduces the Process Model Comprehension Framework (PMCF) as a ﬁrst step towards the measurement and quantiﬁcation of the perspectives of process modelers and readers as well as the interaction of both regarding the comprehension of process models. Therefore, the PMCF describes an Evaluation Theory Tree based on the Communication Theory as well as the Conceptual Modeling Quality Framework and considers a total of 96 quality metrics in order to quantify process model comprehension. Furthermore, the PMCF was evaluated in a survey with 131 participants and has been implemented as well as applied successfully in a practical case study including 33 participants. To conclude, the PMCF allows for the identiﬁcation of pitfalls and provides related information about how to assist process modelers as well as readers in order to foster and enable a proper comprehension of process models.",
     "note": "arXiv:2106.12880"
+  },
+  {
+    "id": "who-classifying-health-workers",
+    "type": "webpage",
+    "title": "Classifying health workers",
+    "author": [
+      {
+        "literal": "World Health Organization"
+      }
+    ],
+    "URL": "https://www.who.int/publications/m/item/classifying-health-workers"
+  },
+  {
+    "id": "who-gdhcn",
+    "type": "webpage",
+    "title": "Global Digital Health Certification Network (GDHCN)",
+    "author": [
+      {
+        "literal": "World Health Organization"
+      }
+    ],
+    "URL": "https://www.who.int/publications/m/item/global-digital-health-certification-network-(gdhcn)"
+  },
+  {
+    "id": "who-global-health-facilities-database",
+    "type": "webpage",
+    "title": "Global health facilities database (questions and answers)",
+    "author": [
+      {
+        "literal": "World Health Organization"
+      }
+    ],
+    "URL": "https://www.who.int/news-room/questions-and-answers/item/global-health-facilities-database"
+  },
+  {
+    "id": "who-global-strategy-digital-health",
+    "type": "report",
+    "title": "Global Strategy on Digital Health 2020-2027",
+    "author": [
+      {
+        "literal": "World Health Organization"
+      }
+    ],
+    "URL": "https://iris.who.int/server/api/core/bitstreams/a64d584f-015b-471f-9d86-9ea263cfb516/content"
+  },
+  {
+    "id": "who-go-data",
+    "type": "webpage",
+    "title": "Go.Data",
+    "author": [
+      {
+        "literal": "World Health Organization"
+      }
+    ],
+    "URL": "https://www.who.int/tools/godata"
+  },
+  {
+    "id": "9789241548960-eng",
+    "type": "book",
+    "title": "Handbook for guideline development",
+    "author": [
+      {
+        "literal": "World Health Organization"
+      }
+    ],
+    "ISBN": "9789241548960",
+    "URL": "https://www.who.int/publications/i/item/9789241548960",
+    "note": "Provides an overview of the WHO guideline development and publication process."
+  },
+  {
+    "id": "9789241580496-eng",
+    "type": "book",
+    "title": "International Health Regulations (2005)",
+    "author": [
+      {
+        "literal": "World Health Organization"
+      }
+    ],
+    "ISBN": "9789241580496",
+    "URL": "https://www.who.int/publications/i/item/9789241580496"
+  },
+  {
+    "id": "smart-ig-starter-kit-references",
+    "type": "webpage",
+    "title": "References section of the SMART IG starter kit",
+    "author": [
+      {
+        "literal": "World Health Organization"
+      }
+    ],
+    "URL": "https://worldhealthorganization.github.io/smart-ig-starter-kit/references.html#2",
+    "note": "Tutorials and reference materials for developers."
+  },
+  {
+    "id": "who-smart-guidelines",
+    "type": "webpage",
+    "title": "SMART Guidelines",
+    "author": [
+      {
+        "literal": "World Health Organization"
+      }
+    ],
+    "URL": "https://www.who.int/teams/digital-health-and-innovation/smart-guidelines"
+  },
+  {
+    "id": "who-data-platforms",
+    "type": "webpage",
+    "title": "WHO data platforms",
+    "author": [
+      {
+        "literal": "World Health Organization"
+      }
+    ],
+    "URL": "https://www.who.int/data/platforms"
+  },
+  {
+    "id": "who-eis-operational-standards",
+    "type": "document",
+    "title": "WHO Event Information System (EIS) operational standards",
+    "author": [
+      {
+        "literal": "World Health Organization"
+      }
+    ],
+    "URL": "https://iris.who.int/server/api/core/bitstreams/1e38533c-30b3-419e-89b5-94d63b30df6f/content"
+  },
+  {
+    "id": "who-integrated-data-platform",
+    "type": "webpage",
+    "title": "WHO Integrated Data Platform",
+    "author": [
+      {
+        "literal": "World Health Organization"
+      }
+    ],
+    "URL": "https://www.who.int/tools/who-integrated-data-platform"
   },
   {
     "id": "WER8207_51-60",
@@ -1839,6 +3107,53 @@
     "abstract": "This guideline presents the World Health Organization’s evidence-based recommendations on routine antenatal care to support a positive pregnancy experience for pregnant women and adolescent girls. It aims to provide a comprehensive, consolidated framework for antenatal care that complements existing WHO guidance on the management of specific pregnancy-related complications. The recommendations promote a person-centred, rights-based approach that extends beyond the prevention of maternal and perinatal morbidity and mortality to enhance women’s physical, psychological and sociocultural well-being, support healthy pregnancies, and improve the quality and utilization of antenatal care. Intended for policy-makers, programme managers and health professionals, the guideline informs the development of national policies, clinical protocols and service delivery models.\n\nDeveloped according to the WHO guideline development process, the document draws on systematic reviews and applies the GRADE and GRADE-CERQual approaches together with the DECIDE evidence-to-decision framework. It contains 49 recommendations covering nutritional interventions, maternal and fetal assessment, preventive measures, management of common physiological symptoms, and health system interventions to improve antenatal care utilization and quality. The guideline also introduces the 2016 WHO antenatal care model, recommending a minimum of eight contacts during pregnancy, and emphasizes implementation, dissemination and periodic updating as new evidence becomes available."
   },
   {
+    "id": "9789241513111-eng",
+    "type": "book",
+    "title": "National health workforce accounts: a handbook",
+    "author": [
+      {
+        "literal": "World Health Organization"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2017,
+          10,
+          26
+        ]
+      ]
+    },
+    "publisher": "World Health Organization",
+    "ISBN": "9789241513111",
+    "URL": "https://iris.who.int/handle/10665/259360",
+    "language": "en",
+    "abstract": "This handbook introduces the National Health Workforce Accounts (NHWA), a standardized framework developed by the World Health Organization to strengthen health workforce information systems and support evidence-based workforce planning and policy-making. The publication is intended to assist countries in monitoring and analysing health workforce capacity, distribution, education, labour market dynamics, financing, governance and information systems in the context of universal health coverage and the health-related Sustainable Development Goals. It outlines the rationale for improved health workforce data and highlights the role of harmonized metrics in addressing challenges related to workforce availability, accessibility, performance and retention.\n\nThe handbook presents a modular framework comprising 78 core indicators organized across 10 modules covering active workforce stock, education and training, regulation and accreditation, education financing, labour market flows, employment conditions, workforce spending and remuneration, skill mix, governance, and health workforce information systems. For each indicator, it provides definitions, methodological guidance, reporting requirements, data sources and disaggregation options. The publication also describes implementation principles, reporting standards and potential applications of the NHWA, supporting countries in strengthening health workforce monitoring, facilitating international comparability and informing policies aimed at improving health system performance and population access to quality health services."
+  },
+  {
+    "id": "who-his-hwf-nhwa-20171-eng",
+    "type": "report",
+    "title": "Understanding national health workforce accounts",
+    "author": [
+      {
+        "literal": "World Health Organization"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2017,
+          12,
+          31
+        ]
+      ]
+    },
+    "publisher": "World Health Organization",
+    "URL": "https://iris.who.int/handle/10665/275758",
+    "language": "en",
+    "abstract": "Understanding National Health Workforce Accounts (NHWA) is an introductory guidance document developed by the World Health Organization to explain the purpose, policy relevance and structure of the National Health Workforce Accounts framework. The publication outlines how NHWA supports the standardization of health workforce information systems, improves the quality and comparability of data, and strengthens the evidence base for health workforce policy, planning and monitoring. Positioned within the context of universal health coverage, the Sustainable Development Goals, the Global Strategy on Human Resources for Health: Workforce 2030, and related international commitments, the document highlights the importance of reliable workforce information for addressing current and future health system challenges.\n\nThe publication describes the benefits of NHWA at national, regional and global levels and presents key policy questions that can be informed through systematic workforce data collection and analysis. It introduces the health labour market framework used by NHWA, emphasizing workforce production, labour market flows, distribution, productivity and regulation. The document also summarizes the development process of the NHWA indicators and explains the modular structure of the framework, which comprises ten modules covering workforce stock, education, labour market dynamics, employment conditions, financing, governance, planning and information systems. Together, these elements provide a foundation for evidence-informed decision-making and strengthened health workforce monitoring."
+  },
+  {
     "id": "who-rhr-1806-eng",
     "type": "report",
     "title": "Classification of digital health interventions v1.0: a shared language to describe the uses of digital technology for health",
@@ -1860,6 +3175,70 @@
     "URL": "https://iris.who.int/handle/10665/260480",
     "language": "en",
     "abstract": "This publication presents version 1.0 of the World Health Organization’s Classification of Digital Health Interventions (DHIs), a taxonomy developed to provide a shared and standardized language for describing how digital and mobile technologies are used to address health system needs. Intended primarily for public health audiences, the framework supports communication among policymakers, programme planners, implementers, researchers, donors and technology specialists by defining digital health interventions as discrete digital functionalities linked to specific health objectives. The classification was developed to facilitate evidence synthesis, landscape analyses, planning processes and the articulation of digital solutions to identified health system challenges.\n\nThe framework organizes digital health interventions into four primary groups according to the main user: clients, health-care providers, health system managers and data services. It links digital interventions to broader health system challenges and to system categories such as electronic medical records, logistics management information systems and telemedicine platforms. Developed through technical consultations, literature review and public feedback, the classification builds on existing mHealth and eHealth frameworks while providing a simplified and practical reference for health programmes. The document is intended to support the design, implementation, evaluation and interoperability of digital health initiatives and will be periodically updated to reflect emerging technologies and evolving practices in digital health."
+  },
+  {
+    "id": "9789241514446-eng",
+    "type": "book",
+    "title": "National health workforce accounts: implementation guide",
+    "author": [
+      {
+        "literal": "World Health Organization"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2018,
+          10,
+          19
+        ]
+      ]
+    },
+    "publisher": "World Health Organization",
+    "ISBN": "9789241514446",
+    "URL": "https://iris.who.int/handle/10665/275473",
+    "language": "en",
+    "abstract": "The National Health Workforce Accounts (NHWA) Implementation Guide provides practical guidance for countries on establishing and sustaining systems to collect, analyse, use and report standardized health workforce data. Developed as a companion document to the NHWA Handbook and in support of the Global Strategy on Human Resources for Health: Workforce 2030, the guide outlines a structured approach to strengthening health workforce information systems and improving the availability, quality and use of human resources for health data. It is intended for policy-makers, programme managers, technical experts and stakeholders involved in health workforce planning, monitoring and governance, and emphasizes collaboration across sectors such as health, education, labour, finance and statistics.\n\nThe guide presents an implementation framework organized into three phases—conceptualization, operationalization, and scaling up and sustainability—comprising eight steps that address political commitment, governance arrangements, planning, legal considerations, data compilation and analysis, validation, dissemination, and process review. It describes the roles of national institutions and multistakeholder coordination mechanisms, provides guidance on data quality, reporting and communication processes, and promotes the integration of existing information systems. By supporting the systematic monitoring of health workforce indicators, the guide aims to strengthen evidence-informed decision-making and contribute to health workforce development, universal health coverage and broader national and global health objectives."
+  },
+  {
+    "id": "who-afro-2019-idsr-guidelines",
+    "type": "report",
+    "title": "Integrated Disease Surveillance and Response (IDSR) technical guidelines",
+    "author": [
+      {
+        "literal": "World Health Organization"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2019
+        ]
+      ]
+    },
+    "URL": "https://www.who.int/publications/i/item/WHO-AF-WHE-CPI-01-2019",
+    "edition": "3rd edition"
+  },
+  {
+    "id": "who-2019-mfl-resource-package",
+    "type": "report",
+    "title": "Master Facility List Resource Package",
+    "author": [
+      {
+        "literal": "World Health Organization"
+      },
+      {
+        "literal": "USAID"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2019
+        ]
+      ]
+    },
+    "URL": "https://iris.who.int/server/api/core/bitstreams/d895078b-b45b-4b2c-b216-b82c07b2d4f7/content"
   },
   {
     "id": "9789241515610-eng",
@@ -1907,6 +3286,50 @@
     "URL": "https://iris.who.int/handle/10665/336323",
     "language": "en",
     "abstract": "This guideline provides comprehensive, evidence-based recommendations to support countries in delivering high-quality, person-centred HIV testing services (HTS) across diverse populations and settings. Updating and consolidating previous WHO guidance issued in 2015 and 2016, it incorporates new evidence on HIV self-testing, social network-based HIV testing approaches, western blotting, and strategic service delivery to strengthen progress towards global HIV targets. Developed using the GRADE methodology and informed by systematic reviews, modelling studies and expert consultation, the guideline aims to improve the effectiveness, efficiency and quality of HIV testing while promoting timely linkage to prevention, treatment and care.\n\nThe publication addresses the full continuum of HIV testing services, including demand creation, pre- and post-test services, facility- and community-based testing, implementation considerations for priority populations, strategic planning, diagnostic testing strategies, quality assurance and programme monitoring. It provides updated recommendations on HIV self-testing, provider-assisted referral, social network-based approaches and the use of dual HIV/syphilis rapid diagnostic tests, while emphasizing the WHO 5Cs of HIV testing services: consent, confidentiality, counselling, correct results and connection. Intended for policy-makers, national programme managers, health-care providers and implementing partners, the guideline supports the expansion of equitable, evidence-informed HIV testing services to improve diagnosis and strengthen national HIV responses."
+  },
+  {
+    "id": "9789240013728-eng",
+    "type": "book",
+    "title": "Digital health platform handbook: building a digital information infrastructure (infostructure) for health",
+    "author": [
+      {
+        "literal": "World Health Organization"
+      },
+      {
+        "literal": "International Telecommunication Union"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2020
+        ]
+      ]
+    },
+    "publisher": "World Health Organization",
+    "ISBN": "9789240013728",
+    "URL": "https://www.who.int/publications/i/item/9789240013728"
+  },
+  {
+    "id": "9789240010567-eng",
+    "type": "book",
+    "title": "Digital implementation investment guide (DIIG): integrating digital interventions into health programmes",
+    "author": [
+      {
+        "literal": "World Health Organization"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2020
+        ]
+      ]
+    },
+    "publisher": "World Health Organization",
+    "ISBN": "9789240010567",
+    "URL": "https://www.who.int/publications/i/item/9789240010567",
+    "publisher-place": "Geneva"
   },
   {
     "id": "9789240010567-eng",
@@ -1978,6 +3401,25 @@
     "language": "en"
   },
   {
+    "id": "who-2021-ai-ethics-governance",
+    "type": "book",
+    "title": "Ethics and governance of artificial intelligence for health: WHO guidance",
+    "author": [
+      {
+        "literal": "World Health Organization"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2021
+        ]
+      ]
+    },
+    "publisher": "World Health Organization",
+    "publisher-place": "Geneva"
+  },
+  {
     "id": "9789240016514-eng",
     "type": "book",
     "title": "Leave no one behind: guidance for planning and implementing catch-up vaccination",
@@ -2047,6 +3489,30 @@
     "URL": "https://iris.who.int/handle/10665/375230",
     "language": "en",
     "abstract": "This second edition of the digital adaptation kit for HIV provides operational, software-neutral requirements to support the incorporation of WHO clinical, public health and data use recommendations into digital systems. Developed within the SMART Guidelines approach, it focuses on the content requirements for person-centred digital tracking and decision support systems used by health workers for HIV services in primary health care settings. The kit is intended to facilitate transparent, consistent and adaptable translation of narrative guidance into digital implementations while supporting interoperability and local customization.\n\nThe publication organizes HIV-related requirements into eight components: health interventions and associated recommendations; generic personas; illustrative user scenarios; business processes and workflows; core data elements; decision support and scheduling logic; indicators and performance metrics; and high-level functional and non-functional requirements. It covers processes including HIV testing, pre-exposure prophylaxis, care and treatment, prevention of mother-to-child transmission, infant diagnosis, diagnostics, client follow-up, referral, and aggregate reporting and data use, with complementary operational resources provided in web annexes."
+  },
+  {
+    "id": "9789240081291-eng",
+    "type": "book",
+    "title": "National health workforce accounts: a handbook",
+    "author": [
+      {
+        "literal": "World Health Organization"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2023,
+          11,
+          23
+        ]
+      ]
+    },
+    "publisher": "World Health Organization",
+    "ISBN": "9789240081291 (electronic version)",
+    "URL": "https://iris.who.int/handle/10665/374320",
+    "language": "en",
+    "abstract": "The National Health Workforce Accounts (NHWA) Handbook, second edition, provides the conceptual framework, standards, methods and indicators that support the systematic collection, analysis and use of health workforce data for evidence-informed policy-making and planning. Developed by the World Health Organization, the handbook supports implementation of the National Health Workforce Accounts as a country-led system to strengthen human resources for health information systems, improve data quality and availability, and monitor progress towards universal health coverage, the Sustainable Development Goals and other global health objectives. It describes the rationale, principles and applications of NHWA at national, regional and global levels and outlines a modular approach to health workforce monitoring.\n\nThe handbook presents guidance on implementation and reporting methods and defines a set of standardized indicators organized into four modules covering workforce stock and flows, education, finance and expenditures, and working conditions, governance and leadership. It explains indicator metadata, calculation methods, disaggregation requirements and reporting standards, and illustrates how NHWA data can be used to support workforce planning, policy development, retention strategies, equity analyses and monitoring of health workforce trends. The revised edition incorporates updated indicators, occupational classifications, tools and guidance to address evolving health workforce priorities and emerging global health challenges."
   },
   {
     "id": "9789240099456-eng",
@@ -2121,6 +3587,27 @@
     "abstract": "This handbook provides practical guidance for countries seeking to digitally transform primary health care through the development and implementation of person-centred point of service systems (PCPOSS). It addresses the transition from paper-based and fragmented digital systems towards integrated, interoperable digital solutions that support service delivery, continuity of care, data use and health system strengthening. Grounded in WHO recommendations on digital interventions for health system strengthening and aligned with the SMART Guidelines framework, the publication outlines approaches for translating clinical and public health guidance into digital systems while maintaining fidelity to normative standards.\n\nThe publication presents a stepwise methodology covering assessment of digital readiness, identification of user requirements, workflow and business process mapping, system design and adaptation, software selection, testing, deployment and scale-up. It emphasizes person-centred care, interoperability, longitudinal health records, decision support and the use of standards-based digital architectures. Through practical tools, worksheets and implementation guidance, the publication supports policy-makers, programme managers, digital health practitioners and software developers in designing and optimizing digital systems that improve service quality, strengthen accountability and enable more effective, integrated and responsive primary health care services."
   },
   {
+    "id": "9789240084759-eng",
+    "type": "book",
+    "title": "Ethics and governance of artificial intelligence for health: guidance on large multi-modal models",
+    "author": [
+      {
+        "literal": "World Health Organization"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
+    },
+    "publisher": "World Health Organization",
+    "ISBN": "9789240084759",
+    "URL": "https://www.who.int/publications/i/item/9789240084759",
+    "publisher-place": "Geneva"
+  },
+  {
     "id": "9789240116191-eng",
     "type": "book",
     "title": "Digital transformation handbook for health product catalogue",
@@ -2142,6 +3629,26 @@
     "URL": "https://iris.who.int/handle/10665/383309",
     "language": "en",
     "abstract": "This handbook provides guidance for the implementation of standardized product master data management through national product catalogues (NPCs) to support digital transformation in health supply chains. Developed within the framework of the WHO Digital Implementation Investment Guide and aligned with the SMART Guidelines initiative, the publication outlines regulatory, governance, technological and operational approaches for establishing interoperable product registries and harmonized product information systems. It explains the importance of standardized product master data for ensuring accurate identification, tracking and management of health products across manufacturers, regulatory authorities, procurement entities, warehouses, health facilities and other supply chain stakeholders.\n\nThe handbook describes policies and procedures for data governance, coding structures, interoperability standards, change management and capacity-building to support sustainable implementation. It also presents guidance on integrating standardized product master data with digital health, regulatory and supply chain systems to improve forecasting, procurement, inventory management, pharmacovigilance, product recalls and traceability. In addition, the publication highlights mechanisms for sharing product master data as a global good and leveraging WHO-hosted tools and open standards to strengthen coordination, data quality and supply chain efficiency across countries and organizations."
+  },
+  {
+    "id": "who-2025-wha-gdhs-extension",
+    "type": "webpage",
+    "title": "World Health Assembly endorses extension of the Global Digital Health Strategy to 2027",
+    "author": [
+      {
+        "literal": "World Health Organization"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025,
+          5,
+          23
+        ]
+      ]
+    },
+    "URL": "https://www.who.int/news/item/23-05-2025-world-health-assembly-endorses-extension-of-the-global-digital-health-strategy-to-2027"
   },
   {
     "id": "9789240124233-eng",
@@ -2190,6 +3697,30 @@
     "URL": "https://iris.who.int/handle/10665/386358",
     "language": "en",
     "abstract": "This handbook provides practical guidance to support countries in planning, designing and implementing digital solutions for reporting substandard and falsified medical products. These products pose a significant threat to public health, contributing to therapeutic failure, adverse effects, loss of trust in health systems and broader socioeconomic impacts. Effective detection and reporting are essential to enable regulatory authorities to investigate suspected cases, remove harmful products from circulation and contribute to global surveillance efforts through mechanisms such as WHO’s Global Surveillance and Monitoring System.\n\nThe document outlines a structured approach to digital transformation, covering assessment of the current environment, stakeholder engagement, governance and policy alignment, definition of system requirements, implementation planning, and monitoring and evaluation. It emphasizes the transition from fragmented or paper-based reporting systems to interoperable digital platforms that improve data quality, standardization and timeliness. Drawing on global experience and existing WHO frameworks, the handbook promotes the use of user-centred design, open standards and integration with pharmacovigilance systems. It is intended for ministries of health, national regulatory authorities and partners seeking to strengthen reporting systems and enhance the capacity to detect and respond to substandard and falsified medical products."
+  },
+  {
+    "id": "9789240122925-eng",
+    "type": "book",
+    "title": "National health workforce accounts: health workforce levels and trends 2026",
+    "author": [
+      {
+        "literal": "World Health Organization"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          22
+        ]
+      ]
+    },
+    "publisher": "World Health Organization",
+    "ISBN": "9789240122925 (electronic version)",
+    "URL": "https://iris.who.int/handle/10665/386519",
+    "language": "en",
+    "abstract": "This report presents the 2026 edition of the National Health Workforce Accounts (NHWA) series, providing an overview of the status of NHWA implementation and an analysis of global and regional health workforce levels and trends based on official data reported by countries to the World Health Organization. Developed to support evidence-informed health workforce policy-making and planning, the report examines progress in strengthening national health workforce information systems, data availability and reporting across countries, and the use of standardized indicators to monitor human resources for health in support of universal health coverage, the Sustainable Development Goals and other health objectives.\n\nDrawing on the 2025 NHWA data release, the report analyses the distribution, density and composition of the health and care workforce across regions and income groups, highlighting persistent disparities in workforce availability. It also examines trends in workforce growth since 2006 and presents a thematic analysis of population ageing and health workforce ageing, assessing their implications for future workforce needs. The findings demonstrate substantial improvements in the availability and quality of health workforce data through NHWA implementation while underscoring continuing challenges related to workforce shortages, inequities in distribution and the need for sustained investment in health workforce planning and monitoring."
   },
   {
     "id": "WER9009_69-88",
@@ -2607,6 +4138,40 @@
     "publisher": "World Health Organization = Organisation mondiale de la Santé",
     "URL": "https://iris.who.int/handle/10665/363397",
     "language": "en"
+  },
+  {
+    "id": "who-harnessing-ai-for-health",
+    "type": "webpage",
+    "title": "Harnessing artificial intelligence for health",
+    "author": [
+      {
+        "literal": "World Health Organization, Department of Digital Health and Innovation"
+      }
+    ],
+    "URL": "https://www.who.int/teams/digital-health-and-innovation/harnessing-artificial-intelligence-for-health"
+  },
+  {
+    "id": "b0426",
+    "type": "document",
+    "title": "National health accounts",
+    "author": [
+      {
+        "literal": "World Health Organization. Regional Office for South-East Asia"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2007,
+          12,
+          31
+        ]
+      ]
+    },
+    "publisher": "WHO Regional Office for South-East Asia",
+    "URL": "https://iris.who.int/handle/10665/205544",
+    "language": "en",
+    "abstract": "This activity which was initiated as a multi-country activity for countries of the SEA Region, was organized by the WCO India with the technical assistance of SEARO. With the enthusiasm shown by the some of the countries of the WHO Western Pacific Region this activity was concluded as a bi-regional activity. The objective of this workshop was to strengthen the national financial management mechanisms in health. The publication describes the process, technical sessions, countries presentations. Overview of sub-accounts, and how SEARO would propose that NHA agenda is taken forward"
   },
   {
     "id": "wpr-rdo-2020-003-eng",
