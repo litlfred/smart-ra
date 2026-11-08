@@ -171,7 +171,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/folio-assistant-core",
-          "ref": "705a2b8a75be2d20877df25b14b8c34003f02c7a",
+          "ref": "43e2c670701280987cf7670548989a72c8a18b03",
           "overrides": {
             "folio-assistant-core": {
               "whole": true
@@ -186,9 +186,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-11-05",
-              "ref": "705a2b8a75be2d20877df25b14b8c34003f02c7a",
-              "evidence": "Owner litlfred, 2026-11-05: card '1. Freeze one set' — re-pin all site PRs to one fixed set of layer commits; 'merge when green' (bean folio-assistant-rpc6)."
+              "on": "2026-11-08",
+              "ref": "43e2c670701280987cf7670548989a72c8a18b03",
+              "evidence": "Owner litlfred, 2026-11-08 15:48:40Z: card tap 'A: Re-pin now' on 'Re-pin core in smart-ra PR 236 now that core#685 merged?' (thread cmsg_017WNUkNK8kdDziPK58Pv6G9VZ4HJjDbGFC5aMakt3gA63); the layers below core follow core main's own pins so the set has no skew."
             }
           }
         }
@@ -199,7 +199,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness",
-          "ref": "f5c9140b1b5391f48b3d4903c4cd40eb8473e37f",
+          "ref": "17e2ef2a0f169cb33a65d96d85b15aa82182d3a4",
           "overrides": {
             "cat-harness": {
               "whole": true
@@ -214,9 +214,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-11-05",
-              "ref": "f5c9140b1b5391f48b3d4903c4cd40eb8473e37f",
-              "evidence": "Owner litlfred, 2026-11-05: card '1. Freeze one set' — re-pin all site PRs to one fixed set of layer commits; 'merge when green' (bean folio-assistant-rpc6)."
+              "on": "2026-11-08",
+              "ref": "17e2ef2a0f169cb33a65d96d85b15aa82182d3a4",
+              "evidence": "Owner litlfred, 2026-11-08 15:48:40Z: card tap 'A: Re-pin now' on 'Re-pin core in smart-ra PR 236 now that core#685 merged?' (thread cmsg_017WNUkNK8kdDziPK58Pv6G9VZ4HJjDbGFC5aMakt3gA63); the layers below core follow core main's own pins so the set has no skew."
             }
           }
         }
@@ -227,7 +227,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness-tools",
-          "ref": "42cc850e43e4d798126ee8fe456b72118e128112",
+          "ref": "961b4d939d7d69874f44162d12407bd3f1d96c6b",
           "overrides": {
             "cat-harness-tools": {
               "whole": true
@@ -239,9 +239,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-11-05",
-              "ref": "42cc850e43e4d798126ee8fe456b72118e128112",
-              "evidence": "Owner litlfred, 2026-11-05: card '1. Freeze one set' — re-pin all site PRs to one fixed set of layer commits; 'merge when green' (bean folio-assistant-rpc6)."
+              "on": "2026-11-08",
+              "ref": "961b4d939d7d69874f44162d12407bd3f1d96c6b",
+              "evidence": "Owner litlfred, 2026-11-08 15:48:40Z: card tap 'A: Re-pin now' on 'Re-pin core in smart-ra PR 236 now that core#685 merged?' (thread cmsg_017WNUkNK8kdDziPK58Pv6G9VZ4HJjDbGFC5aMakt3gA63); the layers below core follow core main's own pins so the set has no skew."
             }
           }
         }
@@ -274,7 +274,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/bootstrap-tools",
-          "ref": "9f478d4d9fcd87842e9a4f5b886232ec806e657e",
+          "ref": "1dc08c906f3a9377534b753fed493b811e040ad7",
           "overrides": {
             "bootstrap-tools": {
               "whole": true
@@ -286,9 +286,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-11-05",
-              "ref": "9f478d4d9fcd87842e9a4f5b886232ec806e657e",
-              "evidence": "Owner litlfred, 2026-11-05: card '1. Freeze one set' — re-pin all site PRs to one fixed set of layer commits; 'merge when green' (bean folio-assistant-rpc6)."
+              "on": "2026-11-08",
+              "ref": "1dc08c906f3a9377534b753fed493b811e040ad7",
+              "evidence": "Owner litlfred, 2026-11-08 15:48:40Z: card tap 'A: Re-pin now' on 'Re-pin core in smart-ra PR 236 now that core#685 merged?' (thread cmsg_017WNUkNK8kdDziPK58Pv6G9VZ4HJjDbGFC5aMakt3gA63); the layers below core follow core main's own pins so the set has no skew."
             }
           }
         }
