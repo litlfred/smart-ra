@@ -199,7 +199,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness",
-          "ref": "f5c9140b1b5391f48b3d4903c4cd40eb8473e37f",
+          "ref": "19871a5054832432efda25715ee3f9a6741be1c2",
           "overrides": {
             "cat-harness": {
               "whole": true
@@ -214,9 +214,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-11-05",
-              "ref": "f5c9140b1b5391f48b3d4903c4cd40eb8473e37f",
-              "evidence": "Owner litlfred, 2026-11-05: card '1. Freeze one set' — re-pin all site PRs to one fixed set of layer commits; 'merge when green' (bean folio-assistant-rpc6)."
+              "on": "2026-11-08",
+              "ref": "19871a5054832432efda25715ee3f9a6741be1c2",
+              "evidence": "Owner litlfred, 2026-11-08 18:35Z: card Q-RAC-11 A — merge cat-harness#1168 and re-pin cat-harness in smart-ra#207. Pinned to the 2026-11-05 freeze commit f5c9140 plus #1168's one change (branch pin/smart-ra-freeze-rules-family), so no other layer moves."
             }
           }
         }
