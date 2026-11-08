@@ -3,7 +3,7 @@
   "folio": "folio",
   "base": {
     "ref": "origin/main",
-    "commit": "7aaec92b0ec4afafdf95aa6504e32550e3e6aa6d"
+    "commit": "c14618fdb9b83a9f62fc06988aec039cc293525b"
   },
   "head": {
     "ref": "worktree",
@@ -12,14 +12,73 @@
   "summary": {
     "added": 0,
     "removed": 0,
-    "changed": 86,
-    "unchanged": 847,
+    "changed": 129,
+    "unchanged": 804,
     "renamed": 0,
-    "prose": 86,
-    "manifest": 0,
-    "moved": 0
+    "prose": 128,
+    "manifest": 54,
+    "moved": 1
   },
   "changes": [
+    {
+      "change": "changed",
+      "label": "tbl:acronyms-lead-bf4749",
+      "aspects": [
+        "moved"
+      ],
+      "base": {
+        "file": "dpi-h-ra/glossary/t-acronyms-lead-bf4749.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/glossary::sec:acronyms-lead",
+        "index": 0
+      },
+      "head": {
+        "file": "dpi-h-ra/acronyms/t-acronyms-lead-bf4749.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/acronyms::sec:acronyms-lead",
+        "index": 0
+      }
+    },
+    {
+      "change": "changed",
+      "label": "tbl:a-e44ef4",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/t-a-e44ef4.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:a",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/t-a-e44ef4.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:a",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-business-services-components-benefits-package-registry-b92138",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-benefits-package-registry-b92138.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-benefits-package-registry",
+        "index": 18
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-benefits-package-registry-b92138.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-benefits-package-registry",
+        "index": 18
+      }
+    },
     {
       "change": "changed",
       "label": "prose:c-business-services-components-computable-decision-support-engi-4a479c",
@@ -75,6 +134,46 @@
         "kind": "prose",
         "section": "dpi-h-ra/appendix::sec:c-business-services-components-computable-decision-support-engi",
         "index": 6
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-business-services-components-public-health-surveillance-platf-4ded99",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-public-health-surveillance-platf-4ded99.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-public-health-surveillance-platf",
+        "index": 5
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-public-health-surveillance-platf-4ded99.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-public-health-surveillance-platf",
+        "index": 5
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-business-services-components-public-health-surveillance-platf-d1bbaa",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-public-health-surveillance-platf-d1bbaa.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-public-health-surveillance-platf",
+        "index": 29
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-public-health-surveillance-platf-d1bbaa.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-public-health-surveillance-platf",
+        "index": 29
       }
     },
     {
@@ -193,6 +292,26 @@
     },
     {
       "change": "changed",
+      "label": "prose:c-metadata-registries-and-foundati-health-facility-registry-e2c6f0",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-health-facility-registry-e2c6f0.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-health-facility-registry",
+        "index": 17
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-health-facility-registry-e2c6f0.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-health-facility-registry",
+        "index": 17
+      }
+    },
+    {
+      "change": "changed",
       "label": "prose:c-metadata-registries-and-foundati-health-facility-registry-71c7dd",
       "aspects": [
         "prose"
@@ -212,6 +331,26 @@
     },
     {
       "change": "changed",
+      "label": "prose:c-metadata-registries-and-foundati-health-facility-registry-37c19d",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-health-facility-registry-37c19d.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-health-facility-registry",
+        "index": 29
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-health-facility-registry-37c19d.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-health-facility-registry",
+        "index": 29
+      }
+    },
+    {
+      "change": "changed",
       "label": "prose:c-metadata-registries-and-foundati-lifelong-health-record-7c8cd5",
       "aspects": [
         "prose"
@@ -227,6 +366,46 @@
         "kind": "prose",
         "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-lifelong-health-record",
         "index": 3
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-metadata-registries-and-foundati-lifelong-health-record-e73013",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-lifelong-health-record-e73013.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-lifelong-health-record",
+        "index": 7
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-lifelong-health-record-e73013.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-lifelong-health-record",
+        "index": 7
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-metadata-registries-and-foundati-lifelong-health-record-5d5f9a",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-lifelong-health-record-5d5f9a.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-lifelong-health-record",
+        "index": 8
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-lifelong-health-record-5d5f9a.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-lifelong-health-record",
+        "index": 8
       }
     },
     {
@@ -288,6 +467,46 @@
     },
     {
       "change": "changed",
+      "label": "prose:c-metadata-registries-and-foundati-product-registry-4c0041",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-product-registry-4c0041.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-product-registry",
+        "index": 7
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-product-registry-4c0041.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-product-registry",
+        "index": 7
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-metadata-registries-and-foundati-product-registry-8a64c2",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-product-registry-8a64c2.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-product-registry",
+        "index": 14
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-product-registry-8a64c2.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-product-registry",
+        "index": 14
+      }
+    },
+    {
+      "change": "changed",
       "label": "prose:c-metadata-registries-and-foundati-terminology-service-6c5267",
       "aspects": [
         "prose"
@@ -345,6 +564,286 @@
     },
     {
       "change": "changed",
+      "label": "prose:d-1-client-registry-808800",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-d-1-client-registry-808800.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:d-1-client-registry",
+        "index": 0
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-d-1-client-registry-808800.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:d-1-client-registry",
+        "index": 0
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:d-1-computable-decision-support-engi-39fe47",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-d-1-computable-decision-support-engi-39fe47.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:d-1-computable-decision-support-engi",
+        "index": 0
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-d-1-computable-decision-support-engi-39fe47.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:d-1-computable-decision-support-engi",
+        "index": 0
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:d-1-health-management-information-se-595883",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-d-1-health-management-information-se-595883.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:d-1-health-management-information-se",
+        "index": 0
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-d-1-health-management-information-se-595883.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:d-1-health-management-information-se",
+        "index": 0
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:d-1-lifelong-health-record-3ef48b",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-d-1-lifelong-health-record-3ef48b.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:d-1-lifelong-health-record",
+        "index": 0
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-d-1-lifelong-health-record-3ef48b.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:d-1-lifelong-health-record",
+        "index": 0
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:d-1-public-health-surveillance-platf-92708e",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-d-1-public-health-surveillance-platf-92708e.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:d-1-public-health-surveillance-platf",
+        "index": 0
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-d-1-public-health-surveillance-platf-92708e.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:d-1-public-health-surveillance-platf",
+        "index": 0
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:d-1-terminology-service-and-logical-ceb1d0",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-d-1-terminology-service-and-logical-ceb1d0.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:d-1-terminology-service-and-logical",
+        "index": 0
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-d-1-terminology-service-and-logical-ceb1d0.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:d-1-terminology-service-and-logical",
+        "index": 0
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:d-2-australia-49379a",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-d-2-australia-49379a.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:d-2-australia",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-d-2-australia-49379a.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:d-2-australia",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:d-2-estonia-c65ab2",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-d-2-estonia-c65ab2.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:d-2-estonia",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-d-2-estonia-c65ab2.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:d-2-estonia",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:d-2-india-c4b3eb",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-d-2-india-c4b3eb.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:d-2-india",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-d-2-india-c4b3eb.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:d-2-india",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:d-2-rwanda-4227e9",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-d-2-rwanda-4227e9.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:d-2-rwanda",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-d-2-rwanda-4227e9.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:d-2-rwanda",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:d-2-spain-1f3e8b",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-d-2-spain-1f3e8b.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:d-2-spain",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-d-2-spain-1f3e8b.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:d-2-spain",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:d-2-spain-catalonia-subnational-84d71b",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-d-2-spain-catalonia-subnational-84d71b.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:d-2-spain-catalonia-subnational",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-d-2-spain-catalonia-subnational-84d71b.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:d-2-spain-catalonia-subnational",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:d-2-united-states-f02f9f",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-d-2-united-states-f02f9f.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:d-2-united-states",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-d-2-united-states-f02f9f.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:d-2-united-states",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:d-3-european-union-and-european-econ-351139",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-d-3-european-union-and-european-econ-351139.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:d-3-european-union-and-european-econ",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-d-3-european-union-and-european-econ-351139.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:d-3-european-union-and-european-econ",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
       "label": "prose:e-b1992f",
       "aspects": [
         "prose"
@@ -366,7 +865,8 @@
       "change": "changed",
       "label": "prose:1-1-f1f11b",
       "aspects": [
-        "prose"
+        "prose",
+        "manifest"
       ],
       "base": {
         "file": "dpi-h-ra/ch1-introduction/p-1-1-f1f11b.ts",
@@ -385,7 +885,8 @@
       "change": "changed",
       "label": "prose:1-1-1-dcc314",
       "aspects": [
-        "prose"
+        "prose",
+        "manifest"
       ],
       "base": {
         "file": "dpi-h-ra/ch1-introduction/p-1-1-1-dcc314.ts",
@@ -404,7 +905,8 @@
       "change": "changed",
       "label": "prose:1-1-2-95b13c",
       "aspects": [
-        "prose"
+        "prose",
+        "manifest"
       ],
       "base": {
         "file": "dpi-h-ra/ch1-introduction/p-1-1-2-95b13c.ts",
@@ -417,6 +919,46 @@
         "kind": "prose",
         "section": "dpi-h-ra/ch1-introduction::sec:1-1-2",
         "index": 0
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:1-1-2-3fe140",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch1-introduction/p-1-1-2-3fe140.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch1-introduction::sec:1-1-2",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/ch1-introduction/p-1-1-2-3fe140.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch1-introduction::sec:1-1-2",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:1-1-2-87ef33",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch1-introduction/p-1-1-2-87ef33.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch1-introduction::sec:1-1-2",
+        "index": 2
+      },
+      "head": {
+        "file": "dpi-h-ra/ch1-introduction/p-1-1-2-87ef33.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch1-introduction::sec:1-1-2",
+        "index": 2
       }
     },
     {
@@ -516,6 +1058,26 @@
     },
     {
       "change": "changed",
+      "label": "prose:1-1-3-a447f2",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch1-introduction/p-1-1-3-a447f2.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch1-introduction::sec:1-1-3",
+        "index": 3
+      },
+      "head": {
+        "file": "dpi-h-ra/ch1-introduction/p-1-1-3-a447f2.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch1-introduction::sec:1-1-3",
+        "index": 3
+      }
+    },
+    {
+      "change": "changed",
       "label": "prose:1-2-2-04fc31",
       "aspects": [
         "prose"
@@ -537,7 +1099,8 @@
       "change": "changed",
       "label": "prose:1-3-1-88dda8",
       "aspects": [
-        "prose"
+        "prose",
+        "manifest"
       ],
       "base": {
         "file": "dpi-h-ra/ch1-introduction/p-1-3-1-88dda8.ts",
@@ -727,7 +1290,8 @@
       "change": "changed",
       "label": "prose:2-2-2-2c4d7e",
       "aspects": [
-        "prose"
+        "prose",
+        "manifest"
       ],
       "base": {
         "file": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra/p-2-2-2-2c4d7e.ts",
@@ -740,6 +1304,26 @@
         "kind": "prose",
         "section": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra::sec:2-2-2",
         "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:2-2-2-156a7b",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra/p-2-2-2-156a7b.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra::sec:2-2-2",
+        "index": 2
+      },
+      "head": {
+        "file": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra/p-2-2-2-156a7b.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra::sec:2-2-2",
+        "index": 2
       }
     },
     {
@@ -841,7 +1425,8 @@
       "change": "changed",
       "label": "prose:ch2-dpi-h-reference-architecture-fra-lead-d9a961",
       "aspects": [
-        "prose"
+        "prose",
+        "manifest"
       ],
       "base": {
         "file": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra/p-ch2-dpi-h-reference-architecture-fra-lead-d9a961.ts",
@@ -873,6 +1458,46 @@
         "kind": "prose",
         "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-1",
         "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-2-86f619",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-2-86f619.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-2",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-2-86f619.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-2",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-2-00e672",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-2-00e672.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-2",
+        "index": 2
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-2-00e672.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-2",
+        "index": 2
       }
     },
     {
@@ -936,7 +1561,8 @@
       "change": "changed",
       "label": "prose:3-4-2-96e3ef",
       "aspects": [
-        "prose"
+        "prose",
+        "manifest"
       ],
       "base": {
         "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-4-2-96e3ef.ts",
@@ -968,6 +1594,46 @@
         "kind": "prose",
         "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-4-5",
         "index": 8
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-4-5-40a756",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-4-5-40a756.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-4-5",
+        "index": 19
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-4-5-40a756.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-4-5",
+        "index": 19
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-4-5-7a4a7f",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-4-5-7a4a7f.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-4-5",
+        "index": 23
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-4-5-7a4a7f.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-4-5",
+        "index": 23
       }
     },
     {
@@ -1010,9 +1676,30 @@
     },
     {
       "change": "changed",
+      "label": "prose:3-6-00d8ed",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-6-00d8ed.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-6",
+        "index": 0
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-6-00d8ed.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-6",
+        "index": 0
+      }
+    },
+    {
+      "change": "changed",
       "label": "prose:3-6-1-e1ef9e",
       "aspects": [
-        "prose"
+        "prose",
+        "manifest"
       ],
       "base": {
         "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-6-1-e1ef9e.ts",
@@ -1044,6 +1731,46 @@
         "kind": "prose",
         "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-6-2",
         "index": 2
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-6-4-4150dd",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-6-4-4150dd.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-6-4",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-6-4-4150dd.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-6-4",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-6-4-c0012b",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-6-4-c0012b.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-6-4",
+        "index": 3
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-6-4-c0012b.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-6-4",
+        "index": 3
       }
     },
     {
@@ -1221,7 +1948,8 @@
       "change": "changed",
       "label": "prose:4-2-2-d1ff5e",
       "aspects": [
-        "prose"
+        "prose",
+        "manifest"
       ],
       "base": {
         "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-2-2-d1ff5e.ts",
@@ -1240,7 +1968,8 @@
       "change": "changed",
       "label": "prose:4-2-4-a20796",
       "aspects": [
-        "prose"
+        "prose",
+        "manifest"
       ],
       "base": {
         "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-2-4-a20796.ts",
@@ -1278,7 +2007,8 @@
       "change": "changed",
       "label": "prose:4-3-2-513f61",
       "aspects": [
-        "prose"
+        "prose",
+        "manifest"
       ],
       "base": {
         "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-3-2-513f61.ts",
@@ -1297,7 +2027,8 @@
       "change": "changed",
       "label": "prose:4-3-3-99c0e8",
       "aspects": [
-        "prose"
+        "prose",
+        "manifest"
       ],
       "base": {
         "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-3-3-99c0e8.ts",
@@ -1333,6 +2064,26 @@
     },
     {
       "change": "changed",
+      "label": "prose:4-3-5-92909d",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-3-5-92909d.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch4-implementing-a-national-digital::sec:4-3-5",
+        "index": 0
+      },
+      "head": {
+        "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-3-5-92909d.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch4-implementing-a-national-digital::sec:4-3-5",
+        "index": 0
+      }
+    },
+    {
+      "change": "changed",
       "label": "prose:4-5-2-2a0e80",
       "aspects": [
         "prose"
@@ -1348,6 +2099,46 @@
         "kind": "prose",
         "section": "dpi-h-ra/ch4-implementing-a-national-digital::sec:4-5-2",
         "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:4-5-3-b2e92d",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-5-3-b2e92d.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch4-implementing-a-national-digital::sec:4-5-3",
+        "index": 0
+      },
+      "head": {
+        "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-5-3-b2e92d.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch4-implementing-a-national-digital::sec:4-5-3",
+        "index": 0
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:4-6-1-6f998e",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-6-1-6f998e.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch4-implementing-a-national-digital::sec:4-6-1",
+        "index": 0
+      },
+      "head": {
+        "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-6-1-6f998e.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch4-implementing-a-national-digital::sec:4-6-1",
+        "index": 0
       }
     },
     {
@@ -1405,6 +2196,46 @@
         "kind": "prose",
         "section": "dpi-h-ra/ch5-future-proofing-the-architecture::sec:5-2",
         "index": 2
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:5-4-1-19769c",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch5-future-proofing-the-architecture/p-5-4-1-19769c.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch5-future-proofing-the-architecture::sec:5-4-1",
+        "index": 2
+      },
+      "head": {
+        "file": "dpi-h-ra/ch5-future-proofing-the-architecture/p-5-4-1-19769c.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch5-future-proofing-the-architecture::sec:5-4-1",
+        "index": 2
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:5-4-2-11d943",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch5-future-proofing-the-architecture/p-5-4-2-11d943.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch5-future-proofing-the-architecture::sec:5-4-2",
+        "index": 0
+      },
+      "head": {
+        "file": "dpi-h-ra/ch5-future-proofing-the-architecture/p-5-4-2-11d943.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch5-future-proofing-the-architecture::sec:5-4-2",
+        "index": 0
       }
     },
     {
@@ -1481,6 +2312,26 @@
         "kind": "prose",
         "section": "dpi-h-ra/ch5-future-proofing-the-architecture::sec:ch5-future-proofing-the-architecture-lead",
         "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:ch5-future-proofing-the-architecture-lead-9dcc4c",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch5-future-proofing-the-architecture/p-ch5-future-proofing-the-architecture-lead-9dcc4c.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch5-future-proofing-the-architecture::sec:ch5-future-proofing-the-architecture-lead",
+        "index": 2
+      },
+      "head": {
+        "file": "dpi-h-ra/ch5-future-proofing-the-architecture/p-ch5-future-proofing-the-architecture-lead-9dcc4c.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch5-future-proofing-the-architecture::sec:ch5-future-proofing-the-architecture-lead",
+        "index": 2
       }
     },
     {
@@ -1651,6 +2502,26 @@
         "file": "dpi-h-ra/glossary/t-glossary-lead-a31853.ts",
         "kind": "table",
         "section": "dpi-h-ra/glossary::sec:glossary-lead",
+        "index": 0
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:references-lead-071187",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/references/p-references-lead-071187.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/references::sec:references-lead",
+        "index": 0
+      },
+      "head": {
+        "file": "dpi-h-ra/references/p-references-lead-071187.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/references::sec:references-lead",
         "index": 0
       }
     }
