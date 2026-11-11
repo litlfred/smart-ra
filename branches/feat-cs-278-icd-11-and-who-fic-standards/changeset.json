@@ -1,0 +1,558 @@
+{
+  "$schema": "folio-changeset/v1",
+  "folio": "folio",
+  "base": {
+    "ref": "origin/main",
+    "commit": "7a3df32635d07b1ec95c4cd3730d938386a6a000"
+  },
+  "head": {
+    "ref": "worktree",
+    "commit": null
+  },
+  "summary": {
+    "added": 0,
+    "removed": 0,
+    "changed": 28,
+    "unchanged": 905,
+    "renamed": 0,
+    "prose": 28,
+    "manifest": 2,
+    "moved": 0
+  },
+  "changes": [
+    {
+      "change": "changed",
+      "label": "prose:c-business-services-components-benefits-package-registry-2f494f",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-benefits-package-registry-2f494f.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-benefits-package-registry",
+        "index": 11
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-benefits-package-registry-2f494f.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-benefits-package-registry",
+        "index": 11
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-business-services-components-benefits-package-registry-e359e0",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-benefits-package-registry-e359e0.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-benefits-package-registry",
+        "index": 15
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-benefits-package-registry-e359e0.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-benefits-package-registry",
+        "index": 15
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-business-services-components-computable-decision-support-engi-2a67bd",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-computable-decision-support-engi-2a67bd.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-computable-decision-support-engi",
+        "index": 12
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-computable-decision-support-engi-2a67bd.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-computable-decision-support-engi",
+        "index": 12
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-business-services-components-computable-decision-support-engi-97cc2b",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-computable-decision-support-engi-97cc2b.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-computable-decision-support-engi",
+        "index": 15
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-computable-decision-support-engi-97cc2b.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-computable-decision-support-engi",
+        "index": 15
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-business-services-components-health-management-information-sy-ce546c",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-health-management-information-sy-ce546c.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-health-management-information-sy",
+        "index": 12
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-health-management-information-sy-ce546c.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-health-management-information-sy",
+        "index": 12
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-business-services-components-health-management-information-sy-506d01",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-health-management-information-sy-506d01.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-health-management-information-sy",
+        "index": 18
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-health-management-information-sy-506d01.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-health-management-information-sy",
+        "index": 18
+      }
+    },
+    {
+      "change": "changed",
+      "label": "tbl:c-business-services-components-health-management-information-sy-0a3f5b",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/t-c-business-services-components-health-management-information-sy-0a3f5b.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-health-management-information-sy",
+        "index": 25
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/t-c-business-services-components-health-management-information-sy-0a3f5b.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-health-management-information-sy",
+        "index": 25
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-business-services-components-public-health-surveillance-platf-4efad4",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-public-health-surveillance-platf-4efad4.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-public-health-surveillance-platf",
+        "index": 21
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-public-health-surveillance-platf-4efad4.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-public-health-surveillance-platf",
+        "index": 21
+      }
+    },
+    {
+      "change": "changed",
+      "label": "tbl:c-metadata-registries-and-foundati-product-registry-2e4f9b",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/t-c-metadata-registries-and-foundati-product-registry-2e4f9b.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-product-registry",
+        "index": 26
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/t-c-metadata-registries-and-foundati-product-registry-2e4f9b.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-product-registry",
+        "index": 26
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-metadata-registries-and-foundati-terminology-service-3a8e2d",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-terminology-service-3a8e2d.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-terminology-service",
+        "index": 13
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-terminology-service-3a8e2d.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-terminology-service",
+        "index": 13
+      }
+    },
+    {
+      "change": "changed",
+      "label": "tbl:c-metadata-registries-and-foundati-terminology-service-817b54",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/t-c-metadata-registries-and-foundati-terminology-service-817b54.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-terminology-service",
+        "index": 23
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/t-c-metadata-registries-and-foundati-terminology-service-817b54.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-terminology-service",
+        "index": 23
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-metadata-registries-and-foundati-terminology-service-f978cb",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-terminology-service-f978cb.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-terminology-service",
+        "index": 24
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-metadata-registries-and-foundati-terminology-service-f978cb.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-metadata-registries-and-foundati-terminology-service",
+        "index": 24
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:d-1-public-health-surveillance-platf-92708e",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-d-1-public-health-surveillance-platf-92708e.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:d-1-public-health-surveillance-platf",
+        "index": 0
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-d-1-public-health-surveillance-platf-92708e.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:d-1-public-health-surveillance-platf",
+        "index": 0
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:d-1-terminology-service-and-logical-ceb1d0",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-d-1-terminology-service-and-logical-ceb1d0.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:d-1-terminology-service-and-logical",
+        "index": 0
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-d-1-terminology-service-and-logical-ceb1d0.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:d-1-terminology-service-and-logical",
+        "index": 0
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:1-2-2-bd790c",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch1-introduction/p-1-2-2-bd790c.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch1-introduction::sec:1-2-2",
+        "index": 0
+      },
+      "head": {
+        "file": "dpi-h-ra/ch1-introduction/p-1-2-2-bd790c.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch1-introduction::sec:1-2-2",
+        "index": 0
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:1-2-2-04fc31",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch1-introduction/p-1-2-2-04fc31.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch1-introduction::sec:1-2-2",
+        "index": 2
+      },
+      "head": {
+        "file": "dpi-h-ra/ch1-introduction/p-1-2-2-04fc31.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch1-introduction::sec:1-2-2",
+        "index": 2
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:1-5-1-69f4a6",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch1-introduction/p-1-5-1-69f4a6.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch1-introduction::sec:1-5-1",
+        "index": 0
+      },
+      "head": {
+        "file": "dpi-h-ra/ch1-introduction/p-1-5-1-69f4a6.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch1-introduction::sec:1-5-1",
+        "index": 0
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:2-2-2-e01764",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra/p-2-2-2-e01764.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra::sec:2-2-2",
+        "index": 0
+      },
+      "head": {
+        "file": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra/p-2-2-2-e01764.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra::sec:2-2-2",
+        "index": 0
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:2-2-2-2c4d7e",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra/p-2-2-2-2c4d7e.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra::sec:2-2-2",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra/p-2-2-2-2c4d7e.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra::sec:2-2-2",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "tbl:3-5",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/t-3-5.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-5-3-1",
+        "index": 8
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/t-3-5.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-5-3-1",
+        "index": 8
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-6-2-1058d2",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-6-2-1058d2.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-6-2",
+        "index": 2
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-6-2-1058d2.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-6-2",
+        "index": 2
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:4-1-2-a4f8e0",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-1-2-a4f8e0.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch4-implementing-a-national-digital::sec:4-1-2",
+        "index": 2
+      },
+      "head": {
+        "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-1-2-a4f8e0.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch4-implementing-a-national-digital::sec:4-1-2",
+        "index": 2
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:4-3-1-d68317",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-3-1-d68317.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch4-implementing-a-national-digital::sec:4-3-1",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-3-1-d68317.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch4-implementing-a-national-digital::sec:4-3-1",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:4-3-1-fc548c",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-3-1-fc548c.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch4-implementing-a-national-digital::sec:4-3-1",
+        "index": 2
+      },
+      "head": {
+        "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-3-1-fc548c.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch4-implementing-a-national-digital::sec:4-3-1",
+        "index": 2
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:4-5-2-2a0e80",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-5-2-2a0e80.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch4-implementing-a-national-digital::sec:4-5-2",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-5-2-2a0e80.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch4-implementing-a-national-digital::sec:4-5-2",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:5-2-b8b815",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch5-future-proofing-the-architecture/p-5-2-b8b815.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch5-future-proofing-the-architecture::sec:5-2",
+        "index": 2
+      },
+      "head": {
+        "file": "dpi-h-ra/ch5-future-proofing-the-architecture/p-5-2-b8b815.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch5-future-proofing-the-architecture::sec:5-2",
+        "index": 2
+      }
+    },
+    {
+      "change": "changed",
+      "label": "tbl:glossary-lead-a31853",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/glossary/t-glossary-lead-a31853.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/glossary::sec:glossary-lead",
+        "index": 0
+      },
+      "head": {
+        "file": "dpi-h-ra/glossary/t-glossary-lead-a31853.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/glossary::sec:glossary-lead",
+        "index": 0
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:references-lead-071187",
+      "aspects": [
+        "prose",
+        "manifest"
+      ],
+      "base": {
+        "file": "dpi-h-ra/references/p-references-lead-071187.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/references::sec:references-lead",
+        "index": 0
+      },
+      "head": {
+        "file": "dpi-h-ra/references/p-references-lead-071187.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/references::sec:references-lead",
+        "index": 0
+      }
+    }
+  ]
+}
