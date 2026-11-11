@@ -22,11 +22,10 @@ export default paper({
     chapterRef({ dir: "ch3-the-reference-architecture-for-d" }),
     chapterRef({ dir: "ch4-implementing-a-national-digital" }),
     chapterRef({ dir: "ch5-future-proofing-the-architecture" }),
-    // Back matter: annexes, then the glossary and its acronyms, then references.
+    // Back matter: annexes, then the glossary (terms, then acronyms), then references.
     // The document opens on the executive summary, not on reference lists.
     chapterRef({ dir: "appendix" }),
     chapterRef({ dir: "glossary" }),
-    chapterRef({ dir: "acronyms" }),
     chapterRef({ dir: "references" }),
   ],
 });
