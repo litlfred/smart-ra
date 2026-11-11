@@ -3,7 +3,7 @@
     "https://litlfred.github.io/smart-ra/ns/context/v1.jsonld",
     {
       "@base": "https://litlfred.github.io/folio/",
-      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns#"
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "papers/dpi-h-ra/blocks/prose-1-1-f1f11b",
@@ -13,6 +13,10 @@
   ],
   "label": "prose:1-1-f1f11b",
   "kind": "prose",
+  "cites": [
+    "references/who-2025-wha-gdhs-extension",
+    "references/who-global-strategy-digital-health"
+  ],
   "text": "p-1-1-f1f11b.md",
   "meta": {
     "source": {
