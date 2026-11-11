@@ -1,0 +1,14 @@
+{
+  "@context": {
+    "archimate": "http://www.opengroup.org/xsd/archimate/3.0/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/"
+  },
+  "@id": "https://litlfred.github.io/smart-ra/archimate/0.3.0-draft.1/elements/id-d626508a7dc55b1fb11bf34f57f8ddd9.jsonld",
+  "@type": "archimate:ApplicationComponent",
+  "schema:identifier": "id-d626508a7dc55b1fb11bf34f57f8ddd9",
+  "schema:name": "Health Management Information System",
+  "schema:description": "The Health Management Information System is a governed, sharedapplication component responsible for the systematic collection, aggregation, analysis, and dissemination of population-level and facility-level health data to support routine monitoring, programme performance measurement, strategic planning, health services commissioning, and public health decision-making.",
+  "schema:category": "Application",
+  "dcterms:isPartOf": "https://litlfred.github.io/smart-ra/archimate/0.3.0-draft.1.jsonld"
+}
