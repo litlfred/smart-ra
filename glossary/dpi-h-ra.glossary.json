@@ -37,7 +37,8 @@
       "source": "folio/dpi-h-ra/glossary/t-glossary-lead-a31853.md",
       "definition": "A specific focus area or subsystem within a broader business system, characterized by its own essential attributes",
       "status": "candidate",
-      "scopeNote": "The RA draft's own wording, verbatim. A candidate until the RA editors adopt it through the public review. The draft marks this entry [Under review]."
+      "scopeNote": "The RA draft's own wording, verbatim. A candidate until the RA editors adopt it through the public review. The draft marks this entry [Under review].",
+      "editorialNote": "Under review"
     },
     {
       "id": "outcome",
@@ -127,13 +128,14 @@
       "id": "enterprise-architecture",
       "prefLabel": "Enterprise Architecture",
       "source": "folio/dpi-h-ra/glossary/t-glossary-lead-a31853.md",
-      "definition": "The organising logic for business processes and IT infrastructure reflecting the integration and standardisation requirements of the organisation's operating model.",
+      "definition": "The organising logic for business processes and IT infrastructure reflecting the integration and\nstandardisation requirements of the organisation's operating model.",
       "status": "candidate",
       "scopeNote": "The RA draft's own glossary wording, verbatim (folio/dpi-h-ra/glossary/t-glossary-lead-a31853.md); the draft marks this entry [Under review]. Substantive alternatives across the DTH corpus (smart-ra#133 S1, smart-ra#139, smart-ra#140): (1) PHC handbook glossary (who-iris/library/9789240093362-eng/sections/sec-002-glossary.md, p. 9, citing DIIG): \"A blueprint of business processes, data, systems and technologies used to help planners, software developers and managers design increasingly complex systems to support the workflow and roles of people in a large enterprise, such as a health system (11).\" (2) SC handbook glossary (who-iris/library/9789240101197-eng/sections/page-008.md, p. 8, citing DIIG): \"A blueprint of business processes, data, systems and technologies that helps planners, software developers and managers design increasingly complex systems to support the workflow and roles of people in a large enterprise such as a health system (1).\" (3) SFP handbook glossary (who-iris/library/9789240120747-eng/sections/page-009.md, p. 9, citing DIIG): \"A blueprint of business processes, data, systems and technologies used to help implementers design increasingly complex systems to support the workflow and roles of people in a large enterprise, such as a health system (3).\" All four are recorded as candidates; none is chosen.",
       "altLabel": [
         "EA",
         "enterprise architecture"
-      ]
+      ],
+      "editorialNote": "Under review"
     },
     {
       "id": "fast-healthcare-interoperability-resources",
@@ -179,7 +181,8 @@
       "source": "folio/dpi-h-ra/glossary/t-glossary-lead-a31853.md",
       "status": "could-not-extract",
       "reason": "The draft lists the term with no definition.",
-      "scopeNote": "The draft marks this entry [To be included before publication]."
+      "scopeNote": "The draft marks this entry [To be included before publication].",
+      "editorialNote": "To be included before publication"
     },
     {
       "id": "health-programme",
@@ -195,7 +198,8 @@
       "source": "folio/dpi-h-ra/glossary/t-glossary-lead-a31853.md",
       "definition": "Bespoke capability of connecting one application component to another",
       "status": "candidate",
-      "scopeNote": "The RA draft's own wording, verbatim. A candidate until the RA editors adopt it through the public review. The draft marks this entry [Under review]."
+      "scopeNote": "The RA draft's own wording, verbatim. A candidate until the RA editors adopt it through the public review. The draft marks this entry [Under review].",
+      "editorialNote": "Under review"
     },
     {
       "id": "interoperability",
@@ -230,7 +234,8 @@
         "POS",
         "Point-of-service applications",
         "Point of Service Application"
-      ]
+      ],
+      "editorialNote": "Under review"
     },
     {
       "id": "reference-architecture",
@@ -253,7 +258,8 @@
       "scopeNote": "The RA draft's own glossary wording, verbatim (folio/dpi-h-ra/glossary/t-glossary-lead-a31853.md); the draft marks this entry [Under review]. Near-identical wording alternatives across the DTH corpus (smart-ra#133 S1, smart-ra#139, smart-ra#142): (1) PHC handbook glossary (who-iris/library/9789240093362-eng/sections/sec-002-glossary.md, p. 11): \"A governed, authoritative and centralized information system that captures, stores and maintains the unique attributes and identifiers of health-care facilities, health service users, products and/or health workforce using a predefined canonical minimum data set.\" (2) SC handbook glossary (who-iris/library/9789240101197-eng/sections/page-009.md, p. 9): \"A governed, authoritative and centralized information system that captures, stores and maintains the unique attributes and identifiers of health facilities, health service users, health products and/or the health workforce using a predefined canonical minimum data set.\" (3) PC handbook glossary (who-iris/library/9789240116191-eng/sections/page-009.md, p. 9): \"A governed, authoritative and centralized information system that captures, stores, and maintains the unique attributes and identifiers of health facilities, health service users, products and/or health workforce using a predefined canonical minimum data set.\" (4) SFP handbook glossary (who-iris/library/9789240120747-eng/sections/page-010.md, p. 10, truncated in source PDF): \"A governed, authoritative and centralized information system that captures, stores and maintains the unique attributes and identifiers of health facilities, health service users, products and/or health workforce using predefined canonical minimum data etc.\" All five are recorded as candidates; none is chosen.",
       "altLabel": [
         "registry"
-      ]
+      ],
+      "editorialNote": "Under review"
     },
     {
       "id": "repository",
@@ -300,7 +306,8 @@
       "source": "folio/dpi-h-ra/glossary/t-glossary-lead-a31853.md",
       "definition": "The design of a specific application component or HDPI expressed through specifications and diagrams",
       "status": "candidate",
-      "scopeNote": "The RA draft's own wording, verbatim. A candidate until the RA editors adopt it through the public review. The draft marks this entry [Under review]."
+      "scopeNote": "The RA draft's own wording, verbatim. A candidate until the RA editors adopt it through the public review. The draft marks this entry [Under review].",
+      "editorialNote": "Under review"
     },
     {
       "id": "stakeholder",
