@@ -22,7 +22,7 @@
 | Health Programme | Health programmes are structured and coordinated interventions and services, delivered to defined populations or patient groups, to prevent disease, promote health, and address specific health needs. |
 | Integration | Bespoke capability of connecting one application component to another [Under review] |
 | Interoperability | Interoperability is the standards-based capability of heterogeneous information systems to communicate, exchange data, and use the exchanged information to execute functions effectively. |
-| Logical Observation Identifiers Names and Codes<br>(LOINC) | LOINC is a common language (a set of identifiers, names, and codes) for identifying health measurements, observations, and documents. |
+| Logical Observation Identifiers Names and Codes (LOINC) | LOINC is a common language (a set of identifiers, names, and codes) for identifying health measurements, observations, and documents. |
 | Point-of-service applications | Point-of-service applications are end-user application components (IT systems or software tools) used by individuals directly engaged in healthcare—such as clinicians, community health workers, and patients—that enable interaction with the broader healthcare ecosystem. [Under review] |
 | Reference Architecture | A technology-neutral blueprint that captures the common building blocks, relationships, and design principles of a technical environment. |
 | Registry | A governed, authoritative and centralized information system that captures, stores and maintains the unique attributes and identifiers of health facilities, health service users, health products and/or the health workforce using a predefined canonical minimum data set. [Under review] |

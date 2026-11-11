@@ -1,9 +1,10 @@
 name: Release build
 
+# The called smart-html release workflow publishes to gh-pages and asks for
+# contents: write and pull-requests: write, so the caller must grant both.
+# pages and id-token are not used and stay off.
 permissions:
   contents: write
-  pages: write
-  id-token: write
   pull-requests: write
   
 # Manual trigger only (owner decision, 2026-10-06): GitHub workflows here are
