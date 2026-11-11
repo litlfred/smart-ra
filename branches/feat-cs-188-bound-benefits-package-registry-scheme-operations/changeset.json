@@ -1,0 +1,442 @@
+{
+  "$schema": "folio-changeset/v1",
+  "folio": "folio",
+  "base": {
+    "ref": "origin/main",
+    "commit": "7a3df32635d07b1ec95c4cd3730d938386a6a000"
+  },
+  "head": {
+    "ref": "worktree",
+    "commit": null
+  },
+  "summary": {
+    "added": 0,
+    "removed": 0,
+    "changed": 22,
+    "unchanged": 911,
+    "renamed": 0,
+    "prose": 22,
+    "manifest": 0,
+    "moved": 0
+  },
+  "changes": [
+    {
+      "change": "changed",
+      "label": "tbl:c-business-services-components-benefits-package-registry-80fe7c",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/t-c-business-services-components-benefits-package-registry-80fe7c.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-benefits-package-registry",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/t-c-business-services-components-benefits-package-registry-80fe7c.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-benefits-package-registry",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-business-services-components-benefits-package-registry-d5d162",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-benefits-package-registry-d5d162.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-benefits-package-registry",
+        "index": 3
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-benefits-package-registry-d5d162.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-benefits-package-registry",
+        "index": 3
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-business-services-components-benefits-package-registry-6a97d1",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-benefits-package-registry-6a97d1.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-benefits-package-registry",
+        "index": 4
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-benefits-package-registry-6a97d1.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-benefits-package-registry",
+        "index": 4
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-business-services-components-benefits-package-registry-c7a798",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-benefits-package-registry-c7a798.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-benefits-package-registry",
+        "index": 5
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-benefits-package-registry-c7a798.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-benefits-package-registry",
+        "index": 5
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-business-services-components-benefits-package-registry-37d21e",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-benefits-package-registry-37d21e.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-benefits-package-registry",
+        "index": 7
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-benefits-package-registry-37d21e.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-benefits-package-registry",
+        "index": 7
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-business-services-components-benefits-package-registry-3ff245",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-benefits-package-registry-3ff245.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-benefits-package-registry",
+        "index": 9
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-benefits-package-registry-3ff245.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-benefits-package-registry",
+        "index": 9
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-business-services-components-benefits-package-registry-2f494f",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-benefits-package-registry-2f494f.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-benefits-package-registry",
+        "index": 11
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-benefits-package-registry-2f494f.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-benefits-package-registry",
+        "index": 11
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-business-services-components-benefits-package-registry-e359e0",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-benefits-package-registry-e359e0.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-benefits-package-registry",
+        "index": 15
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-benefits-package-registry-e359e0.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-benefits-package-registry",
+        "index": 15
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-business-services-components-benefits-package-registry-c8dd7e",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-benefits-package-registry-c8dd7e.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-benefits-package-registry",
+        "index": 16
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-benefits-package-registry-c8dd7e.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-benefits-package-registry",
+        "index": 16
+      }
+    },
+    {
+      "change": "changed",
+      "label": "tbl:c-business-services-components-benefits-package-registry-d6c531",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/t-c-business-services-components-benefits-package-registry-d6c531.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-benefits-package-registry",
+        "index": 20
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/t-c-business-services-components-benefits-package-registry-d6c531.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-benefits-package-registry",
+        "index": 20
+      }
+    },
+    {
+      "change": "changed",
+      "label": "tbl:c-business-services-components-benefits-package-registry-ad83df",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/t-c-business-services-components-benefits-package-registry-ad83df.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-benefits-package-registry",
+        "index": 24
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/t-c-business-services-components-benefits-package-registry-ad83df.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-benefits-package-registry",
+        "index": 24
+      }
+    },
+    {
+      "change": "changed",
+      "label": "tbl:c-business-services-components-benefits-package-registry-a734cd",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/t-c-business-services-components-benefits-package-registry-a734cd.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-benefits-package-registry",
+        "index": 25
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/t-c-business-services-components-benefits-package-registry-a734cd.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-benefits-package-registry",
+        "index": 25
+      }
+    },
+    {
+      "change": "changed",
+      "label": "tbl:c-business-services-components-benefits-package-registry-distinguishing-the-benefits-pack-c66f4f",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/t-c-business-services-components-benefits-package-registry-distinguishing-the-benefits-pack-c66f4f.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-benefits-package-registry-distinguishing-the-benefits-pack",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/t-c-business-services-components-benefits-package-registry-distinguishing-the-benefits-pack-c66f4f.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-benefits-package-registry-distinguishing-the-benefits-pack",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:c-business-services-components-benefits-package-registry-distinguishing-the-benefits-pack-6cbfe7",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-benefits-package-registry-distinguishing-the-benefits-pack-6cbfe7.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-benefits-package-registry-distinguishing-the-benefits-pack",
+        "index": 2
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-c-business-services-components-benefits-package-registry-distinguishing-the-benefits-pack-6cbfe7.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:c-business-services-components-benefits-package-registry-distinguishing-the-benefits-pack",
+        "index": 2
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:e-deab37",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-e-deab37.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:e",
+        "index": 25
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-e-deab37.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:e",
+        "index": 25
+      }
+    },
+    {
+      "change": "changed",
+      "label": "tbl:2-4",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra/t-2-4.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra::sec:2-4-2",
+        "index": 2
+      },
+      "head": {
+        "file": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra/t-2-4.ts",
+        "kind": "table",
+        "section": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra::sec:2-4-2",
+        "index": 2
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:2-4-2-e70c22",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra/p-2-4-2-e70c22.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra::sec:2-4-2",
+        "index": 3
+      },
+      "head": {
+        "file": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra/p-2-4-2-e70c22.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra::sec:2-4-2",
+        "index": 3
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:2-4-2-3db7d0",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra/p-2-4-2-3db7d0.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra::sec:2-4-2",
+        "index": 4
+      },
+      "head": {
+        "file": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra/p-2-4-2-3db7d0.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch2-dpi-h-reference-architecture-fra::sec:2-4-2",
+        "index": 4
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-5-1-022c9f",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-5-1-022c9f.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-5-1",
+        "index": 6
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-5-1-022c9f.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-5-1",
+        "index": 6
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:3-5-3-2-c33109",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-5-3-2-c33109.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-5-3-2",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/ch3-the-reference-architecture-for-d/p-3-5-3-2-c33109.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch3-the-reference-architecture-for-d::sec:3-5-3-2",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:4-3-4-50e900",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-3-4-50e900.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch4-implementing-a-national-digital::sec:4-3-4",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-3-4-50e900.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch4-implementing-a-national-digital::sec:4-3-4",
+        "index": 1
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:4-3-4-fb4f87",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-3-4-fb4f87.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch4-implementing-a-national-digital::sec:4-3-4",
+        "index": 2
+      },
+      "head": {
+        "file": "dpi-h-ra/ch4-implementing-a-national-digital/p-4-3-4-fb4f87.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch4-implementing-a-national-digital::sec:4-3-4",
+        "index": 2
+      }
+    }
+  ]
+}
