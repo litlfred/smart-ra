@@ -12,7 +12,7 @@
       "id": "0.3.0-draft.1",
       "file": "0.3.0-draft.1/WHOBaseFile.archimate",
       "title": "WHO Reference Architecture 0.3.0-draft.1",
-      "description": "0.2.0 plus the supply chain views and elements from the DTH for health supply chain architecture (dth-sc), made by tools/archimate-dth/add_views.py with dth_sc.py. Draft: the product catalogue views (dth-pc) are to be added to the same folder."
+      "description": "0.2.0 plus the supply chain views and elements from the DTH for health supply chain architecture (dth-sc), made by tools/archimate-dth/add_views.py with dth_sc.py, plus the RA's Integrated View (Figs. 3.2 and 3.5) with dpi_h_integrated.py. Draft: the product catalogue views (dth-pc) are to be added to the same folder."
     },
     {
       "id": "0.2.0-draft.3",
@@ -65,6 +65,21 @@
       "model": "0.2.0",
       "view": "id-ba6aa15d5d84416dab9fbd8a9f9fea14",
       "basis": "by-eye"
+    }
+  ],
+  "tables": [
+    {
+      "block": "folio/dpi-h-ra/ch3-the-reference-architecture-for-d/t-3-2.md",
+      "label": "Table 3.2",
+      "kind": "relationship-types",
+      "rules": "relationship-rules.json"
+    },
+    {
+      "block": "folio/dpi-h-ra/ch3-the-reference-architecture-for-d/t-3-3.md",
+      "label": "Table 3.3",
+      "kind": "relationship-rules",
+      "rules": "relationship-rules.json",
+      "model": "0.3.0-draft.1"
     }
   ]
 }
