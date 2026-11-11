@@ -101,5 +101,20 @@
       "view": "id-a1d1097c63345308b872f2850ea4d281",
       "basis": "by-eye"
     }
+  ],
+  "tables": [
+    {
+      "block": "folio/dpi-h-ra/ch3-the-reference-architecture-for-d/t-3-2.md",
+      "label": "Table 3.2",
+      "kind": "relationship-types",
+      "rules": "relationship-rules.json"
+    },
+    {
+      "block": "folio/dpi-h-ra/ch3-the-reference-architecture-for-d/t-3-3.md",
+      "label": "Table 3.3",
+      "kind": "relationship-rules",
+      "rules": "relationship-rules.json",
+      "model": "0.3.0-draft.1"
+    }
   ]
 }
