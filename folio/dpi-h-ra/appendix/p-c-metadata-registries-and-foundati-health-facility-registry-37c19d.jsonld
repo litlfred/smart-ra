@@ -3,7 +3,7 @@
     "https://litlfred.github.io/smart-ra/ns/context/v1.jsonld",
     {
       "@base": "https://litlfred.github.io/folio/",
-      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns#"
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "papers/dpi-h-ra/blocks/prose-c-metadata-registries-and-foundati-health-facility-registry-37c19d",
@@ -13,6 +13,10 @@
   ],
   "label": "prose:c-metadata-registries-and-foundati-health-facility-registry-37c19d",
   "kind": "prose",
+  "cites": [
+    "references/who-2019-mfl-resource-package",
+    "references/who-global-health-facilities-database"
+  ],
   "text": "p-c-metadata-registries-and-foundati-health-facility-registry-37c19d.md",
   "meta": {
     "source": {
