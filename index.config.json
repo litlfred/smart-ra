@@ -62,7 +62,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/who-iris",
-          "ref": "c7d06d51dfc5c3dde0aaf702c3f51252ace0bb90",
+          "ref": "bdbf3b5a83c39091d2046396bb3b0caecbbd2e3c",
           "overrides": {
             "who-iris": {
               "whole": true
@@ -87,8 +87,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-11-11",
-              "ref": "c7d06d51dfc5c3dde0aaf702c3f51252ace0bb90",
-              "evidence": "Owner litlfred, issue smart-ra#240 (2026-11-11T12:08Z), \"Fix 1\": \"Re-pin smart-ra's eight harness mounts to the current tested set (as dth-phc)\"; owner freshness rule: a re-pin moves every pinned harness to its current main."
+              "ref": "bdbf3b5a83c39091d2046396bb3b0caecbbd2e3c",
+              "evidence": "litlfred, 2026-11-11 16:05:30Z, thread 'Merge manager' (cmsg_017WNUkNK8kdDziPK58Pv6G9A4gqquu7bha27LfmNqarmL): \"+12ht repin+merge window\"; re-pin every harness to its main HEAD under the owner's freshness rule (cat-harness-tools#1881)"
             }
           }
         }
@@ -99,7 +99,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/smart-base",
-          "ref": "4804b34245cfc80898042d9acd3dbb987480ef2d",
+          "ref": "41b3ac486d9fce87ea16aa1ab8e0a5bad9140b41",
           "overrides": {
             "smart-base": {
               "path": "smart-base",
@@ -135,8 +135,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-11-11",
-              "ref": "4804b34245cfc80898042d9acd3dbb987480ef2d",
-              "evidence": "Owner litlfred, issue smart-ra#240 (2026-11-11T12:08Z), \"Fix 1\": \"Re-pin smart-ra's eight harness mounts to the current tested set (as dth-phc)\"; owner freshness rule: a re-pin moves every pinned harness to its current main."
+              "ref": "41b3ac486d9fce87ea16aa1ab8e0a5bad9140b41",
+              "evidence": "litlfred, 2026-11-11 16:05:30Z, thread 'Merge manager' (cmsg_017WNUkNK8kdDziPK58Pv6G9A4gqquu7bha27LfmNqarmL): \"+12ht repin+merge window\"; re-pin every harness to its main HEAD under the owner's freshness rule (cat-harness-tools#1881)"
             }
           }
         }
@@ -147,7 +147,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/fhir-harness",
-          "ref": "1e00cf456fac2046d8bffe0070de84be1b3d3164",
+          "ref": "94b649add2d4202b6a3dbe6b6d14f4b7b28fbfa2",
           "overrides": {
             "fhir-harness": {
               "whole": true
@@ -157,8 +157,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-11-11",
-              "ref": "1e00cf456fac2046d8bffe0070de84be1b3d3164",
-              "evidence": "Owner litlfred, issue smart-ra#240 (2026-11-11T12:08Z), \"Fix 1\": \"Re-pin smart-ra's eight harness mounts to the current tested set (as dth-phc)\"; owner freshness rule: a re-pin moves every pinned harness to its current main."
+              "ref": "94b649add2d4202b6a3dbe6b6d14f4b7b28fbfa2",
+              "evidence": "litlfred, 2026-11-11 16:05:30Z, thread 'Merge manager' (cmsg_017WNUkNK8kdDziPK58Pv6G9A4gqquu7bha27LfmNqarmL): \"+12ht repin+merge window\"; re-pin every harness to its main HEAD under the owner's freshness rule (cat-harness-tools#1881)"
             }
           }
         }
@@ -169,7 +169,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/folio-assistant-core",
-          "ref": "1874fd5fd7a1f57ea13faf619af66d25aef31e97",
+          "ref": "1035ced2fd526cfc3ddcc78c1bd2b58ebed206f0",
           "overrides": {
             "folio-assistant-core": {
               "whole": true
@@ -185,8 +185,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-11-11",
-              "ref": "1874fd5fd7a1f57ea13faf619af66d25aef31e97",
-              "evidence": "Owner litlfred, issue smart-ra#240 (2026-11-11T12:08Z), \"Fix 1\": \"Re-pin smart-ra's eight harness mounts to the current tested set (as dth-phc)\"; owner freshness rule: a re-pin moves every pinned harness to its current main."
+              "ref": "1035ced2fd526cfc3ddcc78c1bd2b58ebed206f0",
+              "evidence": "litlfred, 2026-11-11 16:05:30Z, thread 'Merge manager' (cmsg_017WNUkNK8kdDziPK58Pv6G9A4gqquu7bha27LfmNqarmL): \"+12ht repin+merge window\"; re-pin every harness to its main HEAD under the owner's freshness rule (cat-harness-tools#1881)"
             }
           }
         }
@@ -197,7 +197,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness",
-          "ref": "4041cf5620e287a98d7ddeb465dd5841185114d0",
+          "ref": "be6f9dde8ae354c09eb7e1c06ea1b44e54529fce",
           "overrides": {
             "cat-harness": {
               "whole": true
@@ -213,8 +213,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-11-11",
-              "ref": "4041cf5620e287a98d7ddeb465dd5841185114d0",
-              "evidence": "Owner litlfred, issue smart-ra#240 (2026-11-11T12:08Z), \"Fix 1\": \"Re-pin smart-ra's eight harness mounts to the current tested set (as dth-phc)\"; owner freshness rule: a re-pin moves every pinned harness to its current main."
+              "ref": "be6f9dde8ae354c09eb7e1c06ea1b44e54529fce",
+              "evidence": "litlfred, 2026-11-11 16:05:30Z, thread 'Merge manager' (cmsg_017WNUkNK8kdDziPK58Pv6G9A4gqquu7bha27LfmNqarmL): \"+12ht repin+merge window\"; re-pin every harness to its main HEAD under the owner's freshness rule (cat-harness-tools#1881)"
             }
           }
         }
@@ -225,7 +225,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness-tools",
-          "ref": "02897c223c9710d42a7a4d949131a4a5faf23c41",
+          "ref": "b9a8d2023725155a4dd2d6babe0fafed0b940aab",
           "overrides": {
             "cat-harness-tools": {
               "whole": true
@@ -238,8 +238,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-11-11",
-              "ref": "02897c223c9710d42a7a4d949131a4a5faf23c41",
-              "evidence": "Owner litlfred, issue smart-ra#240 (2026-11-11T12:08Z), \"Fix 1\": \"Re-pin smart-ra's eight harness mounts to the current tested set (as dth-phc)\"; owner freshness rule: a re-pin moves every pinned harness to its current main."
+              "ref": "b9a8d2023725155a4dd2d6babe0fafed0b940aab",
+              "evidence": "litlfred, 2026-11-11 16:05:30Z, thread 'Merge manager' (cmsg_017WNUkNK8kdDziPK58Pv6G9A4gqquu7bha27LfmNqarmL): \"+12ht repin+merge window\"; re-pin every harness to its main HEAD under the owner's freshness rule (cat-harness-tools#1881)"
             }
           }
         }
@@ -250,7 +250,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/bootstrap",
-          "ref": "1c36aef5ab70d7e95ee6026124cd004cab0c0990",
+          "ref": "fdc84b22c30ace4b9476e56fa1cac2117e5aaf0a",
           "overrides": {
             "bootstrap": {
               "whole": true
@@ -260,8 +260,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-11-11",
-              "ref": "1c36aef5ab70d7e95ee6026124cd004cab0c0990",
-              "evidence": "Owner litlfred, issue smart-ra#240 (2026-11-11T12:08Z), \"Fix 1\": \"Re-pin smart-ra's eight harness mounts to the current tested set (as dth-phc)\"; owner freshness rule: a re-pin moves every pinned harness to its current main."
+              "ref": "fdc84b22c30ace4b9476e56fa1cac2117e5aaf0a",
+              "evidence": "litlfred, 2026-11-11 16:05:30Z, thread 'Merge manager' (cmsg_017WNUkNK8kdDziPK58Pv6G9A4gqquu7bha27LfmNqarmL): \"+12ht repin+merge window\"; re-pin every harness to its main HEAD under the owner's freshness rule (cat-harness-tools#1881)"
             }
           }
         }
@@ -272,7 +272,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/bootstrap-tools",
-          "ref": "30c4585d5dfbf6960e3ecca86b18d131d6cd3921",
+          "ref": "0dea4fa94b6a66706c537d4586fefdaf5e768eef",
           "overrides": {
             "bootstrap-tools": {
               "whole": true
@@ -285,8 +285,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-11-11",
-              "ref": "30c4585d5dfbf6960e3ecca86b18d131d6cd3921",
-              "evidence": "Owner litlfred, issue smart-ra#240 (2026-11-11T12:08Z), \"Fix 1\": \"Re-pin smart-ra's eight harness mounts to the current tested set (as dth-phc)\"; owner freshness rule: a re-pin moves every pinned harness to its current main."
+              "ref": "0dea4fa94b6a66706c537d4586fefdaf5e768eef",
+              "evidence": "litlfred, 2026-11-11 16:05:30Z, thread 'Merge manager' (cmsg_017WNUkNK8kdDziPK58Pv6G9A4gqquu7bha27LfmNqarmL): \"+12ht repin+merge window\"; re-pin every harness to its main HEAD under the owner's freshness rule (cat-harness-tools#1881)"
             }
           }
         }
