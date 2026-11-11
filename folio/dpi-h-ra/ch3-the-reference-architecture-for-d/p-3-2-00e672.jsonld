@@ -3,7 +3,7 @@
     "https://litlfred.github.io/smart-ra/ns/context/v1.jsonld",
     {
       "@base": "https://litlfred.github.io/folio/",
-      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns#"
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "papers/dpi-h-ra/blocks/prose-3-2-00e672",
@@ -13,6 +13,9 @@
   ],
   "label": "prose:3-2-00e672",
   "kind": "prose",
+  "cites": [
+    "references/archimate-3-2"
+  ],
   "text": "p-3-2-00e672.md",
   "meta": {
     "source": {
