@@ -16,6 +16,7 @@ Part of [Reference Architecture and Guidance for Digital Public Infrastructure f
 | [`9789240010567-eng.json`](9789240010567-eng.json) | Digital implementation investment guide (DIIG): integrating digital interventions into health programmes |  |
 | [`9789240013728-eng.json`](9789240013728-eng.json) | Digital health platform handbook: building a digital information infrastructure (infostructure) for health |  |
 | [`9789240084759-eng.json`](9789240084759-eng.json) | Ethics and governance of artificial intelligence for health: guidance on large multi-modal models |  |
+| [`9789241548960-eng.json`](9789241548960-eng.json) | Handbook for guideline development |  |
 | [`9789241580496-eng.json`](9789241580496-eng.json) | International Health Regulations (2005) |  |
 | [`abdm.json`](abdm.json) | Ayushman Bharat Digital Mission |  |
 | [`ahrq-electronic-medical-record-systems.json`](ahrq-electronic-medical-record-systems.json) | Electronic medical record systems |  |
@@ -72,6 +73,7 @@ Part of [Reference Architecture and Guidance for Digital Public Infrastructure f
 | [`openehr-ckm.json`](openehr-ckm.json) | openEHR Clinical Knowledge Manager |  |
 | [`openehr.json`](openehr.json) | openEHR |  |
 | [`openelis-global.json`](openelis-global.json) | OpenELIS Global |  |
+| [`openhie-architecture-specification.json`](openhie-architecture-specification.json) | Open Health Information Exchange (OpenHIE) Specification and Architecture |  |
 | [`openhie-fis.json`](openhie-fis.json) | OpenHIE Finance and Insurance Service (FIS) component specification |  |
 | [`openhie-iol.json`](openhie-iol.json) | OpenHIE Interoperability Layer (IOL) component specification |  |
 | [`openhie-terminology-maturity-model-2018.json`](openhie-terminology-maturity-model-2018.json) | OpenHIE terminology management maturity model |  |
@@ -80,6 +82,7 @@ Part of [Reference Architecture and Guidance for Digital Public Infrastructure f
 | [`peru-2023-ley-31814.json`](peru-2023-ley-31814.json) | Ley N.º 31814, Ley que promueve el uso de la inteligencia artificial en favor del desarrollo económico y social del país |  |
 | [`rhie.json`](rhie.json) | Rwanda Health Information Exchange |  |
 | [`salut-publica-catalunya.json`](salut-publica-catalunya.json) | Salut Pública |  |
+| [`smart-ig-starter-kit-references.json`](smart-ig-starter-kit-references.json) | [References](https://litlfred.github.io/bootstrap/schemas/#reference) section of the SMART IG starter kit |  |
 | [`snowstorm.json`](snowstorm.json) | Snowstorm |  |
 | [`somsns.json`](somsns.json) | SOMSNS |  |
 | [`sormas.json`](sormas.json) | SORMAS |  |
