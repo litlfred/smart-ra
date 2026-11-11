@@ -1,0 +1,138 @@
+{
+  "$schema": "folio-changeset/v1",
+  "folio": "folio",
+  "base": {
+    "ref": "origin/main",
+    "commit": "7a3df32635d07b1ec95c4cd3730d938386a6a000"
+  },
+  "head": {
+    "ref": "worktree",
+    "commit": null
+  },
+  "summary": {
+    "added": 0,
+    "removed": 0,
+    "changed": 6,
+    "unchanged": 927,
+    "renamed": 0,
+    "prose": 6,
+    "manifest": 0,
+    "moved": 0
+  },
+  "changes": [
+    {
+      "change": "changed",
+      "label": "prose:e-f9b436",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-e-f9b436.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:e",
+        "index": 4
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-e-f9b436.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:e",
+        "index": 4
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:e-5534a6",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-e-5534a6.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:e",
+        "index": 5
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-e-5534a6.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:e",
+        "index": 5
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:e-f3eb0f",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-e-f3eb0f.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:e",
+        "index": 6
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-e-f3eb0f.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:e",
+        "index": 6
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:e-b1992f",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-e-b1992f.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:e",
+        "index": 7
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-e-b1992f.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:e",
+        "index": 7
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:e-37b7cf",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/appendix/p-e-37b7cf.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:e",
+        "index": 8
+      },
+      "head": {
+        "file": "dpi-h-ra/appendix/p-e-37b7cf.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/appendix::sec:e",
+        "index": 8
+      }
+    },
+    {
+      "change": "changed",
+      "label": "prose:1-5-1-252744",
+      "aspects": [
+        "prose"
+      ],
+      "base": {
+        "file": "dpi-h-ra/ch1-introduction/p-1-5-1-252744.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch1-introduction::sec:1-5-1",
+        "index": 1
+      },
+      "head": {
+        "file": "dpi-h-ra/ch1-introduction/p-1-5-1-252744.ts",
+        "kind": "prose",
+        "section": "dpi-h-ra/ch1-introduction::sec:1-5-1",
+        "index": 1
+      }
+    }
+  ]
+}
