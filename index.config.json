@@ -47,24 +47,22 @@
             "site:review-sheet",
             "site:archimate",
             "site:mapper",
-            "site:redirects"
+            "site:redirects",
+            "site:context"
           ],
           "siteSteps": [
             "site:node-kinds"
-          ],
-          "keep": [
-            "ns"
           ]
         }
       },
-      "_site_comment": "`site.build.keep`: `ns`, the JSON-LD context at ns/context/v1.jsonld that publish-instance-context writes onto gh-pages; the root publish keeps it."
+      "_site_comment": "`site:context` builds the JSON-LD context the KG nodes name (ns/context/v1.jsonld under iriBase) into the site, so it is published with it (cat-harness-tools#1052); nothing else writes it, so nothing is kept."
     },
     {
       "name": "who-iris",
       "source": {
         "remote": {
           "repository": "litlfred/who-iris",
-          "ref": "bdadee3d159a27d58834133872e20ec631665f6c",
+          "ref": "90bb3f558f1f23a4d4b58c8e070e5bbc86e72695",
           "overrides": {
             "who-iris": {
               "whole": true
@@ -88,9 +86,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-30",
-              "ref": "bdadee3d159a27d58834133872e20ec631665f6c",
-              "evidence": "who-iris#133 gave the catalogue forwarding stub a <body>, which unblocked every smart-ra staging build (staging-banner refuses a page with none); merge window reopened by litlfred 2026-10-30 22:51Z 'emrge winfow + 3 hts' (to ~01:51Z); main tip bdadee3."
+              "on": "2026-11-05",
+              "ref": "90bb3f558f1f23a4d4b58c8e070e5bbc86e72695",
+              "evidence": "Owner litlfred, 2026-11-05: card '1. Freeze one set' — re-pin all site PRs to one fixed set of layer commits; 'merge when green' (bean folio-assistant-rpc6)."
             }
           }
         }
@@ -101,7 +99,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/smart-base",
-          "ref": "a3e89d4fdf7419391d20d4ef6acdf22bb7a27872",
+          "ref": "1e111a661b6fe2ada620b4e7480f085cedde36a0",
           "overrides": {
             "smart-base": {
               "path": "smart-base",
@@ -136,9 +134,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-30",
-              "ref": "a3e89d4fdf7419391d20d4ef6acdf22bb7a27872",
-              "evidence": "owner card 2026-10-30T20:17Z 'Merge, re-pin, publish' (smart-base#237 one copy of the DPI-H draft in smart-ra; cat-harness#796 example-is-a-mention rule)"
+              "on": "2026-11-05",
+              "ref": "1e111a661b6fe2ada620b4e7480f085cedde36a0",
+              "evidence": "Owner litlfred, 2026-11-05: card '1. Freeze one set' — re-pin all site PRs to one fixed set of layer commits; 'merge when green' (bean folio-assistant-rpc6)."
             }
           }
         }
@@ -149,7 +147,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/fhir-harness",
-          "ref": "3772521c4f6e0a1a88c2a01bfbe361f4ccab3b83",
+          "ref": "299de78ec2aa5ede11acb7db6327a83301ae49ed",
           "overrides": {
             "fhir-harness": {
               "whole": true
@@ -158,9 +156,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-30",
-              "ref": "3772521c4f6e0a1a88c2a01bfbe361f4ccab3b83",
-              "evidence": "litlfred, 2026-10-30 16:15:26Z in the 'Drain smart-ra issues and beans' thread: 'fix all issues.' Re-pin every layer to main after fhir-harness#210, smart-base#223, cat-harness-tools#925 merged; merge window extended to ~19:38Z; main tip 3772521 (IG pages #214, CI #217 #221, direction #224, schemas move #215, claim 5 schema link #226). Window: litlfred 2026-10-30 11:13Z 'merge and repin window open for 4 horus', extended 16:37Z 'merge window +3 hrs' (to ~19:38Z), extended 19:21Z 'merge window + 3hrs' (to ~22:38Z)."
+              "on": "2026-11-05",
+              "ref": "299de78ec2aa5ede11acb7db6327a83301ae49ed",
+              "evidence": "Owner litlfred, 2026-11-05: card '1. Freeze one set' — re-pin all site PRs to one fixed set of layer commits; 'merge when green' (bean folio-assistant-rpc6)."
             }
           }
         }
@@ -171,7 +169,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/folio-assistant-core",
-          "ref": "093e95b3711201ca6756257fd967f453880cf31d",
+          "ref": "705a2b8a75be2d20877df25b14b8c34003f02c7a",
           "overrides": {
             "folio-assistant-core": {
               "whole": true
@@ -186,9 +184,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-31",
-              "ref": "093e95b3711201ca6756257fd967f453880cf31d",
-              "evidence": "folio-assistant-core moved to main 093e95b, past #412 (6cd0644, glossary organizations + acronym check) and #405 (093e95b, DIIG phases & SMART approach charts). Merge-and-repin window (coordinator, 2026-10-31). Prior: litlfred, 2026-10-31: card 'A. Merge when green' for core#328 (thread Review sheet Apps Script), merge and repin window to ~09:00Z; re-pin folio-assistant-core to core#328 (1602a1b): review-sheet Code.gs, readable Config, relative sheet-sync URLs"
+              "on": "2026-11-05",
+              "ref": "705a2b8a75be2d20877df25b14b8c34003f02c7a",
+              "evidence": "Owner litlfred, 2026-11-05: card '1. Freeze one set' — re-pin all site PRs to one fixed set of layer commits; 'merge when green' (bean folio-assistant-rpc6)."
             }
           }
         }
@@ -199,7 +197,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness",
-          "ref": "b5ffdff01932907c9ae55bb51cf430965add62a4",
+          "ref": "19871a5054832432efda25715ee3f9a6741be1c2",
           "overrides": {
             "cat-harness": {
               "whole": true
@@ -214,9 +212,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-31",
-              "ref": "b5ffdff01932907c9ae55bb51cf430965add62a4",
-              "evidence": "litlfred, 2026-10-31 01:59:58Z (via coordinator): 'merge repin winfow + 3hts' (window to ~05:00Z); main tip b5ffdff (re-pin cat-harness and tools past the archimate fix (cat-harness#831, tools#1070))."
+              "on": "2026-11-08",
+              "ref": "19871a5054832432efda25715ee3f9a6741be1c2",
+              "evidence": "Owner litlfred, 2026-11-08 18:35Z: card Q-RAC-11 A — merge cat-harness#1168 and re-pin cat-harness in smart-ra#207. Pinned to the 2026-11-05 freeze commit f5c9140 plus #1168's one change (branch pin/smart-ra-freeze-rules-family), so no other layer moves."
             }
           }
         }
@@ -227,7 +225,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness-tools",
-          "ref": "45b0894620099663f17abb584f376502d702422a",
+          "ref": "961b4d939d7d69874f44162d12407bd3f1d96c6b",
           "overrides": {
             "cat-harness-tools": {
               "whole": true
@@ -239,9 +237,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-31",
-              "ref": "45b0894620099663f17abb584f376502d702422a",
-              "evidence": "litlfred, 2026-10-31 01:59:58Z (via coordinator): 'merge repin winfow + 3hts' (window to ~05:00Z); main tip 45b0894 (re-pin cat-harness and tools past the archimate fix (cat-harness#831, tools#1070))."
+              "on": "2026-11-08",
+              "ref": "961b4d939d7d69874f44162d12407bd3f1d96c6b",
+              "evidence": "Owner litlfred, 2026-11-08: card Q-CIB-4 A (13:23Z, release-gated CI, full rollout in phases; phase 4 = the other layers) and Q-MM-1 A (\"non-content can merge/repin + 12hr\", window to 2026-11-08 19:00Z). Tools-only re-pin to cat-harness-tools 961b4d9 (#1722): a non-release PR runs the fast tier of layer-pr-checks; cat-harness#1158."
             }
           }
         }
@@ -252,7 +250,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/bootstrap",
-          "ref": "3ce2b5d641779ca78432971abb919e6e3afdc60a",
+          "ref": "12fa6d57dfad06ae73e234f116145dfc8d77ad50",
           "overrides": {
             "bootstrap": {
               "whole": true
@@ -261,9 +259,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-30",
-              "ref": "3ce2b5d641779ca78432971abb919e6e3afdc60a",
-              "evidence": "litlfred, 2026-10-30 16:15:26Z in the 'Drain smart-ra issues and beans' thread: 'fix all issues.' Re-pin every layer to main after fhir-harness#210, smart-base#223, cat-harness-tools#925 merged; merge window extended to ~19:38Z"
+              "on": "2026-11-05",
+              "ref": "12fa6d57dfad06ae73e234f116145dfc8d77ad50",
+              "evidence": "Owner litlfred, 2026-11-05: card '1. Freeze one set' — re-pin all site PRs to one fixed set of layer commits; 'merge when green' (bean folio-assistant-rpc6)."
             }
           }
         }
@@ -274,7 +272,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/bootstrap-tools",
-          "ref": "b7fb762ba968a6868bbe5004144ddf78023eb9c7",
+          "ref": "9f478d4d9fcd87842e9a4f5b886232ec806e657e",
           "overrides": {
             "bootstrap-tools": {
               "whole": true
@@ -286,9 +284,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-10-30",
-              "ref": "b7fb762ba968a6868bbe5004144ddf78023eb9c7",
-              "evidence": "litlfred, 2026-10-30 16:15:26Z in the 'Drain smart-ra issues and beans' thread: 'fix all issues.' Re-pin every layer to main after fhir-harness#210, smart-base#223, cat-harness-tools#925 merged; merge window extended to ~19:38Z"
+              "on": "2026-11-05",
+              "ref": "9f478d4d9fcd87842e9a4f5b886232ec806e657e",
+              "evidence": "Owner litlfred, 2026-11-05: card '1. Freeze one set' — re-pin all site PRs to one fixed set of layer commits; 'merge when green' (bean folio-assistant-rpc6)."
             }
           }
         }
