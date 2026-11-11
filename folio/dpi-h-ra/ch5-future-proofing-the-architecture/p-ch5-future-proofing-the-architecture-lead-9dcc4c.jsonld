@@ -3,7 +3,7 @@
     "https://litlfred.github.io/smart-ra/ns/context/v1.jsonld",
     {
       "@base": "https://litlfred.github.io/folio/",
-      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns#"
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "papers/dpi-h-ra/blocks/prose-ch5-future-proofing-the-architecture-lead-9dcc4c",
@@ -13,6 +13,11 @@
   ],
   "label": "prose:ch5-future-proofing-the-architecture-lead-9dcc4c",
   "kind": "prose",
+  "cites": [
+    "references/eu-2024-1689-ai-act",
+    "references/who-2021-ai-ethics-governance",
+    "references/9789240084759-eng"
+  ],
   "text": "p-ch5-future-proofing-the-architecture-lead-9dcc4c.md",
   "meta": {
     "source": {
