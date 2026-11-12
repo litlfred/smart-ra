@@ -5,85 +5,85 @@
   {
    "id": "Task_AgreeReleaseDate",
    "name": "Agree the release date and comment period",
-   "left": 17.08,
-   "top": 6.04,
+   "left": 21.9,
+   "top": 4.35,
    "box": {
-    "left": 12.58,
-    "top": 21.74,
-    "width": 1.49,
-    "height": 5.8
+    "left": 16.61,
+    "top": 25,
+    "width": 1.75,
+    "height": 5.22
    }
   },
   {
    "id": "Task_BuildPcRelease",
    "name": "Build the public comment release",
-   "left": 27.64,
-   "top": 66.91,
+   "left": 32.48,
+   "top": 69.57,
    "box": {
-    "left": 23.14,
-    "top": 89.86,
-    "width": 1.49,
-    "height": 5.8
+    "left": 27.19,
+    "top": 90.22,
+    "width": 1.75,
+    "height": 5.22
    }
   },
   {
    "id": "Task_SetUpChannels",
    "name": "Set up the comment channels, with instructions and links",
-   "left": 40.06,
-   "top": 37.44,
+   "left": 43.07,
+   "top": 36.96,
    "box": {
-    "left": 34.32,
-    "top": 53.14,
-    "width": 1.49,
-    "height": 5.8
+    "left": 37.77,
+    "top": 57.61,
+    "width": 1.75,
+    "height": 5.22
    }
   },
   {
    "id": "Task_WriteAnnouncement",
    "name": "Write the announcement, with links",
-   "left": 50,
-   "top": 37.44,
+   "left": 53.65,
+   "top": 36.96,
    "box": {
-    "left": 45.5,
-    "top": 53.14,
-    "width": 1.49,
-    "height": 5.8
+    "left": 48.36,
+    "top": 57.61,
+    "width": 1.75,
+    "height": 5.22
    }
   },
   {
    "id": "Task_Distribute",
    "name": "Distribute to the public",
-   "left": 60.56,
-   "top": 6.04,
+   "left": 64.23,
+   "top": 4.35,
    "box": {
-    "left": 56.06,
-    "top": 21.74,
-    "width": 1.49,
-    "height": 5.8
+    "left": 58.94,
+    "top": 25,
+    "width": 1.75,
+    "height": 5.22
    }
   },
   {
    "id": "CallActivity_PublicComment",
    "name": "Public comment on the release",
-   "left": 72.98,
-   "top": 37.44,
+   "left": 74.82,
+   "top": 36.96,
    "box": {
-    "left": 67.24,
-    "top": 53.14,
-    "width": 1.49,
-    "height": 5.8
+    "left": 69.53,
+    "top": 57.61,
+    "width": 1.75,
+    "height": 5.22
    }
   },
   {
    "id": "Task_ArchiveRelease",
    "name": "Archive the release with the review",
-   "left": 82.92,
-   "top": 66.91,
+   "left": 85.4,
+   "top": 69.57,
    "box": {
-    "left": 78.42,
-    "top": 89.86,
-    "width": 1.49,
-    "height": 5.8
+    "left": 80.11,
+    "top": 90.22,
+    "width": 1.75,
+    "height": 5.22
    }
   }
  ],
@@ -108,8 +108,7 @@
     "title": "Review coordinator",
     "skills": [
      {
-      "name": "rendered-impact",
-      "href": "../../../en/cat-harness/processes/skills/rendered-impact.html"
+      "name": "rendered-impact"
      },
      {
       "name": "review-heatmap",
@@ -120,8 +119,7 @@
       "href": "../../../en/cat-harness/processes/skills/staging-review.html"
      },
      {
-      "name": "visual-diff",
-      "href": "../../../en/cat-harness/processes/skills/visual-diff.html"
+      "name": "visual-diff"
      }
     ]
    }
@@ -153,10 +151,6 @@
       "href": "../../../en/cat-harness/processes/skills/compiled-artefact-cache.html"
      },
      {
-      "name": "content-publish",
-      "href": "../../../en/cat-harness/processes/skills/content-publish.html"
-     },
-     {
       "name": "content-test",
       "href": "../../../en/cat-harness/processes/skills/content-test.html"
      },
@@ -181,16 +175,13 @@
       "href": "../../../en/cat-harness/processes/skills/platform-gates.html"
      },
      {
-      "name": "prepare-merge",
-      "href": "../../../en/cat-harness/processes/skills/prepare-merge.html"
+      "name": "prepare-merge"
      },
      {
-      "name": "publish-verification",
-      "href": "../../../en/cat-harness/processes/skills/publish-verification.html"
+      "name": "publish-verification"
      },
      {
-      "name": "qa-reports",
-      "href": "../../../en/cat-harness/processes/skills/qa-reports.html"
+      "name": "qa-reports"
      },
      {
       "name": "remote-mount",
@@ -205,8 +196,7 @@
       "href": "../../../en/cat-harness/processes/skills/sub-kg-lifecycle.html"
      },
      {
-      "name": "todo-manager",
-      "href": "../../../en/cat-harness/processes/skills/todo-manager.html"
+      "name": "todo-manager"
      },
      {
       "name": "translation-manager",
@@ -217,8 +207,7 @@
       "href": "../../../en/cat-harness/processes/skills/upstream-version-adoption.html"
      },
      {
-      "name": "watch",
-      "href": "../../../en/cat-harness/processes/skills/watch.html"
+      "name": "watch"
      }
     ]
    }
@@ -255,16 +244,6 @@
       "via": "author"
      },
      {
-      "name": "content-author",
-      "href": "../../../en/cat-harness/processes/skills/content-author.html",
-      "via": "author"
-     },
-     {
-      "name": "content-plan",
-      "href": "../../../en/cat-harness/processes/skills/content-plan.html",
-      "via": "author"
-     },
-     {
       "name": "content-review",
       "href": "../../../en/cat-harness/processes/skills/content-review.html",
       "via": "author"
@@ -300,12 +279,10 @@
      },
      {
       "name": "todo-manager",
-      "href": "../../../en/cat-harness/processes/skills/todo-manager.html",
       "via": "author"
      },
      {
-      "name": "voice-authoring-guidance",
-      "href": "../../../en/cat-harness/processes/skills/voice-authoring-guidance.html"
+      "name": "voice-authoring-guidance"
      }
     ]
    }
@@ -338,16 +315,6 @@
       "via": "author"
      },
      {
-      "name": "content-author",
-      "href": "../../../en/cat-harness/processes/skills/content-author.html",
-      "via": "author"
-     },
-     {
-      "name": "content-plan",
-      "href": "../../../en/cat-harness/processes/skills/content-plan.html",
-      "via": "author"
-     },
-     {
       "name": "content-review",
       "href": "../../../en/cat-harness/processes/skills/content-review.html",
       "via": "author"
@@ -383,12 +350,10 @@
      },
      {
       "name": "todo-manager",
-      "href": "../../../en/cat-harness/processes/skills/todo-manager.html",
       "via": "author"
      },
      {
-      "name": "voice-authoring-guidance",
-      "href": "../../../en/cat-harness/processes/skills/voice-authoring-guidance.html"
+      "name": "voice-authoring-guidance"
      }
     ]
    }
@@ -412,8 +377,7 @@
     "title": "Review coordinator",
     "skills": [
      {
-      "name": "rendered-impact",
-      "href": "../../../en/cat-harness/processes/skills/rendered-impact.html"
+      "name": "rendered-impact"
      },
      {
       "name": "review-heatmap",
@@ -424,8 +388,7 @@
       "href": "../../../en/cat-harness/processes/skills/staging-review.html"
      },
      {
-      "name": "visual-diff",
-      "href": "../../../en/cat-harness/processes/skills/visual-diff.html"
+      "name": "visual-diff"
      }
     ]
    }
@@ -459,16 +422,6 @@
       "via": "author"
      },
      {
-      "name": "content-author",
-      "href": "../../../en/cat-harness/processes/skills/content-author.html",
-      "via": "author"
-     },
-     {
-      "name": "content-plan",
-      "href": "../../../en/cat-harness/processes/skills/content-plan.html",
-      "via": "author"
-     },
-     {
       "name": "content-review",
       "href": "../../../en/cat-harness/processes/skills/content-review.html",
       "via": "author"
@@ -504,12 +457,10 @@
      },
      {
       "name": "todo-manager",
-      "href": "../../../en/cat-harness/processes/skills/todo-manager.html",
       "via": "author"
      },
      {
-      "name": "voice-authoring-guidance",
-      "href": "../../../en/cat-harness/processes/skills/voice-authoring-guidance.html"
+      "name": "voice-authoring-guidance"
      }
     ]
    }
@@ -541,10 +492,6 @@
       "href": "../../../en/cat-harness/processes/skills/compiled-artefact-cache.html"
      },
      {
-      "name": "content-publish",
-      "href": "../../../en/cat-harness/processes/skills/content-publish.html"
-     },
-     {
       "name": "content-test",
       "href": "../../../en/cat-harness/processes/skills/content-test.html"
      },
@@ -569,16 +516,13 @@
       "href": "../../../en/cat-harness/processes/skills/platform-gates.html"
      },
      {
-      "name": "prepare-merge",
-      "href": "../../../en/cat-harness/processes/skills/prepare-merge.html"
+      "name": "prepare-merge"
      },
      {
-      "name": "publish-verification",
-      "href": "../../../en/cat-harness/processes/skills/publish-verification.html"
+      "name": "publish-verification"
      },
      {
-      "name": "qa-reports",
-      "href": "../../../en/cat-harness/processes/skills/qa-reports.html"
+      "name": "qa-reports"
      },
      {
       "name": "remote-mount",
@@ -593,8 +537,7 @@
       "href": "../../../en/cat-harness/processes/skills/sub-kg-lifecycle.html"
      },
      {
-      "name": "todo-manager",
-      "href": "../../../en/cat-harness/processes/skills/todo-manager.html"
+      "name": "todo-manager"
      },
      {
       "name": "translation-manager",
@@ -605,8 +548,7 @@
       "href": "../../../en/cat-harness/processes/skills/upstream-version-adoption.html"
      },
      {
-      "name": "watch",
-      "href": "../../../en/cat-harness/processes/skills/watch.html"
+      "name": "watch"
      }
     ]
    }

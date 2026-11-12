@@ -12,6 +12,14 @@
 .lib-page #document .seg button[aria-selected="true"] { font-weight: 600; }
 .lib-page #document .docbody { padding: 0 16px 8px; }
 .lib-page #document .dockw { padding: 4px 16px; }
+/* Kept figures and transcribed tables (who-iris#224). */
+.lib-page #document .doc-gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; margin: .5rem 0 1rem; }
+.lib-page #document .doc-figure { margin: 0; border: 1px solid var(--border, #8884); border-radius: 6px; padding: 6px; background: var(--card, transparent); }
+.lib-page #document .doc-figure img { display: block; width: 100%; height: auto; max-height: 320px; object-fit: contain; background: #fff; border-radius: 4px; }
+.lib-page #document .doc-figure figcaption { font-size: .85em; margin-top: 6px; }
+.lib-page #document .doc-table { margin: .4rem 0; }
+.lib-page #document .doc-table-scroll { overflow-x: auto; max-width: 100%; }
+.lib-page #document .doc-table table { font-size: .85em; }
 .lib-page #document p.kw, .lib-page #document .dockw p.kw { display: inline; margin: 0; }
 .lib-page #document .docsec p.kw { display: block; margin: 2px 0 6px; }
 .lib-page #document p.kw .pill { margin: 0 2px 2px 0; }
@@ -92,6 +100,17 @@ html[data-fa-scheme="light"] .lib-page {
 .lib-page .lib-view .pdf-viewer { margin:.6rem 0 0 !important; }
 .lib-page .lib-view img { display:block; max-width:100%; height:auto; border:1px solid var(--line); border-radius:6px; }
 .lib-page .lib-view-absent p { margin:0; }
+.lib-page .lib-record { padding:6px 0; border-bottom:1px solid var(--line); }
+.lib-page .lib-record p { margin:0; }
+.lib-page .lib-summary { padding:6px 0 10px; border-bottom:1px solid var(--line); }
+.lib-page .lib-summary h2 { margin:.4rem 0; }
+.lib-page .lib-summary p { margin:.3rem 0; max-width:60rem; }
+.lib-page .lib-versions { padding:6px 0; border-bottom:1px solid var(--line); }
+.lib-page .lib-versions p { margin:0; }
+.lib-page .lib-lang-toggle { margin:.5rem 0 0; }
+.lib-page .lib-lang-toggle a.seg-link { display:inline-block; min-height:24px; line-height:24px; padding:2px 10px; border:1px solid var(--line); text-decoration:none; }
+.lib-page details.lib-all { padding:10px 0; border-top:1px solid var(--line); }
+.lib-page details.lib-all > summary { cursor:pointer; font-size:1rem; min-height:24px; }
 .lib-page .toolbar { padding:10px 0; display:flex; flex-wrap:wrap; gap:8px; align-items:center; border-bottom:1px solid var(--line); }
 .lib-page input, .lib-page select, .lib-page button { font:inherit; color:var(--fg); background:var(--box);
   border:1px solid var(--line); border-radius:6px; padding:6px 9px; }
@@ -384,6 +403,10 @@ var DATA_HREF = new URL("../../../../folio-assistant-core/library/mehl-2023-full
   // the page loads that also contains this page (a page can load another
   // site's chrome from the same origin, /folio-assistant/assets/…).
   const vendorBase = () => {
+    // A site that loads its shared assets from a host names the bundle's
+    // address in a meta (cat-harness-tools scripts/lib/shared-assets.ts).
+    const shared = document.querySelector('meta[name="fa-shared-asset"][data-dir="assets/vendor/crepe/"]');
+    if (shared && shared.getAttribute("content")) return shared.getAttribute("content");
     let best = null;
     for (const e of document.querySelectorAll("script[src], link[href]")) {
       let u;
@@ -1036,15 +1059,41 @@ var DATA_HREF = new URL("../../../../folio-assistant-core/library/mehl-2023-full
     "html.fa-bp .fa-sec-actions>a{display:none}html.fa-bp .fa-block-panel .fa-sec-actions>a{display:block;margin:.5rem 0;padding:.55rem .7rem;border:1px solid #8885;border-radius:8px;text-decoration:none}" +
     "html.fa-bp .block-actions>.ba-trigger,html.fa-bp .block-actions>.ba-bookmark{width:20px;height:20px;border:0;background:none;font-size:13px;opacity:.35;filter:grayscale(1)}" +
     "html.fa-bp .block-actions>.ba-trigger .ba-n{top:-4px;right:-6px;font-size:9px;padding:0 3px}" +
-    "html.fa-bp .block-actions:hover>.ba-trigger,html.fa-bp .ba-trigger:focus-visible,html.fa-bp .ba-trigger[aria-expanded=true],html.fa-bp :hover>.block-actions>.ba-trigger,html.fa-bp p:has(+.fa-blk:hover)>.block-actions>.ba-trigger" + ON +
-    "html.fa-bp .block-actions:hover>.ba-bookmark,html.fa-bp .ba-bookmark:focus-visible,html.fa-bp .ba-bookmark[aria-pressed=true],html.fa-bp :hover>.block-actions>.ba-bookmark,html.fa-bp p:has(+.fa-blk:hover)>.block-actions>.ba-bookmark" + ON +
+    "html.fa-bp .block-actions:hover>.ba-trigger,html.fa-bp .ba-trigger:focus-visible,html.fa-bp .ba-trigger[aria-expanded=true],html.fa-bp :not(.main-content,.fa-doc,main):hover>.block-actions>.ba-trigger,html.fa-bp p:has(+.fa-blk:hover)>.block-actions>.ba-trigger" + ON +
+    // Owner, 2026-11-09: "anchor is only highlighted on the content block it
+    // is in, but not feedback and bookmark ... always highlighted on any
+    // content block". A section's box hangs straight off .main-content, so
+    // ":hover>" matched the whole page and lit every box at once. The page
+    // column is not a block: a section's box lights from its .fa-hot heading.
+    "html.fa-bp .block-actions:hover>.ba-bookmark,html.fa-bp .ba-bookmark:focus-visible,html.fa-bp .ba-bookmark[aria-pressed=true],html.fa-bp :not(.main-content,.fa-doc,main):hover>.block-actions>.ba-bookmark,html.fa-bp p:has(+.fa-blk:hover)>.block-actions>.ba-bookmark" + ON +
     // Owner, 2026-11-08: "pin icon does not get highlighted on hover". A
     // pressed 🔖 is always in full colour, so hovering it changed nothing.
     // Every gutter icon now lights a tinted tile under the pointer, pressed
     // or not, so the one you are about to press is always the one that shows.
     "html.fa-bp .block-actions>.ba-trigger,html.fa-bp .block-actions>.ba-bookmark,html.fa-bp .main-content .anchor-heading{border-radius:5px;transition:background-color .12s}" +
     "html.fa-bp .block-actions>.ba-trigger:hover,html.fa-bp .block-actions>.ba-bookmark:hover,html.fa-bp .main-content .anchor-heading:hover{opacity:1;filter:none;background:color-mix(in srgb,var(--link,#0b5cad) 18%,transparent)}" +
+    // Owner, 2026-11-09: "no indication if a bookmark has been selected or
+    // not". Hovering a block lights every gutter icon in full colour, so a
+    // pressed 🔖 looked the same as one that was not. A pressed 🔖 now keeps
+    // a tinted tile with an accent ring at all times, hovered or not.
+    "html.fa-bp .block-actions>.ba-bookmark[aria-pressed=true]{opacity:1;filter:none;background:color-mix(in srgb,var(--link,#0b5cad) 24%,transparent);box-shadow:inset 0 0 0 1.5px var(--link,#0b5cad)}" +
+    "html.fa-bp .block-actions>.ba-bookmark[aria-pressed=true]:hover{background:color-mix(in srgb,var(--link,#0b5cad) 34%,transparent)}" +
     "html.fa-bp .main-content .anchor-heading svg{visibility:visible;opacity:.35;filter:grayscale(1)}" +
+    // Owner, 2026-11-10: "make RHS grill icons 50% bigger on laptop". From
+    // laptop width up, the 🔗, 📣 and 🔖 are half again as big (20px -> 30px
+    // tiles, 1rem -> 1.5rem link icon) and the right gutter widens to fit,
+    // keeping the same spacing to the text. Tablets and phones are unchanged.
+    "@media (min-width:64rem){html.fa-bp .main-content-wrap{padding-right:3.25rem}" +
+    "html.fa-bp .main-content .anchor-heading{right:-3rem;width:2.25rem;padding:0 .375rem}" +
+    "html.fa-bp .main-content .anchor-heading svg{width:1.5rem;height:1.5rem}" +
+    "html.fa-bp .main-content .block-actions{width:2.25rem;margin-right:-4rem}" +
+    // A section box is placed by its right offset, not by the margin above, so it
+    // must not pick up that -4rem margin too: with both, it sat 7rem past the
+    // text and off the right edge of the window (smart-trust-demo, 11-11).
+    "html.fa-bp .main-content .fa-sec-actions{right:-3rem;margin:0}" +
+    "html.fa-bp .fa-page-main.main-content:has(>.fa-sec-actions){margin-right:3.25rem}" +
+    "html.fa-bp .block-actions>.ba-trigger,html.fa-bp .block-actions>.ba-bookmark{width:30px;height:30px;font-size:20px}" +
+    "html.fa-bp .block-actions>.ba-trigger .ba-n{top:-5px;right:-8px;font-size:12px;padding:0 4px}}" +
     "html.fa-bp .main-content .fa-hot>.anchor-heading svg,html.fa-bp .main-content :hover>.anchor-heading svg,html.fa-bp .main-content .anchor-heading:focus svg" + ON +
     ".fa-block-panel .bp-copy{font:inherit;font-size:.82rem;margin:.1rem .35rem .3rem 0;padding:.3rem .6rem;border:1px solid #8886;border-radius:6px;background:none;color:inherit;cursor:pointer}" +
     ".fa-block-panel .bp-copy.ba-copied,.fa-block-panel .bp-bookmark[aria-pressed=true]{border-color:#2e7d32;background:#2e7d32;color:#fff}" +
@@ -1513,11 +1562,73 @@ function docPages(d){
       return '<tr><td class="num">' + p.physical + '</td><td>' + lab + '</td><td>' + secs + '</td><td>' + figs + '</td></tr>';
     }).join("") + '</tbody></table>';
 }
+/* FIGURES AND TABLES SHOWN -- who-iris#224. Each kept figure as its picture
+   with its description in the page's language (else English, else the first),
+   and each transcribed table drawn from its cells. Every description is an
+   agent draft until a person confirms it, and the page says so. */
+function docLang(){
+  var l = (document.documentElement.getAttribute("lang") || "en").toLowerCase().split("-")[0];
+  return l || "en";
+}
+function pickNarrative(m){
+  if (!m) return "";
+  var l = docLang();
+  if (m[l]) return m[l];
+  if (m.en) return m.en;
+  for (var k in m) if (Object.prototype.hasOwnProperty.call(m, k)) return m[k];
+  return "";
+}
+function docFileHref(id, file){
+  var dir = DATA_HREF.slice(0, DATA_HREF.lastIndexOf("/") + 1);
+  return dir + "files/" + encodeURIComponent(id) + "/" + file.split("/").map(encodeURIComponent).join("/");
+}
+function docGallery(d){
+  if (!d.images || !d.images.length) return "";
+  var rtl = { ar: 1, fa: 1, he: 1, ur: 1 }[docLang()] ? ' dir="rtl"' : '';
+  return '<h3>Figures <span class="note">(' + d.images.length + ')</span></h3>' +
+    '<p class="note">Descriptions are drafts written by an agent and not yet reviewed.</p>' +
+    '<div class="doc-gallery">' + d.images.map(function(im){
+      var text = pickNarrative(im.narratives);
+      return '<figure class="doc-figure" id="fig-' + esc(im.id) + '">' +
+        '<a href="' + esc(docFileHref(DOC_ID, im.file)) + '" target="_blank" rel="noopener">' +
+        '<img loading="lazy" src="' + esc(docFileHref(DOC_ID, im.file)) + '" alt="' + esc(text) + '"></a>' +
+        '<figcaption' + rtl + '>' + (im.shows && im.shows.length ? '<strong>' + esc(im.shows.join(", ")) + '.</strong> ' : '') +
+        esc(text) + ' <span class="note">' + pageText(im.page, null) + '</span></figcaption></figure>';
+    }).join("") + '</div>';
+}
+function docTable(t){
+  var groups = t.columns.some(function(c){ return c.group; });
+  var head = "";
+  if (groups) {
+    var cells = [], i = 0;
+    while (i < t.columns.length) {
+      var g = t.columns[i].group || "", n = 1;
+      while (i + n < t.columns.length && (t.columns[i + n].group || "") === g && g) n++;
+      cells.push('<th' + (n > 1 ? ' colspan="' + n + '"' : '') + '>' + esc(g) + '</th>');
+      i += n;
+    }
+    head += '<tr>' + cells.join("") + '</tr>';
+  }
+  head += '<tr>' + t.columns.map(function(c){ return '<th>' + esc(c.titles) + '</th>'; }).join("") + '</tr>';
+  var body = t.rows.map(function(r){ return '<tr>' + r.map(function(c){ return '<td>' + esc(c) + '</td>'; }).join("") + '</tr>'; }).join("");
+  var text = pickNarrative(t.narratives);
+  return '<details class="doc-table"><summary><strong>' + esc(t.caption || t.label) + '</strong> <span class="note">' +
+    (t.pages.length ? 'p' + t.pages.join("\u2013") : '') + ', ' + t.rows.length + ' rows</span></summary>' +
+    (text ? '<p>' + esc(text) + '</p>' : '') +
+    '<div class="doc-table-scroll"><table>' + '<thead>' + head + '</thead><tbody>' + body + '</tbody></table></div>' +
+    (t.notes ? '<p class="note">' + esc(t.notes) + '</p>' : '') +
+    '<p class="note"><a href="' + esc(docFileHref(DOC_ID, t.csv)) + '">CSV</a></p></details>';
+}
+function docTables(d){
+  if (!d.tables || !d.tables.length) return "";
+  return '<h3>Tables <span class="note">(' + d.tables.length + ', transcribed from the pages; drafts)</span></h3>' + d.tables.map(docTable).join("");
+}
 function docFigures(d){
-  if (!d.figures) return notRecorded("Figures and tables");
-  if (!d.figures.length) return '<p class="empty">No captions found. Nothing failed \u2014 none opens a line with a label and number.</p>';
+  var shown = docGallery(d) + docTables(d);
+  if (!d.figures) return shown + notRecorded("Figures and tables");
+  if (!d.figures.length) return shown + '<p class="empty">No captions found. Nothing failed \u2014 none opens a line with a label and number.</p>';
   var gaps = (d.checks.figureSequenceGaps || []);
-  return (gaps.length ? '<p class="note">Numbering gaps in the document: ' + esc(gaps.join(", ")) + '.</p>' : '') +
+  return shown + (shown ? '<h3>Captions in the text</h3>' : '') + (gaps.length ? '<p class="note">Numbering gaps in the document: ' + esc(gaps.join(", ")) + '.</p>' : '') +
     '<table><thead><tr><th>kind</th><th>no.</th><th>caption</th><th>page</th><th>confidence</th></tr></thead><tbody>' +
     d.figures.map(function(f){
       return '<tr><td>' + esc(f.kind) + '</td><td>' + esc(f.number) + '</td><td>' + (f.title ? esc(f.title) : '<span class="note">withheld</span>') +

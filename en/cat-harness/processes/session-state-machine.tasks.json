@@ -5,97 +5,97 @@
   {
    "id": "A_IdentifyActor",
    "name": "Establish who is acting",
-   "left": 19.5,
-   "top": 17.8,
+   "left": 19.78,
+   "top": 27.61,
    "box": {
-    "left": 14.36,
-    "top": 33.9,
-    "width": 1.7,
-    "height": 4.07
+    "left": 14.41,
+    "top": 41.79,
+    "width": 1.78,
+    "height": 3.58
    }
   },
   {
    "id": "A_AskWhoIsActing",
    "name": "Ask who is acting",
-   "left": 25.89,
-   "top": 57.12,
+   "left": 29.04,
+   "top": 78.36,
    "box": {
-    "left": 20.74,
-    "top": 73.22,
-    "width": 1.7,
-    "height": 4.07
+    "left": 23.67,
+    "top": 92.54,
+    "width": 1.78,
+    "height": 3.58
    }
   },
   {
    "id": "A_OpenSession",
    "name": "Open the session record",
-   "left": 40.78,
-   "top": 21.19,
+   "left": 40.52,
+   "top": 27.61,
    "box": {
-    "left": 34.93,
-    "top": 30.51,
-    "width": 1.7,
-    "height": 4.07
+    "left": 35.15,
+    "top": 41.79,
+    "width": 1.78,
+    "height": 3.58
    }
   },
   {
    "id": "Call_SecurePermissions",
    "name": "Secure the agent's permissions",
-   "left": 54.26,
-   "top": 17.8,
+   "left": 51.63,
+   "top": 27.61,
    "box": {
-    "left": 49.11,
-    "top": 33.9,
-    "width": 1.7,
-    "height": 4.07
+    "left": 46.26,
+    "top": 41.79,
+    "width": 1.78,
+    "height": 3.58
    }
   },
   {
    "id": "A_ReadTurn",
    "name": "Take in the turn",
-   "left": 68.44,
-   "top": 17.8,
+   "left": 62.74,
+   "top": 27.61,
    "box": {
-    "left": 63.3,
-    "top": 33.9,
-    "width": 1.7,
-    "height": 4.07
+    "left": 57.37,
+    "top": 41.79,
+    "width": 1.78,
+    "height": 3.58
    }
   },
   {
    "id": "A_Touch",
    "name": "Refresh `updatedAt` only",
-   "left": 89.72,
-   "top": 4.24,
+   "left": 73.48,
+   "top": 2.24,
    "box": {
-    "left": 83.87,
-    "top": 13.56,
-    "width": 1.7,
-    "height": 4.07
+    "left": 68.11,
+    "top": 16.42,
+    "width": 1.78,
+    "height": 3.58
    }
   },
   {
    "id": "A_UpdateSession",
    "name": "Write what changed",
-   "left": 89.72,
-   "top": 21.19,
+   "left": 73.48,
+   "top": 50,
    "box": {
-    "left": 83.87,
-    "top": 30.51,
-    "width": 1.7,
-    "height": 4.07
+    "left": 68.11,
+    "top": 64.18,
+    "width": 1.78,
+    "height": 3.58
    }
   },
   {
    "id": "A_CloseSession",
    "name": "Close the session",
-   "left": 89.72,
-   "top": 38.14,
+   "left": 88.67,
+   "top": 27.61,
    "box": {
-    "left": 83.87,
-    "top": 47.46,
-    "width": 1.7,
-    "height": 4.07
+    "left": 83.3,
+    "top": 41.79,
+    "width": 1.78,
+    "height": 3.58
    }
   }
  ],
@@ -132,24 +132,20 @@
       "href": "../../../en/cat-harness/processes/skills/ask-the-person.html"
      },
      {
-      "name": "bean-coordination",
-      "href": "../../../en/cat-harness/processes/skills/bean-coordination.html"
+      "name": "bean-coordination"
      },
      {
-      "name": "before-after-preview",
-      "href": "../../../en/cat-harness/processes/skills/before-after-preview.html"
+      "name": "before-after-preview"
      },
      {
-      "name": "blocked-build-dependencies",
-      "href": "../../../en/cat-harness/processes/skills/blocked-build-dependencies.html"
+      "name": "blocked-build-dependencies"
      },
      {
       "name": "bpmn-authoring",
       "href": "../../../en/cat-harness/processes/skills/bpmn-authoring.html"
      },
      {
-      "name": "branch-archaeology",
-      "href": "../../../en/cat-harness/processes/skills/branch-archaeology.html"
+      "name": "branch-archaeology"
      },
      {
       "name": "ci-health",
@@ -160,24 +156,15 @@
       "href": "../../../en/cat-harness/processes/skills/confirmation-waiver.html"
      },
      {
-      "name": "content-author",
-      "href": "../../../en/cat-harness/processes/skills/content-author.html"
-     },
-     {
       "name": "content-graph",
       "href": "../../../en/cat-harness/processes/skills/content-graph.html"
-     },
-     {
-      "name": "content-plan",
-      "href": "../../../en/cat-harness/processes/skills/content-plan.html"
      },
      {
       "name": "continual-progress",
       "href": "../../../en/cat-harness/processes/skills/continual-progress.html"
      },
      {
-      "name": "coordinate",
-      "href": "../../../en/cat-harness/processes/skills/coordinate.html"
+      "name": "coordinate"
      },
      {
       "name": "crdm-detect",
@@ -200,8 +187,7 @@
       "href": "../../../en/cat-harness/processes/skills/deletion-requires-confirmation.html"
      },
      {
-      "name": "delivery-summary",
-      "href": "../../../en/cat-harness/processes/skills/delivery-summary.html"
+      "name": "delivery-summary"
      },
      {
       "name": "directory-conventions",
@@ -216,24 +202,20 @@
       "href": "../../../en/cat-harness/processes/skills/folio-init.html"
      },
      {
-      "name": "gate-tree-mutation",
-      "href": "../../../en/cat-harness/processes/skills/gate-tree-mutation.html"
+      "name": "gate-tree-mutation"
      },
      {
-      "name": "generalise-the-fix",
-      "href": "../../../en/cat-harness/processes/skills/generalise-the-fix.html"
+      "name": "generalise-the-fix"
      },
      {
-      "name": "github-state-inspection",
-      "href": "../../../en/cat-harness/processes/skills/github-state-inspection.html"
+      "name": "github-state-inspection"
      },
      {
       "name": "graph-detanglement",
       "href": "../../../en/cat-harness/processes/skills/graph-detanglement.html"
      },
      {
-      "name": "issue-working",
-      "href": "../../../en/cat-harness/processes/skills/issue-working.html"
+      "name": "issue-working"
      },
      {
       "name": "kg-affordances",
@@ -248,8 +230,7 @@
       "href": "../../../en/cat-harness/processes/skills/library-ingestion.html"
      },
      {
-      "name": "merge-to-main",
-      "href": "../../../en/cat-harness/processes/skills/merge-to-main.html"
+      "name": "merge-to-main"
      },
      {
       "name": "methodology-adoption",
@@ -268,20 +249,16 @@
       "href": "../../../en/cat-harness/processes/skills/platform-gates.html"
      },
      {
-      "name": "pr-description",
-      "href": "../../../en/cat-harness/processes/skills/pr-description.html"
+      "name": "pr-description"
      },
      {
-      "name": "prepare-merge",
-      "href": "../../../en/cat-harness/processes/skills/prepare-merge.html"
+      "name": "prepare-merge"
      },
      {
-      "name": "prepare-merge-auto",
-      "href": "../../../en/cat-harness/processes/skills/prepare-merge-auto.html"
+      "name": "prepare-merge-auto"
      },
      {
-      "name": "related-work-coordination",
-      "href": "../../../en/cat-harness/processes/skills/related-work-coordination.html"
+      "name": "related-work-coordination"
      },
      {
       "name": "session-context",
@@ -304,12 +281,10 @@
       "href": "../../../en/cat-harness/processes/skills/symbiotic-interaction.html"
      },
      {
-      "name": "test-data-sets",
-      "href": "../../../en/cat-harness/processes/skills/test-data-sets.html"
+      "name": "test-data-sets"
      },
      {
-      "name": "todo-manager",
-      "href": "../../../en/cat-harness/processes/skills/todo-manager.html"
+      "name": "todo-manager"
      },
      {
       "name": "translation-manager",
@@ -320,12 +295,10 @@
       "href": "../../../en/cat-harness/processes/skills/upstream-version-adoption.html"
      },
      {
-      "name": "voice-authoring-guidance",
-      "href": "../../../en/cat-harness/processes/skills/voice-authoring-guidance.html"
+      "name": "voice-authoring-guidance"
      },
      {
-      "name": "watch",
-      "href": "../../../en/cat-harness/processes/skills/watch.html"
+      "name": "watch"
      },
      {
       "name": "wireframe-design-review",
@@ -370,8 +343,7 @@
       "href": "../../../en/cat-harness/processes/skills/agent-permissions.html"
      },
      {
-      "name": "dispatch-agent",
-      "href": "../../../en/cat-harness/processes/skills/dispatch-agent.html"
+      "name": "dispatch-agent"
      },
      {
       "name": "folio-init",
@@ -398,8 +370,7 @@
       "href": "../../../en/cat-harness/processes/skills/materialize-remote.html"
      },
      {
-      "name": "merge-to-main",
-      "href": "../../../en/cat-harness/processes/skills/merge-to-main.html"
+      "name": "merge-to-main"
      },
      {
       "name": "repo-conversion",
@@ -439,24 +410,20 @@
       "href": "../../../en/cat-harness/processes/skills/ask-the-person.html"
      },
      {
-      "name": "bean-coordination",
-      "href": "../../../en/cat-harness/processes/skills/bean-coordination.html"
+      "name": "bean-coordination"
      },
      {
-      "name": "before-after-preview",
-      "href": "../../../en/cat-harness/processes/skills/before-after-preview.html"
+      "name": "before-after-preview"
      },
      {
-      "name": "blocked-build-dependencies",
-      "href": "../../../en/cat-harness/processes/skills/blocked-build-dependencies.html"
+      "name": "blocked-build-dependencies"
      },
      {
       "name": "bpmn-authoring",
       "href": "../../../en/cat-harness/processes/skills/bpmn-authoring.html"
      },
      {
-      "name": "branch-archaeology",
-      "href": "../../../en/cat-harness/processes/skills/branch-archaeology.html"
+      "name": "branch-archaeology"
      },
      {
       "name": "ci-health",
@@ -467,24 +434,15 @@
       "href": "../../../en/cat-harness/processes/skills/confirmation-waiver.html"
      },
      {
-      "name": "content-author",
-      "href": "../../../en/cat-harness/processes/skills/content-author.html"
-     },
-     {
       "name": "content-graph",
       "href": "../../../en/cat-harness/processes/skills/content-graph.html"
-     },
-     {
-      "name": "content-plan",
-      "href": "../../../en/cat-harness/processes/skills/content-plan.html"
      },
      {
       "name": "continual-progress",
       "href": "../../../en/cat-harness/processes/skills/continual-progress.html"
      },
      {
-      "name": "coordinate",
-      "href": "../../../en/cat-harness/processes/skills/coordinate.html"
+      "name": "coordinate"
      },
      {
       "name": "crdm-detect",
@@ -507,8 +465,7 @@
       "href": "../../../en/cat-harness/processes/skills/deletion-requires-confirmation.html"
      },
      {
-      "name": "delivery-summary",
-      "href": "../../../en/cat-harness/processes/skills/delivery-summary.html"
+      "name": "delivery-summary"
      },
      {
       "name": "directory-conventions",
@@ -523,24 +480,20 @@
       "href": "../../../en/cat-harness/processes/skills/folio-init.html"
      },
      {
-      "name": "gate-tree-mutation",
-      "href": "../../../en/cat-harness/processes/skills/gate-tree-mutation.html"
+      "name": "gate-tree-mutation"
      },
      {
-      "name": "generalise-the-fix",
-      "href": "../../../en/cat-harness/processes/skills/generalise-the-fix.html"
+      "name": "generalise-the-fix"
      },
      {
-      "name": "github-state-inspection",
-      "href": "../../../en/cat-harness/processes/skills/github-state-inspection.html"
+      "name": "github-state-inspection"
      },
      {
       "name": "graph-detanglement",
       "href": "../../../en/cat-harness/processes/skills/graph-detanglement.html"
      },
      {
-      "name": "issue-working",
-      "href": "../../../en/cat-harness/processes/skills/issue-working.html"
+      "name": "issue-working"
      },
      {
       "name": "kg-affordances",
@@ -555,8 +508,7 @@
       "href": "../../../en/cat-harness/processes/skills/library-ingestion.html"
      },
      {
-      "name": "merge-to-main",
-      "href": "../../../en/cat-harness/processes/skills/merge-to-main.html"
+      "name": "merge-to-main"
      },
      {
       "name": "methodology-adoption",
@@ -575,20 +527,16 @@
       "href": "../../../en/cat-harness/processes/skills/platform-gates.html"
      },
      {
-      "name": "pr-description",
-      "href": "../../../en/cat-harness/processes/skills/pr-description.html"
+      "name": "pr-description"
      },
      {
-      "name": "prepare-merge",
-      "href": "../../../en/cat-harness/processes/skills/prepare-merge.html"
+      "name": "prepare-merge"
      },
      {
-      "name": "prepare-merge-auto",
-      "href": "../../../en/cat-harness/processes/skills/prepare-merge-auto.html"
+      "name": "prepare-merge-auto"
      },
      {
-      "name": "related-work-coordination",
-      "href": "../../../en/cat-harness/processes/skills/related-work-coordination.html"
+      "name": "related-work-coordination"
      },
      {
       "name": "session-context",
@@ -611,12 +559,10 @@
       "href": "../../../en/cat-harness/processes/skills/symbiotic-interaction.html"
      },
      {
-      "name": "test-data-sets",
-      "href": "../../../en/cat-harness/processes/skills/test-data-sets.html"
+      "name": "test-data-sets"
      },
      {
-      "name": "todo-manager",
-      "href": "../../../en/cat-harness/processes/skills/todo-manager.html"
+      "name": "todo-manager"
      },
      {
       "name": "translation-manager",
@@ -627,12 +573,10 @@
       "href": "../../../en/cat-harness/processes/skills/upstream-version-adoption.html"
      },
      {
-      "name": "voice-authoring-guidance",
-      "href": "../../../en/cat-harness/processes/skills/voice-authoring-guidance.html"
+      "name": "voice-authoring-guidance"
      },
      {
-      "name": "watch",
-      "href": "../../../en/cat-harness/processes/skills/watch.html"
+      "name": "watch"
      },
      {
       "name": "wireframe-design-review",
@@ -681,24 +625,20 @@
       "href": "../../../en/cat-harness/processes/skills/ask-the-person.html"
      },
      {
-      "name": "bean-coordination",
-      "href": "../../../en/cat-harness/processes/skills/bean-coordination.html"
+      "name": "bean-coordination"
      },
      {
-      "name": "before-after-preview",
-      "href": "../../../en/cat-harness/processes/skills/before-after-preview.html"
+      "name": "before-after-preview"
      },
      {
-      "name": "blocked-build-dependencies",
-      "href": "../../../en/cat-harness/processes/skills/blocked-build-dependencies.html"
+      "name": "blocked-build-dependencies"
      },
      {
       "name": "bpmn-authoring",
       "href": "../../../en/cat-harness/processes/skills/bpmn-authoring.html"
      },
      {
-      "name": "branch-archaeology",
-      "href": "../../../en/cat-harness/processes/skills/branch-archaeology.html"
+      "name": "branch-archaeology"
      },
      {
       "name": "ci-health",
@@ -709,24 +649,15 @@
       "href": "../../../en/cat-harness/processes/skills/confirmation-waiver.html"
      },
      {
-      "name": "content-author",
-      "href": "../../../en/cat-harness/processes/skills/content-author.html"
-     },
-     {
       "name": "content-graph",
       "href": "../../../en/cat-harness/processes/skills/content-graph.html"
-     },
-     {
-      "name": "content-plan",
-      "href": "../../../en/cat-harness/processes/skills/content-plan.html"
      },
      {
       "name": "continual-progress",
       "href": "../../../en/cat-harness/processes/skills/continual-progress.html"
      },
      {
-      "name": "coordinate",
-      "href": "../../../en/cat-harness/processes/skills/coordinate.html"
+      "name": "coordinate"
      },
      {
       "name": "crdm-detect",
@@ -749,8 +680,7 @@
       "href": "../../../en/cat-harness/processes/skills/deletion-requires-confirmation.html"
      },
      {
-      "name": "delivery-summary",
-      "href": "../../../en/cat-harness/processes/skills/delivery-summary.html"
+      "name": "delivery-summary"
      },
      {
       "name": "directory-conventions",
@@ -765,24 +695,20 @@
       "href": "../../../en/cat-harness/processes/skills/folio-init.html"
      },
      {
-      "name": "gate-tree-mutation",
-      "href": "../../../en/cat-harness/processes/skills/gate-tree-mutation.html"
+      "name": "gate-tree-mutation"
      },
      {
-      "name": "generalise-the-fix",
-      "href": "../../../en/cat-harness/processes/skills/generalise-the-fix.html"
+      "name": "generalise-the-fix"
      },
      {
-      "name": "github-state-inspection",
-      "href": "../../../en/cat-harness/processes/skills/github-state-inspection.html"
+      "name": "github-state-inspection"
      },
      {
       "name": "graph-detanglement",
       "href": "../../../en/cat-harness/processes/skills/graph-detanglement.html"
      },
      {
-      "name": "issue-working",
-      "href": "../../../en/cat-harness/processes/skills/issue-working.html"
+      "name": "issue-working"
      },
      {
       "name": "kg-affordances",
@@ -797,8 +723,7 @@
       "href": "../../../en/cat-harness/processes/skills/library-ingestion.html"
      },
      {
-      "name": "merge-to-main",
-      "href": "../../../en/cat-harness/processes/skills/merge-to-main.html"
+      "name": "merge-to-main"
      },
      {
       "name": "methodology-adoption",
@@ -817,20 +742,16 @@
       "href": "../../../en/cat-harness/processes/skills/platform-gates.html"
      },
      {
-      "name": "pr-description",
-      "href": "../../../en/cat-harness/processes/skills/pr-description.html"
+      "name": "pr-description"
      },
      {
-      "name": "prepare-merge",
-      "href": "../../../en/cat-harness/processes/skills/prepare-merge.html"
+      "name": "prepare-merge"
      },
      {
-      "name": "prepare-merge-auto",
-      "href": "../../../en/cat-harness/processes/skills/prepare-merge-auto.html"
+      "name": "prepare-merge-auto"
      },
      {
-      "name": "related-work-coordination",
-      "href": "../../../en/cat-harness/processes/skills/related-work-coordination.html"
+      "name": "related-work-coordination"
      },
      {
       "name": "session-context",
@@ -853,12 +774,10 @@
       "href": "../../../en/cat-harness/processes/skills/symbiotic-interaction.html"
      },
      {
-      "name": "test-data-sets",
-      "href": "../../../en/cat-harness/processes/skills/test-data-sets.html"
+      "name": "test-data-sets"
      },
      {
-      "name": "todo-manager",
-      "href": "../../../en/cat-harness/processes/skills/todo-manager.html"
+      "name": "todo-manager"
      },
      {
       "name": "translation-manager",
@@ -869,12 +788,10 @@
       "href": "../../../en/cat-harness/processes/skills/upstream-version-adoption.html"
      },
      {
-      "name": "voice-authoring-guidance",
-      "href": "../../../en/cat-harness/processes/skills/voice-authoring-guidance.html"
+      "name": "voice-authoring-guidance"
      },
      {
-      "name": "watch",
-      "href": "../../../en/cat-harness/processes/skills/watch.html"
+      "name": "watch"
      },
      {
       "name": "wireframe-design-review",
@@ -913,24 +830,20 @@
       "href": "../../../en/cat-harness/processes/skills/ask-the-person.html"
      },
      {
-      "name": "bean-coordination",
-      "href": "../../../en/cat-harness/processes/skills/bean-coordination.html"
+      "name": "bean-coordination"
      },
      {
-      "name": "before-after-preview",
-      "href": "../../../en/cat-harness/processes/skills/before-after-preview.html"
+      "name": "before-after-preview"
      },
      {
-      "name": "blocked-build-dependencies",
-      "href": "../../../en/cat-harness/processes/skills/blocked-build-dependencies.html"
+      "name": "blocked-build-dependencies"
      },
      {
       "name": "bpmn-authoring",
       "href": "../../../en/cat-harness/processes/skills/bpmn-authoring.html"
      },
      {
-      "name": "branch-archaeology",
-      "href": "../../../en/cat-harness/processes/skills/branch-archaeology.html"
+      "name": "branch-archaeology"
      },
      {
       "name": "ci-health",
@@ -941,24 +854,15 @@
       "href": "../../../en/cat-harness/processes/skills/confirmation-waiver.html"
      },
      {
-      "name": "content-author",
-      "href": "../../../en/cat-harness/processes/skills/content-author.html"
-     },
-     {
       "name": "content-graph",
       "href": "../../../en/cat-harness/processes/skills/content-graph.html"
-     },
-     {
-      "name": "content-plan",
-      "href": "../../../en/cat-harness/processes/skills/content-plan.html"
      },
      {
       "name": "continual-progress",
       "href": "../../../en/cat-harness/processes/skills/continual-progress.html"
      },
      {
-      "name": "coordinate",
-      "href": "../../../en/cat-harness/processes/skills/coordinate.html"
+      "name": "coordinate"
      },
      {
       "name": "crdm-detect",
@@ -981,8 +885,7 @@
       "href": "../../../en/cat-harness/processes/skills/deletion-requires-confirmation.html"
      },
      {
-      "name": "delivery-summary",
-      "href": "../../../en/cat-harness/processes/skills/delivery-summary.html"
+      "name": "delivery-summary"
      },
      {
       "name": "directory-conventions",
@@ -997,24 +900,20 @@
       "href": "../../../en/cat-harness/processes/skills/folio-init.html"
      },
      {
-      "name": "gate-tree-mutation",
-      "href": "../../../en/cat-harness/processes/skills/gate-tree-mutation.html"
+      "name": "gate-tree-mutation"
      },
      {
-      "name": "generalise-the-fix",
-      "href": "../../../en/cat-harness/processes/skills/generalise-the-fix.html"
+      "name": "generalise-the-fix"
      },
      {
-      "name": "github-state-inspection",
-      "href": "../../../en/cat-harness/processes/skills/github-state-inspection.html"
+      "name": "github-state-inspection"
      },
      {
       "name": "graph-detanglement",
       "href": "../../../en/cat-harness/processes/skills/graph-detanglement.html"
      },
      {
-      "name": "issue-working",
-      "href": "../../../en/cat-harness/processes/skills/issue-working.html"
+      "name": "issue-working"
      },
      {
       "name": "kg-affordances",
@@ -1029,8 +928,7 @@
       "href": "../../../en/cat-harness/processes/skills/library-ingestion.html"
      },
      {
-      "name": "merge-to-main",
-      "href": "../../../en/cat-harness/processes/skills/merge-to-main.html"
+      "name": "merge-to-main"
      },
      {
       "name": "methodology-adoption",
@@ -1049,20 +947,16 @@
       "href": "../../../en/cat-harness/processes/skills/platform-gates.html"
      },
      {
-      "name": "pr-description",
-      "href": "../../../en/cat-harness/processes/skills/pr-description.html"
+      "name": "pr-description"
      },
      {
-      "name": "prepare-merge",
-      "href": "../../../en/cat-harness/processes/skills/prepare-merge.html"
+      "name": "prepare-merge"
      },
      {
-      "name": "prepare-merge-auto",
-      "href": "../../../en/cat-harness/processes/skills/prepare-merge-auto.html"
+      "name": "prepare-merge-auto"
      },
      {
-      "name": "related-work-coordination",
-      "href": "../../../en/cat-harness/processes/skills/related-work-coordination.html"
+      "name": "related-work-coordination"
      },
      {
       "name": "session-context",
@@ -1085,12 +979,10 @@
       "href": "../../../en/cat-harness/processes/skills/symbiotic-interaction.html"
      },
      {
-      "name": "test-data-sets",
-      "href": "../../../en/cat-harness/processes/skills/test-data-sets.html"
+      "name": "test-data-sets"
      },
      {
-      "name": "todo-manager",
-      "href": "../../../en/cat-harness/processes/skills/todo-manager.html"
+      "name": "todo-manager"
      },
      {
       "name": "translation-manager",
@@ -1101,12 +993,10 @@
       "href": "../../../en/cat-harness/processes/skills/upstream-version-adoption.html"
      },
      {
-      "name": "voice-authoring-guidance",
-      "href": "../../../en/cat-harness/processes/skills/voice-authoring-guidance.html"
+      "name": "voice-authoring-guidance"
      },
      {
-      "name": "watch",
-      "href": "../../../en/cat-harness/processes/skills/watch.html"
+      "name": "watch"
      },
      {
       "name": "wireframe-design-review",
@@ -1150,24 +1040,20 @@
       "href": "../../../en/cat-harness/processes/skills/ask-the-person.html"
      },
      {
-      "name": "bean-coordination",
-      "href": "../../../en/cat-harness/processes/skills/bean-coordination.html"
+      "name": "bean-coordination"
      },
      {
-      "name": "before-after-preview",
-      "href": "../../../en/cat-harness/processes/skills/before-after-preview.html"
+      "name": "before-after-preview"
      },
      {
-      "name": "blocked-build-dependencies",
-      "href": "../../../en/cat-harness/processes/skills/blocked-build-dependencies.html"
+      "name": "blocked-build-dependencies"
      },
      {
       "name": "bpmn-authoring",
       "href": "../../../en/cat-harness/processes/skills/bpmn-authoring.html"
      },
      {
-      "name": "branch-archaeology",
-      "href": "../../../en/cat-harness/processes/skills/branch-archaeology.html"
+      "name": "branch-archaeology"
      },
      {
       "name": "ci-health",
@@ -1178,24 +1064,15 @@
       "href": "../../../en/cat-harness/processes/skills/confirmation-waiver.html"
      },
      {
-      "name": "content-author",
-      "href": "../../../en/cat-harness/processes/skills/content-author.html"
-     },
-     {
       "name": "content-graph",
       "href": "../../../en/cat-harness/processes/skills/content-graph.html"
-     },
-     {
-      "name": "content-plan",
-      "href": "../../../en/cat-harness/processes/skills/content-plan.html"
      },
      {
       "name": "continual-progress",
       "href": "../../../en/cat-harness/processes/skills/continual-progress.html"
      },
      {
-      "name": "coordinate",
-      "href": "../../../en/cat-harness/processes/skills/coordinate.html"
+      "name": "coordinate"
      },
      {
       "name": "crdm-detect",
@@ -1218,8 +1095,7 @@
       "href": "../../../en/cat-harness/processes/skills/deletion-requires-confirmation.html"
      },
      {
-      "name": "delivery-summary",
-      "href": "../../../en/cat-harness/processes/skills/delivery-summary.html"
+      "name": "delivery-summary"
      },
      {
       "name": "directory-conventions",
@@ -1234,24 +1110,20 @@
       "href": "../../../en/cat-harness/processes/skills/folio-init.html"
      },
      {
-      "name": "gate-tree-mutation",
-      "href": "../../../en/cat-harness/processes/skills/gate-tree-mutation.html"
+      "name": "gate-tree-mutation"
      },
      {
-      "name": "generalise-the-fix",
-      "href": "../../../en/cat-harness/processes/skills/generalise-the-fix.html"
+      "name": "generalise-the-fix"
      },
      {
-      "name": "github-state-inspection",
-      "href": "../../../en/cat-harness/processes/skills/github-state-inspection.html"
+      "name": "github-state-inspection"
      },
      {
       "name": "graph-detanglement",
       "href": "../../../en/cat-harness/processes/skills/graph-detanglement.html"
      },
      {
-      "name": "issue-working",
-      "href": "../../../en/cat-harness/processes/skills/issue-working.html"
+      "name": "issue-working"
      },
      {
       "name": "kg-affordances",
@@ -1266,8 +1138,7 @@
       "href": "../../../en/cat-harness/processes/skills/library-ingestion.html"
      },
      {
-      "name": "merge-to-main",
-      "href": "../../../en/cat-harness/processes/skills/merge-to-main.html"
+      "name": "merge-to-main"
      },
      {
       "name": "methodology-adoption",
@@ -1286,20 +1157,16 @@
       "href": "../../../en/cat-harness/processes/skills/platform-gates.html"
      },
      {
-      "name": "pr-description",
-      "href": "../../../en/cat-harness/processes/skills/pr-description.html"
+      "name": "pr-description"
      },
      {
-      "name": "prepare-merge",
-      "href": "../../../en/cat-harness/processes/skills/prepare-merge.html"
+      "name": "prepare-merge"
      },
      {
-      "name": "prepare-merge-auto",
-      "href": "../../../en/cat-harness/processes/skills/prepare-merge-auto.html"
+      "name": "prepare-merge-auto"
      },
      {
-      "name": "related-work-coordination",
-      "href": "../../../en/cat-harness/processes/skills/related-work-coordination.html"
+      "name": "related-work-coordination"
      },
      {
       "name": "session-context",
@@ -1322,12 +1189,10 @@
       "href": "../../../en/cat-harness/processes/skills/symbiotic-interaction.html"
      },
      {
-      "name": "test-data-sets",
-      "href": "../../../en/cat-harness/processes/skills/test-data-sets.html"
+      "name": "test-data-sets"
      },
      {
-      "name": "todo-manager",
-      "href": "../../../en/cat-harness/processes/skills/todo-manager.html"
+      "name": "todo-manager"
      },
      {
       "name": "translation-manager",
@@ -1338,12 +1203,10 @@
       "href": "../../../en/cat-harness/processes/skills/upstream-version-adoption.html"
      },
      {
-      "name": "voice-authoring-guidance",
-      "href": "../../../en/cat-harness/processes/skills/voice-authoring-guidance.html"
+      "name": "voice-authoring-guidance"
      },
      {
-      "name": "watch",
-      "href": "../../../en/cat-harness/processes/skills/watch.html"
+      "name": "watch"
      },
      {
       "name": "wireframe-design-review",
@@ -1387,24 +1250,20 @@
       "href": "../../../en/cat-harness/processes/skills/ask-the-person.html"
      },
      {
-      "name": "bean-coordination",
-      "href": "../../../en/cat-harness/processes/skills/bean-coordination.html"
+      "name": "bean-coordination"
      },
      {
-      "name": "before-after-preview",
-      "href": "../../../en/cat-harness/processes/skills/before-after-preview.html"
+      "name": "before-after-preview"
      },
      {
-      "name": "blocked-build-dependencies",
-      "href": "../../../en/cat-harness/processes/skills/blocked-build-dependencies.html"
+      "name": "blocked-build-dependencies"
      },
      {
       "name": "bpmn-authoring",
       "href": "../../../en/cat-harness/processes/skills/bpmn-authoring.html"
      },
      {
-      "name": "branch-archaeology",
-      "href": "../../../en/cat-harness/processes/skills/branch-archaeology.html"
+      "name": "branch-archaeology"
      },
      {
       "name": "ci-health",
@@ -1415,24 +1274,15 @@
       "href": "../../../en/cat-harness/processes/skills/confirmation-waiver.html"
      },
      {
-      "name": "content-author",
-      "href": "../../../en/cat-harness/processes/skills/content-author.html"
-     },
-     {
       "name": "content-graph",
       "href": "../../../en/cat-harness/processes/skills/content-graph.html"
-     },
-     {
-      "name": "content-plan",
-      "href": "../../../en/cat-harness/processes/skills/content-plan.html"
      },
      {
       "name": "continual-progress",
       "href": "../../../en/cat-harness/processes/skills/continual-progress.html"
      },
      {
-      "name": "coordinate",
-      "href": "../../../en/cat-harness/processes/skills/coordinate.html"
+      "name": "coordinate"
      },
      {
       "name": "crdm-detect",
@@ -1455,8 +1305,7 @@
       "href": "../../../en/cat-harness/processes/skills/deletion-requires-confirmation.html"
      },
      {
-      "name": "delivery-summary",
-      "href": "../../../en/cat-harness/processes/skills/delivery-summary.html"
+      "name": "delivery-summary"
      },
      {
       "name": "directory-conventions",
@@ -1471,24 +1320,20 @@
       "href": "../../../en/cat-harness/processes/skills/folio-init.html"
      },
      {
-      "name": "gate-tree-mutation",
-      "href": "../../../en/cat-harness/processes/skills/gate-tree-mutation.html"
+      "name": "gate-tree-mutation"
      },
      {
-      "name": "generalise-the-fix",
-      "href": "../../../en/cat-harness/processes/skills/generalise-the-fix.html"
+      "name": "generalise-the-fix"
      },
      {
-      "name": "github-state-inspection",
-      "href": "../../../en/cat-harness/processes/skills/github-state-inspection.html"
+      "name": "github-state-inspection"
      },
      {
       "name": "graph-detanglement",
       "href": "../../../en/cat-harness/processes/skills/graph-detanglement.html"
      },
      {
-      "name": "issue-working",
-      "href": "../../../en/cat-harness/processes/skills/issue-working.html"
+      "name": "issue-working"
      },
      {
       "name": "kg-affordances",
@@ -1503,8 +1348,7 @@
       "href": "../../../en/cat-harness/processes/skills/library-ingestion.html"
      },
      {
-      "name": "merge-to-main",
-      "href": "../../../en/cat-harness/processes/skills/merge-to-main.html"
+      "name": "merge-to-main"
      },
      {
       "name": "methodology-adoption",
@@ -1523,20 +1367,16 @@
       "href": "../../../en/cat-harness/processes/skills/platform-gates.html"
      },
      {
-      "name": "pr-description",
-      "href": "../../../en/cat-harness/processes/skills/pr-description.html"
+      "name": "pr-description"
      },
      {
-      "name": "prepare-merge",
-      "href": "../../../en/cat-harness/processes/skills/prepare-merge.html"
+      "name": "prepare-merge"
      },
      {
-      "name": "prepare-merge-auto",
-      "href": "../../../en/cat-harness/processes/skills/prepare-merge-auto.html"
+      "name": "prepare-merge-auto"
      },
      {
-      "name": "related-work-coordination",
-      "href": "../../../en/cat-harness/processes/skills/related-work-coordination.html"
+      "name": "related-work-coordination"
      },
      {
       "name": "session-context",
@@ -1559,12 +1399,10 @@
       "href": "../../../en/cat-harness/processes/skills/symbiotic-interaction.html"
      },
      {
-      "name": "test-data-sets",
-      "href": "../../../en/cat-harness/processes/skills/test-data-sets.html"
+      "name": "test-data-sets"
      },
      {
-      "name": "todo-manager",
-      "href": "../../../en/cat-harness/processes/skills/todo-manager.html"
+      "name": "todo-manager"
      },
      {
       "name": "translation-manager",
@@ -1575,12 +1413,10 @@
       "href": "../../../en/cat-harness/processes/skills/upstream-version-adoption.html"
      },
      {
-      "name": "voice-authoring-guidance",
-      "href": "../../../en/cat-harness/processes/skills/voice-authoring-guidance.html"
+      "name": "voice-authoring-guidance"
      },
      {
-      "name": "watch",
-      "href": "../../../en/cat-harness/processes/skills/watch.html"
+      "name": "watch"
      },
      {
       "name": "wireframe-design-review",
@@ -1624,24 +1460,20 @@
       "href": "../../../en/cat-harness/processes/skills/ask-the-person.html"
      },
      {
-      "name": "bean-coordination",
-      "href": "../../../en/cat-harness/processes/skills/bean-coordination.html"
+      "name": "bean-coordination"
      },
      {
-      "name": "before-after-preview",
-      "href": "../../../en/cat-harness/processes/skills/before-after-preview.html"
+      "name": "before-after-preview"
      },
      {
-      "name": "blocked-build-dependencies",
-      "href": "../../../en/cat-harness/processes/skills/blocked-build-dependencies.html"
+      "name": "blocked-build-dependencies"
      },
      {
       "name": "bpmn-authoring",
       "href": "../../../en/cat-harness/processes/skills/bpmn-authoring.html"
      },
      {
-      "name": "branch-archaeology",
-      "href": "../../../en/cat-harness/processes/skills/branch-archaeology.html"
+      "name": "branch-archaeology"
      },
      {
       "name": "ci-health",
@@ -1652,24 +1484,15 @@
       "href": "../../../en/cat-harness/processes/skills/confirmation-waiver.html"
      },
      {
-      "name": "content-author",
-      "href": "../../../en/cat-harness/processes/skills/content-author.html"
-     },
-     {
       "name": "content-graph",
       "href": "../../../en/cat-harness/processes/skills/content-graph.html"
-     },
-     {
-      "name": "content-plan",
-      "href": "../../../en/cat-harness/processes/skills/content-plan.html"
      },
      {
       "name": "continual-progress",
       "href": "../../../en/cat-harness/processes/skills/continual-progress.html"
      },
      {
-      "name": "coordinate",
-      "href": "../../../en/cat-harness/processes/skills/coordinate.html"
+      "name": "coordinate"
      },
      {
       "name": "crdm-detect",
@@ -1692,8 +1515,7 @@
       "href": "../../../en/cat-harness/processes/skills/deletion-requires-confirmation.html"
      },
      {
-      "name": "delivery-summary",
-      "href": "../../../en/cat-harness/processes/skills/delivery-summary.html"
+      "name": "delivery-summary"
      },
      {
       "name": "directory-conventions",
@@ -1708,24 +1530,20 @@
       "href": "../../../en/cat-harness/processes/skills/folio-init.html"
      },
      {
-      "name": "gate-tree-mutation",
-      "href": "../../../en/cat-harness/processes/skills/gate-tree-mutation.html"
+      "name": "gate-tree-mutation"
      },
      {
-      "name": "generalise-the-fix",
-      "href": "../../../en/cat-harness/processes/skills/generalise-the-fix.html"
+      "name": "generalise-the-fix"
      },
      {
-      "name": "github-state-inspection",
-      "href": "../../../en/cat-harness/processes/skills/github-state-inspection.html"
+      "name": "github-state-inspection"
      },
      {
       "name": "graph-detanglement",
       "href": "../../../en/cat-harness/processes/skills/graph-detanglement.html"
      },
      {
-      "name": "issue-working",
-      "href": "../../../en/cat-harness/processes/skills/issue-working.html"
+      "name": "issue-working"
      },
      {
       "name": "kg-affordances",
@@ -1740,8 +1558,7 @@
       "href": "../../../en/cat-harness/processes/skills/library-ingestion.html"
      },
      {
-      "name": "merge-to-main",
-      "href": "../../../en/cat-harness/processes/skills/merge-to-main.html"
+      "name": "merge-to-main"
      },
      {
       "name": "methodology-adoption",
@@ -1760,20 +1577,16 @@
       "href": "../../../en/cat-harness/processes/skills/platform-gates.html"
      },
      {
-      "name": "pr-description",
-      "href": "../../../en/cat-harness/processes/skills/pr-description.html"
+      "name": "pr-description"
      },
      {
-      "name": "prepare-merge",
-      "href": "../../../en/cat-harness/processes/skills/prepare-merge.html"
+      "name": "prepare-merge"
      },
      {
-      "name": "prepare-merge-auto",
-      "href": "../../../en/cat-harness/processes/skills/prepare-merge-auto.html"
+      "name": "prepare-merge-auto"
      },
      {
-      "name": "related-work-coordination",
-      "href": "../../../en/cat-harness/processes/skills/related-work-coordination.html"
+      "name": "related-work-coordination"
      },
      {
       "name": "session-context",
@@ -1796,12 +1609,10 @@
       "href": "../../../en/cat-harness/processes/skills/symbiotic-interaction.html"
      },
      {
-      "name": "test-data-sets",
-      "href": "../../../en/cat-harness/processes/skills/test-data-sets.html"
+      "name": "test-data-sets"
      },
      {
-      "name": "todo-manager",
-      "href": "../../../en/cat-harness/processes/skills/todo-manager.html"
+      "name": "todo-manager"
      },
      {
       "name": "translation-manager",
@@ -1812,12 +1623,10 @@
       "href": "../../../en/cat-harness/processes/skills/upstream-version-adoption.html"
      },
      {
-      "name": "voice-authoring-guidance",
-      "href": "../../../en/cat-harness/processes/skills/voice-authoring-guidance.html"
+      "name": "voice-authoring-guidance"
      },
      {
-      "name": "watch",
-      "href": "../../../en/cat-harness/processes/skills/watch.html"
+      "name": "watch"
      },
      {
       "name": "wireframe-design-review",

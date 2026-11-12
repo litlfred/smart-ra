@@ -2,12 +2,16 @@
 var G = null, SORT = { key: "id", dir: 1 }, VIEW = "list";
 /* THE PAGE'S IDENTITY, and the only thing a page carries -- owner,
    2026-10-02 (#1881): every page is a thin shell that loads its content from
-   the published assets. A JSON data block rather than script, so a shell
+   the published assets. Attributes on the page's own element rather than script, so a shell
    holds no code of its own. DATA_HREF is made ABSOLUTE here, once, before
    anything can rewrite the address bar (see honourAddress). */
 var CONFIG = (function(){
-  var el = document.getElementById("fa-library-config");
-  try { return JSON.parse(el ? el.textContent : "{}") || {}; } catch (_e) { return {}; }
+  /* data-kg-* on the page's .lib-page element (issue #1830) -- no private block. */
+  var el = document.querySelector(".lib-page");
+  var d = el ? el.dataset : {};
+  var c = { data: d.kgData || "", scope: d.kgScope || "", libRoot: d.kgLibRoot };
+  if (d.kgEntry !== undefined) c.entry = d.kgEntry;
+  return c;
 })();
 var DATA_HREF = new URL(String(CONFIG.data || ""), location.href).href;
 /* ARRIVING AT #lib-view OPENS THE VIEW PANEL -- the folio glass's eye links
@@ -684,6 +688,10 @@ function withheldBanner(e, bs){
   // the page loads that also contains this page (a page can load another
   // site's chrome from the same origin, /folio-assistant/assets/…).
   const vendorBase = () => {
+    // A site that loads its shared assets from a host names the bundle's
+    // address in a meta (cat-harness-tools scripts/lib/shared-assets.ts).
+    const shared = document.querySelector('meta[name="fa-shared-asset"][data-dir="assets/vendor/crepe/"]');
+    if (shared && shared.getAttribute("content")) return shared.getAttribute("content");
     let best = null;
     for (const e of document.querySelectorAll("script[src], link[href]")) {
       let u;
@@ -1336,15 +1344,41 @@ function withheldBanner(e, bs){
     "html.fa-bp .fa-sec-actions>a{display:none}html.fa-bp .fa-block-panel .fa-sec-actions>a{display:block;margin:.5rem 0;padding:.55rem .7rem;border:1px solid #8885;border-radius:8px;text-decoration:none}" +
     "html.fa-bp .block-actions>.ba-trigger,html.fa-bp .block-actions>.ba-bookmark{width:20px;height:20px;border:0;background:none;font-size:13px;opacity:.35;filter:grayscale(1)}" +
     "html.fa-bp .block-actions>.ba-trigger .ba-n{top:-4px;right:-6px;font-size:9px;padding:0 3px}" +
-    "html.fa-bp .block-actions:hover>.ba-trigger,html.fa-bp .ba-trigger:focus-visible,html.fa-bp .ba-trigger[aria-expanded=true],html.fa-bp :hover>.block-actions>.ba-trigger,html.fa-bp p:has(+.fa-blk:hover)>.block-actions>.ba-trigger" + ON +
-    "html.fa-bp .block-actions:hover>.ba-bookmark,html.fa-bp .ba-bookmark:focus-visible,html.fa-bp .ba-bookmark[aria-pressed=true],html.fa-bp :hover>.block-actions>.ba-bookmark,html.fa-bp p:has(+.fa-blk:hover)>.block-actions>.ba-bookmark" + ON +
+    "html.fa-bp .block-actions:hover>.ba-trigger,html.fa-bp .ba-trigger:focus-visible,html.fa-bp .ba-trigger[aria-expanded=true],html.fa-bp :not(.main-content,.fa-doc,main):hover>.block-actions>.ba-trigger,html.fa-bp p:has(+.fa-blk:hover)>.block-actions>.ba-trigger" + ON +
+    // Owner, 2026-11-09: "anchor is only highlighted on the content block it
+    // is in, but not feedback and bookmark ... always highlighted on any
+    // content block". A section's box hangs straight off .main-content, so
+    // ":hover>" matched the whole page and lit every box at once. The page
+    // column is not a block: a section's box lights from its .fa-hot heading.
+    "html.fa-bp .block-actions:hover>.ba-bookmark,html.fa-bp .ba-bookmark:focus-visible,html.fa-bp .ba-bookmark[aria-pressed=true],html.fa-bp :not(.main-content,.fa-doc,main):hover>.block-actions>.ba-bookmark,html.fa-bp p:has(+.fa-blk:hover)>.block-actions>.ba-bookmark" + ON +
     // Owner, 2026-11-08: "pin icon does not get highlighted on hover". A
     // pressed 🔖 is always in full colour, so hovering it changed nothing.
     // Every gutter icon now lights a tinted tile under the pointer, pressed
     // or not, so the one you are about to press is always the one that shows.
     "html.fa-bp .block-actions>.ba-trigger,html.fa-bp .block-actions>.ba-bookmark,html.fa-bp .main-content .anchor-heading{border-radius:5px;transition:background-color .12s}" +
     "html.fa-bp .block-actions>.ba-trigger:hover,html.fa-bp .block-actions>.ba-bookmark:hover,html.fa-bp .main-content .anchor-heading:hover{opacity:1;filter:none;background:color-mix(in srgb,var(--link,#0b5cad) 18%,transparent)}" +
+    // Owner, 2026-11-09: "no indication if a bookmark has been selected or
+    // not". Hovering a block lights every gutter icon in full colour, so a
+    // pressed 🔖 looked the same as one that was not. A pressed 🔖 now keeps
+    // a tinted tile with an accent ring at all times, hovered or not.
+    "html.fa-bp .block-actions>.ba-bookmark[aria-pressed=true]{opacity:1;filter:none;background:color-mix(in srgb,var(--link,#0b5cad) 24%,transparent);box-shadow:inset 0 0 0 1.5px var(--link,#0b5cad)}" +
+    "html.fa-bp .block-actions>.ba-bookmark[aria-pressed=true]:hover{background:color-mix(in srgb,var(--link,#0b5cad) 34%,transparent)}" +
     "html.fa-bp .main-content .anchor-heading svg{visibility:visible;opacity:.35;filter:grayscale(1)}" +
+    // Owner, 2026-11-10: "make RHS grill icons 50% bigger on laptop". From
+    // laptop width up, the 🔗, 📣 and 🔖 are half again as big (20px -> 30px
+    // tiles, 1rem -> 1.5rem link icon) and the right gutter widens to fit,
+    // keeping the same spacing to the text. Tablets and phones are unchanged.
+    "@media (min-width:64rem){html.fa-bp .main-content-wrap{padding-right:3.25rem}" +
+    "html.fa-bp .main-content .anchor-heading{right:-3rem;width:2.25rem;padding:0 .375rem}" +
+    "html.fa-bp .main-content .anchor-heading svg{width:1.5rem;height:1.5rem}" +
+    "html.fa-bp .main-content .block-actions{width:2.25rem;margin-right:-4rem}" +
+    // A section box is placed by its right offset, not by the margin above, so it
+    // must not pick up that -4rem margin too: with both, it sat 7rem past the
+    // text and off the right edge of the window (smart-trust-demo, 11-11).
+    "html.fa-bp .main-content .fa-sec-actions{right:-3rem;margin:0}" +
+    "html.fa-bp .fa-page-main.main-content:has(>.fa-sec-actions){margin-right:3.25rem}" +
+    "html.fa-bp .block-actions>.ba-trigger,html.fa-bp .block-actions>.ba-bookmark{width:30px;height:30px;font-size:20px}" +
+    "html.fa-bp .block-actions>.ba-trigger .ba-n{top:-5px;right:-8px;font-size:12px;padding:0 4px}}" +
     "html.fa-bp .main-content .fa-hot>.anchor-heading svg,html.fa-bp .main-content :hover>.anchor-heading svg,html.fa-bp .main-content .anchor-heading:focus svg" + ON +
     ".fa-block-panel .bp-copy{font:inherit;font-size:.82rem;margin:.1rem .35rem .3rem 0;padding:.3rem .6rem;border:1px solid #8886;border-radius:6px;background:none;color:inherit;cursor:pointer}" +
     ".fa-block-panel .bp-copy.ba-copied,.fa-block-panel .bp-bookmark[aria-pressed=true]{border-color:#2e7d32;background:#2e7d32;color:#fff}" +
@@ -1813,11 +1847,73 @@ function docPages(d){
       return '<tr><td class="num">' + p.physical + '</td><td>' + lab + '</td><td>' + secs + '</td><td>' + figs + '</td></tr>';
     }).join("") + '</tbody></table>';
 }
+/* FIGURES AND TABLES SHOWN -- who-iris#224. Each kept figure as its picture
+   with its description in the page's language (else English, else the first),
+   and each transcribed table drawn from its cells. Every description is an
+   agent draft until a person confirms it, and the page says so. */
+function docLang(){
+  var l = (document.documentElement.getAttribute("lang") || "en").toLowerCase().split("-")[0];
+  return l || "en";
+}
+function pickNarrative(m){
+  if (!m) return "";
+  var l = docLang();
+  if (m[l]) return m[l];
+  if (m.en) return m.en;
+  for (var k in m) if (Object.prototype.hasOwnProperty.call(m, k)) return m[k];
+  return "";
+}
+function docFileHref(id, file){
+  var dir = DATA_HREF.slice(0, DATA_HREF.lastIndexOf("/") + 1);
+  return dir + "files/" + encodeURIComponent(id) + "/" + file.split("/").map(encodeURIComponent).join("/");
+}
+function docGallery(d){
+  if (!d.images || !d.images.length) return "";
+  var rtl = { ar: 1, fa: 1, he: 1, ur: 1 }[docLang()] ? ' dir="rtl"' : '';
+  return '<h3>Figures <span class="note">(' + d.images.length + ')</span></h3>' +
+    '<p class="note">Descriptions are drafts written by an agent and not yet reviewed.</p>' +
+    '<div class="doc-gallery">' + d.images.map(function(im){
+      var text = pickNarrative(im.narratives);
+      return '<figure class="doc-figure" id="fig-' + esc(im.id) + '">' +
+        '<a href="' + esc(docFileHref(DOC_ID, im.file)) + '" target="_blank" rel="noopener">' +
+        '<img loading="lazy" src="' + esc(docFileHref(DOC_ID, im.file)) + '" alt="' + esc(text) + '"></a>' +
+        '<figcaption' + rtl + '>' + (im.shows && im.shows.length ? '<strong>' + esc(im.shows.join(", ")) + '.</strong> ' : '') +
+        esc(text) + ' <span class="note">' + pageText(im.page, null) + '</span></figcaption></figure>';
+    }).join("") + '</div>';
+}
+function docTable(t){
+  var groups = t.columns.some(function(c){ return c.group; });
+  var head = "";
+  if (groups) {
+    var cells = [], i = 0;
+    while (i < t.columns.length) {
+      var g = t.columns[i].group || "", n = 1;
+      while (i + n < t.columns.length && (t.columns[i + n].group || "") === g && g) n++;
+      cells.push('<th' + (n > 1 ? ' colspan="' + n + '"' : '') + '>' + esc(g) + '</th>');
+      i += n;
+    }
+    head += '<tr>' + cells.join("") + '</tr>';
+  }
+  head += '<tr>' + t.columns.map(function(c){ return '<th>' + esc(c.titles) + '</th>'; }).join("") + '</tr>';
+  var body = t.rows.map(function(r){ return '<tr>' + r.map(function(c){ return '<td>' + esc(c) + '</td>'; }).join("") + '</tr>'; }).join("");
+  var text = pickNarrative(t.narratives);
+  return '<details class="doc-table"><summary><strong>' + esc(t.caption || t.label) + '</strong> <span class="note">' +
+    (t.pages.length ? 'p' + t.pages.join("\u2013") : '') + ', ' + t.rows.length + ' rows</span></summary>' +
+    (text ? '<p>' + esc(text) + '</p>' : '') +
+    '<div class="doc-table-scroll"><table>' + '<thead>' + head + '</thead><tbody>' + body + '</tbody></table></div>' +
+    (t.notes ? '<p class="note">' + esc(t.notes) + '</p>' : '') +
+    '<p class="note"><a href="' + esc(docFileHref(DOC_ID, t.csv)) + '">CSV</a></p></details>';
+}
+function docTables(d){
+  if (!d.tables || !d.tables.length) return "";
+  return '<h3>Tables <span class="note">(' + d.tables.length + ', transcribed from the pages; drafts)</span></h3>' + d.tables.map(docTable).join("");
+}
 function docFigures(d){
-  if (!d.figures) return notRecorded("Figures and tables");
-  if (!d.figures.length) return '<p class="empty">No captions found. Nothing failed \u2014 none opens a line with a label and number.</p>';
+  var shown = docGallery(d) + docTables(d);
+  if (!d.figures) return shown + notRecorded("Figures and tables");
+  if (!d.figures.length) return shown + '<p class="empty">No captions found. Nothing failed \u2014 none opens a line with a label and number.</p>';
   var gaps = (d.checks.figureSequenceGaps || []);
-  return (gaps.length ? '<p class="note">Numbering gaps in the document: ' + esc(gaps.join(", ")) + '.</p>' : '') +
+  return shown + (shown ? '<h3>Captions in the text</h3>' : '') + (gaps.length ? '<p class="note">Numbering gaps in the document: ' + esc(gaps.join(", ")) + '.</p>' : '') +
     '<table><thead><tr><th>kind</th><th>no.</th><th>caption</th><th>page</th><th>confidence</th></tr></thead><tbody>' +
     d.figures.map(function(f){
       return '<tr><td>' + esc(f.kind) + '</td><td>' + esc(f.number) + '</td><td>' + (f.title ? esc(f.title) : '<span class="note">withheld</span>') +
@@ -2009,7 +2105,7 @@ fetch(DATA_HREF).then(function(r){
       " prose block(s) not yet summarised" + (sd ? ", <b>" + sd + "</b> agent draft(s) awaiting a person" : "") + "</span>";
   }
   if (G.refScan) {
-    var none = scoped.filter(function(e){ return e.refCount === 0; }).length;
+    var none = scoped.filter(function(e){ return e.refCount === 0 && e.provenance !== "catalogued"; }).length;
     $("badges").innerHTML += '<span class="badge">' +
       (none ? '<b>'+none+"</b> entr(ies) referenced by nothing" : "references scanned") +
       (G.refScan.unreadable.length
@@ -2036,3 +2132,30 @@ fetch(DATA_HREF).then(function(r){
   $("listing").innerHTML = '<p class="empty">The projection at <code>' + esc(DATA_HREF) + '</code> could not be read. ' +
     "That is not an empty corpus \u2014 it is a corpus that could not be loaded, and the page says so rather than showing nothing.</p>";
 });
+
+(function(){
+  var box = document.getElementById("lib-lang-toggle");
+  var dataEl = document.getElementById("lib-versions-data");
+  if (!box || !dataEl) return;
+  var d; try { d = JSON.parse(dataEl.textContent || "{}"); } catch (_e) { return; }
+  var vs = d.versions || [];
+  var loc = "en"; try { loc = localStorage.getItem("fa-locale") || "en"; } catch (_e) {}
+  var cur = vs.filter(function(v){ return v.id === d.current; })[0];
+  var src = vs.filter(function(v){ return v.source; })[0];
+  var mine = vs.filter(function(v){ return v.lang === loc; })[0];
+  if (!cur || !src) return;
+  var other = cur.source ? mine : src;
+  if (cur.source && loc !== src.lang && !mine) {
+    box.innerHTML = '<p class="note">No official WHO translation of this publication into your chosen language (' + esc(loc) + ').</p>';
+    box.hidden = false; return;
+  }
+  if (!other || other.id === cur.id) return;
+  var pair = cur.source ? [cur, other] : [other, cur];
+  box.innerHTML = '<span class="seg" role="group" aria-label="Language">' + pair.map(function(v){
+    var label = esc(v.name) + (v.source ? " (source)" : " (WHO official)");
+    return v.id === cur.id
+      ? '<button type="button" aria-pressed="true" lang="' + esc(v.lang) + '">' + label + "</button>"
+      : '<a class="seg-link" role="button" aria-pressed="false" lang="' + esc(v.lang) + '" hreflang="' + esc(v.lang) + '" href="' + esc(v.href) + '">' + label + "</a>";
+  }).join("") + "</span>";
+  box.hidden = false;
+})();

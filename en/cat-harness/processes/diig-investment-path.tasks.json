@@ -156,18 +156,6 @@
     "title": "Programme manager",
     "skills": [
      {
-      "name": "content-plan",
-      "href": "../../../en/cat-harness/processes/skills/content-plan.html"
-     },
-     {
-      "name": "content-publish",
-      "href": "../../../en/cat-harness/processes/skills/content-publish.html"
-     },
-     {
-      "name": "content-retire",
-      "href": "../../../en/cat-harness/processes/skills/content-retire.html"
-     },
-     {
       "name": "decision-audit",
       "href": "../../../en/cat-harness/processes/skills/decision-audit.html"
      },
@@ -180,12 +168,10 @@
       "href": "../../../en/cat-harness/processes/skills/methodology-adoption.html"
      },
      {
-      "name": "release-epic-planning",
-      "href": "../../../en/cat-harness/processes/skills/release-epic-planning.html"
+      "name": "release-epic-planning"
      },
      {
-      "name": "release-lifecycle",
-      "href": "../../../en/cat-harness/processes/skills/release-lifecycle.html"
+      "name": "release-lifecycle"
      }
     ]
    }
@@ -452,18 +438,6 @@
     "title": "Programme manager",
     "skills": [
      {
-      "name": "content-plan",
-      "href": "../../../en/cat-harness/processes/skills/content-plan.html"
-     },
-     {
-      "name": "content-publish",
-      "href": "../../../en/cat-harness/processes/skills/content-publish.html"
-     },
-     {
-      "name": "content-retire",
-      "href": "../../../en/cat-harness/processes/skills/content-retire.html"
-     },
-     {
       "name": "decision-audit",
       "href": "../../../en/cat-harness/processes/skills/decision-audit.html"
      },
@@ -476,12 +450,10 @@
       "href": "../../../en/cat-harness/processes/skills/methodology-adoption.html"
      },
      {
-      "name": "release-epic-planning",
-      "href": "../../../en/cat-harness/processes/skills/release-epic-planning.html"
+      "name": "release-epic-planning"
      },
      {
-      "name": "release-lifecycle",
-      "href": "../../../en/cat-harness/processes/skills/release-lifecycle.html"
+      "name": "release-lifecycle"
      }
     ]
    }
@@ -586,18 +558,6 @@
     "title": "Programme manager",
     "skills": [
      {
-      "name": "content-plan",
-      "href": "../../../en/cat-harness/processes/skills/content-plan.html"
-     },
-     {
-      "name": "content-publish",
-      "href": "../../../en/cat-harness/processes/skills/content-publish.html"
-     },
-     {
-      "name": "content-retire",
-      "href": "../../../en/cat-harness/processes/skills/content-retire.html"
-     },
-     {
       "name": "decision-audit",
       "href": "../../../en/cat-harness/processes/skills/decision-audit.html"
      },
@@ -610,12 +570,10 @@
       "href": "../../../en/cat-harness/processes/skills/methodology-adoption.html"
      },
      {
-      "name": "release-epic-planning",
-      "href": "../../../en/cat-harness/processes/skills/release-epic-planning.html"
+      "name": "release-epic-planning"
      },
      {
-      "name": "release-lifecycle",
-      "href": "../../../en/cat-harness/processes/skills/release-lifecycle.html"
+      "name": "release-lifecycle"
      }
     ]
    }
@@ -639,18 +597,6 @@
     "title": "Programme manager",
     "skills": [
      {
-      "name": "content-plan",
-      "href": "../../../en/cat-harness/processes/skills/content-plan.html"
-     },
-     {
-      "name": "content-publish",
-      "href": "../../../en/cat-harness/processes/skills/content-publish.html"
-     },
-     {
-      "name": "content-retire",
-      "href": "../../../en/cat-harness/processes/skills/content-retire.html"
-     },
-     {
       "name": "decision-audit",
       "href": "../../../en/cat-harness/processes/skills/decision-audit.html"
      },
@@ -663,12 +609,10 @@
       "href": "../../../en/cat-harness/processes/skills/methodology-adoption.html"
      },
      {
-      "name": "release-epic-planning",
-      "href": "../../../en/cat-harness/processes/skills/release-epic-planning.html"
+      "name": "release-epic-planning"
      },
      {
-      "name": "release-lifecycle",
-      "href": "../../../en/cat-harness/processes/skills/release-lifecycle.html"
+      "name": "release-lifecycle"
      }
     ]
    }
@@ -692,18 +636,6 @@
     "title": "Programme manager",
     "skills": [
      {
-      "name": "content-plan",
-      "href": "../../../en/cat-harness/processes/skills/content-plan.html"
-     },
-     {
-      "name": "content-publish",
-      "href": "../../../en/cat-harness/processes/skills/content-publish.html"
-     },
-     {
-      "name": "content-retire",
-      "href": "../../../en/cat-harness/processes/skills/content-retire.html"
-     },
-     {
       "name": "decision-audit",
       "href": "../../../en/cat-harness/processes/skills/decision-audit.html"
      },
@@ -716,12 +648,10 @@
       "href": "../../../en/cat-harness/processes/skills/methodology-adoption.html"
      },
      {
-      "name": "release-epic-planning",
-      "href": "../../../en/cat-harness/processes/skills/release-epic-planning.html"
+      "name": "release-epic-planning"
      },
      {
-      "name": "release-lifecycle",
-      "href": "../../../en/cat-harness/processes/skills/release-lifecycle.html"
+      "name": "release-lifecycle"
      }
     ]
    }
@@ -735,32 +665,17 @@
    "laneHref": "diig-investment-path.html#lane-Lane_ProgrammeManager",
    "skills": [
     {
-     "name": "bean-coordination",
-     "href": "../../../en/cat-harness/processes/skills/bean-coordination.html"
+     "name": "bean-coordination"
     }
    ],
    "calls": {
-    "name": "Open the bean",
-    "href": "bean-open.html",
-    "diagram": "bean-open.html"
+    "name": "Process_BeanOpen"
    },
    "role": {
     "name": "programme-manager",
     "href": "../../../cat-harness/auto-docs/index/roles/index.html#a-cat-harness-scenarios-roles-json-programme-manager",
     "title": "Programme manager",
     "skills": [
-     {
-      "name": "content-plan",
-      "href": "../../../en/cat-harness/processes/skills/content-plan.html"
-     },
-     {
-      "name": "content-publish",
-      "href": "../../../en/cat-harness/processes/skills/content-publish.html"
-     },
-     {
-      "name": "content-retire",
-      "href": "../../../en/cat-harness/processes/skills/content-retire.html"
-     },
      {
       "name": "decision-audit",
       "href": "../../../en/cat-harness/processes/skills/decision-audit.html"
@@ -774,12 +689,10 @@
       "href": "../../../en/cat-harness/processes/skills/methodology-adoption.html"
      },
      {
-      "name": "release-epic-planning",
-      "href": "../../../en/cat-harness/processes/skills/release-epic-planning.html"
+      "name": "release-epic-planning"
      },
      {
-      "name": "release-lifecycle",
-      "href": "../../../en/cat-harness/processes/skills/release-lifecycle.html"
+      "name": "release-lifecycle"
      }
     ]
    }
@@ -793,32 +706,17 @@
    "laneHref": "diig-investment-path.html#lane-Lane_ProgrammeManager",
    "skills": [
     {
-     "name": "todo-manager",
-     "href": "../../../en/cat-harness/processes/skills/todo-manager.html"
+     "name": "todo-manager"
     }
    ],
    "calls": {
-    "name": "Close the bean",
-    "href": "bean-close.html",
-    "diagram": "bean-close.html"
+    "name": "Process_BeanClose"
    },
    "role": {
     "name": "programme-manager",
     "href": "../../../cat-harness/auto-docs/index/roles/index.html#a-cat-harness-scenarios-roles-json-programme-manager",
     "title": "Programme manager",
     "skills": [
-     {
-      "name": "content-plan",
-      "href": "../../../en/cat-harness/processes/skills/content-plan.html"
-     },
-     {
-      "name": "content-publish",
-      "href": "../../../en/cat-harness/processes/skills/content-publish.html"
-     },
-     {
-      "name": "content-retire",
-      "href": "../../../en/cat-harness/processes/skills/content-retire.html"
-     },
      {
       "name": "decision-audit",
       "href": "../../../en/cat-harness/processes/skills/decision-audit.html"
@@ -832,12 +730,10 @@
       "href": "../../../en/cat-harness/processes/skills/methodology-adoption.html"
      },
      {
-      "name": "release-epic-planning",
-      "href": "../../../en/cat-harness/processes/skills/release-epic-planning.html"
+      "name": "release-epic-planning"
      },
      {
-      "name": "release-lifecycle",
-      "href": "../../../en/cat-harness/processes/skills/release-lifecycle.html"
+      "name": "release-lifecycle"
      }
     ]
    }

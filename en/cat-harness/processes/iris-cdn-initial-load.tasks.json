@@ -6,120 +6,120 @@
    "id": "Task_StateBudget",
    "name": "State scope and budget, with denominators",
    "left": 15.81,
-   "top": 3.72,
+   "top": 3.64,
    "box": {
     "left": 12.56,
-    "top": 9.57,
+    "top": 9.36,
     "width": 0.89,
-    "height": 2.55
+    "height": 2.49
    }
   },
   {
    "id": "Task_PlanBatches",
    "name": "Plan batches by community and collection",
    "left": 22.87,
-   "top": 18.62,
+   "top": 18.19,
    "box": {
     "left": 19.62,
-    "top": 24.47,
+    "top": 23.91,
     "width": 0.89,
-    "height": 2.55
+    "height": 2.49
    }
   },
   {
    "id": "Task_HarvestBatch",
    "name": "Harvest a batch of item records (REST)",
    "left": 29.38,
-   "top": 31.6,
+   "top": 30.87,
    "box": {
     "left": 26.68,
-    "top": 41.7,
+    "top": 40.75,
     "width": 0.89,
-    "height": 2.55
+    "height": 2.49
    }
   },
   {
    "id": "Task_FetchBitstreams",
    "name": "Fetch bitstreams not already held",
    "left": 36.44,
-   "top": 31.6,
+   "top": 30.87,
    "box": {
     "left": 33.75,
-    "top": 41.7,
+    "top": 40.75,
     "width": 0.89,
-    "height": 2.55
+    "height": 2.49
    }
   },
   {
    "id": "Task_StoreBytes",
    "name": "Store bytes under SHA-256 (skip if held)",
    "left": 51.12,
-   "top": 63.3,
+   "top": 61.85,
    "box": {
     "left": 47.87,
-    "top": 69.15,
+    "top": 67.57,
     "width": 0.89,
-    "height": 2.55
+    "height": 2.49
    }
   },
   {
    "id": "Task_Checkpoint",
    "name": "Commit the batch checkpoint",
    "left": 58.18,
-   "top": 78.19,
+   "top": 76.4,
    "box": {
     "left": 54.93,
-    "top": 84.04,
+    "top": 82.12,
     "width": 0.89,
-    "height": 2.55
+    "height": 2.49
    }
   },
   {
    "id": "Task_Quarantine",
    "name": "Quarantine and report the mismatch",
    "left": 57.63,
-   "top": 46.28,
+   "top": 45.22,
    "box": {
     "left": 54.93,
-    "top": 56.38,
+    "top": 55.09,
     "width": 0.89,
-    "height": 2.55
+    "height": 2.49
    }
   },
   {
    "id": "Call_BuildGraph",
    "name": "Build the graph partitions",
    "left": 75.1,
-   "top": 31.6,
+   "top": 30.87,
    "box": {
     "left": 72.4,
-    "top": 41.7,
+    "top": 40.75,
     "width": 0.89,
-    "height": 2.55
+    "height": 2.49
    }
   },
   {
    "id": "Call_SignPublish",
    "name": "Sign and publish the release",
    "left": 82.16,
-   "top": 31.6,
+   "top": 30.87,
    "box": {
     "left": 79.46,
-    "top": 41.7,
+    "top": 40.75,
     "width": 0.89,
-    "height": 2.55
+    "height": 2.49
    }
   },
   {
    "id": "Task_ReviewLoad",
    "name": "Review the load report; open beans for gaps",
    "left": 89.78,
-   "top": 18.62,
+   "top": 18.19,
    "box": {
     "left": 86.53,
-    "top": 24.47,
+    "top": 23.91,
     "width": 0.89,
-    "height": 2.55
+    "height": 2.49
    }
   }
  ],
@@ -144,21 +144,6 @@
     "title": "IRIS CDN owner",
     "skills": [
      {
-      "name": "content-plan",
-      "href": "../../../en/cat-harness/processes/skills/content-plan.html",
-      "via": "programme-manager"
-     },
-     {
-      "name": "content-publish",
-      "href": "../../../en/cat-harness/processes/skills/content-publish.html",
-      "via": "programme-manager"
-     },
-     {
-      "name": "content-retire",
-      "href": "../../../en/cat-harness/processes/skills/content-retire.html",
-      "via": "programme-manager"
-     },
-     {
       "name": "decision-audit",
       "href": "../../../en/cat-harness/processes/skills/decision-audit.html",
       "via": "programme-manager"
@@ -179,12 +164,10 @@
      },
      {
       "name": "release-epic-planning",
-      "href": "../../../en/cat-harness/processes/skills/release-epic-planning.html",
       "via": "programme-manager"
      },
      {
       "name": "release-lifecycle",
-      "href": "../../../en/cat-harness/processes/skills/release-lifecycle.html",
       "via": "programme-manager"
      }
     ]
@@ -258,10 +241,6 @@
       "href": "../../../en/cat-harness/processes/skills/compiled-artefact-cache.html"
      },
      {
-      "name": "content-publish",
-      "href": "../../../en/cat-harness/processes/skills/content-publish.html"
-     },
-     {
       "name": "content-test",
       "href": "../../../en/cat-harness/processes/skills/content-test.html"
      },
@@ -286,16 +265,13 @@
       "href": "../../../en/cat-harness/processes/skills/platform-gates.html"
      },
      {
-      "name": "prepare-merge",
-      "href": "../../../en/cat-harness/processes/skills/prepare-merge.html"
+      "name": "prepare-merge"
      },
      {
-      "name": "publish-verification",
-      "href": "../../../en/cat-harness/processes/skills/publish-verification.html"
+      "name": "publish-verification"
      },
      {
-      "name": "qa-reports",
-      "href": "../../../en/cat-harness/processes/skills/qa-reports.html"
+      "name": "qa-reports"
      },
      {
       "name": "remote-mount",
@@ -310,8 +286,7 @@
       "href": "../../../en/cat-harness/processes/skills/sub-kg-lifecycle.html"
      },
      {
-      "name": "todo-manager",
-      "href": "../../../en/cat-harness/processes/skills/todo-manager.html"
+      "name": "todo-manager"
      },
      {
       "name": "translation-manager",
@@ -322,8 +297,7 @@
       "href": "../../../en/cat-harness/processes/skills/upstream-version-adoption.html"
      },
      {
-      "name": "watch",
-      "href": "../../../en/cat-harness/processes/skills/watch.html"
+      "name": "watch"
      }
     ]
    }
@@ -355,10 +329,6 @@
       "href": "../../../en/cat-harness/processes/skills/compiled-artefact-cache.html"
      },
      {
-      "name": "content-publish",
-      "href": "../../../en/cat-harness/processes/skills/content-publish.html"
-     },
-     {
       "name": "content-test",
       "href": "../../../en/cat-harness/processes/skills/content-test.html"
      },
@@ -383,16 +353,13 @@
       "href": "../../../en/cat-harness/processes/skills/platform-gates.html"
      },
      {
-      "name": "prepare-merge",
-      "href": "../../../en/cat-harness/processes/skills/prepare-merge.html"
+      "name": "prepare-merge"
      },
      {
-      "name": "publish-verification",
-      "href": "../../../en/cat-harness/processes/skills/publish-verification.html"
+      "name": "publish-verification"
      },
      {
-      "name": "qa-reports",
-      "href": "../../../en/cat-harness/processes/skills/qa-reports.html"
+      "name": "qa-reports"
      },
      {
       "name": "remote-mount",
@@ -407,8 +374,7 @@
       "href": "../../../en/cat-harness/processes/skills/sub-kg-lifecycle.html"
      },
      {
-      "name": "todo-manager",
-      "href": "../../../en/cat-harness/processes/skills/todo-manager.html"
+      "name": "todo-manager"
      },
      {
       "name": "translation-manager",
@@ -419,8 +385,7 @@
       "href": "../../../en/cat-harness/processes/skills/upstream-version-adoption.html"
      },
      {
-      "name": "watch",
-      "href": "../../../en/cat-harness/processes/skills/watch.html"
+      "name": "watch"
      }
     ]
    }
@@ -452,10 +417,6 @@
       "href": "../../../en/cat-harness/processes/skills/compiled-artefact-cache.html"
      },
      {
-      "name": "content-publish",
-      "href": "../../../en/cat-harness/processes/skills/content-publish.html"
-     },
-     {
       "name": "content-test",
       "href": "../../../en/cat-harness/processes/skills/content-test.html"
      },
@@ -480,16 +441,13 @@
       "href": "../../../en/cat-harness/processes/skills/platform-gates.html"
      },
      {
-      "name": "prepare-merge",
-      "href": "../../../en/cat-harness/processes/skills/prepare-merge.html"
+      "name": "prepare-merge"
      },
      {
-      "name": "publish-verification",
-      "href": "../../../en/cat-harness/processes/skills/publish-verification.html"
+      "name": "publish-verification"
      },
      {
-      "name": "qa-reports",
-      "href": "../../../en/cat-harness/processes/skills/qa-reports.html"
+      "name": "qa-reports"
      },
      {
       "name": "remote-mount",
@@ -504,8 +462,7 @@
       "href": "../../../en/cat-harness/processes/skills/sub-kg-lifecycle.html"
      },
      {
-      "name": "todo-manager",
-      "href": "../../../en/cat-harness/processes/skills/todo-manager.html"
+      "name": "todo-manager"
      },
      {
       "name": "translation-manager",
@@ -516,8 +473,7 @@
       "href": "../../../en/cat-harness/processes/skills/upstream-version-adoption.html"
      },
      {
-      "name": "watch",
-      "href": "../../../en/cat-harness/processes/skills/watch.html"
+      "name": "watch"
      }
     ]
    }
@@ -549,10 +505,6 @@
       "href": "../../../en/cat-harness/processes/skills/compiled-artefact-cache.html"
      },
      {
-      "name": "content-publish",
-      "href": "../../../en/cat-harness/processes/skills/content-publish.html"
-     },
-     {
       "name": "content-test",
       "href": "../../../en/cat-harness/processes/skills/content-test.html"
      },
@@ -577,16 +529,13 @@
       "href": "../../../en/cat-harness/processes/skills/platform-gates.html"
      },
      {
-      "name": "prepare-merge",
-      "href": "../../../en/cat-harness/processes/skills/prepare-merge.html"
+      "name": "prepare-merge"
      },
      {
-      "name": "publish-verification",
-      "href": "../../../en/cat-harness/processes/skills/publish-verification.html"
+      "name": "publish-verification"
      },
      {
-      "name": "qa-reports",
-      "href": "../../../en/cat-harness/processes/skills/qa-reports.html"
+      "name": "qa-reports"
      },
      {
       "name": "remote-mount",
@@ -601,8 +550,7 @@
       "href": "../../../en/cat-harness/processes/skills/sub-kg-lifecycle.html"
      },
      {
-      "name": "todo-manager",
-      "href": "../../../en/cat-harness/processes/skills/todo-manager.html"
+      "name": "todo-manager"
      },
      {
       "name": "translation-manager",
@@ -613,8 +561,7 @@
       "href": "../../../en/cat-harness/processes/skills/upstream-version-adoption.html"
      },
      {
-      "name": "watch",
-      "href": "../../../en/cat-harness/processes/skills/watch.html"
+      "name": "watch"
      }
     ]
    }
@@ -646,10 +593,6 @@
       "href": "../../../en/cat-harness/processes/skills/compiled-artefact-cache.html"
      },
      {
-      "name": "content-publish",
-      "href": "../../../en/cat-harness/processes/skills/content-publish.html"
-     },
-     {
       "name": "content-test",
       "href": "../../../en/cat-harness/processes/skills/content-test.html"
      },
@@ -674,16 +617,13 @@
       "href": "../../../en/cat-harness/processes/skills/platform-gates.html"
      },
      {
-      "name": "prepare-merge",
-      "href": "../../../en/cat-harness/processes/skills/prepare-merge.html"
+      "name": "prepare-merge"
      },
      {
-      "name": "publish-verification",
-      "href": "../../../en/cat-harness/processes/skills/publish-verification.html"
+      "name": "publish-verification"
      },
      {
-      "name": "qa-reports",
-      "href": "../../../en/cat-harness/processes/skills/qa-reports.html"
+      "name": "qa-reports"
      },
      {
       "name": "remote-mount",
@@ -698,8 +638,7 @@
       "href": "../../../en/cat-harness/processes/skills/sub-kg-lifecycle.html"
      },
      {
-      "name": "todo-manager",
-      "href": "../../../en/cat-harness/processes/skills/todo-manager.html"
+      "name": "todo-manager"
      },
      {
       "name": "translation-manager",
@@ -710,8 +649,7 @@
       "href": "../../../en/cat-harness/processes/skills/upstream-version-adoption.html"
      },
      {
-      "name": "watch",
-      "href": "../../../en/cat-harness/processes/skills/watch.html"
+      "name": "watch"
      }
     ]
    }
@@ -729,14 +667,11 @@
      "href": "../../../en/cat-harness/processes/skills/iris-oxigraph.html"
     },
     {
-     "name": "nquads-distribution",
-     "href": "../../../en/cat-harness/processes/skills/nquads-distribution.html"
+     "name": "nquads-distribution"
     }
    ],
    "calls": {
-    "name": "Package and distribute partitioned W3C N-Quads and named queries",
-    "href": "nquads-distribution.html",
-    "diagram": "nquads-distribution.html"
+    "name": "Process_NQuadsDistribution"
    },
    "role": {
     "name": "build-pipeline",
@@ -750,10 +685,6 @@
      {
       "name": "compiled-artefact-cache",
       "href": "../../../en/cat-harness/processes/skills/compiled-artefact-cache.html"
-     },
-     {
-      "name": "content-publish",
-      "href": "../../../en/cat-harness/processes/skills/content-publish.html"
      },
      {
       "name": "content-test",
@@ -780,16 +711,13 @@
       "href": "../../../en/cat-harness/processes/skills/platform-gates.html"
      },
      {
-      "name": "prepare-merge",
-      "href": "../../../en/cat-harness/processes/skills/prepare-merge.html"
+      "name": "prepare-merge"
      },
      {
-      "name": "publish-verification",
-      "href": "../../../en/cat-harness/processes/skills/publish-verification.html"
+      "name": "publish-verification"
      },
      {
-      "name": "qa-reports",
-      "href": "../../../en/cat-harness/processes/skills/qa-reports.html"
+      "name": "qa-reports"
      },
      {
       "name": "remote-mount",
@@ -804,8 +732,7 @@
       "href": "../../../en/cat-harness/processes/skills/sub-kg-lifecycle.html"
      },
      {
-      "name": "todo-manager",
-      "href": "../../../en/cat-harness/processes/skills/todo-manager.html"
+      "name": "todo-manager"
      },
      {
       "name": "translation-manager",
@@ -816,8 +743,7 @@
       "href": "../../../en/cat-harness/processes/skills/upstream-version-adoption.html"
      },
      {
-      "name": "watch",
-      "href": "../../../en/cat-harness/processes/skills/watch.html"
+      "name": "watch"
      }
     ]
    }
@@ -854,10 +780,6 @@
       "href": "../../../en/cat-harness/processes/skills/compiled-artefact-cache.html"
      },
      {
-      "name": "content-publish",
-      "href": "../../../en/cat-harness/processes/skills/content-publish.html"
-     },
-     {
       "name": "content-test",
       "href": "../../../en/cat-harness/processes/skills/content-test.html"
      },
@@ -882,16 +804,13 @@
       "href": "../../../en/cat-harness/processes/skills/platform-gates.html"
      },
      {
-      "name": "prepare-merge",
-      "href": "../../../en/cat-harness/processes/skills/prepare-merge.html"
+      "name": "prepare-merge"
      },
      {
-      "name": "publish-verification",
-      "href": "../../../en/cat-harness/processes/skills/publish-verification.html"
+      "name": "publish-verification"
      },
      {
-      "name": "qa-reports",
-      "href": "../../../en/cat-harness/processes/skills/qa-reports.html"
+      "name": "qa-reports"
      },
      {
       "name": "remote-mount",
@@ -906,8 +825,7 @@
       "href": "../../../en/cat-harness/processes/skills/sub-kg-lifecycle.html"
      },
      {
-      "name": "todo-manager",
-      "href": "../../../en/cat-harness/processes/skills/todo-manager.html"
+      "name": "todo-manager"
      },
      {
       "name": "translation-manager",
@@ -918,8 +836,7 @@
       "href": "../../../en/cat-harness/processes/skills/upstream-version-adoption.html"
      },
      {
-      "name": "watch",
-      "href": "../../../en/cat-harness/processes/skills/watch.html"
+      "name": "watch"
      }
     ]
    }

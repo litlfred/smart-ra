@@ -5,73 +5,73 @@
   {
    "id": "Task_DeclareMount",
    "name": "Declare the mount: harness, repository, pin",
-   "left": 19.26,
-   "top": 8.97,
+   "left": 20.46,
+   "top": 9.57,
    "box": {
-    "left": 12.67,
-    "top": 23.08,
-    "width": 1.62,
-    "height": 6.15
+    "left": 14.69,
+    "top": 29.79,
+    "width": 1.91,
+    "height": 5.11
    }
   },
   {
    "id": "Task_ResolveClosure",
    "name": "Resolve the closure at the pin",
-   "left": 17.57,
-   "top": 50,
+   "left": 20.46,
+   "top": 54.26,
    "box": {
-    "left": 12.67,
-    "top": 74.36,
-    "width": 1.62,
-    "height": 6.15
+    "left": 14.69,
+    "top": 74.47,
+    "width": 1.91,
+    "height": 5.11
    }
   },
   {
    "id": "Task_MountInstances",
-   "name": "Mount each instance at its declared path",
-   "left": 31.76,
-   "top": 50,
+   "name": "Mount each layer at its declared path",
+   "left": 33.19,
+   "top": 54.26,
    "box": {
-    "left": 26.86,
-    "top": 74.36,
-    "width": 1.62,
-    "height": 6.15
+    "left": 27.42,
+    "top": 74.47,
+    "width": 1.91,
+    "height": 5.11
    }
   },
   {
    "id": "Task_WriteLock",
    "name": "Write the lock",
-   "left": 45.27,
-   "top": 50,
+   "left": 45.93,
+   "top": 54.26,
    "box": {
-    "left": 40.37,
-    "top": 74.36,
-    "width": 1.62,
-    "height": 6.15
+    "left": 40.16,
+    "top": 74.47,
+    "width": 1.91,
+    "height": 5.11
    }
   },
   {
    "id": "Task_RenderAgentSurface",
    "name": "Re-render the agent surface",
-   "left": 58.78,
-   "top": 50,
+   "left": 58.67,
+   "top": 54.26,
    "box": {
-    "left": 53.89,
-    "top": 74.36,
-    "width": 1.62,
-    "height": 6.15
+    "left": 52.9,
+    "top": 74.47,
+    "width": 1.91,
+    "height": 5.11
    }
   },
   {
    "id": "Task_CheckAgainstLock",
    "name": "Check disk against lock against declaration",
-   "left": 72.97,
-   "top": 50,
+   "left": 71.4,
+   "top": 54.26,
    "box": {
-    "left": 68.07,
-    "top": 74.36,
-    "width": 1.62,
-    "height": 6.15
+    "left": 65.63,
+    "top": 74.47,
+    "width": 1.91,
+    "height": 5.11
    }
   }
  ],
@@ -104,14 +104,6 @@
       "href": "../../../en/cat-harness/processes/skills/bpmn-authoring.html"
      },
      {
-      "name": "content-author",
-      "href": "../../../en/cat-harness/processes/skills/content-author.html"
-     },
-     {
-      "name": "content-plan",
-      "href": "../../../en/cat-harness/processes/skills/content-plan.html"
-     },
-     {
       "name": "content-review",
       "href": "../../../en/cat-harness/processes/skills/content-review.html"
      },
@@ -136,12 +128,10 @@
       "href": "../../../en/cat-harness/processes/skills/staging-review.html"
      },
      {
-      "name": "todo-manager",
-      "href": "../../../en/cat-harness/processes/skills/todo-manager.html"
+      "name": "todo-manager"
      },
      {
-      "name": "voice-authoring-guidance",
-      "href": "../../../en/cat-harness/processes/skills/voice-authoring-guidance.html"
+      "name": "voice-authoring-guidance"
      }
     ]
    }
@@ -173,10 +163,6 @@
       "href": "../../../en/cat-harness/processes/skills/compiled-artefact-cache.html"
      },
      {
-      "name": "content-publish",
-      "href": "../../../en/cat-harness/processes/skills/content-publish.html"
-     },
-     {
       "name": "content-test",
       "href": "../../../en/cat-harness/processes/skills/content-test.html"
      },
@@ -201,16 +187,13 @@
       "href": "../../../en/cat-harness/processes/skills/platform-gates.html"
      },
      {
-      "name": "prepare-merge",
-      "href": "../../../en/cat-harness/processes/skills/prepare-merge.html"
+      "name": "prepare-merge"
      },
      {
-      "name": "publish-verification",
-      "href": "../../../en/cat-harness/processes/skills/publish-verification.html"
+      "name": "publish-verification"
      },
      {
-      "name": "qa-reports",
-      "href": "../../../en/cat-harness/processes/skills/qa-reports.html"
+      "name": "qa-reports"
      },
      {
       "name": "remote-mount",
@@ -225,8 +208,7 @@
       "href": "../../../en/cat-harness/processes/skills/sub-kg-lifecycle.html"
      },
      {
-      "name": "todo-manager",
-      "href": "../../../en/cat-harness/processes/skills/todo-manager.html"
+      "name": "todo-manager"
      },
      {
       "name": "translation-manager",
@@ -237,15 +219,14 @@
       "href": "../../../en/cat-harness/processes/skills/upstream-version-adoption.html"
      },
      {
-      "name": "watch",
-      "href": "../../../en/cat-harness/processes/skills/watch.html"
+      "name": "watch"
      }
     ]
    }
   },
   "Task_MountInstances": {
    "id": "Task_MountInstances",
-   "name": "Mount each instance at its declared path",
+   "name": "Mount each layer at its declared path",
    "type": "bpmn:Task",
    "stepHref": "mount-dependency.html#step-Task_MountInstances",
    "lane": "Build pipeline",
@@ -270,10 +251,6 @@
       "href": "../../../en/cat-harness/processes/skills/compiled-artefact-cache.html"
      },
      {
-      "name": "content-publish",
-      "href": "../../../en/cat-harness/processes/skills/content-publish.html"
-     },
-     {
       "name": "content-test",
       "href": "../../../en/cat-harness/processes/skills/content-test.html"
      },
@@ -298,16 +275,13 @@
       "href": "../../../en/cat-harness/processes/skills/platform-gates.html"
      },
      {
-      "name": "prepare-merge",
-      "href": "../../../en/cat-harness/processes/skills/prepare-merge.html"
+      "name": "prepare-merge"
      },
      {
-      "name": "publish-verification",
-      "href": "../../../en/cat-harness/processes/skills/publish-verification.html"
+      "name": "publish-verification"
      },
      {
-      "name": "qa-reports",
-      "href": "../../../en/cat-harness/processes/skills/qa-reports.html"
+      "name": "qa-reports"
      },
      {
       "name": "remote-mount",
@@ -322,8 +296,7 @@
       "href": "../../../en/cat-harness/processes/skills/sub-kg-lifecycle.html"
      },
      {
-      "name": "todo-manager",
-      "href": "../../../en/cat-harness/processes/skills/todo-manager.html"
+      "name": "todo-manager"
      },
      {
       "name": "translation-manager",
@@ -334,8 +307,7 @@
       "href": "../../../en/cat-harness/processes/skills/upstream-version-adoption.html"
      },
      {
-      "name": "watch",
-      "href": "../../../en/cat-harness/processes/skills/watch.html"
+      "name": "watch"
      }
     ]
    }
@@ -367,10 +339,6 @@
       "href": "../../../en/cat-harness/processes/skills/compiled-artefact-cache.html"
      },
      {
-      "name": "content-publish",
-      "href": "../../../en/cat-harness/processes/skills/content-publish.html"
-     },
-     {
       "name": "content-test",
       "href": "../../../en/cat-harness/processes/skills/content-test.html"
      },
@@ -395,16 +363,13 @@
       "href": "../../../en/cat-harness/processes/skills/platform-gates.html"
      },
      {
-      "name": "prepare-merge",
-      "href": "../../../en/cat-harness/processes/skills/prepare-merge.html"
+      "name": "prepare-merge"
      },
      {
-      "name": "publish-verification",
-      "href": "../../../en/cat-harness/processes/skills/publish-verification.html"
+      "name": "publish-verification"
      },
      {
-      "name": "qa-reports",
-      "href": "../../../en/cat-harness/processes/skills/qa-reports.html"
+      "name": "qa-reports"
      },
      {
       "name": "remote-mount",
@@ -419,8 +384,7 @@
       "href": "../../../en/cat-harness/processes/skills/sub-kg-lifecycle.html"
      },
      {
-      "name": "todo-manager",
-      "href": "../../../en/cat-harness/processes/skills/todo-manager.html"
+      "name": "todo-manager"
      },
      {
       "name": "translation-manager",
@@ -431,8 +395,7 @@
       "href": "../../../en/cat-harness/processes/skills/upstream-version-adoption.html"
      },
      {
-      "name": "watch",
-      "href": "../../../en/cat-harness/processes/skills/watch.html"
+      "name": "watch"
      }
     ]
    }
@@ -468,10 +431,6 @@
       "href": "../../../en/cat-harness/processes/skills/compiled-artefact-cache.html"
      },
      {
-      "name": "content-publish",
-      "href": "../../../en/cat-harness/processes/skills/content-publish.html"
-     },
-     {
       "name": "content-test",
       "href": "../../../en/cat-harness/processes/skills/content-test.html"
      },
@@ -496,16 +455,13 @@
       "href": "../../../en/cat-harness/processes/skills/platform-gates.html"
      },
      {
-      "name": "prepare-merge",
-      "href": "../../../en/cat-harness/processes/skills/prepare-merge.html"
+      "name": "prepare-merge"
      },
      {
-      "name": "publish-verification",
-      "href": "../../../en/cat-harness/processes/skills/publish-verification.html"
+      "name": "publish-verification"
      },
      {
-      "name": "qa-reports",
-      "href": "../../../en/cat-harness/processes/skills/qa-reports.html"
+      "name": "qa-reports"
      },
      {
       "name": "remote-mount",
@@ -520,8 +476,7 @@
       "href": "../../../en/cat-harness/processes/skills/sub-kg-lifecycle.html"
      },
      {
-      "name": "todo-manager",
-      "href": "../../../en/cat-harness/processes/skills/todo-manager.html"
+      "name": "todo-manager"
      },
      {
       "name": "translation-manager",
@@ -532,8 +487,7 @@
       "href": "../../../en/cat-harness/processes/skills/upstream-version-adoption.html"
      },
      {
-      "name": "watch",
-      "href": "../../../en/cat-harness/processes/skills/watch.html"
+      "name": "watch"
      }
     ]
    }
@@ -569,10 +523,6 @@
       "href": "../../../en/cat-harness/processes/skills/compiled-artefact-cache.html"
      },
      {
-      "name": "content-publish",
-      "href": "../../../en/cat-harness/processes/skills/content-publish.html"
-     },
-     {
       "name": "content-test",
       "href": "../../../en/cat-harness/processes/skills/content-test.html"
      },
@@ -597,16 +547,13 @@
       "href": "../../../en/cat-harness/processes/skills/platform-gates.html"
      },
      {
-      "name": "prepare-merge",
-      "href": "../../../en/cat-harness/processes/skills/prepare-merge.html"
+      "name": "prepare-merge"
      },
      {
-      "name": "publish-verification",
-      "href": "../../../en/cat-harness/processes/skills/publish-verification.html"
+      "name": "publish-verification"
      },
      {
-      "name": "qa-reports",
-      "href": "../../../en/cat-harness/processes/skills/qa-reports.html"
+      "name": "qa-reports"
      },
      {
       "name": "remote-mount",
@@ -621,8 +568,7 @@
       "href": "../../../en/cat-harness/processes/skills/sub-kg-lifecycle.html"
      },
      {
-      "name": "todo-manager",
-      "href": "../../../en/cat-harness/processes/skills/todo-manager.html"
+      "name": "todo-manager"
      },
      {
       "name": "translation-manager",
@@ -633,8 +579,7 @@
       "href": "../../../en/cat-harness/processes/skills/upstream-version-adoption.html"
      },
      {
-      "name": "watch",
-      "href": "../../../en/cat-harness/processes/skills/watch.html"
+      "name": "watch"
      }
     ]
    }

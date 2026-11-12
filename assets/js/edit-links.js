@@ -151,6 +151,10 @@
   // the page loads that also contains this page (a page can load another
   // site's chrome from the same origin, /folio-assistant/assets/…).
   const vendorBase = () => {
+    // A site that loads its shared assets from a host names the bundle's
+    // address in a meta (cat-harness-tools scripts/lib/shared-assets.ts).
+    const shared = document.querySelector('meta[name="fa-shared-asset"][data-dir="assets/vendor/crepe/"]');
+    if (shared && shared.getAttribute("content")) return shared.getAttribute("content");
     let best = null;
     for (const e of document.querySelectorAll("script[src], link[href]")) {
       let u;
@@ -752,6 +756,12 @@
   // section (.fa-hot, set below); each block's 📣 sits in the same left
   // gutter, coloured while its block is hovered; the block's 🔗 lives only in
   // the panel, as its copy-link button.
+  // Owner, 2026-11-06, SUPERSEDING the gutter side above: "get rid of left
+  // gutter ... but display needs a bit of padding on both sides. right gutter
+  // was already there". So the theme's 32px left gutter shrinks to padding,
+  // and the 🔗, 📣 and 🔖 all hang in the right gutter. The 🔗 is placed
+  // against .main-content, not its heading, so a heading inside a bordered box
+  // (a harness section) still puts it in the page gutter, not inside the box.
   const ON = "{opacity:1;filter:none}";
   const LINK_CSS = "html.fa-bp .ba-moved{display:none!important}" +
     // A lazy page fills a block after its box: its own 🔗 is hidden by place.
@@ -761,14 +771,77 @@
     "html.fa-bp .block-actions{opacity:1}" +
     "html.fa-bp .block-actions>.ba-ic:not(.ba-trigger):not(.ba-bookmark),html.fa-bp .fa-block-panel .block-actions>.ba-ic{display:none}" +
     // Owner, 2026-11-02 (dth-pc): "need a bit of padding between content and
-    // grill": the left gutter is inside the document's own box, so the icons
-    // never sit on the theme's backdrop.
-    "@media (min-width:50rem){html.fa-bp .main-content .fa-doc{padding-left:1.75rem}html.fa-bp .main-content .block-actions{float:left;clear:left;width:1.5rem;margin:0 0 6px -1.5rem;text-align:center}}" +
+    // grill", kept: .75rem of backdrop either side of the white panel, 1rem
+    // inside it (owner, 2026-11-06: "need bit padding to left of text and
+    // buttons"), then the right gutter the icons sit in. The 📣's margin is
+    // the panel's 1rem padding plus the anchor's 2.25rem, so both line up.
+    // Owner, 2026-11-08: "i dont wnat the left grill between LHS navbar and
+    // dsiplay content" — the .75rem of backdrop on the LEFT showed as a grey
+    // strip under the blue bar. It is gone: the white panel now meets the
+    // navbar, and its own 1rem keeps the text off the edge.
+    "@media (min-width:50rem){html.fa-bp .main-content-wrap{padding-left:0;padding-right:2.5rem}" +
+    "html.fa-bp .main-content{position:relative;padding-left:1rem;padding-right:1rem}" +
+    "html.fa-bp .main-content :is(h1,h2,h3,h4,h5,h6):has(>.anchor-heading){position:static}" +
+    "html.fa-bp .main-content .anchor-heading{left:auto;right:-2.25rem;top:auto;height:auto;width:1.5rem}" +
+    "html.fa-bp .main-content .block-actions{float:right;clear:right;width:1.5rem;margin:0 -3.25rem 6px 0;text-align:center}" +
+    // A section's box hangs under its heading's 🔗, placed like the 🔗 against
+    // .main-content so a heading inside a bordered box still uses the gutter.
+    "html.fa-bp .main-content .fa-sec-actions{position:absolute;float:none;right:-2.25rem;margin:0}" +
+    // A standalone page (an IG's thin layout) has no .main-content-wrap to
+    // pad, so its column leaves the same gutter itself.
+    "html.fa-bp .fa-page-main.main-content:has(>.fa-sec-actions){margin-right:2.5rem}}" +
+    // A section's QA / TR chips, under its 📣 and 🔖 in the gutter; pressed,
+    // they open the section's panel, where each badge says what it found.
+    "html.fa-bp .main-content .fa-sec-actions>.fa-sec-qa{order:9;margin:0;display:flex;flex-direction:column;align-items:center;gap:2px}" +
+    "html.fa-bp .main-content .fa-sec-actions>.fa-sec-qa .fa-qa-badges{display:flex;flex-direction:column;gap:2px;margin:0}" +
+    "html.fa-bp .main-content .fa-sec-actions>.fa-sec-qa .fa-qa-badge{min-height:0;padding:1px 2px;font-size:9px;cursor:pointer}" +
+    "html.fa-bp .main-content .fa-sec-actions>.fa-sec-qa .fa-qa-panel{display:none}" +
+    "html.fa-bp .fa-block-panel .fa-sec-qa{display:block;margin:1rem 0 0;text-align:left}" +
+    "html.fa-bp .fa-block-panel .fa-sec-qa::before{content:'Quality checks';display:block;font-weight:600;font-size:.9rem;margin-bottom:.3rem}" +
+    "html.fa-bp .fa-block-panel .fa-sec-qa .fa-qa-badges{display:flex;flex-direction:column;align-items:stretch;gap:.3rem;margin:0}" +
+    "html.fa-bp .fa-block-panel .fa-sec-qa .fa-qa-badge{display:flex;width:100%;box-sizing:border-box;text-align:left;font-size:.8rem}" +
+    "html.fa-bp .fa-block-panel .fa-sec-qa span.fa-qa-badge{cursor:default;opacity:.85}" +
+    "html.fa-bp .fa-block-panel .fa-sec-qa span.fa-qa-badge::after{content:attr(title);margin-left:.5em}" +
+    "html.fa-bp .fa-hot+.fa-sec-actions>.ba-ic" + ON +
+    // Its feedback link is the panel's content, not a second icon on the page.
+    "html.fa-bp .fa-sec-actions>a{display:none}html.fa-bp .fa-block-panel .fa-sec-actions>a{display:block;margin:.5rem 0;padding:.55rem .7rem;border:1px solid #8885;border-radius:8px;text-decoration:none}" +
     "html.fa-bp .block-actions>.ba-trigger,html.fa-bp .block-actions>.ba-bookmark{width:20px;height:20px;border:0;background:none;font-size:13px;opacity:.35;filter:grayscale(1)}" +
     "html.fa-bp .block-actions>.ba-trigger .ba-n{top:-4px;right:-6px;font-size:9px;padding:0 3px}" +
-    "html.fa-bp .block-actions:hover>.ba-trigger,html.fa-bp .ba-trigger:focus-visible,html.fa-bp .ba-trigger[aria-expanded=true],html.fa-bp :hover>.block-actions>.ba-trigger,html.fa-bp p:has(+.fa-blk:hover)>.block-actions>.ba-trigger" + ON +
-    "html.fa-bp .block-actions:hover>.ba-bookmark,html.fa-bp .ba-bookmark:focus-visible,html.fa-bp .ba-bookmark[aria-pressed=true],html.fa-bp :hover>.block-actions>.ba-bookmark,html.fa-bp p:has(+.fa-blk:hover)>.block-actions>.ba-bookmark" + ON +
+    "html.fa-bp .block-actions:hover>.ba-trigger,html.fa-bp .ba-trigger:focus-visible,html.fa-bp .ba-trigger[aria-expanded=true],html.fa-bp :not(.main-content,.fa-doc,main):hover>.block-actions>.ba-trigger,html.fa-bp p:has(+.fa-blk:hover)>.block-actions>.ba-trigger" + ON +
+    // Owner, 2026-11-09: "anchor is only highlighted on the content block it
+    // is in, but not feedback and bookmark ... always highlighted on any
+    // content block". A section's box hangs straight off .main-content, so
+    // ":hover>" matched the whole page and lit every box at once. The page
+    // column is not a block: a section's box lights from its .fa-hot heading.
+    "html.fa-bp .block-actions:hover>.ba-bookmark,html.fa-bp .ba-bookmark:focus-visible,html.fa-bp .ba-bookmark[aria-pressed=true],html.fa-bp :not(.main-content,.fa-doc,main):hover>.block-actions>.ba-bookmark,html.fa-bp p:has(+.fa-blk:hover)>.block-actions>.ba-bookmark" + ON +
+    // Owner, 2026-11-08: "pin icon does not get highlighted on hover". A
+    // pressed 🔖 is always in full colour, so hovering it changed nothing.
+    // Every gutter icon now lights a tinted tile under the pointer, pressed
+    // or not, so the one you are about to press is always the one that shows.
+    "html.fa-bp .block-actions>.ba-trigger,html.fa-bp .block-actions>.ba-bookmark,html.fa-bp .main-content .anchor-heading{border-radius:5px;transition:background-color .12s}" +
+    "html.fa-bp .block-actions>.ba-trigger:hover,html.fa-bp .block-actions>.ba-bookmark:hover,html.fa-bp .main-content .anchor-heading:hover{opacity:1;filter:none;background:color-mix(in srgb,var(--link,#0b5cad) 18%,transparent)}" +
+    // Owner, 2026-11-09: "no indication if a bookmark has been selected or
+    // not". Hovering a block lights every gutter icon in full colour, so a
+    // pressed 🔖 looked the same as one that was not. A pressed 🔖 now keeps
+    // a tinted tile with an accent ring at all times, hovered or not.
+    "html.fa-bp .block-actions>.ba-bookmark[aria-pressed=true]{opacity:1;filter:none;background:color-mix(in srgb,var(--link,#0b5cad) 24%,transparent);box-shadow:inset 0 0 0 1.5px var(--link,#0b5cad)}" +
+    "html.fa-bp .block-actions>.ba-bookmark[aria-pressed=true]:hover{background:color-mix(in srgb,var(--link,#0b5cad) 34%,transparent)}" +
     "html.fa-bp .main-content .anchor-heading svg{visibility:visible;opacity:.35;filter:grayscale(1)}" +
+    // Owner, 2026-11-10: "make RHS grill icons 50% bigger on laptop". From
+    // laptop width up, the 🔗, 📣 and 🔖 are half again as big (20px -> 30px
+    // tiles, 1rem -> 1.5rem link icon) and the right gutter widens to fit,
+    // keeping the same spacing to the text. Tablets and phones are unchanged.
+    "@media (min-width:64rem){html.fa-bp .main-content-wrap{padding-right:3.25rem}" +
+    "html.fa-bp .main-content .anchor-heading{right:-3rem;width:2.25rem;padding:0 .375rem}" +
+    "html.fa-bp .main-content .anchor-heading svg{width:1.5rem;height:1.5rem}" +
+    "html.fa-bp .main-content .block-actions{width:2.25rem;margin-right:-4rem}" +
+    // A section box is placed by its right offset, not by the margin above, so it
+    // must not pick up that -4rem margin too: with both, it sat 7rem past the
+    // text and off the right edge of the window (smart-trust-demo, 11-11).
+    "html.fa-bp .main-content .fa-sec-actions{right:-3rem;margin:0}" +
+    "html.fa-bp .fa-page-main.main-content:has(>.fa-sec-actions){margin-right:3.25rem}" +
+    "html.fa-bp .block-actions>.ba-trigger,html.fa-bp .block-actions>.ba-bookmark{width:30px;height:30px;font-size:20px}" +
+    "html.fa-bp .block-actions>.ba-trigger .ba-n{top:-5px;right:-8px;font-size:12px;padding:0 4px}}" +
     "html.fa-bp .main-content .fa-hot>.anchor-heading svg,html.fa-bp .main-content :hover>.anchor-heading svg,html.fa-bp .main-content .anchor-heading:focus svg" + ON +
     ".fa-block-panel .bp-copy{font:inherit;font-size:.82rem;margin:.1rem .35rem .3rem 0;padding:.3rem .6rem;border:1px solid #8886;border-radius:6px;background:none;color:inherit;cursor:pointer}" +
     ".fa-block-panel .bp-copy.ba-copied,.fa-block-panel .bp-bookmark[aria-pressed=true]{border-color:#2e7d32;background:#2e7d32;color:#fff}" +
@@ -847,7 +920,7 @@
       }
       const links = Array.from(box.querySelectorAll(":scope > a[data-fa-link]"));
       links.sort((a, b) => ORDER.indexOf(a.dataset.faLink) - ORDER.indexOf(b.dataset.faLink)).forEach((a) => box.append(a));
-      box.querySelectorAll(":scope > .ba-existing").forEach((s) => box.append(s));
+      box.querySelectorAll(":scope > .ba-existing, :scope > .fa-sec-qa").forEach((s) => box.append(s));
       home = el("span", { hidden: true });
       box.parentNode.insertBefore(home, box);
       moved = box;
@@ -915,7 +988,7 @@
     try { navigator.clipboard.writeText(url).then(() => done("Link copied"), () => done(url)); } catch { done(url); }
   };
   // 🔖 Bookmark (cat-harness#982): every anchored block carries a bookmark
-  // control in the left gutter and in the block panel header, wired to the
+  // control in the right gutter and in the block panel header, wired to the
   // folio glass via data-fa-pin / data-fa-pin-control.
   const pageCover = () => {
     if (!document || typeof document.querySelector !== "function") return "";
@@ -930,7 +1003,7 @@
   };
   const bookmarkIcon = (box, label) => {
     if (!label || box.querySelector(":scope > .ba-bookmark")) return;
-    const base = (location.pathname || "/") + (location.search || "");
+    const base = location.pathname || "/"; // a page is addressed by its path, never a query string (#1881)
     const href = base + "#" + encodeURIComponent(label).replace(/%3A/g, ":").replace(/%2F/g, "/");
     const title = titleOf(box) || label;
     if (!box.hasAttribute("data-fa-pin")) {
@@ -950,6 +1023,118 @@
     b.append(el("span", { textContent: "🔖" }));
     box.append(b);
     if (window.faFolio && typeof window.faFolio.paint === "function") window.faFolio.paint(box);
+  };
+  // Owner, 2026-11-06: a page with no content blocks (the landing page, any
+  // plain Jekyll page) still gets 📣 feedback and [+] bookmark-to-folio per
+  // section, in the right gutter. One box per anchored heading, placed after
+  // it; none on a page whose build drew block boxes (.fa-doc or any
+  // .block-actions), so a block page never shows both. The 📣 names the page
+  // and section, not a source file, which a plain page does not declare. Its
+  // repository is the configured one (<meta name="fa-repo">), else a GitHub
+  // Pages project site's own (<owner>.github.io/<repo>/); with neither there
+  // is no 📣, only the 🔖.
+  const siteRepo = () => {
+    const c = config();
+    if (c && c.repo) return c.repo;
+    // Only GitHub's own name characters pass: the result is spliced into a
+    // github.com URL, and the page address is not ours to trust.
+    const h = /^([A-Za-z0-9-]+)\.github\.io$/.exec(location.hostname || "");
+    const seg = /^\/([A-Za-z0-9._-]+)\//.exec(location.pathname || "");
+    return h && seg && seg[1] !== "." && seg[1] !== ".." ? h[1] + "/" + seg[1] : "";
+  };
+  // An IG page (the FHIR layer's thin layout) says where each heading's text
+  // is in its markdown source: <script id="ig-source-lines">, the IG's own
+  // repository and, per heading, its line and, for an included file, that
+  // file. Its sections take the same right-gutter box as any plain page's
+  // (owner, 2026-11-08: "edit feedback on IGs like rest of documents should
+  // be on right grill not touching section title ... consolidate
+  // infrastructure"), with the ✎ to the section's own source line beside the
+  // 📣, both in the panel. Its headings carry no theme anchor, so each is
+  // matched by its id instead, and its 📣 goes to the IG's repository, not
+  // the site's.
+  const igLines = () => {
+    const d = document.getElementById("ig-source-lines");
+    if (!d) return null;
+    try { const m = JSON.parse(d.textContent); return m && m.blob ? m : null; } catch { return null; }
+  };
+  const norm = (s) => String(s).toLowerCase().replace(/&[a-z]+;/g, " ").replace(/[^a-z0-9]+/g, " ").trim();
+  const sectionBoxes = () => {
+    const main = document.querySelector(".main-content");
+    if (!main || main.querySelector(".fa-doc, .block-actions")) return;
+    const ig = igLines();
+    const ghRepo = ig ? (/^https:\/\/github\.com\/([^/]+\/[^/]+)/.exec(ig.blob) || [])[1] || "" : "";
+    const site = ig ? (ig.repo || ghRepo) : siteRepo();
+    const used = {};
+    let made = false;
+    for (const h of main.querySelectorAll("h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]")) {
+      if (h.closest(".fa-block-panel, nav")) continue;
+      if (ig ? !/^H[1-6]$/.test(h.tagName) : (!h.querySelector(":scope > .anchor-heading") || /^H[56]$/.test(h.tagName))) continue;
+      const sec = h.textContent.trim();
+      const box = el("span", { className: "block-actions fa-sec-actions" });
+      box.dataset.block = h.id;
+      box.dataset.sec = sec;
+      let src = "", from = null;
+      // A generated docs page writes each section's own ✎ Edit and its QA /
+      // TR badges in a paragraph under the heading (cat-harness-tools
+      // gen-docs-pages). Owner, 2026-11-08: "Suggest is now redundant with
+      // right grill icons. QA and TR should be in right grill." So that
+      // paragraph moves into the box: its ✎ (and the ✍ beside it) become the
+      // panel's links, its badges the box's chips, and the empty line goes.
+      const nx = h.nextElementSibling;
+      if (!ig && nx && nx.tagName === "P" && nx.children.length && Array.from(nx.children).every((c) => c.matches("a.fa-node-edit, a.ba-suggest, .fa-qa-badges"))
+        && nx.textContent.replace(/\s/g, "") === Array.from(nx.children, (c) => c.textContent).join("").replace(/\s/g, "")) {
+        from = nx.querySelector("a.fa-node-edit[data-fa-link]");
+        if (from) {
+          for (const a of nx.querySelectorAll("a.fa-node-edit, a.ba-suggest")) box.append(a);
+          if (from.dataset.src) {
+            const r = from.dataset.repo || siteRepo();
+            src = r ? "https://github.com/" + r + "/blob/" + (from.dataset.branch || config().branch || "main") + "/" + from.dataset.src : "";
+          }
+        }
+        const qa = nx.querySelector(".fa-qa-badges");
+        if (qa) box.append(el("p", { className: "fa-sec-qa" }, [qa]));
+        nx.remove();
+      }
+      if (ig) {
+        const k = norm(sec);
+        const lines = Array.isArray(ig.lines) ? ig.lines : [];
+        for (let i = 0; i < lines.length; i++) if (!used[i] && norm(lines[i].t) === k) {
+          used[i] = 1;
+          src = (lines[i].b || ig.blob) + "#L" + lines[i].l;
+          break;
+        }
+        if (src) {
+          const e = el("a", { className: "ba-edit", href: src, textContent: "\u270e edit", title: "Edit this section's source on GitHub" });
+          e.dataset.faLink = "edit";
+          box.append(e);
+        }
+      }
+      const repo = (from && from.dataset.repo) || site;
+      if (repo) {
+        const here = location.href.split("#")[0] + "#" + encodeURIComponent(h.id);
+        const q = new URLSearchParams();
+        if (ig) {
+          const pt = document.title.split(/ [|\u2014] /)[0].trim();
+          q.set("title", "Feedback on \u201c" + sec + "\u201d" + (pt && norm(pt) !== norm(sec) ? " (page: " + pt + ")" : ""));
+          q.set("body", ["**Page:** " + here, "**Section:** " + sec + " (#" + h.id + ")", "**Source:** " + (src || ig.blob), "", "**Feedback:**", "", ""].join("\n"));
+        } else {
+          q.set("title", "Feedback: " + (document.title ? document.title + " \u2014 " : "") + sec);
+          q.set("body", ["**Section:** " + sec, "**On the site:** " + here].concat(src ? ["**Source:** " + src] : []).concat([
+            "", "**Type:** general | technical | editorial", "", "**Comment:**", "", ""]).join("\n"));
+        }
+        const a = el("a", { className: "ba-feedback", href: "https://github.com/" + repo + "/issues/new?" + q, textContent: "\ud83d\udce3 feedback", title: "Give feedback on this section (opens a GitHub issue)" });
+        a.dataset.faLink = "feedback";
+        box.append(a);
+      }
+      h.classList.add("fa-sec-h");
+      h.after(box);
+      made = true;
+    }
+    // A block page brings the panel's styles with its blocks; a plain page
+    // brings none, so the panel would render unstyled at the page's foot.
+    if (made && !document.getElementById("fa-bp-panel-css"))
+      // Before this runtime's own rules, which refine these and must win.
+      (document.head || document.documentElement).insertBefore(el("style", { id: "fa-bp-panel-css", textContent: "\nhtml.fa-bp .block-actions { display:flex; flex-direction:column; gap:4px; align-items:flex-end; font-size:.8rem; opacity:.3; }\nhtml.fa-bp .block-actions:hover, html.fa-bp .block-actions:focus-within, html.fa-bp *:hover > .block-actions, html.fa-bp p:hover + .block-actions { opacity:1; }\nhtml.fa-bp .block-actions > a, html.fa-bp .block-actions > .ba-existing { display:none; }\n.ba-ic { position:relative; width:28px; height:28px; padding:0; border:1px solid #8885; border-radius:7px; background:color-mix(in srgb, currentColor 5%, transparent); color:inherit; font-size:14px; line-height:1; cursor:pointer; }\n.ba-ic:hover, .ba-ic:focus-visible, .ba-ic[aria-expanded=\"true\"] { border-color:var(--link,#0b5cad); }\n.ba-ic[aria-expanded=\"true\"] { background:var(--link,#0b5cad); color:#fff; }\n.ba-ic .ba-n { position:absolute; top:-6px; right:-8px; min-width:1.1em; padding:1px 4px; border-radius:8px; background:#b35900; color:#fff; font:700 10px/1.2 sans-serif; }\n.fa-block-panel { position:fixed; top:0; right:0; bottom:0; z-index:2147482000; width:min(380px,92vw); overflow-y:auto; box-sizing:border-box; padding:14px 18px;\n  background:var(--body-background-color,#fff); color:var(--body-text-color,inherit); border-left:1px solid #8886; box-shadow:-8px 0 24px #0003;\n  font-size:.88rem; line-height:1.45; transform:translateX(105%); transition:transform .16s ease; }\n.fa-block-panel.open { transform:none; }\n@media (prefers-reduced-motion:reduce) { .fa-block-panel { transition:none; } }\n.fa-block-panel .bp-tabs { display:flex; gap:6px; margin:0 2rem .6rem 0; }\n.fa-block-panel .bp-x { position:absolute; top:10px; right:12px; border:0; background:none; color:inherit; font-size:18px; cursor:pointer; opacity:.7; }\n.fa-block-panel h3 { margin:.2rem 0 .1rem; font-size:1rem; }\n.fa-block-panel .bp-sub { opacity:.7; font-size:.8rem; margin-bottom:.6rem; }\nhtml.fa-bp .fa-block-panel .block-actions { float:none; display:block; opacity:1; white-space:normal; font-size:inherit; margin:0; }\nhtml.fa-bp .fa-block-panel .block-actions > a { display:block; margin:.5rem 0; padding:.55rem .7rem; border:1px solid #8885; border-radius:8px; text-decoration:none; }\n.fa-block-panel .block-actions > a:hover { border-color:var(--link,#0b5cad); }\n.fa-block-panel .block-actions > a small { display:block; margin-top:.15rem; color:var(--body-text-color,#555); opacity:.85; font-size:.8rem; }\n.fa-block-panel .block-actions > .ba-existing { display:block; margin:.5rem 0; }\nhtml.fa-bp .fa-block-panel .block-actions > .ba-existing { display:block; }\n.fa-block-panel .block-actions > .ba-ic { display:none; }\n" }), document.getElementById("fa-bp-link-css"));
   };
   const icons = (root) => {
     const r = root || document;
@@ -976,7 +1161,7 @@
     let h = null;
     if (n && !n.closest(".fa-block-panel, nav, .side-bar")) {
       while (n.parentElement && !n.parentElement.matches(".fa-doc, .main-content, main")) n = n.parentElement;
-      for (let x = n; x && !h; x = x.previousElementSibling) if (/^H[1-6]$/.test(x.tagName) && x.querySelector(":scope > .anchor-heading")) h = x;
+      for (let x = n; x && !h; x = x.previousElementSibling) if (/^H[1-6]$/.test(x.tagName) && (x.classList.contains("fa-sec-h") || x.querySelector(":scope > .anchor-heading"))) h = x;
     }
     if (h === hot) return;
     if (hot) hot.classList.remove("fa-hot");
@@ -996,6 +1181,17 @@
     }
     if (panel && panel.classList.contains("open") && !panel.contains(e.target) && !e.target.closest(".fa-suggest, dialog")) close();
   });
+  // A QA chip in the gutter opens its section's panel; docs-ui opens a
+  // badge's own detail only once it is in the panel, with room for it.
+  document.addEventListener("click", (e) => {
+    const q = e.target.closest && e.target.closest(".fa-sec-qa");
+    if (!q || (panel && panel.contains(q))) return;
+    const box = q.closest(".block-actions");
+    if (!box) return;
+    e.preventDefault();
+    e.stopPropagation();
+    open(box, "edit", box.querySelector(":scope > .ba-trigger"));
+  }, true);
   document.addEventListener("keydown", (e) => { if (e.key === "Escape" && panel && panel.classList.contains("open") && !document.querySelector("dialog[open]")) close(); });
   if (typeof document.documentElement === "object" && document.documentElement && document.documentElement.classList) {
     document.documentElement.classList.add("fa-bp");
@@ -1003,8 +1199,8 @@
       const st = el("style", { id: "fa-bp-link-css", textContent: LINK_CSS });
       (document.head || document.documentElement).append(st);
     }
-    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", () => icons());
-    else icons();
+    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", () => { sectionBoxes(); icons(); });
+    else { sectionBoxes(); icons(); }
   }
   window.faBlockPanel = {
     pane: (id, p) => { panes[id] = p; },

@@ -6,84 +6,84 @@
    "id": "A_Tiles",
    "name": "Compose each harness's nav and tile",
    "left": 23.6,
-   "top": 7.27,
+   "top": 4.03,
    "box": {
     "left": 17.8,
-    "top": 19.09,
+    "top": 19.35,
     "width": 1.92,
-    "height": 4.36
+    "height": 3.87
    }
   },
   {
    "id": "A_Ground",
    "name": "Resolve each harness's page ground",
    "left": 37.2,
-   "top": 7.27,
+   "top": 4.03,
    "box": {
     "left": 31.4,
-    "top": 19.09,
+    "top": 19.35,
     "width": 1.92,
-    "height": 4.36
+    "height": 3.87
    }
   },
   {
    "id": "A_Publish",
    "name": "Publish docs on their theme's art",
    "left": 50.8,
-   "top": 7.27,
+   "top": 4.03,
    "box": {
     "left": 45,
-    "top": 19.09,
+    "top": 19.35,
     "width": 1.92,
-    "height": 4.36
+    "height": 3.87
    }
   },
   {
    "id": "A_Board",
    "name": "Draw the board of todos and beans",
    "left": 50.8,
-   "top": 36.36,
+   "top": 29.84,
    "box": {
     "left": 45,
-    "top": 48.18,
+    "top": 45.16,
     "width": 1.92,
-    "height": 4.36
+    "height": 3.87
    }
   },
   {
    "id": "A_Read",
    "name": "Read a page or a card",
    "left": 50.8,
-   "top": 70.91,
+   "top": 60.48,
    "box": {
     "left": 45,
-    "top": 82.73,
+    "top": 75.81,
     "width": 1.92,
-    "height": 4.36
+    "height": 3.87
    }
   },
   {
    "id": "A_Propose",
    "name": "Propose the change",
    "left": 74.8,
-   "top": 61.82,
+   "top": 54.84,
    "box": {
     "left": 69,
-    "top": 73.64,
+    "top": 70.16,
     "width": 1.92,
-    "height": 4.36
+    "height": 3.87
    }
   },
   {
    "id": "A_Todo",
    "name": "Leave it as feedback",
    "left": 74.8,
-   "top": 80.91,
+   "top": 77.42,
    "box": {
     "left": 69,
-    "top": 92.73,
+    "top": 92.74,
     "width": 1.92,
-    "height": 4.36
+    "height": 3.87
    }
   }
  ],
@@ -116,10 +116,6 @@
       "href": "../../../en/cat-harness/processes/skills/compiled-artefact-cache.html"
      },
      {
-      "name": "content-publish",
-      "href": "../../../en/cat-harness/processes/skills/content-publish.html"
-     },
-     {
       "name": "content-test",
       "href": "../../../en/cat-harness/processes/skills/content-test.html"
      },
@@ -144,16 +140,13 @@
       "href": "../../../en/cat-harness/processes/skills/platform-gates.html"
      },
      {
-      "name": "prepare-merge",
-      "href": "../../../en/cat-harness/processes/skills/prepare-merge.html"
+      "name": "prepare-merge"
      },
      {
-      "name": "publish-verification",
-      "href": "../../../en/cat-harness/processes/skills/publish-verification.html"
+      "name": "publish-verification"
      },
      {
-      "name": "qa-reports",
-      "href": "../../../en/cat-harness/processes/skills/qa-reports.html"
+      "name": "qa-reports"
      },
      {
       "name": "remote-mount",
@@ -168,8 +161,7 @@
       "href": "../../../en/cat-harness/processes/skills/sub-kg-lifecycle.html"
      },
      {
-      "name": "todo-manager",
-      "href": "../../../en/cat-harness/processes/skills/todo-manager.html"
+      "name": "todo-manager"
      },
      {
       "name": "translation-manager",
@@ -180,8 +172,7 @@
       "href": "../../../en/cat-harness/processes/skills/upstream-version-adoption.html"
      },
      {
-      "name": "watch",
-      "href": "../../../en/cat-harness/processes/skills/watch.html"
+      "name": "watch"
      }
     ]
    }
@@ -213,10 +204,6 @@
       "href": "../../../en/cat-harness/processes/skills/compiled-artefact-cache.html"
      },
      {
-      "name": "content-publish",
-      "href": "../../../en/cat-harness/processes/skills/content-publish.html"
-     },
-     {
       "name": "content-test",
       "href": "../../../en/cat-harness/processes/skills/content-test.html"
      },
@@ -241,16 +228,13 @@
       "href": "../../../en/cat-harness/processes/skills/platform-gates.html"
      },
      {
-      "name": "prepare-merge",
-      "href": "../../../en/cat-harness/processes/skills/prepare-merge.html"
+      "name": "prepare-merge"
      },
      {
-      "name": "publish-verification",
-      "href": "../../../en/cat-harness/processes/skills/publish-verification.html"
+      "name": "publish-verification"
      },
      {
-      "name": "qa-reports",
-      "href": "../../../en/cat-harness/processes/skills/qa-reports.html"
+      "name": "qa-reports"
      },
      {
       "name": "remote-mount",
@@ -265,8 +249,7 @@
       "href": "../../../en/cat-harness/processes/skills/sub-kg-lifecycle.html"
      },
      {
-      "name": "todo-manager",
-      "href": "../../../en/cat-harness/processes/skills/todo-manager.html"
+      "name": "todo-manager"
      },
      {
       "name": "translation-manager",
@@ -277,8 +260,7 @@
       "href": "../../../en/cat-harness/processes/skills/upstream-version-adoption.html"
      },
      {
-      "name": "watch",
-      "href": "../../../en/cat-harness/processes/skills/watch.html"
+      "name": "watch"
      }
     ]
    }
@@ -310,10 +292,6 @@
       "href": "../../../en/cat-harness/processes/skills/compiled-artefact-cache.html"
      },
      {
-      "name": "content-publish",
-      "href": "../../../en/cat-harness/processes/skills/content-publish.html"
-     },
-     {
       "name": "content-test",
       "href": "../../../en/cat-harness/processes/skills/content-test.html"
      },
@@ -338,16 +316,13 @@
       "href": "../../../en/cat-harness/processes/skills/platform-gates.html"
      },
      {
-      "name": "prepare-merge",
-      "href": "../../../en/cat-harness/processes/skills/prepare-merge.html"
+      "name": "prepare-merge"
      },
      {
-      "name": "publish-verification",
-      "href": "../../../en/cat-harness/processes/skills/publish-verification.html"
+      "name": "publish-verification"
      },
      {
-      "name": "qa-reports",
-      "href": "../../../en/cat-harness/processes/skills/qa-reports.html"
+      "name": "qa-reports"
      },
      {
       "name": "remote-mount",
@@ -362,8 +337,7 @@
       "href": "../../../en/cat-harness/processes/skills/sub-kg-lifecycle.html"
      },
      {
-      "name": "todo-manager",
-      "href": "../../../en/cat-harness/processes/skills/todo-manager.html"
+      "name": "todo-manager"
      },
      {
       "name": "translation-manager",
@@ -374,8 +348,7 @@
       "href": "../../../en/cat-harness/processes/skills/upstream-version-adoption.html"
      },
      {
-      "name": "watch",
-      "href": "../../../en/cat-harness/processes/skills/watch.html"
+      "name": "watch"
      }
     ]
    }
@@ -387,12 +360,7 @@
    "stepHref": "harness-default-rendering.html#step-A_Board",
    "lane": "Board renderer",
    "laneHref": "harness-default-rendering.html#lane-Lane_Board",
-   "skills": [
-    {
-     "name": "todo-manager",
-     "href": "../../../en/cat-harness/processes/skills/todo-manager.html"
-    }
-   ],
+   "skills": [],
    "role": {
     "name": "board-renderer",
     "href": "../../../cat-harness/auto-docs/index/roles/index.html#a-cat-harness-scenarios-roles-json-board-renderer",
@@ -415,20 +383,17 @@
       "href": "../../../en/cat-harness/processes/skills/harness-tiles.html"
      },
      {
-      "name": "incremental-render",
-      "href": "../../../en/cat-harness/processes/skills/incremental-render.html"
+      "name": "incremental-render"
      },
      {
       "name": "liquid-templates",
       "href": "../../../en/cat-harness/processes/skills/liquid-templates.html"
      },
      {
-      "name": "pdf-inline-viewer",
-      "href": "../../../en/cat-harness/processes/skills/pdf-inline-viewer.html"
+      "name": "pdf-inline-viewer"
      },
      {
-      "name": "visualizer-loading",
-      "href": "../../../en/cat-harness/processes/skills/visualizer-loading.html"
+      "name": "visualizer-loading"
      }
     ]
    }
@@ -468,12 +433,10 @@
       "href": "../../../en/cat-harness/processes/skills/decision-audit.html"
      },
      {
-      "name": "narrative-asserts-code",
-      "href": "../../../en/cat-harness/processes/skills/narrative-asserts-code.html"
+      "name": "narrative-asserts-code"
      },
      {
-      "name": "rendered-impact",
-      "href": "../../../en/cat-harness/processes/skills/rendered-impact.html"
+      "name": "rendered-impact"
      },
      {
       "name": "staging-review",
@@ -484,8 +447,7 @@
       "href": "../../../en/cat-harness/processes/skills/translation-manager.html"
      },
      {
-      "name": "visual-diff",
-      "href": "../../../en/cat-harness/processes/skills/visual-diff.html"
+      "name": "visual-diff"
      },
      {
       "name": "voice-overlay-review",
@@ -529,12 +491,10 @@
       "href": "../../../en/cat-harness/processes/skills/decision-audit.html"
      },
      {
-      "name": "narrative-asserts-code",
-      "href": "../../../en/cat-harness/processes/skills/narrative-asserts-code.html"
+      "name": "narrative-asserts-code"
      },
      {
-      "name": "rendered-impact",
-      "href": "../../../en/cat-harness/processes/skills/rendered-impact.html"
+      "name": "rendered-impact"
      },
      {
       "name": "staging-review",
@@ -545,8 +505,7 @@
       "href": "../../../en/cat-harness/processes/skills/translation-manager.html"
      },
      {
-      "name": "visual-diff",
-      "href": "../../../en/cat-harness/processes/skills/visual-diff.html"
+      "name": "visual-diff"
      },
      {
       "name": "voice-overlay-review",
@@ -590,12 +549,10 @@
       "href": "../../../en/cat-harness/processes/skills/decision-audit.html"
      },
      {
-      "name": "narrative-asserts-code",
-      "href": "../../../en/cat-harness/processes/skills/narrative-asserts-code.html"
+      "name": "narrative-asserts-code"
      },
      {
-      "name": "rendered-impact",
-      "href": "../../../en/cat-harness/processes/skills/rendered-impact.html"
+      "name": "rendered-impact"
      },
      {
       "name": "staging-review",
@@ -606,8 +563,7 @@
       "href": "../../../en/cat-harness/processes/skills/translation-manager.html"
      },
      {
-      "name": "visual-diff",
-      "href": "../../../en/cat-harness/processes/skills/visual-diff.html"
+      "name": "visual-diff"
      },
      {
       "name": "voice-overlay-review",

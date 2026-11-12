@@ -5,73 +5,73 @@
   {
    "id": "Task_ClassifyChange",
    "name": "Classify what changed",
-   "left": 21.23,
-   "top": 19.41,
+   "left": 23.5,
+   "top": 27.5,
    "box": {
-    "left": 15.43,
-    "top": 41.1,
-    "width": 1.92,
-    "height": 5.48
+    "left": 16.32,
+    "top": 43.33,
+    "width": 2.38,
+    "height": 4
    }
   },
   {
    "id": "Call_NarrativeReview",
    "name": "Narrative review",
-   "left": 49.22,
-   "top": 3.88,
+   "left": 58.14,
+   "top": 2.5,
    "box": {
-    "left": 41.02,
-    "top": 16.44,
-    "width": 1.92,
-    "height": 5.48
+    "left": 50.96,
+    "top": 18.33,
+    "width": 2.38,
+    "height": 4
    }
   },
   {
    "id": "Call_CodeReview",
    "name": "Code node review",
-   "left": 49.22,
-   "top": 44.98,
+   "left": 58.14,
+   "top": 52.5,
    "box": {
-    "left": 41.02,
-    "top": 57.53,
-    "width": 1.92,
-    "height": 5.48
+    "left": 50.96,
+    "top": 68.33,
+    "width": 2.38,
+    "height": 4
    }
   },
   {
    "id": "Call_NarrativeCodeReview",
    "name": "Prose and the code it describes",
-   "left": 49.22,
-   "top": 24.43,
+   "left": 58.14,
+   "top": 27.5,
    "box": {
-    "left": 41.02,
-    "top": 36.07,
-    "width": 1.92,
-    "height": 5.48
+    "left": 50.96,
+    "top": 43.33,
+    "width": 2.38,
+    "height": 4
    }
   },
   {
    "id": "Task_Consolidate",
    "name": "Consolidate findings",
-   "left": 73.21,
-   "top": 19.41,
+   "left": 82.88,
+   "top": 27.5,
    "box": {
-    "left": 67.41,
-    "top": 41.1,
-    "width": 1.92,
-    "height": 5.48
+    "left": 75.7,
+    "top": 43.33,
+    "width": 2.38,
+    "height": 4
    }
   },
   {
    "id": "Task_EditorDecides",
    "name": "Accept, or send back",
-   "left": 73.21,
-   "top": 68.72,
+   "left": 82.88,
+   "top": 76.67,
    "box": {
-    "left": 67.41,
-    "top": 90.41,
-    "width": 1.92,
-    "height": 5.48
+    "left": 75.7,
+    "top": 92.5,
+    "width": 2.38,
+    "height": 4
    }
   }
  ],
@@ -116,12 +116,10 @@
       "href": "../../../en/cat-harness/processes/skills/decision-audit.html"
      },
      {
-      "name": "narrative-asserts-code",
-      "href": "../../../en/cat-harness/processes/skills/narrative-asserts-code.html"
+      "name": "narrative-asserts-code"
      },
      {
-      "name": "rendered-impact",
-      "href": "../../../en/cat-harness/processes/skills/rendered-impact.html"
+      "name": "rendered-impact"
      },
      {
       "name": "staging-review",
@@ -132,8 +130,7 @@
       "href": "../../../en/cat-harness/processes/skills/translation-manager.html"
      },
      {
-      "name": "visual-diff",
-      "href": "../../../en/cat-harness/processes/skills/visual-diff.html"
+      "name": "visual-diff"
      },
      {
       "name": "voice-overlay-review",
@@ -177,12 +174,10 @@
       "href": "../../../en/cat-harness/processes/skills/decision-audit.html"
      },
      {
-      "name": "narrative-asserts-code",
-      "href": "../../../en/cat-harness/processes/skills/narrative-asserts-code.html"
+      "name": "narrative-asserts-code"
      },
      {
-      "name": "rendered-impact",
-      "href": "../../../en/cat-harness/processes/skills/rendered-impact.html"
+      "name": "rendered-impact"
      },
      {
       "name": "staging-review",
@@ -193,8 +188,7 @@
       "href": "../../../en/cat-harness/processes/skills/translation-manager.html"
      },
      {
-      "name": "visual-diff",
-      "href": "../../../en/cat-harness/processes/skills/visual-diff.html"
+      "name": "visual-diff"
      },
      {
       "name": "voice-overlay-review",
@@ -238,12 +232,10 @@
       "href": "../../../en/cat-harness/processes/skills/decision-audit.html"
      },
      {
-      "name": "narrative-asserts-code",
-      "href": "../../../en/cat-harness/processes/skills/narrative-asserts-code.html"
+      "name": "narrative-asserts-code"
      },
      {
-      "name": "rendered-impact",
-      "href": "../../../en/cat-harness/processes/skills/rendered-impact.html"
+      "name": "rendered-impact"
      },
      {
       "name": "staging-review",
@@ -254,8 +246,7 @@
       "href": "../../../en/cat-harness/processes/skills/translation-manager.html"
      },
      {
-      "name": "visual-diff",
-      "href": "../../../en/cat-harness/processes/skills/visual-diff.html"
+      "name": "visual-diff"
      },
      {
       "name": "voice-overlay-review",
@@ -267,16 +258,11 @@
   "Call_NarrativeCodeReview": {
    "id": "Call_NarrativeCodeReview",
    "name": "Prose and the code it describes",
-   "type": "bpmn:CallActivity",
+   "type": "bpmn:Task",
    "stepHref": "review-task.html#step-Call_NarrativeCodeReview",
    "lane": "Reviewer / SME",
    "laneHref": "review-task.html#lane-Lane_Reviewer",
    "skills": [],
-   "calls": {
-    "name": "Prose and the code it describes",
-    "href": "narrative-code-review.html",
-    "diagram": "narrative-code-review.html"
-   },
    "role": {
     "name": "reviewer",
     "href": "../../../cat-harness/auto-docs/index/roles/index.html#a-cat-harness-scenarios-roles-json-reviewer",
@@ -299,12 +285,10 @@
       "href": "../../../en/cat-harness/processes/skills/decision-audit.html"
      },
      {
-      "name": "narrative-asserts-code",
-      "href": "../../../en/cat-harness/processes/skills/narrative-asserts-code.html"
+      "name": "narrative-asserts-code"
      },
      {
-      "name": "rendered-impact",
-      "href": "../../../en/cat-harness/processes/skills/rendered-impact.html"
+      "name": "rendered-impact"
      },
      {
       "name": "staging-review",
@@ -315,8 +299,7 @@
       "href": "../../../en/cat-harness/processes/skills/translation-manager.html"
      },
      {
-      "name": "visual-diff",
-      "href": "../../../en/cat-harness/processes/skills/visual-diff.html"
+      "name": "visual-diff"
      },
      {
       "name": "voice-overlay-review",
@@ -360,12 +343,10 @@
       "href": "../../../en/cat-harness/processes/skills/decision-audit.html"
      },
      {
-      "name": "narrative-asserts-code",
-      "href": "../../../en/cat-harness/processes/skills/narrative-asserts-code.html"
+      "name": "narrative-asserts-code"
      },
      {
-      "name": "rendered-impact",
-      "href": "../../../en/cat-harness/processes/skills/rendered-impact.html"
+      "name": "rendered-impact"
      },
      {
       "name": "staging-review",
@@ -376,8 +357,7 @@
       "href": "../../../en/cat-harness/processes/skills/translation-manager.html"
      },
      {
-      "name": "visual-diff",
-      "href": "../../../en/cat-harness/processes/skills/visual-diff.html"
+      "name": "visual-diff"
      },
      {
       "name": "voice-overlay-review",
@@ -407,16 +387,6 @@
      {
       "name": "bpmn-authoring",
       "href": "../../../en/cat-harness/processes/skills/bpmn-authoring.html",
-      "via": "author"
-     },
-     {
-      "name": "content-author",
-      "href": "../../../en/cat-harness/processes/skills/content-author.html",
-      "via": "author"
-     },
-     {
-      "name": "content-plan",
-      "href": "../../../en/cat-harness/processes/skills/content-plan.html",
       "via": "author"
      },
      {
@@ -455,12 +425,10 @@
      },
      {
       "name": "todo-manager",
-      "href": "../../../en/cat-harness/processes/skills/todo-manager.html",
       "via": "author"
      },
      {
-      "name": "voice-authoring-guidance",
-      "href": "../../../en/cat-harness/processes/skills/voice-authoring-guidance.html"
+      "name": "voice-authoring-guidance"
      }
     ]
    }

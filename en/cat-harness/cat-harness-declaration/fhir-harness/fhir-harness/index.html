@@ -132,7 +132,7 @@
   &quot;tone&quot;: 10,
   &quot;reads&quot;: &quot;a flame — the FHIR implementation-guide harness&quot;
 }</pre></dd>
-<dt>_avatar_comment</dt><dd>A flame, for FHIR&#39;s own pun on its name. Moved here from cat-harness/schemas/avatars.ts, 2026-10-05 (bean sod4 #4): an instance declares its own mark.</dd>
+<dt>_avatar_comment</dt><dd>A flame, for FHIR&#39;s own pun on its name. Moved here from cat-harness/schemas/avatars.ts, 2026-10-05 (bean sod4 #4): a layer declares its own mark.</dd>
 <dt>directories</dt><dd><pre>[
   {
     &quot;id&quot;: &quot;fhir-harness-translations&quot;,
@@ -210,9 +210,18 @@
     &quot;id&quot;: &quot;fhir-harness-processes&quot;,
     &quot;path&quot;: &quot;processes/&quot;,
     &quot;dependents&quot;: &quot;skip&quot;,
-    &quot;description&quot;: &quot;The BPMN this layer OWNS, grouped by concern as the harness groups its own (`processes/&lt;group&gt;/`): in `content/`, the FHIR IG pipeline (`l3-fhir-pipeline.bpmn`), its incremental build (`ig-incremental-build.bpmn`), the IG AST cache and delta review (`ig-ast-cache.bpmn`, `ig-ast-delta-review.bpmn`) and the Questionnaire wireframe review (`questionnaire-wireframe-review.bpmn`), beside the IG skills they bind.&quot;,
+    &quot;description&quot;: &quot;The BPMN this layer OWNS, grouped by concern as the harness groups its own (`processes/&lt;group&gt;/`): in `content/`, the FHIR IG pipeline (`l3-fhir-pipeline.bpmn`), its incremental build (`ig-incremental-build.bpmn`), the IG AST cache and delta review (`ig-ast-cache.bpmn`, `ig-ast-delta-review.bpmn`), the IG release, its owner&#39;s tag and its catch-up (`ig-release.bpmn`) and the Questionnaire wireframe review (`questionnaire-wireframe-review.bpmn`), beside the IG skills they bind.&quot;,
     &quot;graphTypologies&quot;: [
       &quot;processes&quot;
+    ]
+  },
+  {
+    &quot;id&quot;: &quot;fhir-harness-caches&quot;,
+    &quot;path&quot;: &quot;caches/&quot;,
+    &quot;title&quot;: &quot;CI caches&quot;,
+    &quot;description&quot;: &quot;The caches this layer declares (cache-first CI, rule 6): one `cache/1.0.0` node per cache this layer&#39;s workflows and scripts hold. `fhir-ast.cache.json` is the IG AST branch store, whose component process is `processes/content/ig-ast-cache.bpmn`; `fhir-ig-tooling` and `fhir-cat-mount` are the Actions caches of the AST refresh. Staleness is computed by cat-harness-tools&#39; `caches:viz`, never stated here.&quot;,
+    &quot;graphTypologies&quot;: [
+      &quot;cache&quot;
     ]
   },
   {
@@ -305,14 +314,14 @@
 }</pre></dd>
 <dt>_canonicalUrl_comment</dt><dd>A placeholder base under this repository&#39;s own publication root, NOT a FHIR canonical: this layer publishes no FHIR artefacts, it publishes a Tool graph. It exists because a Tool node&#39;s I/O type IRIs are minted against it at load and Zod refuses a relative one. Stated rather than left blank so nobody reads it as a claim that fhir-harness is an IG.</dd>
 <dt>canonicalUrl</dt><dd>https://litlfred.github.io/folio-assistant/fhir-harness</dd>
-<dt>_name_comment</dt><dd>THE NAME IS NOT AN INSTANTIATION CLAIM. `fhir-harness` is DECLARED here and is not instantiated: instantiation is a `&lt;name&gt;.config.json` at the REPOSITORY root (`harness-tiles`, bean `6n23`), and there is no `fhir-harness.config.json`. It also declares no `coverage.visualiser` on either directory, so by the tile rule it owes no tile and gets none — making it, measured 2026-09-23, the least harness-like thing in this repository that carries the word in its name. That is not a defect: this repository stages future instances as siblings, and `description` above says so (&quot;What a non-WHO implementation guide instantiates&quot;) — a downstream IG instantiates it, this checkout does not. Written down because the name says otherwise to anyone who has not read the declaration, and `check:harness-claims` reports the pairing rather than leaving the next reader to re-derive it.</dd>
+<dt>_name_comment</dt><dd>THE NAME IS NOT AN INSTANTIATION CLAIM. `fhir-harness` is DECLARED here and is not instantiated: instantiation is a `&lt;name&gt;.config.json` at the REPOSITORY root (`harness-tiles`, bean `6n23`), and there is no `fhir-harness.config.json`. It also declares no `coverage.visualiser` on either directory, so by the tile rule it owes no tile and gets none — making it, measured 2026-09-23, the least harness-like thing in this repository that carries the word in its name. That is not a defect: this repository stages future layers as siblings, and `description` above says so (&quot;What a non-WHO implementation guide instantiates&quot;) — a downstream IG instantiates it, this checkout does not. Written down because the name says otherwise to anyone who has not read the declaration, and `check:harness-claims` reports the pairing rather than leaving the next reader to re-derive it.</dd>
 <dt>taskIo</dt><dd><pre>{
   &quot;check:artifact-index&quot;: {
     &quot;inputs&quot;: [
       &quot;{tracked}&quot;
     ],
     &quot;outputs&quot;: [],
-    &quot;because&quot;: &quot;measured 2026-10-01 (bean xpcu); moved from cat-harness/scripts/task-io.ts to its owning instance 2026-10-06 (bean 0r7u)&quot;
+    &quot;because&quot;: &quot;measured 2026-10-01 (bean xpcu); moved from cat-harness/scripts/task-io.ts to its owning layer 2026-10-06 (bean 0r7u)&quot;
   },
   &quot;check:ig-annex-links&quot;: {
     &quot;inputs&quot;: [
@@ -323,14 +332,14 @@
   },
   &quot;ig-ast:schema:check&quot;: {
     &quot;outputs&quot;: [],
-    &quot;because&quot;: &quot;measured 2026-10-01 (bean xpcu); moved from cat-harness/scripts/task-io.ts to its owning instance 2026-10-06 (bean 0r7u)&quot;
+    &quot;because&quot;: &quot;measured 2026-10-01 (bean xpcu); moved from cat-harness/scripts/task-io.ts to its owning layer 2026-10-06 (bean 0r7u)&quot;
   },
   &quot;p2:refusals:check&quot;: {
     &quot;inputs&quot;: [
       &quot;{tracked}&quot;
     ],
     &quot;outputs&quot;: [],
-    &quot;because&quot;: &quot;measured 2026-10-01 (bean xpcu); moved from cat-harness/scripts/task-io.ts to its owning instance 2026-10-06 (bean 0r7u)&quot;
+    &quot;because&quot;: &quot;measured 2026-10-01 (bean xpcu); moved from cat-harness/scripts/task-io.ts to its owning layer 2026-10-06 (bean 0r7u)&quot;
   }
 }</pre></dd>
 <dt>gateExemptions</dt><dd><pre>{
@@ -356,6 +365,11 @@
       &quot;script&quot;: &quot;ingest:ig-chrome:check&quot;,
       &quot;kind&quot;: &quot;report&quot;,
       &quot;reason&quot;: &quot;CI CANNOT OBTAIN ITS INPUT, and here it needs THREE checkouts rather than one. It compares the committed `chrome.json` against the `fhir.template` chain the IG&#39;s `ig.ini` names — `fhir.base.template` and `who.template.root`, which are separate repositories (`HL7/ig-template-base`, `WorldHealthOrganization/smart-ig-template`) that this checkout does not contain and a runner cannot fetch. The wall the retired `ingest:ig-menu:check` met, one layer worse: an IG&#39;s appearance is declared in no file the IG owns. Built so a skip CANNOT be mistaken for a pass — with no `--ig`/`--layer` it exits **2**, printing `could not determine`, rather than the 0 a silent skip would give. What IS gated, on every run and without the network, is the committed chrome&#39;s EFFECT: `smart-trust:pages:check` regenerates all 681 pages from it and compares them byte for byte, and `check:kind-validators` parses the file against `folio-ig-chrome/v1`. Run this one by hand after cloning the IG and its templates, or from `/prepare-merge`. Bean `ajx9`&quot;
+    },
+    {
+      &quot;script&quot;: &quot;check:ig-content-qa&quot;,
+      &quot;kind&quot;: &quot;covered-by&quot;,
+      &quot;reason&quot;: &quot;RUNS AT EVERY IG SITE PUBLISH, not as a step of its own: `ig-site:compose` (`ig-repo-site.ts` `contentQaGate`) calls the same `runGate` before anything is staged, so a pattern hit, an open finding, or a missing or stale review refuses the publish, previews included (fhir-harness#330, card Q-INJ-1). It judges ONE IG checkout and its AST cache; at a checkout that is not an IG (a document folio, a platform or index root: no `contentTypes.ig`, no `sushi-config.yaml`) it exits 78 (NOT APPLICABLE, not counted, never a pass); an IG checkout with no AST still fails with `no AST at output-ast`. Kept as a script to run the gate by hand on an IG checkout (skill `ig-content-qa`)&quot;
     }
   ]
 }</pre></dd>
@@ -387,14 +401,14 @@
         &quot;extensions&quot;: [
           &quot;.json&quot;
         ],
-        &quot;notes&quot;: &quot;Translations land as FHIR translation extensions on Coding.display, CodeableConcept.text, etc. No injector is declared at this layer, which must stay WHO-free; an instance above it that has one says so in its own profile.&quot;
+        &quot;notes&quot;: &quot;Translations land as FHIR translation extensions on Coding.display, CodeableConcept.text, etc. No injector is declared at this layer, which must stay WHO-free; a layer above it that has one says so in its own profile.&quot;
       }
     ],
     &quot;rtlSupported&quot;: true,
     &quot;notes&quot;: &quot;IG Publisher handles some translation via its own PO mechanism. This pipeline handles narrative and FSH.&quot;
   }
 ]</pre></dd>
-<dt>_visualisers_comment</dt><dd>THE VISUALISERS THIS LAYER DECLARES, for the kinds it owns (owner, 2026-10-16: &quot;ig-ast is fhir-harness&quot;). `ig-ast` covers every `ig-ast` directory in the checkout, one page per declaring instance at &lt;locale&gt;/fhir-harness/ig-ast/&lt;instance&gt;/ and a hub at the route, drawn by the `ig-ast-pages` Tool. A directory kept on a branch family and not restored is shown as unknown, never as zero.</dd>
+<dt>_visualisers_comment</dt><dd>THE VISUALISERS THIS LAYER DECLARES, for the kinds it owns (owner, 2026-10-16: &quot;ig-ast is fhir-harness&quot;). `ig-ast` covers every `ig-ast` directory in the checkout, one page per declaring layer at &lt;locale&gt;/fhir-harness/ig-ast/&lt;instance&gt;/ and a hub at the route, drawn by the `ig-ast-pages` Tool. A directory kept on a branch family and not restored is shown as unknown, never as zero.</dd>
 <dt>visualisers</dt><dd><pre>[
   {
     &quot;id&quot;: &quot;ig-ast&quot;,
@@ -409,7 +423,7 @@
     ]
   }
 ]</pre></dd>
-<dt>_builtAtPublish_comment</dt><dd>Owner, 2026-10-14 (B1; schemas/built-at-publish.ts in cat-harness). This instance&#39;s JSON-LD @context is generated by `jsonld:contexts` (cat-harness-tools scripts/gen-instance-contexts.ts) from the prefixes and content-context terms its documents use, flattened with the prefix tables of every instance it needs. Those tables are read at the CHECKOUT&#39;s pins, not at pins this instance&#39;s commit names, so no commit of it can hold the file current: it is built at publish and never committed (bean folio-assistant-63q4).</dd>
+<dt>_builtAtPublish_comment</dt><dd>Owner, 2026-10-14 (B1; schemas/built-at-publish.ts in cat-harness). This layer&#39;s JSON-LD @context is generated by `jsonld:contexts` (cat-harness-tools scripts/gen-instance-contexts.ts) from the prefixes and content-context terms its documents use, flattened with the prefix tables of every layer it needs. Those tables are read at the CHECKOUT&#39;s pins, not at pins this layer&#39;s commit names, so no commit of it can hold the file current: it is built at publish and never committed (bean folio-assistant-63q4).</dd>
 <dt>builtAtPublish</dt><dd><pre>[
   {
     &quot;path&quot;: &quot;ns/context/v1.jsonld&quot;,
