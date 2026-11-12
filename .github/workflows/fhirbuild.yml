@@ -20,4 +20,4 @@ permissions:
 jobs:
   # This workflow contains a single job called "build"
   call_build: 
-    uses: litlfred/smart-base/.github/workflows/fhirbuild.yml@41b3ac486d9fce87ea16aa1ab8e0a5bad9140b41 # index.lock.json
+    uses: litlfred/smart-base/.github/workflows/fhirbuild.yml@1e111a661b6fe2ada620b4e7480f085cedde36a0 # index.lock.json
