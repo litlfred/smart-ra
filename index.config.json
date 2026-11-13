@@ -62,7 +62,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/who-iris",
-          "ref": "cf722fb3f8623aa92872129a1788aa992a887e3f",
+          "ref": "6cc38d7a618de57a9a69f6f555c65bd95f089cc5",
           "overrides": {
             "who-iris": {
               "whole": true
@@ -87,8 +87,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-11-13",
-              "ref": "cf722fb3f8623aa92872129a1788aa992a887e3f",
-              "evidence": "Owner litlfred, 2026-11-13: 'merge all three and rebuild the sites' (cat-harness#1282, cat-harness-tools#1973, fhir-harness#396 system-font consolidation; cat-harness#1280 BPMN 80% text). Re-pin every layer to current main so the site build picks them up."
+              "ref": "6cc38d7a618de57a9a69f6f555c65bd95f089cc5",
+              "evidence": "owner cards in merge-manager session 2026-11-13: cascade card A ~12:05Z; smart-base fix card ~15:55Z, merge #366; owner chose 'allow re-pin here' in worker session ~18:50Z"
             }
           }
         }
@@ -99,7 +99,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/smart-base",
-          "ref": "ec3d1cf7993b499e3362297f7fcbad2c79b66f80",
+          "ref": "6f578c3b3db89d80c896133935bdd294903bea83",
           "overrides": {
             "smart-base": {
               "path": "smart-base",
@@ -124,7 +124,7 @@
                 "smart-base-schemas",
                 "smart-base-pipeline",
                 "smart-base-scripts",
-                "smart-base-kg",
+                "smart-base-L1",
                 "smart-base-skills",
                 "smart-base-scenarios",
                 "smart-base-code-lists"
@@ -134,9 +134,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-11-12",
-              "ref": "ec3d1cf7993b499e3362297f7fcbad2c79b66f80",
-              "evidence": "Owner litlfred, 2026-11-12: smart-ra#242 bottom-up re-pin (owner 'a b then c', step c), Q-CASCADE-FREEZE B, Q-CONSENT-1 A, merge window Q-WIN-1 C. Every layer to the commit its downstream locks name."
+              "on": "2026-11-13",
+              "ref": "6f578c3b3db89d80c896133935bdd294903bea83",
+              "evidence": "owner cards in merge-manager session 2026-11-13: cascade card A ~12:05Z; smart-base fix card ~15:55Z, merge #366; owner chose 'allow re-pin here' in worker session ~18:50Z"
             }
           }
         }
@@ -147,7 +147,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/fhir-harness",
-          "ref": "d983238a48b267985b42c55dfc94b2a16a3109cf",
+          "ref": "3ef4b4fe35953bbca3777f1dd19243cfa7b8748a",
           "overrides": {
             "fhir-harness": {
               "whole": true
@@ -157,8 +157,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-11-13",
-              "ref": "d983238a48b267985b42c55dfc94b2a16a3109cf",
-              "evidence": "Owner litlfred, 2026-11-13: 'merge all three and rebuild the sites' (cat-harness#1282, cat-harness-tools#1973, fhir-harness#396 system-font consolidation; cat-harness#1280 BPMN 80% text). Re-pin every layer to current main so the site build picks them up."
+              "ref": "3ef4b4fe35953bbca3777f1dd19243cfa7b8748a",
+              "evidence": "owner cards in merge-manager session 2026-11-13: cascade card A ~12:05Z; smart-base fix card ~15:55Z, merge #366; owner chose 'allow re-pin here' in worker session ~18:50Z"
             }
           }
         }
@@ -169,7 +169,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/folio-assistant-core",
-          "ref": "437eee5e87bd8f87334b06a4682d3e25c5953943",
+          "ref": "4f46ca7cd19c51efc3cf1f327e78638fdf720800",
           "overrides": {
             "folio-assistant-core": {
               "whole": true
@@ -185,8 +185,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-11-13",
-              "ref": "437eee5e87bd8f87334b06a4682d3e25c5953943",
-              "evidence": "Owner litlfred, 2026-11-13: 'merge all three and rebuild the sites' (cat-harness#1282, cat-harness-tools#1973, fhir-harness#396 system-font consolidation; cat-harness#1280 BPMN 80% text). Re-pin every layer to current main so the site build picks them up."
+              "ref": "4f46ca7cd19c51efc3cf1f327e78638fdf720800",
+              "evidence": "owner cards in merge-manager session 2026-11-13: cascade card A ~12:05Z; smart-base fix card ~15:55Z, merge #366; owner chose 'allow re-pin here' in worker session ~18:50Z"
             }
           }
         }
@@ -197,7 +197,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness",
-          "ref": "ef62dad93bc47d3c7e33064e5493c4be37b65445",
+          "ref": "13ce2d92bdad8baed9d331c685f1d9273447ff3e",
           "overrides": {
             "cat-harness": {
               "whole": true
@@ -213,8 +213,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-11-13",
-              "ref": "ef62dad93bc47d3c7e33064e5493c4be37b65445",
-              "evidence": "Owner litlfred, 2026-11-13: 'merge all three and rebuild the sites' (cat-harness#1282, cat-harness-tools#1973, fhir-harness#396 system-font consolidation; cat-harness#1280 BPMN 80% text). Re-pin every layer to current main so the site build picks them up."
+              "ref": "13ce2d92bdad8baed9d331c685f1d9273447ff3e",
+              "evidence": "owner cards in merge-manager session 2026-11-13: cascade card A ~12:05Z; smart-base fix card ~15:55Z, merge #366; owner chose 'allow re-pin here' in worker session ~18:50Z"
             }
           }
         }
@@ -225,7 +225,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness-tools",
-          "ref": "fb81d3f21f88e870f503160ff99cacf9187f236b",
+          "ref": "51d9a7796a3d5d864171ace40faff2dbe1c7e267",
           "overrides": {
             "cat-harness-tools": {
               "whole": true
@@ -238,8 +238,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-11-13",
-              "ref": "fb81d3f21f88e870f503160ff99cacf9187f236b",
-              "evidence": "Owner litlfred, 2026-11-13: 'merge all three and rebuild the sites' (cat-harness#1282, cat-harness-tools#1973, fhir-harness#396 system-font consolidation; cat-harness#1280 BPMN 80% text). Re-pin every layer to current main so the site build picks them up."
+              "ref": "51d9a7796a3d5d864171ace40faff2dbe1c7e267",
+              "evidence": "owner cards in merge-manager session 2026-11-13: cascade card A ~12:05Z; smart-base fix card ~15:55Z, merge #366; owner chose 'allow re-pin here' in worker session ~18:50Z"
             }
           }
         }
@@ -272,7 +272,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/bootstrap-tools",
-          "ref": "0f88368db7560afac6d3e16fd905cbb974350f82",
+          "ref": "295f0ccea3b0239c565978ce978eef807a692d52",
           "overrides": {
             "bootstrap-tools": {
               "whole": true
@@ -285,8 +285,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-11-13",
-              "ref": "0f88368db7560afac6d3e16fd905cbb974350f82",
-              "evidence": "Owner litlfred, 2026-11-13: 'merge all three and rebuild the sites' (cat-harness#1282, cat-harness-tools#1973, fhir-harness#396 system-font consolidation; cat-harness#1280 BPMN 80% text). Re-pin every layer to current main so the site build picks them up."
+              "ref": "295f0ccea3b0239c565978ce978eef807a692d52",
+              "evidence": "owner cards in merge-manager session 2026-11-13: cascade card A ~12:05Z; smart-base fix card ~15:55Z, merge #366; owner chose 'allow re-pin here' in worker session ~18:50Z"
             }
           }
         }
