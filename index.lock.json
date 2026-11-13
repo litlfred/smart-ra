@@ -24,12 +24,12 @@
     {
       "harness": "cat-harness",
       "repository": "litlfred/cat-harness",
-      "ref": "e24a25d2e1c7cc55102d085a964553615a803578"
+      "ref": "ef62dad93bc47d3c7e33064e5493c4be37b65445"
     },
     {
       "harness": "cat-harness-tools",
       "repository": "litlfred/cat-harness-tools",
-      "ref": "c7abeaf5a155c5681e791e066cbcf343a3f96cf2"
+      "ref": "fb81d3f21f88e870f503160ff99cacf9187f236b"
     },
     {
       "harness": "bootstrap",
@@ -104,7 +104,7 @@
     {
       "instance": "cat-harness",
       "repository": "litlfred/cat-harness",
-      "sha": "e24a25d2e1c7cc55102d085a964553615a803578",
+      "sha": "ef62dad93bc47d3c7e33064e5493c4be37b65445",
       "upstreamRoot": "",
       "path": "cat-harness",
       "via": "cat-harness",
@@ -118,7 +118,7 @@
           "id": "*",
           "path": "cat-harness",
           "upstreamPath": ".",
-          "treeDigest": "4aa02dc9f3294e1e8b351df00849d2bc000fc323b9912e845afb1f7548b99b78",
+          "treeDigest": "756180ab7bdfed36343c6964ccddc67b97780ade9abec9f37a0db9852e29d58a",
           "files": 2605,
           "except": [
             "docs/proposals",
@@ -138,14 +138,14 @@
         "basis": "consent",
         "by": "litlfred",
         "on": "2026-11-13",
-        "ref": "e24a25d2e1c7cc55102d085a964553615a803578",
+        "ref": "ef62dad93bc47d3c7e33064e5493c4be37b65445",
         "approver": "unverified"
       }
     },
     {
       "instance": "cat-harness-tools",
       "repository": "litlfred/cat-harness-tools",
-      "sha": "c7abeaf5a155c5681e791e066cbcf343a3f96cf2",
+      "sha": "fb81d3f21f88e870f503160ff99cacf9187f236b",
       "upstreamRoot": "",
       "path": "cat-harness-tools",
       "via": "cat-harness-tools",
@@ -159,15 +159,15 @@
           "id": "*",
           "path": "cat-harness-tools",
           "upstreamPath": ".",
-          "treeDigest": "a14be7603d7b950f98e5827979177624af3554b8591068bc0db2e51340008c5c",
-          "files": 3704
+          "treeDigest": "84808035514d369e9525a7fc3eb0bda53a6a9ae7a38e918676ffa4a56d599ab7",
+          "files": 3707
         }
       ],
       "trust": {
         "basis": "consent",
         "by": "litlfred",
         "on": "2026-11-13",
-        "ref": "c7abeaf5a155c5681e791e066cbcf343a3f96cf2",
+        "ref": "fb81d3f21f88e870f503160ff99cacf9187f236b",
         "approver": "unverified"
       }
     },

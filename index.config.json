@@ -197,7 +197,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness",
-          "ref": "e24a25d2e1c7cc55102d085a964553615a803578",
+          "ref": "ef62dad93bc47d3c7e33064e5493c4be37b65445",
           "overrides": {
             "cat-harness": {
               "whole": true
@@ -213,7 +213,7 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-11-13",
-              "ref": "e24a25d2e1c7cc55102d085a964553615a803578",
+              "ref": "ef62dad93bc47d3c7e33064e5493c4be37b65445",
               "evidence": "Owner litlfred, 2026-11-13: 'merge all three and rebuild the sites' (cat-harness#1282, cat-harness-tools#1973, fhir-harness#396 system-font consolidation; cat-harness#1280 BPMN 80% text). Re-pin every layer to current main so the site build picks them up."
             }
           }
@@ -225,7 +225,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness-tools",
-          "ref": "c7abeaf5a155c5681e791e066cbcf343a3f96cf2",
+          "ref": "fb81d3f21f88e870f503160ff99cacf9187f236b",
           "overrides": {
             "cat-harness-tools": {
               "whole": true
@@ -238,7 +238,7 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-11-13",
-              "ref": "c7abeaf5a155c5681e791e066cbcf343a3f96cf2",
+              "ref": "fb81d3f21f88e870f503160ff99cacf9187f236b",
               "evidence": "Owner litlfred, 2026-11-13: 'merge all three and rebuild the sites' (cat-harness#1282, cat-harness-tools#1973, fhir-harness#396 system-font consolidation; cat-harness#1280 BPMN 80% text). Re-pin every layer to current main so the site build picks them up."
             }
           }
