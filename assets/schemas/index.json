@@ -74494,6 +74494,20 @@
           "array": false
         },
         {
+          "name": "images",
+          "type": "z .array( z .object({ id: z.string().min(1), file: z.string().min(1), page: z.number().int().nullable(), /** The captio…",
+          "optional": true,
+          "array": true,
+          "doc": "The entry's KEPT figures (role `figure`, a WebP on disk), each with every"
+        },
+        {
+          "name": "tables",
+          "type": "z .array( z .object({ label: z.string(), caption: z.string(), pages: z.array(z.number().int()), columns: z.array(z.obje…",
+          "optional": true,
+          "array": true,
+          "doc": "The entry's transcribed tables (`tabular.csvw.json`), cells inline. Absent when it has none."
+        },
+        {
           "name": "withheld",
           "type": "z.boolean()",
           "optional": false,
@@ -104013,6 +104027,22 @@
       "from": "cat-harness-tools/schemas/ui/site-indexes.ts#LibraryDocumentViewSchema",
       "to": "cat-harness-tools/schemas/ui/site-indexes.ts#StringList",
       "via": "figures",
+      "kind": "field",
+      "optional": true,
+      "array": true
+    },
+    {
+      "from": "cat-harness-tools/schemas/ui/site-indexes.ts#LibraryDocumentViewSchema",
+      "to": "cat-harness-tools/schemas/ui/site-indexes.ts#StringList",
+      "via": "images",
+      "kind": "field",
+      "optional": true,
+      "array": true
+    },
+    {
+      "from": "cat-harness-tools/schemas/ui/site-indexes.ts#LibraryDocumentViewSchema",
+      "to": "cat-harness-tools/schemas/ui/site-indexes.ts#StringList",
+      "via": "tables",
       "kind": "field",
       "optional": true,
       "array": true

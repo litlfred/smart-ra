@@ -330,7 +330,12 @@
    "stepHref": "crdm-deliver.html#step-A_Implement",
    "lane": "Agent",
    "laneHref": "crdm-deliver.html#lane-Lane_Agent",
-   "skills": [],
+   "skills": [
+    {
+     "name": "continual-progress",
+     "href": "../../../en/cat-harness/processes/skills/continual-progress.html"
+    }
+   ],
    "role": {
     "name": "authoring-agent",
     "href": "../../../cat-harness/auto-docs/index/roles/index.html#a-cat-harness-scenarios-roles-json-authoring-agent",

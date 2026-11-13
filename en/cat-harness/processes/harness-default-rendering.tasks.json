@@ -360,7 +360,12 @@
    "stepHref": "harness-default-rendering.html#step-A_Board",
    "lane": "Board renderer",
    "laneHref": "harness-default-rendering.html#lane-Lane_Board",
-   "skills": [],
+   "skills": [
+    {
+     "name": "board-windows",
+     "href": "../../../en/cat-harness/processes/skills/board-windows.html"
+    }
+   ],
    "role": {
     "name": "board-renderer",
     "href": "../../../cat-harness/auto-docs/index/roles/index.html#a-cat-harness-scenarios-roles-json-board-renderer",
