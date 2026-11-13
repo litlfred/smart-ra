@@ -9,12 +9,12 @@
     {
       "harness": "smart-base",
       "repository": "litlfred/smart-base",
-      "ref": "b18ec33a012dede86c5ef4ce54a9d1377acc20a0"
+      "ref": "c6d20230361ba18dc93c1a02c2c9ce7e7ddc1c4b"
     },
     {
       "harness": "fhir-harness",
       "repository": "litlfred/fhir-harness",
-      "ref": "5627fcb1f3f8e40824ecfd370dae4a23af1b8839"
+      "ref": "b721f0ffcfeecdfe86850b4f0f307936581cff9a"
     },
     {
       "harness": "folio-assistant-core",
@@ -24,12 +24,12 @@
     {
       "harness": "cat-harness",
       "repository": "litlfred/cat-harness",
-      "ref": "026a6d919add39221387dd0fba0faccf998be9ac"
+      "ref": "ec52cd5d3e7f34386f421c4bc6bc2637db344224"
     },
     {
       "harness": "cat-harness-tools",
       "repository": "litlfred/cat-harness-tools",
-      "ref": "4ac36f3f401b2f404f434e440c77d20290b46b3b"
+      "ref": "ce6aa9fc78a6504596c9acb02f941691f47fbab9"
     },
     {
       "harness": "bootstrap",
@@ -104,7 +104,7 @@
     {
       "instance": "cat-harness",
       "repository": "litlfred/cat-harness",
-      "sha": "026a6d919add39221387dd0fba0faccf998be9ac",
+      "sha": "ec52cd5d3e7f34386f421c4bc6bc2637db344224",
       "upstreamRoot": "",
       "path": "cat-harness",
       "via": "cat-harness",
@@ -118,7 +118,7 @@
           "id": "*",
           "path": "cat-harness",
           "upstreamPath": ".",
-          "treeDigest": "3a2012c681033e415f501b443bbb92f0f1625c7cadf1588387a62a22f8ae46ce",
+          "treeDigest": "76e92bd2abe215274ccd9ec1582961778b6531072ba72a0f2cd9ab148acf707d",
           "files": 2605,
           "except": [
             "docs/proposals",
@@ -138,14 +138,14 @@
         "basis": "consent",
         "by": "litlfred",
         "on": "2026-11-13",
-        "ref": "026a6d919add39221387dd0fba0faccf998be9ac",
+        "ref": "ec52cd5d3e7f34386f421c4bc6bc2637db344224",
         "approver": "unverified"
       }
     },
     {
       "instance": "cat-harness-tools",
       "repository": "litlfred/cat-harness-tools",
-      "sha": "4ac36f3f401b2f404f434e440c77d20290b46b3b",
+      "sha": "ce6aa9fc78a6504596c9acb02f941691f47fbab9",
       "upstreamRoot": "",
       "path": "cat-harness-tools",
       "via": "cat-harness-tools",
@@ -159,22 +159,22 @@
           "id": "*",
           "path": "cat-harness-tools",
           "upstreamPath": ".",
-          "treeDigest": "f9a64f4dc3734504bc3e017732aca2d0e0fe8282a4fe572c44d759f13f24a95b",
-          "files": 3711
+          "treeDigest": "7b6106d3201922d3d8d8f5d0f9d31729db026370cfe7103d2e76b6f4ba69fb09",
+          "files": 3714
         }
       ],
       "trust": {
         "basis": "consent",
         "by": "litlfred",
         "on": "2026-11-13",
-        "ref": "4ac36f3f401b2f404f434e440c77d20290b46b3b",
+        "ref": "ce6aa9fc78a6504596c9acb02f941691f47fbab9",
         "approver": "unverified"
       }
     },
     {
       "instance": "fhir-harness",
       "repository": "litlfred/fhir-harness",
-      "sha": "5627fcb1f3f8e40824ecfd370dae4a23af1b8839",
+      "sha": "b721f0ffcfeecdfe86850b4f0f307936581cff9a",
       "upstreamRoot": "",
       "path": "fhir-harness",
       "via": "fhir-harness",
@@ -188,7 +188,7 @@
           "id": "*",
           "path": "fhir-harness",
           "upstreamPath": ".",
-          "treeDigest": "b8400e7c624124ac4731d073bb80cd50e0573d28e35e6b123a23956e439d1407",
+          "treeDigest": "ff0aa29c7dcd16ea830468b68d8ca5750db57cb5cdaa351f7816d9a669c3eda6",
           "files": 941
         }
       ],
@@ -196,7 +196,7 @@
         "basis": "consent",
         "by": "litlfred",
         "on": "2026-11-13",
-        "ref": "5627fcb1f3f8e40824ecfd370dae4a23af1b8839",
+        "ref": "b721f0ffcfeecdfe86850b4f0f307936581cff9a",
         "approver": "unverified"
       }
     },
@@ -238,7 +238,7 @@
     {
       "instance": "smart-base",
       "repository": "litlfred/smart-base",
-      "sha": "b18ec33a012dede86c5ef4ce54a9d1377acc20a0",
+      "sha": "c6d20230361ba18dc93c1a02c2c9ce7e7ddc1c4b",
       "upstreamRoot": "smart-base",
       "path": "smart-base",
       "via": "smart-base",
@@ -287,7 +287,7 @@
           "id": "methodologies",
           "path": "smart-base/methodologies",
           "upstreamPath": "smart-base/methodologies",
-          "treeDigest": "c555a90c4acc6c518e721ec5e0201744fece4683aefedcc2a6436bb5bb0d97df",
+          "treeDigest": "731c97c8fb70c3585373051d5f969c04584b0013fcec85b0db86f51b4591a83d",
           "files": 7
         },
         {
@@ -378,21 +378,21 @@
           "id": "smart-base-scripts",
           "path": "smart-base/scripts",
           "upstreamPath": "smart-base/scripts",
-          "treeDigest": "d08f776a6476931d95e89f234b01e4b10f57f07403a16595703c3cd9c77a3107",
+          "treeDigest": "cba6e44cac704d57a78b424ae62435b7338a450f58f973167324e812b9723b01",
           "files": 104
         },
         {
           "id": "smart-base-L1",
           "path": "smart-base/L1",
           "upstreamPath": "smart-base/L1",
-          "treeDigest": "c597364991d28a176a0796de89be600538065bb6c7e621b67f28807061ed09f8",
+          "treeDigest": "ae85233669645489a9bc189296b5159b98fbaf23630291b7cccf105ed6a518bb",
           "files": 68
         },
         {
           "id": "smart-base-skills",
           "path": "smart-base/skills",
           "upstreamPath": "smart-base/skills",
-          "treeDigest": "2abdd8f9e14ccf4e0aceb2cc4a40edc4c1b137c3debec985835da406890a0237",
+          "treeDigest": "4a3a58303b59534bd281d8e6b845465e2ab48101c258e0dedae71c0c52563930",
           "files": 18
         },
         {
@@ -413,7 +413,7 @@
       "assets": [
         {
           "src": "AGENTS.md",
-          "sha256": "378cd6e028a905949c1782cdfa4bfc9b9441c6e6351f61983b7f103f1ddd1e60"
+          "sha256": "2d53122aad2c2ff9294fdcb28f165f9a57adda23b4bd7ff304bdb93d3a58d3b1"
         },
         {
           "src": "README.md",
@@ -428,7 +428,7 @@
         "basis": "consent",
         "by": "litlfred",
         "on": "2026-11-13",
-        "ref": "b18ec33a012dede86c5ef4ce54a9d1377acc20a0",
+        "ref": "c6d20230361ba18dc93c1a02c2c9ce7e7ddc1c4b",
         "approver": "unverified"
       }
     },

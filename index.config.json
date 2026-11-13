@@ -99,7 +99,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/smart-base",
-          "ref": "b18ec33a012dede86c5ef4ce54a9d1377acc20a0",
+          "ref": "c6d20230361ba18dc93c1a02c2c9ce7e7ddc1c4b",
           "overrides": {
             "smart-base": {
               "path": "smart-base",
@@ -135,8 +135,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-11-13",
-              "ref": "b18ec33a012dede86c5ef4ce54a9d1377acc20a0",
-              "evidence": "owner (litlfred) cards in merge-manager session session_01EucfRpkvK7d4FJyuqypQzm, 2026-11-13: Q-ORDER A (who-iris, smart-base, smart-ra re-pin in parallel after the core re-pin, folio-assistant-core#780 merged 88d2589b); cascade card A ~12:05Z (each downstream re-pin to main, merged when green)"
+              "ref": "c6d20230361ba18dc93c1a02c2c9ce7e7ddc1c4b",
+              "evidence": "owner cards in merge-manager session 2026-11-13: cascade card A ~12:05Z; smart-base fix card ~15:55Z, merge #366"
             }
           }
         }
@@ -147,7 +147,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/fhir-harness",
-          "ref": "5627fcb1f3f8e40824ecfd370dae4a23af1b8839",
+          "ref": "b721f0ffcfeecdfe86850b4f0f307936581cff9a",
           "overrides": {
             "fhir-harness": {
               "whole": true
@@ -157,8 +157,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-11-13",
-              "ref": "5627fcb1f3f8e40824ecfd370dae4a23af1b8839",
-              "evidence": "owner (litlfred) cards in merge-manager session session_01EucfRpkvK7d4FJyuqypQzm, 2026-11-13: Q-ORDER A (who-iris, smart-base, smart-ra re-pin in parallel after the core re-pin, folio-assistant-core#780 merged 88d2589b); cascade card A ~12:05Z (each downstream re-pin to main, merged when green)"
+              "ref": "b721f0ffcfeecdfe86850b4f0f307936581cff9a",
+              "evidence": "owner cards in merge-manager session 2026-11-13: cascade card A ~12:05Z; smart-base fix card ~15:55Z, merge #366"
             }
           }
         }
@@ -197,7 +197,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness",
-          "ref": "026a6d919add39221387dd0fba0faccf998be9ac",
+          "ref": "ec52cd5d3e7f34386f421c4bc6bc2637db344224",
           "overrides": {
             "cat-harness": {
               "whole": true
@@ -213,8 +213,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-11-13",
-              "ref": "026a6d919add39221387dd0fba0faccf998be9ac",
-              "evidence": "owner (litlfred) cards in merge-manager session session_01EucfRpkvK7d4FJyuqypQzm, 2026-11-13: Q-ORDER A (who-iris, smart-base, smart-ra re-pin in parallel after the core re-pin, folio-assistant-core#780 merged 88d2589b); cascade card A ~12:05Z (each downstream re-pin to main, merged when green)"
+              "ref": "ec52cd5d3e7f34386f421c4bc6bc2637db344224",
+              "evidence": "owner cards in merge-manager session 2026-11-13: cascade card A ~12:05Z; smart-base fix card ~15:55Z, merge #366"
             }
           }
         }
@@ -225,7 +225,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness-tools",
-          "ref": "4ac36f3f401b2f404f434e440c77d20290b46b3b",
+          "ref": "ce6aa9fc78a6504596c9acb02f941691f47fbab9",
           "overrides": {
             "cat-harness-tools": {
               "whole": true
@@ -238,8 +238,8 @@
             "consent": {
               "by": "litlfred",
               "on": "2026-11-13",
-              "ref": "4ac36f3f401b2f404f434e440c77d20290b46b3b",
-              "evidence": "owner (litlfred) cards in merge-manager session session_01EucfRpkvK7d4FJyuqypQzm, 2026-11-13: Q-ORDER A (who-iris, smart-base, smart-ra re-pin in parallel after the core re-pin, folio-assistant-core#780 merged 88d2589b); cascade card A ~12:05Z (each downstream re-pin to main, merged when green)"
+              "ref": "ce6aa9fc78a6504596c9acb02f941691f47fbab9",
+              "evidence": "owner cards in merge-manager session 2026-11-13: cascade card A ~12:05Z; smart-base fix card ~15:55Z, merge #366"
             }
           }
         }
