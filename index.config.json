@@ -62,7 +62,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/who-iris",
-          "ref": "6cc38d7a618de57a9a69f6f555c65bd95f089cc5",
+          "ref": "3be9ddb3a2ffb9ddafd4aaabe32829469a82416f",
           "overrides": {
             "who-iris": {
               "whole": true
@@ -86,8 +86,8 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-11-13",
-              "ref": "6cc38d7a618de57a9a69f6f555c65bd95f089cc5",
+              "on": "2026-11-14",
+              "ref": "3be9ddb3a2ffb9ddafd4aaabe32829469a82416f",
               "evidence": "owner cards in merge-manager session 2026-11-13: cascade card A ~12:05Z; smart-base fix card ~15:55Z, merge #366; owner chose 'allow re-pin here' in worker session ~18:50Z"
             }
           }
@@ -99,7 +99,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/smart-base",
-          "ref": "6f578c3b3db89d80c896133935bdd294903bea83",
+          "ref": "53484378e4fd06a7ae4a720ebbcda9ee99f26417",
           "overrides": {
             "smart-base": {
               "path": "smart-base",
@@ -110,8 +110,7 @@
                 "smart-base-translations",
                 "library",
                 "methodologies",
-                "processes",
-                "smart-base-house-processes",
+                "collab",
                 "smart-base-artifact-index",
                 "tools",
                 "smart-base-themes",
@@ -121,10 +120,15 @@
                 "smart-base-platform",
                 "smart-base-typologies",
                 "smart-base-validators",
+                "smart-base-L1",
+                "smart-base-L2",
+                "smart-base-L2-bpmn",
+                "smart-base-L2-dmn",
+                "smart-base-L3",
+                "smart-base-L4",
                 "smart-base-schemas",
                 "smart-base-pipeline",
                 "smart-base-scripts",
-                "smart-base-L1",
                 "smart-base-skills",
                 "smart-base-scenarios",
                 "smart-base-code-lists"
@@ -134,8 +138,8 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-11-13",
-              "ref": "6f578c3b3db89d80c896133935bdd294903bea83",
+              "on": "2026-11-14",
+              "ref": "53484378e4fd06a7ae4a720ebbcda9ee99f26417",
               "evidence": "owner cards in merge-manager session 2026-11-13: cascade card A ~12:05Z; smart-base fix card ~15:55Z, merge #366; owner chose 'allow re-pin here' in worker session ~18:50Z"
             }
           }
@@ -147,7 +151,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/fhir-harness",
-          "ref": "3ef4b4fe35953bbca3777f1dd19243cfa7b8748a",
+          "ref": "9c04b6fa237c2ab5f6217ffcb42c760f3783b2f3",
           "overrides": {
             "fhir-harness": {
               "whole": true
@@ -156,8 +160,8 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-11-13",
-              "ref": "3ef4b4fe35953bbca3777f1dd19243cfa7b8748a",
+              "on": "2026-11-14",
+              "ref": "9c04b6fa237c2ab5f6217ffcb42c760f3783b2f3",
               "evidence": "owner cards in merge-manager session 2026-11-13: cascade card A ~12:05Z; smart-base fix card ~15:55Z, merge #366; owner chose 'allow re-pin here' in worker session ~18:50Z"
             }
           }
@@ -169,7 +173,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/folio-assistant-core",
-          "ref": "4f46ca7cd19c51efc3cf1f327e78638fdf720800",
+          "ref": "d97840b91893d233bb25a2c847e7db31f17e7301",
           "overrides": {
             "folio-assistant-core": {
               "whole": true
@@ -184,8 +188,8 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-11-13",
-              "ref": "4f46ca7cd19c51efc3cf1f327e78638fdf720800",
+              "on": "2026-11-14",
+              "ref": "d97840b91893d233bb25a2c847e7db31f17e7301",
               "evidence": "owner cards in merge-manager session 2026-11-13: cascade card A ~12:05Z; smart-base fix card ~15:55Z, merge #366; owner chose 'allow re-pin here' in worker session ~18:50Z"
             }
           }
@@ -197,7 +201,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness",
-          "ref": "13ce2d92bdad8baed9d331c685f1d9273447ff3e",
+          "ref": "775426b8e6d72a2baf036065564554794df71ee0",
           "overrides": {
             "cat-harness": {
               "whole": true
@@ -212,8 +216,8 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-11-13",
-              "ref": "13ce2d92bdad8baed9d331c685f1d9273447ff3e",
+              "on": "2026-11-14",
+              "ref": "775426b8e6d72a2baf036065564554794df71ee0",
               "evidence": "owner cards in merge-manager session 2026-11-13: cascade card A ~12:05Z; smart-base fix card ~15:55Z, merge #366; owner chose 'allow re-pin here' in worker session ~18:50Z"
             }
           }
@@ -225,7 +229,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness-tools",
-          "ref": "51d9a7796a3d5d864171ace40faff2dbe1c7e267",
+          "ref": "25557f6f1e0533a0db8762714852506da42fbc6f",
           "overrides": {
             "cat-harness-tools": {
               "whole": true
@@ -237,8 +241,8 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-11-13",
-              "ref": "51d9a7796a3d5d864171ace40faff2dbe1c7e267",
+              "on": "2026-11-14",
+              "ref": "25557f6f1e0533a0db8762714852506da42fbc6f",
               "evidence": "owner cards in merge-manager session 2026-11-13: cascade card A ~12:05Z; smart-base fix card ~15:55Z, merge #366; owner chose 'allow re-pin here' in worker session ~18:50Z"
             }
           }
@@ -259,7 +263,7 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-11-12",
+              "on": "2026-11-14",
               "ref": "17204fe9ed49e87b165bf0a8b626b6c69329a2a6",
               "evidence": "Owner litlfred, 2026-11-12: smart-ra#242 bottom-up re-pin (owner 'a b then c', step c), Q-CASCADE-FREEZE B, Q-CONSENT-1 A, merge window Q-WIN-1 C. Every layer to the commit its downstream locks name."
             }
@@ -272,7 +276,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/bootstrap-tools",
-          "ref": "295f0ccea3b0239c565978ce978eef807a692d52",
+          "ref": "b653e0577a1649969319196ec738353fe2068793",
           "overrides": {
             "bootstrap-tools": {
               "whole": true
@@ -284,8 +288,8 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-11-13",
-              "ref": "295f0ccea3b0239c565978ce978eef807a692d52",
+              "on": "2026-11-14",
+              "ref": "b653e0577a1649969319196ec738353fe2068793",
               "evidence": "owner cards in merge-manager session 2026-11-13: cascade card A ~12:05Z; smart-base fix card ~15:55Z, merge #366; owner chose 'allow re-pin here' in worker session ~18:50Z"
             }
           }
@@ -297,6 +301,14 @@
     "landing": "dpi-h-ra",
     "agentRun": true
   },
+  "enableSubgraphs": [
+    "folio-assistant-core.collab",
+    "smart-base.collab",
+    "fhir-harness.collab",
+    "smart-base.L2-collab",
+    "smart-base.L3-collab",
+    "cat-harness.editorial"
+  ],
   "contentTypes": {
     "ig": {
       "_comment": "What this repository's FHIR IG side is, per the content types its layers register (bean folio-assistant-cz17, follow-up b; owner card 2026-10-30T12:40Z, \"A. ig section in index.config\"). `ig`: fhir-harness's `ig` content type (fhir-harness#198); `include` is everything fhir-harness's IG readers read in this repository, and nothing else is read (owner, 2026-10-30: \"harness desclares what it it pays attention to in the repo\"). It lists every `input/` entry the build used before the section existed, so nothing is dropped. The folio (`folio/`, `review/`, `library/`, `archimate/`, `documents/`, `uploads/`) is the `dpi-h-ra` document instance's, read by its own adapter and site steps, not by this list. sushi-config.yaml stays SUSHI's file. smart-immunizations#89 is the model.",
