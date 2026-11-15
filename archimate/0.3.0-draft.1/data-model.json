@@ -25,78 +25,11 @@
       "accessedBy": []
     },
     {
-      "id": "id-e162b2223da4440983514be5854b654d",
-      "name": "CDE-HWR: Core Data Elements for the Health Workforce Registry",
-      "type": "DataObject",
-      "documentation": "CDE-HWR: the Core Data Elements of the Health Workforce Registry. The deliberately minimal record the HWR holds as the system of record for each health worker:\n1. Named demographics (name, sex, date of birth).\n2. Identifier and index: the national unique health worker identifier, with cross-references to foundational ID where the law allows.\n3. Licensure: licence number, issuing body, status, validity dates.\n4. Registration: professional registration and cadre (ISCO-08 based health worker classification).\n5. Educational credential: qualification, awarding institution, year.\n6. Organizational affiliation: employer or other affiliating organization.\n7. Facility association: the facility or facilities where the worker practises, by Facility Registry identifier.\nAnything else (employment transactions, payroll, training history, etc.) stays in the operational system that owns it.",
-      "attributes": [
-        {
-          "name": "Named demographics",
-          "description": "name, sex, date of birth",
-          "source": "documentation"
-        },
-        {
-          "name": "Identifier and index",
-          "description": "the national unique health worker identifier, with cross-references to foundational ID where the law allows",
-          "source": "documentation"
-        },
-        {
-          "name": "Licensure",
-          "description": "licence number, issuing body, status, validity dates",
-          "source": "documentation"
-        },
-        {
-          "name": "Registration",
-          "description": "professional registration and cadre (ISCO-08 based health worker classification)",
-          "source": "documentation"
-        },
-        {
-          "name": "Educational credential",
-          "description": "qualification, awarding institution, year",
-          "source": "documentation"
-        },
-        {
-          "name": "Organizational affiliation",
-          "description": "employer or other affiliating organization",
-          "source": "documentation"
-        },
-        {
-          "name": "Facility association",
-          "description": "the facility or facilities where the worker practises, by Facility Registry identifier",
-          "source": "documentation"
-        }
-      ],
-      "accessedBy": [
-        {
-          "elementId": "id-350840520ae44f658b6ad3b3762e382e",
-          "name": "Health Workforce Registry",
-          "type": "ApplicationComponent",
-          "relationshipId": "id-82a19dce8ad94edead787664c3af59f6",
-          "kind": "write"
-        }
-      ]
-    },
-    {
       "id": "id-e4de2256c7644b7cbd7222ac49625b3d",
       "name": "Clinical Guidelines",
       "type": "BusinessObject",
       "attributes": [],
       "accessedBy": []
-    },
-    {
-      "id": "id-ad969289cb774307aa678037c56fdd3f",
-      "name": "Facility",
-      "type": "DataObject",
-      "attributes": [],
-      "accessedBy": [
-        {
-          "elementId": "id-4e0767822dcf46409554156a133fbc67",
-          "name": "Health Facility Registry",
-          "type": "ApplicationComponent",
-          "relationshipId": "id-c4a4adb63b16424ea40b2762a0598b0b",
-          "kind": "write"
-        }
-      ]
     },
     {
       "id": "id-48ca7ae8d2ed5a5a992fbdd0528f9fe8",
@@ -106,45 +39,6 @@
       "skosConcept": "https://github.com/litlfred/dth-pc/blob/main/glossary/dth-pc.glossary.json#generic-product",
       "attributes": [],
       "accessedBy": []
-    },
-    {
-      "id": "id-702c24bbd73341be9afc11c7e11e9810",
-      "name": "Health worker record",
-      "type": "DataObject",
-      "documentation": "The record a registry holds about a health worker. Renamed from \"Health Worker\" so that \"Health worker\" names the person in the role (smart-ra#201, owner card Q-RA3 A, 2026-11-01).",
-      "attributes": [],
-      "accessedBy": [
-        {
-          "elementId": "id-350840520ae44f658b6ad3b3762e382e",
-          "name": "Health Workforce Registry",
-          "type": "ApplicationComponent",
-          "relationshipId": "id-ba37954c9c86400a8b71c5cdb1058441",
-          "kind": "write"
-        }
-      ]
-    },
-    {
-      "id": "id-145e885489634e469e8a6734f56b7df5",
-      "name": "NHWA Dataset (linking and indexing, built on CDE-HWR)",
-      "type": "DataObject",
-      "documentation": "National Health Workforce Accounts (NHWA) dataset. Not a second registry: an analytical linking and indexing dataset that builds on CDE-HWR. The HWR identifier is the key that links records about the same worker held in other data systems, which the NHWA handbook lists as potential data sources: the health workforce registry or database, facility administrative records and HMIS, professional council registers, labour force surveys and population census. From these, the 29 NHWA indicators in 4 modules are computed (1 stock and flow; 2 education; 3 finance and expenditures; 4 working conditions, governance and leadership) and reported nationally and to the WHO NHWA platform. Source: WHO, National health workforce accounts: a handbook, 2nd ed., 2023 (ISBN 9789240081291): the NHWA is \"a system by which countries progressively improve the availability, quality, and use of data on health workforce through monitoring of a set of indicators\", using diverse existing data sources (core principles: multi-sectoral governance, progressive implementation, no primary data collection).",
-      "attributes": [],
-      "accessedBy": [
-        {
-          "elementId": "id-bbd18f65be45490fbbaf02346511ae5e",
-          "name": "Reporting Module",
-          "type": "ApplicationComponent",
-          "relationshipId": "id-d0f759a25e8242a8b7a00cd526fa6ecd",
-          "kind": "readwrite"
-        },
-        {
-          "elementId": "id-b3a5209e0e88419382a678964bed91f9",
-          "name": "Generate Reports",
-          "type": "ApplicationFunction",
-          "relationshipId": "id-015bb6e20381471c883cf5603a767283",
-          "kind": "read"
-        }
-      ]
     },
     {
       "id": "id-71b2e11df2e348a2b9f8eee36c8e5292",
@@ -310,14 +204,6 @@
       "type": "Realization"
     },
     {
-      "id": "id-b94bbb2900d345b3bef61810ecd7e3fe",
-      "source": "id-145e885489634e469e8a6734f56b7df5",
-      "target": "id-e162b2223da4440983514be5854b654d",
-      "type": "Aggregation",
-      "name": "builds on",
-      "role": "builds on"
-    },
-    {
       "id": "id-f33f460c46cf4a7d9178dd6911c9718e",
       "source": "id-22a44179b1b34a74984de87cd5a702b7",
       "target": "id-e4de2256c7644b7cbd7222ac49625b3d",
@@ -418,22 +304,6 @@
       "name": "authorisedTradeItem 1..1",
       "role": "authorisedTradeItem",
       "cardinality": "1..1"
-    },
-    {
-      "id": "id-0c20303182ab4dc7b0e35b0a2f9c9c78",
-      "source": "id-e162b2223da4440983514be5854b654d",
-      "target": "id-702c24bbd73341be9afc11c7e11e9810",
-      "type": "Association",
-      "name": "core of",
-      "role": "core of"
-    },
-    {
-      "id": "id-bee6e6eb9b854e50afe423e0a675f18f",
-      "source": "id-e162b2223da4440983514be5854b654d",
-      "target": "id-ad969289cb774307aa678037c56fdd3f",
-      "type": "Association",
-      "name": "facility association",
-      "role": "facility association"
     }
   ],
   "problems": []

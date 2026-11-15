@@ -1,257 +1,477 @@
-<!doctype html>
-<html lang="en">
-<head>
-<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+<!DOCTYPE html>
 
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector — the version published for public comment — library</title>
-<style>/* The block content panel — bean lrmo. Tokens only, so it follows the light
-   and dark palettes below rather than hardcoding either. */
-.lib-page #document .seg { margin: .2rem 0 .8rem; }
-.lib-page #document .seg button[aria-selected="true"] { font-weight: 600; }
-.lib-page #document .docbody { padding: 0 16px 8px; }
-.lib-page #document .dockw { padding: 4px 16px; }
-/* Kept figures and transcribed tables (who-iris#224). */
-.lib-page #document .doc-gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; margin: .5rem 0 1rem; }
-.lib-page #document .doc-figure { margin: 0; border: 1px solid var(--border, #8884); border-radius: 6px; padding: 6px; background: var(--card, transparent); }
-.lib-page #document .doc-figure img { display: block; width: 100%; height: auto; max-height: 320px; object-fit: contain; background: #fff; border-radius: 4px; }
-.lib-page #document .doc-figure figcaption { font-size: .85em; margin-top: 6px; }
-.lib-page #document .doc-table { margin: .4rem 0; }
-.lib-page #document .doc-table-scroll { overflow-x: auto; max-width: 100%; }
-.lib-page #document .doc-table table { font-size: .85em; }
-.lib-page #document p.kw, .lib-page #document .dockw p.kw { display: inline; margin: 0; }
-.lib-page #document .docsec p.kw { display: block; margin: 2px 0 6px; }
-.lib-page #document p.kw .pill { margin: 0 2px 2px 0; }
-.lib-page #document ul.toc, .lib-page #document ul.toc ul { list-style: none; margin: 0; padding-left: 1.1rem; }
-.lib-page #document ul.toc { padding-left: 0; }
-.lib-page #document ul.toc li { margin: .15rem 0; }
-.lib-page #document ul.toc li.leaf { padding-left: 1rem; }
-.lib-page #document ul.toc summary { cursor: pointer; }
-.lib-page #document td ul { margin: .3rem 0 0; padding-left: 1.1rem; }
-.lib-page #document .docsec { margin: 0 0 1rem; }
-.lib-page #document .docsec h3 { margin: .2rem 0 .3rem; font-size: 1rem; }
-.lib-page #document .sum { padding: .55rem .7rem; border: 1px dashed var(--line); border-radius: 6px; }
-.lib-page #document .sum p { margin: .35rem 0 0; }
-.lib-page #document td { white-space: normal; vertical-align: top; }
-.lib-page #blocks details > summary { cursor: pointer; }
-.lib-page #blocks .block-body { margin: .4rem 0 .2rem; }
-.lib-page #blocks .block-body pre {
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <link rel="stylesheet" href="../../../../assets/css/just-the-docs-default.css">
+
+  <link rel="stylesheet" href="../../../../assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
+
+  
+
+  
+
+  
+    <script src="../../../../assets/js/vendor/lunr.min.js"></script>
+  
+
+  <script src="../../../../assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+
+
+
+  <!-- Begin Jekyll SEO tag v2.9.0 -->
+<title>Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector — the version published for public comment — library | Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector — the version published for public comment — library" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The DPI-H Reference Architecture guidance (WHO/ITU), an L1 document: the draft for public comment as an editable document folio, its frozen review version in the library, and the public-comment adjudication record." />
+<meta name="twitter:description" property="og:description" content="The DPI-H Reference Architecture guidance (WHO/ITU), an L1 document: the draft for public comment as an editable document folio, its frozen review version in the library, and the public-comment adjudication record." />
+<link rel="canonical" href="https://litlfred.github.io/smart-ra/en/folio-assistant-core/library/who-dpi-h-reference-architecture-draft-v1/" />
+<meta property="og:url" content="https://litlfred.github.io/smart-ra/en/folio-assistant-core/library/who-dpi-h-reference-architecture-draft-v1/" />
+<meta property="og:site_name" content="Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector — the version published for public comment — library" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"The DPI-H Reference Architecture guidance (WHO/ITU), an L1 document: the draft for public comment as an editable document folio, its frozen review version in the library, and the public-comment adjudication record.","headline":"Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector — the version published for public comment — library","url":"https://litlfred.github.io/smart-ra/en/folio-assistant-core/library/who-dpi-h-reference-architecture-draft-v1/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <script type="application/json" id="fa-site-scheme">{"scheme": "dark"}</script><!-- fa-first-paint:begin -->
+<script>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+<style>html{background-color:#27262b}html[data-fa-scheme="light"]{background-color:#ffffff}</style>
+<!-- fa-first-paint:end --><meta name="fa-render-regions" content="1">
+<script>document.documentElement.setAttribute("data-fa-render","pending");</script><style>
+  .bpmn-figure {
+    overflow-x: auto;
+    background: #fff;
+    border: 1px solid rgba(128, 128, 128, 0.35);
+    border-radius: 6px;
+    margin: 1em 0 0.4em;
+  }
+  .bpmn-figure img {
+    display: block;
+    width: 100%;
+    min-width: 1200px;
+    max-width: none;
+  }
+  .bpmn-source {
+    margin-top: 0;
+    font-size: 0.75rem;
+  }
+</style><script type="application/json" id="fa-translation-meta">{
+  "lang": "en",
+  "translationStatus": "",
+  "translationSource": "",
+  "supportedLocales": ["ar","zh","en","fr","ru","es"],
+  "availableLocales": null,
+  "translationQa":{
+    "key": "page.translation",
+    "slug": "en-folio-assistant-core-library-who-dpi-h-reference-architecture-draft-v1-index.html",
+    "src": "../../../../assets/qa/en-folio-assistant-core-library-who-dpi-h-reference-architecture-draft-v1-index.html/page.translation.json",
+    "index": "../../../../assets/qa/en-folio-assistant-core-library-who-dpi-h-reference-architecture-draft-v1-index.html/qa-index.json",
+    "list": "../../../../assets/qa/translation-qa-pages.json"
+  },
+  "sweep":{
+    "absent": "dpi-h-ra publishes no translation QA sweep on this site",
+    "run": false,
+    "sweptAt": "",
+    "totalPages": 0,
+    "pagesWithTranslations": 0,
+    "complete": false
+  },
+  "statusSrc":"../../../../assets/translation-status/index.json",
+  "reviewSrc":"../../../../assets/translation-status/review.json"
+}</script><script type="application/json" id="fa-navbar-row" data-fa-row-src="harness-data"></script><script type="application/json" id="fa-site-links">{"kg":"https://litlfred.github.io/folio-assistant/dpi-h-ra/","jsonld":"https://litlfred.github.io/folio-assistant/dpi-h-ra/dpi-h-ra.jsonld","source":"https://github.com/litlfred/smart-ra"}</script><meta name="fa-site-index-src" content="../../../../assets/harness/site.json">
+<meta name="fa-todo-src" content="../../../../assets/todos/index.json"><meta name="fa-todo-graph" content="../../../../todos.jsonld"><meta name="fa-zoom-src" content="../../../../assets/semantic-zoom.json"><meta name="fa-tiles" content="" data-fa-src="harness-data">
+<meta name="fa-glass-strip" content="[&quot;glass-todos&quot;,&quot;glass-settings&quot;]"><meta name="fa-baseurl" content="../../../.."><meta name="fa-staging" content=""><meta name="fa-search-index" content=""><meta name="fa-search-exclude" content="true">
+
+<meta name="fa-beans-src" content="../../../../assets/beans/index.json"><meta name="fa-processes-src" content="../../../../subgraph/index.jsonld"><meta name="fa-build-src" content="../../../../build.json"><link rel="stylesheet" href="../../../../assets/css/navbar-row.css?v=263225e79ed9">
+<link rel="stylesheet" href="../../../../assets/css/docs-ui.css?v=cc59a4b4ce11"><link rel="stylesheet" href="../../../../assets/css/narrow-viewport.css?v=173ef819dbf2"><link rel="stylesheet" href="../../../../assets/css/themes.css?v=37c8ab192a5f"><link rel="stylesheet" href="../../../../assets/css/uml.css?v=e677f91cbf66"><link rel="stylesheet" href="../../../../assets/css/avatars.css?v=7b30d540df9f"><script type="application/json" id="fa-declared-kinds">["archimate","beans","folio","fsh-guts","glossary","library","public-comments","references","todo-items","todos","uploads"]</script><script src="../../../../assets/js/harness-data.js" defer></script><script src="../../../../assets/js/kg-render.js" defer></script><script src="../../../../assets/js/navbar-row.js?v=fb3cd5c0d28c" defer></script>
+<script src="../../../../assets/js/docs-ui.js?v=480a3c3c0d42" defer></script><script src="../../../../assets/js/edit-links.js?v=7b072444cbb5" defer></script><script src="../../../../assets/js/translation-review.js?v=1902d883e072" defer></script><script src="../../../../assets/js/code-highlight.js?v=0f94772226c3" defer></script><style>
+  .folio-landing { position: relative; margin: 0 0 2rem; }
+
+  /* WHAT IS LEFT HERE, AND WHY IT IS SO LITTLE.
+     `landing.html` emits exactly one folio-landing class —
+     `folio-landing folio-landing--plain` — the no-stickies fallback, which
+     renders the description and no art. The art path moved to the sticky
+     board (`fa-sticky--backdrop` in docs-ui.css), which composites text into
+     the picture through a declared `textRegion` and a scrim.
+
+     So this block used to carry fourteen selectors of which ELEVEN matched
+     nothing: every rule reaching for `folio-landing__art`,
+     `folio-landing__text` or `folio-landing--no-region`. Measured before they
+     were cut — those three classes appear in no markup in this repository and
+     on none of the 331 published pages that were inlining the CSS for them.
+     CSS has no error for a selector that matches nothing, which is the same
+     silence that let `.fa-sticky--backdrop > .fa-sticky-art` ship wrong.
+
+     The reasoning did not go with them. The blend-direction argument for the
+     fade is now at `.fa-sticky--backdrop::before`, where a scrim replaces it;
+     the region, overflow and breakpoint-parity lessons were already
+     re-derived and better stated on `.fa-landing-sticky--fixed`. What is NOT
+     carried over is the `cqw` container-query sizing: the successor scales
+     through `--fa-text-scale` rather than container queries, so a note about
+     `container-type` not being its own query container would be advice about
+     a mechanism nothing here uses. Bean `alox`, issue #873. */
+  .folio-landing--plain {
+    position: static; width: auto; height: auto; color: inherit;
+  }
+  .folio-landing--plain p { font-size: inherit; font-weight: inherit; }
+</style><style id="fa-page-ground" data-instance="folio-assistant-core">
+  /* Grumpy cat, the theme of folio-assistant-core. */
+  :root { --fa-page-scrim: rgba(39, 38, 43, 0.85); --fa-text-scrim: rgba(39, 38, 43, 0.96); }
+  :root[data-fa-scheme="light"] { --fa-page-scrim: rgba(255, 255, 255, 0.85); --fa-text-scrim: rgba(255, 255, 255, 0.96); }
+  /* The root carries the art, so it covers the whole viewport however short
+     the page; the body is made see-through so the art is not painted over. */
+  html:root body { background-color: transparent; }
+  html body .main-content { background-color: var(--fa-text-scrim); border-radius: 6px; }
+  html:root {
+    background-image:
+      linear-gradient(var(--fa-page-scrim), var(--fa-page-scrim)),
+      url("../../../../assets/img/harness/landing-laptop.webp");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  @media (max-width: 48rem) {
+    html:root {
+      background-image:
+        linear-gradient(var(--fa-page-scrim), var(--fa-page-scrim)),
+        url("../../../../assets/img/harness/landing-card.webp");
+    }
+  }
+  @media (max-width: 30rem) {
+    html:root {
+      background-image:
+        linear-gradient(var(--fa-page-scrim), var(--fa-page-scrim)),
+        url("../../../../assets/img/harness/landing-mobile.webp");
+    }
+  }
+  /* Print and forced colours get the plain page: art is decoration. */
+  @media print, (forced-colors: active) {
+    html:root { background-image: none; }
+  }
+</style>
+
+<link rel="stylesheet" href="../../../../assets/css/navbar.css"><script src="../../../../assets/navbar/rail-1hykcsiz9zv.js" defer></script><script src="../../../../assets/js/navbar.js" defer></script><link rel="stylesheet" href="../../../../assets/page-layout.css" data-fa-page-layout><script src="../../../../assets/page-layout.js" defer data-fa-page-layout></script><meta name="fa-pinned-data" content="../../../.."></head>
+
+<body><script type="application/json" id="fa-rail" data-fa-root="https://litlfred.github.io/folio-assistant" data-fa-to-root="../../../..">{"data":"rail-1hykcsiz9zv","here":"/en/folio-assistant-core/library/who-dpi-h-reference-architecture-draft-v1/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../">Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector</a></nav>
+  <a class="skip-to-main" href="#main-content">Skip to main content</a>
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="svg-link" viewBox="0 0 24 24">
+  <title>Link</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+  </svg>
+</symbol>
+
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+  <title>Menu</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg>
+</symbol>
+
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+  <title>Expand</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </svg>
+</symbol>
+
+  <!-- Feather. MIT License: https://github.com/feathericons/feather/blob/master/LICENSE -->
+<symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link">
+  <title id="svg-external-link-title">(external link)</title>
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line>
+</symbol>
+
+  
+    <symbol id="svg-doc" viewBox="0 0 24 24">
+  <title>Document</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+  </svg>
+</symbol>
+
+    <symbol id="svg-search" viewBox="0 0 24 24">
+  <title>Search</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+    <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+  </svg>
+</symbol>
+
+  
+  
+    <!-- Bootstrap Icons. MIT License: https://github.com/twbs/icons/blob/main/LICENSE.md -->
+<symbol id="svg-copy" viewBox="0 0 16 16">
+  <title>Copy</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+  </svg>
+</symbol>
+<symbol id="svg-copied" viewBox="0 0 16 16">
+  <title>Copied</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16">
+    <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/>
+  </svg>
+</symbol>
+
+  
+</svg>
+
+  
+    
+
+  
+  <div class="main" id="top">
+    <div id="main-header" class="main-header fa-site-bar fa-page-bar"><a class="fa-page-bar-home" href="../../../../">Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector</a>
+  
+    
+
+<div class="search" role="search">
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector" autocomplete="off">
+    <label for="search-input" class="search-label">
+      <span class="sr-only">Search Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector</span>
+      <svg viewBox="0 0 24 24" class="search-icon" aria-hidden="true"><use xlink:href="#svg-search"></use></svg>
+    </label>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
+
+  
+  
+  
+<span class="fa-page-bar-locale" data-fa-slot="locale"></span></div>
+
+    <div class="main-content-wrap">
+      
+      <div id="main-content" class="main-content">
+        <main>
+          
+            
+<style>.fa-lib .lib-page #document .seg { margin: .2rem 0 .8rem; }
+.fa-lib .lib-page #document .seg button[aria-selected="true"] { font-weight: 600; }
+.fa-lib .lib-page #document .docbody { padding: 0 16px 8px; }
+.fa-lib .lib-page #document .dockw { padding: 4px 16px; }
+.fa-lib .lib-page #document .doc-gallery { display: flex; flex-direction: column; gap: 8px; margin: .5rem 0 1rem; }
+.fa-lib .lib-page #document .doc-figure { margin: 0; display: flex; align-items: center; gap: 12px; border: 1px solid var(--border, #8884); border-radius: 6px; padding: 6px; background: var(--card, transparent); }
+.fa-lib .lib-page #document .fig-thumb { flex: 0 0 auto; padding: 0; border: 0; background: #fff; border-radius: 4px; cursor: zoom-in; }
+.fa-lib .lib-page #document .fig-thumb:focus-visible { outline: 2px solid #58a6ff; outline-offset: 2px; }
+.fa-lib .lib-page #document .doc-figure img { display: block; width: 120px; height: 90px; object-fit: contain; border-radius: 4px; }
+.fa-lib .lib-page #document .doc-figure figcaption { flex: 1 1 auto; min-width: 0; font-size: .9em; display: flex; gap: 8px; align-items: baseline; }
+.fa-lib .lib-page #document .fig-name { min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 600; }
+.fa-lib .lib-page .fig-print-desc { display: none; }
+.fa-lib .lib-page .doc-print { margin-inline-start: 8px; font-size: .8rem; cursor: pointer; }
+@media print {
+.fa-lib .lib-page .fig-print-desc { display: block; margin: 4px 0 0; font-size: .85em; }
+.fa-lib .lib-page #document .doc-figure { display: block; break-inside: avoid; }
+.fa-lib .lib-page #document .doc-figure img { width: auto; height: auto; max-width: 100%; max-height: 60vh; }
+.fa-lib .lib-page #document .fig-thumb { cursor: default; }
+.fa-lib .lib-page .doc-print, .fa-lib .lib-page .fig-pop { display: none; }
+}
+.fa-lib .lib-page .fig-pop { max-width: min(92vw, 1100px); max-height: 92vh; padding: 0; border: 1px solid var(--border, #8884); border-radius: 8px; background: var(--bg, #fff); color: inherit; }
+.fa-lib .lib-page .fig-pop::backdrop { background: rgba(0,0,0,.6); }
+.fa-lib .lib-page .fig-pop-box { position: relative; padding: 12px 16px; }
+.fa-lib .lib-page .fig-pop-box img { display: block; max-width: 100%; max-height: 70vh; margin: 8px auto; background: #fff; object-fit: contain; }
+.fa-lib .lib-page .fig-pop-box h3 { margin: 0 32px 0 0; }
+.fa-lib .lib-page .fig-pop-x { position: absolute; top: 6px; inset-inline-end: 8px; min-width: 32px; min-height: 32px; font-size: 22px; line-height: 1; border: 0; background: none; color: inherit; cursor: pointer; }
+.fa-lib .lib-page #document .doc-table { margin: .4rem 0; }
+.fa-lib .lib-page #document .doc-table-scroll { overflow-x: auto; max-width: 100%; }
+.fa-lib .lib-page #document .doc-table table { font-size: .85em; }
+.fa-lib .lib-page #document p.kw, .fa-lib .lib-page #document .dockw p.kw { display: inline; margin: 0; }
+.fa-lib .lib-page #document .docsec p.kw { display: block; margin: 2px 0 6px; }
+.fa-lib .lib-page #document p.kw .pill { margin: 0 2px 2px 0; }
+.fa-lib .lib-page #document ul.toc, .fa-lib .lib-page #document ul.toc ul { list-style: none; margin: 0; padding-left: 1.1rem; }
+.fa-lib .lib-page #document ul.toc { padding-left: 0; }
+.fa-lib .lib-page #document ul.toc li { margin: .15rem 0; }
+.fa-lib .lib-page #document ul.toc li.leaf { padding-left: 1rem; }
+.fa-lib .lib-page #document ul.toc summary { cursor: pointer; }
+.fa-lib .lib-page #document td ul { margin: .3rem 0 0; padding-left: 1.1rem; }
+.fa-lib .lib-page #document .docsec { margin: 0 0 1rem; }
+.fa-lib .lib-page #document .docsec h3 { margin: .2rem 0 .3rem; font-size: 1rem; }
+.fa-lib .lib-page #document .sum { padding: .55rem .7rem; border: 1px dashed var(--line); border-radius: 6px; }
+.fa-lib .lib-page #document .sum p { margin: .35rem 0 0; }
+.fa-lib .lib-page #document td { white-space: normal; vertical-align: top; }
+.fa-lib .lib-page #blocks details > summary { cursor: pointer; }
+.fa-lib .lib-page #blocks .block-body { margin: .4rem 0 .2rem; }
+.fa-lib .lib-page #blocks .block-body pre {
   white-space: pre-wrap; word-break: break-word; margin: 0;
   padding: .55rem .7rem; background: var(--panel); border: 1px solid var(--line);
   border-radius: 6px; font-size: 12.5px; line-height: 1.45; max-height: 22rem; overflow: auto;
 }
-.lib-page #blocks .block-body .note { margin: .35rem 0 0; font-size: 11.5px; color: var(--muted); }
-/* EXTRACT AND AGENT SUMMARY, SIDE BY SIDE -- owner, 2026-09-24: "the extract
-   of a node is shown, but no agentic summary". Beside, never instead: the
-   extract is the source's words and the summary is an agent's account of
-   them, so a reader must be able to hold one against the other. Two columns
-   where there is room, stacked on a phone, extract first either way. */
-.lib-page #blocks td { white-space: normal; vertical-align: top; }
-.lib-page #blocks td.bt { min-width: 15rem; }
-.lib-page #blocks .pair { display: grid; grid-template-columns: 1fr; gap: .6rem; }
-@media (min-width: 760px) { .lib-page #blocks .pair { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } }
-.lib-page #blocks .pair > div { min-width: 0; }
-.lib-page #blocks .lbl { margin: 0 0 .3rem; font-size: 11.5px; font-weight: 600; color: var(--muted);
+.fa-lib .lib-page #blocks .block-body .note { margin: .35rem 0 0; font-size: 11.5px; color: var(--muted); }
+.fa-lib .lib-page #blocks td { white-space: normal; vertical-align: top; }
+.fa-lib .lib-page #blocks td.bt { min-width: 15rem; }
+.fa-lib .lib-page #blocks .pair { display: grid; grid-template-columns: 1fr; gap: .6rem; }
+@media (min-width: 760px) {
+.fa-lib .lib-page #blocks .pair { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+}
+.fa-lib .lib-page #blocks .pair > div { min-width: 0; }
+.fa-lib .lib-page #blocks .lbl { margin: 0 0 .3rem; font-size: 11.5px; font-weight: 600; color: var(--muted);
   text-transform: uppercase; letter-spacing: .04em; }
-.lib-page #blocks .sum { padding: .55rem .7rem; border: 1px dashed var(--line); border-radius: 6px;
+.fa-lib .lib-page #blocks .sum { padding: .55rem .7rem; border: 1px dashed var(--line); border-radius: 6px;
   font-size: 13px; line-height: 1.5; }
-.lib-page #blocks .sum p { margin: .35rem 0 0; }
-/* A WITHHELD ENTRY -- issue #1794. Said in words, styled as information
-   rather than as an error: not publishing a refused work is the system
-   working, and the banner is there so it is not mistaken for a gap. */
-.lib-page #blocks .wh-banner { margin: 8px 16px 12px; padding: .6rem .8rem; border: 1px solid var(--info);
+.fa-lib .lib-page #blocks .sum p { margin: .35rem 0 0; }
+.fa-lib .lib-page #blocks .wh-banner { margin: 8px 16px 12px; padding: .6rem .8rem; border: 1px solid var(--info);
   background: var(--info-soft); border-radius: 8px; font-size: .86rem; line-height: 1.5; }
-.lib-page #blocks .wh-banner p { margin: 0 0 .35rem; }
-.lib-page #blocks .wh-banner p:last-child { margin: 0; }
-.lib-page #blocks .wh-line { color: var(--muted); font-size: .8rem; }
-/* THEMED, since 2026-10-07: every library page sits on the site's default
-   layout, inside the theme's content column, so this sheet styles ONE
-   wrapper. Every selector starts .lib-page, and there is no rule on body,
-   :root or a -- a rule there would restyle the theme on every page that
-   shares this file's reader. The palette is keyed on the scheme the SITE
-   paints (data-fa-scheme on html, set by head_custom.html's first-paint
-   block and by docs-ui.js's toggle), so it follows the reader's choice
-   rather than the OS alone. Dark is the default because the site's is.
-   --bg is the theme's own ground, which a sticky header must paint over. */
-.lib-page {
+.fa-lib .lib-page #blocks .wh-banner p { margin: 0 0 .35rem; }
+.fa-lib .lib-page #blocks .wh-banner p:last-child { margin: 0; }
+.fa-lib .lib-page #blocks .wh-line { color: var(--muted); font-size: .8rem; }
+.fa-lib .lib-page {
   --bg:#27262b; --fg:#e8eaed; --muted:#a9b0b8; --line:#4a4950; --panel:#1f1e23;
   --accent:#7fc7a1; --accent-soft:#16291f; --warn:#e0b25e; --warn-soft:#2a2213;
   --info:#8db4ec; --info-soft:#1d2937; --box:#1f1e23;
 }
-html[data-fa-scheme="light"] .lib-page {
+html[data-fa-scheme="light"] .fa-lib .lib-page {
   --bg:#fff; --fg:#17191c; --muted:#5b6168; --line:#d9dde2; --panel:#f6f7f9;
   --accent:#276749; --accent-soft:#e6f2ec; --warn:#8a5300; --warn-soft:#fdf3e0;
   --info:#1a5fb4; --info-soft:#e7eefb; --box:#fff;
 }
-.lib-page, .lib-page * { box-sizing:border-box; }
-/* The theme's list bullet is drawn by li::before in .main-content; the
-   table of contents is a tree, not a bulleted list. */
-.lib-page ul.toc li::before { content:none; }
-.lib-page .lib-head { padding:16px 0; border-bottom:1px solid var(--line); }
-.lib-page h1 { margin:0 0 6px; }
-.lib-page .badges { display:flex; flex-wrap:wrap; gap:8px; margin:8px 0 0; }
-.lib-page .badge { border:1px solid var(--line); border-radius:8px; padding:5px 10px; font-size:.82rem; background:var(--panel); }
-.lib-page .badge b { font-variant-numeric:tabular-nums; }
-.lib-page .badge.q b { color:var(--warn); }
-/* The view panel (viewPanelHtml): the entry's primary asset, under the head. */
-.lib-page .lib-view { padding:10px 0; border-bottom:1px solid var(--line); }
-.lib-page .lib-view summary { cursor:pointer; font-size:1rem; }
-.lib-page .lib-view .pdf-viewer { margin:.6rem 0 0 !important; }
-.lib-page .lib-view img { display:block; max-width:100%; height:auto; border:1px solid var(--line); border-radius:6px; }
-.lib-page .lib-view-absent p { margin:0; }
-.lib-page .lib-record { padding:6px 0; border-bottom:1px solid var(--line); }
-.lib-page .lib-record p { margin:0; }
-.lib-page .lib-summary { padding:6px 0 10px; border-bottom:1px solid var(--line); }
-.lib-page .lib-summary h2 { margin:.4rem 0; }
-.lib-page .lib-summary p { margin:.3rem 0; max-width:60rem; }
-.lib-page .lib-versions { padding:6px 0; border-bottom:1px solid var(--line); }
-.lib-page .lib-versions p { margin:0; }
-.lib-page .lib-lang-toggle { margin:.5rem 0 0; }
-.lib-page .lib-lang-toggle a.seg-link { display:inline-block; min-height:24px; line-height:24px; padding:2px 10px; border:1px solid var(--line); text-decoration:none; }
-.lib-page details.lib-all { padding:10px 0; border-top:1px solid var(--line); }
-.lib-page details.lib-all > summary { cursor:pointer; font-size:1rem; min-height:24px; }
-.lib-page .toolbar { padding:10px 0; display:flex; flex-wrap:wrap; gap:8px; align-items:center; border-bottom:1px solid var(--line); }
-.lib-page input, .lib-page select, .lib-page button { font:inherit; color:var(--fg); background:var(--box);
+.fa-lib .lib-page, .fa-lib .lib-page * { box-sizing:border-box; }
+.fa-lib .lib-page ul.toc li::before { content:none; }
+.fa-lib .lib-page .lib-head { padding:16px 0; border-bottom:1px solid var(--line); }
+.fa-lib .lib-page h1 { margin:0 0 6px; }
+.fa-lib .lib-page .badges { display:flex; flex-wrap:wrap; gap:8px; margin:8px 0 0; }
+.fa-lib .lib-page .badge { border:1px solid var(--line); border-radius:8px; padding:5px 10px; font-size:.82rem; background:var(--panel); }
+.fa-lib .lib-page .badge b { font-variant-numeric:tabular-nums; }
+.fa-lib .lib-page .badge.q b { color:var(--warn); }
+.fa-lib .lib-page .lib-view { padding:10px 0; border-bottom:1px solid var(--line); }
+.fa-lib .lib-page .lib-view summary { cursor:pointer; font-size:1rem; }
+.fa-lib .lib-page .lib-view .pdf-viewer { margin:.6rem 0 0 !important; }
+.fa-lib .lib-page .lib-view img { display:block; max-width:100%; height:auto; border:1px solid var(--line); border-radius:6px; }
+.fa-lib .lib-page .lib-view-absent p { margin:0; }
+.fa-lib .lib-page .lib-record { padding:6px 0; border-bottom:1px solid var(--line); }
+.fa-lib .lib-page .lib-record p { margin:0; }
+.fa-lib .lib-page .lib-summary { padding:6px 0 10px; border-bottom:1px solid var(--line); }
+.fa-lib .lib-page .lib-summary h2 { margin:.4rem 0; }
+.fa-lib .lib-page .lib-summary p { margin:.3rem 0; max-width:60rem; }
+.fa-lib .lib-page .lib-versions { padding:6px 0; border-bottom:1px solid var(--line); }
+.fa-lib .lib-page .lib-versions p { margin:0; }
+.fa-lib .lib-page .lib-lang-toggle { margin:.5rem 0 0; }
+.fa-lib .lib-page .lib-lang-toggle a.seg-link { display:inline-block; min-height:24px; line-height:24px; padding:2px 10px; border:1px solid var(--line); text-decoration:none; }
+.fa-lib .lib-page details.lib-all { padding:10px 0; border-top:1px solid var(--line); }
+.fa-lib .lib-page details.lib-all > summary { cursor:pointer; font-size:1rem; min-height:24px; }
+.fa-lib .lib-page .toolbar { padding:10px 0; display:flex; flex-wrap:wrap; gap:8px; align-items:center; border-bottom:1px solid var(--line); }
+.fa-lib .lib-page input, .fa-lib .lib-page select, .fa-lib .lib-page button { font:inherit; color:var(--fg); background:var(--box);
   border:1px solid var(--line); border-radius:6px; padding:6px 9px; }
-.lib-page input { flex:1 1 200px; min-width:0; }
-.lib-page .seg { display:inline-flex; border:1px solid var(--line); border-radius:6px; overflow:hidden; }
-.lib-page .seg button { border:0; border-radius:0; background:transparent; cursor:pointer; padding:6px 12px; }
-.lib-page .seg button[aria-pressed="true"] { background:var(--accent-soft); color:var(--fg); font-weight:600; }
-.lib-page .lib-main { padding:0 0 40px; }
-.lib-page table { border-collapse:collapse; width:100%; font-size:.86rem; }
-/* min-width, border-left, background and font-size undo the theme's own
-   cell rules, which are type selectors and so lose to these. */
-.lib-page th, .lib-page td { text-align:left; padding:7px 10px; border:0; border-bottom:1px solid var(--line); white-space:nowrap;
+.fa-lib .lib-page input { flex:1 1 200px; min-width:0; }
+.fa-lib .lib-page .seg { display:inline-flex; border:1px solid var(--line); border-radius:6px; overflow:hidden; }
+.fa-lib .lib-page .seg button { border:0; border-radius:0; background:transparent; cursor:pointer; padding:6px 12px; }
+.fa-lib .lib-page .seg button[aria-pressed="true"] { background:var(--accent-soft); color:var(--fg); font-weight:600; }
+.fa-lib .lib-page .lib-main { padding:0 0 40px; }
+.fa-lib .lib-page table { border-collapse:collapse; width:100%; font-size:.86rem; }
+.fa-lib .lib-page th, .fa-lib .lib-page td { text-align:left; padding:7px 10px; border:0; border-bottom:1px solid var(--line); white-space:nowrap;
   min-width:0; background:transparent; font-size:inherit; }
-.lib-page th { position:sticky; top:0; background:var(--bg); color:var(--muted); font-size:.74rem;
+.fa-lib .lib-page th { position:sticky; top:0; background:var(--bg); color:var(--muted); font-size:.74rem;
   text-transform:uppercase; letter-spacing:.04em; }
-.lib-page th button { border:0; background:transparent; padding:0; font:inherit; color:inherit;
+.fa-lib .lib-page th button { border:0; background:transparent; padding:0; font:inherit; color:inherit;
   cursor:pointer; text-transform:inherit; letter-spacing:inherit; }
-.lib-page th button:hover { color:var(--fg); text-decoration:underline; }
-.lib-page th[aria-sort] button::after { content:" ▲"; }
-.lib-page th[aria-sort="descending"] button::after { content:" ▼"; }
-.lib-page td.num { text-align:right; font-variant-numeric:tabular-nums; }
-.lib-page tbody tr:hover { background:var(--panel); }
-.lib-page .slug { font-family:var(--fa-font-mono,Menlo,Consolas,monospace); }
-/* A row's secondary links -- source, README, a referenced entry's own -- are
-   24 px targets (WCAG 2.5.8). As plain inline text they were 16 px tall and
-   sat closer than 24 px to the title link beside them. */
-.lib-page a.src { display:inline-block; min-width:24px; min-height:24px; line-height:24px; }
-/* The row's PRIMARY links -- the title and the slug -- are 24 px targets too.
-   Fixing a.src alone left the title a 16 px inline box, and wherever the
-   title cell wrapped (a short title whose "source" link falls to the next
-   line, which depends on the fonts the runner has) that 24 px source link
-   sat 10.6 px below the title's centre: axe's target-size, serious, on
-   main's CI for cat-harness/nist-sp-800-207 ("Zero Trust Architecture").
-   A rule for the CLASS of link, not that entry: every listing link is a
-   24 px target whatever wraps next to it. */
-.lib-page a.lib-title, .lib-page a.lib-view { display:inline-block; min-height:24px; line-height:24px; }
-.lib-page .pill { display:inline-block; font-size:.7rem; padding:1px 7px; border-radius:999px;
+.fa-lib .lib-page th button:hover { color:var(--fg); text-decoration:underline; }
+.fa-lib .lib-page th[aria-sort] button::after { content:" ▲"; }
+.fa-lib .lib-page th[aria-sort="descending"] button::after { content:" ▼"; }
+.fa-lib .lib-page td.num { text-align:right; font-variant-numeric:tabular-nums; }
+.fa-lib .lib-page tbody tr:hover { background:var(--panel); }
+.fa-lib .lib-page .slug { font-family:var(--fa-font-mono,Menlo,Consolas,monospace); }
+.fa-lib .lib-page a.src { display:inline-block; min-width:24px; min-height:24px; line-height:24px; }
+.fa-lib .lib-page a.lib-title, .fa-lib .lib-page a.lib-view { display:inline-block; min-height:24px; line-height:24px; }
+.fa-lib .lib-page .pill { display:inline-block; font-size:.7rem; padding:1px 7px; border-radius:999px;
   border:1px solid var(--line); color:var(--muted); }
-.lib-page .pill.ok { color:var(--accent); background:var(--accent-soft); border-color:var(--accent); }
-.lib-page .pill.warn { color:var(--warn); background:var(--warn-soft); border-color:var(--warn); }
-.lib-page .pill.info { color:var(--info); background:var(--info-soft); border-color:var(--info); }
-.lib-page #desktop { display:grid; grid-template-columns:repeat(auto-fill, minmax(230px, 1fr));
+.fa-lib .lib-page .pill.ok { color:var(--accent); background:var(--accent-soft); border-color:var(--accent); }
+.fa-lib .lib-page .pill.warn { color:var(--warn); background:var(--warn-soft); border-color:var(--warn); }
+.fa-lib .lib-page .pill.info { color:var(--info); background:var(--info-soft); border-color:var(--info); }
+.fa-lib .lib-page #desktop { display:grid; grid-template-columns:repeat(auto-fill, minmax(230px, 1fr));
   gap:14px; padding:16px; }
-.lib-page .card { border:1px solid var(--line); border-radius:10px; background:var(--panel);
+.fa-lib .lib-page .card { border:1px solid var(--line); border-radius:10px; background:var(--panel);
   padding:12px; display:flex; flex-direction:column; gap:6px; }
-.lib-page .card h3 { margin:0; font-size:.92rem; line-height:1.3; }
-.lib-page .card .slug { font-size:.74rem; color:var(--muted); }
-.lib-page .card .rows { font-size:.78rem; color:var(--muted); display:grid;
+.fa-lib .lib-page .card h3 { margin:0; font-size:.92rem; line-height:1.3; }
+.fa-lib .lib-page .card .slug { font-size:.74rem; color:var(--muted); }
+.fa-lib .lib-page .card .rows { font-size:.78rem; color:var(--muted); display:grid;
   grid-template-columns:auto 1fr; gap:1px 8px; margin-top:2px; }
-.lib-page .card .rows b { color:var(--fg); font-weight:600; font-variant-numeric:tabular-nums; }
-.lib-page .card .tags { display:flex; flex-wrap:wrap; gap:4px; margin-top:4px; }
-.lib-page .spine { height:6px; border-radius:3px; background:var(--accent); opacity:.65; }
-.lib-page .empty { color:var(--muted); padding:24px 16px; }
-.lib-page h2 { font-size:.95rem; margin:24px 0 4px; }
-.lib-page p.note { color:var(--muted); font-size:.82rem; margin:0 0 8px; }
-.lib-page .wrap { overflow:auto; }
-/* THE BOOK'S AVATAR, first in its row -- bean zrvt, issue #1006. A fixed box
-   so a row does not reflow when the cover arrives, and a glyph of the same
-   size when there is no picture, so "no cover" never looks like a broken one. */
-.lib-page .lib-ava { display:inline-flex; align-items:center; justify-content:center;
+.fa-lib .lib-page .card .rows b { color:var(--fg); font-weight:600; font-variant-numeric:tabular-nums; }
+.fa-lib .lib-page .card .tags { display:flex; flex-wrap:wrap; gap:4px; margin-top:4px; }
+.fa-lib .lib-page .spine { height:6px; border-radius:3px; background:var(--accent); opacity:.65; }
+.fa-lib .lib-page .empty { color:var(--muted); padding:24px 16px; }
+.fa-lib .lib-page h2 { font-size:.95rem; margin:24px 0 4px; }
+.fa-lib .lib-page p.note { color:var(--muted); font-size:.82rem; margin:0 0 8px; }
+.fa-lib .lib-page .wrap { overflow:auto; }
+.fa-lib .lib-page .lib-ava { display:inline-flex; align-items:center; justify-content:center;
   width:34px; height:46px; margin-right:8px; vertical-align:middle; flex:0 0 auto;
   border:1px solid var(--line); background:var(--panel); overflow:hidden; }
-.lib-page .lib-ava img { width:100%; height:100%; object-fit:cover; display:block; }
-.lib-page .lib-ava svg { width:22px; height:22px; fill:none; stroke:var(--muted); stroke-width:1.6; }
-.lib-page td.lib-first { white-space:nowrap; }
-.lib-page .card .lib-ava { width:56px; height:76px; }
-/* THE LISTING FITS MORE OF ITSELF, AND SAYS WHEN IT DOES NOT -- bean gnqa,
-   findings 1 and 2. Measured 2026-10-02 at 1280 px: a 3636 px table in a
-   1224 px box, every cell nowrap, so the title and source path alone were
-   2,000 px and nine of thirteen columns sat past the right edge with
-   nothing on screen saying so. The long TEXT cells now wrap inside a
-   bounded width; the short numeric and pill cells keep nowrap, because a
-   count broken over two lines is harder to read than one scrolled to. */
-.lib-page #listing td.lib-first { white-space:normal; min-width:13rem; max-width:17rem; }
-.lib-page #listing td.t-title { white-space:normal; min-width:14rem; max-width:22rem; }
-.lib-page #listing td.t-title a.lib-title { display:inline-flex; align-items:center; min-height:24px; }
-.lib-page #listing td.t-source { white-space:normal; min-width:9rem; max-width:14rem; }
-.lib-page #listing td.t-source .slug { overflow-wrap:anywhere; }
-.lib-page #listing td.t-source .pill { white-space:nowrap; }
-.lib-page #queue td.slug { white-space:normal; overflow-wrap:anywhere; min-width:12rem; max-width:24rem; }
-/* "Referenced by" OPENS rather than hovers -- finding 6. A title tooltip is
-   unreachable by touch and by keyboard; a details element is both. */
-.lib-page details.refs > summary { cursor:pointer; list-style:none; display:inline-flex; align-items:center; min-height:28px; }
-.lib-page details.refs > summary::-webkit-details-marker { display:none; }
-.lib-page details.refs > summary .pill::after { content:" \25B8"; }
-.lib-page details.refs[open] > summary .pill::after { content:" \25BE"; }
-.lib-page details.refs ul { margin:.3rem 0 0; padding-left:1rem; font-size:.72rem; color:var(--muted);
+.fa-lib .lib-page .lib-ava img { width:100%; height:100%; object-fit:cover; display:block; }
+.fa-lib .lib-page .lib-ava svg { width:22px; height:22px; fill:none; stroke:var(--muted); stroke-width:1.6; }
+.fa-lib .lib-page td.lib-first { white-space:nowrap; }
+.fa-lib .lib-page .card .lib-ava { width:56px; height:76px; }
+.fa-lib .lib-page #listing td.lib-first { white-space:normal; min-width:13rem; max-width:17rem; }
+.fa-lib .lib-page #listing td.t-title { white-space:normal; min-width:14rem; max-width:22rem; }
+.fa-lib .lib-page #listing td.t-title a.lib-title, .fa-lib .lib-page #listing td.t-title .lib-title-locale {
+  display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:3; line-clamp:3; overflow:hidden; min-height:24px; }
+.fa-lib .lib-page #listing td.t-title .lib-title-locale { font-size:.85em; color:var(--muted); line-height:1.35; }
+.fa-lib .lib-page #listing td.t-source { white-space:normal; min-width:9rem; max-width:14rem; }
+.fa-lib .lib-page #listing td.t-source .slug { overflow-wrap:anywhere; }
+.fa-lib .lib-page #listing td.t-source .pill { white-space:nowrap; }
+.fa-lib .lib-page #queue td.slug { white-space:normal; overflow-wrap:anywhere; min-width:12rem; max-width:24rem; }
+.fa-lib .lib-page details.refs > summary { cursor:pointer; list-style:none; display:inline-flex; align-items:center; min-height:28px; }
+.fa-lib .lib-page details.refs > summary::-webkit-details-marker { display:none; }
+.fa-lib .lib-page details.refs > summary .pill::after { content:" \25B8"; }
+.fa-lib .lib-page details.refs[open] > summary .pill::after { content:" \25BE"; }
+.fa-lib .lib-page details.refs ul { margin:.3rem 0 0; padding-left:1rem; font-size:.72rem; color:var(--muted);
   white-space:normal; overflow-wrap:anywhere; max-width:22rem; }
-/* THE EDGE CUE AT DESKTOP WIDTH. narrow-viewport.css fades a table's
-   overflowing edge below 800 px; above it the scroll box is .wrap, and it
-   had mask-image none. Same mask, same scroll-driven animation, so a box
-   that does not overflow shows no fade. */
 @media (min-width: 800px) {
-  /* The entry's identity stays in view while the reader scrolls to its
-     numbers: the first column is pinned to the scroll box's left edge. */
-  .lib-page #listing th:first-child, .lib-page #listing td.lib-first { position:sticky; left:0; z-index:1;
+.fa-lib .lib-page #listing th:first-child, .fa-lib .lib-page #listing td.lib-first { position:sticky; left:0; z-index:1;
     background:var(--bg); box-shadow:1px 0 0 var(--line); }
-  .lib-page #listing th:first-child { z-index:2; }
-  @supports (animation-timeline: scroll()) {
-    /* Right edge only: the pinned first column already shows what is to
-       the left, and a left fade would dim the entry's own name. */
-    .lib-page #listing.wrap, .lib-page #queue.wrap {
+.fa-lib .lib-page #listing th:first-child { z-index:2; }
+@supports (animation-timeline: scroll()) {
+.fa-lib .lib-page #listing.wrap, .fa-lib .lib-page #queue.wrap {
       mask-image: linear-gradient(to right,
         #000 calc(100% - var(--fa-cue-r)), transparent 100%);
       animation: fa-scroll-cue linear both;
       animation-timeline: scroll(self inline);
     }
-  }
 }
-/* ON A PHONE A ROW IS A CARD -- finding 2. At 390 px a sideways-scrolling
-   table showed one column of thirteen: the cover, the slug and a button,
-   none of the metadata the listing exists for. Each row now lays its cells
-   out in a two-column grid, every cell labelled from its own header, and
-   the header row stays as the SORT controls. Overrides narrow-viewport.css
-   by id, which outranks its type selector. */
+}
 @media (max-width: 799.98px) {
-  .lib-page #listing table, .lib-page #queue table { display:block; mask-image:none; animation:none; overflow:visible; }
-  .lib-page #listing thead, .lib-page #queue thead, .lib-page #listing tbody, .lib-page #queue tbody { display:block; }
-  .lib-page #listing thead tr, .lib-page #queue thead tr { display:flex; flex-wrap:wrap; gap:2px 12px; padding:6px 10px; }
-  .lib-page #listing thead th, .lib-page #queue thead th { position:static; border:0; padding:2px 0; }
-  .lib-page #listing thead tr::before { content:"Sort by"; font-size:.74rem; color:var(--muted); align-self:center; }
-  .lib-page #listing tbody tr, .lib-page #queue tbody tr { display:grid; grid-template-columns:1fr 1fr; gap:2px 10px;
+.fa-lib .lib-page #listing table, .fa-lib .lib-page #queue table { display:block; mask-image:none; animation:none; overflow:visible; }
+.fa-lib .lib-page #listing thead, .fa-lib .lib-page #queue thead, .fa-lib .lib-page #listing tbody, .fa-lib .lib-page #queue tbody { display:block; }
+.fa-lib .lib-page #listing thead tr, .fa-lib .lib-page #queue thead tr { display:flex; flex-wrap:wrap; gap:2px 12px; padding:6px 10px; }
+.fa-lib .lib-page #listing thead th, .fa-lib .lib-page #queue thead th { position:static; border:0; padding:2px 0; }
+.fa-lib .lib-page #listing thead tr::before { content:"Sort by"; font-size:.74rem; color:var(--muted); align-self:center; }
+.fa-lib .lib-page #listing tbody tr, .fa-lib .lib-page #queue tbody tr { display:grid; grid-template-columns:1fr 1fr; gap:2px 10px;
     padding:10px; border-bottom:1px solid var(--line); }
-  .lib-page #listing tbody td, .lib-page #queue tbody td { display:block; border:0; padding:2px 0; white-space:normal;
+.fa-lib .lib-page #listing tbody td, .fa-lib .lib-page #queue tbody td { display:block; border:0; padding:2px 0; white-space:normal;
     min-width:0; max-width:none; text-align:left; overflow-wrap:anywhere; }
-  .lib-page #listing td.lib-first, .lib-page #listing td.t-title, .lib-page #listing td.t-source, .lib-page #listing td.t-refs, .lib-page #queue td.slug { grid-column:1 / -1; }
-  .lib-page #listing td[data-label]::before, .lib-page #queue td[data-label]::before { content:attr(data-label);
+.fa-lib .lib-page #listing td.lib-first, .fa-lib .lib-page #listing td.t-title, .fa-lib .lib-page #listing td.t-source, .fa-lib .lib-page #listing td.t-refs, .fa-lib .lib-page #queue td.slug { grid-column:1 / -1; }
+.fa-lib .lib-page #listing td[data-label]::before, .fa-lib .lib-page #queue td[data-label]::before { content:attr(data-label);
     display:block; font-size:.66rem; letter-spacing:.04em; text-transform:uppercase; color:var(--muted); }
-  .lib-page #listing td.lib-first::before, .lib-page #listing td.t-title::before { content:none; }
+.fa-lib .lib-page #listing td.lib-first::before, .fa-lib .lib-page #listing td.t-title::before { content:none; }
 }
-
-body { max-width: 72rem; margin: 0 auto; padding: 1rem 16px; }
-.doc-actions a { margin-left: .4em; font-size: .8rem; font-weight: normal; }
+.fa-lib .doc-actions a { margin-left: .4em; font-size: .8rem; font-weight: normal; }
 </style>
-<link rel="stylesheet" href="../../../../assets/css/navbar.css"><script src="../../../../assets/navbar/rail-1hykcsiz9zv.js" defer></script><script src="../../../../assets/js/navbar.js" defer></script><script src="../../../../assets/navbar/row-2acuhncsmbg.js" defer></script><link rel="stylesheet" href="../../../../assets/css/navbar-row.css"><script src="../../../../assets/js/navbar-row.js" defer></script><meta name="fa-search-exclude" content="true"><script src="../../../../assets/js/vendor/lunr.min.js" defer></script><script src="../../../../assets/js/just-the-docs.js" defer></script><link rel="stylesheet" href="../../../../assets/page-layout.css" data-fa-page-layout><script src="../../../../assets/page-layout.js" defer data-fa-page-layout></script><meta name="fa-platform-base" content="https://litlfred.github.io/folio-assistant" data-fa-platform-ui><link rel="stylesheet" href="../../../../assets/css/docs-ui.css" data-fa-platform-ui><script src="../../../../assets/js/docs-ui.js" defer data-fa-platform-ui></script><meta name="fa-pinned-data" content="../../../.."></head>
-<body><script type="application/json" id="fa-navbar-row" data-fa-root="../../../.." data-fa-row-src="row-2acuhncsmbg"></script><script type="application/json" id="fa-rail" data-fa-root="https://litlfred.github.io/folio-assistant" data-fa-to-root="../../../..">{"data":"rail-1hykcsiz9zv","here":"/en/folio-assistant-core/library/who-dpi-h-reference-architecture-draft-v1/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../">Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector</a></nav><div id="main-header" class="main-header fa-site-bar fa-page-bar"><a class="fa-page-bar-home" href="../../../../">Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector</a><div class="search" role="search"><div class="search-input-wrap"><input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search this site" autocomplete="off"><label for="search-input" class="search-label"><span class="sr-only">Search this site</span></label></div><div id="search-results" class="search-results"></div></div><span class="fa-page-bar-locale" data-fa-slot="locale"></span></div>
+<div class="fa-lib"><div class="lib-page">
 <p><a href="../">Library</a></p>
-<h1>Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector — the version published for public comment</h1>
+<h1>
+  
+  
+    Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector — the version published for public comment
+  
+  
+</h1>
+    
 <p class="note">A frozen source: the library keeps it exactly as published. Edits are made in the folio, and each section's ✎ edit opens the folio block made from it.</p>
 <section id="document"><p class="note">Loading the document…</p></section>
+
 <noscript><p>This page draws the document from <a href="../../../../folio-assistant-core/library/who-dpi-h-reference-architecture-draft-v1/entries/who-dpi-h-reference-architecture-draft-v1.doc.json">its JSON</a>; it needs JavaScript.</p></noscript>
+</div></div>
 <script>
 function $(i){ return document.getElementById(i); }
 function esc(s){ return String(s==null?"":s).replace(/[&<>"']/g,function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]; }); }
@@ -1512,58 +1732,130 @@ function confPill(c, ev){
 function notRecorded(what){
   return '<p class="empty">' + esc(what) + ' not recorded for this entry \u2014 it was ingested before this field existed. Re-ingest to add it.</p>';
 }
-function docContents(d){
-  if (!d.toc.length && d.variant && d.variant !== "pdf") {
-    /* A text or notebook source has no separate outline: its headings ARE its
-       sections, so they are its contents. */
-    if (!d.sections.length) return '<p class="empty">No sections: the source has no headings.</p>';
-    return '<p class="note">Contents: the source\u2019s own headings.</p><ul class="toc">' + d.sections.map(function(s){
-      return '<li style="margin-left:' + (Math.max(0, (s.level || 1) - 1)) + 'em"><a href="#sec-' + esc(s.id) + '" data-sec="' + esc(s.id) + '">' +
-        (s.number ? esc(s.number) + ' ' : '') + esc(s.title) + '</a></li>';
-    }).join("") + '</ul>';
-  }
-  if (!d.toc.length) return '<p class="empty">No table of contents: the PDF carries no outline and none could be inferred.</p>';
-  var how = d.tocSource === "outline" ? "the PDF\u2019s own outline"
-    : "inferred (" + esc(d.tocMethod || "unknown") + "); each entry\u2019s confidence and the evidence behind it are shown";
-  /* A TREE OF <details>, collapsed to the top level so the document's shape
-     is visible at a glance (owner, 2026-10-06: "TOC collapsible and start
-     collapsed - hard to see overview"). Native <details>: keyboard and
-     screen-reader behaviour with no script. */
-  var bySec = {};
-  d.sections.forEach(function(s){ bySec[s.id] = s; });
-  function line(e){
-    var t = (e.number ? esc(e.number) + ' ' : '') + esc(e.title);
-    var link = e.section ? '<a href="#sec-' + esc(e.section) + '" data-sec="' + esc(e.section) + '">' + t + '</a>' : t;
-    var s = e.section && bySec[e.section];
-    return link + ' <span class="note">' + pageText(e.page, e.pageLabel) + '</span> ' + confPill(e.confidence, e.evidence) +
-      (s && s.edit && d.links ? ' ' + editHost(s) : '');
-  }
-  /* Build a node list first, so a level can see how many siblings it has.
-     A node that is the ONLY one at its level starts open: an outline whose
-     single root is the book's title would otherwise collapse to one line
-     (9789241548960-eng). The tree opens down to the first level that
-     branches \u2014 the chapters \u2014 and no further. */
-  var i = 0;
-  function nodes(level){
+/* THE CONTENTS TREE. Owner, 2026-11-13: "a hierarchy tree expandable
+   browser of sections on library items ... that shows blocks within". From
+   the outline when there is one, else from the sections, nested by level; a
+   section's blocks are its leaves. A node's children are built when it is
+   first opened, so a document of a thousand sections stays fast. */
+var DOC_BLOCKS = null, DOC_TREE = [];
+/* Section id -> its blocks: the ids its own node contains, then any block
+   whose target is that section's file. A block placed by neither is left to
+   the Blocks panel rather than guessed into a section. */
+function docBlocksBySection(d){
+  var out = {}, byId = {}, placed = {};
+  (DOC_BLOCKS || []).forEach(function(b){ byId[b.id] = b; });
+  d.sections.forEach(function(s){
+    (s.blocks || []).forEach(function(id){
+      if (placed[id]) return;
+      placed[id] = 1; (out[s.id] = out[s.id] || []).push(byId[id] || { id: id });
+    });
+  });
+  var known = {};
+  d.sections.forEach(function(s){ known[s.id] = 1; });
+  (DOC_BLOCKS || []).forEach(function(b){
+    var m = !placed[b.id] && /(?:^|\/)sections\/([^\/]+)\.md$/.exec(b.target || "");
+    if (m && known[m[1]]) { placed[b.id] = 1; (out[m[1]] = out[m[1]] || []).push(b); }
+  });
+  return out;
+}
+function blockAnchor(id){ return "blk-" + String(id).split("/").pop(); }
+function blockLeaf(b, secTitle){
+  var words = String(b.content || (b.summary && b.summary.text) || "").replace(/\s+/g, " ").trim().split(" ").slice(0, 10).join(" ");
+  var t = b.title && b.title !== secTitle ? b.title : words ? words + "\u2026" : b.title || String(b.id).split("/").pop();
+  return '<li class="leaf blk"><span class="pill">' + esc(b.kind || "block") + '</span> <a href="#' + esc(blockAnchor(b.id)) +
+    '" data-blk="' + esc(blockAnchor(b.id)) + '">' + esc(t) + '</a></li>';
+}
+/* Nest a flat list by its levels: node = { item, kids: [node index] }. */
+function docNest(items){
+  var nodes = [], i = 0;
+  function level(lv){
     var out = [];
-    while (i < d.toc.length && d.toc[i].level >= level) {
-      var e = d.toc[i++];
-      out.push({ e: e, kids: (i < d.toc.length && d.toc[i].level > e.level) ? nodes(e.level + 1) : [] });
+    while (i < items.length && (items[i].level || 1) >= lv) {
+      var n = nodes.push({ item: items[i++], kids: [] }) - 1;
+      if (i < items.length && (items[i].level || 1) > (nodes[n].item.level || 1)) nodes[n].kids = level((nodes[n].item.level || 1) + 1);
+      out.push(n);
     }
     return out;
   }
-  function render(ns){
-    var only = ns.length === 1;
-    return ns.map(function(n){
-      return n.kids.length
-        ? '<li><details' + (only ? ' open' : '') + '><summary>' + line(n.e) + '</summary><ul>' + render(n.kids) + '</ul></details></li>'
-        : '<li class="leaf">' + line(n.e) + '</li>';
-    }).join("");
+  /* From the shallowest level, so an item above the first one's is not dropped. */
+  var top = items.length ? level(Math.min.apply(null, items.map(function(x){ return x.level || 1; }))) : [];
+  return { nodes: nodes, top: top };
+}
+/* The <li> of each node in ns. A node that is the ONLY one at its level
+   starts open (an outline whose single root is the book's title would
+   otherwise collapse to one line, 9789241548960-eng), so its children are
+   built now; every other node's are built on its first toggle. */
+function docTreeItems(ns){
+  var only = ns.length === 1;
+  return ns.map(function(k){
+    var n = DOC_TREE[k];
+    if (!n.kids.length && !n.blocks.length) return '<li class="leaf">' + n.line + '</li>';
+    return '<li><details data-node="' + k + '"' + (only ? ' open' : '') + '><summary>' + n.line + '</summary><ul data-kids="' + k + '"' +
+      (only ? ' data-built="1">' + docTreeKids(k) : '>') + '</ul></details></li>';
+  }).join("");
+}
+function docTreeKids(k){
+  var n = DOC_TREE[k];
+  return docTreeItems(n.kids) + n.blocks.map(function(b){ return blockLeaf(b, n.title); }).join("");
+}
+function docTreeBuild(details){
+  var ul = details.querySelector("ul[data-kids]");
+  if (!ul || ul.getAttribute("data-built")) return;
+  ul.setAttribute("data-built", "1");
+  ul.innerHTML = docTreeKids(Number(ul.getAttribute("data-kids")));
+}
+/* An INFERRED contents lists what the contents pages print. A section the
+   rung cut that no entry names -- the front matter, or the 30 chapters of
+   Parts 2 and 3 that 10665-75211's oversized split cut by running heads --
+   was not in the tree at all. Each is placed among the entries by its first
+   page, at its own level, and says it is not listed. An outline is the
+   PDF's own and is shown as it is. */
+function docTocWithSections(d){
+  if (d.tocSource === "outline") return d.toc;
+  var named = {};
+  d.toc.forEach(function(e){ if (e.section) named[e.section] = true; });
+  var extra = d.sections.filter(function(s){ return !named[s.id] && s.pageStart != null; }).map(function(s){
+    return { level: s.level || 1, title: s.title, number: s.number, page: s.pageStart, pageLabel: s.labelStart, section: s.id, unlisted: true };
+  });
+  if (!extra.length) return d.toc;
+  var out = [], j = 0;
+  d.toc.forEach(function(e){
+    while (j < extra.length && e.page != null && extra[j].page < e.page) out.push(extra[j++]);
+    out.push(e);
+  });
+  return out.concat(extra.slice(j));
+}
+function docContents(d){
+  var bySec = {};
+  d.sections.forEach(function(s){ bySec[s.id] = s; });
+  var blocksOf = docBlocksBySection(d);
+  var useToc = d.toc.length > 0, items = useToc ? docTocWithSections(d) : d.sections;
+  if (!items.length) return d.variant && d.variant !== "pdf"
+    ? '<p class="empty">No sections: the source has no headings.</p>'
+    : '<p class="empty">No table of contents: the PDF carries no outline and none could be inferred.</p>';
+  function line(e){
+    var sid = useToc ? e.section : e.id, s = sid && bySec[sid];
+    var t = (e.number ? esc(e.number) + ' ' : '') + esc(e.title);
+    var link = sid ? '<a href="#sec-' + esc(sid) + '" data-sec="' + esc(sid) + '">' + t + '</a>' : t;
+    var where = useToc && e.unlisted ? ' <span class="note">' + pageText(e.page, e.pageLabel) + ' \u00B7 a section the contents do not list</span>'
+      : useToc ? ' <span class="note">' + pageText(e.page, e.pageLabel) + '</span> ' + confPill(e.confidence, e.evidence)
+      : e.pageStart != null ? ' <span class="note">' + pageText(e.pageStart, e.labelStart) + '</span>' : '';
+    return link + where + (s && s.edit && d.links ? ' ' + editHost(s) : '');
   }
-  var tree = render(nodes(d.toc[0].level));
-  return '<p class="note">Source: ' + how + '. ' + d.toc.length + ' entries.</p>' +
+  var t = docNest(items);
+  DOC_TREE = t.nodes.map(function(n){
+    var sid = useToc ? n.item.section : n.item.id;
+    return { line: line(n.item), title: n.item.title, kids: n.kids, blocks: (sid && blocksOf[sid]) || [] };
+  });
+  var how = !useToc
+    ? (d.variant && d.variant !== "pdf" ? "Contents: the source\u2019s own headings."
+      : "No outline: the PDF carries none and none could be inferred, so its sections are listed.") + ' ' + d.sections.length + ' sections.'
+    : 'Source: ' + (d.tocSource === "outline" ? "the PDF\u2019s own outline"
+      : "inferred (" + esc(d.tocMethod || "unknown") + "); each entry\u2019s confidence and the evidence behind it are shown") + '. ' + d.toc.length + ' entries.' +
+      (items.length > d.toc.length ? ' ' + (items.length - d.toc.length) + ' section(s) the contents do not list are shown at their place.' : '');
+  return '<p class="note">' + how + (DOC_BLOCKS ? '' : ' Blocks are listed once the block graph has loaded.') + '</p>' +
     '<p><button type="button" data-toc="open">Expand all</button> <button type="button" data-toc="close">Collapse all</button></p>' +
-    '<ul class="toc">' + tree + '</ul>';
+    '<ul class="toc">' + docTreeItems(t.top) + '</ul>';
 }
 function docPages(d){
   if (!d.pageLabels) return notRecorded("Page labels");
@@ -1599,19 +1891,65 @@ function docFileHref(id, file){
   var dir = DATA_HREF.slice(0, DATA_HREF.lastIndexOf("/") + 1);
   return dir + "files/" + encodeURIComponent(id) + "/" + file.split("/").map(encodeURIComponent).join("/");
 }
+/* A FIGURE'S SHORT NAME -- owner, 2026-11-14: "very duplicative and long
+   text. blue figure titles should be shortened". The description opens with
+   the figure's own label as the caption gives it ("Fig. 10, 'Product
+   packaging hierarchy' (source: ...)"), so that label is the name. Failing
+   it, the caption the text carries on the same page; failing that, the
+   description's first words. Never the whole description. */
+var FIG_LABEL = /^\s*((?:Fig(?:ure)?|Graph|Chart|Map|Box)\.?\s*[A-Z]?\d+[a-z]?)\s*[,:.\u2013-]?\s*['\u2018"\u201C]([^'\u2019"\u201D]{1,120})['\u2019"\u201D]\s*[.,;:]?\s*/i;
+function figName(im, d){
+  var text = pickNarrative(im.narratives);
+  var m = FIG_LABEL.exec(text);
+  if (m) return m[1] + " \u00B7 " + m[2];
+  var c = (d.figures || []).filter(function(f){ return f.page === im.page && /fig/i.test(f.kind) && f.title; })[0];
+  if (c) return (c.number ? c.kind + " " + c.number + " \u00B7 " : "") + c.title;
+  var w = text.split(/\s+/).slice(0, 8).join(" ");
+  return w ? w + (text.length > w.length ? "\u2026" : "") : im.id;
+}
+/* THE GALLERY: a THUMBNAIL that pops out -- owner, 2026-11-14: "i wanted to
+   actually see the figure thumbnail as a popout", "figures should be
+   vertically stacked". One figure per row: its thumbnail, its short name on
+   one line and its page; the description is in the
+   popout only, so it is said once. Thumbnails load as they scroll near
+   (loading="lazy"); the popout is one <dialog>, built on first use. */
 function docGallery(d){
   if (!d.images || !d.images.length) return "";
-  var rtl = { ar: 1, fa: 1, he: 1, ur: 1 }[docLang()] ? ' dir="rtl"' : '';
+  DOC_GALLERY = d;
   return '<h3>Figures <span class="note">(' + d.images.length + ')</span></h3>' +
-    '<p class="note">Descriptions are drafts written by an agent and not yet reviewed.</p>' +
-    '<div class="doc-gallery">' + d.images.map(function(im){
-      var text = pickNarrative(im.narratives);
+    '<p class="note">Select a figure to see it large with its description. Descriptions are drafts written by an agent and not yet reviewed.</p>' +
+    '<div class="doc-gallery">' + d.images.map(function(im, i){
+      var name = figName(im, d);
       return '<figure class="doc-figure" id="fig-' + esc(im.id) + '">' +
-        '<a href="' + esc(docFileHref(DOC_ID, im.file)) + '" target="_blank" rel="noopener">' +
-        '<img loading="lazy" src="' + esc(docFileHref(DOC_ID, im.file)) + '" alt="' + esc(text) + '"></a>' +
-        '<figcaption' + rtl + '>' + (im.shows && im.shows.length ? '<strong>' + esc(im.shows.join(", ")) + '.</strong> ' : '') +
-        esc(text) + ' <span class="note">' + pageText(im.page, null) + '</span></figcaption></figure>';
+        '<button type="button" class="fig-thumb" data-fig="' + i + '" title="' + esc(name) + '">' +
+        '<img loading="lazy" decoding="async" src="' + esc(docFileHref(DOC_ID, im.file)) + '" alt="' + esc(name) + '"></button>' +
+        '<figcaption><span class="fig-name" title="' + esc(name) + '">' + esc(name) + '</span> <span class="note">' +
+        pageText(im.page, null) + '</span></figcaption></figure>';
     }).join("") + '</div>';
+}
+var DOC_GALLERY = null;
+function figPopout(i){
+  var d = DOC_GALLERY, im = d && d.images[i];
+  if (!im) return;
+  var dlg = document.getElementById("fig-pop");
+  if (!dlg) {
+    dlg = document.createElement("dialog");
+    dlg.id = "fig-pop"; dlg.className = "fig-pop";
+    (document.querySelector(".lib-page") || document.body).appendChild(dlg);
+    /* A click on the backdrop (the dialog itself, outside its box) closes it. */
+    dlg.addEventListener("click", function(ev){ if (ev.target === dlg || (ev.target.closest && ev.target.closest("[data-fig-close]"))) dlg.close(); });
+  }
+  var rtl = { ar: 1, fa: 1, he: 1, ur: 1 }[docLang()] ? ' dir="rtl"' : '';
+  var href = docFileHref(DOC_ID, im.file), name = figName(im, d), full = pickNarrative(im.narratives);
+  /* The heading already names the figure: the description goes on from there. */
+  var named = FIG_LABEL.test(full), text = named ? full.replace(FIG_LABEL, "") : full;
+  var shows = named ? [] : (im.shows || []);
+  dlg.innerHTML = '<div class="fig-pop-box"><button type="button" class="fig-pop-x" data-fig-close aria-label="Close">\u00D7</button>' +
+    '<h3>' + esc(name) + ' <span class="note">' + pageText(im.page, null) + '</span></h3>' +
+    '<img decoding="async" src="' + esc(href) + '" alt="' + esc(name) + '">' +
+    '<p' + rtl + '>' + (shows.length ? '<strong>' + esc(shows.join(", ")) + '.</strong> ' : '') + esc(text) + '</p>' +
+    '<p class="note">Agent draft, not yet reviewed. <a href="' + esc(href) + '" target="_blank" rel="noopener">Open the image on its own</a></p></div>';
+  if (dlg.showModal) dlg.showModal(); else dlg.setAttribute("open", "");
 }
 function docTable(t){
   var groups = t.columns.some(function(c){ return c.group; });
@@ -1709,6 +2047,92 @@ function docChecks(d){
   return '<p class="note">Findings about the DOCUMENT, reported and never corrected \u2014 drafts drift.</p>' +
     '<table><thead><tr><th>check</th><th>count</th><th>items</th></tr></thead><tbody>' + rows.join("") + '</tbody></table>';
 }
+/* WHAT WAS EXTRACTED -- one line of pills, kind by kind (owner,
+   2026-11-14: "why no biblio, glossary, etc here"). Words, never colour
+   alone: "none in the text" is a finding, "not extracted" is a gap. */
+/* PRINTING LOADS EVERYTHING FIRST -- owner, 2026-11-14: "Make sure printing
+   loads all of the content before it renders the PDF on the browser". What
+   this panel defers for the screen -- lazy thumbnails, figure descriptions
+   kept for the popout, the contents tree built on toggle, summaries behind a
+   disclosure -- is all made present before a print:
+   - the "Print / PDF" button prepares, WAITS for every image, then prints;
+   - the browser's own print (Ctrl+P) gets the same preparation on
+     beforeprint; the images are switched to eager there too, and afterprint
+     closes again what the preparation opened. */
+var PRINT_OPENED = [];
+function docPrintPrep(){
+  var root = document.querySelector(".lib-page") || document;
+  /* The contents tree and every disclosure in the panels, built and open. */
+  for (var ds; (ds = root.querySelectorAll("ul.toc details:not([open])")).length;)
+    Array.prototype.forEach.call(ds, function(x){ docTreeBuild(x); x.open = true; PRINT_OPENED.push(x); });
+  Array.prototype.forEach.call(root.querySelectorAll("#document details:not([open]), #blocks details:not([open])"), function(x){ x.open = true; PRINT_OPENED.push(x); });
+  /* Each figure's description, said in print as the popout says it on screen. */
+  if (DOC_GALLERY) Array.prototype.forEach.call(root.querySelectorAll(".doc-figure button.fig-thumb[data-fig]"), function(b){
+    var fig = b.closest(".doc-figure");
+    if (!fig || fig.querySelector(".fig-print-desc")) return;
+    var im = DOC_GALLERY.images[+b.getAttribute("data-fig")];
+    var p = document.createElement("p");
+    p.className = "fig-print-desc";
+    p.textContent = im ? pickNarrative(im.narratives) : "";
+    fig.appendChild(p);
+  });
+  /* Every image fetched now, not when it would have scrolled into view. */
+  var imgs = Array.prototype.slice.call(root.querySelectorAll("img"));
+  imgs.forEach(function(i){ if (i.loading === "lazy" || i.getAttribute("loading") === "lazy") i.loading = "eager"; });
+  return Promise.all(imgs.map(function(i){
+    if (i.complete && i.naturalWidth) return null;
+    return new Promise(function(ok){
+      var done = function(){ ok(null); };
+      i.addEventListener("load", done, { once: true });
+      i.addEventListener("error", done, { once: true });
+      setTimeout(done, 15000);
+    });
+  }));
+}
+function docPrintDone(){
+  PRINT_OPENED.forEach(function(x){ x.open = false; });
+  PRINT_OPENED = [];
+}
+if (typeof window !== "undefined" && window.addEventListener) {
+  window.addEventListener("beforeprint", function(){ docPrintPrep(); });
+  window.addEventListener("afterprint", docPrintDone);
+}
+var COVER_NAMES = { contents: "Contents", sections: "Sections", figures: "Figures", tables: "Tables",
+  references: "References", glossary: "Glossary", footnotes: "Footnotes", summaries: "Summaries" };
+function docCoverage(d){
+  if (!d.coverage || !d.coverage.length) return "";
+  return '<p class="doc-cover"><span class="note">What was extracted:</span> ' + d.coverage.map(function(c){
+    var word = c.state === "found" ? (c.count != null ? String(c.count) : "found")
+      : c.state === "partial" ? (c.count != null ? c.count + ", partial" : "partial")
+      : c.state === "none" ? "none in the text" : "not extracted";
+    var cls = c.state === "found" ? "ok" : c.state === "none" ? "" : "warn";
+    return '<span class="pill ' + cls + '"' + (c.note ? ' title="' + esc(c.note) + '"' : '') + '>' +
+      esc(COVER_NAMES[c.kind] || c.kind) + ': ' + esc(word) + '</span>';
+  }).join(" ") + '</p>';
+}
+/* THE SHARED LINK RUNTIME (edit-links.js), which the page's head loads with
+   defer: viewer.js runs before it, so the first document can render before
+   it is there. Wait for it -- deferred scripts have all run by
+   DOMContentLoaded -- and on a host whose head has none, load it from the
+   site root, as navbar-row.js loads its vendor scripts. */
+var EDIT_LINKS_WAIT = null;
+function withEditLinks(fn){
+  if (window.faEditLinks) { fn(window.faEditLinks); return; }
+  if (!EDIT_LINKS_WAIT) EDIT_LINKS_WAIT = new Promise(function(done){
+    function load(){
+      if (window.faEditLinks) { done(window.faEditLinks); return; }
+      var root = typeof SITE_ROOT === "string" ? SITE_ROOT : "/";
+      var s = document.createElement("script");
+      s.src = root + "assets/js/edit-links.js";
+      s.onload = function(){ done(window.faEditLinks || null); };
+      s.onerror = function(){ done(null); };
+      document.head.appendChild(s);
+    }
+    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", load);
+    else load();
+  });
+  EDIT_LINKS_WAIT.then(function(L){ if (L) fn(L); });
+}
 var DOC_TABS = [["contents","Contents",docContents],["pages","Pages",docPages],["figures","Figures & tables",docFigures],["sections","Sections",docSections],["checks","Checks",docChecks]];
 function renderDocument(id, d, err){
   var el = $("document");
@@ -1718,7 +2142,7 @@ function renderDocument(id, d, err){
   el.hidden = false;
   if (err) { el.innerHTML = '<h2>Document</h2><p class="empty">Could not read the document view for ' + esc(id) + ' \u2014 ' + esc(err) + '. This is a failure to read, not an empty document.</p>'; return; }
   DOC = d; DOC_ID = id;
-  if (d.links && window.faEditLinks) window.faEditLinks.configure({ repo: d.links.repo, branch: d.links.branch, content: id });
+
   var tab = DOC_TABS.filter(function(t){ return t[0] === DOC_TAB; })[0] || DOC_TABS[0];
   var whole = d.links ? ' <span class="doc-actions" data-src="' + esc(d.links.dir) + '" data-block="' + esc(id) + '"><a data-fa-link="source">source</a> ' +
     '<a data-fa-link="feedback" title="Give feedback on this document (opens a GitHub issue)">\u{1f4e3} feedback</a></span>' : '';
@@ -1727,7 +2151,9 @@ function renderDocument(id, d, err){
     : d.pages ? d.pages + ' pages'
     : d.pagesCovered ? 'page count not recorded; sections reach page ' + d.pagesCovered
     : 'page count not recorded';
-  el.innerHTML = '<h2>Document \u2014 ' + esc(d.title || id) + ' <span class="note">(' + size + ')</span>' + whole + '</h2>' +
+  el.innerHTML = '<h2>Document \u2014 ' + esc(d.title || id) + ' <span class="note">(' + size + ')</span>' + whole +
+    ' <button type="button" class="doc-print" title="Load every figure and section, then print or save as PDF">Print / PDF</button></h2>' +
+    docCoverage(d) +
     '<div class="seg" role="tablist" aria-label="Document view">' + DOC_TABS.map(function(t){
       return '<button type="button" role="tab" aria-selected="' + (t[0] === tab[0]) + '" data-tab="' + t[0] + '">' + esc(t[1]) + '</button>';
     }).join("") + '</div>' + (d.keywords && d.keywords.length ? '<div class="dockw"><span class="note">Keywords (LSI):</span> ' + chips(d.keywords) + '</div>' : '') +
@@ -1737,12 +2163,47 @@ function renderDocument(id, d, err){
   });
   Array.prototype.forEach.call(el.querySelectorAll("[data-toc]"), function(b){
     b.addEventListener("click", function(){
-      var open = b.getAttribute("data-toc") === "open";
-      Array.prototype.forEach.call(el.querySelectorAll("ul.toc details"), function(x){ x.open = open; });
+      if (b.getAttribute("data-toc") !== "open") {
+        Array.prototype.forEach.call(el.querySelectorAll("ul.toc details"), function(x){ x.open = false; });
+        return;
+      }
+      /* Opening builds children, which may be nodes of their own: repeat
+         until every node is open. */
+      for (var ds; (ds = el.querySelectorAll("ul.toc details:not([open])")).length;)
+        Array.prototype.forEach.call(ds, function(x){ docTreeBuild(x); x.open = true; });
     });
   });
-  /* Hrefs now, not on first hover: a keyboard reader tabs to these links. */
-  if (d.links && window.faEditLinks) window.faEditLinks.fill(el);
+  /* toggle does not bubble, so it is caught on the way down; once per panel. */
+  if (!el.getAttribute("data-tree")) {
+    el.setAttribute("data-tree", "1");
+    el.addEventListener("toggle", function(ev){
+      var t = ev.target;
+      if (t && t.matches && t.matches("ul.toc details[data-node]") && t.open) docTreeBuild(t);
+    }, true);
+    /* A block leaf scrolls to its row in the Blocks panel; the address is
+       left alone, since a changed hash re-reads the whole entry. */
+    el.addEventListener("click", function(ev){
+      /* Print: prepare, wait for every image, then print. */
+      if (ev.target && ev.target.closest && ev.target.closest("button.doc-print")) {
+        docPrintPrep().then(function(){ window.print(); });
+        return;
+      }
+      /* A figure's thumbnail opens its popout. */
+      var fb = ev.target && ev.target.closest && ev.target.closest("button.fig-thumb[data-fig]");
+      if (fb) { figPopout(+fb.getAttribute("data-fig")); return; }
+      var a = ev.target && ev.target.closest && ev.target.closest("a[data-blk]");
+      if (!a) return;
+      ev.preventDefault();
+      var r = document.getElementById(a.getAttribute("data-blk")); if (r) r.scrollIntoView({ block: "center" });
+    });
+  }
+  /* Hrefs now, not on first hover: a keyboard reader tabs to these links.
+     Configured and filled together, once the shared runtime is there. */
+  if (d.links) withEditLinks(function(L){
+    if (DOC !== d || DOC_ID !== id) return;   /* another entry or tab since */
+    L.configure({ repo: d.links.repo, branch: d.links.branch, content: id });
+    L.fill(el);
+  });
   /* A section link from any tab opens the Sections tab at that section. Only
      <a>: a link HOST carries data-sec too (its section's name, for an issue). */
   Array.prototype.forEach.call(el.querySelectorAll("a[data-sec]:not([data-fa-link])"), function(a){
@@ -1762,14 +2223,55 @@ function openSectionFromHash(){
   var t = document.getElementById(h.slice(1)); if (t) t.scrollIntoView();
 }
 window.addEventListener("hashchange", openSectionFromHash);
+/* "no-cache", not "no-store": revalidated every time, so never stale, but an
+   unchanged structure.json is a 304 rather than its body again. */
+function fetchDocument(id){
+  return fetch(docHref(id), {cache: "no-cache"})
+    .then(function(r){ if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); });
+}
+/* takeEarly is the viewer's (gen-library-viz.ts): the response the entry page
+   started before its index arrived. Without it, this fetches. */
 function loadDocument(id){
-  fetch(docHref(id), {cache: "no-store"})
-    .then(function(r){ if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+  (typeof takeEarly === "function" ? takeEarly("document", id, fetchDocument) : fetchDocument(id))
     .then(function(d){ renderDocument(id, d, null); openSectionFromHash(); })
     .catch(function(e){ renderDocument(id, null, String(e && e.message || e)); });
 }
 
 loadDocument("who-dpi-h-reference-architecture-draft-v1");
 </script>
+
+
+          
+
+          
+            
+          
+        </main>
+        
+<hr>
+<footer>
+  
+
+  <p class="text-small mb-0">Reference Architecture and Guidance for Digital Public Infrastructure for the Health Sector — built with <a href="https://litlfred.github.io/folio-assistant/">folio-assistant</a>.</p><p class="text-small mb-0 fa-build-stamp">
+  deployed
+  <a href="https://github.com/litlfred/folio-assistant/actions"><code>dev</code></a></p>
+
+
+  
+</footer>
+
+      </div>
+    </div>
+    
+      
+
+<div class="search-overlay"></div>
+
+    
+  </div>
+
+  
+    
+  
 </body>
 </html>

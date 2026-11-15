@@ -5,20 +5,8 @@ hide empty members
 class "Adapted SMART Guidelines L1" as id_b03a09f1177a4bf6bfd1f22c6cea1c94 <<BusinessObject>>
 class "Adapted SMART Guidelines L2 (DAK)" as id_2f415a2e0d4245c19663f5821ed02a16 <<DataObject>>
 class "Approved Terminology Content" as id_c41368c8e91646cf96381ca301ac003d <<DataObject>>
-class "CDE-HWR: Core Data Elements for the Health Workforce Registry" as id_e162b2223da4440983514be5854b654d <<DataObject>> {
-  +Named demographics
-  +Identifier and index
-  +Licensure
-  +Registration
-  +Educational credential
-  +Organizational affiliation
-  +Facility association
-}
 class "Clinical Guidelines" as id_e4de2256c7644b7cbd7222ac49625b3d <<BusinessObject>>
-class "Facility" as id_ad969289cb774307aa678037c56fdd3f <<DataObject>>
 class "Generic Product" as id_48ca7ae8d2ed5a5a992fbdd0528f9fe8 <<BusinessObject>>
-class "Health worker record" as id_702c24bbd73341be9afc11c7e11e9810 <<DataObject>>
-class "NHWA Dataset (linking and indexing, built on CDE-HWR)" as id_145e885489634e469e8a6734f56b7df5 <<DataObject>>
 class "Patient-level Data" as id_71b2e11df2e348a2b9f8eee36c8e5292 <<DataObject>>
 class "Product Classification" as id_1aa66395ee2651d5aec70dc678326440 <<BusinessObject>>
 class "Product Master Data" as id_815bef20a55f5f59b409a76a9a6545f8 <<BusinessObject>>
@@ -31,7 +19,6 @@ class "Structured Guidelines content" as id_22a44179b1b34a74984de87cd5a702b7 <<D
 class "Trade Item" as id_60e7d1d9e64c5011a1efe8becac406d0 <<BusinessObject>>
 id_066e40fefc9e48e4b23e51d9f9bd14d2 --|> id_22a44179b1b34a74984de87cd5a702b7 : specialises
 id_066e40fefc9e48e4b23e51d9f9bd14d2 ..|> id_5b55a8ca67864a1a91910347db193e79 : realises
-id_145e885489634e469e8a6734f56b7df5 o-- id_e162b2223da4440983514be5854b654d : builds on
 id_22a44179b1b34a74984de87cd5a702b7 ..|> id_e4de2256c7644b7cbd7222ac49625b3d : realises
 id_2f415a2e0d4245c19663f5821ed02a16 --|> id_066e40fefc9e48e4b23e51d9f9bd14d2 : specialises
 id_2f415a2e0d4245c19663f5821ed02a16 ..|> id_b03a09f1177a4bf6bfd1f22c6cea1c94 : realises
@@ -47,6 +34,4 @@ id_815bef20a55f5f59b409a76a9a6545f8 *-- id_b99b159bb8d558ef8477825142fe4700 : co
 id_85cd033bc1bd4bec9bb4a2f316f357da o-- id_c41368c8e91646cf96381ca301ac003d : aggregates
 id_b03a09f1177a4bf6bfd1f22c6cea1c94 --|> id_5b55a8ca67864a1a91910347db193e79 : specialises
 id_b99b159bb8d558ef8477825142fe4700 --> "1..1" id_60e7d1d9e64c5011a1efe8becac406d0 : authorisedTradeItem
-id_e162b2223da4440983514be5854b654d --> id_702c24bbd73341be9afc11c7e11e9810 : core of
-id_e162b2223da4440983514be5854b654d --> id_ad969289cb774307aa678037c56fdd3f : facility association
 @enduml

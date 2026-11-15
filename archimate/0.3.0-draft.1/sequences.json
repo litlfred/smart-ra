@@ -89,12 +89,6 @@
           "elementId": "id-bbd18f65be45490fbbaf02346511ae5e"
         },
         {
-          "id": "id-e162b2223da4440983514be5854b654d",
-          "name": "CDE-HWR: Core Data Elements for the Health Workforce Registry",
-          "type": "DataObject",
-          "elementId": "id-e162b2223da4440983514be5854b654d"
-        },
-        {
           "id": "id-702c24bbd73341be9afc11c7e11e9810",
           "name": "Health worker record",
           "type": "DataObject",
@@ -107,22 +101,10 @@
           "elementId": "id-301912f3fcaf4648b0ebc3cbbfc3b447"
         },
         {
-          "id": "id-145e885489634e469e8a6734f56b7df5",
-          "name": "NHWA Dataset (linking and indexing, built on CDE-HWR)",
-          "type": "DataObject",
-          "elementId": "id-145e885489634e469e8a6734f56b7df5"
-        },
-        {
           "id": "id-ad969289cb774307aa678037c56fdd3f",
           "name": "Facility",
           "type": "DataObject",
           "elementId": "id-ad969289cb774307aa678037c56fdd3f"
-        },
-        {
-          "id": "id-b3a5209e0e88419382a678964bed91f9",
-          "name": "Generate Reports",
-          "type": "ApplicationFunction",
-          "elementId": "id-b3a5209e0e88419382a678964bed91f9"
         }
       ],
       "messages": [
@@ -177,13 +159,6 @@
         },
         {
           "from": "id-350840520ae44f658b6ad3b3762e382e",
-          "to": "id-e162b2223da4440983514be5854b654d",
-          "label": "writes CDE-HWR: Core Data Elements for the Health Workforce Registry",
-          "kind": "access",
-          "relationshipId": "id-82a19dce8ad94edead787664c3af59f6"
-        },
-        {
-          "from": "id-350840520ae44f658b6ad3b3762e382e",
           "to": "id-702c24bbd73341be9afc11c7e11e9810",
           "label": "writes Health worker record",
           "kind": "access",
@@ -195,13 +170,6 @@
           "label": "writes Terminology",
           "kind": "access",
           "relationshipId": "id-1a95e061e76a4a16a6b921d503b281d6"
-        },
-        {
-          "from": "id-bbd18f65be45490fbbaf02346511ae5e",
-          "to": "id-145e885489634e469e8a6734f56b7df5",
-          "label": "reads/writes NHWA Dataset (linking and indexing, built on CDE-HWR)",
-          "kind": "access",
-          "relationshipId": "id-d0f759a25e8242a8b7a00cd526fa6ecd"
         },
         {
           "from": "id-4e0767822dcf46409554156a133fbc67",
@@ -216,13 +184,6 @@
           "label": "writes Facility",
           "kind": "access",
           "relationshipId": "id-c4a4adb63b16424ea40b2762a0598b0b"
-        },
-        {
-          "from": "id-b3a5209e0e88419382a678964bed91f9",
-          "to": "id-145e885489634e469e8a6734f56b7df5",
-          "label": "reads NHWA Dataset (linking and indexing, built on CDE-HWR)",
-          "kind": "access",
-          "relationshipId": "id-015bb6e20381471c883cf5603a767283"
         }
       ]
     },
