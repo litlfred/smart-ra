@@ -17,4 +17,4 @@ permissions:
 
 jobs:
   qa-sweep:
-    uses: litlfred/cat-harness-tools/.github/workflows/folio-qa-sweep.yml@51d9a7796a3d5d864171ace40faff2dbe1c7e267 # index.lock.json
+    uses: litlfred/cat-harness-tools/.github/workflows/folio-qa-sweep.yml@496c5e95b81049edf53e16461a2f46e4a48f83f9 # index.lock.json
