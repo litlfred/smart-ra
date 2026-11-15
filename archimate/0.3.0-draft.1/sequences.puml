@@ -1,4 +1,16 @@
 @startuml
+' Semantic Governance Infrastructure (Fig. 3.4.1) (id-69a9d2fa4a075b6485c75cdb8b1a664b): sequence diagram, derived by archimate-diagrams. Do not edit.
+title Semantic Governance Infrastructure (Fig. 3.4.1)
+hide footbox
+participant "Governance TMS" as id_620f8efa30e85046b0da9f05ce83cf75 <<ApplicationComponent>>
+participant "Runtime TS" as id_7ed447d199de5153af38aa2d72b410df <<ApplicationComponent>>
+participant "Global content sources" as id_9f2b802d64b05ac58e5a725b8c335157 <<ApplicationComponent>>
+id_620f8efa30e85046b0da9f05ce83cf75 ->> id_7ed447d199de5153af38aa2d72b410df : flows to Runtime TS
+id_7ed447d199de5153af38aa2d72b410df ->> id_620f8efa30e85046b0da9f05ce83cf75 : flows to Governance TMS
+id_9f2b802d64b05ac58e5a725b8c335157 ->> id_620f8efa30e85046b0da9f05ce83cf75 : Content syndication
+@enduml
+
+@startuml
 ' 1. Central Health Workforce Registry (id-007936f8c2424b96ad1893ef0ff66059): sequence diagram, derived by archimate-diagrams. Do not edit.
 title 1. Central Health Workforce Registry
 hide footbox

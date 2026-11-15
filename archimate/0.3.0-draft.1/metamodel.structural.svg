@@ -51,7 +51,7 @@
 <g id="a_node3"><a xlink:href="../../en/dpi-h-ra/archimate/0.3.0-draft.1/metamodel/#type-Capability" xlink:title="Capability: its elements" target="_top">
 <polygon fill="#f5deaa" stroke="black" points="243.05,-555.88 155.64,-555.88 155.64,-517.96 243.05,-517.96 243.05,-555.88"/>
 <text text-anchor="middle" x="199.35" y="-540.22" font-family="Helvetica,sans-Serif" font-size="11.00">Capability</text>
-<text text-anchor="middle" x="199.35" y="-527.02" font-family="Helvetica,sans-Serif" font-size="11.00">33 element(s)</text>
+<text text-anchor="middle" x="199.35" y="-527.02" font-family="Helvetica,sans-Serif" font-size="11.00">34 element(s)</text>
 </a>
 </g>
 </g>
@@ -133,7 +133,7 @@
 <g id="a_node9"><a xlink:href="../../en/dpi-h-ra/archimate/0.3.0-draft.1/metamodel/#type-ApplicationComponent" xlink:title="Application Component: its elements" target="_top">
 <polygon fill="#b5ffff" stroke="black" points="302.36,-234.44 96.34,-234.44 96.34,-183.32 302.36,-183.32 302.36,-234.44"/>
 <text text-anchor="middle" x="199.35" y="-218.78" font-family="Helvetica,sans-Serif" font-size="11.00">Application Component</text>
-<text text-anchor="middle" x="199.35" y="-205.58" font-family="Helvetica,sans-Serif" font-size="11.00">68 element(s)</text>
+<text text-anchor="middle" x="199.35" y="-205.58" font-family="Helvetica,sans-Serif" font-size="11.00">77 element(s)</text>
 <text text-anchor="middle" x="199.35" y="-192.38" font-family="Helvetica,sans-Serif" font-size="11.00">(to itself: realises ×5, composed of ×1)</text>
 </a>
 </g>
@@ -227,7 +227,7 @@
 <g id="a_node16"><a xlink:href="../../en/dpi-h-ra/archimate/0.3.0-draft.1/metamodel/#type-Artifact" xlink:title="Artifact: its elements" target="_top">
 <polygon fill="#c9e7b7" stroke="black" points="260.17,-67.12 138.53,-67.12 138.53,-16 260.17,-16 260.17,-67.12"/>
 <text text-anchor="middle" x="199.35" y="-51.46" font-family="Helvetica,sans-Serif" font-size="11.00">Artifact</text>
-<text text-anchor="middle" x="199.35" y="-38.26" font-family="Helvetica,sans-Serif" font-size="11.00">7 element(s)</text>
+<text text-anchor="middle" x="199.35" y="-38.26" font-family="Helvetica,sans-Serif" font-size="11.00">10 element(s)</text>
 <text text-anchor="middle" x="199.35" y="-25.06" font-family="Helvetica,sans-Serif" font-size="11.00">(to itself: realises ×2)</text>
 </a>
 </g>
@@ -264,21 +264,21 @@
 <g id="a_node10"><a xlink:href="../../en/dpi-h-ra/archimate/0.3.0-draft.1/metamodel/#type-ApplicationFunction" xlink:title="Application Function: its elements" target="_top">
 <polygon fill="#b5ffff" stroke="black" points="522.96,-227.84 403.74,-227.84 403.74,-189.92 522.96,-189.92 522.96,-227.84"/>
 <text text-anchor="middle" x="463.35" y="-212.18" font-family="Helvetica,sans-Serif" font-size="11.00">Application Function</text>
-<text text-anchor="middle" x="463.35" y="-198.98" font-family="Helvetica,sans-Serif" font-size="11.00">10 element(s)</text>
+<text text-anchor="middle" x="463.35" y="-198.98" font-family="Helvetica,sans-Serif" font-size="11.00">11 element(s)</text>
 </a>
 </g>
 </g>
 <!-- ApplicationComponent&#45;&gt;ApplicationFunction -->
-<g id="edge10" class="edge mm&#45;cat&#45;structural mm&#45;from&#45;application mm&#45;to&#45;application">
+<g id="edge11" class="edge mm&#45;cat&#45;structural mm&#45;from&#45;application mm&#45;to&#45;application">
 <title>ApplicationComponent&#45;&gt;ApplicationFunction</title>
-<g id="a_edge10"><a xlink:href="../../en/dpi-h-ra/archimate/0.3.0-draft.1/metamodel/#pattern-ApplicationComponent-ApplicationFunction" xlink:title="Application Component → Application Function: its relationships" target="_top">
-<path fill="none" stroke="#555555" d="M311.4,-208.88C338.65,-208.88 367.05,-208.88 391.82,-208.88"/>
-<ellipse fill="#555555" stroke="#555555" cx="307.05" cy="-208.88" rx="4" ry="4"/>
-<polygon fill="#555555" stroke="#555555" points="391.79,-212.38 401.79,-208.88 391.79,-205.38 391.79,-212.38"/>
+<g id="a_edge11"><a xlink:href="../../en/dpi-h-ra/archimate/0.3.0-draft.1/metamodel/#pattern-ApplicationComponent-ApplicationFunction" xlink:title="Application Component → Application Function: its relationships" target="_top">
+<path fill="none" stroke="#555555" d="M302.55,-208.88C332.55,-208.88 364.63,-208.88 392.19,-208.88"/>
+<polygon fill="#555555" stroke="#555555" points="402.08,-208.88 392.08,-213.38 398.3,-208.88 392.08,-208.88 392.08,-208.88 392.08,-208.88 398.3,-208.88 392.08,-204.38 402.08,-208.88"/>
 </a>
 </g>
-<g id="a_edge10&#45;label"><a xlink:href="../../en/dpi-h-ra/archimate/0.3.0-draft.1/metamodel/#pattern-ApplicationComponent-ApplicationFunction" xlink:title="assigned to ×4" target="_top">
-<text text-anchor="middle" x="353.05" y="-214.58" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">assigned to ×4</text>
+<g id="a_edge11&#45;label"><a xlink:href="../../en/dpi-h-ra/archimate/0.3.0-draft.1/metamodel/#pattern-ApplicationComponent-ApplicationFunction" xlink:title="assigned to ×4&#10;realises ×1" target="_top">
+<text text-anchor="middle" x="353.05" y="-225.38" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">assigned to ×4</text>
+<text text-anchor="middle" x="353.05" y="-214.58" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">realises ×1</text>
 </a>
 </g>
 </g>
@@ -293,15 +293,15 @@
 </g>
 </g>
 <!-- ApplicationComponent&#45;&gt;ApplicationInteraction -->
-<g id="edge11" class="edge mm&#45;cat&#45;structural mm&#45;from&#45;application mm&#45;to&#45;application">
+<g id="edge12" class="edge mm&#45;cat&#45;structural mm&#45;from&#45;application mm&#45;to&#45;application">
 <title>ApplicationComponent&#45;&gt;ApplicationInteraction</title>
-<g id="a_edge11"><a xlink:href="../../en/dpi-h-ra/archimate/0.3.0-draft.1/metamodel/#pattern-ApplicationComponent-ApplicationInteraction" xlink:title="Application Component → Application Interaction: its relationships" target="_top">
+<g id="a_edge12"><a xlink:href="../../en/dpi-h-ra/archimate/0.3.0-draft.1/metamodel/#pattern-ApplicationComponent-ApplicationInteraction" xlink:title="Application Component → Application Interaction: its relationships" target="_top">
 <path fill="none" stroke="#555555" d="M257.23,-238.46C292.4,-254.76 338.8,-273.34 382.35,-281.68 453.28,-295.27 639.54,-306.53 707.35,-281.68 732.06,-272.62 754.55,-252.98 770.33,-236.38"/>
 <ellipse fill="#555555" stroke="#555555" cx="253.52" cy="-236.72" rx="4" ry="4"/>
 <polygon fill="#555555" stroke="#555555" points="772.76,-238.9 776.93,-229.16 767.6,-234.18 772.76,-238.9"/>
 </a>
 </g>
-<g id="a_edge11&#45;label"><a xlink:href="../../en/dpi-h-ra/archimate/0.3.0-draft.1/metamodel/#pattern-ApplicationComponent-ApplicationInteraction" xlink:title="assigned to ×4" target="_top">
+<g id="a_edge12&#45;label"><a xlink:href="../../en/dpi-h-ra/archimate/0.3.0-draft.1/metamodel/#pattern-ApplicationComponent-ApplicationInteraction" xlink:title="assigned to ×4" target="_top">
 <text text-anchor="middle" x="387.35" y="-295.54" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">assigned to ×4</text>
 </a>
 </g>
@@ -335,7 +335,7 @@
 <g id="a_node14"><a xlink:href="../../en/dpi-h-ra/archimate/0.3.0-draft.1/metamodel/#type-ApplicationService" xlink:title="Application Service: its elements" target="_top">
 <polygon fill="#b5ffff" stroke="black" points="1487.74,-234.44 1348.96,-234.44 1348.96,-183.32 1487.74,-183.32 1487.74,-234.44"/>
 <text text-anchor="middle" x="1418.35" y="-218.78" font-family="Helvetica,sans-Serif" font-size="11.00">Application Service</text>
-<text text-anchor="middle" x="1418.35" y="-205.58" font-family="Helvetica,sans-Serif" font-size="11.00">19 element(s)</text>
+<text text-anchor="middle" x="1418.35" y="-205.58" font-family="Helvetica,sans-Serif" font-size="11.00">20 element(s)</text>
 <text text-anchor="middle" x="1418.35" y="-192.38" font-family="Helvetica,sans-Serif" font-size="11.00">(to itself: aggregates ×2)</text>
 </a>
 </g>
@@ -355,15 +355,15 @@
 </g>
 <!-- ApplicationComponent&#45;&gt;Artifact -->
 <!-- ApplicationFunction&#45;&gt;ApplicationService -->
-<g id="edge12" class="edge mm&#45;cat&#45;structural mm&#45;from&#45;application mm&#45;to&#45;application">
+<g id="edge9" class="edge mm&#45;cat&#45;structural mm&#45;from&#45;application mm&#45;to&#45;application">
 <title>ApplicationFunction&#45;&gt;ApplicationService</title>
-<g id="a_edge12"><a xlink:href="../../en/dpi-h-ra/archimate/0.3.0-draft.1/metamodel/#pattern-ApplicationFunction-ApplicationService" xlink:title="Application Function → Application Service: its relationships" target="_top">
+<g id="a_edge9"><a xlink:href="../../en/dpi-h-ra/archimate/0.3.0-draft.1/metamodel/#pattern-ApplicationFunction-ApplicationService" xlink:title="Application Function → Application Service: its relationships" target="_top">
 <path fill="none" stroke="#555555" stroke-dasharray="5,2" d="M477.84,-228.02C492.58,-245.77 517.23,-271 545.35,-281.68 585.96,-297.11 1286.35,-296.06 1327.35,-281.68 1349.95,-273.75 1371.1,-257.59 1387.32,-242.51"/>
 <polygon fill="none" stroke="#555555" points="1389.48,-245.28 1394.24,-235.82 1384.62,-240.25 1389.48,-245.28"/>
 </a>
 </g>
-<g id="a_edge12&#45;label"><a xlink:href="../../en/dpi-h-ra/archimate/0.3.0-draft.1/metamodel/#pattern-ApplicationFunction-ApplicationService" xlink:title="realises ×4" target="_top">
-<text text-anchor="middle" x="1103.35" y="-295.54" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">realises ×4</text>
+<g id="a_edge9&#45;label"><a xlink:href="../../en/dpi-h-ra/archimate/0.3.0-draft.1/metamodel/#pattern-ApplicationFunction-ApplicationService" xlink:title="realises ×5" target="_top">
+<text text-anchor="middle" x="1103.35" y="-295.54" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">realises ×5</text>
 </a>
 </g>
 </g>
@@ -379,14 +379,14 @@
 </g>
 </g>
 <!-- ApplicationProcess&#45;&gt;Capability -->
-<g id="edge9" class="edge mm&#45;cat&#45;structural mm&#45;from&#45;application mm&#45;to&#45;strategy">
+<g id="edge10" class="edge mm&#45;cat&#45;structural mm&#45;from&#45;application mm&#45;to&#45;strategy">
 <title>ApplicationProcess&#45;&gt;Capability</title>
-<g id="a_edge9"><a xlink:href="../../en/dpi-h-ra/archimate/0.3.0-draft.1/metamodel/#pattern-ApplicationProcess-Capability" xlink:title="Application Process → Capability: its relationships" target="_top">
+<g id="a_edge10"><a xlink:href="../../en/dpi-h-ra/archimate/0.3.0-draft.1/metamodel/#pattern-ApplicationProcess-Capability" xlink:title="Application Process → Capability: its relationships" target="_top">
 <path fill="none" stroke="#555555" stroke-dasharray="5,2" d="M1191.82,-234.88C1189.28,-254.2 1184.38,-281.32 1175.35,-303.64 1145.96,-376.28 1144.64,-407.37 1080.35,-452.16 1012.62,-499.34 437.74,-526.34 254.93,-533.79"/>
 <polygon fill="none" stroke="#555555" points="254.83,-530.29 244.97,-534.19 255.11,-537.28 254.83,-530.29"/>
 </a>
 </g>
-<g id="a_edge9&#45;label"><a xlink:href="../../en/dpi-h-ra/archimate/0.3.0-draft.1/metamodel/#pattern-ApplicationProcess-Capability" xlink:title="realises ×5" target="_top">
+<g id="a_edge10&#45;label"><a xlink:href="../../en/dpi-h-ra/archimate/0.3.0-draft.1/metamodel/#pattern-ApplicationProcess-Capability" xlink:title="realises ×5" target="_top">
 <text text-anchor="middle" x="1182.11" y="-373.5" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">realises ×5</text>
 </a>
 </g>
@@ -399,8 +399,8 @@
 <polygon fill="none" stroke="#555555" points="254.82,-530.48 244.96,-534.34 255.08,-537.47 254.82,-530.48"/>
 </a>
 </g>
-<g id="a_edge16&#45;label"><a xlink:href="../../en/dpi-h-ra/archimate/0.3.0-draft.1/metamodel/#pattern-ApplicationService-Capability" xlink:title="realises ×2" target="_top">
-<text text-anchor="middle" x="1355.56" y="-373.5" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">realises ×2</text>
+<g id="a_edge16&#45;label"><a xlink:href="../../en/dpi-h-ra/archimate/0.3.0-draft.1/metamodel/#pattern-ApplicationService-Capability" xlink:title="realises ×3" target="_top">
+<text text-anchor="middle" x="1355.56" y="-373.5" font-family="Helvetica,sans-Serif" font-size="9.00" fill="#333333">realises ×3</text>
 </a>
 </g>
 </g>

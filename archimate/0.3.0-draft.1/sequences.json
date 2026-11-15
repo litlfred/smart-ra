@@ -4,6 +4,55 @@
   "name": "WHO_RA",
   "sequences": [
     {
+      "id": "id-69a9d2fa4a075b6485c75cdb8b1a664b",
+      "title": "Semantic Governance Infrastructure (Fig. 3.4.1)",
+      "source": "view",
+      "viewId": "id-69a9d2fa4a075b6485c75cdb8b1a664b",
+      "participants": [
+        {
+          "id": "id-620f8efa30e85046b0da9f05ce83cf75",
+          "name": "Governance TMS",
+          "type": "ApplicationComponent",
+          "elementId": "id-620f8efa30e85046b0da9f05ce83cf75"
+        },
+        {
+          "id": "id-7ed447d199de5153af38aa2d72b410df",
+          "name": "Runtime TS",
+          "type": "ApplicationComponent",
+          "elementId": "id-7ed447d199de5153af38aa2d72b410df"
+        },
+        {
+          "id": "id-9f2b802d64b05ac58e5a725b8c335157",
+          "name": "Global content sources",
+          "type": "ApplicationComponent",
+          "elementId": "id-9f2b802d64b05ac58e5a725b8c335157"
+        }
+      ],
+      "messages": [
+        {
+          "from": "id-620f8efa30e85046b0da9f05ce83cf75",
+          "to": "id-7ed447d199de5153af38aa2d72b410df",
+          "label": "flows to Runtime TS",
+          "kind": "flow",
+          "relationshipId": "id-4e5baed957555ce5952eb78f1069c743"
+        },
+        {
+          "from": "id-7ed447d199de5153af38aa2d72b410df",
+          "to": "id-620f8efa30e85046b0da9f05ce83cf75",
+          "label": "flows to Governance TMS",
+          "kind": "flow",
+          "relationshipId": "id-2b4950b5f7cf5256a7fb52696e5c90e2"
+        },
+        {
+          "from": "id-9f2b802d64b05ac58e5a725b8c335157",
+          "to": "id-620f8efa30e85046b0da9f05ce83cf75",
+          "label": "Content syndication",
+          "kind": "flow",
+          "relationshipId": "id-06b696e72f0b5ab4940f3ba56b046260"
+        }
+      ]
+    },
+    {
       "id": "id-007936f8c2424b96ad1893ef0ff66059",
       "title": "1. Central Health Workforce Registry",
       "source": "view",
