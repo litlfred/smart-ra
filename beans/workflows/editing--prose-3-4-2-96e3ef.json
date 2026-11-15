@@ -1,0 +1,755 @@
+{
+  "$schema": "folio-workflow-instance/v1",
+  "id": "editing--prose-3-4-2-96e3ef",
+  "processId": "Process_Editing",
+  "source": "folio-assistant-core/processes/content/editing-hci-validation.bpmn",
+  "subject": "prose:3-4-2-96e3ef",
+  "bean": "folio-assistant-g3ra",
+  "carriedBeans": [
+    "folio-assistant-g3ra"
+  ],
+  "tokens": [],
+  "arrivals": {},
+  "history": [
+    {
+      "at": "2026-11-15T08:59:21.462Z",
+      "node": "StartEvent_EditRequested",
+      "note": "instance started"
+    },
+    {
+      "at": "2026-11-15T08:59:24.613Z",
+      "node": "Task_DescribeChange",
+      "actor": "claude (authoring agent, session https://claude.ai/code/session_01Qmmkt8JHV6bzSp4tPmwei3)",
+      "note": "change described in smart-ra#197 (PR body and change-set item), written by the authoring session",
+      "authz": {
+        "allowed": true,
+        "mode": "strict",
+        "authenticatedBy": "github",
+        "actor": "owner",
+        "account": "litlfred",
+        "role": "author",
+        "assignment": "unconstrained",
+        "authorized": "permit",
+        "findings": []
+      },
+      "prov": {
+        "@type": "prov:Activity",
+        "@id": "editing--prose-3-4-2-96e3ef#1",
+        "prov:startedAtTime": "2026-11-15T08:59:24.613Z",
+        "prov:qualifiedAssociation": {
+          "prov:agent": "owner",
+          "prov:hadRole": "author",
+          "prov:hadPlan": "editing-hci-validation#Task_DescribeChange"
+        },
+        "cat-harness:underPolicy": [
+          "https://litlfred.github.io/fhir-harness/policies/ig-publisher-service",
+          "https://litlfred.github.io/folio-assistant-core/policies/content-agents",
+          "https://litlfred.github.io/folio-assistant/policies/folio-defaults",
+          "https://litlfred.github.io/folio-assistant/policies/http-gateway"
+        ]
+      }
+    },
+    {
+      "at": "2026-11-15T08:59:27.809Z",
+      "node": "Task_ClaimBean",
+      "actor": "claude (authoring agent, session https://claude.ai/code/session_01Qmmkt8JHV6bzSp4tPmwei3)",
+      "note": "bean folio-assistant-g3ra",
+      "authz": {
+        "allowed": true,
+        "mode": "strict",
+        "authenticatedBy": "github",
+        "actor": "owner",
+        "account": "litlfred",
+        "role": "authoring-agent",
+        "assignment": "unconstrained",
+        "authorized": "permit",
+        "findings": []
+      },
+      "prov": {
+        "@type": "prov:Activity",
+        "@id": "editing--prose-3-4-2-96e3ef#2",
+        "prov:startedAtTime": "2026-11-15T08:59:27.809Z",
+        "prov:qualifiedAssociation": {
+          "prov:agent": "owner",
+          "prov:hadRole": "authoring-agent",
+          "prov:hadPlan": "editing-hci-validation#Task_ClaimBean"
+        },
+        "cat-harness:underPolicy": [
+          "https://litlfred.github.io/fhir-harness/policies/ig-publisher-service",
+          "https://litlfred.github.io/folio-assistant-core/policies/content-agents",
+          "https://litlfred.github.io/folio-assistant/policies/folio-defaults",
+          "https://litlfred.github.io/folio-assistant/policies/http-gateway"
+        ]
+      }
+    },
+    {
+      "at": "2026-11-15T08:59:30.750Z",
+      "node": "GW_BeanYours",
+      "outcome": "claimed",
+      "actor": "claude (authoring agent, session https://claude.ai/code/session_01Qmmkt8JHV6bzSp4tPmwei3)",
+      "authz": {
+        "allowed": true,
+        "mode": "strict",
+        "authenticatedBy": "github",
+        "actor": "owner",
+        "account": "litlfred",
+        "role": "authoring-agent",
+        "assignment": "unconstrained",
+        "authorized": "permit",
+        "findings": []
+      },
+      "prov": {
+        "@type": "prov:Activity",
+        "@id": "editing--prose-3-4-2-96e3ef#3",
+        "prov:startedAtTime": "2026-11-15T08:59:30.750Z",
+        "prov:qualifiedAssociation": {
+          "prov:agent": "owner",
+          "prov:hadRole": "authoring-agent",
+          "prov:hadPlan": "editing-hci-validation#GW_BeanYours"
+        },
+        "cat-harness:underPolicy": [
+          "https://litlfred.github.io/fhir-harness/policies/ig-publisher-service",
+          "https://litlfred.github.io/folio-assistant-core/policies/content-agents",
+          "https://litlfred.github.io/folio-assistant/policies/folio-defaults",
+          "https://litlfred.github.io/folio-assistant/policies/http-gateway"
+        ]
+      }
+    },
+    {
+      "at": "2026-11-15T08:59:33.542Z",
+      "node": "CallActivity_Evidence",
+      "actor": "claude (authoring agent, session https://claude.ai/code/session_01Qmmkt8JHV6bzSp4tPmwei3)",
+      "note": "subprocess Process_EvidenceRetrieval completed"
+    },
+    {
+      "at": "2026-11-15T08:59:36.346Z",
+      "node": "Task_DraftEdit",
+      "actor": "claude (authoring agent, session https://claude.ai/code/session_01Qmmkt8JHV6bzSp4tPmwei3)",
+      "note": "edit as committed on smart-ra#197 head a9e7d250",
+      "authz": {
+        "allowed": true,
+        "mode": "strict",
+        "authenticatedBy": "github",
+        "actor": "owner",
+        "account": "litlfred",
+        "role": "authoring-agent",
+        "assignment": "unconstrained",
+        "authorized": "permit",
+        "findings": []
+      },
+      "prov": {
+        "@type": "prov:Activity",
+        "@id": "editing--prose-3-4-2-96e3ef#5",
+        "prov:startedAtTime": "2026-11-15T08:59:36.346Z",
+        "prov:qualifiedAssociation": {
+          "prov:agent": "owner",
+          "prov:hadRole": "authoring-agent",
+          "prov:hadPlan": "editing-hci-validation#Task_DraftEdit"
+        },
+        "cat-harness:underPolicy": [
+          "https://litlfred.github.io/fhir-harness/policies/ig-publisher-service",
+          "https://litlfred.github.io/folio-assistant-core/policies/content-agents",
+          "https://litlfred.github.io/folio-assistant/policies/folio-defaults",
+          "https://litlfred.github.io/folio-assistant/policies/http-gateway"
+        ]
+      }
+    },
+    {
+      "at": "2026-11-15T08:59:39.193Z",
+      "node": "Task_SchemaValidate",
+      "actor": "claude (authoring agent, session https://claude.ai/code/session_01Qmmkt8JHV6bzSp4tPmwei3)",
+      "note": "qa-sweep / qa-sweep success on smart-ra#197 head a9e7d250; Harness PR checks on the same head",
+      "authz": {
+        "allowed": true,
+        "mode": "strict",
+        "authenticatedBy": "github",
+        "actor": "owner",
+        "account": "litlfred",
+        "role": "validation-pipeline",
+        "assignment": "unconstrained",
+        "authorized": "permit",
+        "findings": []
+      },
+      "prov": {
+        "@type": "prov:Activity",
+        "@id": "editing--prose-3-4-2-96e3ef#6",
+        "prov:startedAtTime": "2026-11-15T08:59:39.193Z",
+        "prov:qualifiedAssociation": {
+          "prov:agent": "owner",
+          "prov:hadRole": "validation-pipeline",
+          "prov:hadPlan": "editing-hci-validation#Task_SchemaValidate"
+        },
+        "cat-harness:underPolicy": [
+          "https://litlfred.github.io/fhir-harness/policies/ig-publisher-service",
+          "https://litlfred.github.io/folio-assistant-core/policies/content-agents",
+          "https://litlfred.github.io/folio-assistant/policies/folio-defaults",
+          "https://litlfred.github.io/folio-assistant/policies/http-gateway"
+        ]
+      }
+    },
+    {
+      "at": "2026-11-15T08:59:42.272Z",
+      "node": "Task_SyntaxSpell",
+      "actor": "claude (authoring agent, session https://claude.ai/code/session_01Qmmkt8JHV6bzSp4tPmwei3)",
+      "note": "qa-sweep / qa-sweep success on smart-ra#197 head a9e7d250; Harness PR checks on the same head",
+      "authz": {
+        "allowed": true,
+        "mode": "strict",
+        "authenticatedBy": "github",
+        "actor": "owner",
+        "account": "litlfred",
+        "role": "validation-pipeline",
+        "assignment": "unconstrained",
+        "authorized": "permit",
+        "findings": []
+      },
+      "prov": {
+        "@type": "prov:Activity",
+        "@id": "editing--prose-3-4-2-96e3ef#7",
+        "prov:startedAtTime": "2026-11-15T08:59:42.272Z",
+        "prov:qualifiedAssociation": {
+          "prov:agent": "owner",
+          "prov:hadRole": "validation-pipeline",
+          "prov:hadPlan": "editing-hci-validation#Task_SyntaxSpell"
+        },
+        "cat-harness:underPolicy": [
+          "https://litlfred.github.io/fhir-harness/policies/ig-publisher-service",
+          "https://litlfred.github.io/folio-assistant-core/policies/content-agents",
+          "https://litlfred.github.io/folio-assistant/policies/folio-defaults",
+          "https://litlfred.github.io/folio-assistant/policies/http-gateway"
+        ]
+      }
+    },
+    {
+      "at": "2026-11-15T08:59:45.188Z",
+      "node": "Task_BuildGates",
+      "actor": "claude (authoring agent, session https://claude.ai/code/session_01Qmmkt8JHV6bzSp4tPmwei3)",
+      "note": "qa-sweep / qa-sweep success on smart-ra#197 head a9e7d250; Harness PR checks on the same head",
+      "authz": {
+        "allowed": true,
+        "mode": "strict",
+        "authenticatedBy": "github",
+        "actor": "owner",
+        "account": "litlfred",
+        "role": "validation-pipeline",
+        "assignment": "unconstrained",
+        "authorized": "permit",
+        "findings": []
+      },
+      "prov": {
+        "@type": "prov:Activity",
+        "@id": "editing--prose-3-4-2-96e3ef#8",
+        "prov:startedAtTime": "2026-11-15T08:59:45.188Z",
+        "prov:qualifiedAssociation": {
+          "prov:agent": "owner",
+          "prov:hadRole": "validation-pipeline",
+          "prov:hadPlan": "editing-hci-validation#Task_BuildGates"
+        },
+        "cat-harness:underPolicy": [
+          "https://litlfred.github.io/fhir-harness/policies/ig-publisher-service",
+          "https://litlfred.github.io/folio-assistant-core/policies/content-agents",
+          "https://litlfred.github.io/folio-assistant/policies/folio-defaults",
+          "https://litlfred.github.io/folio-assistant/policies/http-gateway"
+        ]
+      }
+    },
+    {
+      "at": "2026-11-15T08:59:47.991Z",
+      "node": "Gateway_ReviewerKind",
+      "outcome": "no",
+      "actor": "claude (authoring agent, session https://claude.ai/code/session_01Qmmkt8JHV6bzSp4tPmwei3)",
+      "authz": {
+        "allowed": true,
+        "mode": "strict",
+        "authenticatedBy": "github",
+        "actor": "owner",
+        "account": "litlfred",
+        "role": "reviewer",
+        "assignment": "unconstrained",
+        "authorized": "permit",
+        "findings": []
+      },
+      "prov": {
+        "@type": "prov:Activity",
+        "@id": "editing--prose-3-4-2-96e3ef#9",
+        "prov:startedAtTime": "2026-11-15T08:59:47.991Z",
+        "prov:qualifiedAssociation": {
+          "prov:agent": "owner",
+          "prov:hadRole": "reviewer",
+          "prov:hadPlan": "editing-hci-validation#Gateway_ReviewerKind"
+        },
+        "cat-harness:underPolicy": [
+          "https://litlfred.github.io/fhir-harness/policies/ig-publisher-service",
+          "https://litlfred.github.io/folio-assistant-core/policies/content-agents",
+          "https://litlfred.github.io/folio-assistant/policies/folio-defaults",
+          "https://litlfred.github.io/folio-assistant/policies/http-gateway"
+        ]
+      }
+    },
+    {
+      "at": "2026-11-15T08:59:51.087Z",
+      "node": "Task_AgentReview",
+      "actor": "claude (authoring agent, session https://claude.ai/code/session_01Qmmkt8JHV6bzSp4tPmwei3)",
+      "note": "agent checked the merge of main into smart-ra#197 kept the PR's wording (conflicts resolved mechanically)",
+      "authz": {
+        "allowed": true,
+        "mode": "strict",
+        "authenticatedBy": "github",
+        "actor": "owner",
+        "account": "litlfred",
+        "role": "reviewer",
+        "assignment": "unconstrained",
+        "authorized": "permit",
+        "findings": []
+      },
+      "prov": {
+        "@type": "prov:Activity",
+        "@id": "editing--prose-3-4-2-96e3ef#10",
+        "prov:startedAtTime": "2026-11-15T08:59:51.087Z",
+        "prov:qualifiedAssociation": {
+          "prov:agent": "owner",
+          "prov:hadRole": "reviewer",
+          "prov:hadPlan": "editing-hci-validation#Task_AgentReview"
+        },
+        "cat-harness:underPolicy": [
+          "https://litlfred.github.io/fhir-harness/policies/ig-publisher-service",
+          "https://litlfred.github.io/folio-assistant-core/policies/content-agents",
+          "https://litlfred.github.io/folio-assistant/policies/folio-defaults",
+          "https://litlfred.github.io/folio-assistant/policies/http-gateway"
+        ]
+      }
+    },
+    {
+      "at": "2026-11-15T08:59:54.035Z",
+      "node": "Task_CollateFindings",
+      "actor": "claude (authoring agent, session https://claude.ai/code/session_01Qmmkt8JHV6bzSp4tPmwei3)",
+      "note": "findings: before/after in /mnt/project-files/smart-ra-g3/before-after.md; bean folio-assistant-g3ra",
+      "authz": {
+        "allowed": true,
+        "mode": "strict",
+        "authenticatedBy": "github",
+        "actor": "owner",
+        "account": "litlfred",
+        "role": "validation-pipeline",
+        "assignment": "unconstrained",
+        "authorized": "permit",
+        "findings": []
+      },
+      "prov": {
+        "@type": "prov:Activity",
+        "@id": "editing--prose-3-4-2-96e3ef#11",
+        "prov:startedAtTime": "2026-11-15T08:59:54.035Z",
+        "prov:qualifiedAssociation": {
+          "prov:agent": "owner",
+          "prov:hadRole": "validation-pipeline",
+          "prov:hadPlan": "editing-hci-validation#Task_CollateFindings"
+        },
+        "cat-harness:underPolicy": [
+          "https://litlfred.github.io/fhir-harness/policies/ig-publisher-service",
+          "https://litlfred.github.io/folio-assistant-core/policies/content-agents",
+          "https://litlfred.github.io/folio-assistant/policies/folio-defaults",
+          "https://litlfred.github.io/folio-assistant/policies/http-gateway"
+        ]
+      }
+    },
+    {
+      "at": "2026-11-15T08:59:57.189Z",
+      "node": "Task_LogFindings",
+      "actor": "claude (authoring agent, session https://claude.ai/code/session_01Qmmkt8JHV6bzSp4tPmwei3)",
+      "note": "findings: before/after in /mnt/project-files/smart-ra-g3/before-after.md; bean folio-assistant-g3ra",
+      "authz": {
+        "allowed": true,
+        "mode": "strict",
+        "authenticatedBy": "github",
+        "actor": "owner",
+        "account": "litlfred",
+        "role": "authoring-agent",
+        "assignment": "unconstrained",
+        "authorized": "permit",
+        "findings": []
+      },
+      "prov": {
+        "@type": "prov:Activity",
+        "@id": "editing--prose-3-4-2-96e3ef#12",
+        "prov:startedAtTime": "2026-11-15T08:59:57.189Z",
+        "prov:qualifiedAssociation": {
+          "prov:agent": "owner",
+          "prov:hadRole": "authoring-agent",
+          "prov:hadPlan": "editing-hci-validation#Task_LogFindings"
+        },
+        "cat-harness:underPolicy": [
+          "https://litlfred.github.io/fhir-harness/policies/ig-publisher-service",
+          "https://litlfred.github.io/folio-assistant-core/policies/content-agents",
+          "https://litlfred.github.io/folio-assistant/policies/folio-defaults",
+          "https://litlfred.github.io/folio-assistant/policies/http-gateway"
+        ]
+      }
+    },
+    {
+      "at": "2026-11-15T09:00:00.375Z",
+      "node": "Task_ReviewFindings",
+      "actor": "litlfred",
+      "note": "owner litlfred reviewed smart-ra#197 before/after (/mnt/project-files/smart-ra-g3/before-after.md) and confirmed on card Q-RA-G3-4, option A, tapped 2026-11-15T08:48:50Z (card cmsg_017WNUkNK8kdDziPK58Pv6G97rksphHxVcqYjqJUXreH24)",
+      "authz": {
+        "allowed": true,
+        "mode": "strict",
+        "authenticatedBy": "github",
+        "actor": "owner",
+        "account": "litlfred",
+        "role": "author",
+        "assignment": "unconstrained",
+        "authorized": "permit",
+        "findings": []
+      },
+      "prov": {
+        "@type": "prov:Activity",
+        "@id": "editing--prose-3-4-2-96e3ef#13",
+        "prov:startedAtTime": "2026-11-15T09:00:00.375Z",
+        "prov:qualifiedAssociation": {
+          "prov:agent": "owner",
+          "prov:hadRole": "author",
+          "prov:hadPlan": "editing-hci-validation#Task_ReviewFindings"
+        },
+        "cat-harness:underPolicy": [
+          "https://litlfred.github.io/fhir-harness/policies/ig-publisher-service",
+          "https://litlfred.github.io/folio-assistant-core/policies/content-agents",
+          "https://litlfred.github.io/folio-assistant/policies/folio-defaults",
+          "https://litlfred.github.io/folio-assistant/policies/http-gateway"
+        ]
+      }
+    },
+    {
+      "at": "2026-11-15T09:00:06.313Z",
+      "node": "Call_OptionsAnalysis",
+      "actor": "claude (authoring agent, session https://claude.ai/code/session_01Qmmkt8JHV6bzSp4tPmwei3)",
+      "note": "subprocess Process_OptionsAnalysis completed"
+    },
+    {
+      "at": "2026-11-15T09:00:09.500Z",
+      "node": "Task_RecordDecision",
+      "actor": "litlfred",
+      "note": "owner litlfred reviewed smart-ra#197 before/after (/mnt/project-files/smart-ra-g3/before-after.md) and confirmed on card Q-RA-G3-4, option A, tapped 2026-11-15T08:48:50Z (card cmsg_017WNUkNK8kdDziPK58Pv6G97rksphHxVcqYjqJUXreH24)",
+      "authz": {
+        "allowed": true,
+        "mode": "strict",
+        "authenticatedBy": "github",
+        "actor": "owner",
+        "account": "litlfred",
+        "role": "author",
+        "assignment": "unconstrained",
+        "authorized": "permit",
+        "findings": []
+      },
+      "prov": {
+        "@type": "prov:Activity",
+        "@id": "editing--prose-3-4-2-96e3ef#15",
+        "prov:startedAtTime": "2026-11-15T09:00:09.500Z",
+        "prov:qualifiedAssociation": {
+          "prov:agent": "owner",
+          "prov:hadRole": "author",
+          "prov:hadPlan": "editing-hci-validation#Task_RecordDecision"
+        },
+        "cat-harness:underPolicy": [
+          "https://litlfred.github.io/fhir-harness/policies/ig-publisher-service",
+          "https://litlfred.github.io/folio-assistant-core/policies/content-agents",
+          "https://litlfred.github.io/folio-assistant/policies/folio-defaults",
+          "https://litlfred.github.io/folio-assistant/policies/http-gateway"
+        ]
+      }
+    },
+    {
+      "at": "2026-11-15T09:00:12.777Z",
+      "node": "Gateway_EditorDecision",
+      "outcome": "accept",
+      "actor": "litlfred",
+      "authz": {
+        "allowed": true,
+        "mode": "strict",
+        "authenticatedBy": "github",
+        "actor": "owner",
+        "account": "litlfred",
+        "role": "author",
+        "assignment": "unconstrained",
+        "authorized": "permit",
+        "findings": []
+      },
+      "prov": {
+        "@type": "prov:Activity",
+        "@id": "editing--prose-3-4-2-96e3ef#16",
+        "prov:startedAtTime": "2026-11-15T09:00:12.777Z",
+        "prov:qualifiedAssociation": {
+          "prov:agent": "owner",
+          "prov:hadRole": "author",
+          "prov:hadPlan": "editing-hci-validation#Gateway_EditorDecision"
+        },
+        "cat-harness:underPolicy": [
+          "https://litlfred.github.io/fhir-harness/policies/ig-publisher-service",
+          "https://litlfred.github.io/folio-assistant-core/policies/content-agents",
+          "https://litlfred.github.io/folio-assistant/policies/folio-defaults",
+          "https://litlfred.github.io/folio-assistant/policies/http-gateway"
+        ]
+      }
+    },
+    {
+      "at": "2026-11-15T09:00:15.542Z",
+      "node": "Task_Commit",
+      "actor": "claude (authoring agent, session https://claude.ai/code/session_01Qmmkt8JHV6bzSp4tPmwei3)",
+      "note": "committed on smart-ra#197 head a9e7d250",
+      "authz": {
+        "allowed": true,
+        "mode": "strict",
+        "authenticatedBy": "github",
+        "actor": "owner",
+        "account": "litlfred",
+        "role": "authoring-agent",
+        "assignment": "unconstrained",
+        "authorized": "permit",
+        "findings": []
+      },
+      "prov": {
+        "@type": "prov:Activity",
+        "@id": "editing--prose-3-4-2-96e3ef#17",
+        "prov:startedAtTime": "2026-11-15T09:00:15.542Z",
+        "prov:qualifiedAssociation": {
+          "prov:agent": "owner",
+          "prov:hadRole": "authoring-agent",
+          "prov:hadPlan": "editing-hci-validation#Task_Commit"
+        },
+        "cat-harness:underPolicy": [
+          "https://litlfred.github.io/fhir-harness/policies/ig-publisher-service",
+          "https://litlfred.github.io/folio-assistant-core/policies/content-agents",
+          "https://litlfred.github.io/folio-assistant/policies/folio-defaults",
+          "https://litlfred.github.io/folio-assistant/policies/http-gateway"
+        ]
+      }
+    },
+    {
+      "at": "2026-11-15T09:00:18.497Z",
+      "node": "Task_ResolveBean",
+      "actor": "claude (authoring agent, session https://claude.ai/code/session_01Qmmkt8JHV6bzSp4tPmwei3)",
+      "note": "bean folio-assistant-g3ra stays open for the PR set",
+      "authz": {
+        "allowed": true,
+        "mode": "strict",
+        "authenticatedBy": "github",
+        "actor": "owner",
+        "account": "litlfred",
+        "role": "authoring-agent",
+        "assignment": "unconstrained",
+        "authorized": "permit",
+        "findings": []
+      },
+      "prov": {
+        "@type": "prov:Activity",
+        "@id": "editing--prose-3-4-2-96e3ef#18",
+        "prov:startedAtTime": "2026-11-15T09:00:18.497Z",
+        "prov:qualifiedAssociation": {
+          "prov:agent": "owner",
+          "prov:hadRole": "authoring-agent",
+          "prov:hadPlan": "editing-hci-validation#Task_ResolveBean"
+        },
+        "cat-harness:underPolicy": [
+          "https://litlfred.github.io/fhir-harness/policies/ig-publisher-service",
+          "https://litlfred.github.io/folio-assistant-core/policies/content-agents",
+          "https://litlfred.github.io/folio-assistant/policies/folio-defaults",
+          "https://litlfred.github.io/folio-assistant/policies/http-gateway"
+        ]
+      }
+    },
+    {
+      "at": "2026-11-15T09:00:21.339Z",
+      "node": "GW_BeanClosedHow",
+      "outcome": "in the corpus",
+      "actor": "claude (authoring agent, session https://claude.ai/code/session_01Qmmkt8JHV6bzSp4tPmwei3)",
+      "authz": {
+        "allowed": true,
+        "mode": "strict",
+        "authenticatedBy": "github",
+        "actor": "owner",
+        "account": "litlfred",
+        "role": "authoring-agent",
+        "assignment": "unconstrained",
+        "authorized": "permit",
+        "findings": []
+      },
+      "prov": {
+        "@type": "prov:Activity",
+        "@id": "editing--prose-3-4-2-96e3ef#19",
+        "prov:startedAtTime": "2026-11-15T09:00:21.339Z",
+        "prov:qualifiedAssociation": {
+          "prov:agent": "owner",
+          "prov:hadRole": "authoring-agent",
+          "prov:hadPlan": "editing-hci-validation#GW_BeanClosedHow"
+        },
+        "cat-harness:underPolicy": [
+          "https://litlfred.github.io/fhir-harness/policies/ig-publisher-service",
+          "https://litlfred.github.io/folio-assistant-core/policies/content-agents",
+          "https://litlfred.github.io/folio-assistant/policies/folio-defaults",
+          "https://litlfred.github.io/folio-assistant/policies/http-gateway"
+        ]
+      }
+    },
+    {
+      "at": "2026-11-15T09:00:21.342Z",
+      "node": "EndEvent_InCorpus",
+      "note": "end event reached"
+    }
+  ],
+  "status": "completed",
+  "startedAt": "2026-11-15T08:59:21.462Z",
+  "updatedAt": "2026-11-15T09:00:21.342Z",
+  "children": {
+    "CallActivity_Evidence": {
+      "id": "editing--prose-3-4-2-96e3ef/CallActivity_Evidence",
+      "processId": "Process_EvidenceRetrieval",
+      "source": "folio-assistant-core/processes/content/evidence-retrieval.bpmn",
+      "subject": "prose:3-4-2-96e3ef",
+      "bean": "folio-assistant-g3ra",
+      "carriedBeans": [
+        "folio-assistant-g3ra"
+      ],
+      "tokens": [],
+      "arrivals": {},
+      "history": [
+        {
+          "at": "2026-11-15T08:59:30.752Z",
+          "node": "StartEvent_Recommendation",
+          "note": "instance started"
+        },
+        {
+          "at": "2026-11-15T08:59:33.540Z",
+          "node": "Gateway_RecommendationInPlay",
+          "outcome": "no",
+          "actor": "claude (authoring agent, session https://claude.ai/code/session_01Qmmkt8JHV6bzSp4tPmwei3)",
+          "authz": {
+            "allowed": true,
+            "mode": "strict",
+            "authenticatedBy": "github",
+            "actor": "owner",
+            "account": "litlfred",
+            "role": "author",
+            "assignment": "unconstrained",
+            "authorized": "permit",
+            "findings": []
+          },
+          "prov": {
+            "@type": "prov:Activity",
+            "@id": "editing--prose-3-4-2-96e3ef/CallActivity_Evidence#1",
+            "prov:startedAtTime": "2026-11-15T08:59:33.540Z",
+            "prov:qualifiedAssociation": {
+              "prov:agent": "owner",
+              "prov:hadRole": "author",
+              "prov:hadPlan": "evidence-retrieval#Gateway_RecommendationInPlay"
+            },
+            "cat-harness:underPolicy": [
+              "https://litlfred.github.io/fhir-harness/policies/ig-publisher-service",
+              "https://litlfred.github.io/folio-assistant-core/policies/content-agents",
+              "https://litlfred.github.io/folio-assistant/policies/folio-defaults",
+              "https://litlfred.github.io/folio-assistant/policies/http-gateway"
+            ]
+          }
+        },
+        {
+          "at": "2026-11-15T08:59:33.542Z",
+          "node": "EndEvent_NoRecommendation",
+          "note": "end event reached"
+        }
+      ],
+      "status": "completed",
+      "startedAt": "2026-11-15T08:59:30.752Z",
+      "updatedAt": "2026-11-15T08:59:33.542Z"
+    },
+    "Call_OptionsAnalysis": {
+      "id": "editing--prose-3-4-2-96e3ef/Call_OptionsAnalysis",
+      "processId": "Process_OptionsAnalysis",
+      "source": "cat-harness/processes/process/options-analysis.bpmn",
+      "subject": "prose:3-4-2-96e3ef",
+      "bean": "folio-assistant-g3ra",
+      "carriedBeans": [
+        "folio-assistant-g3ra"
+      ],
+      "tokens": [],
+      "arrivals": {},
+      "history": [
+        {
+          "at": "2026-11-15T09:00:00.378Z",
+          "node": "Start_Process_OptionsAnalysis",
+          "note": "instance started"
+        },
+        {
+          "at": "2026-11-15T09:00:03.420Z",
+          "node": "A_Frame",
+          "actor": "claude (authoring agent, session https://claude.ai/code/session_01Qmmkt8JHV6bzSp4tPmwei3)",
+          "authz": {
+            "allowed": true,
+            "mode": "strict",
+            "authenticatedBy": "github",
+            "actor": "owner",
+            "account": "litlfred",
+            "role": "business-analyst",
+            "assignment": "unconstrained",
+            "authorized": "permit",
+            "findings": []
+          },
+          "prov": {
+            "@type": "prov:Activity",
+            "@id": "editing--prose-3-4-2-96e3ef/Call_OptionsAnalysis#1",
+            "prov:startedAtTime": "2026-11-15T09:00:03.420Z",
+            "prov:qualifiedAssociation": {
+              "prov:agent": "owner",
+              "prov:hadRole": "business-analyst",
+              "prov:hadPlan": "options-analysis#A_Frame"
+            },
+            "cat-harness:underPolicy": [
+              "https://litlfred.github.io/fhir-harness/policies/ig-publisher-service",
+              "https://litlfred.github.io/folio-assistant-core/policies/content-agents",
+              "https://litlfred.github.io/folio-assistant/policies/folio-defaults",
+              "https://litlfred.github.io/folio-assistant/policies/http-gateway"
+            ]
+          }
+        },
+        {
+          "at": "2026-11-15T09:00:06.309Z",
+          "node": "GW_Trigger",
+          "outcome": "no",
+          "actor": "claude (authoring agent, session https://claude.ai/code/session_01Qmmkt8JHV6bzSp4tPmwei3)",
+          "authz": {
+            "allowed": true,
+            "mode": "strict",
+            "authenticatedBy": "github",
+            "actor": "owner",
+            "account": "litlfred",
+            "role": "business-analyst",
+            "assignment": "unconstrained",
+            "authorized": "permit",
+            "findings": []
+          },
+          "prov": {
+            "@type": "prov:Activity",
+            "@id": "editing--prose-3-4-2-96e3ef/Call_OptionsAnalysis#2",
+            "prov:startedAtTime": "2026-11-15T09:00:06.309Z",
+            "prov:qualifiedAssociation": {
+              "prov:agent": "owner",
+              "prov:hadRole": "business-analyst",
+              "prov:hadPlan": "options-analysis#GW_Trigger"
+            },
+            "cat-harness:underPolicy": [
+              "https://litlfred.github.io/fhir-harness/policies/ig-publisher-service",
+              "https://litlfred.github.io/folio-assistant-core/policies/content-agents",
+              "https://litlfred.github.io/folio-assistant/policies/folio-defaults",
+              "https://litlfred.github.io/folio-assistant/policies/http-gateway"
+            ]
+          }
+        },
+        {
+          "at": "2026-11-15T09:00:06.312Z",
+          "node": "End_TriggerNotMet",
+          "note": "end event reached"
+        }
+      ],
+      "status": "completed",
+      "startedAt": "2026-11-15T09:00:00.378Z",
+      "updatedAt": "2026-11-15T09:00:06.312Z"
+    }
+  }
+}
