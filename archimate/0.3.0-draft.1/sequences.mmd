@@ -15,7 +15,7 @@ sequenceDiagram
   participant id_4e0767822dcf46409554156a133fbc67 as Health Facility Registry
   participant id_bbd18f65be45490fbbaf02346511ae5e as Reporting Module
   participant id_e162b2223da4440983514be5854b654d as CDE-HWR - Core Data Elements for the Health Workforce Registry
-  participant id_702c24bbd73341be9afc11c7e11e9810 as Health Worker
+  participant id_702c24bbd73341be9afc11c7e11e9810 as Health worker record
   participant id_301912f3fcaf4648b0ebc3cbbfc3b447 as Terminology
   participant id_145e885489634e469e8a6734f56b7df5 as NHWA Dataset (linking and indexing, built on CDE-HWR)
   participant id_ad969289cb774307aa678037c56fdd3f as Facility
@@ -28,7 +28,7 @@ sequenceDiagram
   id_3c5d846710034c4595e206e748d65e36->>id_d79aa0eec0584b0792b44bca408afeb6: flows to DPI-F Security & Consent Module
   id_4e0767822dcf46409554156a133fbc67->>id_3c5d846710034c4595e206e748d65e36: flows to DPI-F Information Mediator
   id_350840520ae44f658b6ad3b3762e382e->>id_e162b2223da4440983514be5854b654d: writes CDE-HWR - Core Data Elements for the Health Workforce Registry
-  id_350840520ae44f658b6ad3b3762e382e->>id_702c24bbd73341be9afc11c7e11e9810: writes Health Worker
+  id_350840520ae44f658b6ad3b3762e382e->>id_702c24bbd73341be9afc11c7e11e9810: writes Health worker record
   id_350840520ae44f658b6ad3b3762e382e->>id_301912f3fcaf4648b0ebc3cbbfc3b447: writes Terminology
   id_bbd18f65be45490fbbaf02346511ae5e->>id_145e885489634e469e8a6734f56b7df5: reads/writes NHWA Dataset (linking and indexing, built on CDE-HWR)
   id_4e0767822dcf46409554156a133fbc67->>id_301912f3fcaf4648b0ebc3cbbfc3b447: writes Terminology
@@ -42,14 +42,14 @@ sequenceDiagram
   participant id_d79aa0eec0584b0792b44bca408afeb6 as DPI-F Security & Consent Module
   participant id_bbd18f65be45490fbbaf02346511ae5e as Reporting Module
   participant id_301912f3fcaf4648b0ebc3cbbfc3b447 as Terminology
-  participant id_702c24bbd73341be9afc11c7e11e9810 as Health Worker
+  participant id_702c24bbd73341be9afc11c7e11e9810 as Health worker record
   id_350840520ae44f658b6ad3b3762e382e->>id_3c5d846710034c4595e206e748d65e36: flows to DPI-F Information Mediator
   id_d79aa0eec0584b0792b44bca408afeb6->>id_3c5d846710034c4595e206e748d65e36: flows to DPI-F Information Mediator
   id_3c5d846710034c4595e206e748d65e36->>id_350840520ae44f658b6ad3b3762e382e: flows to Health Workforce Registry
   id_3c5d846710034c4595e206e748d65e36->>id_bbd18f65be45490fbbaf02346511ae5e: flows to Reporting Module
   id_3c5d846710034c4595e206e748d65e36->>id_d79aa0eec0584b0792b44bca408afeb6: flows to DPI-F Security & Consent Module
   id_350840520ae44f658b6ad3b3762e382e->>id_301912f3fcaf4648b0ebc3cbbfc3b447: writes Terminology
-  id_350840520ae44f658b6ad3b3762e382e->>id_702c24bbd73341be9afc11c7e11e9810: writes Health Worker
+  id_350840520ae44f658b6ad3b3762e382e->>id_702c24bbd73341be9afc11c7e11e9810: writes Health worker record
 
 sequenceDiagram
   %% Track and Trace through DHSC Components (DTH SC Fig. 24) (id-bea56e01c8345fbc803dee47a17ccfd3): sequence diagram, derived by archimate-diagrams. Do not edit.

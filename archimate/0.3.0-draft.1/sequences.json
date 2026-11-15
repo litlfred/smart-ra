@@ -96,7 +96,7 @@
         },
         {
           "id": "id-702c24bbd73341be9afc11c7e11e9810",
-          "name": "Health Worker",
+          "name": "Health worker record",
           "type": "DataObject",
           "elementId": "id-702c24bbd73341be9afc11c7e11e9810"
         },
@@ -185,7 +185,7 @@
         {
           "from": "id-350840520ae44f658b6ad3b3762e382e",
           "to": "id-702c24bbd73341be9afc11c7e11e9810",
-          "label": "writes Health Worker",
+          "label": "writes Health worker record",
           "kind": "access",
           "relationshipId": "id-ba37954c9c86400a8b71c5cdb1058441"
         },
@@ -264,7 +264,7 @@
         },
         {
           "id": "id-702c24bbd73341be9afc11c7e11e9810",
-          "name": "Health Worker",
+          "name": "Health worker record",
           "type": "DataObject",
           "elementId": "id-702c24bbd73341be9afc11c7e11e9810"
         }
@@ -315,7 +315,7 @@
         {
           "from": "id-350840520ae44f658b6ad3b3762e382e",
           "to": "id-702c24bbd73341be9afc11c7e11e9810",
-          "label": "writes Health Worker",
+          "label": "writes Health worker record",
           "kind": "access",
           "relationshipId": "id-ba37954c9c86400a8b71c5cdb1058441"
         }

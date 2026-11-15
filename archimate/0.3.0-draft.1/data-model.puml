@@ -17,7 +17,7 @@ class "CDE-HWR: Core Data Elements for the Health Workforce Registry" as id_e162
 class "Clinical Guidelines" as id_e4de2256c7644b7cbd7222ac49625b3d <<BusinessObject>>
 class "Facility" as id_ad969289cb774307aa678037c56fdd3f <<DataObject>>
 class "Generic Product" as id_48ca7ae8d2ed5a5a992fbdd0528f9fe8 <<BusinessObject>>
-class "Health Worker" as id_702c24bbd73341be9afc11c7e11e9810 <<DataObject>>
+class "Health worker record" as id_702c24bbd73341be9afc11c7e11e9810 <<DataObject>>
 class "NHWA Dataset (linking and indexing, built on CDE-HWR)" as id_145e885489634e469e8a6734f56b7df5 <<DataObject>>
 class "Patient-level Data" as id_71b2e11df2e348a2b9f8eee36c8e5292 <<DataObject>>
 class "Product Classification" as id_1aa66395ee2651d5aec70dc678326440 <<BusinessObject>>
