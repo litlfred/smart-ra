@@ -1,0 +1,16 @@
+{
+  "$schema": "qa-reports-manifest/v1",
+  "key": "pr/194/d389fbe27028b42e17d1d1c350761b815c4f6853",
+  "source": "d389fbe27028b42e17d1d1c350761b815c4f6853",
+  "pr": 194,
+  "written_at": "2026-11-15T07:39:12.846Z",
+  "producer": {
+    "run": "https://github.com/litlfred/smart-ra/actions/runs/43689183630"
+  },
+  "roots": [
+    "test/results"
+  ],
+  "payloadTree": "96de8e4d388d109a18282b8cc3cd26a9d446b704",
+  "files": 933,
+  "bytes": 27400167
+}
