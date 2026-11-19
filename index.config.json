@@ -76,7 +76,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/who-iris",
-          "ref": "f7290776b30cf851a3174384917b1dcc3890991b",
+          "ref": "bc7e22c3f6ee56bcf59b4f9a24edfa34df8ab707",
           "overrides": {
             "who-iris": {
               "whole": true
@@ -100,9 +100,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-11-17",
-              "ref": "f7290776b30cf851a3174384917b1dcc3890991b",
-              "evidence": "litlfred 2026-11-17 ~18:30Z in session session_01EucfRqYSWYLZDQCayeryd8: 'Do the repinning and then update'; re-pin every layer to its current main so the avatar PR picks up the merged gate fixes (cat-harness-tools#2421, #2415, #2419), as lock:freshness requires"
+              "on": "2026-11-19",
+              "ref": "bc7e22c3f6ee56bcf59b4f9a24edfa34df8ab707",
+              "evidence": "litlfred approved first-hand on 2026-11-19 in session session_01EucfRqbJtrWDW4JjUTfsQ6 (card: 'Yes, all five'), relayed by the merge manager session_01EucfRnjwjC8CPYgVnsFuHS: re-pin every layer to current main to pick up folio-assistant-core#850 (glossary concept IRI pages, check:site-iris) and #852 (translated-page URL rebasing) and cat-harness-tools 68699aee"
             },
             "standing": {
               "follows": "main",
@@ -120,7 +120,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/smart-base",
-          "ref": "c4f318e7f34be3f93f8b7ddbc6173cf09be3f32b",
+          "ref": "0b45b934abf523a21faed6328cccde4a367b7131",
           "overrides": {
             "smart-base": {
               "path": "smart-base",
@@ -154,9 +154,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-11-18",
-              "ref": "c4f318e7f34be3f93f8b7ddbc6173cf09be3f32b",
-              "evidence": "litlfred 2026-11-18 in session session_01EucfRqYSWYLZDQCayeryd8: 'send PRs to merge manager when green and ready'; re-pin every layer to its current main so the avatar PR picks up cat-harness-tools#2340 (canonical site-publish caller, main only), as lock:freshness requires"
+              "on": "2026-11-19",
+              "ref": "0b45b934abf523a21faed6328cccde4a367b7131",
+              "evidence": "litlfred approved first-hand on 2026-11-19 in session session_01EucfRqbJtrWDW4JjUTfsQ6 (card: re-pin to current main, 'Yes, all five'), with standing follow-main consent (2026-11-12) and the merge manager's relay (session_01EucfRnjwjC8CPYgVnsFuHS: 're-pin every layer to its current main'); main moved during the re-pin, so lock:freshness requires the newer heads"
             },
             "standing": {
               "follows": "main",
@@ -174,7 +174,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/fhir-harness",
-          "ref": "d34ae7692a304983a495b20b62f37b8b98d3cb85",
+          "ref": "8075551c0541bc5ecb5bcb7d579fe1a889641e00",
           "overrides": {
             "fhir-harness": {
               "whole": true
@@ -183,9 +183,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-11-18",
-              "ref": "d34ae7692a304983a495b20b62f37b8b98d3cb85",
-              "evidence": "litlfred 2026-11-18 in session session_01EucfRqYSWYLZDQCayeryd8: 'send PRs to merge manager when green and ready'; re-pin every layer to its current main so the avatar PR picks up cat-harness-tools#2340 (canonical site-publish caller, main only), as lock:freshness requires"
+              "on": "2026-11-19",
+              "ref": "8075551c0541bc5ecb5bcb7d579fe1a889641e00",
+              "evidence": "litlfred approved first-hand on 2026-11-19 in session session_01EucfRqbJtrWDW4JjUTfsQ6 (card: re-pin to current main, 'Yes, all five'), with standing follow-main consent (2026-11-12) and the merge manager's relay (session_01EucfRnjwjC8CPYgVnsFuHS: 're-pin every layer to its current main'); main moved during the re-pin, so lock:freshness requires the newer heads"
             },
             "standing": {
               "follows": "main",
@@ -203,7 +203,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/folio-assistant-core",
-          "ref": "1fa2a0981023c550067fc9c6e24937d114e07d2e",
+          "ref": "97b3461c369edb0877d9be4ed8fdb63e0e8a3c2b",
           "overrides": {
             "folio-assistant-core": {
               "whole": true
@@ -218,9 +218,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-11-18",
-              "ref": "1fa2a0981023c550067fc9c6e24937d114e07d2e",
-              "evidence": "litlfred 2026-11-18 in session session_01EucfRqYSWYLZDQCayeryd8: 'send PRs to merge manager when green and ready'; re-pin every layer to its current main so the avatar PR picks up cat-harness-tools#2340 (canonical site-publish caller, main only), as lock:freshness requires"
+              "on": "2026-11-19",
+              "ref": "97b3461c369edb0877d9be4ed8fdb63e0e8a3c2b",
+              "evidence": "litlfred approved first-hand on 2026-11-19 in session session_01EucfRqbJtrWDW4JjUTfsQ6 (card: 'Yes, all five'), relayed by the merge manager session_01EucfRnjwjC8CPYgVnsFuHS: re-pin every layer to current main to pick up folio-assistant-core#850 (glossary concept IRI pages, check:site-iris) and #852 (translated-page URL rebasing) and cat-harness-tools 68699aee"
             },
             "standing": {
               "follows": "main",
@@ -238,7 +238,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness",
-          "ref": "9770b20ca6b34060fbbbc0e899a376bb710f424e",
+          "ref": "44f3c050ce5565cab593436a2450004e6dc7a4bb",
           "overrides": {
             "cat-harness": {
               "whole": true
@@ -253,9 +253,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-11-18",
-              "ref": "9770b20ca6b34060fbbbc0e899a376bb710f424e",
-              "evidence": "litlfred 2026-11-18 in session session_01EucfRqYSWYLZDQCayeryd8: 'send PRs to merge manager when green and ready'; re-pin every layer to its current main so the avatar PR picks up cat-harness-tools#2340 (canonical site-publish caller, main only), as lock:freshness requires"
+              "on": "2026-11-19",
+              "ref": "44f3c050ce5565cab593436a2450004e6dc7a4bb",
+              "evidence": "litlfred approved first-hand on 2026-11-19 in session session_01EucfRqbJtrWDW4JjUTfsQ6 (card: 'Yes, all five'), relayed by the merge manager session_01EucfRnjwjC8CPYgVnsFuHS: re-pin every layer to current main to pick up folio-assistant-core#850 (glossary concept IRI pages, check:site-iris) and #852 (translated-page URL rebasing) and cat-harness-tools 68699aee"
             },
             "standing": {
               "follows": "main",
@@ -273,7 +273,7 @@
       "source": {
         "remote": {
           "repository": "litlfred/cat-harness-tools",
-          "ref": "db55d2da5d4cc5947a5c03c9638d18ac3a8546f6",
+          "ref": "15fc205d356eda5aeb95af379216076606c23904",
           "overrides": {
             "cat-harness-tools": {
               "whole": true
@@ -285,9 +285,9 @@
           "trust": {
             "consent": {
               "by": "litlfred",
-              "on": "2026-11-18",
-              "ref": "db55d2da5d4cc5947a5c03c9638d18ac3a8546f6",
-              "evidence": "litlfred 2026-11-18 in session session_01EucfRqYSWYLZDQCayeryd8: 'send PRs to merge manager when green and ready'; re-pin every layer to its current main so the avatar PR picks up cat-harness-tools#2340 (canonical site-publish caller, main only), as lock:freshness requires"
+              "on": "2026-11-19",
+              "ref": "15fc205d356eda5aeb95af379216076606c23904",
+              "evidence": "litlfred approved first-hand on 2026-11-19 in session session_01EucfRqbJtrWDW4JjUTfsQ6 (card: re-pin to current main, 'Yes, all five'), with standing follow-main consent (2026-11-12) and the merge manager's relay (session_01EucfRnjwjC8CPYgVnsFuHS: 're-pin every layer to its current main'); main moved during the re-pin, so lock:freshness requires the newer heads"
             },
             "standing": {
               "follows": "main",
